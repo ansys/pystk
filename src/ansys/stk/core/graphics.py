@@ -206,9 +206,12 @@ class VideoFormat(IntEnum):
     """H.264 file format."""
     WMV = 1
     """Windows Media Video (WMV) file format."""
+    PRO_RES = 2
+    """Apple ProRes file format."""
 
 VideoFormat.H264.__doc__ = "H.264 file format."
 VideoFormat.WMV.__doc__ = "Windows Media Video (WMV) file format."
+VideoFormat.PRO_RES.__doc__ = "Apple ProRes file format."
 
 agcls.AgTypeNameMap["VideoFormat"] = VideoFormat
 
@@ -6846,15 +6849,6 @@ class Lighting(SupportsDeleteCallback):
 
     Examples
     --------
-    Control the Lighting of the 3D scene:
-    >>> # Scenario scenario: Scenario object
-    >>> # Modify the lighting levels
-    >>> manager = scenario.scene_manager
-    >>> lighting = manager.scenes.item(0).lighting
-    >>> lighting.ambient_intensity = 0.20  # Percent
-    >>> lighting.diffuse_intensity = 4  # Percent
-    >>> lighting.night_lights_intensity = 5  # Percent
-
     Set Vehicle Lighting Properties:
     >>> # Satellite satellite: Satellite object
     >>> lighting = satellite.graphics.lighting
@@ -6873,6 +6867,15 @@ class Lighting(SupportsDeleteCallback):
     >>> umbra.visible = True
     >>> umbra.color = Colors.Red
     >>> umbra.line_width = LineWidth.WIDTH2
+
+    Control the Lighting of the 3D scene:
+    >>> # Scenario scenario: Scenario object
+    >>> # Modify the lighting levels
+    >>> manager = scenario.scene_manager
+    >>> lighting = manager.scenes.item(0).lighting
+    >>> lighting.ambient_intensity = 0.20  # Percent
+    >>> lighting.diffuse_intensity = 4  # Percent
+    >>> lighting.night_lights_intensity = 5  # Percent
     """
 
     _num_methods = 8
@@ -8022,7 +8025,7 @@ class Camera(SupportsDeleteCallback):
     >>> manager.render()
     """
 
-    _num_methods = 50
+    _num_methods = 51
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_position_method_offset = 1
     _set_position_method_offset = 2
@@ -8074,6 +8077,7 @@ class Camera(SupportsDeleteCallback):
     _view_offset_method_offset = 48
     _view_offset_direction_with_up_axis_method_offset = 49
     _view_offset_direction_method_offset = 50
+    _view_central_body_from_position_method_offset = 51
     _metadata = {
         "iid_data" : (5415728535553925060, 1568220948406149766),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -8452,6 +8456,13 @@ class Camera(SupportsDeleteCallback):
     def view_offset_direction(self, axes:"IVectorGeometryToolAxes", reference_point:"IVectorGeometryToolPoint", direction:"IVectorGeometryToolVector") -> None:
         """Set the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the direction vector."""
         return self._intf.invoke(Camera._metadata, Camera._view_offset_direction_metadata, axes, reference_point, direction)
+
+    _view_central_body_from_position_metadata = { "offset" : _view_central_body_from_position_method_offset,
+            "arg_types" : (agcom.BSTR, agcom.PVOID, agcom.PVOID,),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
+    def view_central_body_from_position(self, central_body:str, axes:"IVectorGeometryToolAxes", camera_position:"IVectorGeometryToolPoint") -> None:
+        """Zoom to a central body and use the specified axes for rotation. The reference point is set to the center of the central body."""
+        return self._intf.invoke(Camera._metadata, Camera._view_central_body_from_position_metadata, central_body, axes, camera_position)
 
     _property_names[position] = "position"
     _property_names[reference_point] = "reference_point"
@@ -17158,7 +17169,7 @@ class TextOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer, SupportsDel
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def text(self) -> str:
-        r"""Set the Text to be rendered to an overlay. Newline characters ('\n') will mark the start of the next line in the text."""
+        r"""Get or set the text to be rendered to an overlay. Newline characters ('\n') will mark the start of the next line in the text."""
         return self._intf.get_property(TextOverlay._metadata, TextOverlay._get_text_metadata)
 
     _set_text_metadata = { "offset" : _set_text_method_offset,
@@ -17188,7 +17199,7 @@ class TextOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer, SupportsDel
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def font(self) -> "GraphicsFont":
-        """Get the graphics font used to style the text."""
+        """Get or set the graphics font used to style the text."""
         return self._intf.get_property(TextOverlay._metadata, TextOverlay._get_font_metadata)
 
     _set_font_metadata = { "offset" : _set_font_method_offset,
@@ -18725,7 +18736,7 @@ class AGICustomTerrainOverlayFactory(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def initialize_with_string(self, uri:str) -> "AGICustomTerrainOverlay":
-        """Initialize an agi custom terrain overlay with the provided values."""
+        """Initialize a new instance with the provided values."""
         return self._intf.invoke(AGICustomTerrainOverlayFactory._metadata, AGICustomTerrainOverlayFactory._initialize_with_string_metadata, uri, OutArg())
 
 

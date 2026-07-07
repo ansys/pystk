@@ -20,11 +20,17 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from typing import Set, Dict
+from typing import Set, Dict, TYPE_CHECKING
 from functools import wraps
 
 import importlib
 
+if TYPE_CHECKING:
+    # only import types for type checking to avoid
+    # circular imports at runtime
+    from ..stkobjects import DataProviderResultDataSetCollection, DataProviderElements
+
+_module_config = { "TOARRAY_CHUNK_COUNT" : 1E6 }
 
 def required_package(package_name: str):
     """
@@ -65,7 +71,15 @@ def to_numpy_array(results: "DataProviderResultDataSetCollection") -> "ndarray":
     results_arr = numpy.array([])
 
     # create numpy array from row formatted dataset elements
-    row_elements = results.to_array()
+    row_size = results.count
+    row_count = results.row_count
+    chunk_count = max(int(_module_config["TOARRAY_CHUNK_COUNT"]), 1)
+    subset_length = max(int(chunk_count / max(row_size, 1)), 1)
+    row_elements = []
+    start_index = 0
+    while start_index < row_count:
+        row_elements.extend(results.to_array_subset(start_index, subset_length))
+        start_index += subset_length
     unshaped_elements_arr = numpy.array(row_elements)
 
     # get unique element names and unique element count

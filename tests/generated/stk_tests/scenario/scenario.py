@@ -350,7 +350,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(ScenarioTimeStepType.REAL_TIME, ani.animation_step_type)
 
         ani.animation_step_value = 12
+        ani.animation_step_size = 1
         Assert.assertEqual(12, ani.animation_step_value)
+        Assert.assertEqual(1, ani.animation_step_size)
 
         ani.animation_step_type = ScenarioTimeStepType.X_REAL_TIME
         Assert.assertEqual(ScenarioTimeStepType.X_REAL_TIME, ani.animation_step_type)
@@ -361,21 +363,29 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(ani.continue_x_real_time_from_pause)
 
         ani.animation_step_value = 21
+        ani.animation_step_size = 2
         Assert.assertEqual(21, ani.animation_step_value)
+        Assert.assertEqual(2, ani.animation_step_size)
 
         ani.animation_step_type = ScenarioTimeStepType.STEP
         Assert.assertEqual(ScenarioTimeStepType.STEP, ani.animation_step_type)
 
         ani.animation_step_value = 1234
         Assert.assertEqual(1234, ani.animation_step_value)
+        Assert.assertEqual(1234, ani.animation_step_size)
+        ani.animation_step_size = 3
+        Assert.assertEqual(3, ani.animation_step_value)
+        Assert.assertEqual(3, ani.animation_step_size)
 
         ani.animation_step_type = ScenarioTimeStepType.ARRAY
         Assert.assertEqual(ScenarioTimeStepType.ARRAY, ani.animation_step_type)
 
         ani.time_array_increment = 1
+        ani.animation_step_size = 4
         Assert.assertEqual(1, ani.time_array_increment)
         ani.animation_step_value = 100000
         Assert.assertEqual(100000, ani.animation_step_value)
+        Assert.assertEqual(4, ani.animation_step_size)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ani.animation_step_value = -1
 
@@ -685,6 +695,35 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.current_scenario.children.unload(STKObjectType.FACILITY, "Fac2")
             TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "Sat1")
             TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "Sat2")
+
+    # endregion
+
+    # region TerrainServerOptions
+    @category("Basic Tests")
+    def test_TerrainServerOptions(self):
+        useTerrainServerForAnalysis: bool = EarlyBoundTests.AG_SC.use_terrain_server_for_analysis
+        if useTerrainServerForAnalysis:
+            EarlyBoundTests.AG_SC.use_terrain_server_for_analysis = False
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            EarlyBoundTests.AG_SC.use_terrain_server_for_line_of_sight_terrain_mask = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            EarlyBoundTests.AG_SC.use_terrain_server_for_az_el_mask = True
+
+        EarlyBoundTests.AG_SC.use_terrain_server_for_analysis = True
+        Assert.assertTrue(EarlyBoundTests.AG_SC.use_terrain_server_for_analysis)
+
+        EarlyBoundTests.AG_SC.use_terrain_server_for_line_of_sight_terrain_mask = True
+        Assert.assertTrue(EarlyBoundTests.AG_SC.use_terrain_server_for_line_of_sight_terrain_mask)
+        EarlyBoundTests.AG_SC.use_terrain_server_for_az_el_mask = True
+        Assert.assertTrue(EarlyBoundTests.AG_SC.use_terrain_server_for_az_el_mask)
+
+        EarlyBoundTests.AG_SC.use_terrain_server_for_line_of_sight_terrain_mask = False
+        Assert.assertFalse(EarlyBoundTests.AG_SC.use_terrain_server_for_line_of_sight_terrain_mask)
+        EarlyBoundTests.AG_SC.use_terrain_server_for_az_el_mask = False
+        Assert.assertFalse(EarlyBoundTests.AG_SC.use_terrain_server_for_az_el_mask)
+
+        EarlyBoundTests.AG_SC.use_terrain_server_for_analysis = useTerrainServerForAnalysis
 
     # endregion
 

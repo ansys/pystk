@@ -59,6 +59,9 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.IAntennaContour`
               - IAntennaContour Interface for a antenna's contour properties.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaHFSSDesign`
+              - Provide access to the properties and methods defining an HFSS design.
+
             * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModel`
               - Provide access to the properties and methods defining an antenna model.
 
@@ -217,6 +220,15 @@ Summary
 
             * - :py:class:`~ansys.stk.core.stkobjects.IGreatArcVehicle`
               - A base interface for all Great Arc Vehicles.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.IGroundLocation`
+              - Interface containing properties common to ground location objects (i.e. Target, Place, and Facility).
+
+            * - :py:class:`~ansys.stk.core.stkobjects.IGroundLocationGraphics`
+              - IGroundLocationGraphics used to access the 2-d graphics properties for a ground location.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.IGroundLocationGraphics3D`
+              - IGroundLocationGraphics3D Interface. For 3D properties of a ground location.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IIonosphericFadingLossModel`
               - Provide access to the properties and methods for an Ionospheric Fading loss model.
@@ -544,6 +556,9 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintCondition`
               - Class defining access constraints in terms of lighting conditions.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintElevationRiseSet`
+              - Class defining the Elevation Rise-Set constraint.
+
             * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection`
               - Collection of Exclusion Zones used in Exclusion Zone constraint.
 
@@ -561,6 +576,9 @@ Summary
 
             * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintMinMaxBase`
               - Class related to defining constraints in terms of minimum and/or maximum values.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintNoiseTemperature`
+              - Class defining the System Noise Temperature constraint.
 
             * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintObjExAngle`
               - Class defining the Object Exclusion Angle constraint.
@@ -691,6 +709,21 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.AntennaGraphics3D`
               - Class defining 3D Graphics properties of a Antenna.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaHFSSDesign`
+              - Class defining an HFSS design.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaHFSSDesignHelixQuadrifilarShort`
+              - Class defining an HFSS helix quadrifilar short design.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaHFSSDesignSlotGap`
+              - Class defining an HFSS slot gap design.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaHFSSDesignWireDipole`
+              - Class defining an HFSS wire dipole design.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaHFSSDesignWireMonopole`
+              - Class defining an HFSS wire monopole design.
+
             * - :py:class:`~ansys.stk.core.stkobjects.AntennaModel`
               - Class defining a generic antenna model.
 
@@ -774,6 +807,9 @@ Summary
 
             * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelHemispherical`
               - Class defining a hemispherical antenna model.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelHFSSDesign`
+              - Class defining an HFSS design antenna model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelHfssEepArray`
               - Class defining an HFSS EEP array antenna model.
@@ -907,13 +943,10 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelSimpleSatcom`
               - Class defining an atmospheric absorption model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelTIREM320`
-              - Class defining an atmospheric absorption model.
-
-            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelTIREM331`
-              - Class defining an atmospheric absorption model.
-
             * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelTIREM550`
+              - Class defining an atmospheric absorption model.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelTIREM630`
               - Class defining an atmospheric absorption model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericTurbulenceModel`
@@ -1082,7 +1115,10 @@ Summary
               - 3D graphics properties of a chain.
 
             * - :py:class:`~ansys.stk.core.stkobjects.ChainOptimalStrandOpts`
-              - Class defining Chain optimal strand options.
+              - Do not use this class, as it is deprecated. Use ChainStrandAnalysisOpts instead. Class defining Chain optimal strand options.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainStrandAnalysisOpts`
+              - Class defining Chain strand analysis options.
 
             * - :py:class:`~ansys.stk.core.stkobjects.ChainTimePeriod`
               - Chain time period options.
@@ -4122,6 +4158,15 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.AntennaGraphicsCoordinateSystem`
               - Coordinate system for defining antenna graphics resolution.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaHFSSDesignHelixTurnDirection`
+              - HFSS Design antenna helix quadrifilar turn directions.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaHFSSDesignStatus`
+              - HFSS Design antenna model statuses.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaHFSSDesignType`
+              - HFSS Design antenna model types.
+
             * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelCosecantSquaredSidelobeType`
               - Cosecant Squared antenna sidelobe selection types.
 
@@ -4197,6 +4242,9 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.ChainCoverageAssetMode`
               - Chain Cov Asset Mode.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainGraphics2DNetworkDataMode`
+              - Chain graphics network data mode, show percentage or data rate usage.
+
             * - :py:class:`~ansys.stk.core.stkobjects.ChainOptimalStrandCalculationScalarMetricType`
               - Chain optimal strand calculation scalar type.
 
@@ -4211,6 +4259,9 @@ Summary
 
             * - :py:class:`~ansys.stk.core.stkobjects.ChainParentPlatformRestriction`
               - Options for a chain's From and To Parent Platform Restriction.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainStrandAnalysisComputeType`
+              - Chain strand analysis compute type.
 
             * - :py:class:`~ansys.stk.core.stkobjects.ChainTimePeriodType`
               - Compute Time Period Type.
@@ -4518,6 +4569,9 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.IvClockHost`
               - Clock host options for access. Time values are reported with a clock colocated with the clock host object.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.IvColorMode`
+              - Color mode options for access graphics.
+
             * - :py:class:`~ansys.stk.core.stkobjects.IvTimeSense`
               - Mode of signal transmission of the designated clock host.
 
@@ -4604,6 +4658,9 @@ Summary
 
             * - :py:class:`~ansys.stk.core.stkobjects.NoiseTemperatureComputeType`
               - System noise temperature compute type.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.NoiseTemperatureMethod`
+              - Noise temperature computation method.
 
             * - :py:class:`~ansys.stk.core.stkobjects.NoteShowType`
               - Options for specifying when a label note displays.
@@ -4902,6 +4959,9 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.STKObjectType`
               - STK objects.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.SurfaceLinesTerrain`
+              - Options for surface lines on terrain.
+
             * - :py:class:`~ansys.stk.core.stkobjects.SurfaceReference`
               - Options for surface reference of earth globes.
 
@@ -5194,6 +5254,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
      IAntennaBeam<stkobjects/IAntennaBeam>
      IAntennaBeamSelectionStrategy<stkobjects/IAntennaBeamSelectionStrategy>
      IAntennaContour<stkobjects/IAntennaContour>
+     IAntennaHFSSDesign<stkobjects/IAntennaHFSSDesign>
      IAntennaModel<stkobjects/IAntennaModel>
      IAntennaModelOpticalSimple<stkobjects/IAntennaModelOpticalSimple>
      IAreaTypeData<stkobjects/IAreaTypeData>
@@ -5247,6 +5308,9 @@ The following is an overview of the classes, interfaces and enumerations of the 
      IGreatArcGraphics<stkobjects/IGreatArcGraphics>
      IGreatArcGraphics3D<stkobjects/IGreatArcGraphics3D>
      IGreatArcVehicle<stkobjects/IGreatArcVehicle>
+     IGroundLocation<stkobjects/IGroundLocation>
+     IGroundLocationGraphics<stkobjects/IGroundLocationGraphics>
+     IGroundLocationGraphics3D<stkobjects/IGroundLocationGraphics3D>
      IIonosphericFadingLossModel<stkobjects/IIonosphericFadingLossModel>
      ILaserAtmosphericLossModel<stkobjects/ILaserAtmosphericLossModel>
      ILaserTroposphericScintillationLossModel<stkobjects/ILaserTroposphericScintillationLossModel>
@@ -5359,12 +5423,14 @@ The following is an overview of the classes, interfaces and enumerations of the 
      AccessConstraintCentralBodyObstruction<stkobjects/AccessConstraintCentralBodyObstruction>
      AccessConstraintCollection<stkobjects/AccessConstraintCollection>
      AccessConstraintCondition<stkobjects/AccessConstraintCondition>
+     AccessConstraintElevationRiseSet<stkobjects/AccessConstraintElevationRiseSet>
      AccessConstraintExclZonesCollection<stkobjects/AccessConstraintExclZonesCollection>
      AccessConstraintGrazingAltitude<stkobjects/AccessConstraintGrazingAltitude>
      AccessConstraintGroundTrack<stkobjects/AccessConstraintGroundTrack>
      AccessConstraintIntervals<stkobjects/AccessConstraintIntervals>
      AccessConstraintLatitudeLongitudeZone<stkobjects/AccessConstraintLatitudeLongitudeZone>
      AccessConstraintMinMaxBase<stkobjects/AccessConstraintMinMaxBase>
+     AccessConstraintNoiseTemperature<stkobjects/AccessConstraintNoiseTemperature>
      AccessConstraintObjExAngle<stkobjects/AccessConstraintObjExAngle>
      AccessConstraintPluginMinMax<stkobjects/AccessConstraintPluginMinMax>
      AccessConstraintTimeSlipRange<stkobjects/AccessConstraintTimeSlipRange>
@@ -5408,6 +5474,11 @@ The following is an overview of the classes, interfaces and enumerations of the 
      AntennaControl<stkobjects/AntennaControl>
      AntennaGraphics<stkobjects/AntennaGraphics>
      AntennaGraphics3D<stkobjects/AntennaGraphics3D>
+     AntennaHFSSDesign<stkobjects/AntennaHFSSDesign>
+     AntennaHFSSDesignHelixQuadrifilarShort<stkobjects/AntennaHFSSDesignHelixQuadrifilarShort>
+     AntennaHFSSDesignSlotGap<stkobjects/AntennaHFSSDesignSlotGap>
+     AntennaHFSSDesignWireDipole<stkobjects/AntennaHFSSDesignWireDipole>
+     AntennaHFSSDesignWireMonopole<stkobjects/AntennaHFSSDesignWireMonopole>
      AntennaModel<stkobjects/AntennaModel>
      AntennaModelANSYSffdFormat<stkobjects/AntennaModelANSYSffdFormat>
      AntennaModelApertureCircularBessel<stkobjects/AntennaModelApertureCircularBessel>
@@ -5436,6 +5507,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
      AntennaModelGPSGlobal<stkobjects/AntennaModelGPSGlobal>
      AntennaModelHelix<stkobjects/AntennaModelHelix>
      AntennaModelHemispherical<stkobjects/AntennaModelHemispherical>
+     AntennaModelHFSSDesign<stkobjects/AntennaModelHFSSDesign>
      AntennaModelHfssEepArray<stkobjects/AntennaModelHfssEepArray>
      AntennaModelIEEE1979<stkobjects/AntennaModelIEEE1979>
      AntennaModelIntelSat<stkobjects/AntennaModelIntelSat>
@@ -5480,9 +5552,8 @@ The following is an overview of the classes, interfaces and enumerations of the 
      AtmosphericAbsorptionModelITURP676Version9<stkobjects/AtmosphericAbsorptionModelITURP676Version9>
      AtmosphericAbsorptionModelScriptPlugin<stkobjects/AtmosphericAbsorptionModelScriptPlugin>
      AtmosphericAbsorptionModelSimpleSatcom<stkobjects/AtmosphericAbsorptionModelSimpleSatcom>
-     AtmosphericAbsorptionModelTIREM320<stkobjects/AtmosphericAbsorptionModelTIREM320>
-     AtmosphericAbsorptionModelTIREM331<stkobjects/AtmosphericAbsorptionModelTIREM331>
      AtmosphericAbsorptionModelTIREM550<stkobjects/AtmosphericAbsorptionModelTIREM550>
+     AtmosphericAbsorptionModelTIREM630<stkobjects/AtmosphericAbsorptionModelTIREM630>
      AtmosphericTurbulenceModel<stkobjects/AtmosphericTurbulenceModel>
      AtmosphericTurbulenceModelConstant<stkobjects/AtmosphericTurbulenceModelConstant>
      AtmosphericTurbulenceModelHufnagelValley<stkobjects/AtmosphericTurbulenceModelHufnagelValley>
@@ -5539,6 +5610,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
      ChainGraphics2DStatic<stkobjects/ChainGraphics2DStatic>
      ChainGraphics3D<stkobjects/ChainGraphics3D>
      ChainOptimalStrandOpts<stkobjects/ChainOptimalStrandOpts>
+     ChainStrandAnalysisOpts<stkobjects/ChainStrandAnalysisOpts>
      ChainTimePeriod<stkobjects/ChainTimePeriod>
      ChainUserSpecifiedTimePeriod<stkobjects/ChainUserSpecifiedTimePeriod>
      ClassicalLocationArgumentOfLatitude<stkobjects/ClassicalLocationArgumentOfLatitude>
@@ -6555,6 +6627,9 @@ The following is an overview of the classes, interfaces and enumerations of the 
     ≔ AntennaContourType<stkobjects/AntennaContourType>
     ≔ AntennaControlReferenceType<stkobjects/AntennaControlReferenceType>
     ≔ AntennaGraphicsCoordinateSystem<stkobjects/AntennaGraphicsCoordinateSystem>
+    ≔ AntennaHFSSDesignHelixTurnDirection<stkobjects/AntennaHFSSDesignHelixTurnDirection>
+    ≔ AntennaHFSSDesignStatus<stkobjects/AntennaHFSSDesignStatus>
+    ≔ AntennaHFSSDesignType<stkobjects/AntennaHFSSDesignType>
     ≔ AntennaModelCosecantSquaredSidelobeType<stkobjects/AntennaModelCosecantSquaredSidelobeType>
     ≔ AntennaModelInputType<stkobjects/AntennaModelInputType>
     ≔ AntennaModelType<stkobjects/AntennaModelType>
@@ -6580,11 +6655,13 @@ The following is an overview of the classes, interfaces and enumerations of the 
     ≔ CCSDSTimeSystem<stkobjects/CCSDSTimeSystem>
     ≔ ChainConstellationConstraintsMode<stkobjects/ChainConstellationConstraintsMode>
     ≔ ChainCoverageAssetMode<stkobjects/ChainCoverageAssetMode>
+    ≔ ChainGraphics2DNetworkDataMode<stkobjects/ChainGraphics2DNetworkDataMode>
     ≔ ChainOptimalStrandCalculationScalarMetricType<stkobjects/ChainOptimalStrandCalculationScalarMetricType>
     ≔ ChainOptimalStrandCompareStrandsType<stkobjects/ChainOptimalStrandCompareStrandsType>
     ≔ ChainOptimalStrandLinkCompareType<stkobjects/ChainOptimalStrandLinkCompareType>
     ≔ ChainOptimalStrandMetricType<stkobjects/ChainOptimalStrandMetricType>
     ≔ ChainParentPlatformRestriction<stkobjects/ChainParentPlatformRestriction>
+    ≔ ChainStrandAnalysisComputeType<stkobjects/ChainStrandAnalysisComputeType>
     ≔ ChainTimePeriodType<stkobjects/ChainTimePeriodType>
     ≔ CircularApertureInputType<stkobjects/CircularApertureInputType>
     ≔ ClassicalLocation<stkobjects/ClassicalLocation>
@@ -6687,6 +6764,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
     ≔ IonosphericFadingLossModelType<stkobjects/IonosphericFadingLossModelType>
     ≔ ITURP676AtmosphereDataType<stkobjects/ITURP676AtmosphereDataType>
     ≔ IvClockHost<stkobjects/IvClockHost>
+    ≔ IvColorMode<stkobjects/IvColorMode>
     ≔ IvTimeSense<stkobjects/IvTimeSense>
     ≔ LaserPropagationLossModelType<stkobjects/LaserPropagationLossModelType>
     ≔ LaserTroposphericScintillationLossModelType<stkobjects/LaserTroposphericScintillationLossModelType>
@@ -6716,6 +6794,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
     ≔ MTOTrackEvaluationType<stkobjects/MTOTrackEvaluationType>
     ≔ MTOVisibilityMode<stkobjects/MTOVisibilityMode>
     ≔ NoiseTemperatureComputeType<stkobjects/NoiseTemperatureComputeType>
+    ≔ NoiseTemperatureMethod<stkobjects/NoiseTemperatureMethod>
     ≔ NoteShowType<stkobjects/NoteShowType>
     ≔ NotificationFilterMask<stkobjects/NotificationFilterMask>
     ≔ OffsetFrameType<stkobjects/OffsetFrameType>
@@ -6815,6 +6894,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
     ≔ StarReferenceFrame<stkobjects/StarReferenceFrame>
     ≔ StatisticType<stkobjects/StatisticType>
     ≔ STKObjectType<stkobjects/STKObjectType>
+    ≔ SurfaceLinesTerrain<stkobjects/SurfaceLinesTerrain>
     ≔ SurfaceReference<stkobjects/SurfaceReference>
     ≔ SwathComputationalMethod<stkobjects/SwathComputationalMethod>
     ≔ TargetSelectionMethod<stkobjects/TargetSelectionMethod>

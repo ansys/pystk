@@ -37,9 +37,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSDriver.reset_all_profiles`
               - Reset all active profiles in all target sequences.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSDriver.run_mcs`
-              - Run the current MCS.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSDriver.run_mcs2`
               - Run the current MCS and returns an error code.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSDriver.set_all_profile_modes`
+              - Set the mode for all profiles in all target sequences to the value held by the SetAllProfileModesTo property.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSDriver.set_all_sequence_actions`
+              - Set the action for all target sequences to the value held by the SetAllTargetSequenceActionsTo property.
 
     .. tab-item:: Properties
 
@@ -57,6 +59,10 @@ Overview
               - Get the Mission Control Sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSDriver.options`
               - Get the Mission Control Sequence options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSDriver.set_all_profile_modes_to`
+              - The mode setting that will be applied to all profiles in all target sequences in the MCS when the SetAllProfileModes method is invoked.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSDriver.set_all_target_sequence_actions_to`
+              - The action setting that will be applied to all target sequences in the MCS when the SetAllSequenceActions method is invoked.
 
 
 
@@ -122,6 +128,18 @@ Property detail
     :type: MCSOptions
 
     Get the Mission Control Sequence options.
+
+.. py:property:: set_all_profile_modes_to
+    :canonical: ansys.stk.core.stkobjects.astrogator.MCSDriver.set_all_profile_modes_to
+    :type: ProfileMode
+
+    The mode setting that will be applied to all profiles in all target sequences in the MCS when the SetAllProfileModes method is invoked.
+
+.. py:property:: set_all_target_sequence_actions_to
+    :canonical: ansys.stk.core.stkobjects.astrogator.MCSDriver.set_all_target_sequence_actions_to
+    :type: TargetSequenceAction
+
+    The action setting that will be applied to all target sequences in the MCS when the SetAllSequenceActions method is invoked.
 
 
 Method detail
@@ -218,21 +236,35 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: run_mcs(self) -> None
+
+.. py:method:: run_mcs(self) -> RunCode
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSDriver.run_mcs
-
-    Run the current MCS.
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: run_mcs2(self) -> RunCode
-    :canonical: ansys.stk.core.stkobjects.astrogator.MCSDriver.run_mcs2
 
     Run the current MCS and returns an error code.
 
     :Returns:
 
         :obj:`~RunCode`
+
+.. py:method:: set_all_profile_modes(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.MCSDriver.set_all_profile_modes
+
+    Set the mode for all profiles in all target sequences to the value held by the SetAllProfileModesTo property.
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+.. py:method:: set_all_sequence_actions(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.MCSDriver.set_all_sequence_actions
+
+    Set the action for all target sequences to the value held by the SetAllTargetSequenceActionsTo property.
+
+    :Returns:
+
+        :obj:`~None`
+
+
 

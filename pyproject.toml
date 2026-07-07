@@ -40,11 +40,11 @@ optional-dependencies.all = [
   # Target: grpc
   "grpcio>=1.73.1",
   # Target: jupyter
-  "jupyter-rfb>=0.5.3",
+  "jupyter-rfb>=1.0.2",
   # Target: migration
   "libcst>=1.8.2",
   # Target: extensions
-  "matplotlib>=3.10.3",
+  "matplotlib==3.10.9",
   "numpy>=2.2.6",
   "pandas>=2.3.1",
   "pillow>=11.3.0",
@@ -56,7 +56,7 @@ optional-dependencies.core = [
   # NOTE: no dependencies are installed by default ensuring a dependency-free installation of ansys-stk[core]
 ]
 optional-dependencies.extensions = [
-  "matplotlib>=3.10.3",
+  "matplotlib==3.10.9",
   "pandas>=2.3.1",
 ]
 optional-dependencies.grpc = [
@@ -64,7 +64,7 @@ optional-dependencies.grpc = [
   "protobuf>=6.31.1",
 ]
 optional-dependencies.jupyter = [
-  "jupyter-rfb>=0.5.3",
+  "jupyter-rfb>=1.0.2",
   "numpy>=2.2.6",
   "pillow>=11.3.0",
   "sidecar>=0.7.0",
@@ -88,41 +88,41 @@ scripts.pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistan
 
 [dependency-groups]
 vulnerabilities = [
-  "bandit[toml]==1.9.2",
-  "safety==3.7.0",
-  "typer==0.21.1",
+  "bandit[toml]==1.9.4",
+  "safety==3.8.1",
+  "typer==0.26.8",
 ]
 tests = [
   "numpy==2.2.6",
   "parameterized==0.9.0",
-  "pytest==9.0.2",
-  "pytest-cov==7.0.0",
-  "pytest-mpl==0.18.0",
-  "pytz==2025.2",
+  "pytest==9.1.1",
+  "pytest-cov==7.1.0",
+  "pytest-mpl==0.19.0",
+  "pytz==2026.2",
   "scipy==1.15.3",
 ]
 doc = [
-  "ansys-sphinx-theme==1.6.4",
-  "build==1.4.0",
+  "ansys-sphinx-theme==1.9.0",
+  "build==1.5.0",
   "ipykernel==6.31.0",
-  "jupyter-server==2.17.0",
-  "jupyterlab==4.5.2",
-  "jupytext==1.18.1",
+  "jupyter-server==2.20.0",
+  "jupyterlab==4.6.1",
+  "jupytext==1.19.4",
   "libcst==1.8.6",
-  "matplotlib==3.10.8",
+  "matplotlib==3.10.9",
   "myst-parser==4.0.1",
-  "nbconvert==7.16.6",
+  "nbconvert==7.17.1",
   "nbsphinx==0.9.8",
   "numpydoc==1.10.0",
   "pandas==2.3.3",
-  "plotly==6.5.2",
+  "plotly==6.8.0",
   "scipy==1.15.3",
   "sphinx==8.2.3",
   "sphinx-copybutton==0.5.2",
   "sphinx-design==0.6.1",
   "sphinx-jinja==2.0.2",
   "sphinxcontrib-jquery==4.1",
-  "sphinxcontrib-mermaid==2.0.0",
+  "sphinxcontrib-mermaid==2.0.2",
   "toml==0.10.2",
 ]
 docstyle = [
@@ -202,13 +202,18 @@ title_format = "`{version} <https://github.com/ansys/pystk/releases/tag/v{versio
 issue_format = "`#{issue} <https://github.com/ansys/pystk/pull/{issue}>`_"
 
 [[tool.towncrier.type]]
+directory = "breaking"
+name = "Breaking"
+showcontent = true
+
+[[tool.towncrier.type]]
 directory = "added"
 name = "Added"
 showcontent = true
 
 [[tool.towncrier.type]]
-directory = "dependencies"
-name = "Dependencies"
+directory = "fixed"
+name = "Fixed"
 showcontent = true
 
 [[tool.towncrier.type]]
@@ -217,8 +222,8 @@ name = "Documentation"
 showcontent = true
 
 [[tool.towncrier.type]]
-directory = "fixed"
-name = "Fixed"
+directory = "dependencies"
+name = "Dependencies"
 showcontent = true
 
 [[tool.towncrier.type]]

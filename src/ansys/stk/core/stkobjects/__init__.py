@@ -26,23 +26,26 @@ __all__ = ["AberrationType", "Access", "AccessAdvancedSettings", "AccessAllowedT
 "AccessConstraintAnalysisWorkbench", "AccessConstraintAnalysisWorkbenchCollection",
 "AccessConstraintAnalysisWorkbenchComponent", "AccessConstraintAngle", "AccessConstraintBackground",
 "AccessConstraintCentralBodyObstruction", "AccessConstraintCollection", "AccessConstraintCondition",
-"AccessConstraintExclZonesCollection", "AccessConstraintGrazingAltitude", "AccessConstraintGroundTrack",
-"AccessConstraintIntervals", "AccessConstraintLatitudeLongitudeZone", "AccessConstraintMinMaxBase",
-"AccessConstraintObjExAngle", "AccessConstraintPluginMinMax", "AccessConstraintTimeSlipRange", "AccessConstraintType",
-"AccessEventDetection", "AccessGraphics", "AccessSampling", "AccessTargetTime", "AccessTargetTimesCollection",
-"AccessTimePeriod", "AccessTimeType", "AdditionalGainLoss", "AdditionalGainLossCollection", "AdvCAT",
-"AdvCATAdvancedEllipsoid", "AdvCATAdvancedSettings", "AdvCATAvailableObjectCollection", "AdvCATChosenObject",
-"AdvCATChosenObjectCollection", "AdvCATConjunctionType", "AdvCATEllipsoidClassType", "AdvCATGraphics3D",
-"AdvCATPreFilters", "AdvCATSecondaryEllipsoidsVisibilityType", "Aircraft", "AircraftExportTools", "AircraftGraphics",
-"AircraftGraphics3D", "AircraftWGS84WarningType", "AltitudeReferenceType", "AnalysisWorkbenchAccessConstraintType",
-"AnimationActionType", "AnimationDirectionType", "AnimationEndTimeMode", "AnimationOptionType", "Antenna",
-"AntennaBeam", "AntennaBeamCollection", "AntennaBeamSelectionStrategy", "AntennaBeamSelectionStrategyAggregate",
+"AccessConstraintElevationRiseSet", "AccessConstraintExclZonesCollection", "AccessConstraintGrazingAltitude",
+"AccessConstraintGroundTrack", "AccessConstraintIntervals", "AccessConstraintLatitudeLongitudeZone",
+"AccessConstraintMinMaxBase", "AccessConstraintNoiseTemperature", "AccessConstraintObjExAngle",
+"AccessConstraintPluginMinMax", "AccessConstraintTimeSlipRange", "AccessConstraintType", "AccessEventDetection",
+"AccessGraphics", "AccessSampling", "AccessTargetTime", "AccessTargetTimesCollection", "AccessTimePeriod",
+"AccessTimeType", "AdditionalGainLoss", "AdditionalGainLossCollection", "AdvCAT", "AdvCATAdvancedEllipsoid",
+"AdvCATAdvancedSettings", "AdvCATAvailableObjectCollection", "AdvCATChosenObject", "AdvCATChosenObjectCollection",
+"AdvCATConjunctionType", "AdvCATEllipsoidClassType", "AdvCATGraphics3D", "AdvCATPreFilters",
+"AdvCATSecondaryEllipsoidsVisibilityType", "Aircraft", "AircraftExportTools", "AircraftGraphics", "AircraftGraphics3D",
+"AircraftWGS84WarningType", "AltitudeReferenceType", "AnalysisWorkbenchAccessConstraintType", "AnimationActionType",
+"AnimationDirectionType", "AnimationEndTimeMode", "AnimationOptionType", "Antenna", "AntennaBeam",
+"AntennaBeamCollection", "AntennaBeamSelectionStrategy", "AntennaBeamSelectionStrategyAggregate",
 "AntennaBeamSelectionStrategyMaximumGain", "AntennaBeamSelectionStrategyMinimumBoresightAngle",
 "AntennaBeamSelectionStrategyScriptPlugin", "AntennaBeamTransmit", "AntennaContourEIRP", "AntennaContourFluxDensity",
 "AntennaContourGain", "AntennaContourGraphics", "AntennaContourLevel", "AntennaContourLevelCollection",
 "AntennaContourRIP", "AntennaContourSpectralFluxDensity", "AntennaContourType", "AntennaControl",
 "AntennaControlReferenceType", "AntennaGraphics", "AntennaGraphics3D", "AntennaGraphicsCoordinateSystem",
-"AntennaModel", "AntennaModelANSYSffdFormat", "AntennaModelApertureCircularBessel",
+"AntennaHFSSDesign", "AntennaHFSSDesignHelixQuadrifilarShort", "AntennaHFSSDesignHelixTurnDirection",
+"AntennaHFSSDesignSlotGap", "AntennaHFSSDesignStatus", "AntennaHFSSDesignType", "AntennaHFSSDesignWireDipole",
+"AntennaHFSSDesignWireMonopole", "AntennaModel", "AntennaModelANSYSffdFormat", "AntennaModelApertureCircularBessel",
 "AntennaModelApertureCircularBesselEnvelope", "AntennaModelApertureCircularCosine",
 "AntennaModelApertureCircularCosinePedestal", "AntennaModelApertureCircularCosineSquared",
 "AntennaModelApertureCircularCosineSquaredPedestal", "AntennaModelApertureCircularSincIntegerPower",
@@ -52,7 +55,7 @@ __all__ = ["AberrationType", "Access", "AccessAdvancedSettings", "AccessAllowedT
 "AntennaModelApertureRectangularSincIntegerPower", "AntennaModelApertureRectangularSincRealPower",
 "AntennaModelApertureRectangularUniform", "AntennaModelCosecantSquared", "AntennaModelCosecantSquaredSidelobeType",
 "AntennaModelDipole", "AntennaModelElevationAzimuthCuts", "AntennaModelExternal", "AntennaModelGIMROC",
-"AntennaModelGPSFRPA", "AntennaModelGPSGlobal", "AntennaModelGaussian", "AntennaModelHelix",
+"AntennaModelGPSFRPA", "AntennaModelGPSGlobal", "AntennaModelGaussian", "AntennaModelHFSSDesign", "AntennaModelHelix",
 "AntennaModelHemispherical", "AntennaModelHfssEepArray", "AntennaModelIEEE1979", "AntennaModelITUBO1213CoPolar",
 "AntennaModelITUBO1213CrossPolar", "AntennaModelITUF1245", "AntennaModelITUS1528R12Circular",
 "AntennaModelITUS1528R12Rectangular", "AntennaModelITUS1528R13", "AntennaModelITUS465", "AntennaModelITUS580",
@@ -66,32 +69,33 @@ __all__ = ["AberrationType", "Access", "AccessAdvancedSettings", "AccessAllowedT
 "AtmosphericAbsorptionModelCOMPlugin", "AtmosphericAbsorptionModelGraphics3DACAP",
 "AtmosphericAbsorptionModelITURP676Version13", "AtmosphericAbsorptionModelITURP676Version9",
 "AtmosphericAbsorptionModelScriptPlugin", "AtmosphericAbsorptionModelSimpleSatcom",
-"AtmosphericAbsorptionModelTIREM320", "AtmosphericAbsorptionModelTIREM331", "AtmosphericAbsorptionModelTIREM550",
-"AtmosphericAbsorptionModelType", "AtmosphericDensityModel", "AtmosphericTurbulenceModel",
-"AtmosphericTurbulenceModelConstant", "AtmosphericTurbulenceModelHufnagelValley", "AtmosphericTurbulenceModelType",
-"AttitudeCoordinateAxes", "AttitudeInclude", "AttitudeProfile", "AttitudeProfileAlignedAndConstrained",
-"AttitudeProfileAlignmentOffset", "AttitudeProfileAviator", "AttitudeProfileConstraintOffset",
-"AttitudeProfileCoordinatedTurn", "AttitudeProfileFixedInAxes", "AttitudeProfileGPS", "AttitudeProfileInertial",
-"AttitudeProfilePrecessingSpin", "AttitudeProfileSpinAboutSettings", "AttitudeProfileSpinning",
-"AttitudeProfileYawToNadir", "AttitudeScheduleTimesCollection", "AttitudeScheduleTimesElement", "AttitudeStandardBasic",
-"AttitudeStandardOrbit", "AttitudeStandardRoute", "AttitudeStandardTrajectory", "AttitudeStandardType",
-"AttitudeTorque", "AvailableFeatures", "AxisOffset", "AzElMaskType", "BasicAzElMask", "BeamSelectionStrategyType",
-"Beamformer", "BeamformerASCIIFile", "BeamformerBlackmanHarris", "BeamformerCosine", "BeamformerCosineX",
-"BeamformerCustomTaperFile", "BeamformerDolphChebyshev", "BeamformerHamming", "BeamformerHann", "BeamformerMVDR",
-"BeamformerRaisedCosine", "BeamformerRaisedCosineSquared", "BeamformerScript", "BeamformerTaylor", "BeamformerType",
-"BeamformerUniform", "BeerBouguerLambertLawLayer", "BeerBouguerLambertLawLayerCollection",
-"BorderWallUpperLowerEdgeAltitudeReference", "BoresightType", "BuildHeightReferenceMethod", "BuildingHeightUnit",
-"CCSDSDateFormat", "CCSDSEphemerisFormatType", "CCSDSReferenceFrame", "CCSDSTimeSystem", "CentralBody",
-"CentralBodyCollection", "CentralBodyEllipsoid", "CentralBodyTerrainCollection", "CentralBodyTerrainCollectionElement",
-"Chain", "ChainAnalysisOptions", "ChainConnection", "ChainConnectionCollection", "ChainConstellationConstraintsMode",
-"ChainConstraints", "ChainCoverageAssetMode", "ChainGraphics", "ChainGraphics2DAnimation", "ChainGraphics2DStatic",
-"ChainGraphics3D", "ChainOptimalStrandCalculationScalarMetricType", "ChainOptimalStrandCompareStrandsType",
-"ChainOptimalStrandLinkCompareType", "ChainOptimalStrandMetricType", "ChainOptimalStrandOpts",
-"ChainParentPlatformRestriction", "ChainTimePeriod", "ChainTimePeriodType", "ChainUserSpecifiedTimePeriod",
-"CircularApertureInputType", "ClassicalLocation", "ClassicalLocationArgumentOfLatitude",
-"ClassicalLocationEccentricAnomaly", "ClassicalLocationMeanAnomaly", "ClassicalLocationTimePastAscendingNode",
-"ClassicalLocationTimePastPerigee", "ClassicalLocationTrueAnomaly", "ClassicalOrientation", "ClassicalSizeShape",
-"ClassicalSizeShapeAltitude", "ClassicalSizeShapeMeanMotion", "ClassicalSizeShapePeriod", "ClassicalSizeShapeRadius",
+"AtmosphericAbsorptionModelTIREM550", "AtmosphericAbsorptionModelTIREM630", "AtmosphericAbsorptionModelType",
+"AtmosphericDensityModel", "AtmosphericTurbulenceModel", "AtmosphericTurbulenceModelConstant",
+"AtmosphericTurbulenceModelHufnagelValley", "AtmosphericTurbulenceModelType", "AttitudeCoordinateAxes",
+"AttitudeInclude", "AttitudeProfile", "AttitudeProfileAlignedAndConstrained", "AttitudeProfileAlignmentOffset",
+"AttitudeProfileAviator", "AttitudeProfileConstraintOffset", "AttitudeProfileCoordinatedTurn",
+"AttitudeProfileFixedInAxes", "AttitudeProfileGPS", "AttitudeProfileInertial", "AttitudeProfilePrecessingSpin",
+"AttitudeProfileSpinAboutSettings", "AttitudeProfileSpinning", "AttitudeProfileYawToNadir",
+"AttitudeScheduleTimesCollection", "AttitudeScheduleTimesElement", "AttitudeStandardBasic", "AttitudeStandardOrbit",
+"AttitudeStandardRoute", "AttitudeStandardTrajectory", "AttitudeStandardType", "AttitudeTorque", "AvailableFeatures",
+"AxisOffset", "AzElMaskType", "BasicAzElMask", "BeamSelectionStrategyType", "Beamformer", "BeamformerASCIIFile",
+"BeamformerBlackmanHarris", "BeamformerCosine", "BeamformerCosineX", "BeamformerCustomTaperFile",
+"BeamformerDolphChebyshev", "BeamformerHamming", "BeamformerHann", "BeamformerMVDR", "BeamformerRaisedCosine",
+"BeamformerRaisedCosineSquared", "BeamformerScript", "BeamformerTaylor", "BeamformerType", "BeamformerUniform",
+"BeerBouguerLambertLawLayer", "BeerBouguerLambertLawLayerCollection", "BorderWallUpperLowerEdgeAltitudeReference",
+"BoresightType", "BuildHeightReferenceMethod", "BuildingHeightUnit", "CCSDSDateFormat", "CCSDSEphemerisFormatType",
+"CCSDSReferenceFrame", "CCSDSTimeSystem", "CentralBody", "CentralBodyCollection", "CentralBodyEllipsoid",
+"CentralBodyTerrainCollection", "CentralBodyTerrainCollectionElement", "Chain", "ChainAnalysisOptions",
+"ChainConnection", "ChainConnectionCollection", "ChainConstellationConstraintsMode", "ChainConstraints",
+"ChainCoverageAssetMode", "ChainGraphics", "ChainGraphics2DAnimation", "ChainGraphics2DNetworkDataMode",
+"ChainGraphics2DStatic", "ChainGraphics3D", "ChainOptimalStrandCalculationScalarMetricType",
+"ChainOptimalStrandCompareStrandsType", "ChainOptimalStrandLinkCompareType", "ChainOptimalStrandMetricType",
+"ChainOptimalStrandOpts", "ChainParentPlatformRestriction", "ChainStrandAnalysisComputeType", "ChainStrandAnalysisOpts",
+"ChainTimePeriod", "ChainTimePeriodType", "ChainUserSpecifiedTimePeriod", "CircularApertureInputType",
+"ClassicalLocation", "ClassicalLocationArgumentOfLatitude", "ClassicalLocationEccentricAnomaly",
+"ClassicalLocationMeanAnomaly", "ClassicalLocationTimePastAscendingNode", "ClassicalLocationTimePastPerigee",
+"ClassicalLocationTrueAnomaly", "ClassicalOrientation", "ClassicalSizeShape", "ClassicalSizeShapeAltitude",
+"ClassicalSizeShapeMeanMotion", "ClassicalSizeShapePeriod", "ClassicalSizeShapeRadius",
 "ClassicalSizeShapeSemimajorAxis", "CloudsAndFogFadingLossModel", "CloudsAndFogFadingLossModelP840Version6",
 "CloudsAndFogFadingLossModelP840Version7", "CloudsAndFogFadingLossModelType", "CloudsAndFogLiquidWaterChoiceType",
 "CommRadCartesianLocation", "CommRadComplexNumber", "CommRadComplexNumberCollection", "CommRadPluginConfiguration",
@@ -186,9 +190,9 @@ __all__ = ["AberrationType", "Access", "AccessAdvancedSettings", "AccessAllowedT
 "Graphics3DXOrigin", "Graphics3DYOrigin", "GroundVehicle", "GroundVehicleExportTools", "GroundVehicleGraphics",
 "GroundVehicleGraphics3D", "HFSSFarFieldDataGainType", "HelpContextIdentifierType", "IAccessAdvanced",
 "IAccessConstraint", "IAccessConstraintMinMaxBase", "IAccessInterval", "IAnimation", "IAntennaBeam",
-"IAntennaBeamSelectionStrategy", "IAntennaContour", "IAntennaModel", "IAntennaModelOpticalSimple", "IAreaTypeData",
-"IAtmosphericAbsorptionModel", "IAtmosphericAbsorptionModelTIREM", "IAtmosphericTurbulenceModel", "IAzElMaskData",
-"IBeamformer", "ICelestialBodyInformation", "ICelestialBodyInformationCollection", "IChainTimePeriod",
+"IAntennaBeamSelectionStrategy", "IAntennaContour", "IAntennaHFSSDesign", "IAntennaModel", "IAntennaModelOpticalSimple",
+"IAreaTypeData", "IAtmosphericAbsorptionModel", "IAtmosphericAbsorptionModelTIREM", "IAtmosphericTurbulenceModel",
+"IAzElMaskData", "IBeamformer", "ICelestialBodyInformation", "ICelestialBodyInformationCollection", "IChainTimePeriod",
 "IClassicalLocation", "IClassicalSizeShape", "ICloneable", "ICloudsAndFogFadingLossModel",
 "ICommSystemAccessEventDetection", "ICommSystemAccessSamplingMethod", "ICommSystemLinkSelectionCriteria",
 "IComponentInfo", "IComponentLinkEmbedControl", "IConstellationConstraintRestriction", "ICoverageBounds",
@@ -199,18 +203,18 @@ __all__ = ["AberrationType", "Access", "AccessAdvancedSettings", "AccessAllowedT
 "IFigureOfMeritDefinitionResponseTime", "IFigureOfMeritGraphics2DAttributes", "IFigureOfMeritGraphics2DContours",
 "IFigureOfMeritNavigationAccuracyMethod", "IFlightPathAngle", "IGeodeticSize", "IGraphics3DMarkerData",
 "IGraphics3DModel", "IGraphics3DModelData", "IGraphics3DReferenceAnalysisWorkbenchComponent", "IGreatArcGraphics",
-"IGreatArcGraphics3D", "IGreatArcVehicle", "IIonosphericFadingLossModel", "ILaserAtmosphericLossModel",
-"ILaserTroposphericScintillationLossModel", "ILatitudeLongitudeAltitudePosition", "ILifetimeInformation",
-"IModulatorModel", "IModulatorModelScriptPlugin", "IOrbitDisplayData", "IOrientationAscNode", "IPointingStrategy",
-"IPolarization", "IPolarizationCrossPolLeakage", "IPolarizationElliptical", "IPolarizationHorizontal",
-"IPolarizationLinear", "IPolarizationVertical", "IPositionSourceData", "IPropagator", "IPropagatorSGP4LoadData",
-"IProvideSpatialInfo", "IRFFilterModel", "IRadarActivity", "IRadarContinuousWaveAnalysisMode",
-"IRadarCrossSectionComputeStrategy", "IRadarModeBistaticReceiver", "IRadarModeBistaticTransmitter",
-"IRadarModeMonostatic", "IRadarModel", "IRadarProbabilityOfDetection", "IRadarProbabilityOfDetectionCFAR",
-"IRadarPulseIntegration", "IRadarSTCAttenuation", "IRadarSTCAttenuationMap", "IRadarWaveformSearchTrack",
-"IRainLossModel", "IReTransmitterModel", "IReceiverModel", "IReceiverModelScriptPlugin", "IRefractionModelBase",
-"ISRPModelBase", "ISTKObject", "ISTKObjectCollection", "ISTKObjectElementCollection", "ISamplingMethodStrategy",
-"IScatteringPointModel", "IScatteringPointProvider", "ISensorPattern", "ISensorPointing",
+"IGreatArcGraphics3D", "IGreatArcVehicle", "IGroundLocation", "IGroundLocationGraphics", "IGroundLocationGraphics3D",
+"IIonosphericFadingLossModel", "ILaserAtmosphericLossModel", "ILaserTroposphericScintillationLossModel",
+"ILatitudeLongitudeAltitudePosition", "ILifetimeInformation", "IModulatorModel", "IModulatorModelScriptPlugin",
+"IOrbitDisplayData", "IOrientationAscNode", "IPointingStrategy", "IPolarization", "IPolarizationCrossPolLeakage",
+"IPolarizationElliptical", "IPolarizationHorizontal", "IPolarizationLinear", "IPolarizationVertical",
+"IPositionSourceData", "IPropagator", "IPropagatorSGP4LoadData", "IProvideSpatialInfo", "IRFFilterModel",
+"IRadarActivity", "IRadarContinuousWaveAnalysisMode", "IRadarCrossSectionComputeStrategy", "IRadarModeBistaticReceiver",
+"IRadarModeBistaticTransmitter", "IRadarModeMonostatic", "IRadarModel", "IRadarProbabilityOfDetection",
+"IRadarProbabilityOfDetectionCFAR", "IRadarPulseIntegration", "IRadarSTCAttenuation", "IRadarSTCAttenuationMap",
+"IRadarWaveformSearchTrack", "IRainLossModel", "IReTransmitterModel", "IReceiverModel", "IReceiverModelScriptPlugin",
+"IRefractionModelBase", "ISRPModelBase", "ISTKObject", "ISTKObjectCollection", "ISTKObjectElementCollection",
+"ISamplingMethodStrategy", "IScatteringPointModel", "IScatteringPointProvider", "ISensorPattern", "ISensorPointing",
 "ISensorPointingTargetedBoresight", "ISensorProjectionDisplayDistance", "ISolarActivityConfiguration",
 "ITURP676AtmosphereDataType", "ITargetSelectionMethod", "ITerrainNormData", "ITimePeriod", "ITransmitterModel",
 "ITransmitterModelScriptPlugin", "ITroposphericScintillationFadingLossModel", "IUrbanTerrestrialLossModel",
@@ -225,10 +229,10 @@ __all__ = ["AberrationType", "Access", "AccessAdvancedSettings", "AccessAllowedT
 "IVehiclePassNumbering", "IVehiclePointing", "IVehicleSolarFluxGeoMagnitude", "IVehicleWaypointAltitudeReference",
 "IVolumetricGridDefinition", "IWaveform", "IWaveformSelectionStrategy", "IntegratorStepSizeControl",
 "IntegratorTimeRegularization", "IntersectionType", "IonosphericFadingLossModel",
-"IonosphericFadingLossModelP531Version13", "IonosphericFadingLossModelType", "IvClockHost", "IvTimeSense",
-"KeyValueCollection", "LOPAtmosphericDensityModel", "LabelNote", "LabelNoteCollection", "LaserAtmosphericLossModel",
-"LaserAtmosphericLossModelBeerBouguerLambertLaw", "LaserEnvironment", "LaserPropagationChannel",
-"LaserPropagationLossModelType", "LaserTroposphericScintillationLossModel",
+"IonosphericFadingLossModelP531Version13", "IonosphericFadingLossModelType", "IvClockHost", "IvColorMode",
+"IvTimeSense", "KeyValueCollection", "LOPAtmosphericDensityModel", "LabelNote", "LabelNoteCollection",
+"LaserAtmosphericLossModel", "LaserAtmosphericLossModelBeerBouguerLambertLaw", "LaserEnvironment",
+"LaserPropagationChannel", "LaserPropagationLossModelType", "LaserTroposphericScintillationLossModel",
 "LaserTroposphericScintillationLossModelITURP1814", "LaserTroposphericScintillationLossModelType",
 "LatitudeLongitudeAltitudeCentric", "LatitudeLongitudeAltitudeDetic", "LatitudeLongitudeAltitudePosition",
 "LatticeType", "LaunchVehicle", "LaunchVehicleControlFixedApogeeAltitude", "LaunchVehicleControlFixedDeltaV",
@@ -256,10 +260,10 @@ __all__ = ["AberrationType", "Access", "AccessAdvancedSettings", "AccessAllowedT
 "ModulatorModelNarrowbandUniform", "ModulatorModelOQPSK", "ModulatorModelPulsedSignal", "ModulatorModelQAM1024",
 "ModulatorModelQAM128", "ModulatorModelQAM16", "ModulatorModelQAM256", "ModulatorModelQAM32", "ModulatorModelQAM64",
 "ModulatorModelQPSK", "ModulatorModelScriptPluginCustomPSD", "ModulatorModelScriptPluginIdealPSD", "ModulatorModelType",
-"ModulatorModelWidebandGaussian", "ModulatorModelWidebandUniform", "NoiseTemperatureComputeType", "NoteShowType",
-"NotificationFilterMask", "ObjectCoverage", "ObjectCoverageFigureOfMerit", "ObjectLaserEnvironment", "ObjectLink",
-"ObjectLinkCollection", "ObjectRFEnvironment", "OceanTides", "OffsetFrameType", "OnePointAccess",
-"OnePointAccessConstraint", "OnePointAccessConstraintCollection", "OnePointAccessResult",
+"ModulatorModelWidebandGaussian", "ModulatorModelWidebandUniform", "NoiseTemperatureComputeType",
+"NoiseTemperatureMethod", "NoteShowType", "NotificationFilterMask", "ObjectCoverage", "ObjectCoverageFigureOfMerit",
+"ObjectLaserEnvironment", "ObjectLink", "ObjectLinkCollection", "ObjectRFEnvironment", "OceanTides", "OffsetFrameType",
+"OnePointAccess", "OnePointAccessConstraint", "OnePointAccessConstraintCollection", "OnePointAccessResult",
 "OnePointAccessResultCollection", "OnePointAccessStatus", "OnePointAccessSummary", "OrbitState", "OrbitStateCartesian",
 "OrbitStateClassical", "OrbitStateCoordinateSystem", "OrbitStateDelaunay", "OrbitStateDetic", "OrbitStateEquinoctial",
 "OrbitStateMixedSpherical", "OrbitStateSpherical", "OrientationAscNode", "OrientationLongitudeOfAscending",
@@ -383,18 +387,19 @@ __all__ = ["AberrationType", "Access", "AccessAdvancedSettings", "AccessAllowedT
 "SpaceEnvironmentVehicleTemperature", "SpacingUnit", "SpatialState", "SphericalFlightPathAngleHorizontal",
 "SphericalFlightPathAngleVertical", "SphericalFlightPathAzimuthType", "SpiceInterpolation", "Star", "StarCollection",
 "StarGraphics", "StarGraphics3D", "StarInformation", "StarReferenceFrame", "StatisticType", "Subset",
-"SurfaceReference", "Swath", "SwathComputationalMethod", "SystemNoiseTemperature", "TIREMPolarizationType", "Target",
-"TargetGraphics", "TargetGraphics3D", "TargetSelectionMethod", "TargetSelectionMethod",
-"TargetSelectionMethodClosingVelocity", "TargetSelectionMethodPriority", "TargetSelectionMethodRange", "Terrain",
-"TerrainCollection", "TerrainFileType", "TerrainNormalSlopeAzimuth", "TerrainNormalType", "TextOutlineStyle",
-"ThirdBodyGravitySourceType", "TickData", "Tileset3D", "Tileset3DCollection", "Tileset3DSourceType",
-"TimeIntervalCollection", "TimeIntervalCollectionReadOnly", "TimePeriod", "TimePeriodValue", "TimePeriodValueType",
-"TimeVaryingExtremum", "TrackMode", "TrajectoryType", "TransferFunctionInputBackOffOutputBackOffTable",
-"TransferFunctionInputBackOffOutputBackOffTableRow", "TransferFunctionInputBackOffVsCOverImTable",
-"TransferFunctionInputBackOffVsCOverImTableRow", "TransferFunctionPolynomialCollection", "TransferFunctionType",
-"Transmitter", "TransmitterGraphics", "TransmitterGraphics3D", "TransmitterModel", "TransmitterModelCable",
-"TransmitterModelComplex", "TransmitterModelLaser", "TransmitterModelMedium", "TransmitterModelMultibeam",
-"TransmitterModelScriptPluginLaser", "TransmitterModelScriptPluginRF", "TransmitterModelSimple", "TransmitterModelType",
+"SurfaceLinesTerrain", "SurfaceReference", "Swath", "SwathComputationalMethod", "SystemNoiseTemperature",
+"TIREMPolarizationType", "Target", "TargetGraphics", "TargetGraphics3D", "TargetSelectionMethod",
+"TargetSelectionMethod", "TargetSelectionMethodClosingVelocity", "TargetSelectionMethodPriority",
+"TargetSelectionMethodRange", "Terrain", "TerrainCollection", "TerrainFileType", "TerrainNormalSlopeAzimuth",
+"TerrainNormalType", "TextOutlineStyle", "ThirdBodyGravitySourceType", "TickData", "Tileset3D", "Tileset3DCollection",
+"Tileset3DSourceType", "TimeIntervalCollection", "TimeIntervalCollectionReadOnly", "TimePeriod", "TimePeriodValue",
+"TimePeriodValueType", "TimeVaryingExtremum", "TrackMode", "TrajectoryType",
+"TransferFunctionInputBackOffOutputBackOffTable", "TransferFunctionInputBackOffOutputBackOffTableRow",
+"TransferFunctionInputBackOffVsCOverImTable", "TransferFunctionInputBackOffVsCOverImTableRow",
+"TransferFunctionPolynomialCollection", "TransferFunctionType", "Transmitter", "TransmitterGraphics",
+"TransmitterGraphics3D", "TransmitterModel", "TransmitterModelCable", "TransmitterModelComplex",
+"TransmitterModelLaser", "TransmitterModelMedium", "TransmitterModelMultibeam", "TransmitterModelScriptPluginLaser",
+"TransmitterModelScriptPluginRF", "TransmitterModelSimple", "TransmitterModelType",
 "TroposphericScintillationAverageTimeChoiceType", "TroposphericScintillationFadingLossModel",
 "TroposphericScintillationFadingLossModelP618Version12", "TroposphericScintillationFadingLossModelP618Version8",
 "TroposphericScintillationFadingLossModelType", "UrbanTerrestrialLossModel", "UrbanTerrestrialLossModelTwoRay",
@@ -2146,7 +2151,7 @@ class AccessConstraintType(IntEnum):
     LINK_MARGIN = 167
     """Link Margin constraint. Use IAccessConstraintMinMaxBase."""
     NOISE_TEMPERATURE = 168
-    """Noise Temperature constraint. Use IAccessConstraintMinMaxBase."""
+    """Noise Temperature constraint. Use AccessConstraintNoiseTemperature."""
     POLARIZATION_RELATIVE_ANGLE = 169
     """Polarization Relative Angle constraint. Use IAccessConstraintMinMaxBase."""
     POWER_AT_RECEIVER_INPUT = 170
@@ -2261,6 +2266,8 @@ class AccessConstraintType(IntEnum):
     """Distance from AreaTarget boundary. Measured along the surface from subPoint to closest point of the boundary. The value is signed: if subPoint is inside the boundary, value is negative else positive. Use interface IAccessConstraintMinMaxBase."""
     CALCULATION_SCALAR = 225
     """Scalar Calculation (Calc Scalar). Use interface AccessConstraintAnalysisWorkbenchComponent."""
+    ELEVATION_RISE_SET = 226
+    """Elevation Rise-Set. Use interface AccessConstraintElevationRiseSet."""
 
 AccessConstraintType.NONE.__doc__ = "None. Use interface IAccessConstraint."
 AccessConstraintType.IMAGE_QUALITY.__doc__ = "Image quality. Use interface IAccessConstraintMinMaxBase."
@@ -2419,7 +2426,7 @@ AccessConstraintType.G_OVER_T.__doc__ = "G/T constraint. Use IAccessConstraintMi
 AccessConstraintType.J_OVER_S.__doc__ = "J/S constraint. Use IAccessConstraintMinMaxBase."
 AccessConstraintType.LINK_EIRP.__doc__ = "Link EIRP constraint. Use IAccessConstraintMinMaxBase."
 AccessConstraintType.LINK_MARGIN.__doc__ = "Link Margin constraint. Use IAccessConstraintMinMaxBase."
-AccessConstraintType.NOISE_TEMPERATURE.__doc__ = "Noise Temperature constraint. Use IAccessConstraintMinMaxBase."
+AccessConstraintType.NOISE_TEMPERATURE.__doc__ = "Noise Temperature constraint. Use AccessConstraintNoiseTemperature."
 AccessConstraintType.POLARIZATION_RELATIVE_ANGLE.__doc__ = "Polarization Relative Angle constraint. Use IAccessConstraintMinMaxBase."
 AccessConstraintType.POWER_AT_RECEIVER_INPUT.__doc__ = "Power at Receiver Input constraint. Use IAccessConstraintMinMaxBase."
 AccessConstraintType.POWER_FLUX_DENSITY.__doc__ = "Power Flux Density constraint. Use IAccessConstraintMinMaxBase."
@@ -2477,6 +2484,7 @@ AccessConstraintType.CENTRAL_ANGLE.__doc__ = "Central angle. Use interface IAcce
 AccessConstraintType.CENTRAL_DISTANCE.__doc__ = "Central distance. Use interface IAccessConstraintMinMaxBase."
 AccessConstraintType.DISTANCE_FROM_AREA_TARGET_BOUNDARY.__doc__ = "Distance from AreaTarget boundary. Measured along the surface from subPoint to closest point of the boundary. The value is signed: if subPoint is inside the boundary, value is negative else positive. Use interface IAccessConstraintMinMaxBase."
 AccessConstraintType.CALCULATION_SCALAR.__doc__ = "Scalar Calculation (Calc Scalar). Use interface AccessConstraintAnalysisWorkbenchComponent."
+AccessConstraintType.ELEVATION_RISE_SET.__doc__ = "Elevation Rise-Set. Use interface AccessConstraintElevationRiseSet."
 
 agcls.AgTypeNameMap["AccessConstraintType"] = AccessConstraintType
 
@@ -3519,6 +3527,22 @@ SurfaceReference.MEAN_SEA_LEVEL.__doc__ = "Mean Sea Level."
 
 agcls.AgTypeNameMap["SurfaceReference"] = SurfaceReference
 
+class SurfaceLinesTerrain(IntEnum):
+    """Options for surface lines on terrain."""
+
+    OFF = 0x0
+    """Surface lines are off on terrain."""
+    ON = 0x1
+    """Surface lines are on on terrain."""
+    ON_WHEN_TERRAIN_SERVER_ON = 0x2
+    """Surface lines are on when terrain server is on."""
+
+SurfaceLinesTerrain.OFF.__doc__ = "Surface lines are off on terrain."
+SurfaceLinesTerrain.ON.__doc__ = "Surface lines are on on terrain."
+SurfaceLinesTerrain.ON_WHEN_TERRAIN_SERVER_ON.__doc__ = "Surface lines are on when terrain server is on."
+
+agcls.AgTypeNameMap["SurfaceLinesTerrain"] = SurfaceLinesTerrain
+
 class Graphics3DFormat(IntEnum):
     """Font format for data display."""
 
@@ -3827,6 +3851,22 @@ ChainParentPlatformRestriction.DIFFERENT.__doc__ = "The From and To objects must
 
 agcls.AgTypeNameMap["ChainParentPlatformRestriction"] = ChainParentPlatformRestriction
 
+class ChainStrandAnalysisComputeType(IntEnum):
+    """Chain strand analysis compute type."""
+
+    UNKNOWN = -1
+    """Unsupported Chain strand analysis compute type."""
+    OPT_STRANDS = 0
+    """Compute Chain optimal strands."""
+    NETWORK_THROUGHPUT = 1
+    """Compute Chain network throughput."""
+
+ChainStrandAnalysisComputeType.UNKNOWN.__doc__ = "Unsupported Chain strand analysis compute type."
+ChainStrandAnalysisComputeType.OPT_STRANDS.__doc__ = "Compute Chain optimal strands."
+ChainStrandAnalysisComputeType.NETWORK_THROUGHPUT.__doc__ = "Compute Chain network throughput."
+
+agcls.AgTypeNameMap["ChainStrandAnalysisComputeType"] = ChainStrandAnalysisComputeType
+
 class ChainOptimalStrandMetricType(IntEnum):
     """Chain optimal strand metric type."""
 
@@ -3902,6 +3942,22 @@ ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MIN.__doc__ = "Chain op
 ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MAX.__doc__ = "Chain optimal strand comparison type, when comparing strands to determine best strand, use max value of metric between strands."
 
 agcls.AgTypeNameMap["ChainOptimalStrandCompareStrandsType"] = ChainOptimalStrandCompareStrandsType
+
+class ChainGraphics2DNetworkDataMode(IntEnum):
+    """Chain graphics network data mode, show percentage or data rate usage."""
+
+    UNKNOWN = -1
+    """Unsupported Chain graphics network data mode."""
+    PCT = 0
+    """Chain graphics network data mode to display colors and labels based on percent usage."""
+    DATA_RATE = 1
+    """Chain graphics network data mode to display colors and labels based on data rate values."""
+
+ChainGraphics2DNetworkDataMode.UNKNOWN.__doc__ = "Unsupported Chain graphics network data mode."
+ChainGraphics2DNetworkDataMode.PCT.__doc__ = "Chain graphics network data mode to display colors and labels based on percent usage."
+ChainGraphics2DNetworkDataMode.DATA_RATE.__doc__ = "Chain graphics network data mode to display colors and labels based on data rate values."
+
+agcls.AgTypeNameMap["ChainGraphics2DNetworkDataMode"] = ChainGraphics2DNetworkDataMode
 
 class DataSaveMode(IntEnum):
     """Access Save Mode."""
@@ -5086,6 +5142,19 @@ IvTimeSense.RECEIVE.__doc__ = "Clock host is receiving."
 
 agcls.AgTypeNameMap["IvTimeSense"] = IvTimeSense
 
+class IvColorMode(IntEnum):
+    """Color mode options for access graphics."""
+
+    CUSTOM_COLOR = 0
+    """Custom color."""
+    OBJECT_COLORS = 1
+    """Object colors."""
+
+IvColorMode.CUSTOM_COLOR.__doc__ = "Custom color."
+IvColorMode.OBJECT_COLORS.__doc__ = "Object colors."
+
+agcls.AgTypeNameMap["IvColorMode"] = IvColorMode
+
 class GPSAttitudeModelType(IntEnum):
     """GPS attitude profile model types."""
 
@@ -5161,6 +5230,22 @@ SamplingMethod.ADAPTIVE.__doc__ = "Adaptive sampling method."
 SamplingMethod.FIXED_STEP.__doc__ = "Fixed-step sampling method."
 
 agcls.AgTypeNameMap["SamplingMethod"] = SamplingMethod
+
+class NoiseTemperatureMethod(IntEnum):
+    """Noise temperature computation method."""
+
+    UNKNOWN = -1
+    """Unknown noise temperature method."""
+    USE_SELECTED_COMPONENTS = 0
+    """Use Selected Components."""
+    USE_TOTAL_SYSTEM_TEMPERATURE = 1
+    """Use Total System Temperature."""
+
+NoiseTemperatureMethod.UNKNOWN.__doc__ = "Unknown noise temperature method."
+NoiseTemperatureMethod.USE_SELECTED_COMPONENTS.__doc__ = "Use Selected Components."
+NoiseTemperatureMethod.USE_TOTAL_SYSTEM_TEMPERATURE.__doc__ = "Use Total System Temperature."
+
+agcls.AgTypeNameMap["NoiseTemperatureMethod"] = NoiseTemperatureMethod
 
 class CoverageSatisfactionType(IntEnum):
     """The condition on the number of assets covering a grid point that must be satisfied for a valid access."""
@@ -7281,6 +7366,8 @@ class AntennaModelType(IntEnum):
     """Pattern Ticra GRASP antenna model."""
     HFSS_EEP_ARRAY = 51
     """HFSS EEP array antenna model."""
+    HFSS_DESIGN = 52
+    """HFSS Design antenna model."""
 
 AntennaModelType.UNKNOWN.__doc__ = "Unknown antenna model type."
 AntennaModelType.GAUSSIAN.__doc__ = "Gaussian antenna model."
@@ -7335,8 +7422,63 @@ AntennaModelType.REMCOM_UAN_FORMAT.__doc__ = "Pattern Remcom Uan antenna model."
 AntennaModelType.ANSYS_FFD_FORMAT.__doc__ = "Pattern ANSYS ffd antenna model."
 AntennaModelType.TICRA_GRASP_FORMAT.__doc__ = "Pattern Ticra GRASP antenna model."
 AntennaModelType.HFSS_EEP_ARRAY.__doc__ = "HFSS EEP array antenna model."
+AntennaModelType.HFSS_DESIGN.__doc__ = "HFSS Design antenna model."
 
 agcls.AgTypeNameMap["AntennaModelType"] = AntennaModelType
+
+class AntennaHFSSDesignType(IntEnum):
+    """HFSS Design antenna model types."""
+
+    UNKNOWN = -1
+    """Unknown HFSS design type."""
+    WIRE_DIPOLE = 0
+    """HFSS wire dipole design."""
+    SLOT_GAP = 1
+    """HFSS slot gap design."""
+    WIRE_MONOPOLE = 2
+    """HFSS wire monopole design."""
+    HELIX_QUADRIFILAR_SHORT = 3
+    """HFSS helix quadrifilar short design."""
+
+AntennaHFSSDesignType.UNKNOWN.__doc__ = "Unknown HFSS design type."
+AntennaHFSSDesignType.WIRE_DIPOLE.__doc__ = "HFSS wire dipole design."
+AntennaHFSSDesignType.SLOT_GAP.__doc__ = "HFSS slot gap design."
+AntennaHFSSDesignType.WIRE_MONOPOLE.__doc__ = "HFSS wire monopole design."
+AntennaHFSSDesignType.HELIX_QUADRIFILAR_SHORT.__doc__ = "HFSS helix quadrifilar short design."
+
+agcls.AgTypeNameMap["AntennaHFSSDesignType"] = AntennaHFSSDesignType
+
+class AntennaHFSSDesignHelixTurnDirection(IntEnum):
+    """HFSS Design antenna helix quadrifilar turn directions."""
+
+    UNKNOWN = -1
+    """Unknown direction."""
+    LEFT = 0
+    """Lefthand turn."""
+    RIGHT = 1
+    """Righthand turn."""
+
+AntennaHFSSDesignHelixTurnDirection.UNKNOWN.__doc__ = "Unknown direction."
+AntennaHFSSDesignHelixTurnDirection.LEFT.__doc__ = "Lefthand turn."
+AntennaHFSSDesignHelixTurnDirection.RIGHT.__doc__ = "Righthand turn."
+
+agcls.AgTypeNameMap["AntennaHFSSDesignHelixTurnDirection"] = AntennaHFSSDesignHelixTurnDirection
+
+class AntennaHFSSDesignStatus(IntEnum):
+    """HFSS Design antenna model statuses."""
+
+    UNKNOWN = -1
+    """Unknown HFSS design status."""
+    NOT_GENERATED = 0
+    """HFSS design is not generated."""
+    VALID = 1
+    """HFSS design is valid."""
+
+AntennaHFSSDesignStatus.UNKNOWN.__doc__ = "Unknown HFSS design status."
+AntennaHFSSDesignStatus.NOT_GENERATED.__doc__ = "HFSS design is not generated."
+AntennaHFSSDesignStatus.VALID.__doc__ = "HFSS design is valid."
+
+agcls.AgTypeNameMap["AntennaHFSSDesignStatus"] = AntennaHFSSDesignStatus
 
 class AntennaContourType(IntEnum):
     """Antenna contour types."""
@@ -8150,7 +8292,7 @@ class RFFilterModelType(IntEnum):
     FIR = 16
     """FIR."""
     IIR = 17
-    """FIR."""
+    """IIR."""
 
 RFFilterModelType.UNKNOWN.__doc__ = "Unknown."
 RFFilterModelType.BESSEL.__doc__ = "Bessel."
@@ -8170,7 +8312,7 @@ RFFilterModelType.ROOT_RAISED_COSINE.__doc__ = "Root Raised Cosine."
 RFFilterModelType.RC_LOW_PASS.__doc__ = "Rc Low Pass."
 RFFilterModelType.FIR_BOX_CAR.__doc__ = "FIR Box Car."
 RFFilterModelType.FIR.__doc__ = "FIR."
-RFFilterModelType.IIR.__doc__ = "FIR."
+RFFilterModelType.IIR.__doc__ = "IIR."
 
 agcls.AgTypeNameMap["RFFilterModelType"] = RFFilterModelType
 
@@ -8373,10 +8515,6 @@ class AtmosphericAbsorptionModelType(IntEnum):
     """Unknown atmospheric absorption model type."""
     ITURP676_9 = 0
     """ITU-R P676-9 atmospheric absorption model type."""
-    TIREM331 = 1
-    """TIREM 3.31 atmospheric absorption model type."""
-    TIREM320 = 2
-    """TIREM 3.20 atmospheric absorption model type."""
     SIMPLE_SATCOM = 3
     """Simple Satcom atmospheric absorption model type."""
     SCRIPT_PLUGIN = 4
@@ -8389,17 +8527,18 @@ class AtmosphericAbsorptionModelType(IntEnum):
     """COM Plugin atmospheric absorption model type."""
     ITURP676_13 = 8
     """ITU-R P676-13 atmospheric absorption model type."""
+    TIREM630 = 9
+    """TIREM 6.30 atmospheric absorption model type."""
 
 AtmosphericAbsorptionModelType.UNKNOWN.__doc__ = "Unknown atmospheric absorption model type."
 AtmosphericAbsorptionModelType.ITURP676_9.__doc__ = "ITU-R P676-9 atmospheric absorption model type."
-AtmosphericAbsorptionModelType.TIREM331.__doc__ = "TIREM 3.31 atmospheric absorption model type."
-AtmosphericAbsorptionModelType.TIREM320.__doc__ = "TIREM 3.20 atmospheric absorption model type."
 AtmosphericAbsorptionModelType.SIMPLE_SATCOM.__doc__ = "Simple Satcom atmospheric absorption model type."
 AtmosphericAbsorptionModelType.SCRIPT_PLUGIN.__doc__ = "Script plugin atmospheric absorption model type."
 AtmosphericAbsorptionModelType.TIREM550.__doc__ = "TIREM 5.50 atmospheric absorption model type."
 AtmosphericAbsorptionModelType.GRAPHICS_3D_ACAP.__doc__ = "Voacap atmospheric absorption model type."
 AtmosphericAbsorptionModelType.COM_PLUGIN.__doc__ = "COM Plugin atmospheric absorption model type."
 AtmosphericAbsorptionModelType.ITURP676_13.__doc__ = "ITU-R P676-13 atmospheric absorption model type."
+AtmosphericAbsorptionModelType.TIREM630.__doc__ = "TIREM 6.30 atmospheric absorption model type."
 
 agcls.AgTypeNameMap["AtmosphericAbsorptionModelType"] = AtmosphericAbsorptionModelType
 
@@ -8412,10 +8551,13 @@ class ITURP676AtmosphereDataType(IntEnum):
     """Annual Global atmosphere data."""
     SEASONAL_REGIONAL = 1
     """Seasonal/Regional atmosphere data."""
+    USER_SPECIFIED = 2
+    """User specified atmosphere profile data."""
 
 ITURP676AtmosphereDataType.UNKNOWN.__doc__ = "Unknown atmosphere data type."
 ITURP676AtmosphereDataType.ANNUAL_GLOBAL.__doc__ = "Annual Global atmosphere data."
 ITURP676AtmosphereDataType.SEASONAL_REGIONAL.__doc__ = "Seasonal/Regional atmosphere data."
+ITURP676AtmosphereDataType.USER_SPECIFIED.__doc__ = "User specified atmosphere profile data."
 
 agcls.AgTypeNameMap["ITURP676AtmosphereDataType"] = ITURP676AtmosphereDataType
 
@@ -9424,7 +9566,7 @@ class ISTKObject(object):
     >>> advCAT = scenario.children.new(STKObjectType.ADVCAT, "MyAdvCAT")
     """
 
-    _num_methods = 29
+    _num_methods = 35
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_parent_method_offset = 1
     _get_path_method_offset = 2
@@ -9455,6 +9597,12 @@ class ISTKObject(object):
     _copy_object_method_offset = 27
     _get_central_body_name_method_offset = 28
     _get_metadata_method_offset = 29
+    _get_show_object_method_offset = 30
+    _set_show_object_method_offset = 31
+    _get_color_method_offset = 32
+    _set_color_method_offset = 33
+    _is_visibility_supported_method_offset = 34
+    _is_color_supported_method_offset = 35
     _metadata = {
         "iid_data" : (5589240815345843284, 2951245507405727647),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -9694,6 +9842,50 @@ class ISTKObject(object):
         """Get the object's metadata. Metadata is a collection of keys and their associated values."""
         return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_metadata_metadata)
 
+    _get_show_object_metadata = { "offset" : _get_show_object_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def show_object(self) -> bool:
+        """Whether the object is visible."""
+        return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_show_object_metadata)
+
+    _set_show_object_metadata = { "offset" : _set_show_object_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @show_object.setter
+    def show_object(self, visibility:bool) -> None:
+        return self._intf.set_property(ISTKObject._metadata, ISTKObject._set_show_object_metadata, visibility)
+
+    _get_color_metadata = { "offset" : _get_color_method_offset,
+            "arg_types" : (POINTER(agcom.OLE_COLOR),),
+            "marshallers" : (agmarshall.OLEColorArg,) }
+    @property
+    def color(self) -> agcolor.Color:
+        """The object's color."""
+        return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_color_metadata)
+
+    _set_color_metadata = { "offset" : _set_color_method_offset,
+            "arg_types" : (agcom.OLE_COLOR,),
+            "marshallers" : (agmarshall.OLEColorArg,) }
+    @color.setter
+    def color(self, color:agcolor.Color) -> None:
+        return self._intf.set_property(ISTKObject._metadata, ISTKObject._set_color_metadata, color)
+
+    _is_visibility_supported_metadata = { "offset" : _is_visibility_supported_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    def is_visibility_supported(self) -> bool:
+        """Determine whether or not the object supports setting graphics visibility."""
+        return self._intf.invoke(ISTKObject._metadata, ISTKObject._is_visibility_supported_metadata, OutArg())
+
+    _is_color_supported_metadata = { "offset" : _is_color_supported_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    def is_color_supported(self) -> bool:
+        """Determine whether or not the object supports setting color."""
+        return self._intf.invoke(ISTKObject._metadata, ISTKObject._is_color_supported_metadata, OutArg())
+
     _property_names[parent] = "parent"
     _property_names[path] = "path"
     _property_names[instance_name] = "instance_name"
@@ -9711,6 +9903,8 @@ class ISTKObject(object):
     _property_names[analysis_workbench_components] = "analysis_workbench_components"
     _property_names[central_body_name] = "central_body_name"
     _property_names[metadata] = "metadata"
+    _property_names[show_object] = "show_object"
+    _property_names[color] = "color"
 
 
 agcls.AgClassCatalog.add_catalog_entry((5589240815345843284, 2951245507405727647), ISTKObject)
@@ -12376,7 +12570,7 @@ agcls.AgClassCatalog.add_catalog_entry((5666957665585525357, 1810300235911712935
 agcls.AgTypeNameMap["ISensorPointingTargetedBoresight"] = ISensorPointingTargetedBoresight
 
 class ISensorPointing(object):
-    """Base interface ISensorPointing. ISensorPointing3DModel, SensorPointingExternal, ISensorPointingFixed, SensorPointingFixedInAxes, SensorPointingGrazingAltitude, IAgSnPtTargeted, SensorPointingAlongVector and IAgSnPtSchedule implement this interface."""
+    """Base interface ISensorPointing. SensorPointing3DModel, IAgSnPtExternal, SensorPointingFixed, SensorPointingFixedInAxes, SensorPointingGrazingAltitude, IAgSnPtTargeted, SensorPointingAlongVector and IAgSnPtSchedule implement this interface."""
 
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -12432,6 +12626,700 @@ class IAzElMaskData(object):
 
 agcls.AgClassCatalog.add_catalog_entry((5161082777426334143, 15891473325821376958), IAzElMaskData)
 agcls.AgTypeNameMap["IAzElMaskData"] = IAzElMaskData
+
+class IGroundLocationGraphics(object):
+    """IGroundLocationGraphics used to access the 2-d graphics properties for a ground location."""
+
+    _num_methods = 22
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_inherit_from_scenario_method_offset = 1
+    _set_inherit_from_scenario_method_offset = 2
+    _get_color_method_offset = 3
+    _set_color_method_offset = 4
+    _get_marker_style_method_offset = 5
+    _set_marker_style_method_offset = 6
+    _get_show_label_method_offset = 7
+    _set_show_label_method_offset = 8
+    _get_az_el_mask_method_offset = 9
+    _get_contours_method_offset = 10
+    _get_use_instance_name_label_method_offset = 11
+    _set_use_instance_name_label_method_offset = 12
+    _get_label_name_method_offset = 13
+    _set_label_name_method_offset = 14
+    _get_label_notes_method_offset = 15
+    _get_marker_color_method_offset = 16
+    _set_marker_color_method_offset = 17
+    _get_label_color_method_offset = 18
+    _set_label_color_method_offset = 19
+    _get_show_graphics_method_offset = 20
+    _set_show_graphics_method_offset = 21
+    _get_radar_cross_section_method_offset = 22
+    _metadata = {
+        "iid_data" : (5669109198723927115, 638501253483809976),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def __init__(self, source_object=None):
+        """Construct an object of type IGroundLocationGraphics."""
+        initialize_from_source_object(self, source_object, IGroundLocationGraphics)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, IGroundLocationGraphics)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_interface_attribute(self, attrname, value, IGroundLocationGraphics, None)
+
+    _get_inherit_from_scenario_metadata = { "offset" : _get_inherit_from_scenario_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def inherit_from_scenario(self) -> bool:
+        """Inheritable graphics attributes are inherited from the Scenario object instead of being set locally for the ground location."""
+        return self._intf.get_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._get_inherit_from_scenario_metadata)
+
+    _set_inherit_from_scenario_metadata = { "offset" : _set_inherit_from_scenario_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @inherit_from_scenario.setter
+    def inherit_from_scenario(self, inherit:bool) -> None:
+        return self._intf.set_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._set_inherit_from_scenario_metadata, inherit)
+
+    _get_color_metadata = { "offset" : _get_color_method_offset,
+            "arg_types" : (POINTER(agcom.OLE_COLOR),),
+            "marshallers" : (agmarshall.OLEColorArg,) }
+    @property
+    def color(self) -> agcolor.Color:
+        """The color in which the marker and label for the object is displayed in the 2D and 3D Graphics windows."""
+        return self._intf.get_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._get_color_metadata)
+
+    _set_color_metadata = { "offset" : _set_color_method_offset,
+            "arg_types" : (agcom.OLE_COLOR,),
+            "marshallers" : (agmarshall.OLEColorArg,) }
+    @color.setter
+    def color(self, color:agcolor.Color) -> None:
+        return self._intf.set_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._set_color_metadata, color)
+
+    _get_marker_style_metadata = { "offset" : _get_marker_style_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def marker_style(self) -> str:
+        """The style of the marker representing the object in the 2D Graphics window. A member of the MarkerStyle enumeration."""
+        return self._intf.get_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._get_marker_style_metadata)
+
+    _set_marker_style_metadata = { "offset" : _set_marker_style_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @marker_style.setter
+    def marker_style(self, marker_style:str) -> None:
+        return self._intf.set_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._set_marker_style_metadata, marker_style)
+
+    _get_show_label_metadata = { "offset" : _get_show_label_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def show_label(self) -> bool:
+        """Display the label for the ground location."""
+        return self._intf.get_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._get_show_label_metadata)
+
+    _set_show_label_metadata = { "offset" : _set_show_label_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @show_label.setter
+    def show_label(self, show_label:bool) -> None:
+        return self._intf.set_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._set_show_label_metadata, show_label)
+
+    _get_az_el_mask_metadata = { "offset" : _get_az_el_mask_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def az_el_mask(self) -> "BasicAzElMask":
+        """The graphics az-el mask properties for the ground location."""
+        return self._intf.get_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._get_az_el_mask_metadata)
+
+    _get_contours_metadata = { "offset" : _get_contours_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def contours(self) -> "Graphics2DRangeContours":
+        """The range contours properties for the ground location."""
+        return self._intf.get_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._get_contours_metadata)
+
+    _get_use_instance_name_label_metadata = { "offset" : _get_use_instance_name_label_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_instance_name_label(self) -> bool:
+        """Use the name of the object as the label for the ground location."""
+        return self._intf.get_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._get_use_instance_name_label_metadata)
+
+    _set_use_instance_name_label_metadata = { "offset" : _set_use_instance_name_label_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_instance_name_label.setter
+    def use_instance_name_label(self, value:bool) -> None:
+        return self._intf.set_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._set_use_instance_name_label_metadata, value)
+
+    _get_label_name_metadata = { "offset" : _get_label_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def label_name(self) -> str:
+        """Use a user-specified name as the label for the ground location. This does not have to correspond to the name of the object in the Object Browser."""
+        return self._intf.get_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._get_label_name_metadata)
+
+    _set_label_name_metadata = { "offset" : _set_label_name_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @label_name.setter
+    def label_name(self, value:str) -> None:
+        return self._intf.set_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._set_label_name_metadata, value)
+
+    _get_label_notes_metadata = { "offset" : _get_label_notes_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def label_notes(self) -> "LabelNoteCollection":
+        """Notes attached to the object and displayed in the 2D and 3D Graphics windows."""
+        return self._intf.get_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._get_label_notes_metadata)
+
+    _get_marker_color_metadata = { "offset" : _get_marker_color_method_offset,
+            "arg_types" : (POINTER(agcom.OLE_COLOR),),
+            "marshallers" : (agmarshall.OLEColorArg,) }
+    @property
+    def marker_color(self) -> agcolor.Color:
+        """The color in which the marker for the object is displayed."""
+        return self._intf.get_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._get_marker_color_metadata)
+
+    _set_marker_color_metadata = { "offset" : _set_marker_color_method_offset,
+            "arg_types" : (agcom.OLE_COLOR,),
+            "marshallers" : (agmarshall.OLEColorArg,) }
+    @marker_color.setter
+    def marker_color(self, color:agcolor.Color) -> None:
+        return self._intf.set_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._set_marker_color_metadata, color)
+
+    _get_label_color_metadata = { "offset" : _get_label_color_method_offset,
+            "arg_types" : (POINTER(agcom.OLE_COLOR),),
+            "marshallers" : (agmarshall.OLEColorArg,) }
+    @property
+    def label_color(self) -> agcolor.Color:
+        """The color in which the label for the object is displayed."""
+        return self._intf.get_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._get_label_color_metadata)
+
+    _set_label_color_metadata = { "offset" : _set_label_color_method_offset,
+            "arg_types" : (agcom.OLE_COLOR,),
+            "marshallers" : (agmarshall.OLEColorArg,) }
+    @label_color.setter
+    def label_color(self, color:agcolor.Color) -> None:
+        return self._intf.set_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._set_label_color_metadata, color)
+
+    _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def show_graphics(self) -> bool:
+        """Specify whether graphics attributes of the ground location are visible."""
+        return self._intf.get_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._get_show_graphics_metadata)
+
+    _set_show_graphics_metadata = { "offset" : _set_show_graphics_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @show_graphics.setter
+    def show_graphics(self, is_visible:bool) -> None:
+        return self._intf.set_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._set_show_graphics_metadata, is_visible)
+
+    _get_radar_cross_section_metadata = { "offset" : _get_radar_cross_section_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def radar_cross_section(self) -> "RadarCrossSectionGraphics":
+        """Get the radar cross section graphics interface."""
+        return self._intf.get_property(IGroundLocationGraphics._metadata, IGroundLocationGraphics._get_radar_cross_section_metadata)
+
+    _property_names[inherit_from_scenario] = "inherit_from_scenario"
+    _property_names[color] = "color"
+    _property_names[marker_style] = "marker_style"
+    _property_names[show_label] = "show_label"
+    _property_names[az_el_mask] = "az_el_mask"
+    _property_names[contours] = "contours"
+    _property_names[use_instance_name_label] = "use_instance_name_label"
+    _property_names[label_name] = "label_name"
+    _property_names[label_notes] = "label_notes"
+    _property_names[marker_color] = "marker_color"
+    _property_names[label_color] = "label_color"
+    _property_names[show_graphics] = "show_graphics"
+    _property_names[radar_cross_section] = "radar_cross_section"
+
+
+agcls.AgClassCatalog.add_catalog_entry((5669109198723927115, 638501253483809976), IGroundLocationGraphics)
+agcls.AgTypeNameMap["IGroundLocationGraphics"] = IGroundLocationGraphics
+
+class IGroundLocationGraphics3D(object):
+    """IGroundLocationGraphics3D Interface. For 3D properties of a ground location."""
+
+    _num_methods = 10
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_model_method_offset = 1
+    _get_offsets_method_offset = 2
+    _get_range_contours_method_offset = 3
+    _get_data_displays_method_offset = 4
+    _get_vector_method_offset = 5
+    _get_az_el_mask_method_offset = 6
+    _get_model_pointing_method_offset = 7
+    _get_uncertainty_area_label_swap_distance_method_offset = 8
+    _get_vapor_trail_method_offset = 9
+    _get_radar_cross_section_method_offset = 10
+    _metadata = {
+        "iid_data" : (5248332110935519514, 15519312240282024838),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def __init__(self, source_object=None):
+        """Construct an object of type IGroundLocationGraphics3D."""
+        initialize_from_source_object(self, source_object, IGroundLocationGraphics3D)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, IGroundLocationGraphics3D)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_interface_attribute(self, attrname, value, IGroundLocationGraphics3D, None)
+
+    _get_model_metadata = { "offset" : _get_model_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def model(self) -> "PointTargetGraphics3DModel":
+        """Return the 3D model properties."""
+        return self._intf.get_property(IGroundLocationGraphics3D._metadata, IGroundLocationGraphics3D._get_model_metadata)
+
+    _get_offsets_metadata = { "offset" : _get_offsets_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def offsets(self) -> "Graphics3DOffset":
+        """Return the 3D offsets properties."""
+        return self._intf.get_property(IGroundLocationGraphics3D._metadata, IGroundLocationGraphics3D._get_offsets_metadata)
+
+    _get_range_contours_metadata = { "offset" : _get_range_contours_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def range_contours(self) -> "Graphics3DRangeContours":
+        """Return the 3D range contours properties."""
+        return self._intf.get_property(IGroundLocationGraphics3D._metadata, IGroundLocationGraphics3D._get_range_contours_metadata)
+
+    _get_data_displays_metadata = { "offset" : _get_data_displays_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def data_displays(self) -> "Graphics3DDataDisplayCollection":
+        """Return the 3D data display properties."""
+        return self._intf.get_property(IGroundLocationGraphics3D._metadata, IGroundLocationGraphics3D._get_data_displays_metadata)
+
+    _get_vector_metadata = { "offset" : _get_vector_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def vector(self) -> "Graphics3DVector":
+        """Return the 3D vectorector properties."""
+        return self._intf.get_property(IGroundLocationGraphics3D._metadata, IGroundLocationGraphics3D._get_vector_metadata)
+
+    _get_az_el_mask_metadata = { "offset" : _get_az_el_mask_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def az_el_mask(self) -> "Graphics3DAzElMask":
+        """Return the 3D AzElMask properties."""
+        return self._intf.get_property(IGroundLocationGraphics3D._metadata, IGroundLocationGraphics3D._get_az_el_mask_metadata)
+
+    _get_model_pointing_metadata = { "offset" : _get_model_pointing_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def model_pointing(self) -> "Graphics3DModelPointing":
+        """Return 3D model pointing properties used to point parts of a ground location model toward a target, such as the Sun or Earth."""
+        return self._intf.get_property(IGroundLocationGraphics3D._metadata, IGroundLocationGraphics3D._get_model_pointing_metadata)
+
+    _get_uncertainty_area_label_swap_distance_metadata = { "offset" : _get_uncertainty_area_label_swap_distance_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def uncertainty_area_label_swap_distance(self) -> "Graphics3DLabelSwapDistance":
+        """Area of uncertainty label swap distance."""
+        return self._intf.get_property(IGroundLocationGraphics3D._metadata, IGroundLocationGraphics3D._get_uncertainty_area_label_swap_distance_metadata)
+
+    _get_vapor_trail_metadata = { "offset" : _get_vapor_trail_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def vapor_trail(self) -> "Graphics3DVaporTrail":
+        """Vapor trail attributes."""
+        return self._intf.get_property(IGroundLocationGraphics3D._metadata, IGroundLocationGraphics3D._get_vapor_trail_metadata)
+
+    _get_radar_cross_section_metadata = { "offset" : _get_radar_cross_section_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def radar_cross_section(self) -> "RadarCrossSectionGraphics3D":
+        """Get the radar cross section graphics interface."""
+        return self._intf.get_property(IGroundLocationGraphics3D._metadata, IGroundLocationGraphics3D._get_radar_cross_section_metadata)
+
+    _property_names[model] = "model"
+    _property_names[offsets] = "offsets"
+    _property_names[range_contours] = "range_contours"
+    _property_names[data_displays] = "data_displays"
+    _property_names[vector] = "vector"
+    _property_names[az_el_mask] = "az_el_mask"
+    _property_names[model_pointing] = "model_pointing"
+    _property_names[uncertainty_area_label_swap_distance] = "uncertainty_area_label_swap_distance"
+    _property_names[vapor_trail] = "vapor_trail"
+    _property_names[radar_cross_section] = "radar_cross_section"
+
+
+agcls.AgClassCatalog.add_catalog_entry((5248332110935519514, 15519312240282024838), IGroundLocationGraphics3D)
+agcls.AgTypeNameMap["IGroundLocationGraphics3D"] = IGroundLocationGraphics3D
+
+class IGroundLocation(object):
+    """Interface containing properties common to ground location objects (i.e. Target, Place, and Facility)."""
+
+    _num_methods = 33
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_use_local_time_offset_method_offset = 1
+    _set_use_local_time_offset_method_offset = 2
+    _get_local_time_offset_method_offset = 3
+    _set_local_time_offset_method_offset = 4
+    _get_use_terrain_method_offset = 5
+    _set_use_terrain_method_offset = 6
+    _set_az_el_mask_method_offset = 7
+    _get_position_method_offset = 8
+    _set_terrain_norm_method_offset = 9
+    _get_terrain_norm_data_method_offset = 10
+    _get_access_constraints_method_offset = 11
+    _reset_az_el_mask_method_offset = 12
+    _get_az_el_mask_method_offset = 13
+    _get_az_el_mask_data_method_offset = 14
+    _get_terrain_norm_method_offset = 15
+    _set_height_above_ground_method_offset = 16
+    _get_height_above_ground_method_offset = 17
+    _set_altitude_reference_method_offset = 18
+    _get_altitude_reference_method_offset = 19
+    _get_radar_cross_section_method_offset = 20
+    _get_save_terrain_mask_data_in_binary_method_offset = 21
+    _set_save_terrain_mask_data_in_binary_method_offset = 22
+    _get_lighting_obstruction_model_method_offset = 23
+    _set_lighting_obstruction_model_method_offset = 24
+    _get_lighting_maximum_step_method_offset = 25
+    _set_lighting_maximum_step_method_offset = 26
+    _get_laser_environment_method_offset = 27
+    _get_rf_environment_method_offset = 28
+    _get_max_range_when_computing_az_el_mask_method_offset = 29
+    _set_max_range_when_computing_az_el_mask_method_offset = 30
+    _get_chain_analysis_options_method_offset = 31
+    _get_ground_location_graphics_method_offset = 32
+    _get_ground_location_graphics_3d_method_offset = 33
+    _metadata = {
+        "iid_data" : (5629792143295093093, 6050865114848000663),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def __init__(self, source_object=None):
+        """Construct an object of type IGroundLocation."""
+        initialize_from_source_object(self, source_object, IGroundLocation)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, IGroundLocation)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_interface_attribute(self, attrname, value, IGroundLocation, None)
+
+    _get_use_local_time_offset_metadata = { "offset" : _get_use_local_time_offset_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_local_time_offset(self) -> bool:
+        """Opt whether to use a local time offset from GMT."""
+        return self._intf.get_property(IGroundLocation._metadata, IGroundLocation._get_use_local_time_offset_metadata)
+
+    _set_use_local_time_offset_metadata = { "offset" : _set_use_local_time_offset_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_local_time_offset.setter
+    def use_local_time_offset(self, use_local_time_offset:bool) -> None:
+        return self._intf.set_property(IGroundLocation._metadata, IGroundLocation._set_use_local_time_offset_metadata, use_local_time_offset)
+
+    _get_local_time_offset_metadata = { "offset" : _get_local_time_offset_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def local_time_offset(self) -> float:
+        """The amount of the time offset from GMT, if this option is used. Uses Time Dimension."""
+        return self._intf.get_property(IGroundLocation._metadata, IGroundLocation._get_local_time_offset_metadata)
+
+    _set_local_time_offset_metadata = { "offset" : _set_local_time_offset_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @local_time_offset.setter
+    def local_time_offset(self, local_time_offset:float) -> None:
+        return self._intf.set_property(IGroundLocation._metadata, IGroundLocation._set_local_time_offset_metadata, local_time_offset)
+
+    _get_use_terrain_metadata = { "offset" : _get_use_terrain_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_terrain(self) -> bool:
+        """Opt whether to set altitude automatically by using terrain data."""
+        return self._intf.get_property(IGroundLocation._metadata, IGroundLocation._get_use_terrain_metadata)
+
+    _set_use_terrain_metadata = { "offset" : _set_use_terrain_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_terrain.setter
+    def use_terrain(self, enable_terrain:bool) -> None:
+        return self._intf.set_property(IGroundLocation._metadata, IGroundLocation._set_use_terrain_metadata, enable_terrain)
+
+    _set_az_el_mask_metadata = { "offset" : _set_az_el_mask_method_offset,
+            "arg_types" : (agcom.LONG, agcom.Variant,),
+            "marshallers" : (agmarshall.EnumArg(AzElMaskType), agmarshall.VariantArg,) }
+    def set_az_el_mask(self, type:"AzElMaskType", data:typing.Any) -> None:
+        """Set an az-el mask. A member of the AzElMaskType enumeration."""
+        return self._intf.invoke(IGroundLocation._metadata, IGroundLocation._set_az_el_mask_metadata, type, data)
+
+    _get_position_metadata = { "offset" : _get_position_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def position(self) -> "IPosition":
+        """Get the position of the ground location."""
+        return self._intf.get_property(IGroundLocation._metadata, IGroundLocation._get_position_metadata)
+
+    _get_terrain_norm_metadata = { "offset" : _get_terrain_norm_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(TerrainNormalType),) }
+    @property
+    def terrain_norm(self) -> "TerrainNormalType":
+        """Get the normal to the local terrain."""
+        return self._intf.get_property(IGroundLocation._metadata, IGroundLocation._get_terrain_norm_metadata)
+
+    _set_terrain_norm_metadata = { "offset" : _set_terrain_norm_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(TerrainNormalType),) }
+    @terrain_norm.setter
+    def terrain_norm(self, type:"TerrainNormalType") -> None:
+        """Set the normal to the local terrain."""
+        return self._intf.set_property(IGroundLocation._metadata, IGroundLocation._set_terrain_norm_metadata, type)
+
+    _get_terrain_norm_data_metadata = { "offset" : _get_terrain_norm_data_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def terrain_norm_data(self) -> "ITerrainNormData":
+        """Data used in specifying terrain slope."""
+        return self._intf.get_property(IGroundLocation._metadata, IGroundLocation._get_terrain_norm_data_metadata)
+
+    _get_access_constraints_metadata = { "offset" : _get_access_constraints_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def access_constraints(self) -> "AccessConstraintCollection":
+        """Get the constraints imposed on the ground location."""
+        return self._intf.get_property(IGroundLocation._metadata, IGroundLocation._get_access_constraints_metadata)
+
+    _reset_az_el_mask_metadata = { "offset" : _reset_az_el_mask_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def reset_az_el_mask(self) -> None:
+        """Reset the az-el mask."""
+        return self._intf.invoke(IGroundLocation._metadata, IGroundLocation._reset_az_el_mask_metadata, )
+
+    _get_az_el_mask_metadata = { "offset" : _get_az_el_mask_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(AzElMaskType),) }
+    def get_az_el_mask(self) -> "AzElMaskType":
+        """Get the az-el mask. A member of the AzElMaskType enumeration."""
+        return self._intf.invoke(IGroundLocation._metadata, IGroundLocation._get_az_el_mask_metadata, OutArg())
+
+    _get_az_el_mask_data_metadata = { "offset" : _get_az_el_mask_data_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    def get_az_el_mask_data(self) -> typing.Any:
+        """Get az-el mask data."""
+        return self._intf.invoke(IGroundLocation._metadata, IGroundLocation._get_az_el_mask_data_metadata, OutArg())
+
+    _get_height_above_ground_metadata = { "offset" : _get_height_above_ground_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def height_above_ground(self) -> float:
+        """Height of ground above its model of the ground. Height is measured along the normal to surface defined by reference ellipsoid of the central body. Models the ground as an ellipsoid passing through the ground position. Uses Distance Dimension."""
+        return self._intf.get_property(IGroundLocation._metadata, IGroundLocation._get_height_above_ground_metadata)
+
+    _set_height_above_ground_metadata = { "offset" : _set_height_above_ground_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @height_above_ground.setter
+    def height_above_ground(self, value:float) -> None:
+        """Height of ground location above its model of the ground. Height is measured along the normal to surface defined by reference ellipsoid of the central body. Models the ground as an ellipsoid passing through the ground position. Uses Distance Dimension."""
+        return self._intf.set_property(IGroundLocation._metadata, IGroundLocation._set_height_above_ground_metadata, value)
+
+    _get_altitude_reference_metadata = { "offset" : _get_altitude_reference_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(AltitudeReferenceType),) }
+    @property
+    def altitude_reference(self) -> "AltitudeReferenceType":
+        """Get or set the altitude reference of the object."""
+        return self._intf.get_property(IGroundLocation._metadata, IGroundLocation._get_altitude_reference_metadata)
+
+    _set_altitude_reference_metadata = { "offset" : _set_altitude_reference_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(AltitudeReferenceType),) }
+    @altitude_reference.setter
+    def altitude_reference(self, value:"AltitudeReferenceType") -> None:
+        """Get or set the altitude reference of the object."""
+        return self._intf.set_property(IGroundLocation._metadata, IGroundLocation._set_altitude_reference_metadata, value)
+
+    _get_radar_cross_section_metadata = { "offset" : _get_radar_cross_section_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def radar_cross_section(self) -> "RadarCrossSectionInheritable":
+        """Return the radar cross sectoin."""
+        return self._intf.get_property(IGroundLocation._metadata, IGroundLocation._get_radar_cross_section_metadata)
+
+    _get_save_terrain_mask_data_in_binary_metadata = { "offset" : _get_save_terrain_mask_data_in_binary_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def save_terrain_mask_data_in_binary(self) -> bool:
+        """Save terrain az-el mask data in binary."""
+        return self._intf.get_property(IGroundLocation._metadata, IGroundLocation._get_save_terrain_mask_data_in_binary_metadata)
+
+    _set_save_terrain_mask_data_in_binary_metadata = { "offset" : _set_save_terrain_mask_data_in_binary_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @save_terrain_mask_data_in_binary.setter
+    def save_terrain_mask_data_in_binary(self, save_terrain_mask_data_in_binary:bool) -> None:
+        return self._intf.set_property(IGroundLocation._metadata, IGroundLocation._set_save_terrain_mask_data_in_binary_metadata, save_terrain_mask_data_in_binary)
+
+    _get_lighting_obstruction_model_metadata = { "offset" : _get_lighting_obstruction_model_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(LightingObstructionModelType),) }
+    @property
+    def lighting_obstruction_model(self) -> "LightingObstructionModelType":
+        """Get or set the obstruction model used in lighting computations."""
+        return self._intf.get_property(IGroundLocation._metadata, IGroundLocation._get_lighting_obstruction_model_metadata)
+
+    _set_lighting_obstruction_model_metadata = { "offset" : _set_lighting_obstruction_model_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(LightingObstructionModelType),) }
+    @lighting_obstruction_model.setter
+    def lighting_obstruction_model(self, type:"LightingObstructionModelType") -> None:
+        return self._intf.set_property(IGroundLocation._metadata, IGroundLocation._set_lighting_obstruction_model_metadata, type)
+
+    _get_lighting_maximum_step_metadata = { "offset" : _get_lighting_maximum_step_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def lighting_maximum_step(self) -> float:
+        """Get or set the maximum step size to use when computing lighting. Only applies (and only can be set) when LightingObstructionModel is eLightingObstructionAzElMask or eLightingObstructionTerrain. Uses Time Dimension."""
+        return self._intf.get_property(IGroundLocation._metadata, IGroundLocation._get_lighting_maximum_step_metadata)
+
+    _set_lighting_maximum_step_metadata = { "offset" : _set_lighting_maximum_step_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @lighting_maximum_step.setter
+    def lighting_maximum_step(self, max_step:float) -> None:
+        return self._intf.set_property(IGroundLocation._metadata, IGroundLocation._set_lighting_maximum_step_metadata, max_step)
+
+    _get_laser_environment_metadata = { "offset" : _get_laser_environment_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def laser_environment(self) -> "PlatformLaserEnvironment":
+        """Get the laser environment."""
+        return self._intf.get_property(IGroundLocation._metadata, IGroundLocation._get_laser_environment_metadata)
+
+    _get_rf_environment_metadata = { "offset" : _get_rf_environment_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def rf_environment(self) -> "PlatformRFEnvironment":
+        """Get the RF environment."""
+        return self._intf.get_property(IGroundLocation._metadata, IGroundLocation._get_rf_environment_metadata)
+
+    _get_max_range_when_computing_az_el_mask_metadata = { "offset" : _get_max_range_when_computing_az_el_mask_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def max_range_when_computing_az_el_mask(self) -> float:
+        """Get or set the maximum range to use when computing the az el mask using terrain data. Zero indicates to use algorithm default. Only applies when GetAzElMask returns eTerrainData (cannot be set if eMaskFile). Uses Distance Dimension."""
+        return self._intf.get_property(IGroundLocation._metadata, IGroundLocation._get_max_range_when_computing_az_el_mask_metadata)
+
+    _set_max_range_when_computing_az_el_mask_metadata = { "offset" : _set_max_range_when_computing_az_el_mask_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @max_range_when_computing_az_el_mask.setter
+    def max_range_when_computing_az_el_mask(self, max_range:float) -> None:
+        return self._intf.set_property(IGroundLocation._metadata, IGroundLocation._set_max_range_when_computing_az_el_mask_metadata, max_range)
+
+    _get_chain_analysis_options_metadata = { "offset" : _get_chain_analysis_options_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def chain_analysis_options(self) -> "ChainAnalysisOptions":
+        """Get the ground location's chain analysis options."""
+        return self._intf.get_property(IGroundLocation._metadata, IGroundLocation._get_chain_analysis_options_metadata)
+
+    _get_ground_location_graphics_metadata = { "offset" : _get_ground_location_graphics_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def ground_location_graphics(self) -> "IGroundLocationGraphics":
+        """Get the 2D Graphics properties of the ground location."""
+        return self._intf.get_property(IGroundLocation._metadata, IGroundLocation._get_ground_location_graphics_metadata)
+
+    _get_ground_location_graphics_3d_metadata = { "offset" : _get_ground_location_graphics_3d_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def ground_location_graphics_3d(self) -> "IGroundLocationGraphics3D":
+        """Get the 3D Graphics properties of the ground location."""
+        return self._intf.get_property(IGroundLocation._metadata, IGroundLocation._get_ground_location_graphics_3d_metadata)
+
+    _property_names[use_local_time_offset] = "use_local_time_offset"
+    _property_names[local_time_offset] = "local_time_offset"
+    _property_names[use_terrain] = "use_terrain"
+    _property_names[position] = "position"
+    _property_names[terrain_norm] = "terrain_norm"
+    _property_names[terrain_norm_data] = "terrain_norm_data"
+    _property_names[access_constraints] = "access_constraints"
+    _property_names[height_above_ground] = "height_above_ground"
+    _property_names[altitude_reference] = "altitude_reference"
+    _property_names[radar_cross_section] = "radar_cross_section"
+    _property_names[save_terrain_mask_data_in_binary] = "save_terrain_mask_data_in_binary"
+    _property_names[lighting_obstruction_model] = "lighting_obstruction_model"
+    _property_names[lighting_maximum_step] = "lighting_maximum_step"
+    _property_names[laser_environment] = "laser_environment"
+    _property_names[rf_environment] = "rf_environment"
+    _property_names[max_range_when_computing_az_el_mask] = "max_range_when_computing_az_el_mask"
+    _property_names[chain_analysis_options] = "chain_analysis_options"
+    _property_names[ground_location_graphics] = "ground_location_graphics"
+    _property_names[ground_location_graphics_3d] = "ground_location_graphics_3d"
+
+
+agcls.AgClassCatalog.add_catalog_entry((5629792143295093093, 6050865114848000663), IGroundLocation)
+agcls.AgTypeNameMap["IGroundLocation"] = IGroundLocation
 
 class IAreaTypeData(object):
     """Base interface IAreaTypeData. AreaTypePatternCollection and AreaTypeEllipse derive from it."""
@@ -13233,6 +14121,55 @@ class IAntennaModel(object):
 
 agcls.AgClassCatalog.add_catalog_entry((5117342552551032832, 9234783456725006503), IAntennaModel)
 agcls.AgTypeNameMap["IAntennaModel"] = IAntennaModel
+
+class IAntennaHFSSDesign(object):
+    """Provide access to the properties and methods defining an HFSS design."""
+
+    _num_methods = 2
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_type_method_offset = 1
+    _get_polarization_reference_axis_method_offset = 2
+    _metadata = {
+        "iid_data" : (5217102436898167068, 1804892997125538452),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def __init__(self, source_object=None):
+        """Construct an object of type IAntennaHFSSDesign."""
+        initialize_from_source_object(self, source_object, IAntennaHFSSDesign)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, IAntennaHFSSDesign)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_interface_attribute(self, attrname, value, IAntennaHFSSDesign, None)
+
+    _get_type_metadata = { "offset" : _get_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(AntennaHFSSDesignType),) }
+    @property
+    def type(self) -> "AntennaHFSSDesignType":
+        """Get the HFSS design type."""
+        return self._intf.get_property(IAntennaHFSSDesign._metadata, IAntennaHFSSDesign._get_type_metadata)
+
+    _get_polarization_reference_axis_metadata = { "offset" : _get_polarization_reference_axis_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(PolarizationReferenceAxis),) }
+    @property
+    def polarization_reference_axis(self) -> "PolarizationReferenceAxis":
+        """Get the polarization reference axis."""
+        return self._intf.get_property(IAntennaHFSSDesign._metadata, IAntennaHFSSDesign._get_polarization_reference_axis_metadata)
+
+    _property_names[type] = "type"
+    _property_names[polarization_reference_axis] = "polarization_reference_axis"
+
+
+agcls.AgClassCatalog.add_catalog_entry((5217102436898167068, 1804892997125538452), IAntennaHFSSDesign)
+agcls.AgTypeNameMap["IAntennaHFSSDesign"] = IAntennaHFSSDesign
 
 class IElementConfiguration(object):
     """Provide access to the properties and methods defining an element configuration."""
@@ -18282,7 +19219,7 @@ agcls.AgClassCatalog.add_catalog_entry((4879721223002769882, 1052014019947408015
 agcls.AgTypeNameMap["IChainTimePeriod"] = IChainTimePeriod
 
 class ICoverageBounds(object):
-    """Base interface for ICoverageBoundsCustom, CoverageBoundsGlobal, CoverageBoundsLatitude, CoverageBoundsLatitudeLines, IAgCvBoundsLonLines, CoverageBoundsCustomBoundary."""
+    """Base interface for ICoverageBoundsCustom, CoverageBoundsGlobal, CoverageBoundsLatitude, CoverageBoundsLatitudeLines, ICoverageBoundsLongitudeLines, CoverageBoundsCustomBoundary."""
 
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -20192,7 +21129,7 @@ class BasicAzElMask(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5253410657847573291, 16896071106562394508), BasicAzElMask)
 agcls.AgTypeNameMap["BasicAzElMask"] = BasicAzElMask
 
-class FacilityGraphics(SupportsDeleteCallback):
+class FacilityGraphics(IGroundLocationGraphics, SupportsDeleteCallback):
     """FacilityGraphics used to access the 2D graphics for a Facility object interface."""
 
     _num_methods = 22
@@ -20412,19 +21349,21 @@ class FacilityGraphics(SupportsDeleteCallback):
         """Construct an object of type FacilityGraphics."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, FacilityGraphics)
+        IGroundLocationGraphics.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
+        IGroundLocationGraphics._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, FacilityGraphics, [FacilityGraphics, ])
+        set_class_attribute(self, attrname, value, FacilityGraphics, [FacilityGraphics, IGroundLocationGraphics])
 
 agcls.AgClassCatalog.add_catalog_entry((5291095085080476046, 4373555046457639060), FacilityGraphics)
 agcls.AgTypeNameMap["FacilityGraphics"] = FacilityGraphics
 
-class PlaceGraphics(SupportsDeleteCallback):
+class PlaceGraphics(IGroundLocationGraphics, SupportsDeleteCallback):
     """PlaceGraphics used to access the 2-d graphics properties for a Place object."""
 
     _num_methods = 22
@@ -20644,14 +21583,16 @@ class PlaceGraphics(SupportsDeleteCallback):
         """Construct an object of type PlaceGraphics."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, PlaceGraphics)
+        IGroundLocationGraphics.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
+        IGroundLocationGraphics._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, PlaceGraphics, [PlaceGraphics, ])
+        set_class_attribute(self, attrname, value, PlaceGraphics, [PlaceGraphics, IGroundLocationGraphics])
 
 agcls.AgClassCatalog.add_catalog_entry((5688864550700796749, 3555452832424715176), PlaceGraphics)
 agcls.AgTypeNameMap["PlaceGraphics"] = PlaceGraphics
@@ -22551,7 +23492,7 @@ class Graphics3DVector(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5450201120933478624, 7960475195821303977), Graphics3DVector)
 agcls.AgTypeNameMap["Graphics3DVector"] = Graphics3DVector
 
-class FacilityGraphics3D(SupportsDeleteCallback):
+class FacilityGraphics3D(IGroundLocationGraphics3D, SupportsDeleteCallback):
     """FacilityGraphics3D Interface. For 3D properties of a Facility object interface."""
 
     _num_methods = 10
@@ -22669,19 +23610,21 @@ class FacilityGraphics3D(SupportsDeleteCallback):
         """Construct an object of type FacilityGraphics3D."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, FacilityGraphics3D)
+        IGroundLocationGraphics3D.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
+        IGroundLocationGraphics3D._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, FacilityGraphics3D, [FacilityGraphics3D, ])
+        set_class_attribute(self, attrname, value, FacilityGraphics3D, [FacilityGraphics3D, IGroundLocationGraphics3D])
 
 agcls.AgClassCatalog.add_catalog_entry((4741235884680377715, 4172026086109232828), FacilityGraphics3D)
 agcls.AgTypeNameMap["FacilityGraphics3D"] = FacilityGraphics3D
 
-class PlaceGraphics3D(SupportsDeleteCallback):
+class PlaceGraphics3D(IGroundLocationGraphics3D, SupportsDeleteCallback):
     """PlaceGraphics3D Interface. For 3D properties of a Place object."""
 
     _num_methods = 10
@@ -22799,14 +23742,16 @@ class PlaceGraphics3D(SupportsDeleteCallback):
         """Construct an object of type PlaceGraphics3D."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, PlaceGraphics3D)
+        IGroundLocationGraphics3D.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
+        IGroundLocationGraphics3D._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, PlaceGraphics3D, [PlaceGraphics3D, ])
+        set_class_attribute(self, attrname, value, PlaceGraphics3D, [PlaceGraphics3D, IGroundLocationGraphics3D])
 
 agcls.AgClassCatalog.add_catalog_entry((4947690264086131759, 4427002723693592988), PlaceGraphics3D)
 agcls.AgTypeNameMap["PlaceGraphics3D"] = PlaceGraphics3D
@@ -25354,7 +26299,7 @@ class Scenario(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     >>> scenario.set_time_period(start_time="1 Jan 2012 12:00:00.000", stop_time="2 Jan 2012 12:00:00.000")
     """
 
-    _num_methods = 37
+    _num_methods = 43
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_start_time_method_offset = 1
     _set_start_time_method_offset = 2
@@ -25393,6 +26338,12 @@ class Scenario(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     _get_rf_environment_method_offset = 35
     _get_tilesets_method_offset = 36
     _get_laser_environment_method_offset = 37
+    _get_use_terrain_server_for_analysis_method_offset = 38
+    _set_use_terrain_server_for_analysis_method_offset = 39
+    _get_use_terrain_server_for_line_of_sight_terrain_mask_method_offset = 40
+    _set_use_terrain_server_for_line_of_sight_terrain_mask_method_offset = 41
+    _get_use_terrain_server_for_az_el_mask_method_offset = 42
+    _set_use_terrain_server_for_az_el_mask_method_offset = 43
     _metadata = {
         "iid_data" : (5505067613858299156, 14034460141417496205),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -25694,6 +26645,51 @@ class Scenario(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
         """Return the laser environment."""
         return self._intf.get_property(Scenario._metadata, Scenario._get_laser_environment_metadata)
 
+    _get_use_terrain_server_for_analysis_metadata = { "offset" : _get_use_terrain_server_for_analysis_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_terrain_server_for_analysis(self) -> bool:
+        """Whether STK uses the Terrain Server for analysis."""
+        return self._intf.get_property(Scenario._metadata, Scenario._get_use_terrain_server_for_analysis_metadata)
+
+    _set_use_terrain_server_for_analysis_metadata = { "offset" : _set_use_terrain_server_for_analysis_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_terrain_server_for_analysis.setter
+    def use_terrain_server_for_analysis(self, use_terrain_server_for_analysis:bool) -> None:
+        return self._intf.set_property(Scenario._metadata, Scenario._set_use_terrain_server_for_analysis_metadata, use_terrain_server_for_analysis)
+
+    _get_use_terrain_server_for_line_of_sight_terrain_mask_metadata = { "offset" : _get_use_terrain_server_for_line_of_sight_terrain_mask_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_terrain_server_for_line_of_sight_terrain_mask(self) -> bool:
+        """Whether STK uses the Terrain Server for Line-of-sight terrain mask."""
+        return self._intf.get_property(Scenario._metadata, Scenario._get_use_terrain_server_for_line_of_sight_terrain_mask_metadata)
+
+    _set_use_terrain_server_for_line_of_sight_terrain_mask_metadata = { "offset" : _set_use_terrain_server_for_line_of_sight_terrain_mask_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_terrain_server_for_line_of_sight_terrain_mask.setter
+    def use_terrain_server_for_line_of_sight_terrain_mask(self, use_terrain_server_for_los_terrain_mask:bool) -> None:
+        return self._intf.set_property(Scenario._metadata, Scenario._set_use_terrain_server_for_line_of_sight_terrain_mask_metadata, use_terrain_server_for_los_terrain_mask)
+
+    _get_use_terrain_server_for_az_el_mask_metadata = { "offset" : _get_use_terrain_server_for_az_el_mask_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_terrain_server_for_az_el_mask(self) -> bool:
+        """Whether STK uses the Terrain Server for Azimuth/Elevation mask."""
+        return self._intf.get_property(Scenario._metadata, Scenario._get_use_terrain_server_for_az_el_mask_metadata)
+
+    _set_use_terrain_server_for_az_el_mask_metadata = { "offset" : _set_use_terrain_server_for_az_el_mask_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_terrain_server_for_az_el_mask.setter
+    def use_terrain_server_for_az_el_mask(self, use_terrain_server_for_az_el_mask:bool) -> None:
+        return self._intf.set_property(Scenario._metadata, Scenario._set_use_terrain_server_for_az_el_mask_metadata, use_terrain_server_for_az_el_mask)
+
     _property_names[start_time] = "start_time"
     _property_names[stop_time] = "stop_time"
     _property_names[epoch] = "epoch"
@@ -25719,6 +26715,9 @@ class Scenario(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     _property_names[rf_environment] = "rf_environment"
     _property_names[tilesets] = "tilesets"
     _property_names[laser_environment] = "laser_environment"
+    _property_names[use_terrain_server_for_analysis] = "use_terrain_server_for_analysis"
+    _property_names[use_terrain_server_for_line_of_sight_terrain_mask] = "use_terrain_server_for_line_of_sight_terrain_mask"
+    _property_names[use_terrain_server_for_az_el_mask] = "use_terrain_server_for_az_el_mask"
 
     def __init__(self, source_object=None):
         """Construct an object of type Scenario."""
@@ -25743,7 +26742,7 @@ agcls.AgTypeNameMap["Scenario"] = Scenario
 class ScenarioAnimation(SupportsDeleteCallback):
     """ScenarioAnimation Interface for Scenario-level properties that control the animation cycle, animation step definition and the intervals between refresh updates in the 2D and 3D windows."""
 
-    _num_methods = 26
+    _num_methods = 28
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_start_time_method_offset = 1
     _set_start_time_method_offset = 2
@@ -25771,6 +26770,8 @@ class ScenarioAnimation(SupportsDeleteCallback):
     _get_time_array_component_method_offset = 24
     _get_time_array_qualified_path_method_offset = 25
     _reset_time_array_component_method_offset = 26
+    _get_animation_step_size_method_offset = 27
+    _set_animation_step_size_method_offset = 28
     _metadata = {
         "iid_data" : (5096472273259979639, 17426136909356303018),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -25972,6 +26973,21 @@ class ScenarioAnimation(SupportsDeleteCallback):
         """Remove and resets the display configuration by unsetting currently set time array component (if any)."""
         return self._intf.invoke(ScenarioAnimation._metadata, ScenarioAnimation._reset_time_array_component_metadata, )
 
+    _get_animation_step_size_metadata = { "offset" : _get_animation_step_size_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def animation_step_size(self) -> float:
+        """Animation step size for single step in seconds. Same as AnimStepValue for Time Step type."""
+        return self._intf.get_property(ScenarioAnimation._metadata, ScenarioAnimation._get_animation_step_size_metadata)
+
+    _set_animation_step_size_metadata = { "offset" : _set_animation_step_size_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @animation_step_size.setter
+    def animation_step_size(self, value:float) -> None:
+        return self._intf.set_property(ScenarioAnimation._metadata, ScenarioAnimation._set_animation_step_size_metadata, value)
+
     _property_names[start_time] = "start_time"
     _property_names[enable_anim_cycle_time] = "enable_anim_cycle_time"
     _property_names[animation_cycle_time] = "animation_cycle_time"
@@ -25983,6 +26999,7 @@ class ScenarioAnimation(SupportsDeleteCallback):
     _property_names[continue_x_real_time_from_pause] = "continue_x_real_time_from_pause"
     _property_names[time_period] = "time_period"
     _property_names[time_array_increment] = "time_array_increment"
+    _property_names[animation_step_size] = "animation_step_size"
 
     def __init__(self, source_object=None):
         """Construct an object of type ScenarioAnimation."""
@@ -27109,7 +28126,7 @@ class ScenarioGraphics3D(SupportsDeleteCallback):
     >>> scenario.graphics_3d.medium_font.italic = False
     """
 
-    _num_methods = 24
+    _num_methods = 26
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_chunk_image_cache_size_method_offset = 1
     _set_chunk_image_cache_size_method_offset = 2
@@ -27120,8 +28137,8 @@ class ScenarioGraphics3D(SupportsDeleteCallback):
     _get_large_font_method_offset = 7
     _get_surface_reference_method_offset = 8
     _set_surface_reference_method_offset = 9
-    _get_draw_on_terrain_method_offset = 10
-    _set_draw_on_terrain_method_offset = 11
+
+
     _get_chunk_terrain_cache_size_method_offset = 12
     _set_chunk_terrain_cache_size_method_offset = 13
     _get_text_outline_style_method_offset = 14
@@ -27135,6 +28152,8 @@ class ScenarioGraphics3D(SupportsDeleteCallback):
     _show_objects_method_offset = 22
     _hide_object_method_offset = 23
     _hide_objects_method_offset = 24
+    _get_draw_on_terrain_method_offset = 25
+    _set_draw_on_terrain_method_offset = 26
     _metadata = {
         "iid_data" : (5294350066689483887, 16378796118625010595),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -27212,20 +28231,7 @@ class ScenarioGraphics3D(SupportsDeleteCallback):
     def surface_reference(self, type:"SurfaceReference") -> None:
         return self._intf.set_property(ScenarioGraphics3D._metadata, ScenarioGraphics3D._set_surface_reference_metadata, type)
 
-    _get_draw_on_terrain_metadata = { "offset" : _get_draw_on_terrain_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def draw_on_terrain(self) -> bool:
-        """If true, lines drawn on the globe such as those that define area and line targets, range rings, vehicle paths, map details, etc. will conform to the terrain on the globe. Otherwise, if terrain is present, the lines may go under or float over the terrain."""
-        return self._intf.get_property(ScenarioGraphics3D._metadata, ScenarioGraphics3D._get_draw_on_terrain_metadata)
 
-    _set_draw_on_terrain_metadata = { "offset" : _set_draw_on_terrain_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @draw_on_terrain.setter
-    def draw_on_terrain(self, value:bool) -> None:
-        return self._intf.set_property(ScenarioGraphics3D._metadata, ScenarioGraphics3D._set_draw_on_terrain_metadata, value)
 
     _get_chunk_terrain_cache_size_metadata = { "offset" : _get_chunk_terrain_cache_size_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -27322,17 +28328,32 @@ class ScenarioGraphics3D(SupportsDeleteCallback):
         """Hides multiple objects in a specified 3D window. Users can specify either a window identifier or a window title or 'all' to hide objects in all 3d windows."""
         return self._intf.invoke(ScenarioGraphics3D._metadata, ScenarioGraphics3D._hide_objects_metadata, trunc_object_paths, window_id_or_title)
 
+    _get_draw_on_terrain_metadata = { "offset" : _get_draw_on_terrain_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(SurfaceLinesTerrain),) }
+    @property
+    def draw_on_terrain(self) -> "SurfaceLinesTerrain":
+        """Property determining how surface lines conform to the terrain on the globe, such as area and line targets boundaries, range rings, map details, etc."""
+        return self._intf.get_property(ScenarioGraphics3D._metadata, ScenarioGraphics3D._get_draw_on_terrain_metadata)
+
+    _set_draw_on_terrain_metadata = { "offset" : _set_draw_on_terrain_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(SurfaceLinesTerrain),) }
+    @draw_on_terrain.setter
+    def draw_on_terrain(self, surface_lines_terrain:"SurfaceLinesTerrain") -> None:
+        return self._intf.set_property(ScenarioGraphics3D._metadata, ScenarioGraphics3D._set_draw_on_terrain_metadata, surface_lines_terrain)
+
     _property_names[chunk_image_cache_size] = "chunk_image_cache_size"
     _property_names[is_negative_altitude_allowed] = "is_negative_altitude_allowed"
     _property_names[small_font] = "small_font"
     _property_names[medium_font] = "medium_font"
     _property_names[large_font] = "large_font"
     _property_names[surface_reference] = "surface_reference"
-    _property_names[draw_on_terrain] = "draw_on_terrain"
     _property_names[chunk_terrain_cache_size] = "chunk_terrain_cache_size"
     _property_names[text_outline_style] = "text_outline_style"
     _property_names[text_outline_color] = "text_outline_color"
     _property_names[text_anti_aliasing_enabled] = "text_anti_aliasing_enabled"
+    _property_names[draw_on_terrain] = "draw_on_terrain"
 
     def __init__(self, source_object=None):
         """Construct an object of type ScenarioGraphics3D."""
@@ -32074,7 +33095,7 @@ class AccessConstraintBackground(IAccessConstraint, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AccessConstraintBackground, [AccessConstraintBackground, IAccessConstraint])
 
-agcls.AgClassCatalog.add_catalog_entry((4690790083756826855, 4318287981113781638), AccessConstraintBackground)
+agcls.AgClassCatalog.add_catalog_entry((4690790083756826855, 4318287981197667718), AccessConstraintBackground)
 agcls.AgTypeNameMap["AccessConstraintBackground"] = AccessConstraintBackground
 
 class AccessConstraintGroundTrack(IAccessConstraint, SupportsDeleteCallback):
@@ -33190,6 +34211,306 @@ class AccessConstraintGrazingAltitude(IAccessConstraintMinMaxBase, IAccessConstr
 agcls.AgClassCatalog.add_catalog_entry((5270452956300806586, 3275170213450325692), AccessConstraintGrazingAltitude)
 agcls.AgTypeNameMap["AccessConstraintGrazingAltitude"] = AccessConstraintGrazingAltitude
 
+class AccessConstraintNoiseTemperature(IAccessConstraintMinMaxBase, IAccessConstraint, SupportsDeleteCallback):
+    """Access Constraint used for System Noise Temperature Constraint."""
+
+    _num_methods = 22
+    _vtable_offset = IAccessConstraintMinMaxBase._vtable_offset + IAccessConstraintMinMaxBase._num_methods
+    _get_method_method_offset = 1
+    _set_method_method_offset = 2
+    _get_earth_method_offset = 3
+    _set_earth_method_offset = 4
+    _get_sun_method_offset = 5
+    _set_sun_method_offset = 6
+    _get_atmosphere_method_offset = 7
+    _set_atmosphere_method_offset = 8
+    _get_rain_method_offset = 9
+    _set_rain_method_offset = 10
+    _get_cosmic_background_method_offset = 11
+    _set_cosmic_background_method_offset = 12
+    _get_clouds_fog_method_offset = 13
+    _set_clouds_fog_method_offset = 14
+    _get_tropospheric_scintillation_method_offset = 15
+    _set_tropospheric_scintillation_method_offset = 16
+    _get_external_method_offset = 17
+    _set_external_method_offset = 18
+    _get_ionospheric_fading_method_offset = 19
+    _set_ionospheric_fading_method_offset = 20
+    _get_plugin_method_offset = 21
+    _set_plugin_method_offset = 22
+    _metadata = {
+        "iid_data" : (4665284807800621644, 6891032967074336930),
+        "vtable_reference" : IAccessConstraintMinMaxBase._vtable_offset + IAccessConstraintMinMaxBase._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AccessConstraintNoiseTemperature)
+
+    _get_method_metadata = { "offset" : _get_method_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(NoiseTemperatureMethod),) }
+    @property
+    def method(self) -> "NoiseTemperatureMethod":
+        """Computation Method."""
+        return self._intf.get_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._get_method_metadata)
+
+    _set_method_metadata = { "offset" : _set_method_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(NoiseTemperatureMethod),) }
+    @method.setter
+    def method(self, ag_e_noise_temperature_method:"NoiseTemperatureMethod") -> None:
+        return self._intf.set_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._set_method_metadata, ag_e_noise_temperature_method)
+
+    _get_earth_metadata = { "offset" : _get_earth_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def earth(self) -> bool:
+        """Use Earth."""
+        return self._intf.get_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._get_earth_metadata)
+
+    _set_earth_metadata = { "offset" : _set_earth_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @earth.setter
+    def earth(self, earth:bool) -> None:
+        return self._intf.set_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._set_earth_metadata, earth)
+
+    _get_sun_metadata = { "offset" : _get_sun_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def sun(self) -> bool:
+        """Use Sun."""
+        return self._intf.get_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._get_sun_metadata)
+
+    _set_sun_metadata = { "offset" : _set_sun_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @sun.setter
+    def sun(self, sun:bool) -> None:
+        return self._intf.set_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._set_sun_metadata, sun)
+
+    _get_atmosphere_metadata = { "offset" : _get_atmosphere_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def atmosphere(self) -> bool:
+        """Use Atmosphere."""
+        return self._intf.get_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._get_atmosphere_metadata)
+
+    _set_atmosphere_metadata = { "offset" : _set_atmosphere_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @atmosphere.setter
+    def atmosphere(self, atmosphere:bool) -> None:
+        return self._intf.set_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._set_atmosphere_metadata, atmosphere)
+
+    _get_rain_metadata = { "offset" : _get_rain_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def rain(self) -> bool:
+        """Use Rain."""
+        return self._intf.get_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._get_rain_metadata)
+
+    _set_rain_metadata = { "offset" : _set_rain_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @rain.setter
+    def rain(self, rain:bool) -> None:
+        return self._intf.set_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._set_rain_metadata, rain)
+
+    _get_cosmic_background_metadata = { "offset" : _get_cosmic_background_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def cosmic_background(self) -> bool:
+        """Use Cosmic Background."""
+        return self._intf.get_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._get_cosmic_background_metadata)
+
+    _set_cosmic_background_metadata = { "offset" : _set_cosmic_background_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @cosmic_background.setter
+    def cosmic_background(self, cosmic_background:bool) -> None:
+        return self._intf.set_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._set_cosmic_background_metadata, cosmic_background)
+
+    _get_clouds_fog_metadata = { "offset" : _get_clouds_fog_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def clouds_fog(self) -> bool:
+        """Clouds and Fog."""
+        return self._intf.get_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._get_clouds_fog_metadata)
+
+    _set_clouds_fog_metadata = { "offset" : _set_clouds_fog_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @clouds_fog.setter
+    def clouds_fog(self, clouds_fog:bool) -> None:
+        return self._intf.set_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._set_clouds_fog_metadata, clouds_fog)
+
+    _get_tropospheric_scintillation_metadata = { "offset" : _get_tropospheric_scintillation_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def tropospheric_scintillation(self) -> bool:
+        """Troposhperic Scintillation."""
+        return self._intf.get_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._get_tropospheric_scintillation_metadata)
+
+    _set_tropospheric_scintillation_metadata = { "offset" : _set_tropospheric_scintillation_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @tropospheric_scintillation.setter
+    def tropospheric_scintillation(self, tropo_scint:bool) -> None:
+        return self._intf.set_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._set_tropospheric_scintillation_metadata, tropo_scint)
+
+    _get_external_metadata = { "offset" : _get_external_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def external(self) -> bool:
+        """External."""
+        return self._intf.get_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._get_external_metadata)
+
+    _set_external_metadata = { "offset" : _set_external_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @external.setter
+    def external(self, external:bool) -> None:
+        return self._intf.set_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._set_external_metadata, external)
+
+    _get_ionospheric_fading_metadata = { "offset" : _get_ionospheric_fading_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def ionospheric_fading(self) -> bool:
+        """Ionospheric Fading."""
+        return self._intf.get_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._get_ionospheric_fading_metadata)
+
+    _set_ionospheric_fading_metadata = { "offset" : _set_ionospheric_fading_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @ionospheric_fading.setter
+    def ionospheric_fading(self, iono_fading:bool) -> None:
+        return self._intf.set_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._set_ionospheric_fading_metadata, iono_fading)
+
+    _get_plugin_metadata = { "offset" : _get_plugin_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def plugin(self) -> bool:
+        """Use User-Supplied Plugin."""
+        return self._intf.get_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._get_plugin_metadata)
+
+    _set_plugin_metadata = { "offset" : _set_plugin_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @plugin.setter
+    def plugin(self, plugin:bool) -> None:
+        return self._intf.set_property(AccessConstraintNoiseTemperature._metadata, AccessConstraintNoiseTemperature._set_plugin_metadata, plugin)
+
+    _property_names[method] = "method"
+    _property_names[earth] = "earth"
+    _property_names[sun] = "sun"
+    _property_names[atmosphere] = "atmosphere"
+    _property_names[rain] = "rain"
+    _property_names[cosmic_background] = "cosmic_background"
+    _property_names[clouds_fog] = "clouds_fog"
+    _property_names[tropospheric_scintillation] = "tropospheric_scintillation"
+    _property_names[external] = "external"
+    _property_names[ionospheric_fading] = "ionospheric_fading"
+    _property_names[plugin] = "plugin"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type AccessConstraintNoiseTemperature."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, AccessConstraintNoiseTemperature)
+        IAccessConstraintMinMaxBase.__init__(self, source_object)
+        IAccessConstraint.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IAccessConstraintMinMaxBase._private_init(self, intf)
+        IAccessConstraint._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, AccessConstraintNoiseTemperature, [AccessConstraintNoiseTemperature, IAccessConstraintMinMaxBase, IAccessConstraint])
+
+agcls.AgClassCatalog.add_catalog_entry((5738797359670411125, 2490156853719575714), AccessConstraintNoiseTemperature)
+agcls.AgTypeNameMap["AccessConstraintNoiseTemperature"] = AccessConstraintNoiseTemperature
+
+class AccessConstraintElevationRiseSet(IAccessConstraint, SupportsDeleteCallback):
+    """Access Constraint used for Elevation Rise-Set constraint."""
+
+    _num_methods = 4
+    _vtable_offset = IAccessConstraint._vtable_offset + IAccessConstraint._num_methods
+    _get_elevation_rise_method_offset = 1
+    _set_elevation_rise_method_offset = 2
+    _get_elevation_set_method_offset = 3
+    _set_elevation_set_method_offset = 4
+    _metadata = {
+        "iid_data" : (4699790778705884012, 11579078186148589191),
+        "vtable_reference" : IAccessConstraint._vtable_offset + IAccessConstraint._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AccessConstraintElevationRiseSet)
+
+    _get_elevation_rise_metadata = { "offset" : _get_elevation_rise_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def elevation_rise(self) -> typing.Any:
+        """Rise value for the access constraint."""
+        return self._intf.get_property(AccessConstraintElevationRiseSet._metadata, AccessConstraintElevationRiseSet._get_elevation_rise_metadata)
+
+    _set_elevation_rise_metadata = { "offset" : _set_elevation_rise_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @elevation_rise.setter
+    def elevation_rise(self, value:typing.Any) -> None:
+        return self._intf.set_property(AccessConstraintElevationRiseSet._metadata, AccessConstraintElevationRiseSet._set_elevation_rise_metadata, value)
+
+    _get_elevation_set_metadata = { "offset" : _get_elevation_set_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def elevation_set(self) -> typing.Any:
+        """Set value for the access constraint."""
+        return self._intf.get_property(AccessConstraintElevationRiseSet._metadata, AccessConstraintElevationRiseSet._get_elevation_set_metadata)
+
+    _set_elevation_set_metadata = { "offset" : _set_elevation_set_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @elevation_set.setter
+    def elevation_set(self, value:typing.Any) -> None:
+        return self._intf.set_property(AccessConstraintElevationRiseSet._metadata, AccessConstraintElevationRiseSet._set_elevation_set_metadata, value)
+
+    _property_names[elevation_rise] = "elevation_rise"
+    _property_names[elevation_set] = "elevation_set"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type AccessConstraintElevationRiseSet."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, AccessConstraintElevationRiseSet)
+        IAccessConstraint.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IAccessConstraint._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, AccessConstraintElevationRiseSet, [AccessConstraintElevationRiseSet, IAccessConstraint])
+
+agcls.AgClassCatalog.add_catalog_entry((5277116914826291952, 4564225189286122636), AccessConstraintElevationRiseSet)
+agcls.AgTypeNameMap["AccessConstraintElevationRiseSet"] = AccessConstraintElevationRiseSet
+
 class SensorPointingGrazingAltitude(ISensorPointing, SupportsDeleteCallback):
     """SensorPointingGrazingAltitude Interface for a sensor pointed in such a way that the boresight vector will graze the central body at a specified altitude."""
 
@@ -33544,7 +34865,7 @@ class AreaTarget(ISTKObject, ILifetimeInformation, IDisplayTime, SupportsDeleteC
 agcls.AgClassCatalog.add_catalog_entry((4731787984503470075, 8443477913258964657), AreaTarget)
 agcls.AgTypeNameMap["AreaTarget"] = AreaTarget
 
-class Facility(ISTKObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
+class Facility(ISTKObject, IGroundLocation, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
     """
     Provide access to the properties and methods used in defining a facility object.
 
@@ -33901,11 +35222,13 @@ class Facility(ISTKObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCal
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Facility)
         ISTKObject.__init__(self, source_object)
+        IGroundLocation.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
         IDisplayTime.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISTKObject._private_init(self, intf)
+        IGroundLocation._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
         IDisplayTime._private_init(self, intf)
     def __eq__(self, other):
@@ -33913,12 +35236,12 @@ class Facility(ISTKObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCal
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Facility, [Facility, ISTKObject, ILifetimeInformation, IDisplayTime])
+        set_class_attribute(self, attrname, value, Facility, [Facility, ISTKObject, IGroundLocation, ILifetimeInformation, IDisplayTime])
 
 agcls.AgClassCatalog.add_catalog_entry((5728094912721776297, 10613285630895205764), Facility)
 agcls.AgTypeNameMap["Facility"] = Facility
 
-class Target(ISTKObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
+class Target(ISTKObject, IGroundLocation, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
     """Provide access to the properties and methods used in defining a target object."""
 
     _num_methods = 33
@@ -34242,11 +35565,13 @@ class Target(ISTKObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallb
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Target)
         ISTKObject.__init__(self, source_object)
+        IGroundLocation.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
         IDisplayTime.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISTKObject._private_init(self, intf)
+        IGroundLocation._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
         IDisplayTime._private_init(self, intf)
     def __eq__(self, other):
@@ -34254,12 +35579,12 @@ class Target(ISTKObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallb
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Target, [Target, ISTKObject, ILifetimeInformation, IDisplayTime])
+        set_class_attribute(self, attrname, value, Target, [Target, ISTKObject, IGroundLocation, ILifetimeInformation, IDisplayTime])
 
 agcls.AgClassCatalog.add_catalog_entry((5456908853854173469, 8269483171657844890), Target)
 agcls.AgTypeNameMap["Target"] = Target
 
-class Place(ISTKObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
+class Place(ISTKObject, IGroundLocation, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
     """Provide access to the properties and methods used in defining a place object."""
 
     _num_methods = 33
@@ -34583,11 +35908,13 @@ class Place(ISTKObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallba
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Place)
         ISTKObject.__init__(self, source_object)
+        IGroundLocation.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
         IDisplayTime.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISTKObject._private_init(self, intf)
+        IGroundLocation._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
         IDisplayTime._private_init(self, intf)
     def __eq__(self, other):
@@ -34595,7 +35922,7 @@ class Place(ISTKObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallba
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Place, [Place, ISTKObject, ILifetimeInformation, IDisplayTime])
+        set_class_attribute(self, attrname, value, Place, [Place, ISTKObject, IGroundLocation, ILifetimeInformation, IDisplayTime])
 
 agcls.AgClassCatalog.add_catalog_entry((5301481024413712072, 10913291911326098096), Place)
 agcls.AgTypeNameMap["Place"] = Place
@@ -36769,7 +38096,7 @@ class DataProviderResultDataSetCollection(SupportsDeleteCallback):
     >>> plt.grid(visible=True)
     """
 
-    _num_methods = 8
+    _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
@@ -36779,6 +38106,7 @@ class DataProviderResultDataSetCollection(SupportsDeleteCallback):
     _get_row_method_offset = 6
     _to_array_method_offset = 7
     _get_element_names_method_offset = 8
+    _to_array_subset_method_offset = 9
     _metadata = {
         "iid_data" : (4996193866686929491, 1910261682280353193),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
@@ -36860,6 +38188,13 @@ class DataProviderResultDataSetCollection(SupportsDeleteCallback):
         """Return the element names."""
         return self._intf.get_property(DataProviderResultDataSetCollection._metadata, DataProviderResultDataSetCollection._get_element_names_metadata)
 
+    _to_array_subset_metadata = { "offset" : _to_array_subset_method_offset,
+            "arg_types" : (agcom.INT, agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
+            "marshallers" : (agmarshall.IntArg, agmarshall.LongArg, agmarshall.LPSafearrayArg,) }
+    def to_array_subset(self, index:int, subset_length:int) -> list:
+        """Return a subset of the dataset collection in row format beginning at a given zero-indexed row and containing a specified number of rows."""
+        return self._intf.invoke(DataProviderResultDataSetCollection._metadata, DataProviderResultDataSetCollection._to_array_subset_metadata, index, subset_length, OutArg())
+
     @agdata.required_package("numpy")
     def to_numpy_array(self) -> "ndarray":
         """Return a row formatted dataset collection as a numpy array. This function requires ``numpy``."""
@@ -36910,7 +38245,7 @@ agcls.AgTypeNameMap["DataProviderResultDataSetCollection"] = DataProviderResultD
 class DataProviderResultDataSet(SupportsDeleteCallback):
     """Represents a dataset element."""
 
-    _num_methods = 7
+    _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_element_name_method_offset = 1
     _get_element_type_method_offset = 2
@@ -36919,6 +38254,7 @@ class DataProviderResultDataSet(SupportsDeleteCallback):
     _get_values_method_offset = 5
     _get_internal_units_values_method_offset = 6
     _get_statistics_method_offset = 7
+    _get_values_subset_method_offset = 8
     _metadata = {
         "iid_data" : (4646036859619097605, 3290917032280734122),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -36980,6 +38316,13 @@ class DataProviderResultDataSet(SupportsDeleteCallback):
     def statistics(self) -> "DataProviderResultStatistics":
         """Return an interface for computing statistics on the results."""
         return self._intf.get_property(DataProviderResultDataSet._metadata, DataProviderResultDataSet._get_statistics_metadata)
+
+    _get_values_subset_metadata = { "offset" : _get_values_subset_method_offset,
+            "arg_types" : (agcom.INT, agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
+            "marshallers" : (agmarshall.IntArg, agmarshall.LongArg, agmarshall.LPSafearrayArg,) }
+    def get_values_subset(self, index:int, count:int) -> list:
+        """Retrieve a subset of an array of values of the elements in the dataset beginning at a given zero-indexed position and containing a specified number of values."""
+        return self._intf.invoke(DataProviderResultDataSet._metadata, DataProviderResultDataSet._get_values_subset_metadata, index, count, OutArg())
 
     _property_names[element_name] = "element_name"
     _property_names[element_type] = "element_type"
@@ -37909,7 +39252,7 @@ agcls.AgTypeNameMap["Access"] = Access
 class AccessGraphics(SupportsDeleteCallback):
     """Provide access to the Graphics for Access Computations."""
 
-    _num_methods = 12
+    _num_methods = 16
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_inherit_method_offset = 1
     _set_inherit_method_offset = 2
@@ -37923,6 +39266,10 @@ class AccessGraphics(SupportsDeleteCallback):
     _set_line_width_method_offset = 10
     _get_line_style_method_offset = 11
     _set_line_style_method_offset = 12
+    _get_color_mode_method_offset = 13
+    _set_color_mode_method_offset = 14
+    _get_custom_color_method_offset = 15
+    _set_custom_color_method_offset = 16
     _metadata = {
         "iid_data" : (5644371892489893659, 9518623073582134922),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -38021,12 +39368,44 @@ class AccessGraphics(SupportsDeleteCallback):
     def line_style(self, value:str) -> None:
         return self._intf.set_property(AccessGraphics._metadata, AccessGraphics._set_line_style_metadata, value)
 
+    _get_color_mode_metadata = { "offset" : _get_color_mode_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(IvColorMode),) }
+    @property
+    def color_mode(self) -> "IvColorMode":
+        """Color mode for access graphics, either use the object colors or a single, custom color."""
+        return self._intf.get_property(AccessGraphics._metadata, AccessGraphics._get_color_mode_metadata)
+
+    _set_color_mode_metadata = { "offset" : _set_color_mode_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(IvColorMode),) }
+    @color_mode.setter
+    def color_mode(self, color_mode:"IvColorMode") -> None:
+        return self._intf.set_property(AccessGraphics._metadata, AccessGraphics._set_color_mode_metadata, color_mode)
+
+    _get_custom_color_metadata = { "offset" : _get_custom_color_method_offset,
+            "arg_types" : (POINTER(agcom.OLE_COLOR),),
+            "marshallers" : (agmarshall.OLEColorArg,) }
+    @property
+    def custom_color(self) -> agcolor.Color:
+        """Color for all access graphics, used when color mode is set to custom."""
+        return self._intf.get_property(AccessGraphics._metadata, AccessGraphics._get_custom_color_metadata)
+
+    _set_custom_color_metadata = { "offset" : _set_custom_color_method_offset,
+            "arg_types" : (agcom.OLE_COLOR,),
+            "marshallers" : (agmarshall.OLEColorArg,) }
+    @custom_color.setter
+    def custom_color(self, custom_color:agcolor.Color) -> None:
+        return self._intf.set_property(AccessGraphics._metadata, AccessGraphics._set_custom_color_metadata, custom_color)
+
     _property_names[inherit] = "inherit"
     _property_names[show_line] = "show_line"
     _property_names[show_animation_highlight_graphics_2d] = "show_animation_highlight_graphics_2d"
     _property_names[static_graphics_2d] = "static_graphics_2d"
     _property_names[line_width] = "line_width"
     _property_names[line_style] = "line_style"
+    _property_names[color_mode] = "color_mode"
+    _property_names[custom_color] = "custom_color"
 
     def __init__(self, source_object=None):
         """Construct an object of type AccessGraphics."""
@@ -40208,7 +41587,7 @@ class Graphics3DReferencePoint(IGraphics3DReferenceAnalysisWorkbenchComponent, I
 agcls.AgClassCatalog.add_catalog_entry((4851890658682305088, 11309432970732013747), Graphics3DReferencePoint)
 agcls.AgTypeNameMap["Graphics3DReferencePoint"] = Graphics3DReferencePoint
 
-class TargetGraphics(SupportsDeleteCallback):
+class TargetGraphics(IGroundLocationGraphics, SupportsDeleteCallback):
     """TargetGraphics used to access the 2-d graphics properties for a Target object."""
 
     _num_methods = 22
@@ -40428,19 +41807,21 @@ class TargetGraphics(SupportsDeleteCallback):
         """Construct an object of type TargetGraphics."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, TargetGraphics)
+        IGroundLocationGraphics.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
+        IGroundLocationGraphics._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TargetGraphics, [TargetGraphics, ])
+        set_class_attribute(self, attrname, value, TargetGraphics, [TargetGraphics, IGroundLocationGraphics])
 
 agcls.AgClassCatalog.add_catalog_entry((4928797576619829064, 9163866499947622529), TargetGraphics)
 agcls.AgTypeNameMap["TargetGraphics"] = TargetGraphics
 
-class TargetGraphics3D(SupportsDeleteCallback):
+class TargetGraphics3D(IGroundLocationGraphics3D, SupportsDeleteCallback):
     """TargetGraphics3D Interface. For 3D properties of a Target object."""
 
     _num_methods = 10
@@ -40558,14 +41939,16 @@ class TargetGraphics3D(SupportsDeleteCallback):
         """Construct an object of type TargetGraphics3D."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, TargetGraphics3D)
+        IGroundLocationGraphics3D.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
+        IGroundLocationGraphics3D._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TargetGraphics3D, [TargetGraphics3D, ])
+        set_class_attribute(self, attrname, value, TargetGraphics3D, [TargetGraphics3D, IGroundLocationGraphics3D])
 
 agcls.AgClassCatalog.add_catalog_entry((5161406782638454312, 3762447855985891503), TargetGraphics3D)
 agcls.AgTypeNameMap["TargetGraphics3D"] = TargetGraphics3D
@@ -73963,7 +75346,7 @@ class Chain(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     >>> chain = root.current_scenario.children.new(STKObjectType.CHAIN, "MyChain")
     """
 
-    _num_methods = 41
+    _num_methods = 42
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_recompute_automatically_method_offset = 1
     _set_recompute_automatically_method_offset = 2
@@ -74006,6 +75389,7 @@ class Chain(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     _set_max_strand_depth_method_offset = 39
     _get_connections_method_offset = 40
     _get_optimal_strand_opts_method_offset = 41
+    _get_strand_analysis_opts_method_offset = 42
     _metadata = {
         "iid_data" : (5614927203180761813, 10187914962611659711),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -74324,6 +75708,14 @@ class Chain(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
         """Optimal strands settings for the Chain."""
         return self._intf.get_property(Chain._metadata, Chain._get_optimal_strand_opts_metadata)
 
+    _get_strand_analysis_opts_metadata = { "offset" : _get_strand_analysis_opts_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def strand_analysis_opts(self) -> "ChainStrandAnalysisOpts":
+        """Strand analysis settings for the Chain."""
+        return self._intf.get_property(Chain._metadata, Chain._get_strand_analysis_opts_metadata)
+
     _property_names[recompute_automatically] = "recompute_automatically"
     _property_names[time_period_type] = "time_period_type"
     _property_names[time_period] = "time_period"
@@ -74347,6 +75739,7 @@ class Chain(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     _property_names[max_strand_depth] = "max_strand_depth"
     _property_names[connections] = "connections"
     _property_names[optimal_strand_opts] = "optimal_strand_opts"
+    _property_names[strand_analysis_opts] = "strand_analysis_opts"
 
     def __init__(self, source_object=None):
         """Construct an object of type Chain."""
@@ -74610,6 +76003,234 @@ class ChainConnectionCollection(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4831183929190967693, 15083267044207364240), ChainConnectionCollection)
 agcls.AgTypeNameMap["ChainConnectionCollection"] = ChainConnectionCollection
 
+class ChainStrandAnalysisOpts(SupportsDeleteCallback):
+    """Chain strand analysis options."""
+
+    _num_methods = 22
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_compute_method_offset = 1
+    _set_compute_method_offset = 2
+    _get_sampling_time_step_method_offset = 3
+    _set_sampling_time_step_method_offset = 4
+    _get_include_access_edge_times_in_samples_method_offset = 5
+    _set_include_access_edge_times_in_samples_method_offset = 6
+    _get_num_strands_to_store_method_offset = 7
+    _set_num_strands_to_store_method_offset = 8
+    _get_type_method_offset = 9
+    _set_type_method_offset = 10
+    _get_link_comparison_type_method_offset = 11
+    _set_link_comparison_type_method_offset = 12
+    _get_strand_comparison_type_method_offset = 13
+    _set_strand_comparison_type_method_offset = 14
+    _get_calc_scalar_type_method_offset = 15
+    _set_calc_scalar_type_method_offset = 16
+    _get_calc_scalar_name_method_offset = 17
+    _set_calc_scalar_name_method_offset = 18
+    _get_calc_scalar_file_name_method_offset = 19
+    _set_calc_scalar_file_name_method_offset = 20
+    _get_compute_type_method_offset = 21
+    _set_compute_type_method_offset = 22
+    _metadata = {
+        "iid_data" : (4660781173273013015, 13633882308297064886),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, ChainStrandAnalysisOpts)
+
+    _get_compute_metadata = { "offset" : _get_compute_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def compute(self) -> bool:
+        """Compute strands analytics."""
+        return self._intf.get_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._get_compute_metadata)
+
+    _set_compute_metadata = { "offset" : _set_compute_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @compute.setter
+    def compute(self, compute:bool) -> None:
+        return self._intf.set_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._set_compute_metadata, compute)
+
+    _get_sampling_time_step_metadata = { "offset" : _get_sampling_time_step_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def sampling_time_step(self) -> float:
+        """Time step used to sample strand metric when computing strand analytics."""
+        return self._intf.get_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._get_sampling_time_step_metadata)
+
+    _set_sampling_time_step_metadata = { "offset" : _set_sampling_time_step_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @sampling_time_step.setter
+    def sampling_time_step(self, sample_time_step:float) -> None:
+        return self._intf.set_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._set_sampling_time_step_metadata, sample_time_step)
+
+    _get_include_access_edge_times_in_samples_metadata = { "offset" : _get_include_access_edge_times_in_samples_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def include_access_edge_times_in_samples(self) -> bool:
+        """Include all chain connection access pairs when computing sample times for strand analytics."""
+        return self._intf.get_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._get_include_access_edge_times_in_samples_metadata)
+
+    _set_include_access_edge_times_in_samples_metadata = { "offset" : _set_include_access_edge_times_in_samples_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @include_access_edge_times_in_samples.setter
+    def include_access_edge_times_in_samples(self, value:bool) -> None:
+        return self._intf.set_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._set_include_access_edge_times_in_samples_metadata, value)
+
+    _get_num_strands_to_store_metadata = { "offset" : _get_num_strands_to_store_method_offset,
+            "arg_types" : (POINTER(agcom.INT),),
+            "marshallers" : (agmarshall.IntArg,) }
+    @property
+    def num_strands_to_store(self) -> int:
+        """Maximum number of objects in all strands for the Chain."""
+        return self._intf.get_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._get_num_strands_to_store_metadata)
+
+    _set_num_strands_to_store_metadata = { "offset" : _set_num_strands_to_store_method_offset,
+            "arg_types" : (agcom.INT,),
+            "marshallers" : (agmarshall.IntArg,) }
+    @num_strands_to_store.setter
+    def num_strands_to_store(self, value:int) -> None:
+        return self._intf.set_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._set_num_strands_to_store_metadata, value)
+
+    _get_type_metadata = { "offset" : _get_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(ChainOptimalStrandMetricType),) }
+    @property
+    def type(self) -> "ChainOptimalStrandMetricType":
+        """Strand analysis type."""
+        return self._intf.get_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._get_type_metadata)
+
+    _set_type_metadata = { "offset" : _set_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(ChainOptimalStrandMetricType),) }
+    @type.setter
+    def type(self, value:"ChainOptimalStrandMetricType") -> None:
+        return self._intf.set_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._set_type_metadata, value)
+
+    _get_link_comparison_type_metadata = { "offset" : _get_link_comparison_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(ChainOptimalStrandLinkCompareType),) }
+    @property
+    def link_comparison_type(self) -> "ChainOptimalStrandLinkCompareType":
+        """Strand analysis comparison type (min, max or sum) used when comparing connections of a strand when computing an overall value of the metric for a strand."""
+        return self._intf.get_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._get_link_comparison_type_metadata)
+
+    _set_link_comparison_type_metadata = { "offset" : _set_link_comparison_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(ChainOptimalStrandLinkCompareType),) }
+    @link_comparison_type.setter
+    def link_comparison_type(self, value:"ChainOptimalStrandLinkCompareType") -> None:
+        return self._intf.set_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._set_link_comparison_type_metadata, value)
+
+    _get_strand_comparison_type_metadata = { "offset" : _get_strand_comparison_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(ChainOptimalStrandCompareStrandsType),) }
+    @property
+    def strand_comparison_type(self) -> "ChainOptimalStrandCompareStrandsType":
+        """Strand analysis comparison type (min or max) used when comparing strands."""
+        return self._intf.get_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._get_strand_comparison_type_metadata)
+
+    _set_strand_comparison_type_metadata = { "offset" : _set_strand_comparison_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(ChainOptimalStrandCompareStrandsType),) }
+    @strand_comparison_type.setter
+    def strand_comparison_type(self, value:"ChainOptimalStrandCompareStrandsType") -> None:
+        return self._intf.set_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._set_strand_comparison_type_metadata, value)
+
+    _get_calc_scalar_type_metadata = { "offset" : _get_calc_scalar_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(ChainOptimalStrandCalculationScalarMetricType),) }
+    @property
+    def calc_scalar_type(self) -> "ChainOptimalStrandCalculationScalarMetricType":
+        """Strand analysis AWB calculation scalar type used when the strand analysis type is set to use a calculation scalar."""
+        return self._intf.get_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._get_calc_scalar_type_metadata)
+
+    _set_calc_scalar_type_metadata = { "offset" : _set_calc_scalar_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(ChainOptimalStrandCalculationScalarMetricType),) }
+    @calc_scalar_type.setter
+    def calc_scalar_type(self, value:"ChainOptimalStrandCalculationScalarMetricType") -> None:
+        return self._intf.set_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._set_calc_scalar_type_metadata, value)
+
+    _get_calc_scalar_name_metadata = { "offset" : _get_calc_scalar_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def calc_scalar_name(self) -> str:
+        """Strand analysis AWB calculation scalar to evaluate to determine strand analytics."""
+        return self._intf.get_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._get_calc_scalar_name_metadata)
+
+    _set_calc_scalar_name_metadata = { "offset" : _set_calc_scalar_name_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @calc_scalar_name.setter
+    def calc_scalar_name(self, value:str) -> None:
+        return self._intf.set_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._set_calc_scalar_name_metadata, value)
+
+    _get_calc_scalar_file_name_metadata = { "offset" : _get_calc_scalar_file_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def calc_scalar_file_name(self) -> str:
+        """Strand analysis AWB calculation scalar file (.awb) to evaluate to determine strand analytics."""
+        return self._intf.get_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._get_calc_scalar_file_name_metadata)
+
+    _set_calc_scalar_file_name_metadata = { "offset" : _set_calc_scalar_file_name_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @calc_scalar_file_name.setter
+    def calc_scalar_file_name(self, value:str) -> None:
+        return self._intf.set_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._set_calc_scalar_file_name_metadata, value)
+
+    _get_compute_type_metadata = { "offset" : _get_compute_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(ChainStrandAnalysisComputeType),) }
+    @property
+    def compute_type(self) -> "ChainStrandAnalysisComputeType":
+        """Strand analysis type."""
+        return self._intf.get_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._get_compute_type_metadata)
+
+    _set_compute_type_metadata = { "offset" : _set_compute_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(ChainStrandAnalysisComputeType),) }
+    @compute_type.setter
+    def compute_type(self, value:"ChainStrandAnalysisComputeType") -> None:
+        return self._intf.set_property(ChainStrandAnalysisOpts._metadata, ChainStrandAnalysisOpts._set_compute_type_metadata, value)
+
+    _property_names[compute] = "compute"
+    _property_names[sampling_time_step] = "sampling_time_step"
+    _property_names[include_access_edge_times_in_samples] = "include_access_edge_times_in_samples"
+    _property_names[num_strands_to_store] = "num_strands_to_store"
+    _property_names[type] = "type"
+    _property_names[link_comparison_type] = "link_comparison_type"
+    _property_names[strand_comparison_type] = "strand_comparison_type"
+    _property_names[calc_scalar_type] = "calc_scalar_type"
+    _property_names[calc_scalar_name] = "calc_scalar_name"
+    _property_names[calc_scalar_file_name] = "calc_scalar_file_name"
+    _property_names[compute_type] = "compute_type"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type ChainStrandAnalysisOpts."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, ChainStrandAnalysisOpts)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, ChainStrandAnalysisOpts, [ChainStrandAnalysisOpts, ])
+
+agcls.AgClassCatalog.add_catalog_entry((5127117359855353469, 8772658165200233401), ChainStrandAnalysisOpts)
+agcls.AgTypeNameMap["ChainStrandAnalysisOpts"] = ChainStrandAnalysisOpts
+
 class ChainOptimalStrandOpts(SupportsDeleteCallback):
     """Chain optimal strand options."""
 
@@ -74648,7 +76269,7 @@ class ChainOptimalStrandOpts(SupportsDeleteCallback):
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def compute(self) -> bool:
-        """Compute optimal strands."""
+        """Compute strands analytics."""
         return self._intf.get_property(ChainOptimalStrandOpts._metadata, ChainOptimalStrandOpts._get_compute_metadata)
 
     _set_compute_metadata = { "offset" : _set_compute_method_offset,
@@ -74663,7 +76284,7 @@ class ChainOptimalStrandOpts(SupportsDeleteCallback):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def sampling_time_step(self) -> float:
-        """Time step used to sample optimal strand metric when computing optimal strands."""
+        """Time step used to sample strand metric when computing strand analytics."""
         return self._intf.get_property(ChainOptimalStrandOpts._metadata, ChainOptimalStrandOpts._get_sampling_time_step_metadata)
 
     _set_sampling_time_step_metadata = { "offset" : _set_sampling_time_step_method_offset,
@@ -74678,7 +76299,7 @@ class ChainOptimalStrandOpts(SupportsDeleteCallback):
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def include_access_edge_times_in_samples(self) -> bool:
-        """Include all chain connection access pairs when computing sample times for optimal strands."""
+        """Include all chain connection access pairs when computing sample times for strand analytics."""
         return self._intf.get_property(ChainOptimalStrandOpts._metadata, ChainOptimalStrandOpts._get_include_access_edge_times_in_samples_metadata)
 
     _set_include_access_edge_times_in_samples_metadata = { "offset" : _set_include_access_edge_times_in_samples_method_offset,
@@ -74708,7 +76329,7 @@ class ChainOptimalStrandOpts(SupportsDeleteCallback):
             "marshallers" : (agmarshall.EnumArg(ChainOptimalStrandMetricType),) }
     @property
     def type(self) -> "ChainOptimalStrandMetricType":
-        """Optimal path type."""
+        """Strand analysis type."""
         return self._intf.get_property(ChainOptimalStrandOpts._metadata, ChainOptimalStrandOpts._get_type_metadata)
 
     _set_type_metadata = { "offset" : _set_type_method_offset,
@@ -74723,7 +76344,7 @@ class ChainOptimalStrandOpts(SupportsDeleteCallback):
             "marshallers" : (agmarshall.EnumArg(ChainOptimalStrandLinkCompareType),) }
     @property
     def link_comparison_type(self) -> "ChainOptimalStrandLinkCompareType":
-        """Optimal path comparison type (min, max or sum) used when comparing connections of a strand when computing an overall value of the metric for a strand."""
+        """Strand analysis comparison type (min, max or sum) used when comparing connections of a strand when computing an overall value of the metric for a strand."""
         return self._intf.get_property(ChainOptimalStrandOpts._metadata, ChainOptimalStrandOpts._get_link_comparison_type_metadata)
 
     _set_link_comparison_type_metadata = { "offset" : _set_link_comparison_type_method_offset,
@@ -74738,7 +76359,7 @@ class ChainOptimalStrandOpts(SupportsDeleteCallback):
             "marshallers" : (agmarshall.EnumArg(ChainOptimalStrandCompareStrandsType),) }
     @property
     def strand_comparison_type(self) -> "ChainOptimalStrandCompareStrandsType":
-        """Optimal path comparison type (min or max) used when comparing strands."""
+        """Strand analysis comparison type (min or max) used when comparing strands."""
         return self._intf.get_property(ChainOptimalStrandOpts._metadata, ChainOptimalStrandOpts._get_strand_comparison_type_metadata)
 
     _set_strand_comparison_type_metadata = { "offset" : _set_strand_comparison_type_method_offset,
@@ -74753,7 +76374,7 @@ class ChainOptimalStrandOpts(SupportsDeleteCallback):
             "marshallers" : (agmarshall.EnumArg(ChainOptimalStrandCalculationScalarMetricType),) }
     @property
     def calc_scalar_type(self) -> "ChainOptimalStrandCalculationScalarMetricType":
-        """Optimal path AWB calculation scalar type used when the optiml path type is set to use a calculation scalar."""
+        """Strand analysis AWB calculation scalar type used when the strand analysis type is set to use a calculation scalar."""
         return self._intf.get_property(ChainOptimalStrandOpts._metadata, ChainOptimalStrandOpts._get_calc_scalar_type_metadata)
 
     _set_calc_scalar_type_metadata = { "offset" : _set_calc_scalar_type_method_offset,
@@ -74768,7 +76389,7 @@ class ChainOptimalStrandOpts(SupportsDeleteCallback):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def calc_scalar_name(self) -> str:
-        """Optimal path AWB calculation scalar to evaluate to determine optimal strands."""
+        """Strand analysis AWB calculation scalar to evaluate to determine strand analytics."""
         return self._intf.get_property(ChainOptimalStrandOpts._metadata, ChainOptimalStrandOpts._get_calc_scalar_name_metadata)
 
     _set_calc_scalar_name_metadata = { "offset" : _set_calc_scalar_name_method_offset,
@@ -74783,7 +76404,7 @@ class ChainOptimalStrandOpts(SupportsDeleteCallback):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def calc_scalar_file_name(self) -> str:
-        """Optimal path AWB calculation scalar file (.awb) to evaluate to determine optimal strands."""
+        """Strand analysis AWB calculation scalar file (.awb) to evaluate to determine strand analytics."""
         return self._intf.get_property(ChainOptimalStrandOpts._metadata, ChainOptimalStrandOpts._get_calc_scalar_file_name_metadata)
 
     _set_calc_scalar_file_name_metadata = { "offset" : _set_calc_scalar_file_name_method_offset,
@@ -74907,7 +76528,7 @@ agcls.AgTypeNameMap["ChainGraphics2DStatic"] = ChainGraphics2DStatic
 class ChainGraphics2DAnimation(SupportsDeleteCallback):
     """2D Animation graphics for a chain."""
 
-    _num_methods = 24
+    _num_methods = 52
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_show_highlight_method_offset = 1
     _set_show_highlight_method_offset = 2
@@ -74933,6 +76554,34 @@ class ChainGraphics2DAnimation(SupportsDeleteCallback):
     _set_optimal_path_color_ramp_start_color_method_offset = 22
     _get_optimal_path_color_ramp_end_color_method_offset = 23
     _set_optimal_path_color_ramp_end_color_method_offset = 24
+    _get_show_network_throughput_graphics_2d_method_offset = 25
+    _set_show_network_throughput_graphics_2d_method_offset = 26
+    _get_show_network_throughput_node_graphics_2d_method_offset = 27
+    _set_show_network_throughput_node_graphics_2d_method_offset = 28
+    _get_show_network_throughput_node_labels_graphics_2d_method_offset = 29
+    _set_show_network_throughput_node_labels_graphics_2d_method_offset = 30
+    _get_network_throughput_node_point_size_method_offset = 31
+    _set_network_throughput_node_point_size_method_offset = 32
+    _get_network_throughput_end_nodes_color_method_offset = 33
+    _set_network_throughput_end_nodes_color_method_offset = 34
+    _get_network_throughput_node_data_mode_method_offset = 35
+    _set_network_throughput_node_data_mode_method_offset = 36
+    _get_show_network_throughput_link_graphics_2d_method_offset = 37
+    _set_show_network_throughput_link_graphics_2d_method_offset = 38
+    _get_show_network_throughput_link_labels_graphics_2d_method_offset = 39
+    _set_show_network_throughput_link_labels_graphics_2d_method_offset = 40
+    _get_network_throughput_link_line_width_method_offset = 41
+    _set_network_throughput_link_line_width_method_offset = 42
+    _get_network_throughput_link_data_mode_method_offset = 43
+    _set_network_throughput_link_data_mode_method_offset = 44
+    _get_network_throughput_link_combine_strands_method_offset = 45
+    _set_network_throughput_link_combine_strands_method_offset = 46
+    _get_network_throughput_link_labels_include_num_strands_method_offset = 47
+    _set_network_throughput_link_labels_include_num_strands_method_offset = 48
+    _get_network_throughput_zero_pct_contour_color_method_offset = 49
+    _set_network_throughput_zero_pct_contour_color_method_offset = 50
+    _get_network_throughput_one_hundred_pct_contour_color_method_offset = 51
+    _set_network_throughput_one_hundred_pct_contour_color_method_offset = 52
     _metadata = {
         "iid_data" : (5651681978576631156, 14115961353000587436),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -75121,6 +76770,216 @@ class ChainGraphics2DAnimation(SupportsDeleteCallback):
     def optimal_path_color_ramp_end_color(self, optimal_path_color_ramp_end_color:agcolor.Color) -> None:
         return self._intf.set_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._set_optimal_path_color_ramp_end_color_metadata, optimal_path_color_ramp_end_color)
 
+    _get_show_network_throughput_graphics_2d_metadata = { "offset" : _get_show_network_throughput_graphics_2d_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def show_network_throughput_graphics_2d(self) -> bool:
+        """Show or hide all network throughput graphics if computed."""
+        return self._intf.get_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._get_show_network_throughput_graphics_2d_metadata)
+
+    _set_show_network_throughput_graphics_2d_metadata = { "offset" : _set_show_network_throughput_graphics_2d_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @show_network_throughput_graphics_2d.setter
+    def show_network_throughput_graphics_2d(self, show_network_throughput_gfx:bool) -> None:
+        return self._intf.set_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._set_show_network_throughput_graphics_2d_metadata, show_network_throughput_gfx)
+
+    _get_show_network_throughput_node_graphics_2d_metadata = { "offset" : _get_show_network_throughput_node_graphics_2d_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def show_network_throughput_node_graphics_2d(self) -> bool:
+        """Show or hide all network throughput node graphics."""
+        return self._intf.get_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._get_show_network_throughput_node_graphics_2d_metadata)
+
+    _set_show_network_throughput_node_graphics_2d_metadata = { "offset" : _set_show_network_throughput_node_graphics_2d_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @show_network_throughput_node_graphics_2d.setter
+    def show_network_throughput_node_graphics_2d(self, show_network_throughput_node_gfx:bool) -> None:
+        return self._intf.set_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._set_show_network_throughput_node_graphics_2d_metadata, show_network_throughput_node_gfx)
+
+    _get_show_network_throughput_node_labels_graphics_2d_metadata = { "offset" : _get_show_network_throughput_node_labels_graphics_2d_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def show_network_throughput_node_labels_graphics_2d(self) -> bool:
+        """Show or hide all network throughput node labels."""
+        return self._intf.get_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._get_show_network_throughput_node_labels_graphics_2d_metadata)
+
+    _set_show_network_throughput_node_labels_graphics_2d_metadata = { "offset" : _set_show_network_throughput_node_labels_graphics_2d_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @show_network_throughput_node_labels_graphics_2d.setter
+    def show_network_throughput_node_labels_graphics_2d(self, show_network_throughput_node_labels_gfx:bool) -> None:
+        return self._intf.set_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._set_show_network_throughput_node_labels_graphics_2d_metadata, show_network_throughput_node_labels_gfx)
+
+    _get_network_throughput_node_point_size_metadata = { "offset" : _get_network_throughput_node_point_size_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def network_throughput_node_point_size(self) -> float:
+        """Pixel size of nodes when network throughput graphics are displayed."""
+        return self._intf.get_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._get_network_throughput_node_point_size_metadata)
+
+    _set_network_throughput_node_point_size_metadata = { "offset" : _set_network_throughput_node_point_size_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @network_throughput_node_point_size.setter
+    def network_throughput_node_point_size(self, value:float) -> None:
+        return self._intf.set_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._set_network_throughput_node_point_size_metadata, value)
+
+    _get_network_throughput_end_nodes_color_metadata = { "offset" : _get_network_throughput_end_nodes_color_method_offset,
+            "arg_types" : (POINTER(agcom.OLE_COLOR),),
+            "marshallers" : (agmarshall.OLEColorArg,) }
+    @property
+    def network_throughput_end_nodes_color(self) -> agcolor.Color:
+        """The color for the end nodes for network throughput graphics."""
+        return self._intf.get_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._get_network_throughput_end_nodes_color_metadata)
+
+    _set_network_throughput_end_nodes_color_metadata = { "offset" : _set_network_throughput_end_nodes_color_method_offset,
+            "arg_types" : (agcom.OLE_COLOR,),
+            "marshallers" : (agmarshall.OLEColorArg,) }
+    @network_throughput_end_nodes_color.setter
+    def network_throughput_end_nodes_color(self, network_throughput_end_nodes_color:agcolor.Color) -> None:
+        return self._intf.set_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._set_network_throughput_end_nodes_color_metadata, network_throughput_end_nodes_color)
+
+    _get_network_throughput_node_data_mode_metadata = { "offset" : _get_network_throughput_node_data_mode_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(ChainGraphics2DNetworkDataMode),) }
+    @property
+    def network_throughput_node_data_mode(self) -> "ChainGraphics2DNetworkDataMode":
+        """The data mode for displaying nodes labels and points for network throughput graphics."""
+        return self._intf.get_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._get_network_throughput_node_data_mode_metadata)
+
+    _set_network_throughput_node_data_mode_metadata = { "offset" : _set_network_throughput_node_data_mode_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(ChainGraphics2DNetworkDataMode),) }
+    @network_throughput_node_data_mode.setter
+    def network_throughput_node_data_mode(self, network_throughput_node_data_mode:"ChainGraphics2DNetworkDataMode") -> None:
+        return self._intf.set_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._set_network_throughput_node_data_mode_metadata, network_throughput_node_data_mode)
+
+    _get_show_network_throughput_link_graphics_2d_metadata = { "offset" : _get_show_network_throughput_link_graphics_2d_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def show_network_throughput_link_graphics_2d(self) -> bool:
+        """Show or hide all network throughput link graphics."""
+        return self._intf.get_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._get_show_network_throughput_link_graphics_2d_metadata)
+
+    _set_show_network_throughput_link_graphics_2d_metadata = { "offset" : _set_show_network_throughput_link_graphics_2d_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @show_network_throughput_link_graphics_2d.setter
+    def show_network_throughput_link_graphics_2d(self, show_network_throughput_link_gfx:bool) -> None:
+        return self._intf.set_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._set_show_network_throughput_link_graphics_2d_metadata, show_network_throughput_link_gfx)
+
+    _get_show_network_throughput_link_labels_graphics_2d_metadata = { "offset" : _get_show_network_throughput_link_labels_graphics_2d_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def show_network_throughput_link_labels_graphics_2d(self) -> bool:
+        """Show or hide all network throughput link labels."""
+        return self._intf.get_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._get_show_network_throughput_link_labels_graphics_2d_metadata)
+
+    _set_show_network_throughput_link_labels_graphics_2d_metadata = { "offset" : _set_show_network_throughput_link_labels_graphics_2d_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @show_network_throughput_link_labels_graphics_2d.setter
+    def show_network_throughput_link_labels_graphics_2d(self, show_network_throughput_link_labels_gfx:bool) -> None:
+        return self._intf.set_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._set_show_network_throughput_link_labels_graphics_2d_metadata, show_network_throughput_link_labels_gfx)
+
+    _get_network_throughput_link_line_width_metadata = { "offset" : _get_network_throughput_link_line_width_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(LineWidth),) }
+    @property
+    def network_throughput_link_line_width(self) -> "LineWidth":
+        """Line width of links when network throughput graphics are displayed."""
+        return self._intf.get_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._get_network_throughput_link_line_width_metadata)
+
+    _set_network_throughput_link_line_width_metadata = { "offset" : _set_network_throughput_link_line_width_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(LineWidth),) }
+    @network_throughput_link_line_width.setter
+    def network_throughput_link_line_width(self, network_throughput_link_line_width:"LineWidth") -> None:
+        return self._intf.set_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._set_network_throughput_link_line_width_metadata, network_throughput_link_line_width)
+
+    _get_network_throughput_link_data_mode_metadata = { "offset" : _get_network_throughput_link_data_mode_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(ChainGraphics2DNetworkDataMode),) }
+    @property
+    def network_throughput_link_data_mode(self) -> "ChainGraphics2DNetworkDataMode":
+        """The data mode for displaying link labels and lines for network throughput graphics."""
+        return self._intf.get_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._get_network_throughput_link_data_mode_metadata)
+
+    _set_network_throughput_link_data_mode_metadata = { "offset" : _set_network_throughput_link_data_mode_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(ChainGraphics2DNetworkDataMode),) }
+    @network_throughput_link_data_mode.setter
+    def network_throughput_link_data_mode(self, network_throughput_link_data_mode:"ChainGraphics2DNetworkDataMode") -> None:
+        return self._intf.set_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._set_network_throughput_link_data_mode_metadata, network_throughput_link_data_mode)
+
+    _get_network_throughput_link_combine_strands_metadata = { "offset" : _get_network_throughput_link_combine_strands_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def network_throughput_link_combine_strands(self) -> bool:
+        """Combine strand link data when multiple strands overlap for Network Throughput graphics."""
+        return self._intf.get_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._get_network_throughput_link_combine_strands_metadata)
+
+    _set_network_throughput_link_combine_strands_metadata = { "offset" : _set_network_throughput_link_combine_strands_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @network_throughput_link_combine_strands.setter
+    def network_throughput_link_combine_strands(self, network_throughput_link_combine_strands:bool) -> None:
+        return self._intf.set_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._set_network_throughput_link_combine_strands_metadata, network_throughput_link_combine_strands)
+
+    _get_network_throughput_link_labels_include_num_strands_metadata = { "offset" : _get_network_throughput_link_labels_include_num_strands_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def network_throughput_link_labels_include_num_strands(self) -> bool:
+        """Include the number of strands in the link labels for Network Throughput graphics."""
+        return self._intf.get_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._get_network_throughput_link_labels_include_num_strands_metadata)
+
+    _set_network_throughput_link_labels_include_num_strands_metadata = { "offset" : _set_network_throughput_link_labels_include_num_strands_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @network_throughput_link_labels_include_num_strands.setter
+    def network_throughput_link_labels_include_num_strands(self, network_throughput_link_labels_include_num_strands:bool) -> None:
+        return self._intf.set_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._set_network_throughput_link_labels_include_num_strands_metadata, network_throughput_link_labels_include_num_strands)
+
+    _get_network_throughput_zero_pct_contour_color_metadata = { "offset" : _get_network_throughput_zero_pct_contour_color_method_offset,
+            "arg_types" : (POINTER(agcom.OLE_COLOR),),
+            "marshallers" : (agmarshall.OLEColorArg,) }
+    @property
+    def network_throughput_zero_pct_contour_color(self) -> agcolor.Color:
+        """The color for the 0 percentage network throughput contours graphics."""
+        return self._intf.get_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._get_network_throughput_zero_pct_contour_color_metadata)
+
+    _set_network_throughput_zero_pct_contour_color_metadata = { "offset" : _set_network_throughput_zero_pct_contour_color_method_offset,
+            "arg_types" : (agcom.OLE_COLOR,),
+            "marshallers" : (agmarshall.OLEColorArg,) }
+    @network_throughput_zero_pct_contour_color.setter
+    def network_throughput_zero_pct_contour_color(self, network_throughput_zero_pct_contour_color:agcolor.Color) -> None:
+        return self._intf.set_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._set_network_throughput_zero_pct_contour_color_metadata, network_throughput_zero_pct_contour_color)
+
+    _get_network_throughput_one_hundred_pct_contour_color_metadata = { "offset" : _get_network_throughput_one_hundred_pct_contour_color_method_offset,
+            "arg_types" : (POINTER(agcom.OLE_COLOR),),
+            "marshallers" : (agmarshall.OLEColorArg,) }
+    @property
+    def network_throughput_one_hundred_pct_contour_color(self) -> agcolor.Color:
+        """The color for the 100 percentage network throughput contours graphics."""
+        return self._intf.get_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._get_network_throughput_one_hundred_pct_contour_color_metadata)
+
+    _set_network_throughput_one_hundred_pct_contour_color_metadata = { "offset" : _set_network_throughput_one_hundred_pct_contour_color_method_offset,
+            "arg_types" : (agcom.OLE_COLOR,),
+            "marshallers" : (agmarshall.OLEColorArg,) }
+    @network_throughput_one_hundred_pct_contour_color.setter
+    def network_throughput_one_hundred_pct_contour_color(self, network_throughput_one_hundred_pct_contour_color:agcolor.Color) -> None:
+        return self._intf.set_property(ChainGraphics2DAnimation._metadata, ChainGraphics2DAnimation._set_network_throughput_one_hundred_pct_contour_color_metadata, network_throughput_one_hundred_pct_contour_color)
+
     _property_names[show_highlight] = "show_highlight"
     _property_names[show_line] = "show_line"
     _property_names[show_link_numbers_in_strands] = "show_link_numbers_in_strands"
@@ -75133,6 +76992,20 @@ class ChainGraphics2DAnimation(SupportsDeleteCallback):
     _property_names[number_of_optimal_strands_to_display] = "number_of_optimal_strands_to_display"
     _property_names[optimal_path_color_ramp_start_color] = "optimal_path_color_ramp_start_color"
     _property_names[optimal_path_color_ramp_end_color] = "optimal_path_color_ramp_end_color"
+    _property_names[show_network_throughput_graphics_2d] = "show_network_throughput_graphics_2d"
+    _property_names[show_network_throughput_node_graphics_2d] = "show_network_throughput_node_graphics_2d"
+    _property_names[show_network_throughput_node_labels_graphics_2d] = "show_network_throughput_node_labels_graphics_2d"
+    _property_names[network_throughput_node_point_size] = "network_throughput_node_point_size"
+    _property_names[network_throughput_end_nodes_color] = "network_throughput_end_nodes_color"
+    _property_names[network_throughput_node_data_mode] = "network_throughput_node_data_mode"
+    _property_names[show_network_throughput_link_graphics_2d] = "show_network_throughput_link_graphics_2d"
+    _property_names[show_network_throughput_link_labels_graphics_2d] = "show_network_throughput_link_labels_graphics_2d"
+    _property_names[network_throughput_link_line_width] = "network_throughput_link_line_width"
+    _property_names[network_throughput_link_data_mode] = "network_throughput_link_data_mode"
+    _property_names[network_throughput_link_combine_strands] = "network_throughput_link_combine_strands"
+    _property_names[network_throughput_link_labels_include_num_strands] = "network_throughput_link_labels_include_num_strands"
+    _property_names[network_throughput_zero_pct_contour_color] = "network_throughput_zero_pct_contour_color"
+    _property_names[network_throughput_one_hundred_pct_contour_color] = "network_throughput_one_hundred_pct_contour_color"
 
     def __init__(self, source_object=None):
         """Construct an object of type ChainGraphics2DAnimation."""
@@ -90146,7 +92019,7 @@ agcls.AgTypeNameMap["PropagatorSP3FileCollection"] = PropagatorSP3FileCollection
 class PropagatorSP3(IPropagator, SupportsDeleteCallback):
     """The SP3 propagator reads .sp3 files of type 'a' and 'c' and allows you to use multiple files in sequence. These files are used to provide precise GPS orbits from the National Geodetic Survey (NGS)."""
 
-    _num_methods = 13
+    _num_methods = 18
     _vtable_offset = IPropagator._vtable_offset + IPropagator._num_methods
     _propagate_method_offset = 1
     _get_interpolation_order_method_offset = 2
@@ -90161,6 +92034,11 @@ class PropagatorSP3(IPropagator, SupportsDeleteCallback):
     _set_satellite_identifier_method_offset = 11
     _get_files_method_offset = 12
     _get_available_identifiers_method_offset = 13
+    _get_start_time_method_offset = 14
+    _get_stop_time_method_offset = 15
+    _get_override_method_offset = 16
+    _set_override_method_offset = 17
+    _get_ephemeris_start_epoch_method_offset = 18
     _metadata = {
         "iid_data" : (5239525628668019441, 18065691718528681627),
         "vtable_reference" : IPropagator._vtable_offset + IPropagator._num_methods - 1,
@@ -90269,6 +92147,45 @@ class PropagatorSP3(IPropagator, SupportsDeleteCallback):
         """An array of available satellite identifiers."""
         return self._intf.get_property(PropagatorSP3._metadata, PropagatorSP3._get_available_identifiers_metadata)
 
+    _get_start_time_metadata = { "offset" : _get_start_time_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def start_time(self) -> typing.Any:
+        """Get the start time of ephemeris interval. Uses DateFormat Dimension."""
+        return self._intf.get_property(PropagatorSP3._metadata, PropagatorSP3._get_start_time_metadata)
+
+    _get_stop_time_metadata = { "offset" : _get_stop_time_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def stop_time(self) -> typing.Any:
+        """Get the stop time of ephemeris interval. Uses DateFormat Dimension."""
+        return self._intf.get_property(PropagatorSP3._metadata, PropagatorSP3._get_stop_time_metadata)
+
+    _get_override_metadata = { "offset" : _get_override_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def override(self) -> bool:
+        """Opt whether to override times contained in the SP3 file."""
+        return self._intf.get_property(PropagatorSP3._metadata, PropagatorSP3._get_override_metadata)
+
+    _set_override_metadata = { "offset" : _set_override_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @override.setter
+    def override(self, value:bool) -> None:
+        return self._intf.set_property(PropagatorSP3._metadata, PropagatorSP3._set_override_metadata, value)
+
+    _get_ephemeris_start_epoch_metadata = { "offset" : _get_ephemeris_start_epoch_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def ephemeris_start_epoch(self) -> "ITimeToolInstantSmartEpoch":
+        """If overriding the times contained in the SP3 file, specify the time of the first ephemeris point."""
+        return self._intf.get_property(PropagatorSP3._metadata, PropagatorSP3._get_ephemeris_start_epoch_metadata)
+
     _property_names[interpolation_order] = "interpolation_order"
     _property_names[interpolation_method] = "interpolation_method"
     _property_names[interpolate_across_boundaries] = "interpolate_across_boundaries"
@@ -90276,6 +92193,10 @@ class PropagatorSP3(IPropagator, SupportsDeleteCallback):
     _property_names[satellite_identifier] = "satellite_identifier"
     _property_names[files] = "files"
     _property_names[available_identifiers] = "available_identifiers"
+    _property_names[start_time] = "start_time"
+    _property_names[stop_time] = "stop_time"
+    _property_names[override] = "override"
+    _property_names[ephemeris_start_epoch] = "ephemeris_start_epoch"
 
     def __init__(self, source_object=None):
         """Construct an object of type PropagatorSP3."""
@@ -96783,7 +98704,7 @@ agcls.AgTypeNameMap["AntennaModelRemcomUanFormat"] = AntennaModelRemcomUanFormat
 class AntennaModelANSYSffdFormat(IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Provide access to the properties and methods defining an antnna pattern ANSYS ffd format model."""
 
-    _num_methods = 8
+    _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_filename_method_offset = 1
     _set_filename_method_offset = 2
@@ -96793,6 +98714,8 @@ class AntennaModelANSYSffdFormat(IAntennaModel, IComponentInfo, ICloneable, Supp
     _get_defined_power_value_method_offset = 6
     _get_user_gain_factor_method_offset = 7
     _set_user_gain_factor_method_offset = 8
+    _get_polarization_reference_axis_method_offset = 9
+    _set_polarization_reference_axis_method_offset = 10
     _metadata = {
         "iid_data" : (5483238422600985884, 5958270954640721337),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -96862,11 +98785,27 @@ class AntennaModelANSYSffdFormat(IAntennaModel, IComponentInfo, ICloneable, Supp
     def user_gain_factor(self, value:float) -> None:
         return self._intf.set_property(AntennaModelANSYSffdFormat._metadata, AntennaModelANSYSffdFormat._set_user_gain_factor_metadata, value)
 
+    _get_polarization_reference_axis_metadata = { "offset" : _get_polarization_reference_axis_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(PolarizationReferenceAxis),) }
+    @property
+    def polarization_reference_axis(self) -> "PolarizationReferenceAxis":
+        """Get or set the polarization reference axis."""
+        return self._intf.get_property(AntennaModelANSYSffdFormat._metadata, AntennaModelANSYSffdFormat._get_polarization_reference_axis_metadata)
+
+    _set_polarization_reference_axis_metadata = { "offset" : _set_polarization_reference_axis_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(PolarizationReferenceAxis),) }
+    @polarization_reference_axis.setter
+    def polarization_reference_axis(self, value:"PolarizationReferenceAxis") -> None:
+        return self._intf.set_property(AntennaModelANSYSffdFormat._metadata, AntennaModelANSYSffdFormat._set_polarization_reference_axis_metadata, value)
+
     _property_names[filename] = "filename"
     _property_names[defined_frequencies] = "defined_frequencies"
     _property_names[gain_type] = "gain_type"
     _property_names[defined_power_value] = "defined_power_value"
     _property_names[user_gain_factor] = "user_gain_factor"
+    _property_names[polarization_reference_axis] = "polarization_reference_axis"
 
     def __init__(self, source_object=None):
         """Construct an object of type AntennaModelANSYSffdFormat."""
@@ -96889,6 +98828,613 @@ class AntennaModelANSYSffdFormat(IAntennaModel, IComponentInfo, ICloneable, Supp
 
 agcls.AgClassCatalog.add_catalog_entry((5251646040684600788, 17731094088954012091), AntennaModelANSYSffdFormat)
 agcls.AgTypeNameMap["AntennaModelANSYSffdFormat"] = AntennaModelANSYSffdFormat
+
+class AntennaModelHFSSDesign(IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback):
+    """Provide access to the properties and methods defining an HFSS design antenna model."""
+
+    _num_methods = 5
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_status_method_offset = 1
+    _generate_method_offset = 2
+    _set_design_type_method_offset = 3
+    _get_design_method_offset = 4
+    _get_availability_method_offset = 5
+    _metadata = {
+        "iid_data" : (4981833557198522150, 9972210690786575253),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AntennaModelHFSSDesign)
+
+    _get_status_metadata = { "offset" : _get_status_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(AntennaHFSSDesignStatus),) }
+    @property
+    def status(self) -> "AntennaHFSSDesignStatus":
+        """Get the status of the HFSS design antenna."""
+        return self._intf.get_property(AntennaModelHFSSDesign._metadata, AntennaModelHFSSDesign._get_status_metadata)
+
+    _generate_metadata = { "offset" : _generate_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def generate(self) -> None:
+        """Generate the HFSS design antenna."""
+        return self._intf.invoke(AntennaModelHFSSDesign._metadata, AntennaModelHFSSDesign._generate_metadata, )
+
+    _set_design_type_metadata = { "offset" : _set_design_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(AntennaHFSSDesignType),) }
+    def set_design_type(self, type:"AntennaHFSSDesignType") -> None:
+        """Set the HFSS design type."""
+        return self._intf.invoke(AntennaModelHFSSDesign._metadata, AntennaModelHFSSDesign._set_design_type_metadata, type)
+
+    _get_design_metadata = { "offset" : _get_design_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def design(self) -> "IAntennaHFSSDesign":
+        """Get the HFSS design."""
+        return self._intf.get_property(AntennaModelHFSSDesign._metadata, AntennaModelHFSSDesign._get_design_metadata)
+
+    _get_availability_metadata = { "offset" : _get_availability_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def availability(self) -> str:
+        """Get the availability of the HFSS design antenna."""
+        return self._intf.get_property(AntennaModelHFSSDesign._metadata, AntennaModelHFSSDesign._get_availability_metadata)
+
+    _property_names[status] = "status"
+    _property_names[design] = "design"
+    _property_names[availability] = "availability"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type AntennaModelHFSSDesign."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, AntennaModelHFSSDesign)
+        IAntennaModel.__init__(self, source_object)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IAntennaModel._private_init(self, intf)
+        IComponentInfo._private_init(self, intf)
+        ICloneable._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, AntennaModelHFSSDesign, [AntennaModelHFSSDesign, IAntennaModel, IComponentInfo, ICloneable])
+
+agcls.AgClassCatalog.add_catalog_entry((5706694164737253177, 13061114762391961528), AntennaModelHFSSDesign)
+agcls.AgTypeNameMap["AntennaModelHFSSDesign"] = AntennaModelHFSSDesign
+
+class AntennaHFSSDesignWireDipole(IAntennaHFSSDesign, SupportsDeleteCallback):
+    """Provide access to the properties and methods defining an HFSS wire dipole design."""
+
+    _num_methods = 6
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_dipole_length_method_offset = 1
+    _set_dipole_length_method_offset = 2
+    _get_dipole_radius_method_offset = 3
+    _set_dipole_radius_method_offset = 4
+    _get_feed_gap_method_offset = 5
+    _set_feed_gap_method_offset = 6
+    _metadata = {
+        "iid_data" : (4798183480098999081, 16562676696109448330),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AntennaHFSSDesignWireDipole)
+
+    _get_dipole_length_metadata = { "offset" : _get_dipole_length_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def dipole_length(self) -> float:
+        """Get or set the dipole length."""
+        return self._intf.get_property(AntennaHFSSDesignWireDipole._metadata, AntennaHFSSDesignWireDipole._get_dipole_length_metadata)
+
+    _set_dipole_length_metadata = { "offset" : _set_dipole_length_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @dipole_length.setter
+    def dipole_length(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignWireDipole._metadata, AntennaHFSSDesignWireDipole._set_dipole_length_metadata, value)
+
+    _get_dipole_radius_metadata = { "offset" : _get_dipole_radius_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def dipole_radius(self) -> float:
+        """Get or set the dipole radius."""
+        return self._intf.get_property(AntennaHFSSDesignWireDipole._metadata, AntennaHFSSDesignWireDipole._get_dipole_radius_metadata)
+
+    _set_dipole_radius_metadata = { "offset" : _set_dipole_radius_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @dipole_radius.setter
+    def dipole_radius(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignWireDipole._metadata, AntennaHFSSDesignWireDipole._set_dipole_radius_metadata, value)
+
+    _get_feed_gap_metadata = { "offset" : _get_feed_gap_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def feed_gap(self) -> float:
+        """Get or set the feed gap."""
+        return self._intf.get_property(AntennaHFSSDesignWireDipole._metadata, AntennaHFSSDesignWireDipole._get_feed_gap_metadata)
+
+    _set_feed_gap_metadata = { "offset" : _set_feed_gap_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @feed_gap.setter
+    def feed_gap(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignWireDipole._metadata, AntennaHFSSDesignWireDipole._set_feed_gap_metadata, value)
+
+    _property_names[dipole_length] = "dipole_length"
+    _property_names[dipole_radius] = "dipole_radius"
+    _property_names[feed_gap] = "feed_gap"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type AntennaHFSSDesignWireDipole."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, AntennaHFSSDesignWireDipole)
+        IAntennaHFSSDesign.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IAntennaHFSSDesign._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, AntennaHFSSDesignWireDipole, [AntennaHFSSDesignWireDipole, IAntennaHFSSDesign])
+
+agcls.AgClassCatalog.add_catalog_entry((5752885715441634178, 16308974031013143216), AntennaHFSSDesignWireDipole)
+agcls.AgTypeNameMap["AntennaHFSSDesignWireDipole"] = AntennaHFSSDesignWireDipole
+
+class AntennaHFSSDesignSlotGap(IAntennaHFSSDesign, SupportsDeleteCallback):
+    """Provide access to the properties and methods defining an HFSS slot gap design."""
+
+    _num_methods = 12
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_slot_length_method_offset = 1
+    _set_slot_length_method_offset = 2
+    _get_slot_width_method_offset = 3
+    _set_slot_width_method_offset = 4
+    _get_feed_offset_method_offset = 5
+    _set_feed_offset_method_offset = 6
+    _get_substrate_height_method_offset = 7
+    _set_substrate_height_method_offset = 8
+    _get_substrate_dimension_x_method_offset = 9
+    _set_substrate_dimension_x_method_offset = 10
+    _get_substrate_dimension_y_method_offset = 11
+    _set_substrate_dimension_y_method_offset = 12
+    _metadata = {
+        "iid_data" : (4694651073445789480, 8887739245633747840),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AntennaHFSSDesignSlotGap)
+
+    _get_slot_length_metadata = { "offset" : _get_slot_length_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def slot_length(self) -> float:
+        """Get or set the slot length."""
+        return self._intf.get_property(AntennaHFSSDesignSlotGap._metadata, AntennaHFSSDesignSlotGap._get_slot_length_metadata)
+
+    _set_slot_length_metadata = { "offset" : _set_slot_length_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @slot_length.setter
+    def slot_length(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignSlotGap._metadata, AntennaHFSSDesignSlotGap._set_slot_length_metadata, value)
+
+    _get_slot_width_metadata = { "offset" : _get_slot_width_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def slot_width(self) -> float:
+        """Get or set the slot width."""
+        return self._intf.get_property(AntennaHFSSDesignSlotGap._metadata, AntennaHFSSDesignSlotGap._get_slot_width_metadata)
+
+    _set_slot_width_metadata = { "offset" : _set_slot_width_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @slot_width.setter
+    def slot_width(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignSlotGap._metadata, AntennaHFSSDesignSlotGap._set_slot_width_metadata, value)
+
+    _get_feed_offset_metadata = { "offset" : _get_feed_offset_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def feed_offset(self) -> float:
+        """Get or set the feed offset."""
+        return self._intf.get_property(AntennaHFSSDesignSlotGap._metadata, AntennaHFSSDesignSlotGap._get_feed_offset_metadata)
+
+    _set_feed_offset_metadata = { "offset" : _set_feed_offset_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @feed_offset.setter
+    def feed_offset(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignSlotGap._metadata, AntennaHFSSDesignSlotGap._set_feed_offset_metadata, value)
+
+    _get_substrate_height_metadata = { "offset" : _get_substrate_height_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def substrate_height(self) -> float:
+        """Get or set the substrate height."""
+        return self._intf.get_property(AntennaHFSSDesignSlotGap._metadata, AntennaHFSSDesignSlotGap._get_substrate_height_metadata)
+
+    _set_substrate_height_metadata = { "offset" : _set_substrate_height_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @substrate_height.setter
+    def substrate_height(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignSlotGap._metadata, AntennaHFSSDesignSlotGap._set_substrate_height_metadata, value)
+
+    _get_substrate_dimension_x_metadata = { "offset" : _get_substrate_dimension_x_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def substrate_dimension_x(self) -> float:
+        """Get or set the substrate dimension x."""
+        return self._intf.get_property(AntennaHFSSDesignSlotGap._metadata, AntennaHFSSDesignSlotGap._get_substrate_dimension_x_metadata)
+
+    _set_substrate_dimension_x_metadata = { "offset" : _set_substrate_dimension_x_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @substrate_dimension_x.setter
+    def substrate_dimension_x(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignSlotGap._metadata, AntennaHFSSDesignSlotGap._set_substrate_dimension_x_metadata, value)
+
+    _get_substrate_dimension_y_metadata = { "offset" : _get_substrate_dimension_y_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def substrate_dimension_y(self) -> float:
+        """Get or set the substrate dimension y."""
+        return self._intf.get_property(AntennaHFSSDesignSlotGap._metadata, AntennaHFSSDesignSlotGap._get_substrate_dimension_y_metadata)
+
+    _set_substrate_dimension_y_metadata = { "offset" : _set_substrate_dimension_y_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @substrate_dimension_y.setter
+    def substrate_dimension_y(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignSlotGap._metadata, AntennaHFSSDesignSlotGap._set_substrate_dimension_y_metadata, value)
+
+    _property_names[slot_length] = "slot_length"
+    _property_names[slot_width] = "slot_width"
+    _property_names[feed_offset] = "feed_offset"
+    _property_names[substrate_height] = "substrate_height"
+    _property_names[substrate_dimension_x] = "substrate_dimension_x"
+    _property_names[substrate_dimension_y] = "substrate_dimension_y"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type AntennaHFSSDesignSlotGap."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, AntennaHFSSDesignSlotGap)
+        IAntennaHFSSDesign.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IAntennaHFSSDesign._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, AntennaHFSSDesignSlotGap, [AntennaHFSSDesignSlotGap, IAntennaHFSSDesign])
+
+agcls.AgClassCatalog.add_catalog_entry((4614601757672773397, 4269781851239234203), AntennaHFSSDesignSlotGap)
+agcls.AgTypeNameMap["AntennaHFSSDesignSlotGap"] = AntennaHFSSDesignSlotGap
+
+class AntennaHFSSDesignWireMonopole(IAntennaHFSSDesign, SupportsDeleteCallback):
+    """Provide access to the properties and methods defining an HFSS wire monopole design."""
+
+    _num_methods = 8
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_monopole_length_method_offset = 1
+    _set_monopole_length_method_offset = 2
+    _get_monopole_radius_method_offset = 3
+    _set_monopole_radius_method_offset = 4
+    _get_feed_gap_method_offset = 5
+    _set_feed_gap_method_offset = 6
+    _get_ground_plane_width_method_offset = 7
+    _set_ground_plane_width_method_offset = 8
+    _metadata = {
+        "iid_data" : (4913831001155896195, 18365766951052132278),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AntennaHFSSDesignWireMonopole)
+
+    _get_monopole_length_metadata = { "offset" : _get_monopole_length_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def monopole_length(self) -> float:
+        """Get or set the monopole length."""
+        return self._intf.get_property(AntennaHFSSDesignWireMonopole._metadata, AntennaHFSSDesignWireMonopole._get_monopole_length_metadata)
+
+    _set_monopole_length_metadata = { "offset" : _set_monopole_length_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @monopole_length.setter
+    def monopole_length(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignWireMonopole._metadata, AntennaHFSSDesignWireMonopole._set_monopole_length_metadata, value)
+
+    _get_monopole_radius_metadata = { "offset" : _get_monopole_radius_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def monopole_radius(self) -> float:
+        """Get or set the monopole radius."""
+        return self._intf.get_property(AntennaHFSSDesignWireMonopole._metadata, AntennaHFSSDesignWireMonopole._get_monopole_radius_metadata)
+
+    _set_monopole_radius_metadata = { "offset" : _set_monopole_radius_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @monopole_radius.setter
+    def monopole_radius(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignWireMonopole._metadata, AntennaHFSSDesignWireMonopole._set_monopole_radius_metadata, value)
+
+    _get_feed_gap_metadata = { "offset" : _get_feed_gap_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def feed_gap(self) -> float:
+        """Get or set the feed gap."""
+        return self._intf.get_property(AntennaHFSSDesignWireMonopole._metadata, AntennaHFSSDesignWireMonopole._get_feed_gap_metadata)
+
+    _set_feed_gap_metadata = { "offset" : _set_feed_gap_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @feed_gap.setter
+    def feed_gap(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignWireMonopole._metadata, AntennaHFSSDesignWireMonopole._set_feed_gap_metadata, value)
+
+    _get_ground_plane_width_metadata = { "offset" : _get_ground_plane_width_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def ground_plane_width(self) -> float:
+        """Get or set the ground plane width."""
+        return self._intf.get_property(AntennaHFSSDesignWireMonopole._metadata, AntennaHFSSDesignWireMonopole._get_ground_plane_width_metadata)
+
+    _set_ground_plane_width_metadata = { "offset" : _set_ground_plane_width_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @ground_plane_width.setter
+    def ground_plane_width(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignWireMonopole._metadata, AntennaHFSSDesignWireMonopole._set_ground_plane_width_metadata, value)
+
+    _property_names[monopole_length] = "monopole_length"
+    _property_names[monopole_radius] = "monopole_radius"
+    _property_names[feed_gap] = "feed_gap"
+    _property_names[ground_plane_width] = "ground_plane_width"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type AntennaHFSSDesignWireMonopole."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, AntennaHFSSDesignWireMonopole)
+        IAntennaHFSSDesign.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IAntennaHFSSDesign._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, AntennaHFSSDesignWireMonopole, [AntennaHFSSDesignWireMonopole, IAntennaHFSSDesign])
+
+agcls.AgClassCatalog.add_catalog_entry((5584801762614289154, 8342300485780240014), AntennaHFSSDesignWireMonopole)
+agcls.AgTypeNameMap["AntennaHFSSDesignWireMonopole"] = AntennaHFSSDesignWireMonopole
+
+class AntennaHFSSDesignHelixQuadrifilarShort(IAntennaHFSSDesign, SupportsDeleteCallback):
+    """Provide access to the properties and methods defining an HFSS helix quadrifilar short design."""
+
+    _num_methods = 16
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_helix_diameter_method_offset = 1
+    _set_helix_diameter_method_offset = 2
+    _get_helix_spacing_method_offset = 3
+    _set_helix_spacing_method_offset = 4
+    _get_wire_diameter_method_offset = 5
+    _set_wire_diameter_method_offset = 6
+    _get_number_of_turns_method_offset = 7
+    _set_number_of_turns_method_offset = 8
+    _get_feed_port_height_method_offset = 9
+    _set_feed_port_height_method_offset = 10
+    _get_ground_plane_x_method_offset = 11
+    _set_ground_plane_x_method_offset = 12
+    _get_ground_plane_y_method_offset = 13
+    _set_ground_plane_y_method_offset = 14
+    _get_turn_direction_method_offset = 15
+    _set_turn_direction_method_offset = 16
+    _metadata = {
+        "iid_data" : (5526913659980366855, 13107315149341701015),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AntennaHFSSDesignHelixQuadrifilarShort)
+
+    _get_helix_diameter_metadata = { "offset" : _get_helix_diameter_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def helix_diameter(self) -> float:
+        """Get or set the helix diameter."""
+        return self._intf.get_property(AntennaHFSSDesignHelixQuadrifilarShort._metadata, AntennaHFSSDesignHelixQuadrifilarShort._get_helix_diameter_metadata)
+
+    _set_helix_diameter_metadata = { "offset" : _set_helix_diameter_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @helix_diameter.setter
+    def helix_diameter(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignHelixQuadrifilarShort._metadata, AntennaHFSSDesignHelixQuadrifilarShort._set_helix_diameter_metadata, value)
+
+    _get_helix_spacing_metadata = { "offset" : _get_helix_spacing_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def helix_spacing(self) -> float:
+        """Get or set the helix spacing."""
+        return self._intf.get_property(AntennaHFSSDesignHelixQuadrifilarShort._metadata, AntennaHFSSDesignHelixQuadrifilarShort._get_helix_spacing_metadata)
+
+    _set_helix_spacing_metadata = { "offset" : _set_helix_spacing_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @helix_spacing.setter
+    def helix_spacing(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignHelixQuadrifilarShort._metadata, AntennaHFSSDesignHelixQuadrifilarShort._set_helix_spacing_metadata, value)
+
+    _get_wire_diameter_metadata = { "offset" : _get_wire_diameter_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def wire_diameter(self) -> float:
+        """Get or set the wire diameter."""
+        return self._intf.get_property(AntennaHFSSDesignHelixQuadrifilarShort._metadata, AntennaHFSSDesignHelixQuadrifilarShort._get_wire_diameter_metadata)
+
+    _set_wire_diameter_metadata = { "offset" : _set_wire_diameter_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @wire_diameter.setter
+    def wire_diameter(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignHelixQuadrifilarShort._metadata, AntennaHFSSDesignHelixQuadrifilarShort._set_wire_diameter_metadata, value)
+
+    _get_number_of_turns_metadata = { "offset" : _get_number_of_turns_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def number_of_turns(self) -> float:
+        """Get or set the number of turns."""
+        return self._intf.get_property(AntennaHFSSDesignHelixQuadrifilarShort._metadata, AntennaHFSSDesignHelixQuadrifilarShort._get_number_of_turns_metadata)
+
+    _set_number_of_turns_metadata = { "offset" : _set_number_of_turns_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @number_of_turns.setter
+    def number_of_turns(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignHelixQuadrifilarShort._metadata, AntennaHFSSDesignHelixQuadrifilarShort._set_number_of_turns_metadata, value)
+
+    _get_feed_port_height_metadata = { "offset" : _get_feed_port_height_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def feed_port_height(self) -> float:
+        """Get or set the feed port height."""
+        return self._intf.get_property(AntennaHFSSDesignHelixQuadrifilarShort._metadata, AntennaHFSSDesignHelixQuadrifilarShort._get_feed_port_height_metadata)
+
+    _set_feed_port_height_metadata = { "offset" : _set_feed_port_height_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @feed_port_height.setter
+    def feed_port_height(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignHelixQuadrifilarShort._metadata, AntennaHFSSDesignHelixQuadrifilarShort._set_feed_port_height_metadata, value)
+
+    _get_ground_plane_x_metadata = { "offset" : _get_ground_plane_x_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def ground_plane_x(self) -> float:
+        """Get or set the ground plane x."""
+        return self._intf.get_property(AntennaHFSSDesignHelixQuadrifilarShort._metadata, AntennaHFSSDesignHelixQuadrifilarShort._get_ground_plane_x_metadata)
+
+    _set_ground_plane_x_metadata = { "offset" : _set_ground_plane_x_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @ground_plane_x.setter
+    def ground_plane_x(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignHelixQuadrifilarShort._metadata, AntennaHFSSDesignHelixQuadrifilarShort._set_ground_plane_x_metadata, value)
+
+    _get_ground_plane_y_metadata = { "offset" : _get_ground_plane_y_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def ground_plane_y(self) -> float:
+        """Get or set the ground plane y."""
+        return self._intf.get_property(AntennaHFSSDesignHelixQuadrifilarShort._metadata, AntennaHFSSDesignHelixQuadrifilarShort._get_ground_plane_y_metadata)
+
+    _set_ground_plane_y_metadata = { "offset" : _set_ground_plane_y_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @ground_plane_y.setter
+    def ground_plane_y(self, value:float) -> None:
+        return self._intf.set_property(AntennaHFSSDesignHelixQuadrifilarShort._metadata, AntennaHFSSDesignHelixQuadrifilarShort._set_ground_plane_y_metadata, value)
+
+    _get_turn_direction_metadata = { "offset" : _get_turn_direction_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(AntennaHFSSDesignHelixTurnDirection),) }
+    @property
+    def turn_direction(self) -> "AntennaHFSSDesignHelixTurnDirection":
+        """Get or set the turn direction."""
+        return self._intf.get_property(AntennaHFSSDesignHelixQuadrifilarShort._metadata, AntennaHFSSDesignHelixQuadrifilarShort._get_turn_direction_metadata)
+
+    _set_turn_direction_metadata = { "offset" : _set_turn_direction_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(AntennaHFSSDesignHelixTurnDirection),) }
+    @turn_direction.setter
+    def turn_direction(self, value:"AntennaHFSSDesignHelixTurnDirection") -> None:
+        return self._intf.set_property(AntennaHFSSDesignHelixQuadrifilarShort._metadata, AntennaHFSSDesignHelixQuadrifilarShort._set_turn_direction_metadata, value)
+
+    _property_names[helix_diameter] = "helix_diameter"
+    _property_names[helix_spacing] = "helix_spacing"
+    _property_names[wire_diameter] = "wire_diameter"
+    _property_names[number_of_turns] = "number_of_turns"
+    _property_names[feed_port_height] = "feed_port_height"
+    _property_names[ground_plane_x] = "ground_plane_x"
+    _property_names[ground_plane_y] = "ground_plane_y"
+    _property_names[turn_direction] = "turn_direction"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type AntennaHFSSDesignHelixQuadrifilarShort."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, AntennaHFSSDesignHelixQuadrifilarShort)
+        IAntennaHFSSDesign.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IAntennaHFSSDesign._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, AntennaHFSSDesignHelixQuadrifilarShort, [AntennaHFSSDesignHelixQuadrifilarShort, IAntennaHFSSDesign])
+
+agcls.AgClassCatalog.add_catalog_entry((5661036257438630853, 14693496326879929272), AntennaHFSSDesignHelixQuadrifilarShort)
+agcls.AgTypeNameMap["AntennaHFSSDesignHelixQuadrifilarShort"] = AntennaHFSSDesignHelixQuadrifilarShort
+
+class AntennaHFSSDesign(IAntennaHFSSDesign, SupportsDeleteCallback):
+    """Class defining an HFSS design."""
+    def __init__(self, source_object=None):
+        """Construct an object of type AntennaHFSSDesign."""
+        SupportsDeleteCallback.__init__(self)
+        IAntennaHFSSDesign.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IAntennaHFSSDesign._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, AntennaHFSSDesign, [IAntennaHFSSDesign])
+
+agcls.AgClassCatalog.add_catalog_entry((5681127913254486420, 18420853056599019662), AntennaHFSSDesign)
+agcls.AgTypeNameMap["AntennaHFSSDesign"] = AntennaHFSSDesign
 
 class AntennaModelTicraGRASPFormat(IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Provide access to the properties and methods defining an antnna pattern Ticra GRASP format model."""
@@ -119830,7 +122376,7 @@ agcls.AgTypeNameMap["AtmosphericAbsorptionModelITURP676Version9"] = AtmosphericA
 class AtmosphericAbsorptionModelITURP676Version13(IAtmosphericAbsorptionModel, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Provide access to the properties and methods of the ITU-R P676-13 atmospheric absorption model."""
 
-    _num_methods = 6
+    _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_fast_approximation_method_method_offset = 1
     _set_fast_approximation_method_method_offset = 2
@@ -119838,6 +122384,8 @@ class AtmosphericAbsorptionModelITURP676Version13(IAtmosphericAbsorptionModel, I
     _set_use_water_vapor_from_section2_2_method_offset = 4
     _get_atmosphere_data_type_method_offset = 5
     _set_atmosphere_data_type_method_offset = 6
+    _get_user_profile_filename_method_offset = 7
+    _set_user_profile_filename_method_offset = 8
     _metadata = {
         "iid_data" : (4862275768820489375, 18372992077602585767),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -119891,9 +122439,25 @@ class AtmosphericAbsorptionModelITURP676Version13(IAtmosphericAbsorptionModel, I
     def atmosphere_data_type(self, value:"ITURP676AtmosphereDataType") -> None:
         return self._intf.set_property(AtmosphericAbsorptionModelITURP676Version13._metadata, AtmosphericAbsorptionModelITURP676Version13._set_atmosphere_data_type_metadata, value)
 
+    _get_user_profile_filename_metadata = { "offset" : _get_user_profile_filename_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def user_profile_filename(self) -> str:
+        """Get or set the atmosphere profile file."""
+        return self._intf.get_property(AtmosphericAbsorptionModelITURP676Version13._metadata, AtmosphericAbsorptionModelITURP676Version13._get_user_profile_filename_metadata)
+
+    _set_user_profile_filename_metadata = { "offset" : _set_user_profile_filename_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @user_profile_filename.setter
+    def user_profile_filename(self, value:str) -> None:
+        return self._intf.set_property(AtmosphericAbsorptionModelITURP676Version13._metadata, AtmosphericAbsorptionModelITURP676Version13._set_user_profile_filename_metadata, value)
+
     _property_names[fast_approximation_method] = "fast_approximation_method"
     _property_names[use_water_vapor_from_section2_2] = "use_water_vapor_from_section2_2"
     _property_names[atmosphere_data_type] = "atmosphere_data_type"
+    _property_names[user_profile_filename] = "user_profile_filename"
 
     def __init__(self, source_object=None):
         """Construct an object of type AtmosphericAbsorptionModelITURP676Version13."""
@@ -120071,56 +122635,6 @@ class AtmosphericAbsorptionModelGraphics3DACAP(IAtmosphericAbsorptionModel, ICom
 agcls.AgClassCatalog.add_catalog_entry((5172276832523233792, 4577811367809704889), AtmosphericAbsorptionModelGraphics3DACAP)
 agcls.AgTypeNameMap["AtmosphericAbsorptionModelGraphics3DACAP"] = AtmosphericAbsorptionModelGraphics3DACAP
 
-class AtmosphericAbsorptionModelTIREM320(IAtmosphericAbsorptionModelTIREM, IAtmosphericAbsorptionModel, IComponentInfo, ICloneable, SupportsDeleteCallback):
-    """Class defining an atmospheric absorption model."""
-    def __init__(self, source_object=None):
-        """Construct an object of type AtmosphericAbsorptionModelTIREM320."""
-        SupportsDeleteCallback.__init__(self)
-        IAtmosphericAbsorptionModelTIREM.__init__(self, source_object)
-        IAtmosphericAbsorptionModel.__init__(self, source_object)
-        IComponentInfo.__init__(self, source_object)
-        ICloneable.__init__(self, source_object)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-        IAtmosphericAbsorptionModelTIREM._private_init(self, intf)
-        IAtmosphericAbsorptionModel._private_init(self, intf)
-        IComponentInfo._private_init(self, intf)
-        ICloneable._private_init(self, intf)
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AtmosphericAbsorptionModelTIREM320, [IAtmosphericAbsorptionModelTIREM, IAtmosphericAbsorptionModel, IComponentInfo, ICloneable])
-
-agcls.AgClassCatalog.add_catalog_entry((5121740885310446820, 17594685033855545772), AtmosphericAbsorptionModelTIREM320)
-agcls.AgTypeNameMap["AtmosphericAbsorptionModelTIREM320"] = AtmosphericAbsorptionModelTIREM320
-
-class AtmosphericAbsorptionModelTIREM331(IAtmosphericAbsorptionModelTIREM, IAtmosphericAbsorptionModel, IComponentInfo, ICloneable, SupportsDeleteCallback):
-    """Class defining an atmospheric absorption model."""
-    def __init__(self, source_object=None):
-        """Construct an object of type AtmosphericAbsorptionModelTIREM331."""
-        SupportsDeleteCallback.__init__(self)
-        IAtmosphericAbsorptionModelTIREM.__init__(self, source_object)
-        IAtmosphericAbsorptionModel.__init__(self, source_object)
-        IComponentInfo.__init__(self, source_object)
-        ICloneable.__init__(self, source_object)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-        IAtmosphericAbsorptionModelTIREM._private_init(self, intf)
-        IAtmosphericAbsorptionModel._private_init(self, intf)
-        IComponentInfo._private_init(self, intf)
-        ICloneable._private_init(self, intf)
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AtmosphericAbsorptionModelTIREM331, [IAtmosphericAbsorptionModelTIREM, IAtmosphericAbsorptionModel, IComponentInfo, ICloneable])
-
-agcls.AgClassCatalog.add_catalog_entry((4643446797748436939, 16148035157907289256), AtmosphericAbsorptionModelTIREM331)
-agcls.AgTypeNameMap["AtmosphericAbsorptionModelTIREM331"] = AtmosphericAbsorptionModelTIREM331
-
 class AtmosphericAbsorptionModelTIREM550(IAtmosphericAbsorptionModelTIREM, IAtmosphericAbsorptionModel, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Class defining an atmospheric absorption model."""
     def __init__(self, source_object=None):
@@ -120145,6 +122659,31 @@ class AtmosphericAbsorptionModelTIREM550(IAtmosphericAbsorptionModelTIREM, IAtmo
 
 agcls.AgClassCatalog.add_catalog_entry((5252992519588263233, 6333838147900305564), AtmosphericAbsorptionModelTIREM550)
 agcls.AgTypeNameMap["AtmosphericAbsorptionModelTIREM550"] = AtmosphericAbsorptionModelTIREM550
+
+class AtmosphericAbsorptionModelTIREM630(IAtmosphericAbsorptionModelTIREM, IAtmosphericAbsorptionModel, IComponentInfo, ICloneable, SupportsDeleteCallback):
+    """Class defining an atmospheric absorption model."""
+    def __init__(self, source_object=None):
+        """Construct an object of type AtmosphericAbsorptionModelTIREM630."""
+        SupportsDeleteCallback.__init__(self)
+        IAtmosphericAbsorptionModelTIREM.__init__(self, source_object)
+        IAtmosphericAbsorptionModel.__init__(self, source_object)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IAtmosphericAbsorptionModelTIREM._private_init(self, intf)
+        IAtmosphericAbsorptionModel._private_init(self, intf)
+        IComponentInfo._private_init(self, intf)
+        ICloneable._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, AtmosphericAbsorptionModelTIREM630, [IAtmosphericAbsorptionModelTIREM, IAtmosphericAbsorptionModel, IComponentInfo, ICloneable])
+
+agcls.AgClassCatalog.add_catalog_entry((5198907417094323607, 16360887364662041515), AtmosphericAbsorptionModelTIREM630)
+agcls.AgTypeNameMap["AtmosphericAbsorptionModelTIREM630"] = AtmosphericAbsorptionModelTIREM630
 
 class AtmosphericAbsorptionModelSimpleSatcom(IAtmosphericAbsorptionModel, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Provide access to the properties and methods of the Simple Satcom atmospheric absorption model."""

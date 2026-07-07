@@ -121,6 +121,10 @@
         {
             "OldName": "OLE_YPOS_PIXELS_arg",
             "NewName": "OLEYPosPixelsArg"
+        },
+        {
+            "OldName": "PGRPCBYTES_arg",
+            "NewName": "PGrpcBytesArg"
         }
     ],
     "EnumTypeMappings": [],

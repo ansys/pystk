@@ -808,7 +808,7 @@ Summary
               - Curvilinear Relative Motion objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcCustomFunction`
-              - Custom Function Calc objects.
+              - Do not use this class, as it is deprecated. Custom Function Calc objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcDamageFlux`
               - CoClass StateCalcDamageFlux.
@@ -1062,6 +1062,9 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcPressure`
               - Pressure Calc objects.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcPythonScript`
+              - Python script Calc objects.
+
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcRA`
               - RA Calc objects.
 
@@ -1142,6 +1145,9 @@ Summary
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcSignedEccentricity`
               - SignedEccentricity Calc objects.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcSignedInclination`
+              - SignedInclination Calc objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcSolarBetaAngle`
               - Solar Beta Angle objects.
@@ -2114,6 +2120,7 @@ Object Model components specifically designed to support STK Astrogator.
      StateCalcPositionVelocityDifferenceOtherSegment<astrogator/StateCalcPositionVelocityDifferenceOtherSegment>
      StateCalcPower<astrogator/StateCalcPower>
      StateCalcPressure<astrogator/StateCalcPressure>
+     StateCalcPythonScript<astrogator/StateCalcPythonScript>
      StateCalcRA<astrogator/StateCalcRA>
      StateCalcRAAN<astrogator/StateCalcRAAN>
      StateCalcRadiationPressureArea<astrogator/StateCalcRadiationPressureArea>
@@ -2141,6 +2148,7 @@ Object Model components specifically designed to support STK Astrogator.
      StateCalcSequenceDeltaV<astrogator/StateCalcSequenceDeltaV>
      StateCalcSequenceDeltaVSquared<astrogator/StateCalcSequenceDeltaVSquared>
      StateCalcSignedEccentricity<astrogator/StateCalcSignedEccentricity>
+     StateCalcSignedInclination<astrogator/StateCalcSignedInclination>
      StateCalcSolarBetaAngle<astrogator/StateCalcSolarBetaAngle>
      StateCalcSolarInPlaneAngle<astrogator/StateCalcSolarInPlaneAngle>
      StateCalcSpeedOfLight<astrogator/StateCalcSpeedOfLight>

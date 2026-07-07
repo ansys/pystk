@@ -16,6 +16,11 @@
         },
         {
             "ParentScope": "IAgRemoteFrameBuffer",
+            "OldName": "GetRBGRasterGrpc",
+            "NewName": "get_rbg_raster_grpc"
+        },
+        {
+            "ParentScope": "IAgRemoteFrameBuffer",
             "OldName": "SetToOffScreenRendering",
             "NewName": "set_to_offscreen_rendering"
         },

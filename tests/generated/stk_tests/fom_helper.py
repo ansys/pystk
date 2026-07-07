@@ -80,7 +80,7 @@ class FOMHelper(object):
                 oConstraint.time_step = 315576001
             oConstraint.time_step = 0.1  # min. 0.1
             with pytest.raises(Exception):
-                oConstraint.time_step = 0.099
+                oConstraint.time_step = 0.0099
 
             # ConstraintName and Constraint
             oConstraint.constraint = "AngularRate"

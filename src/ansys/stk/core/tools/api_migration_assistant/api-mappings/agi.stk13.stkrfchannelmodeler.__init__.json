@@ -695,6 +695,11 @@
             "NewName": "analysis_link_collection"
         },
         {
+            "ParentScope": "IAgStkRfcmAnalysis",
+            "OldName": "Terminate",
+            "NewName": "terminate"
+        },
+        {
             "ParentScope": "IAgStkRfcmAnalysisConfigurationModel",
             "OldName": "Type",
             "NewName": "type"
@@ -1515,18 +1520,18 @@
     "EnumValueMappings": [
         {
             "ParentScope": "AgERfcmChannelResponseType",
-            "OldName": "eRfcmChannelResponseTypeFrequencyPulse",
-            "NewName": "FREQUENCY_PULSE"
-        },
-        {
-            "ParentScope": "AgERfcmChannelResponseType",
             "OldName": "eRfcmChannelResponseTypeRangeDoppler",
             "NewName": "RANGE_DOPPLER"
         },
         {
+            "ParentScope": "AgERfcmChannelResponseType",
+            "OldName": "eRfcmChannelResponseTypeFrequencyPulse",
+            "NewName": "FREQUENCY_PULSE"
+        },
+        {
             "ParentScope": "AgERfcmAnalysisConfigurationModelType",
-            "OldName": "eRfcmAnalysisConfigurationModelTypeCommunications",
-            "NewName": "COMMUNICATIONS"
+            "OldName": "eRfcmAnalysisConfigurationModelTypeRadarSar",
+            "NewName": "RADAR_SAR"
         },
         {
             "ParentScope": "AgERfcmAnalysisConfigurationModelType",
@@ -1535,13 +1540,13 @@
         },
         {
             "ParentScope": "AgERfcmAnalysisConfigurationModelType",
-            "OldName": "eRfcmAnalysisConfigurationModelTypeRadarSar",
-            "NewName": "RADAR_SAR"
+            "OldName": "eRfcmAnalysisConfigurationModelTypeCommunications",
+            "NewName": "COMMUNICATIONS"
         },
         {
             "ParentScope": "AgERfcmTransceiverMode",
-            "OldName": "eRfcmTransceiverModeTransceive",
-            "NewName": "TRANSCEIVE"
+            "OldName": "eRfcmTransceiverModeReceiveOnly",
+            "NewName": "RECEIVE_ONLY"
         },
         {
             "ParentScope": "AgERfcmTransceiverMode",
@@ -1550,13 +1555,13 @@
         },
         {
             "ParentScope": "AgERfcmTransceiverMode",
-            "OldName": "eRfcmTransceiverModeReceiveOnly",
-            "NewName": "RECEIVE_ONLY"
+            "OldName": "eRfcmTransceiverModeTransceive",
+            "NewName": "TRANSCEIVE"
         },
         {
             "ParentScope": "AgERfcmAnalysisConfigurationComputeStepMode",
-            "OldName": "eRfcmAnalysisConfigurationComputeStepModeFixedStepSize",
-            "NewName": "FIXED_STEP_SIZE"
+            "OldName": "eRfcmAnalysisConfigurationComputeStepModeContinuousChannelSoundings",
+            "NewName": "CONTINUOUS_CHANNEL_SOUNDINGS"
         },
         {
             "ParentScope": "AgERfcmAnalysisConfigurationComputeStepMode",
@@ -1565,13 +1570,8 @@
         },
         {
             "ParentScope": "AgERfcmAnalysisConfigurationComputeStepMode",
-            "OldName": "eRfcmAnalysisConfigurationComputeStepModeContinuousChannelSoundings",
-            "NewName": "CONTINUOUS_CHANNEL_SOUNDINGS"
-        },
-        {
-            "ParentScope": "AgERfcmAnalysisResultsFileMode",
-            "OldName": "eRfcmAnalysisResultsFileModeSingleFile",
-            "NewName": "SINGLE_FILE"
+            "OldName": "eRfcmAnalysisConfigurationComputeStepModeFixedStepSize",
+            "NewName": "FIXED_STEP_SIZE"
         },
         {
             "ParentScope": "AgERfcmAnalysisResultsFileMode",
@@ -1579,9 +1579,14 @@
             "NewName": "ONE_FILE_PER_LINK"
         },
         {
+            "ParentScope": "AgERfcmAnalysisResultsFileMode",
+            "OldName": "eRfcmAnalysisResultsFileModeSingleFile",
+            "NewName": "SINGLE_FILE"
+        },
+        {
             "ParentScope": "AgERfcmAnalysisSolverBoundingBoxMode",
-            "OldName": "eRfcmAnalysisSolverBoundingBoxModeDefault",
-            "NewName": "DEFAULT"
+            "OldName": "eRfcmAnalysisSolverBoundingBoxModeCustom",
+            "NewName": "CUSTOM"
         },
         {
             "ParentScope": "AgERfcmAnalysisSolverBoundingBoxMode",
@@ -1590,13 +1595,8 @@
         },
         {
             "ParentScope": "AgERfcmAnalysisSolverBoundingBoxMode",
-            "OldName": "eRfcmAnalysisSolverBoundingBoxModeCustom",
-            "NewName": "CUSTOM"
-        },
-        {
-            "ParentScope": "AgERfcmTransceiverModelType",
-            "OldName": "eRfcmTransceiverModelTypeCommunications",
-            "NewName": "COMMUNICATIONS"
+            "OldName": "eRfcmAnalysisSolverBoundingBoxModeDefault",
+            "NewName": "DEFAULT"
         },
         {
             "ParentScope": "AgERfcmTransceiverModelType",
@@ -1604,14 +1604,14 @@
             "NewName": "RADAR"
         },
         {
-            "ParentScope": "AgERfcmPolarizationType",
-            "OldName": "eRfcmPolarizationTypeVertical",
-            "NewName": "VERTICAL"
+            "ParentScope": "AgERfcmTransceiverModelType",
+            "OldName": "eRfcmTransceiverModelTypeCommunications",
+            "NewName": "COMMUNICATIONS"
         },
         {
             "ParentScope": "AgERfcmPolarizationType",
-            "OldName": "eRfcmPolarizationTypeHorizontal",
-            "NewName": "HORIZONTAL"
+            "OldName": "eRfcmPolarizationTypeLHCP",
+            "NewName": "LEFT_HAND_CIRCULAR_POLARIZATION"
         },
         {
             "ParentScope": "AgERfcmPolarizationType",
@@ -1620,18 +1620,18 @@
         },
         {
             "ParentScope": "AgERfcmPolarizationType",
-            "OldName": "eRfcmPolarizationTypeLHCP",
-            "NewName": "LEFT_HAND_CIRCULAR_POLARIZATION"
+            "OldName": "eRfcmPolarizationTypeHorizontal",
+            "NewName": "HORIZONTAL"
+        },
+        {
+            "ParentScope": "AgERfcmPolarizationType",
+            "OldName": "eRfcmPolarizationTypeVertical",
+            "NewName": "VERTICAL"
         },
         {
             "ParentScope": "AgERfcmImageWindowType",
-            "OldName": "eRfcmImageWindowTypeFlat",
-            "NewName": "FLAT"
-        },
-        {
-            "ParentScope": "AgERfcmImageWindowType",
-            "OldName": "eRfcmImageWindowTypeHann",
-            "NewName": "HANN"
+            "OldName": "eRfcmImageWindowTypeTaylor",
+            "NewName": "TAYLOR"
         },
         {
             "ParentScope": "AgERfcmImageWindowType",
@@ -1640,8 +1640,13 @@
         },
         {
             "ParentScope": "AgERfcmImageWindowType",
-            "OldName": "eRfcmImageWindowTypeTaylor",
-            "NewName": "TAYLOR"
+            "OldName": "eRfcmImageWindowTypeHann",
+            "NewName": "HANN"
+        },
+        {
+            "ParentScope": "AgERfcmImageWindowType",
+            "OldName": "eRfcmImageWindowTypeFlat",
+            "NewName": "FLAT"
         }
     ],
     "NamedArgumentMappings": []

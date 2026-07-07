@@ -2336,9 +2336,9 @@ agcls.AgTypeNameMap["UnitPreferencesDimensionCollection"] = UnitPreferencesDimen
 class ConversionUtility(SupportsDeleteCallback):
     """Provide conversion utilities."""
 
-    _num_methods = 18
+    _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _convert_quantity_method_offset = 1
+
     _convert_date_method_offset = 2
     _convert_quantity_array_method_offset = 3
     _convert_date_array_method_offset = 4
@@ -2356,6 +2356,7 @@ class ConversionUtility(SupportsDeleteCallback):
     _new_cartesian3_vector_method_offset = 16
     _new_cartesian3_vector_from_direction_method_offset = 17
     _new_cartesian3_vector_from_position_method_offset = 18
+    _convert_quantity_method_offset = 19
     _metadata = {
         "iid_data" : (5542071105973083214, 3736498381011271868),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -2364,12 +2365,6 @@ class ConversionUtility(SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ConversionUtility)
 
-    _convert_quantity_metadata = { "offset" : _convert_quantity_method_offset,
-            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
-    def convert_quantity(self, dimension_name:str, from_unit:str, to_unit:str, from_value:float) -> float:
-        """Convert the specified quantity value from a given unit to another unit."""
-        return self._intf.invoke(ConversionUtility._metadata, ConversionUtility._convert_quantity_metadata, dimension_name, from_unit, to_unit, from_value, OutArg())
 
     _convert_date_metadata = { "offset" : _convert_date_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR),),
@@ -2489,6 +2484,13 @@ class ConversionUtility(SupportsDeleteCallback):
     def new_cartesian3_vector_from_position(self, input_position:"IPosition") -> "ICartesian3Vector":
         """Convert the position to cartesian vector."""
         return self._intf.invoke(ConversionUtility._metadata, ConversionUtility._new_cartesian3_vector_from_position_metadata, input_position, OutArg())
+
+    _convert_quantity_metadata = { "offset" : _convert_quantity_method_offset,
+            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.DoubleArg, agmarshall.VariantArg,) }
+    def convert_quantity(self, dimension_name:str, from_unit:str, to_unit:str, from_value:float) -> typing.Any:
+        """Convert the specified quantity value from a given unit to another unit."""
+        return self._intf.invoke(ConversionUtility._metadata, ConversionUtility._convert_quantity_metadata, dimension_name, from_unit, to_unit, from_value, OutArg())
 
 
     def __init__(self, source_object=None):
@@ -2750,7 +2752,7 @@ class Date(SupportsDeleteCallback):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("Date"), agmarshall.InterfaceOutArg,) }
     def span(self, date:"Date") -> "Quantity":
-        """Subtracts the value from the Date interface and returns an Quantity."""
+        """Subtracts the value from the Date interface and returns an IAgQuantity."""
         return self._intf.invoke(Date._metadata, Date._span_metadata, date, OutArg())
 
     _property_names[ole_date] = "ole_date"

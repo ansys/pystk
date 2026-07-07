@@ -1050,6 +1050,11 @@
             "NewName": "new_cartesian3_vector_from_position"
         },
         {
+            "ParentScope": "IAgConversionUtility",
+            "OldName": "ConvertQuantityEx",
+            "NewName": "convert_quantity"
+        },
+        {
             "ParentScope": "IAgDoublesCollection",
             "OldName": "Item",
             "NewName": "item"
@@ -1463,28 +1468,8 @@
     "EnumValueMappings": [
         {
             "ParentScope": "AgEPositionType",
-            "OldName": "eCartesian",
-            "NewName": "CARTESIAN"
-        },
-        {
-            "ParentScope": "AgEPositionType",
-            "OldName": "eCylindrical",
-            "NewName": "CYLINDRICAL"
-        },
-        {
-            "ParentScope": "AgEPositionType",
-            "OldName": "eGeocentric",
-            "NewName": "GEOCENTRIC"
-        },
-        {
-            "ParentScope": "AgEPositionType",
-            "OldName": "eGeodetic",
-            "NewName": "GEODETIC"
-        },
-        {
-            "ParentScope": "AgEPositionType",
-            "OldName": "eSpherical",
-            "NewName": "SPHERICAL"
+            "OldName": "ePlanetodetic",
+            "NewName": "PLANETODETIC"
         },
         {
             "ParentScope": "AgEPositionType",
@@ -1493,18 +1478,33 @@
         },
         {
             "ParentScope": "AgEPositionType",
-            "OldName": "ePlanetodetic",
-            "NewName": "PLANETODETIC"
+            "OldName": "eSpherical",
+            "NewName": "SPHERICAL"
+        },
+        {
+            "ParentScope": "AgEPositionType",
+            "OldName": "eGeodetic",
+            "NewName": "GEODETIC"
+        },
+        {
+            "ParentScope": "AgEPositionType",
+            "OldName": "eGeocentric",
+            "NewName": "GEOCENTRIC"
+        },
+        {
+            "ParentScope": "AgEPositionType",
+            "OldName": "eCylindrical",
+            "NewName": "CYLINDRICAL"
+        },
+        {
+            "ParentScope": "AgEPositionType",
+            "OldName": "eCartesian",
+            "NewName": "CARTESIAN"
         },
         {
             "ParentScope": "AgEEulerDirectionSequence",
-            "OldName": "e12",
-            "NewName": "SEQUENCE_12"
-        },
-        {
-            "ParentScope": "AgEEulerDirectionSequence",
-            "OldName": "e21",
-            "NewName": "SEQUENCE_21"
+            "OldName": "e32",
+            "NewName": "SEQUENCE_32"
         },
         {
             "ParentScope": "AgEEulerDirectionSequence",
@@ -1513,18 +1513,18 @@
         },
         {
             "ParentScope": "AgEEulerDirectionSequence",
-            "OldName": "e32",
-            "NewName": "SEQUENCE_32"
+            "OldName": "e21",
+            "NewName": "SEQUENCE_21"
+        },
+        {
+            "ParentScope": "AgEEulerDirectionSequence",
+            "OldName": "e12",
+            "NewName": "SEQUENCE_12"
         },
         {
             "ParentScope": "AgEDirectionType",
-            "OldName": "eDirEuler",
-            "NewName": "EULER"
-        },
-        {
-            "ParentScope": "AgEDirectionType",
-            "OldName": "eDirPR",
-            "NewName": "PR"
+            "OldName": "eDirXYZ",
+            "NewName": "XYZ"
         },
         {
             "ParentScope": "AgEDirectionType",
@@ -1533,8 +1533,13 @@
         },
         {
             "ParentScope": "AgEDirectionType",
-            "OldName": "eDirXYZ",
-            "NewName": "XYZ"
+            "OldName": "eDirPR",
+            "NewName": "PR"
+        },
+        {
+            "ParentScope": "AgEDirectionType",
+            "OldName": "eDirEuler",
+            "NewName": "EULER"
         },
         {
             "ParentScope": "AgEPRSequence",
@@ -1543,13 +1548,8 @@
         },
         {
             "ParentScope": "AgEOrientationType",
-            "OldName": "eAzEl",
-            "NewName": "AZ_EL"
-        },
-        {
-            "ParentScope": "AgEOrientationType",
-            "OldName": "eEulerAngles",
-            "NewName": "EULER_ANGLES"
+            "OldName": "eYPRAngles",
+            "NewName": "YPR_ANGLES"
         },
         {
             "ParentScope": "AgEOrientationType",
@@ -1558,13 +1558,13 @@
         },
         {
             "ParentScope": "AgEOrientationType",
-            "OldName": "eYPRAngles",
-            "NewName": "YPR_ANGLES"
+            "OldName": "eEulerAngles",
+            "NewName": "EULER_ANGLES"
         },
         {
-            "ParentScope": "AgEAzElAboutBoresight",
-            "OldName": "eAzElAboutBoresightHold",
-            "NewName": "HOLD"
+            "ParentScope": "AgEOrientationType",
+            "OldName": "eAzEl",
+            "NewName": "AZ_EL"
         },
         {
             "ParentScope": "AgEAzElAboutBoresight",
@@ -1572,54 +1572,14 @@
             "NewName": "ROTATE"
         },
         {
-            "ParentScope": "AgEEulerOrientationSequence",
-            "OldName": "e121",
-            "NewName": "SEQUENCE_121"
+            "ParentScope": "AgEAzElAboutBoresight",
+            "OldName": "eAzElAboutBoresightHold",
+            "NewName": "HOLD"
         },
         {
             "ParentScope": "AgEEulerOrientationSequence",
-            "OldName": "e123",
-            "NewName": "SEQUENCE_123"
-        },
-        {
-            "ParentScope": "AgEEulerOrientationSequence",
-            "OldName": "e131",
-            "NewName": "SEQUENCE_131"
-        },
-        {
-            "ParentScope": "AgEEulerOrientationSequence",
-            "OldName": "e132",
-            "NewName": "SEQUENCE_132"
-        },
-        {
-            "ParentScope": "AgEEulerOrientationSequence",
-            "OldName": "e212",
-            "NewName": "SEQUENCE_212"
-        },
-        {
-            "ParentScope": "AgEEulerOrientationSequence",
-            "OldName": "e213",
-            "NewName": "SEQUENCE_213"
-        },
-        {
-            "ParentScope": "AgEEulerOrientationSequence",
-            "OldName": "e231",
-            "NewName": "SEQUENCE_231"
-        },
-        {
-            "ParentScope": "AgEEulerOrientationSequence",
-            "OldName": "e232",
-            "NewName": "SEQUENCE_232"
-        },
-        {
-            "ParentScope": "AgEEulerOrientationSequence",
-            "OldName": "e312",
-            "NewName": "SEQUENCE_312"
-        },
-        {
-            "ParentScope": "AgEEulerOrientationSequence",
-            "OldName": "e313",
-            "NewName": "SEQUENCE_313"
+            "OldName": "e323",
+            "NewName": "SEQUENCE_323"
         },
         {
             "ParentScope": "AgEEulerOrientationSequence",
@@ -1628,28 +1588,58 @@
         },
         {
             "ParentScope": "AgEEulerOrientationSequence",
-            "OldName": "e323",
-            "NewName": "SEQUENCE_323"
+            "OldName": "e313",
+            "NewName": "SEQUENCE_313"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e312",
+            "NewName": "SEQUENCE_312"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e232",
+            "NewName": "SEQUENCE_232"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e231",
+            "NewName": "SEQUENCE_231"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e213",
+            "NewName": "SEQUENCE_213"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e212",
+            "NewName": "SEQUENCE_212"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e132",
+            "NewName": "SEQUENCE_132"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e131",
+            "NewName": "SEQUENCE_131"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e123",
+            "NewName": "SEQUENCE_123"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e121",
+            "NewName": "SEQUENCE_121"
         },
         {
             "ParentScope": "AgEYPRAnglesSequence",
-            "OldName": "ePRY",
-            "NewName": "PRY"
-        },
-        {
-            "ParentScope": "AgEYPRAnglesSequence",
-            "OldName": "ePYR",
-            "NewName": "PYR"
-        },
-        {
-            "ParentScope": "AgEYPRAnglesSequence",
-            "OldName": "eRPY",
-            "NewName": "RPY"
-        },
-        {
-            "ParentScope": "AgEYPRAnglesSequence",
-            "OldName": "eRYP",
-            "NewName": "RYP"
+            "OldName": "eYRP",
+            "NewName": "YRP"
         },
         {
             "ParentScope": "AgEYPRAnglesSequence",
@@ -1658,33 +1648,28 @@
         },
         {
             "ParentScope": "AgEYPRAnglesSequence",
-            "OldName": "eYRP",
-            "NewName": "YRP"
+            "OldName": "eRYP",
+            "NewName": "RYP"
+        },
+        {
+            "ParentScope": "AgEYPRAnglesSequence",
+            "OldName": "eRPY",
+            "NewName": "RPY"
+        },
+        {
+            "ParentScope": "AgEYPRAnglesSequence",
+            "OldName": "ePYR",
+            "NewName": "PYR"
+        },
+        {
+            "ParentScope": "AgEYPRAnglesSequence",
+            "OldName": "ePRY",
+            "NewName": "PRY"
         },
         {
             "ParentScope": "AgEOrbitStateType",
-            "OldName": "eOrbitStateCartesian",
-            "NewName": "CARTESIAN"
-        },
-        {
-            "ParentScope": "AgEOrbitStateType",
-            "OldName": "eOrbitStateClassical",
-            "NewName": "CLASSICAL"
-        },
-        {
-            "ParentScope": "AgEOrbitStateType",
-            "OldName": "eOrbitStateEquinoctial",
-            "NewName": "EQUINOCTIAL"
-        },
-        {
-            "ParentScope": "AgEOrbitStateType",
-            "OldName": "eOrbitStateDelaunay",
-            "NewName": "DELAUNAY"
-        },
-        {
-            "ParentScope": "AgEOrbitStateType",
-            "OldName": "eOrbitStateSpherical",
-            "NewName": "SPHERICAL"
+            "OldName": "eOrbitStateGeodetic",
+            "NewName": "GEODETIC"
         },
         {
             "ParentScope": "AgEOrbitStateType",
@@ -1693,118 +1678,33 @@
         },
         {
             "ParentScope": "AgEOrbitStateType",
-            "OldName": "eOrbitStateGeodetic",
-            "NewName": "GEODETIC"
+            "OldName": "eOrbitStateSpherical",
+            "NewName": "SPHERICAL"
+        },
+        {
+            "ParentScope": "AgEOrbitStateType",
+            "OldName": "eOrbitStateDelaunay",
+            "NewName": "DELAUNAY"
+        },
+        {
+            "ParentScope": "AgEOrbitStateType",
+            "OldName": "eOrbitStateEquinoctial",
+            "NewName": "EQUINOCTIAL"
+        },
+        {
+            "ParentScope": "AgEOrbitStateType",
+            "OldName": "eOrbitStateClassical",
+            "NewName": "CLASSICAL"
+        },
+        {
+            "ParentScope": "AgEOrbitStateType",
+            "OldName": "eOrbitStateCartesian",
+            "NewName": "CARTESIAN"
         },
         {
             "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemUnknown",
-            "NewName": "UNKNOWN"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemAlignmentAtEpoch",
-            "NewName": "ALIGNMENT_AT_EPOCH"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemB1950",
-            "NewName": "B1950"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemFixed",
-            "NewName": "FIXED"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemJ2000",
-            "NewName": "J2000"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemMeanOfDate",
-            "NewName": "MEAN_OF_DATE"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemMeanOfEpoch",
-            "NewName": "MEAN_OF_EPOCH"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemTEMEOfDate",
-            "NewName": "TEME_OF_DATE"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemTEMEOfEpoch",
-            "NewName": "TEME_OF_EPOCH"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemTrueOfDate",
-            "NewName": "TRUE_OF_DATE"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemTrueOfEpoch",
-            "NewName": "TRUE_OF_EPOCH"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemTrueOfRefDate",
-            "NewName": "TRUE_OF_REFERENCE_DATE"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemICRF",
-            "NewName": "ICRF"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemMeanEarth",
-            "NewName": "MEAN_EARTH"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemFixedNoLibration",
-            "NewName": "FIXED_NO_LIBRATION"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemFixedIAU2003",
-            "NewName": "FIXED_IAU2003"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemPrincipalAxes421",
-            "NewName": "PRINCIPAL_AXES421"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemPrincipalAxes403",
-            "NewName": "PRINCIPAL_AXES403"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemInertial",
-            "NewName": "INERTIAL"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemJ2000Ecliptic",
-            "NewName": "J2000_ECLIPTIC"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemTrueEclipticOfDate",
-            "NewName": "TRUE_ECLIPTIC_OF_DATE"
-        },
-        {
-            "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemPrincipalAxes430",
-            "NewName": "PRINCIPAL_AXES430"
+            "OldName": "eCoordinateSystemEclipticJ2000ICRF",
+            "NewName": "ECLIPTIC_J2000ICRF"
         },
         {
             "ParentScope": "AgECoordinateSystem",
@@ -1813,23 +1713,118 @@
         },
         {
             "ParentScope": "AgECoordinateSystem",
-            "OldName": "eCoordinateSystemEclipticJ2000ICRF",
-            "NewName": "ECLIPTIC_J2000ICRF"
+            "OldName": "eCoordinateSystemPrincipalAxes430",
+            "NewName": "PRINCIPAL_AXES430"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemTrueEclipticOfDate",
+            "NewName": "TRUE_ECLIPTIC_OF_DATE"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemJ2000Ecliptic",
+            "NewName": "J2000_ECLIPTIC"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemInertial",
+            "NewName": "INERTIAL"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemPrincipalAxes403",
+            "NewName": "PRINCIPAL_AXES403"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemPrincipalAxes421",
+            "NewName": "PRINCIPAL_AXES421"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemFixedIAU2003",
+            "NewName": "FIXED_IAU2003"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemFixedNoLibration",
+            "NewName": "FIXED_NO_LIBRATION"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemMeanEarth",
+            "NewName": "MEAN_EARTH"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemICRF",
+            "NewName": "ICRF"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemTrueOfRefDate",
+            "NewName": "TRUE_OF_REFERENCE_DATE"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemTrueOfEpoch",
+            "NewName": "TRUE_OF_EPOCH"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemTrueOfDate",
+            "NewName": "TRUE_OF_DATE"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemTEMEOfEpoch",
+            "NewName": "TEME_OF_EPOCH"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemTEMEOfDate",
+            "NewName": "TEME_OF_DATE"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemMeanOfEpoch",
+            "NewName": "MEAN_OF_EPOCH"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemMeanOfDate",
+            "NewName": "MEAN_OF_DATE"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemJ2000",
+            "NewName": "J2000"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemFixed",
+            "NewName": "FIXED"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemB1950",
+            "NewName": "B1950"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemAlignmentAtEpoch",
+            "NewName": "ALIGNMENT_AT_EPOCH"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemUnknown",
+            "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgELogMsgType",
-            "OldName": "eLogMsgDebug",
-            "NewName": "DEBUG"
-        },
-        {
-            "ParentScope": "AgELogMsgType",
-            "OldName": "eLogMsgInfo",
-            "NewName": "INFO"
-        },
-        {
-            "ParentScope": "AgELogMsgType",
-            "OldName": "eLogMsgForceInfo",
-            "NewName": "FORCE_INFO"
+            "OldName": "eLogMsgAlarm",
+            "NewName": "ALARM"
         },
         {
             "ParentScope": "AgELogMsgType",
@@ -1838,18 +1833,23 @@
         },
         {
             "ParentScope": "AgELogMsgType",
-            "OldName": "eLogMsgAlarm",
-            "NewName": "ALARM"
+            "OldName": "eLogMsgForceInfo",
+            "NewName": "FORCE_INFO"
+        },
+        {
+            "ParentScope": "AgELogMsgType",
+            "OldName": "eLogMsgInfo",
+            "NewName": "INFO"
+        },
+        {
+            "ParentScope": "AgELogMsgType",
+            "OldName": "eLogMsgDebug",
+            "NewName": "DEBUG"
         },
         {
             "ParentScope": "AgELogMsgDispID",
-            "OldName": "eLogMsgDispAll",
-            "NewName": "ALL"
-        },
-        {
-            "ParentScope": "AgELogMsgDispID",
-            "OldName": "eLogMsgDispDefault",
-            "NewName": "DEFAULT"
+            "OldName": "eLogMsgDispStatusBar",
+            "NewName": "STATUS_BAR"
         },
         {
             "ParentScope": "AgELogMsgDispID",
@@ -1858,88 +1858,18 @@
         },
         {
             "ParentScope": "AgELogMsgDispID",
-            "OldName": "eLogMsgDispStatusBar",
-            "NewName": "STATUS_BAR"
+            "OldName": "eLogMsgDispDefault",
+            "NewName": "DEFAULT"
+        },
+        {
+            "ParentScope": "AgELogMsgDispID",
+            "OldName": "eLogMsgDispAll",
+            "NewName": "ALL"
         },
         {
             "ParentScope": "AgELineStyle",
-            "OldName": "eSolid",
-            "NewName": "SOLID"
-        },
-        {
-            "ParentScope": "AgELineStyle",
-            "OldName": "eDashed",
-            "NewName": "DASHED"
-        },
-        {
-            "ParentScope": "AgELineStyle",
-            "OldName": "eDotted",
-            "NewName": "DOTTED"
-        },
-        {
-            "ParentScope": "AgELineStyle",
-            "OldName": "eDotDashed",
-            "NewName": "DOT_DASHED"
-        },
-        {
-            "ParentScope": "AgELineStyle",
-            "OldName": "eLongDashed",
-            "NewName": "LONG_DASHED"
-        },
-        {
-            "ParentScope": "AgELineStyle",
-            "OldName": "eDashDotDotted",
-            "NewName": "DASH_DOT_DOTTED"
-        },
-        {
-            "ParentScope": "AgELineStyle",
-            "OldName": "eMDash",
-            "NewName": "M_DASH"
-        },
-        {
-            "ParentScope": "AgELineStyle",
-            "OldName": "eLDash",
-            "NewName": "L_DASH"
-        },
-        {
-            "ParentScope": "AgELineStyle",
-            "OldName": "eSDashDot",
-            "NewName": "S_DASH_DOT"
-        },
-        {
-            "ParentScope": "AgELineStyle",
-            "OldName": "eMDashDot",
-            "NewName": "M_DASH_DOT"
-        },
-        {
-            "ParentScope": "AgELineStyle",
-            "OldName": "eLDashDot",
-            "NewName": "DASH_DOT"
-        },
-        {
-            "ParentScope": "AgELineStyle",
-            "OldName": "eMSDash",
-            "NewName": "MS_DASH"
-        },
-        {
-            "ParentScope": "AgELineStyle",
-            "OldName": "eLSDash",
-            "NewName": "LS_DASH"
-        },
-        {
-            "ParentScope": "AgELineStyle",
-            "OldName": "eLMDash",
-            "NewName": "LM_DASH"
-        },
-        {
-            "ParentScope": "AgELineStyle",
-            "OldName": "eLMSDash",
-            "NewName": "LMS_DASH"
-        },
-        {
-            "ParentScope": "AgELineStyle",
-            "OldName": "eDot",
-            "NewName": "DOT"
+            "OldName": "eSDash",
+            "NewName": "S_DASH"
         },
         {
             "ParentScope": "AgELineStyle",
@@ -1948,18 +1878,88 @@
         },
         {
             "ParentScope": "AgELineStyle",
-            "OldName": "eSDash",
-            "NewName": "S_DASH"
+            "OldName": "eDot",
+            "NewName": "DOT"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eLMSDash",
+            "NewName": "LMS_DASH"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eLMDash",
+            "NewName": "LM_DASH"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eLSDash",
+            "NewName": "LS_DASH"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eMSDash",
+            "NewName": "MS_DASH"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eLDashDot",
+            "NewName": "DASH_DOT"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eMDashDot",
+            "NewName": "M_DASH_DOT"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eSDashDot",
+            "NewName": "S_DASH_DOT"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eLDash",
+            "NewName": "L_DASH"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eMDash",
+            "NewName": "M_DASH"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eDashDotDotted",
+            "NewName": "DASH_DOT_DOTTED"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eLongDashed",
+            "NewName": "LONG_DASHED"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eDotDashed",
+            "NewName": "DOT_DASHED"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eDotted",
+            "NewName": "DOTTED"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eDashed",
+            "NewName": "DASHED"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eSolid",
+            "NewName": "SOLID"
         },
         {
             "ParentScope": "AgEExecMultiCmdResultAction",
-            "OldName": "eContinueOnError",
-            "NewName": "CONTINUE_ON_ERROR"
-        },
-        {
-            "ParentScope": "AgEExecMultiCmdResultAction",
-            "OldName": "eStopOnError",
-            "NewName": "STOP_ON_ERROR"
+            "OldName": "eIgnoreExecCmdResult",
+            "NewName": "DISCARD_RESULTS"
         },
         {
             "ParentScope": "AgEExecMultiCmdResultAction",
@@ -1968,38 +1968,18 @@
         },
         {
             "ParentScope": "AgEExecMultiCmdResultAction",
-            "OldName": "eIgnoreExecCmdResult",
-            "NewName": "DISCARD_RESULTS"
+            "OldName": "eStopOnError",
+            "NewName": "STOP_ON_ERROR"
+        },
+        {
+            "ParentScope": "AgEExecMultiCmdResultAction",
+            "OldName": "eContinueOnError",
+            "NewName": "CONTINUE_ON_ERROR"
         },
         {
             "ParentScope": "AgEFillStyle",
-            "OldName": "eFillStyleSolid",
-            "NewName": "SOLID"
-        },
-        {
-            "ParentScope": "AgEFillStyle",
-            "OldName": "eFillStyleHorizontalStripe",
-            "NewName": "HORIZONTAL_STRIPE"
-        },
-        {
-            "ParentScope": "AgEFillStyle",
-            "OldName": "eFillStyleDiagonalStripe1",
-            "NewName": "DIAGONAL_STRIPE1"
-        },
-        {
-            "ParentScope": "AgEFillStyle",
-            "OldName": "eFillStyleDiagonalStripe2",
-            "NewName": "DIAGONAL_STRIPE2"
-        },
-        {
-            "ParentScope": "AgEFillStyle",
-            "OldName": "eFillStyleHatch",
-            "NewName": "HATCH"
-        },
-        {
-            "ParentScope": "AgEFillStyle",
-            "OldName": "eFillStyleDiagonalHatch",
-            "NewName": "DIAGONAL_HATCH"
+            "OldName": "eFillStyleVerticalStripe",
+            "NewName": "VERTICAL_STRIPE"
         },
         {
             "ParentScope": "AgEFillStyle",
@@ -2008,33 +1988,38 @@
         },
         {
             "ParentScope": "AgEFillStyle",
-            "OldName": "eFillStyleVerticalStripe",
-            "NewName": "VERTICAL_STRIPE"
+            "OldName": "eFillStyleDiagonalHatch",
+            "NewName": "DIAGONAL_HATCH"
+        },
+        {
+            "ParentScope": "AgEFillStyle",
+            "OldName": "eFillStyleHatch",
+            "NewName": "HATCH"
+        },
+        {
+            "ParentScope": "AgEFillStyle",
+            "OldName": "eFillStyleDiagonalStripe2",
+            "NewName": "DIAGONAL_STRIPE2"
+        },
+        {
+            "ParentScope": "AgEFillStyle",
+            "OldName": "eFillStyleDiagonalStripe1",
+            "NewName": "DIAGONAL_STRIPE1"
+        },
+        {
+            "ParentScope": "AgEFillStyle",
+            "OldName": "eFillStyleHorizontalStripe",
+            "NewName": "HORIZONTAL_STRIPE"
+        },
+        {
+            "ParentScope": "AgEFillStyle",
+            "OldName": "eFillStyleSolid",
+            "NewName": "SOLID"
         },
         {
             "ParentScope": "AgEPropertyInfoValueType",
-            "OldName": "ePropertyInfoValueTypeInt",
-            "NewName": "INT"
-        },
-        {
-            "ParentScope": "AgEPropertyInfoValueType",
-            "OldName": "ePropertyInfoValueTypeReal",
-            "NewName": "REAL"
-        },
-        {
-            "ParentScope": "AgEPropertyInfoValueType",
-            "OldName": "ePropertyInfoValueTypeQuantity",
-            "NewName": "QUANTITY"
-        },
-        {
-            "ParentScope": "AgEPropertyInfoValueType",
-            "OldName": "ePropertyInfoValueTypeDate",
-            "NewName": "DATE"
-        },
-        {
-            "ParentScope": "AgEPropertyInfoValueType",
-            "OldName": "ePropertyInfoValueTypeString",
-            "NewName": "STRING"
+            "OldName": "ePropertyInfoValueTypeInterface",
+            "NewName": "INTERFACE"
         },
         {
             "ParentScope": "AgEPropertyInfoValueType",
@@ -2043,8 +2028,28 @@
         },
         {
             "ParentScope": "AgEPropertyInfoValueType",
-            "OldName": "ePropertyInfoValueTypeInterface",
-            "NewName": "INTERFACE"
+            "OldName": "ePropertyInfoValueTypeString",
+            "NewName": "STRING"
+        },
+        {
+            "ParentScope": "AgEPropertyInfoValueType",
+            "OldName": "ePropertyInfoValueTypeDate",
+            "NewName": "DATE"
+        },
+        {
+            "ParentScope": "AgEPropertyInfoValueType",
+            "OldName": "ePropertyInfoValueTypeQuantity",
+            "NewName": "QUANTITY"
+        },
+        {
+            "ParentScope": "AgEPropertyInfoValueType",
+            "OldName": "ePropertyInfoValueTypeReal",
+            "NewName": "REAL"
+        },
+        {
+            "ParentScope": "AgEPropertyInfoValueType",
+            "OldName": "ePropertyInfoValueTypeInt",
+            "NewName": "INT"
         }
     ],
     "NamedArgumentMappings": []

@@ -24,6 +24,24 @@ Overview
               - Get or set the maximum number of animation strand lines to show. If there are more than the specified number of valid strands, the animation lines are not displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.line_width`
               - Get or set the width of the valid strand lines used in animation graphics.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.network_throughput_end_nodes_color`
+              - The color for the end nodes for network throughput graphics.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.network_throughput_link_combine_strands`
+              - Combine strand link data when multiple strands overlap for Network Throughput graphics.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.network_throughput_link_data_mode`
+              - The data mode for displaying link labels and lines for network throughput graphics.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.network_throughput_link_labels_include_num_strands`
+              - Include the number of strands in the link labels for Network Throughput graphics.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.network_throughput_link_line_width`
+              - Line width of links when network throughput graphics are displayed.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.network_throughput_node_data_mode`
+              - The data mode for displaying nodes labels and points for network throughput graphics.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.network_throughput_node_point_size`
+              - Pixel size of nodes when network throughput graphics are displayed.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.network_throughput_one_hundred_pct_contour_color`
+              - The color for the 100 percentage network throughput contours graphics.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.network_throughput_zero_pct_contour_color`
+              - The color for the 0 percentage network throughput contours graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.number_of_optimal_strands_to_display`
               - The number of animation optimal strands lines to show.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.optimal_path_color_ramp_end_color`
@@ -38,6 +56,16 @@ Overview
               - Opt whether to display lines between the valid strands in the chain during animation.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_link_numbers_in_strands`
               - Opt whether to have each link line in the valid strand lines is numbered to show the sequence of the links between the objects in the chain.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_network_throughput_graphics_2d`
+              - Show or hide all network throughput graphics if computed.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_network_throughput_link_graphics_2d`
+              - Show or hide all network throughput link graphics.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_network_throughput_link_labels_graphics_2d`
+              - Show or hide all network throughput link labels.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_network_throughput_node_graphics_2d`
+              - Show or hide all network throughput node graphics.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_network_throughput_node_labels_graphics_2d`
+              - Show or hide all network throughput node labels.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_optimal_path_line`
               - Opt whether to display lines for the optimal strands in the chain during animation.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.use_hide_animation_graphics_2d_if_more_than_n_strands`
@@ -73,6 +101,60 @@ Property detail
     :type: LineWidth
 
     Get or set the width of the valid strand lines used in animation graphics.
+
+.. py:property:: network_throughput_end_nodes_color
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.network_throughput_end_nodes_color
+    :type: Color
+
+    The color for the end nodes for network throughput graphics.
+
+.. py:property:: network_throughput_link_combine_strands
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.network_throughput_link_combine_strands
+    :type: bool
+
+    Combine strand link data when multiple strands overlap for Network Throughput graphics.
+
+.. py:property:: network_throughput_link_data_mode
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.network_throughput_link_data_mode
+    :type: ChainGraphics2DNetworkDataMode
+
+    The data mode for displaying link labels and lines for network throughput graphics.
+
+.. py:property:: network_throughput_link_labels_include_num_strands
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.network_throughput_link_labels_include_num_strands
+    :type: bool
+
+    Include the number of strands in the link labels for Network Throughput graphics.
+
+.. py:property:: network_throughput_link_line_width
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.network_throughput_link_line_width
+    :type: LineWidth
+
+    Line width of links when network throughput graphics are displayed.
+
+.. py:property:: network_throughput_node_data_mode
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.network_throughput_node_data_mode
+    :type: ChainGraphics2DNetworkDataMode
+
+    The data mode for displaying nodes labels and points for network throughput graphics.
+
+.. py:property:: network_throughput_node_point_size
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.network_throughput_node_point_size
+    :type: float
+
+    Pixel size of nodes when network throughput graphics are displayed.
+
+.. py:property:: network_throughput_one_hundred_pct_contour_color
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.network_throughput_one_hundred_pct_contour_color
+    :type: Color
+
+    The color for the 100 percentage network throughput contours graphics.
+
+.. py:property:: network_throughput_zero_pct_contour_color
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.network_throughput_zero_pct_contour_color
+    :type: Color
+
+    The color for the 0 percentage network throughput contours graphics.
 
 .. py:property:: number_of_optimal_strands_to_display
     :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.number_of_optimal_strands_to_display
@@ -115,6 +197,36 @@ Property detail
     :type: bool
 
     Opt whether to have each link line in the valid strand lines is numbered to show the sequence of the links between the objects in the chain.
+
+.. py:property:: show_network_throughput_graphics_2d
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_network_throughput_graphics_2d
+    :type: bool
+
+    Show or hide all network throughput graphics if computed.
+
+.. py:property:: show_network_throughput_link_graphics_2d
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_network_throughput_link_graphics_2d
+    :type: bool
+
+    Show or hide all network throughput link graphics.
+
+.. py:property:: show_network_throughput_link_labels_graphics_2d
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_network_throughput_link_labels_graphics_2d
+    :type: bool
+
+    Show or hide all network throughput link labels.
+
+.. py:property:: show_network_throughput_node_graphics_2d
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_network_throughput_node_graphics_2d
+    :type: bool
+
+    Show or hide all network throughput node graphics.
+
+.. py:property:: show_network_throughput_node_labels_graphics_2d
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_network_throughput_node_labels_graphics_2d
+    :type: bool
+
+    Show or hide all network throughput node labels.
 
 .. py:property:: show_optimal_path_line
     :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_optimal_path_line

@@ -115,7 +115,7 @@ def VARIANT_from_python_data(data:typing.Any) -> agcom.Variant:
             union_val.dblVal = agcom.DOUBLE(data)
         elif var.vt == agcom.VT_UNKNOWN:
             union_val.punkVal = data._intf.p
-            agcom._CreateAgObjectLifetimeManager._add_ref_impl(data._intf)
+            typing.cast(agcom.IUnknown, data._intf).add_ref()
         elif var.vt & agcom.VT_ARRAY:
             union_val.parray = SAFEARRAY_from_list(data, True)
         var.buffer = union_val.buffer
@@ -190,7 +190,7 @@ def ctype_val_from_VARIANT(var:agcom.Variant) -> typing.Any:
     elif var.vt == agcom.VT_UINT|agcom.VT_BYREF:
         return union_val.puintVal
     elif var.vt == agcom.VT_VARIANT|agcom.VT_BYREF:
-        return cast(union_val.pvarVal, POINTER(agcom.Variant))
+        return union_val.pvarVal
     elif var.vt == agcom.VT_ERROR:
         return agcom.HRESULT(union_val.scode)
     elif var.vt == agcom.VT_ERROR|agcom.VT_BYREF:
@@ -242,7 +242,8 @@ def python_val_from_ctypes_val(ctypes_val:typing.Any, vt:int):
             pUnk = ctypes_val
         ret = agcom.IUnknown()
         ret.p = pUnk
-        ret.create_ownership()
+        ret.add_ref()
+        ret.take_ownership()
         return agcoclass.get_concrete_class(ret)
     elif vt & agcom.VT_ARRAY:
         if vt & agcom.VT_BYREF:
@@ -812,9 +813,9 @@ class InterfaceInArg(object):
         elif val is not None and hasattr(val, "_intf"):
             new_inst.val = val
             if new_inst.as_interface=="IDispatch":
-                new_inst.pIntf = val._intf.query_interface(agcom.GUID(agcom.IDispatch._guid))
+                new_inst.pIntf = val._intf.query_interface(agcom.IDispatch._metadata)
             elif new_inst.as_interface=="IUnknown":
-                new_inst.pIntf = val._intf.query_interface(agcom.GUID(agcom.IUnknown._guid))
+                new_inst.pIntf = val._intf.query_interface(agcom.IUnknown._metadata)
             else:
                 intf_class = agcoclass.AgTypeNameMap[new_inst.as_interface]
                 new_inst.pIntf = val._intf.query_interface(intf_class._metadata)
@@ -894,6 +895,9 @@ class InterfaceEventCallbackArg(object):
         """
         ptr = agcom.IUnknown()
         ptr.p = agcom.PVOID(pUnk) if type(pUnk)==int else pUnk
+        # Reference to the event args is held on the STK side, we just borrow it here,
+        # so do not release it as we are not calling AddRef/adding our own reference
+        ptr._skip_release = True
         self.intf = as_interface()
         self.intf._private_init(ptr)
         del(ptr)
@@ -1061,3 +1065,20 @@ class OLEYPosPixelsArg(object):
     @property
     def python_val(self) -> int:
         return self.OLE_YPOS_PIXELS.value
+
+class PGrpcBytesArg(object):
+    def __init__(self, val: bytes = None):
+        if val is None:
+            self.byte_array = bytes()
+        else:
+            self.byte_array = val
+    def __enter__(self):
+        return self
+    def __exit__(self, type, value, tb):
+        return False
+    @property
+    def com_val(self):
+        raise RuntimeError("Calling gRPC-only method via COM.")
+    @property
+    def python_val(self) -> bytes:
+        return self.byte_array

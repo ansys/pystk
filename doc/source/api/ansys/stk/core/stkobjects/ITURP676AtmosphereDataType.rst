@@ -28,6 +28,9 @@ Overview
             * - :py:attr:`~SEASONAL_REGIONAL`
               - Seasonal/Regional atmosphere data.
 
+            * - :py:attr:`~USER_SPECIFIED`
+              - User specified atmosphere profile data.
+
 
 Import detail
 -------------

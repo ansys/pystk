@@ -12525,103 +12525,8 @@
     "EnumValueMappings": [
         {
             "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorObjectNotFound",
-            "NewName": "OBJECT_NOT_FOUND"
-        },
-        {
-            "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorIndexOutOfRange",
-            "NewName": "INDEX_OUT_OF_RANGE"
-        },
-        {
-            "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorInvalidAttribute",
-            "NewName": "INVALID_ATTRIBUTE"
-        },
-        {
-            "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorCommandFailed",
-            "NewName": "COMMAND_FAILED"
-        },
-        {
-            "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrAvtrErrorInvalidArg",
-            "NewName": "ERROR_INVALID_ARG"
-        },
-        {
-            "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorEmptyArg",
-            "NewName": "EMPTY_ARG"
-        },
-        {
-            "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorObjectNotRemoved",
-            "NewName": "OBJECT_NOT_REMOVED"
-        },
-        {
-            "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorFailedToRenameObject",
-            "NewName": "FAILED_TO_RENAME_OBJECT"
-        },
-        {
-            "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorUnknownClassType",
-            "NewName": "UNKNOWN_CLASS_TYPE"
-        },
-        {
-            "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorFailedToCreateObject",
-            "NewName": "FAILED_TO_CREATE_OBJECT"
-        },
-        {
-            "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorObjectLinkInvalidChoice",
-            "NewName": "OBJECT_LINK_INVALID_CHOICE"
-        },
-        {
-            "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorObjectLinkNoChoices",
-            "NewName": "OBJECT_LINK_NO_CHOICES"
-        },
-        {
-            "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorReadOnlyAttribute",
-            "NewName": "READ_ONLY_ATTRIBUTE"
-        },
-        {
-            "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorCstrInvalidCstrList",
-            "NewName": "INVALID_CSTR_LIST"
-        },
-        {
-            "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorCstrInvalidConstraint",
-            "NewName": "INVALID_CONSTRAINT"
-        },
-        {
-            "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorListReadOnly",
-            "NewName": "LIST_READ_ONLY"
-        },
-        {
-            "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorListInsertFailed",
-            "NewName": "LIST_INSERT_FAILED"
-        },
-        {
-            "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorInvalidLength",
-            "NewName": "INVALID_LENGTH"
-        },
-        {
-            "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorFailedToLoadFile",
-            "NewName": "FAILED_TO_LOAD_FILE"
-        },
-        {
-            "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorInvalidOperation",
-            "NewName": "INVALID_OPERATION"
+            "OldName": "eAvtrErrorDeprecated",
+            "NewName": "DEPRECATED"
         },
         {
             "ParentScope": "AgEAvtrErrorCodes",
@@ -12630,13 +12535,108 @@
         },
         {
             "ParentScope": "AgEAvtrErrorCodes",
-            "OldName": "eAvtrErrorDeprecated",
-            "NewName": "DEPRECATED"
+            "OldName": "eAvtrErrorInvalidOperation",
+            "NewName": "INVALID_OPERATION"
+        },
+        {
+            "ParentScope": "AgEAvtrErrorCodes",
+            "OldName": "eAvtrErrorFailedToLoadFile",
+            "NewName": "FAILED_TO_LOAD_FILE"
+        },
+        {
+            "ParentScope": "AgEAvtrErrorCodes",
+            "OldName": "eAvtrErrorInvalidLength",
+            "NewName": "INVALID_LENGTH"
+        },
+        {
+            "ParentScope": "AgEAvtrErrorCodes",
+            "OldName": "eAvtrErrorListInsertFailed",
+            "NewName": "LIST_INSERT_FAILED"
+        },
+        {
+            "ParentScope": "AgEAvtrErrorCodes",
+            "OldName": "eAvtrErrorListReadOnly",
+            "NewName": "LIST_READ_ONLY"
+        },
+        {
+            "ParentScope": "AgEAvtrErrorCodes",
+            "OldName": "eAvtrErrorCstrInvalidConstraint",
+            "NewName": "INVALID_CONSTRAINT"
+        },
+        {
+            "ParentScope": "AgEAvtrErrorCodes",
+            "OldName": "eAvtrErrorCstrInvalidCstrList",
+            "NewName": "INVALID_CSTR_LIST"
+        },
+        {
+            "ParentScope": "AgEAvtrErrorCodes",
+            "OldName": "eAvtrErrorReadOnlyAttribute",
+            "NewName": "READ_ONLY_ATTRIBUTE"
+        },
+        {
+            "ParentScope": "AgEAvtrErrorCodes",
+            "OldName": "eAvtrErrorObjectLinkNoChoices",
+            "NewName": "OBJECT_LINK_NO_CHOICES"
+        },
+        {
+            "ParentScope": "AgEAvtrErrorCodes",
+            "OldName": "eAvtrErrorObjectLinkInvalidChoice",
+            "NewName": "OBJECT_LINK_INVALID_CHOICE"
+        },
+        {
+            "ParentScope": "AgEAvtrErrorCodes",
+            "OldName": "eAvtrErrorFailedToCreateObject",
+            "NewName": "FAILED_TO_CREATE_OBJECT"
+        },
+        {
+            "ParentScope": "AgEAvtrErrorCodes",
+            "OldName": "eAvtrErrorUnknownClassType",
+            "NewName": "UNKNOWN_CLASS_TYPE"
+        },
+        {
+            "ParentScope": "AgEAvtrErrorCodes",
+            "OldName": "eAvtrErrorFailedToRenameObject",
+            "NewName": "FAILED_TO_RENAME_OBJECT"
+        },
+        {
+            "ParentScope": "AgEAvtrErrorCodes",
+            "OldName": "eAvtrErrorObjectNotRemoved",
+            "NewName": "OBJECT_NOT_REMOVED"
+        },
+        {
+            "ParentScope": "AgEAvtrErrorCodes",
+            "OldName": "eAvtrErrorEmptyArg",
+            "NewName": "EMPTY_ARG"
+        },
+        {
+            "ParentScope": "AgEAvtrErrorCodes",
+            "OldName": "eAvtrAvtrErrorInvalidArg",
+            "NewName": "ERROR_INVALID_ARG"
+        },
+        {
+            "ParentScope": "AgEAvtrErrorCodes",
+            "OldName": "eAvtrErrorCommandFailed",
+            "NewName": "COMMAND_FAILED"
+        },
+        {
+            "ParentScope": "AgEAvtrErrorCodes",
+            "OldName": "eAvtrErrorInvalidAttribute",
+            "NewName": "INVALID_ATTRIBUTE"
+        },
+        {
+            "ParentScope": "AgEAvtrErrorCodes",
+            "OldName": "eAvtrErrorIndexOutOfRange",
+            "NewName": "INDEX_OUT_OF_RANGE"
+        },
+        {
+            "ParentScope": "AgEAvtrErrorCodes",
+            "OldName": "eAvtrErrorObjectNotFound",
+            "NewName": "OBJECT_NOT_FOUND"
         },
         {
             "ParentScope": "AgEAvtrClosureValue",
-            "OldName": "eClosureMode",
-            "NewName": "CLOSURE_MODE"
+            "OldName": "eAngleTol",
+            "NewName": "ANGLE_TOL"
         },
         {
             "ParentScope": "AgEAvtrClosureValue",
@@ -12645,163 +12645,13 @@
         },
         {
             "ParentScope": "AgEAvtrClosureValue",
-            "OldName": "eAngleTol",
-            "NewName": "ANGLE_TOL"
+            "OldName": "eClosureMode",
+            "NewName": "CLOSURE_MODE"
         },
         {
             "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcAirway",
-            "NewName": "PROCEDURE_AIRWAY"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcAirwayRouter",
-            "NewName": "PROCEDURE_AIRWAY_ROUTER"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcArcEnroute",
-            "NewName": "PROCEDURE_ARC_ENROUTE"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcArcPointToPoint",
-            "NewName": "PROCEDURE_ARC_POINT_TO_POINT"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcAreaTargetSearch",
-            "NewName": "PROCEDURE_AREA_TARGET_SEARCH"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcBasicManeuver",
-            "NewName": "PROCEDURE_BASIC_MANEUVER"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcBasicPointToPoint",
-            "NewName": "PROCEDURE_BASIC_POINT_TO_POINT"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcDelay",
-            "NewName": "PROCEDURE_DELAY"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcEnroute",
-            "NewName": "PROCEDURE_ENROUTE"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcFlightLine",
-            "NewName": "PROCEDURE_FLIGHT_LINE"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcFormationRecover",
-            "NewName": "PROCEDURE_FORMATION_RECOVER"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcHoldingCircular",
-            "NewName": "PROCEDURE_HOLDING_CIRCULAR"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcHoldingFigure8",
-            "NewName": "PROCEDURE_HOLDING_FIGURE8"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcHoldingRacetrack",
-            "NewName": "PROCEDURE_HOLDING_RACETRACK"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcHover",
-            "NewName": "PROCEDURE_HOVER"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcHoverTranslate",
-            "NewName": "PROCEDURE_HOVER_TRANSLATE"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcInFormation",
-            "NewName": "PROCEDURE_IN_FORMATION"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcLanding",
-            "NewName": "PROCEDURE_LANDING"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcLaunch",
-            "NewName": "PROCEDURE_LAUNCH"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcParallelFlightLine",
-            "NewName": "PROCEDURE_PARALLEL_FLIGHT_LINE"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcReferenceState",
-            "NewName": "PROCEDURE_REFERENCE_STATE"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcSuperProcedure",
-            "NewName": "PROCEDURE_SUPER_PROCEDURE"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcTakeoff",
-            "NewName": "PROCEDURE_TAKEOFF"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcTerrainFollowing",
-            "NewName": "PROCEDURE_TERRAIN_FOLLOWING"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcTransitionToForwardFlight",
-            "NewName": "PROCEDURE_TRANSITION_TO_FORWARD_FLIGHT"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcTransitionToHover",
-            "NewName": "PROCEDURE_TRANSITION_TO_HOVER"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcVerticalLanding",
-            "NewName": "PROCEDURE_VERTICAL_LANDING"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcVerticalTakeoff",
-            "NewName": "PROCEDURE_VERTICAL_TAKEOFF"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcVGTPoint",
-            "NewName": "PROCEDURE_VGT_POINT"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcLaunchDynState",
-            "NewName": "PROCEDURE_LAUNCH_DYNAMIC_STATE"
-        },
-        {
-            "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcLaunchWaypoint",
-            "NewName": "PROCEDURE_LAUNCH_WAYPOINT"
+            "OldName": "eProcExtEphem",
+            "NewName": "PROCEDURE_EXT_EPHEM"
         },
         {
             "ParentScope": "AgEAvtrProcedureType",
@@ -12810,88 +12660,163 @@
         },
         {
             "ParentScope": "AgEAvtrProcedureType",
-            "OldName": "eProcExtEphem",
-            "NewName": "PROCEDURE_EXT_EPHEM"
+            "OldName": "eProcLaunchWaypoint",
+            "NewName": "PROCEDURE_LAUNCH_WAYPOINT"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcLaunchDynState",
+            "NewName": "PROCEDURE_LAUNCH_DYNAMIC_STATE"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcVGTPoint",
+            "NewName": "PROCEDURE_VGT_POINT"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcVerticalTakeoff",
+            "NewName": "PROCEDURE_VERTICAL_TAKEOFF"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcVerticalLanding",
+            "NewName": "PROCEDURE_VERTICAL_LANDING"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcTransitionToHover",
+            "NewName": "PROCEDURE_TRANSITION_TO_HOVER"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcTransitionToForwardFlight",
+            "NewName": "PROCEDURE_TRANSITION_TO_FORWARD_FLIGHT"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcTerrainFollowing",
+            "NewName": "PROCEDURE_TERRAIN_FOLLOWING"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcTakeoff",
+            "NewName": "PROCEDURE_TAKEOFF"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcSuperProcedure",
+            "NewName": "PROCEDURE_SUPER_PROCEDURE"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcReferenceState",
+            "NewName": "PROCEDURE_REFERENCE_STATE"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcParallelFlightLine",
+            "NewName": "PROCEDURE_PARALLEL_FLIGHT_LINE"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcLaunch",
+            "NewName": "PROCEDURE_LAUNCH"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcLanding",
+            "NewName": "PROCEDURE_LANDING"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcInFormation",
+            "NewName": "PROCEDURE_IN_FORMATION"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcHoverTranslate",
+            "NewName": "PROCEDURE_HOVER_TRANSLATE"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcHover",
+            "NewName": "PROCEDURE_HOVER"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcHoldingRacetrack",
+            "NewName": "PROCEDURE_HOLDING_RACETRACK"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcHoldingFigure8",
+            "NewName": "PROCEDURE_HOLDING_FIGURE8"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcHoldingCircular",
+            "NewName": "PROCEDURE_HOLDING_CIRCULAR"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcFormationRecover",
+            "NewName": "PROCEDURE_FORMATION_RECOVER"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcFlightLine",
+            "NewName": "PROCEDURE_FLIGHT_LINE"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcEnroute",
+            "NewName": "PROCEDURE_ENROUTE"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcDelay",
+            "NewName": "PROCEDURE_DELAY"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcBasicPointToPoint",
+            "NewName": "PROCEDURE_BASIC_POINT_TO_POINT"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcBasicManeuver",
+            "NewName": "PROCEDURE_BASIC_MANEUVER"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcAreaTargetSearch",
+            "NewName": "PROCEDURE_AREA_TARGET_SEARCH"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcArcPointToPoint",
+            "NewName": "PROCEDURE_ARC_POINT_TO_POINT"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcArcEnroute",
+            "NewName": "PROCEDURE_ARC_ENROUTE"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcAirwayRouter",
+            "NewName": "PROCEDURE_AIRWAY_ROUTER"
+        },
+        {
+            "ParentScope": "AgEAvtrProcedureType",
+            "OldName": "eProcAirway",
+            "NewName": "PROCEDURE_AIRWAY"
         },
         {
             "ParentScope": "AgEAvtrSiteType",
-            "OldName": "eSiteAirportFromCatalog",
-            "NewName": "SITE_AIRPORT_FROM_CATALOG"
-        },
-        {
-            "ParentScope": "AgEAvtrSiteType",
-            "OldName": "eSiteEndOfPrevProcedure",
-            "NewName": "SITE_END_OF_PREV_PROCEDURE"
-        },
-        {
-            "ParentScope": "AgEAvtrSiteType",
-            "OldName": "eSiteNavaidFromCatalog",
-            "NewName": "SITE_NAVAID_FROM_CATALOG"
-        },
-        {
-            "ParentScope": "AgEAvtrSiteType",
-            "OldName": "eSiteReferenceState",
-            "NewName": "SITE_REFERENCE_STATE"
-        },
-        {
-            "ParentScope": "AgEAvtrSiteType",
-            "OldName": "eSiteRelativeToPrevProcedure",
-            "NewName": "SITE_RELATIVE_TO_PREV_PROCEDURE"
-        },
-        {
-            "ParentScope": "AgEAvtrSiteType",
-            "OldName": "eSiteRelativeToStationarySTKObject",
-            "NewName": "SITE_RELATIVE_TO_STATIONARY_STK_OBJECT"
-        },
-        {
-            "ParentScope": "AgEAvtrSiteType",
-            "OldName": "eSiteRunway",
-            "NewName": "SITE_RUNWAY"
-        },
-        {
-            "ParentScope": "AgEAvtrSiteType",
-            "OldName": "eSiteRunwayFromCatalog",
-            "NewName": "SITE_RUNWAY_FROM_CATALOG"
-        },
-        {
-            "ParentScope": "AgEAvtrSiteType",
-            "OldName": "eSiteSTKAreaTarget",
-            "NewName": "SITE_STK_AREA_TARGET"
-        },
-        {
-            "ParentScope": "AgEAvtrSiteType",
-            "OldName": "eSiteSTKObjectWaypoint",
-            "NewName": "SITE_STK_OBJECT_WAYPOINT"
-        },
-        {
-            "ParentScope": "AgEAvtrSiteType",
-            "OldName": "eSiteSTKStaticObject",
-            "NewName": "SITE_STK_STATIC_OBJECT"
-        },
-        {
-            "ParentScope": "AgEAvtrSiteType",
-            "OldName": "eSiteSTKVehicle",
-            "NewName": "SITE_STK_VEHICLE"
-        },
-        {
-            "ParentScope": "AgEAvtrSiteType",
-            "OldName": "eSiteSuperProcedure",
-            "NewName": "SITE_SUPER_PROCEDURE"
-        },
-        {
-            "ParentScope": "AgEAvtrSiteType",
-            "OldName": "eSiteVTOLPoint",
-            "NewName": "SITE_VTOL_POINT"
-        },
-        {
-            "ParentScope": "AgEAvtrSiteType",
-            "OldName": "eSiteVTOLPointFromCatalog",
-            "NewName": "SITE_VTOL_POINT_FROM_CATALOG"
-        },
-        {
-            "ParentScope": "AgEAvtrSiteType",
-            "OldName": "eSiteWaypoint",
-            "NewName": "SITE_WAYPOINT"
+            "OldName": "eSiteDynState",
+            "NewName": "SITE_DYNAMIC_STATE"
         },
         {
             "ParentScope": "AgEAvtrSiteType",
@@ -12900,13 +12825,83 @@
         },
         {
             "ParentScope": "AgEAvtrSiteType",
-            "OldName": "eSiteDynState",
-            "NewName": "SITE_DYNAMIC_STATE"
+            "OldName": "eSiteWaypoint",
+            "NewName": "SITE_WAYPOINT"
         },
         {
-            "ParentScope": "AgEAvtrBasicManeuverStrategy",
-            "OldName": "eStraightAhead",
-            "NewName": "STRAIGHT_AHEAD"
+            "ParentScope": "AgEAvtrSiteType",
+            "OldName": "eSiteVTOLPointFromCatalog",
+            "NewName": "SITE_VTOL_POINT_FROM_CATALOG"
+        },
+        {
+            "ParentScope": "AgEAvtrSiteType",
+            "OldName": "eSiteVTOLPoint",
+            "NewName": "SITE_VTOL_POINT"
+        },
+        {
+            "ParentScope": "AgEAvtrSiteType",
+            "OldName": "eSiteSuperProcedure",
+            "NewName": "SITE_SUPER_PROCEDURE"
+        },
+        {
+            "ParentScope": "AgEAvtrSiteType",
+            "OldName": "eSiteSTKVehicle",
+            "NewName": "SITE_STK_VEHICLE"
+        },
+        {
+            "ParentScope": "AgEAvtrSiteType",
+            "OldName": "eSiteSTKStaticObject",
+            "NewName": "SITE_STK_STATIC_OBJECT"
+        },
+        {
+            "ParentScope": "AgEAvtrSiteType",
+            "OldName": "eSiteSTKObjectWaypoint",
+            "NewName": "SITE_STK_OBJECT_WAYPOINT"
+        },
+        {
+            "ParentScope": "AgEAvtrSiteType",
+            "OldName": "eSiteSTKAreaTarget",
+            "NewName": "SITE_STK_AREA_TARGET"
+        },
+        {
+            "ParentScope": "AgEAvtrSiteType",
+            "OldName": "eSiteRunwayFromCatalog",
+            "NewName": "SITE_RUNWAY_FROM_CATALOG"
+        },
+        {
+            "ParentScope": "AgEAvtrSiteType",
+            "OldName": "eSiteRunway",
+            "NewName": "SITE_RUNWAY"
+        },
+        {
+            "ParentScope": "AgEAvtrSiteType",
+            "OldName": "eSiteRelativeToStationarySTKObject",
+            "NewName": "SITE_RELATIVE_TO_STATIONARY_STK_OBJECT"
+        },
+        {
+            "ParentScope": "AgEAvtrSiteType",
+            "OldName": "eSiteRelativeToPrevProcedure",
+            "NewName": "SITE_RELATIVE_TO_PREV_PROCEDURE"
+        },
+        {
+            "ParentScope": "AgEAvtrSiteType",
+            "OldName": "eSiteReferenceState",
+            "NewName": "SITE_REFERENCE_STATE"
+        },
+        {
+            "ParentScope": "AgEAvtrSiteType",
+            "OldName": "eSiteNavaidFromCatalog",
+            "NewName": "SITE_NAVAID_FROM_CATALOG"
+        },
+        {
+            "ParentScope": "AgEAvtrSiteType",
+            "OldName": "eSiteEndOfPrevProcedure",
+            "NewName": "SITE_END_OF_PREV_PROCEDURE"
+        },
+        {
+            "ParentScope": "AgEAvtrSiteType",
+            "OldName": "eSiteAirportFromCatalog",
+            "NewName": "SITE_AIRPORT_FROM_CATALOG"
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverStrategy",
@@ -12914,14 +12909,14 @@
             "NewName": "WEAVE"
         },
         {
-            "ParentScope": "AgEAvtrStraightAheadRefFrame",
-            "OldName": "eMaintainCourse",
-            "NewName": "MAINTAIN_COURSE"
+            "ParentScope": "AgEAvtrBasicManeuverStrategy",
+            "OldName": "eStraightAhead",
+            "NewName": "STRAIGHT_AHEAD"
         },
         {
             "ParentScope": "AgEAvtrStraightAheadRefFrame",
-            "OldName": "eMaintainHeading",
-            "NewName": "MAINTAIN_HEADING"
+            "OldName": "eCompensateCoriolis",
+            "NewName": "COMPENSATE_CORIOLIS"
         },
         {
             "ParentScope": "AgEAvtrStraightAheadRefFrame",
@@ -12930,18 +12925,18 @@
         },
         {
             "ParentScope": "AgEAvtrStraightAheadRefFrame",
-            "OldName": "eCompensateCoriolis",
-            "NewName": "COMPENSATE_CORIOLIS"
+            "OldName": "eMaintainHeading",
+            "NewName": "MAINTAIN_HEADING"
+        },
+        {
+            "ParentScope": "AgEAvtrStraightAheadRefFrame",
+            "OldName": "eMaintainCourse",
+            "NewName": "MAINTAIN_COURSE"
         },
         {
             "ParentScope": "AgEAvtrAirspeedType",
-            "OldName": "eMach",
-            "NewName": "MACH"
-        },
-        {
-            "ParentScope": "AgEAvtrAirspeedType",
-            "OldName": "eEAS",
-            "NewName": "EAS"
+            "OldName": "eTAS",
+            "NewName": "TAS"
         },
         {
             "ParentScope": "AgEAvtrAirspeedType",
@@ -12950,13 +12945,13 @@
         },
         {
             "ParentScope": "AgEAvtrAirspeedType",
-            "OldName": "eTAS",
-            "NewName": "TAS"
+            "OldName": "eEAS",
+            "NewName": "EAS"
         },
         {
-            "ParentScope": "AgEAvtrAeroPropSimpleMode",
-            "OldName": "eFixedWing",
-            "NewName": "FIXED_WING"
+            "ParentScope": "AgEAvtrAirspeedType",
+            "OldName": "eMach",
+            "NewName": "MACH"
         },
         {
             "ParentScope": "AgEAvtrAeroPropSimpleMode",
@@ -12964,19 +12959,14 @@
             "NewName": "HELICOPTER"
         },
         {
-            "ParentScope": "AgEAvtrAeroPropFlightMode",
-            "OldName": "eFlightPerfForwardFlight",
-            "NewName": "FLIGHT_PERFORMANCE_FORWARD_FLIGHT"
+            "ParentScope": "AgEAvtrAeroPropSimpleMode",
+            "OldName": "eFixedWing",
+            "NewName": "FIXED_WING"
         },
         {
             "ParentScope": "AgEAvtrAeroPropFlightMode",
-            "OldName": "eFlightPerfHover",
-            "NewName": "FLIGHT_PERFORMANCE_HOVER"
-        },
-        {
-            "ParentScope": "AgEAvtrAeroPropFlightMode",
-            "OldName": "eFlightPerfTakeoff",
-            "NewName": "FLIGHT_PERFORMANCE_TAKEOFF"
+            "OldName": "eFlightPerfWeightOnWheels",
+            "NewName": "FLIGHT_PERFORMANCE_WEIGHT_ON_WHEELS"
         },
         {
             "ParentScope": "AgEAvtrAeroPropFlightMode",
@@ -12985,28 +12975,23 @@
         },
         {
             "ParentScope": "AgEAvtrAeroPropFlightMode",
-            "OldName": "eFlightPerfWeightOnWheels",
-            "NewName": "FLIGHT_PERFORMANCE_WEIGHT_ON_WHEELS"
+            "OldName": "eFlightPerfTakeoff",
+            "NewName": "FLIGHT_PERFORMANCE_TAKEOFF"
+        },
+        {
+            "ParentScope": "AgEAvtrAeroPropFlightMode",
+            "OldName": "eFlightPerfHover",
+            "NewName": "FLIGHT_PERFORMANCE_HOVER"
+        },
+        {
+            "ParentScope": "AgEAvtrAeroPropFlightMode",
+            "OldName": "eFlightPerfForwardFlight",
+            "NewName": "FLIGHT_PERFORMANCE_FORWARD_FLIGHT"
         },
         {
             "ParentScope": "AgEAvtrPhaseOfFlight",
-            "OldName": "eFlightPhaseTakeoff",
-            "NewName": "FLIGHT_PHASE_TAKEOFF"
-        },
-        {
-            "ParentScope": "AgEAvtrPhaseOfFlight",
-            "OldName": "eFlightPhaseClimb",
-            "NewName": "FLIGHT_PHASE_CLIMB"
-        },
-        {
-            "ParentScope": "AgEAvtrPhaseOfFlight",
-            "OldName": "eFlightPhaseCruise",
-            "NewName": "FLIGHT_PHASE_CRUISE"
-        },
-        {
-            "ParentScope": "AgEAvtrPhaseOfFlight",
-            "OldName": "eFlightPhaseDescend",
-            "NewName": "FLIGHT_PHASE_DESCEND"
+            "OldName": "eFlightPhaseVTOL",
+            "NewName": "FLIGHT_PHASE_VTOL"
         },
         {
             "ParentScope": "AgEAvtrPhaseOfFlight",
@@ -13015,28 +13000,28 @@
         },
         {
             "ParentScope": "AgEAvtrPhaseOfFlight",
-            "OldName": "eFlightPhaseVTOL",
-            "NewName": "FLIGHT_PHASE_VTOL"
+            "OldName": "eFlightPhaseDescend",
+            "NewName": "FLIGHT_PHASE_DESCEND"
+        },
+        {
+            "ParentScope": "AgEAvtrPhaseOfFlight",
+            "OldName": "eFlightPhaseCruise",
+            "NewName": "FLIGHT_PHASE_CRUISE"
+        },
+        {
+            "ParentScope": "AgEAvtrPhaseOfFlight",
+            "OldName": "eFlightPhaseClimb",
+            "NewName": "FLIGHT_PHASE_CLIMB"
+        },
+        {
+            "ParentScope": "AgEAvtrPhaseOfFlight",
+            "OldName": "eFlightPhaseTakeoff",
+            "NewName": "FLIGHT_PHASE_TAKEOFF"
         },
         {
             "ParentScope": "AgEAvtrCruiseSpeed",
-            "OldName": "eMinAirspeed",
-            "NewName": "MIN_AIRSPEED"
-        },
-        {
-            "ParentScope": "AgEAvtrCruiseSpeed",
-            "OldName": "eMaxEnduranceAirspeed",
-            "NewName": "MAX_ENDURANCE_AIRSPEED"
-        },
-        {
-            "ParentScope": "AgEAvtrCruiseSpeed",
-            "OldName": "eMaxRangeAirspeed",
-            "NewName": "MAX_RANGE_AIRSPEED"
-        },
-        {
-            "ParentScope": "AgEAvtrCruiseSpeed",
-            "OldName": "eOtherAirspeed",
-            "NewName": "OTHER_AIRSPEED"
+            "OldName": "eMaxPerfAirspeed",
+            "NewName": "MAX_PERFORMANCE_AIRSPEED"
         },
         {
             "ParentScope": "AgEAvtrCruiseSpeed",
@@ -13045,13 +13030,28 @@
         },
         {
             "ParentScope": "AgEAvtrCruiseSpeed",
-            "OldName": "eMaxPerfAirspeed",
-            "NewName": "MAX_PERFORMANCE_AIRSPEED"
+            "OldName": "eOtherAirspeed",
+            "NewName": "OTHER_AIRSPEED"
+        },
+        {
+            "ParentScope": "AgEAvtrCruiseSpeed",
+            "OldName": "eMaxRangeAirspeed",
+            "NewName": "MAX_RANGE_AIRSPEED"
+        },
+        {
+            "ParentScope": "AgEAvtrCruiseSpeed",
+            "OldName": "eMaxEnduranceAirspeed",
+            "NewName": "MAX_ENDURANCE_AIRSPEED"
+        },
+        {
+            "ParentScope": "AgEAvtrCruiseSpeed",
+            "OldName": "eMinAirspeed",
+            "NewName": "MIN_AIRSPEED"
         },
         {
             "ParentScope": "AgEAvtrTakeoffMode",
-            "OldName": "eTakeoffNormal",
-            "NewName": "TAKEOFF_NORMAL"
+            "OldName": "eTakeoffLowTransition",
+            "NewName": "TAKEOFF_LOW_TRANSITION"
         },
         {
             "ParentScope": "AgEAvtrTakeoffMode",
@@ -13060,13 +13060,13 @@
         },
         {
             "ParentScope": "AgEAvtrTakeoffMode",
-            "OldName": "eTakeoffLowTransition",
-            "NewName": "TAKEOFF_LOW_TRANSITION"
+            "OldName": "eTakeoffNormal",
+            "NewName": "TAKEOFF_NORMAL"
         },
         {
             "ParentScope": "AgEAvtrApproachMode",
-            "OldName": "eStandardInstrumentApproach",
-            "NewName": "STANDARD_INSTRUMENT_APPROACH"
+            "OldName": "eEnterDownwindPattern",
+            "NewName": "ENTER_DOWNWIND_PATTERN"
         },
         {
             "ParentScope": "AgEAvtrApproachMode",
@@ -13075,13 +13075,13 @@
         },
         {
             "ParentScope": "AgEAvtrApproachMode",
-            "OldName": "eEnterDownwindPattern",
-            "NewName": "ENTER_DOWNWIND_PATTERN"
+            "OldName": "eStandardInstrumentApproach",
+            "NewName": "STANDARD_INSTRUMENT_APPROACH"
         },
         {
             "ParentScope": "AgEAvtrNavigatorTurnDir",
-            "OldName": "eNavigatorTurnAuto",
-            "NewName": "NAVIGATOR_TURN_AUTO"
+            "OldName": "eNavigatorTurnRight",
+            "NewName": "NAVIGATOR_TURN_RIGHT"
         },
         {
             "ParentScope": "AgEAvtrNavigatorTurnDir",
@@ -13090,33 +13090,13 @@
         },
         {
             "ParentScope": "AgEAvtrNavigatorTurnDir",
-            "OldName": "eNavigatorTurnRight",
-            "NewName": "NAVIGATOR_TURN_RIGHT"
+            "OldName": "eNavigatorTurnAuto",
+            "NewName": "NAVIGATOR_TURN_AUTO"
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverFuelFlowType",
-            "OldName": "eBasicManeuverFuelFlowTakeoff",
-            "NewName": "BASIC_MANEUVER_FUEL_FLOW_TAKEOFF"
-        },
-        {
-            "ParentScope": "AgEAvtrBasicManeuverFuelFlowType",
-            "OldName": "eBasicManeuverFuelFlowCruise",
-            "NewName": "BASIC_MANEUVER_FUEL_FLOW_CRUISE"
-        },
-        {
-            "ParentScope": "AgEAvtrBasicManeuverFuelFlowType",
-            "OldName": "eBasicManeuverFuelFlowLanding",
-            "NewName": "BASIC_MANEUVER_FUEL_FLOW_LANDING"
-        },
-        {
-            "ParentScope": "AgEAvtrBasicManeuverFuelFlowType",
-            "OldName": "eBasicManeuverFuelFlowVTOL",
-            "NewName": "BASIC_MANEUVER_FUEL_FLOW_VTOL"
-        },
-        {
-            "ParentScope": "AgEAvtrBasicManeuverFuelFlowType",
-            "OldName": "eBasicManeuverFuelFlowAeroProp",
-            "NewName": "BASIC_MANEUVER_FUEL_FLOW_AERODYNAMIC_PROPULSION"
+            "OldName": "eBasicManeuverFuelFlowThrustModel",
+            "NewName": "BASIC_MANEUVER_FUEL_FLOW_THRUST_MODEL"
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverFuelFlowType",
@@ -13125,13 +13105,33 @@
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverFuelFlowType",
-            "OldName": "eBasicManeuverFuelFlowThrustModel",
-            "NewName": "BASIC_MANEUVER_FUEL_FLOW_THRUST_MODEL"
+            "OldName": "eBasicManeuverFuelFlowAeroProp",
+            "NewName": "BASIC_MANEUVER_FUEL_FLOW_AERODYNAMIC_PROPULSION"
+        },
+        {
+            "ParentScope": "AgEAvtrBasicManeuverFuelFlowType",
+            "OldName": "eBasicManeuverFuelFlowVTOL",
+            "NewName": "BASIC_MANEUVER_FUEL_FLOW_VTOL"
+        },
+        {
+            "ParentScope": "AgEAvtrBasicManeuverFuelFlowType",
+            "OldName": "eBasicManeuverFuelFlowLanding",
+            "NewName": "BASIC_MANEUVER_FUEL_FLOW_LANDING"
+        },
+        {
+            "ParentScope": "AgEAvtrBasicManeuverFuelFlowType",
+            "OldName": "eBasicManeuverFuelFlowCruise",
+            "NewName": "BASIC_MANEUVER_FUEL_FLOW_CRUISE"
+        },
+        {
+            "ParentScope": "AgEAvtrBasicManeuverFuelFlowType",
+            "OldName": "eBasicManeuverFuelFlowTakeoff",
+            "NewName": "BASIC_MANEUVER_FUEL_FLOW_TAKEOFF"
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverAltitudeLimit",
-            "OldName": "eBasicManeuverAltLimitError",
-            "NewName": "BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR"
+            "OldName": "eBasicManeuverAltLimitContinue",
+            "NewName": "BASIC_MANEUVER_ALTITUDE_LIMIT_CONTINUE"
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverAltitudeLimit",
@@ -13140,13 +13140,13 @@
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverAltitudeLimit",
-            "OldName": "eBasicManeuverAltLimitContinue",
-            "NewName": "BASIC_MANEUVER_ALTITUDE_LIMIT_CONTINUE"
+            "OldName": "eBasicManeuverAltLimitError",
+            "NewName": "BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR"
         },
         {
             "ParentScope": "AgEAvtrRunwayHighLowEnd",
-            "OldName": "eHighEnd",
-            "NewName": "HIGH_END"
+            "OldName": "eHeadwind",
+            "NewName": "HEADWIND"
         },
         {
             "ParentScope": "AgEAvtrRunwayHighLowEnd",
@@ -13155,13 +13155,8 @@
         },
         {
             "ParentScope": "AgEAvtrRunwayHighLowEnd",
-            "OldName": "eHeadwind",
-            "NewName": "HEADWIND"
-        },
-        {
-            "ParentScope": "AgEAvtrBasicManeuverRefFrame",
-            "OldName": "eEarthFrame",
-            "NewName": "EARTH_FRAME"
+            "OldName": "eHighEnd",
+            "NewName": "HIGH_END"
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverRefFrame",
@@ -13169,14 +13164,14 @@
             "NewName": "WIND_FRAME"
         },
         {
-            "ParentScope": "AgEAvtrBasicManeuverStrategyNavControlLimit",
-            "OldName": "eNavUseAccelPerfModel",
-            "NewName": "NAVIGATION_USE_ACCELERATION_PERFORMANCE_MODEL"
+            "ParentScope": "AgEAvtrBasicManeuverRefFrame",
+            "OldName": "eEarthFrame",
+            "NewName": "EARTH_FRAME"
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverStrategyNavControlLimit",
-            "OldName": "eNavMinTurnRadius",
-            "NewName": "NAVIGATION_MIN_TURN_RADIUS"
+            "OldName": "eNavMaxHorizAccel",
+            "NewName": "NAVIGATION_MAX_HORIZONTAL_ACCELERATION"
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverStrategyNavControlLimit",
@@ -13185,13 +13180,18 @@
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverStrategyNavControlLimit",
-            "OldName": "eNavMaxHorizAccel",
-            "NewName": "NAVIGATION_MAX_HORIZONTAL_ACCELERATION"
+            "OldName": "eNavMinTurnRadius",
+            "NewName": "NAVIGATION_MIN_TURN_RADIUS"
+        },
+        {
+            "ParentScope": "AgEAvtrBasicManeuverStrategyNavControlLimit",
+            "OldName": "eNavUseAccelPerfModel",
+            "NewName": "NAVIGATION_USE_ACCELERATION_PERFORMANCE_MODEL"
         },
         {
             "ParentScope": "AgEAvtrAccelManeuverMode",
-            "OldName": "eAccelManeuverModeNormal",
-            "NewName": "ACCELERATION_MANEUVER_MODE_NORMAL"
+            "OldName": "eAccelManeuverModeAeroProp",
+            "NewName": "ACCELERATION_MANEUVER_MODE_AERODYNAMIC_PROPULSION"
         },
         {
             "ParentScope": "AgEAvtrAccelManeuverMode",
@@ -13200,23 +13200,13 @@
         },
         {
             "ParentScope": "AgEAvtrAccelManeuverMode",
-            "OldName": "eAccelManeuverModeAeroProp",
-            "NewName": "ACCELERATION_MANEUVER_MODE_AERODYNAMIC_PROPULSION"
+            "OldName": "eAccelManeuverModeNormal",
+            "NewName": "ACCELERATION_MANEUVER_MODE_NORMAL"
         },
         {
             "ParentScope": "AgEAvtrAircraftAeroStrategy",
-            "OldName": "eAircraftAeroSimple",
-            "NewName": "AIRCRAFT_AERODYNAMIC_SIMPLE"
-        },
-        {
-            "ParentScope": "AgEAvtrAircraftAeroStrategy",
-            "OldName": "eAircraftAeroExternalFile",
-            "NewName": "AIRCRAFT_AERODYNAMIC_EXTERNAL_FILE"
-        },
-        {
-            "ParentScope": "AgEAvtrAircraftAeroStrategy",
-            "OldName": "eAircraftAeroBasicFixedWing",
-            "NewName": "AIRCRAFT_AERODYNAMIC_BASIC_FIXED_WING"
+            "OldName": "eAircraftAeroFourPoint",
+            "NewName": "AIRCRAFT_AERODYNAMIC_FOUR_POINT"
         },
         {
             "ParentScope": "AgEAvtrAircraftAeroStrategy",
@@ -13225,28 +13215,23 @@
         },
         {
             "ParentScope": "AgEAvtrAircraftAeroStrategy",
-            "OldName": "eAircraftAeroFourPoint",
-            "NewName": "AIRCRAFT_AERODYNAMIC_FOUR_POINT"
+            "OldName": "eAircraftAeroBasicFixedWing",
+            "NewName": "AIRCRAFT_AERODYNAMIC_BASIC_FIXED_WING"
+        },
+        {
+            "ParentScope": "AgEAvtrAircraftAeroStrategy",
+            "OldName": "eAircraftAeroExternalFile",
+            "NewName": "AIRCRAFT_AERODYNAMIC_EXTERNAL_FILE"
+        },
+        {
+            "ParentScope": "AgEAvtrAircraftAeroStrategy",
+            "OldName": "eAircraftAeroSimple",
+            "NewName": "AIRCRAFT_AERODYNAMIC_SIMPLE"
         },
         {
             "ParentScope": "AgEAvtrAircraftPropStrategy",
-            "OldName": "eAircraftPropSimple",
-            "NewName": "AIRCRAFT_PROPULSION_SIMPLE"
-        },
-        {
-            "ParentScope": "AgEAvtrAircraftPropStrategy",
-            "OldName": "eAircraftPropExternalFile",
-            "NewName": "AIRCRAFT_PROPULSION_EXTERNAL_FILE"
-        },
-        {
-            "ParentScope": "AgEAvtrAircraftPropStrategy",
-            "OldName": "eAircraftPropBasicFixedWing",
-            "NewName": "AIRCRAFT_PROPULSION_BASIC_FIXED_WING"
-        },
-        {
-            "ParentScope": "AgEAvtrAircraftPropStrategy",
-            "OldName": "eAircraftPropMissileRamjet",
-            "NewName": "AIRCRAFT_PROPULSION_MISSILE_RAMJET"
+            "OldName": "eAircraftPropMissileTurbojet",
+            "NewName": "AIRCRAFT_PROPULSION_MISSILE_TURBOJET"
         },
         {
             "ParentScope": "AgEAvtrAircraftPropStrategy",
@@ -13255,13 +13240,23 @@
         },
         {
             "ParentScope": "AgEAvtrAircraftPropStrategy",
-            "OldName": "eAircraftPropMissileTurbojet",
-            "NewName": "AIRCRAFT_PROPULSION_MISSILE_TURBOJET"
+            "OldName": "eAircraftPropMissileRamjet",
+            "NewName": "AIRCRAFT_PROPULSION_MISSILE_RAMJET"
         },
         {
-            "ParentScope": "AgEAvtrAGLMSL",
-            "OldName": "eAltAGL",
-            "NewName": "ALTITUDE_AGL"
+            "ParentScope": "AgEAvtrAircraftPropStrategy",
+            "OldName": "eAircraftPropBasicFixedWing",
+            "NewName": "AIRCRAFT_PROPULSION_BASIC_FIXED_WING"
+        },
+        {
+            "ParentScope": "AgEAvtrAircraftPropStrategy",
+            "OldName": "eAircraftPropExternalFile",
+            "NewName": "AIRCRAFT_PROPULSION_EXTERNAL_FILE"
+        },
+        {
+            "ParentScope": "AgEAvtrAircraftPropStrategy",
+            "OldName": "eAircraftPropSimple",
+            "NewName": "AIRCRAFT_PROPULSION_SIMPLE"
         },
         {
             "ParentScope": "AgEAvtrAGLMSL",
@@ -13269,9 +13264,9 @@
             "NewName": "ALTITUDE_MSL"
         },
         {
-            "ParentScope": "AgEAvtrLandingApproachFixRangeMode",
-            "OldName": "eRelToRunwayCenter",
-            "NewName": "RELATIVE_TO_RUNWAY_CENTER"
+            "ParentScope": "AgEAvtrAGLMSL",
+            "OldName": "eAltAGL",
+            "NewName": "ALTITUDE_AGL"
         },
         {
             "ParentScope": "AgEAvtrLandingApproachFixRangeMode",
@@ -13279,9 +13274,9 @@
             "NewName": "RELATIVE_TO_RUNWAY_END"
         },
         {
-            "ParentScope": "AgEAvtrAccelerationAdvAccelMode",
-            "OldName": "eAccelModeMaxAccel",
-            "NewName": "ACCELERATION_MODE_MAX_ACCELERATION"
+            "ParentScope": "AgEAvtrLandingApproachFixRangeMode",
+            "OldName": "eRelToRunwayCenter",
+            "NewName": "RELATIVE_TO_RUNWAY_CENTER"
         },
         {
             "ParentScope": "AgEAvtrAccelerationAdvAccelMode",
@@ -13289,9 +13284,9 @@
             "NewName": "ACCELERATION_MODE_OVERRIDE_ACCELERATION"
         },
         {
-            "ParentScope": "AgEAvtrAccelManeuverAeroPropMode",
-            "OldName": "eUseThrustAndLiftCoefficient",
-            "NewName": "USE_THRUST_AND_LIFT_COEFFICIENT"
+            "ParentScope": "AgEAvtrAccelerationAdvAccelMode",
+            "OldName": "eAccelModeMaxAccel",
+            "NewName": "ACCELERATION_MODE_MAX_ACCELERATION"
         },
         {
             "ParentScope": "AgEAvtrAccelManeuverAeroPropMode",
@@ -13299,14 +13294,14 @@
             "NewName": "USE_LIFT_COEFFICIENT_ONLY"
         },
         {
-            "ParentScope": "AgEAvtrBasicManeuverStrategyAirspeedPerfLimits",
-            "OldName": "eConstrainIfViolated",
-            "NewName": "CONSTRAIN_IF_VIOLATED"
+            "ParentScope": "AgEAvtrAccelManeuverAeroPropMode",
+            "OldName": "eUseThrustAndLiftCoefficient",
+            "NewName": "USE_THRUST_AND_LIFT_COEFFICIENT"
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverStrategyAirspeedPerfLimits",
-            "OldName": "eStopIfViolated",
-            "NewName": "STOP_IF_VIOLATED"
+            "OldName": "eIgnoreIfViolated",
+            "NewName": "IGNORE_IF_VIOLATED"
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverStrategyAirspeedPerfLimits",
@@ -13315,13 +13310,18 @@
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverStrategyAirspeedPerfLimits",
-            "OldName": "eIgnoreIfViolated",
-            "NewName": "IGNORE_IF_VIOLATED"
+            "OldName": "eStopIfViolated",
+            "NewName": "STOP_IF_VIOLATED"
+        },
+        {
+            "ParentScope": "AgEAvtrBasicManeuverStrategyAirspeedPerfLimits",
+            "OldName": "eConstrainIfViolated",
+            "NewName": "CONSTRAIN_IF_VIOLATED"
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverStrategyPoweredCruiseMode",
-            "OldName": "eGlideSpecifyUnPoweredCruise",
-            "NewName": "GLIDE_SPECIFY_UN_POWERED_CRUISE"
+            "OldName": "eGlideSpecifyThrustModel",
+            "NewName": "GLIDE_SPECIFY_THRUST_MODEL"
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverStrategyPoweredCruiseMode",
@@ -13330,23 +13330,13 @@
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverStrategyPoweredCruiseMode",
-            "OldName": "eGlideSpecifyThrustModel",
-            "NewName": "GLIDE_SPECIFY_THRUST_MODEL"
+            "OldName": "eGlideSpecifyUnPoweredCruise",
+            "NewName": "GLIDE_SPECIFY_UN_POWERED_CRUISE"
         },
         {
             "ParentScope": "AgEAvtrTurnMode",
-            "OldName": "eTurnModeTurnG",
-            "NewName": "TURN_MODE_TURN_G"
-        },
-        {
-            "ParentScope": "AgEAvtrTurnMode",
-            "OldName": "eTurnModeBankAngle",
-            "NewName": "TURN_MODE_BANK_ANGLE"
-        },
-        {
-            "ParentScope": "AgEAvtrTurnMode",
-            "OldName": "eTurnModeAccel",
-            "NewName": "TURN_MODE_ACCELERATION"
+            "OldName": "eTurnModeRate",
+            "NewName": "TURN_MODE_RATE"
         },
         {
             "ParentScope": "AgEAvtrTurnMode",
@@ -13355,23 +13345,23 @@
         },
         {
             "ParentScope": "AgEAvtrTurnMode",
-            "OldName": "eTurnModeRate",
-            "NewName": "TURN_MODE_RATE"
+            "OldName": "eTurnModeAccel",
+            "NewName": "TURN_MODE_ACCELERATION"
+        },
+        {
+            "ParentScope": "AgEAvtrTurnMode",
+            "OldName": "eTurnModeBankAngle",
+            "NewName": "TURN_MODE_BANK_ANGLE"
+        },
+        {
+            "ParentScope": "AgEAvtrTurnMode",
+            "OldName": "eTurnModeTurnG",
+            "NewName": "TURN_MODE_TURN_G"
         },
         {
             "ParentScope": "AgEAvtrPointToPointMode",
-            "OldName": "eFlyDirect",
-            "NewName": "FLY_DIRECT"
-        },
-        {
-            "ParentScope": "AgEAvtrPointToPointMode",
-            "OldName": "eArriveOnCourseForNext",
-            "NewName": "ARRIVE_ON_COURSE_FOR_NEXT"
-        },
-        {
-            "ParentScope": "AgEAvtrPointToPointMode",
-            "OldName": "eArriveOnCourse",
-            "NewName": "ARRIVE_ON_COURSE"
+            "OldName": "eArriveOnHdgIntoWind",
+            "NewName": "ARRIVE_ON_HDG_INTO_WIND"
         },
         {
             "ParentScope": "AgEAvtrPointToPointMode",
@@ -13380,18 +13370,23 @@
         },
         {
             "ParentScope": "AgEAvtrPointToPointMode",
-            "OldName": "eArriveOnHdgIntoWind",
-            "NewName": "ARRIVE_ON_HDG_INTO_WIND"
+            "OldName": "eArriveOnCourse",
+            "NewName": "ARRIVE_ON_COURSE"
+        },
+        {
+            "ParentScope": "AgEAvtrPointToPointMode",
+            "OldName": "eArriveOnCourseForNext",
+            "NewName": "ARRIVE_ON_COURSE_FOR_NEXT"
+        },
+        {
+            "ParentScope": "AgEAvtrPointToPointMode",
+            "OldName": "eFlyDirect",
+            "NewName": "FLY_DIRECT"
         },
         {
             "ParentScope": "AgEAvtrAltitudeConstraintManeuverMode",
-            "OldName": "eLevelOffAutomaticManeuver",
-            "NewName": "LEVEL_OFF_AUTOMATIC_MANEUVER"
-        },
-        {
-            "ParentScope": "AgEAvtrAltitudeConstraintManeuverMode",
-            "OldName": "eLevelOffLeftTurnManeuver",
-            "NewName": "LEVEL_OFF_LEFT_TURN_MANEUVER"
+            "OldName": "eLevelOffNoManeuver",
+            "NewName": "LEVEL_OFF_NO_MANEUVER"
         },
         {
             "ParentScope": "AgEAvtrAltitudeConstraintManeuverMode",
@@ -13400,13 +13395,18 @@
         },
         {
             "ParentScope": "AgEAvtrAltitudeConstraintManeuverMode",
-            "OldName": "eLevelOffNoManeuver",
-            "NewName": "LEVEL_OFF_NO_MANEUVER"
+            "OldName": "eLevelOffLeftTurnManeuver",
+            "NewName": "LEVEL_OFF_LEFT_TURN_MANEUVER"
+        },
+        {
+            "ParentScope": "AgEAvtrAltitudeConstraintManeuverMode",
+            "OldName": "eLevelOffAutomaticManeuver",
+            "NewName": "LEVEL_OFF_AUTOMATIC_MANEUVER"
         },
         {
             "ParentScope": "AgEAvtrWindModelType",
-            "OldName": "eConstantWind",
-            "NewName": "CONSTANT_WIND"
+            "OldName": "eDisabled",
+            "NewName": "DISABLED"
         },
         {
             "ParentScope": "AgEAvtrWindModelType",
@@ -13415,13 +13415,13 @@
         },
         {
             "ParentScope": "AgEAvtrWindModelType",
-            "OldName": "eDisabled",
-            "NewName": "DISABLED"
+            "OldName": "eConstantWind",
+            "NewName": "CONSTANT_WIND"
         },
         {
             "ParentScope": "AgEAvtrWindAtmosModelSource",
-            "OldName": "eScenarioModel",
-            "NewName": "SCENARIO_MODEL"
+            "OldName": "eProcedureModel",
+            "NewName": "PROCEDURE_MODEL"
         },
         {
             "ParentScope": "AgEAvtrWindAtmosModelSource",
@@ -13430,13 +13430,8 @@
         },
         {
             "ParentScope": "AgEAvtrWindAtmosModelSource",
-            "OldName": "eProcedureModel",
-            "NewName": "PROCEDURE_MODEL"
-        },
-        {
-            "ParentScope": "AgEAvtrADDSMsgInterpType",
-            "OldName": "eInterpOnePoint",
-            "NewName": "INTERPOLATION_ONE_POINT"
+            "OldName": "eScenarioModel",
+            "NewName": "SCENARIO_MODEL"
         },
         {
             "ParentScope": "AgEAvtrADDSMsgInterpType",
@@ -13444,9 +13439,9 @@
             "NewName": "INTERPOLATION_TWO_POINT"
         },
         {
-            "ParentScope": "AgEAvtrADDSMissingMsgType",
-            "OldName": "eMissingMsgZeroWind",
-            "NewName": "MISSING_MESSAGE_ZERO_WIND"
+            "ParentScope": "AgEAvtrADDSMsgInterpType",
+            "OldName": "eInterpOnePoint",
+            "NewName": "INTERPOLATION_ONE_POINT"
         },
         {
             "ParentScope": "AgEAvtrADDSMissingMsgType",
@@ -13454,9 +13449,9 @@
             "NewName": "MISSING_MESSAGE_INTERPOLATION_END_POINTS"
         },
         {
-            "ParentScope": "AgEAvtrADDSMsgExtrapType",
-            "OldName": "eExtrapMsgZeroWind",
-            "NewName": "EXTRAPOLATION_MESSAGE_ZERO_WIND"
+            "ParentScope": "AgEAvtrADDSMissingMsgType",
+            "OldName": "eMissingMsgZeroWind",
+            "NewName": "MISSING_MESSAGE_ZERO_WIND"
         },
         {
             "ParentScope": "AgEAvtrADDSMsgExtrapType",
@@ -13464,9 +13459,14 @@
             "NewName": "EXTRAPOLATION_MESSAGE_HOLD_END_POINTS"
         },
         {
+            "ParentScope": "AgEAvtrADDSMsgExtrapType",
+            "OldName": "eExtrapMsgZeroWind",
+            "NewName": "EXTRAPOLATION_MESSAGE_ZERO_WIND"
+        },
+        {
             "ParentScope": "AgEAvtrADDSForecastType",
-            "OldName": "e6Hour",
-            "NewName": "HOUR_6"
+            "OldName": "e24Hour",
+            "NewName": "HOUR_24"
         },
         {
             "ParentScope": "AgEAvtrADDSForecastType",
@@ -13475,28 +13475,13 @@
         },
         {
             "ParentScope": "AgEAvtrADDSForecastType",
-            "OldName": "e24Hour",
-            "NewName": "HOUR_24"
+            "OldName": "e6Hour",
+            "NewName": "HOUR_6"
         },
         {
             "ParentScope": "AgEAvtrAtmosphereModel",
-            "OldName": "eStandard1976",
-            "NewName": "STANDARD1976"
-        },
-        {
-            "ParentScope": "AgEAvtrAtmosphereModel",
-            "OldName": "eMILHot",
-            "NewName": "MIL_HOT"
-        },
-        {
-            "ParentScope": "AgEAvtrAtmosphereModel",
-            "OldName": "eMILCold",
-            "NewName": "MIL_COLD"
-        },
-        {
-            "ParentScope": "AgEAvtrAtmosphereModel",
-            "OldName": "eMILLowDensity",
-            "NewName": "MIL_LOW_DENSITY"
+            "OldName": "eMILInterpolate",
+            "NewName": "MIL_INTERPOLATE"
         },
         {
             "ParentScope": "AgEAvtrAtmosphereModel",
@@ -13505,13 +13490,23 @@
         },
         {
             "ParentScope": "AgEAvtrAtmosphereModel",
-            "OldName": "eMILInterpolate",
-            "NewName": "MIL_INTERPOLATE"
+            "OldName": "eMILLowDensity",
+            "NewName": "MIL_LOW_DENSITY"
         },
         {
-            "ParentScope": "AgEAvtrSmoothTurnMode",
-            "OldName": "eSmoothTurnLoadFactor",
-            "NewName": "SMOOTH_TURN_LOAD_FACTOR"
+            "ParentScope": "AgEAvtrAtmosphereModel",
+            "OldName": "eMILCold",
+            "NewName": "MIL_COLD"
+        },
+        {
+            "ParentScope": "AgEAvtrAtmosphereModel",
+            "OldName": "eMILHot",
+            "NewName": "MIL_HOT"
+        },
+        {
+            "ParentScope": "AgEAvtrAtmosphereModel",
+            "OldName": "eStandard1976",
+            "NewName": "STANDARD1976"
         },
         {
             "ParentScope": "AgEAvtrSmoothTurnMode",
@@ -13519,9 +13514,9 @@
             "NewName": "SMOOTH_TURN_ROLL_ANGLE"
         },
         {
-            "ParentScope": "AgEAvtrPerfModelOverride",
-            "OldName": "ePerfModelValue",
-            "NewName": "PERFORMANCE_MODEL_VALUE"
+            "ParentScope": "AgEAvtrSmoothTurnMode",
+            "OldName": "eSmoothTurnLoadFactor",
+            "NewName": "SMOOTH_TURN_LOAD_FACTOR"
         },
         {
             "ParentScope": "AgEAvtrPerfModelOverride",
@@ -13529,59 +13524,14 @@
             "NewName": "OVERRIDE"
         },
         {
-            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
-            "OldName": "eMaintainCurrentAirspeed",
-            "NewName": "MAINTAIN_CURRENT_AIRSPEED"
+            "ParentScope": "AgEAvtrPerfModelOverride",
+            "OldName": "ePerfModelValue",
+            "NewName": "PERFORMANCE_MODEL_VALUE"
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
-            "OldName": "eMaintainSpecifiedAirspeed",
-            "NewName": "MAINTAIN_SPECIFIED_AIRSPEED"
-        },
-        {
-            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
-            "OldName": "eMaintainMinAirspeed",
-            "NewName": "MAINTAIN_MIN_AIRSPEED"
-        },
-        {
-            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
-            "OldName": "eMaintainMaxEnduranceAirspeed",
-            "NewName": "MAINTAIN_MAX_ENDURANCE_AIRSPEED"
-        },
-        {
-            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
-            "OldName": "eMaintainMaxRangeAirspeed",
-            "NewName": "MAINTAIN_MAX_RANGE_AIRSPEED"
-        },
-        {
-            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
-            "OldName": "eMaintainMaxAirspeed",
-            "NewName": "MAINTAIN_MAX_AIRSPEED"
-        },
-        {
-            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
-            "OldName": "eMaintainMaxPerformanceAirspeed",
-            "NewName": "MAINTAIN_MAX_PERFORMANCE_AIRSPEED"
-        },
-        {
-            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
-            "OldName": "eAccelAtG",
-            "NewName": "ACCELERATION_AT_G"
-        },
-        {
-            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
-            "OldName": "eDecelAtG",
-            "NewName": "DECELERATION_AT_G"
-        },
-        {
-            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
-            "OldName": "eAccelDecelUnderGravity",
-            "NewName": "ACCELERATION_DECELERATION_UNDER_GRAVITY"
-        },
-        {
-            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
-            "OldName": "eAccelDecelAeroProp",
-            "NewName": "ACCELERATION_DECELERATION_AERODYNAMIC_PROPULSION"
+            "OldName": "eInterpolateAccelDecel",
+            "NewName": "INTERPOLATE_ACCELERATION_DECELERATION"
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
@@ -13590,13 +13540,58 @@
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
-            "OldName": "eInterpolateAccelDecel",
-            "NewName": "INTERPOLATE_ACCELERATION_DECELERATION"
+            "OldName": "eAccelDecelAeroProp",
+            "NewName": "ACCELERATION_DECELERATION_AERODYNAMIC_PROPULSION"
         },
         {
-            "ParentScope": "AgEAvtrAileronRollFlightPath",
-            "OldName": "eStraightLineFlightPath",
-            "NewName": "STRAIGHT_LINE_FLIGHT_PATH"
+            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
+            "OldName": "eAccelDecelUnderGravity",
+            "NewName": "ACCELERATION_DECELERATION_UNDER_GRAVITY"
+        },
+        {
+            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
+            "OldName": "eDecelAtG",
+            "NewName": "DECELERATION_AT_G"
+        },
+        {
+            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
+            "OldName": "eAccelAtG",
+            "NewName": "ACCELERATION_AT_G"
+        },
+        {
+            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
+            "OldName": "eMaintainMaxPerformanceAirspeed",
+            "NewName": "MAINTAIN_MAX_PERFORMANCE_AIRSPEED"
+        },
+        {
+            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
+            "OldName": "eMaintainMaxAirspeed",
+            "NewName": "MAINTAIN_MAX_AIRSPEED"
+        },
+        {
+            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
+            "OldName": "eMaintainMaxRangeAirspeed",
+            "NewName": "MAINTAIN_MAX_RANGE_AIRSPEED"
+        },
+        {
+            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
+            "OldName": "eMaintainMaxEnduranceAirspeed",
+            "NewName": "MAINTAIN_MAX_ENDURANCE_AIRSPEED"
+        },
+        {
+            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
+            "OldName": "eMaintainMinAirspeed",
+            "NewName": "MAINTAIN_MIN_AIRSPEED"
+        },
+        {
+            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
+            "OldName": "eMaintainSpecifiedAirspeed",
+            "NewName": "MAINTAIN_SPECIFIED_AIRSPEED"
+        },
+        {
+            "ParentScope": "AgEAvtrBasicManeuverAirspeedMode",
+            "OldName": "eMaintainCurrentAirspeed",
+            "NewName": "MAINTAIN_CURRENT_AIRSPEED"
         },
         {
             "ParentScope": "AgEAvtrAileronRollFlightPath",
@@ -13604,9 +13599,9 @@
             "NewName": "ZERO_G_FLIGHT_PATH"
         },
         {
-            "ParentScope": "AgEAvtrRollLeftRight",
-            "OldName": "eRollLeft",
-            "NewName": "ROLL_LEFT"
+            "ParentScope": "AgEAvtrAileronRollFlightPath",
+            "OldName": "eStraightLineFlightPath",
+            "NewName": "STRAIGHT_LINE_FLIGHT_PATH"
         },
         {
             "ParentScope": "AgEAvtrRollLeftRight",
@@ -13614,9 +13609,9 @@
             "NewName": "ROLL_RIGHT"
         },
         {
-            "ParentScope": "AgEAvtrRollUprightInverted",
-            "OldName": "eRollUpright",
-            "NewName": "ROLL_UPRIGHT"
+            "ParentScope": "AgEAvtrRollLeftRight",
+            "OldName": "eRollLeft",
+            "NewName": "ROLL_LEFT"
         },
         {
             "ParentScope": "AgEAvtrRollUprightInverted",
@@ -13624,9 +13619,9 @@
             "NewName": "ROLL_INVERTED"
         },
         {
-            "ParentScope": "AgEAvtrAileronRollMode",
-            "OldName": "eRollToAngle",
-            "NewName": "ROLL_TO_ANGLE"
+            "ParentScope": "AgEAvtrRollUprightInverted",
+            "OldName": "eRollUpright",
+            "NewName": "ROLL_UPRIGHT"
         },
         {
             "ParentScope": "AgEAvtrAileronRollMode",
@@ -13634,9 +13629,14 @@
             "NewName": "ROLL_TO_ORIENTATION"
         },
         {
+            "ParentScope": "AgEAvtrAileronRollMode",
+            "OldName": "eRollToAngle",
+            "NewName": "ROLL_TO_ANGLE"
+        },
+        {
             "ParentScope": "AgEAvtrFlyAOALeftRight",
-            "OldName": "eFlyAOALeft",
-            "NewName": "FLY_AOA_LEFT"
+            "OldName": "eFlyAOANoRoll",
+            "NewName": "FLY_AOA_NO_ROLL"
         },
         {
             "ParentScope": "AgEAvtrFlyAOALeftRight",
@@ -13645,13 +13645,13 @@
         },
         {
             "ParentScope": "AgEAvtrFlyAOALeftRight",
-            "OldName": "eFlyAOANoRoll",
-            "NewName": "FLY_AOA_NO_ROLL"
+            "OldName": "eFlyAOALeft",
+            "NewName": "FLY_AOA_LEFT"
         },
         {
             "ParentScope": "AgEAvtrSmoothAccelLeftRight",
-            "OldName": "eSmoothAccelLeft",
-            "NewName": "SMOOTH_ACCELERATION_LEFT"
+            "OldName": "eSmoothAccelNoRoll",
+            "NewName": "SMOOTH_ACCELERATION_NO_ROLL"
         },
         {
             "ParentScope": "AgEAvtrSmoothAccelLeftRight",
@@ -13660,13 +13660,8 @@
         },
         {
             "ParentScope": "AgEAvtrSmoothAccelLeftRight",
-            "OldName": "eSmoothAccelNoRoll",
-            "NewName": "SMOOTH_ACCELERATION_NO_ROLL"
-        },
-        {
-            "ParentScope": "AgEAvtrPullMode",
-            "OldName": "ePullToAngle",
-            "NewName": "PULL_TO_ANGLE"
+            "OldName": "eSmoothAccelLeft",
+            "NewName": "SMOOTH_ACCELERATION_LEFT"
         },
         {
             "ParentScope": "AgEAvtrPullMode",
@@ -13674,14 +13669,14 @@
             "NewName": "PULL_TO_HORIZON"
         },
         {
-            "ParentScope": "AgEAvtrRollingPullMode",
-            "OldName": "eRollToAngleMode",
-            "NewName": "ROLL_TO_ANGLE_MODE"
+            "ParentScope": "AgEAvtrPullMode",
+            "OldName": "ePullToAngle",
+            "NewName": "PULL_TO_ANGLE"
         },
         {
             "ParentScope": "AgEAvtrRollingPullMode",
-            "OldName": "eRollToOrientationMode",
-            "NewName": "ROLL_TO_ORIENTATION_MODE"
+            "OldName": "ePullToHorizonMode",
+            "NewName": "PULL_TO_HORIZON_MODE"
         },
         {
             "ParentScope": "AgEAvtrRollingPullMode",
@@ -13690,13 +13685,18 @@
         },
         {
             "ParentScope": "AgEAvtrRollingPullMode",
-            "OldName": "ePullToHorizonMode",
-            "NewName": "PULL_TO_HORIZON_MODE"
+            "OldName": "eRollToOrientationMode",
+            "NewName": "ROLL_TO_ORIENTATION_MODE"
+        },
+        {
+            "ParentScope": "AgEAvtrRollingPullMode",
+            "OldName": "eRollToAngleMode",
+            "NewName": "ROLL_TO_ANGLE_MODE"
         },
         {
             "ParentScope": "AgEAvtrSmoothAccelStopConditions",
-            "OldName": "eRollRateANDLoadFactor",
-            "NewName": "ROLL_RATE_AND_LOAD_FACTOR"
+            "OldName": "eSmoothAccelNormalStopConditions",
+            "NewName": "SMOOTH_ACCELERATION_NORMAL_STOP_CONDITIONS"
         },
         {
             "ParentScope": "AgEAvtrSmoothAccelStopConditions",
@@ -13705,28 +13705,13 @@
         },
         {
             "ParentScope": "AgEAvtrSmoothAccelStopConditions",
-            "OldName": "eSmoothAccelNormalStopConditions",
-            "NewName": "SMOOTH_ACCELERATION_NORMAL_STOP_CONDITIONS"
+            "OldName": "eRollRateANDLoadFactor",
+            "NewName": "ROLL_RATE_AND_LOAD_FACTOR"
         },
         {
             "ParentScope": "AgEAvtrAutopilotHorizPlaneMode",
-            "OldName": "eAutopilotAbsoluteHeading",
-            "NewName": "AUTOPILOT_ABSOLUTE_HEADING"
-        },
-        {
-            "ParentScope": "AgEAvtrAutopilotHorizPlaneMode",
-            "OldName": "eAutopilotAbsoluteCourse",
-            "NewName": "AUTOPILOT_ABSOLUTE_COURSE"
-        },
-        {
-            "ParentScope": "AgEAvtrAutopilotHorizPlaneMode",
-            "OldName": "eAutopilotRelativeHeading",
-            "NewName": "AUTOPILOT_RELATIVE_HEADING"
-        },
-        {
-            "ParentScope": "AgEAvtrAutopilotHorizPlaneMode",
-            "OldName": "eAutopilotRelativeCourse",
-            "NewName": "AUTOPILOT_RELATIVE_COURSE"
+            "OldName": "eAutopilotCourseRate",
+            "NewName": "AUTOPILOT_COURSE_RATE"
         },
         {
             "ParentScope": "AgEAvtrAutopilotHorizPlaneMode",
@@ -13735,13 +13720,23 @@
         },
         {
             "ParentScope": "AgEAvtrAutopilotHorizPlaneMode",
-            "OldName": "eAutopilotCourseRate",
-            "NewName": "AUTOPILOT_COURSE_RATE"
+            "OldName": "eAutopilotRelativeCourse",
+            "NewName": "AUTOPILOT_RELATIVE_COURSE"
         },
         {
-            "ParentScope": "AgEAvtrAngleMode",
-            "OldName": "eRelativeAngle",
-            "NewName": "RELATIVE_ANGLE"
+            "ParentScope": "AgEAvtrAutopilotHorizPlaneMode",
+            "OldName": "eAutopilotRelativeHeading",
+            "NewName": "AUTOPILOT_RELATIVE_HEADING"
+        },
+        {
+            "ParentScope": "AgEAvtrAutopilotHorizPlaneMode",
+            "OldName": "eAutopilotAbsoluteCourse",
+            "NewName": "AUTOPILOT_ABSOLUTE_COURSE"
+        },
+        {
+            "ParentScope": "AgEAvtrAutopilotHorizPlaneMode",
+            "OldName": "eAutopilotAbsoluteHeading",
+            "NewName": "AUTOPILOT_ABSOLUTE_HEADING"
         },
         {
             "ParentScope": "AgEAvtrAngleMode",
@@ -13749,24 +13744,14 @@
             "NewName": "ABSOLUTE_ANGLE"
         },
         {
-            "ParentScope": "AgEAvtrHoverAltitudeMode",
-            "OldName": "eHoverHoldInitAltitude",
-            "NewName": "HOVER_HOLD_INIT_ALTITUDE"
+            "ParentScope": "AgEAvtrAngleMode",
+            "OldName": "eRelativeAngle",
+            "NewName": "RELATIVE_ANGLE"
         },
         {
             "ParentScope": "AgEAvtrHoverAltitudeMode",
-            "OldName": "eHoverSpecifyAltitude",
-            "NewName": "HOVER_SPECIFY_ALTITUDE"
-        },
-        {
-            "ParentScope": "AgEAvtrHoverAltitudeMode",
-            "OldName": "eHoverSpecifyAltitudeChange",
-            "NewName": "HOVER_SPECIFY_ALTITUDE_CHANGE"
-        },
-        {
-            "ParentScope": "AgEAvtrHoverAltitudeMode",
-            "OldName": "eHoverSpecifyAltitudeRate",
-            "NewName": "HOVER_SPECIFY_ALTITUDE_RATE"
+            "OldName": "eHoverParachute",
+            "NewName": "HOVER_PARACHUTE"
         },
         {
             "ParentScope": "AgEAvtrHoverAltitudeMode",
@@ -13775,18 +13760,28 @@
         },
         {
             "ParentScope": "AgEAvtrHoverAltitudeMode",
-            "OldName": "eHoverParachute",
-            "NewName": "HOVER_PARACHUTE"
+            "OldName": "eHoverSpecifyAltitudeRate",
+            "NewName": "HOVER_SPECIFY_ALTITUDE_RATE"
+        },
+        {
+            "ParentScope": "AgEAvtrHoverAltitudeMode",
+            "OldName": "eHoverSpecifyAltitudeChange",
+            "NewName": "HOVER_SPECIFY_ALTITUDE_CHANGE"
+        },
+        {
+            "ParentScope": "AgEAvtrHoverAltitudeMode",
+            "OldName": "eHoverSpecifyAltitude",
+            "NewName": "HOVER_SPECIFY_ALTITUDE"
+        },
+        {
+            "ParentScope": "AgEAvtrHoverAltitudeMode",
+            "OldName": "eHoverHoldInitAltitude",
+            "NewName": "HOVER_HOLD_INIT_ALTITUDE"
         },
         {
             "ParentScope": "AgEAvtrHoverHeadingMode",
-            "OldName": "eHoverRelative",
-            "NewName": "HOVER_RELATIVE"
-        },
-        {
-            "ParentScope": "AgEAvtrHoverHeadingMode",
-            "OldName": "eHoverAbsolute",
-            "NewName": "HOVER_ABSOLUTE"
+            "OldName": "eHoverOppositeWind",
+            "NewName": "HOVER_OPPOSITE_WIND"
         },
         {
             "ParentScope": "AgEAvtrHoverHeadingMode",
@@ -13795,38 +13790,18 @@
         },
         {
             "ParentScope": "AgEAvtrHoverHeadingMode",
-            "OldName": "eHoverOppositeWind",
-            "NewName": "HOVER_OPPOSITE_WIND"
+            "OldName": "eHoverAbsolute",
+            "NewName": "HOVER_ABSOLUTE"
+        },
+        {
+            "ParentScope": "AgEAvtrHoverHeadingMode",
+            "OldName": "eHoverRelative",
+            "NewName": "HOVER_RELATIVE"
         },
         {
             "ParentScope": "AgEAvtrAutopilotAltitudeMode",
-            "OldName": "eAutopilotHoldInitAltitude",
-            "NewName": "AUTOPILOT_HOLD_INIT_ALTITUDE"
-        },
-        {
-            "ParentScope": "AgEAvtrAutopilotAltitudeMode",
-            "OldName": "eAutopilotSpecifyAltitude",
-            "NewName": "AUTOPILOT_SPECIFY_ALTITUDE"
-        },
-        {
-            "ParentScope": "AgEAvtrAutopilotAltitudeMode",
-            "OldName": "eAutopilotSpecifyAltitudeChange",
-            "NewName": "AUTOPILOT_SPECIFY_ALTITUDE_CHANGE"
-        },
-        {
-            "ParentScope": "AgEAvtrAutopilotAltitudeMode",
-            "OldName": "eAutopilotSpecifyAltitudeRate",
-            "NewName": "AUTOPILOT_SPECIFY_ALTITUDE_RATE"
-        },
-        {
-            "ParentScope": "AgEAvtrAutopilotAltitudeMode",
-            "OldName": "eAutopilotHoldInitAltitudeRate",
-            "NewName": "AUTOPILOT_HOLD_INIT_ALTITUDE_RATE"
-        },
-        {
-            "ParentScope": "AgEAvtrAutopilotAltitudeMode",
-            "OldName": "eAutopilotSpecifyFPA",
-            "NewName": "AUTOPILOT_SPECIFY_FLIGHT_PATH_ANGLE"
+            "OldName": "eAutopilotBallistic",
+            "NewName": "AUTOPILOT_BALLISTIC"
         },
         {
             "ParentScope": "AgEAvtrAutopilotAltitudeMode",
@@ -13835,13 +13810,38 @@
         },
         {
             "ParentScope": "AgEAvtrAutopilotAltitudeMode",
-            "OldName": "eAutopilotBallistic",
-            "NewName": "AUTOPILOT_BALLISTIC"
+            "OldName": "eAutopilotSpecifyFPA",
+            "NewName": "AUTOPILOT_SPECIFY_FLIGHT_PATH_ANGLE"
+        },
+        {
+            "ParentScope": "AgEAvtrAutopilotAltitudeMode",
+            "OldName": "eAutopilotHoldInitAltitudeRate",
+            "NewName": "AUTOPILOT_HOLD_INIT_ALTITUDE_RATE"
+        },
+        {
+            "ParentScope": "AgEAvtrAutopilotAltitudeMode",
+            "OldName": "eAutopilotSpecifyAltitudeRate",
+            "NewName": "AUTOPILOT_SPECIFY_ALTITUDE_RATE"
+        },
+        {
+            "ParentScope": "AgEAvtrAutopilotAltitudeMode",
+            "OldName": "eAutopilotSpecifyAltitudeChange",
+            "NewName": "AUTOPILOT_SPECIFY_ALTITUDE_CHANGE"
+        },
+        {
+            "ParentScope": "AgEAvtrAutopilotAltitudeMode",
+            "OldName": "eAutopilotSpecifyAltitude",
+            "NewName": "AUTOPILOT_SPECIFY_ALTITUDE"
+        },
+        {
+            "ParentScope": "AgEAvtrAutopilotAltitudeMode",
+            "OldName": "eAutopilotHoldInitAltitude",
+            "NewName": "AUTOPILOT_HOLD_INIT_ALTITUDE"
         },
         {
             "ParentScope": "AgEAvtrAutopilotAltitudeControlMode",
-            "OldName": "eAutopilotAltitudeRate",
-            "NewName": "AUTOPILOT_ALTITUDE_RATE"
+            "OldName": "eAutopilotPerfModels",
+            "NewName": "AUTOPILOT_PERFORMANCE_MODELS"
         },
         {
             "ParentScope": "AgEAvtrAutopilotAltitudeControlMode",
@@ -13850,13 +13850,13 @@
         },
         {
             "ParentScope": "AgEAvtrAutopilotAltitudeControlMode",
-            "OldName": "eAutopilotPerfModels",
-            "NewName": "AUTOPILOT_PERFORMANCE_MODELS"
+            "OldName": "eAutopilotAltitudeRate",
+            "NewName": "AUTOPILOT_ALTITUDE_RATE"
         },
         {
             "ParentScope": "AgEAvtrClosureMode",
-            "OldName": "eClosureNotSet",
-            "NewName": "CLOSURE_NOT_SET"
+            "OldName": "eHOBS",
+            "NewName": "HOBS"
         },
         {
             "ParentScope": "AgEAvtrClosureMode",
@@ -13865,13 +13865,8 @@
         },
         {
             "ParentScope": "AgEAvtrClosureMode",
-            "OldName": "eHOBS",
-            "NewName": "HOBS"
-        },
-        {
-            "ParentScope": "AgEAvtrInterceptMode",
-            "OldName": "eTargetAspect",
-            "NewName": "TARGET_ASPECT"
+            "OldName": "eClosureNotSet",
+            "NewName": "CLOSURE_NOT_SET"
         },
         {
             "ParentScope": "AgEAvtrInterceptMode",
@@ -13879,19 +13874,14 @@
             "NewName": "LATERAL_SEPARATION"
         },
         {
-            "ParentScope": "AgEAvtrRendezvousStopCondition",
-            "OldName": "eStopNormal",
-            "NewName": "STOP_NORMAL"
+            "ParentScope": "AgEAvtrInterceptMode",
+            "OldName": "eTargetAspect",
+            "NewName": "TARGET_ASPECT"
         },
         {
             "ParentScope": "AgEAvtrRendezvousStopCondition",
-            "OldName": "eStopAfterTargetCurrentProcedure",
-            "NewName": "STOP_AFTER_TARGET_CURRENT_PROCEDURE"
-        },
-        {
-            "ParentScope": "AgEAvtrRendezvousStopCondition",
-            "OldName": "eStopAfterTargetCurrentPhase",
-            "NewName": "STOP_AFTER_TARGET_CURRENT_PHASE"
+            "OldName": "eStopWhenTargetPhaseOfFlightChanges",
+            "NewName": "STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES"
         },
         {
             "ParentScope": "AgEAvtrRendezvousStopCondition",
@@ -13900,38 +13890,23 @@
         },
         {
             "ParentScope": "AgEAvtrRendezvousStopCondition",
-            "OldName": "eStopWhenTargetPhaseOfFlightChanges",
-            "NewName": "STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES"
+            "OldName": "eStopAfterTargetCurrentPhase",
+            "NewName": "STOP_AFTER_TARGET_CURRENT_PHASE"
+        },
+        {
+            "ParentScope": "AgEAvtrRendezvousStopCondition",
+            "OldName": "eStopAfterTargetCurrentProcedure",
+            "NewName": "STOP_AFTER_TARGET_CURRENT_PROCEDURE"
+        },
+        {
+            "ParentScope": "AgEAvtrRendezvousStopCondition",
+            "OldName": "eStopNormal",
+            "NewName": "STOP_NORMAL"
         },
         {
             "ParentScope": "AgEAvtrFormationFlyerStopCondition",
-            "OldName": "eFormationFlyerStopAfterFullMission",
-            "NewName": "FORMATION_FLYER_STOP_AFTER_FULL_MISSION"
-        },
-        {
-            "ParentScope": "AgEAvtrFormationFlyerStopCondition",
-            "OldName": "eFormationFlyerStopAfterTime",
-            "NewName": "FORMATION_FLYER_STOP_AFTER_TIME"
-        },
-        {
-            "ParentScope": "AgEAvtrFormationFlyerStopCondition",
-            "OldName": "eFormationFlyerStopAfterFuelState",
-            "NewName": "FORMATION_FLYER_STOP_AFTER_FUEL_STATE"
-        },
-        {
-            "ParentScope": "AgEAvtrFormationFlyerStopCondition",
-            "OldName": "eFormationFlyerStopAfterDownRange",
-            "NewName": "FORMATION_FLYER_STOP_AFTER_DOWN_RANGE"
-        },
-        {
-            "ParentScope": "AgEAvtrFormationFlyerStopCondition",
-            "OldName": "eFormationFlyerStopWhenTargetProcedureChanges",
-            "NewName": "FORMATION_FLYER_STOP_WHEN_TARGET_PROCEDURE_CHANGES"
-        },
-        {
-            "ParentScope": "AgEAvtrFormationFlyerStopCondition",
-            "OldName": "eFormationFlyerStopWhenTargetMissionChanges",
-            "NewName": "FORMATION_FLYER_STOP_WHEN_TARGET_MISSION_CHANGES"
+            "OldName": "eFormationFlyerStopWhenTargetPerfModeChanges",
+            "NewName": "FORMATION_FLYER_STOP_WHEN_TARGET_PERFORMANCE_MODE_CHANGES"
         },
         {
             "ParentScope": "AgEAvtrFormationFlyerStopCondition",
@@ -13940,38 +13915,38 @@
         },
         {
             "ParentScope": "AgEAvtrFormationFlyerStopCondition",
-            "OldName": "eFormationFlyerStopWhenTargetPerfModeChanges",
-            "NewName": "FORMATION_FLYER_STOP_WHEN_TARGET_PERFORMANCE_MODE_CHANGES"
+            "OldName": "eFormationFlyerStopWhenTargetMissionChanges",
+            "NewName": "FORMATION_FLYER_STOP_WHEN_TARGET_MISSION_CHANGES"
+        },
+        {
+            "ParentScope": "AgEAvtrFormationFlyerStopCondition",
+            "OldName": "eFormationFlyerStopWhenTargetProcedureChanges",
+            "NewName": "FORMATION_FLYER_STOP_WHEN_TARGET_PROCEDURE_CHANGES"
+        },
+        {
+            "ParentScope": "AgEAvtrFormationFlyerStopCondition",
+            "OldName": "eFormationFlyerStopAfterDownRange",
+            "NewName": "FORMATION_FLYER_STOP_AFTER_DOWN_RANGE"
+        },
+        {
+            "ParentScope": "AgEAvtrFormationFlyerStopCondition",
+            "OldName": "eFormationFlyerStopAfterFuelState",
+            "NewName": "FORMATION_FLYER_STOP_AFTER_FUEL_STATE"
+        },
+        {
+            "ParentScope": "AgEAvtrFormationFlyerStopCondition",
+            "OldName": "eFormationFlyerStopAfterTime",
+            "NewName": "FORMATION_FLYER_STOP_AFTER_TIME"
+        },
+        {
+            "ParentScope": "AgEAvtrFormationFlyerStopCondition",
+            "OldName": "eFormationFlyerStopAfterFullMission",
+            "NewName": "FORMATION_FLYER_STOP_AFTER_FULL_MISSION"
         },
         {
             "ParentScope": "AgEAvtrExtEphemFlightMode",
-            "OldName": "eExtEphemFlightModeForwardFlightClimb",
-            "NewName": "EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_CLIMB"
-        },
-        {
-            "ParentScope": "AgEAvtrExtEphemFlightMode",
-            "OldName": "eExtEphemFlightModeForwardFlightCruise",
-            "NewName": "EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_CRUISE"
-        },
-        {
-            "ParentScope": "AgEAvtrExtEphemFlightMode",
-            "OldName": "eExtEphemFlightModeForwardFlightDescend",
-            "NewName": "EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_DESCEND"
-        },
-        {
-            "ParentScope": "AgEAvtrExtEphemFlightMode",
-            "OldName": "eExtEphemFlightModeLanding",
-            "NewName": "EXT_EPHEM_FLIGHT_MODE_LANDING"
-        },
-        {
-            "ParentScope": "AgEAvtrExtEphemFlightMode",
-            "OldName": "eExtEphemFlightModeLandingWOW",
-            "NewName": "EXT_EPHEM_FLIGHT_MODE_LANDING_WOW"
-        },
-        {
-            "ParentScope": "AgEAvtrExtEphemFlightMode",
-            "OldName": "eExtEphemFlightModeTakeoff",
-            "NewName": "EXT_EPHEM_FLIGHT_MODE_TAKEOFF"
+            "OldName": "eExtEphemFlightModeVTOLHover",
+            "NewName": "EXT_EPHEM_FLIGHT_MODE_VTOL_HOVER"
         },
         {
             "ParentScope": "AgEAvtrExtEphemFlightMode",
@@ -13980,13 +13955,38 @@
         },
         {
             "ParentScope": "AgEAvtrExtEphemFlightMode",
-            "OldName": "eExtEphemFlightModeVTOLHover",
-            "NewName": "EXT_EPHEM_FLIGHT_MODE_VTOL_HOVER"
+            "OldName": "eExtEphemFlightModeTakeoff",
+            "NewName": "EXT_EPHEM_FLIGHT_MODE_TAKEOFF"
+        },
+        {
+            "ParentScope": "AgEAvtrExtEphemFlightMode",
+            "OldName": "eExtEphemFlightModeLandingWOW",
+            "NewName": "EXT_EPHEM_FLIGHT_MODE_LANDING_WOW"
+        },
+        {
+            "ParentScope": "AgEAvtrExtEphemFlightMode",
+            "OldName": "eExtEphemFlightModeLanding",
+            "NewName": "EXT_EPHEM_FLIGHT_MODE_LANDING"
+        },
+        {
+            "ParentScope": "AgEAvtrExtEphemFlightMode",
+            "OldName": "eExtEphemFlightModeForwardFlightDescend",
+            "NewName": "EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_DESCEND"
+        },
+        {
+            "ParentScope": "AgEAvtrExtEphemFlightMode",
+            "OldName": "eExtEphemFlightModeForwardFlightCruise",
+            "NewName": "EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_CRUISE"
+        },
+        {
+            "ParentScope": "AgEAvtrExtEphemFlightMode",
+            "OldName": "eExtEphemFlightModeForwardFlightClimb",
+            "NewName": "EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_CLIMB"
         },
         {
             "ParentScope": "AgEAvtrAccelPerfModelOverride",
-            "OldName": "eAccelPerfModelValue",
-            "NewName": "ACCELERATION_PERFORMANCE_MODEL_VALUE"
+            "OldName": "eAccelNoLimit",
+            "NewName": "ACCELERATION_NO_LIMIT"
         },
         {
             "ParentScope": "AgEAvtrAccelPerfModelOverride",
@@ -13995,18 +13995,13 @@
         },
         {
             "ParentScope": "AgEAvtrAccelPerfModelOverride",
-            "OldName": "eAccelNoLimit",
-            "NewName": "ACCELERATION_NO_LIMIT"
+            "OldName": "eAccelPerfModelValue",
+            "NewName": "ACCELERATION_PERFORMANCE_MODEL_VALUE"
         },
         {
             "ParentScope": "AgEAvtrStationkeepingStopCondition",
-            "OldName": "eStopConditionNotSet",
-            "NewName": "STOP_CONDITION_NOT_SET"
-        },
-        {
-            "ParentScope": "AgEAvtrStationkeepingStopCondition",
-            "OldName": "eStopAfterTurnCount",
-            "NewName": "STOP_AFTER_TURN_COUNT"
+            "OldName": "eStopAfterTime",
+            "NewName": "STOP_AFTER_TIME"
         },
         {
             "ParentScope": "AgEAvtrStationkeepingStopCondition",
@@ -14015,13 +14010,13 @@
         },
         {
             "ParentScope": "AgEAvtrStationkeepingStopCondition",
-            "OldName": "eStopAfterTime",
-            "NewName": "STOP_AFTER_TIME"
+            "OldName": "eStopAfterTurnCount",
+            "NewName": "STOP_AFTER_TURN_COUNT"
         },
         {
-            "ParentScope": "AgEAvtrTurnDirection",
-            "OldName": "eTurnLeft",
-            "NewName": "TURN_LEFT"
+            "ParentScope": "AgEAvtrStationkeepingStopCondition",
+            "OldName": "eStopConditionNotSet",
+            "NewName": "STOP_CONDITION_NOT_SET"
         },
         {
             "ParentScope": "AgEAvtrTurnDirection",
@@ -14029,9 +14024,9 @@
             "NewName": "TURN_RIGHT"
         },
         {
-            "ParentScope": "AgEAvtrProfileControlLimit",
-            "OldName": "eProfileAccelPerfModel",
-            "NewName": "PROFILE_ACCELERATION_PERFORMANCE_MODEL"
+            "ParentScope": "AgEAvtrTurnDirection",
+            "OldName": "eTurnLeft",
+            "NewName": "TURN_LEFT"
         },
         {
             "ParentScope": "AgEAvtrProfileControlLimit",
@@ -14039,29 +14034,14 @@
             "NewName": "PROFILE_PITCH_RATE"
         },
         {
-            "ParentScope": "AgEAvtrRelSpeedAltStopCondition",
-            "OldName": "eRelSpeedAltStopNormal",
-            "NewName": "RELATIVE_SPEED_ALTITUDE_STOP_NORMAL"
+            "ParentScope": "AgEAvtrProfileControlLimit",
+            "OldName": "eProfileAccelPerfModel",
+            "NewName": "PROFILE_ACCELERATION_PERFORMANCE_MODEL"
         },
         {
             "ParentScope": "AgEAvtrRelSpeedAltStopCondition",
-            "OldName": "eRelSpeedAltStopMinRangeForEqualSpeed",
-            "NewName": "RELATIVE_SPEED_ALTITUDE_STOP_MIN_RANGE_FOR_EQUAL_SPEED"
-        },
-        {
-            "ParentScope": "AgEAvtrRelSpeedAltStopCondition",
-            "OldName": "eRelSpeedAltStopTransitionSpeedRange",
-            "NewName": "RELATIVE_SPEED_ALTITUDE_STOP_TRANSITION_SPEED_RANGE"
-        },
-        {
-            "ParentScope": "AgEAvtrRelSpeedAltStopCondition",
-            "OldName": "eRelSpeedAltStopAfterTargetCurrentProcedure",
-            "NewName": "RELATIVE_SPEED_ALTITUDE_STOP_AFTER_TARGET_CURRENT_PROCEDURE"
-        },
-        {
-            "ParentScope": "AgEAvtrRelSpeedAltStopCondition",
-            "OldName": "eRelSpeedAltStopAfterTargetCurrentPhase",
-            "NewName": "RELATIVE_SPEED_ALTITUDE_STOP_AFTER_TARGET_CURRENT_PHASE"
+            "OldName": "eRelSpeedAltStopWhenTargetPhaseOfFlightChanges",
+            "NewName": "RELATIVE_SPEED_ALTITUDE_STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES"
         },
         {
             "ParentScope": "AgEAvtrRelSpeedAltStopCondition",
@@ -14070,18 +14050,33 @@
         },
         {
             "ParentScope": "AgEAvtrRelSpeedAltStopCondition",
-            "OldName": "eRelSpeedAltStopWhenTargetPhaseOfFlightChanges",
-            "NewName": "RELATIVE_SPEED_ALTITUDE_STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES"
+            "OldName": "eRelSpeedAltStopAfterTargetCurrentPhase",
+            "NewName": "RELATIVE_SPEED_ALTITUDE_STOP_AFTER_TARGET_CURRENT_PHASE"
+        },
+        {
+            "ParentScope": "AgEAvtrRelSpeedAltStopCondition",
+            "OldName": "eRelSpeedAltStopAfterTargetCurrentProcedure",
+            "NewName": "RELATIVE_SPEED_ALTITUDE_STOP_AFTER_TARGET_CURRENT_PROCEDURE"
+        },
+        {
+            "ParentScope": "AgEAvtrRelSpeedAltStopCondition",
+            "OldName": "eRelSpeedAltStopTransitionSpeedRange",
+            "NewName": "RELATIVE_SPEED_ALTITUDE_STOP_TRANSITION_SPEED_RANGE"
+        },
+        {
+            "ParentScope": "AgEAvtrRelSpeedAltStopCondition",
+            "OldName": "eRelSpeedAltStopMinRangeForEqualSpeed",
+            "NewName": "RELATIVE_SPEED_ALTITUDE_STOP_MIN_RANGE_FOR_EQUAL_SPEED"
+        },
+        {
+            "ParentScope": "AgEAvtrRelSpeedAltStopCondition",
+            "OldName": "eRelSpeedAltStopNormal",
+            "NewName": "RELATIVE_SPEED_ALTITUDE_STOP_NORMAL"
         },
         {
             "ParentScope": "AgEAvtrRelativeAltitudeMode",
-            "OldName": "eHoldOffsetAlt",
-            "NewName": "HOLD_OFFSET_ALTITUDE"
-        },
-        {
-            "ParentScope": "AgEAvtrRelativeAltitudeMode",
-            "OldName": "eHoldInitAltOffset",
-            "NewName": "HOLD_INIT_ALTITUDE_OFFSET"
+            "OldName": "eHoldInitElevationAngle",
+            "NewName": "HOLD_INIT_ELEVATION_ANGLE"
         },
         {
             "ParentScope": "AgEAvtrRelativeAltitudeMode",
@@ -14090,13 +14085,13 @@
         },
         {
             "ParentScope": "AgEAvtrRelativeAltitudeMode",
-            "OldName": "eHoldInitElevationAngle",
-            "NewName": "HOLD_INIT_ELEVATION_ANGLE"
+            "OldName": "eHoldInitAltOffset",
+            "NewName": "HOLD_INIT_ALTITUDE_OFFSET"
         },
         {
-            "ParentScope": "AgEAvtrFlyToFlightPathAngleMode",
-            "OldName": "eFlyToAltRate",
-            "NewName": "FLY_TO_ALTITUDE_RATE"
+            "ParentScope": "AgEAvtrRelativeAltitudeMode",
+            "OldName": "eHoldOffsetAlt",
+            "NewName": "HOLD_OFFSET_ALTITUDE"
         },
         {
             "ParentScope": "AgEAvtrFlyToFlightPathAngleMode",
@@ -14104,9 +14099,9 @@
             "NewName": "FLY_TO_FLIGHT_PATH_ANGLE"
         },
         {
-            "ParentScope": "AgEAvtrPushPull",
-            "OldName": "ePullUp",
-            "NewName": "PULL_UP"
+            "ParentScope": "AgEAvtrFlyToFlightPathAngleMode",
+            "OldName": "eFlyToAltRate",
+            "NewName": "FLY_TO_ALTITUDE_RATE"
         },
         {
             "ParentScope": "AgEAvtrPushPull",
@@ -14114,9 +14109,14 @@
             "NewName": "PUSH_OVER"
         },
         {
+            "ParentScope": "AgEAvtrPushPull",
+            "OldName": "ePullUp",
+            "NewName": "PULL_UP"
+        },
+        {
             "ParentScope": "AgEAvtrAccelMode",
-            "OldName": "eAccel",
-            "NewName": "ACCELERATION"
+            "OldName": "eMaintainSpeed",
+            "NewName": "MAINTAIN_SPEED"
         },
         {
             "ParentScope": "AgEAvtrAccelMode",
@@ -14125,13 +14125,13 @@
         },
         {
             "ParentScope": "AgEAvtrAccelMode",
-            "OldName": "eMaintainSpeed",
-            "NewName": "MAINTAIN_SPEED"
+            "OldName": "eAccel",
+            "NewName": "ACCELERATION"
         },
         {
             "ParentScope": "AgEAvtrDelayAltMode",
-            "OldName": "eDelayLevelOff",
-            "NewName": "DELAY_LEVEL_OFF"
+            "OldName": "eDelayOverride",
+            "NewName": "DELAY_OVERRIDE"
         },
         {
             "ParentScope": "AgEAvtrDelayAltMode",
@@ -14140,13 +14140,13 @@
         },
         {
             "ParentScope": "AgEAvtrDelayAltMode",
-            "OldName": "eDelayOverride",
-            "NewName": "DELAY_OVERRIDE"
+            "OldName": "eDelayLevelOff",
+            "NewName": "DELAY_LEVEL_OFF"
         },
         {
             "ParentScope": "AgEAvtrJoinExitArcMethod",
-            "OldName": "eJoinExitOutbound",
-            "NewName": "JOIN_EXIT_OUTBOUND"
+            "OldName": "eJoinExitInbound",
+            "NewName": "JOIN_EXIT_INBOUND"
         },
         {
             "ParentScope": "AgEAvtrJoinExitArcMethod",
@@ -14155,13 +14155,13 @@
         },
         {
             "ParentScope": "AgEAvtrJoinExitArcMethod",
-            "OldName": "eJoinExitInbound",
-            "NewName": "JOIN_EXIT_INBOUND"
+            "OldName": "eJoinExitOutbound",
+            "NewName": "JOIN_EXIT_OUTBOUND"
         },
         {
             "ParentScope": "AgEAvtrFlightLineProcType",
-            "OldName": "eProcTypeEnroute",
-            "NewName": "PROCEDURE_TYPE_ENROUTE"
+            "OldName": "eProcTypeTerrainFollow",
+            "NewName": "PROCEDURE_TYPE_TERRAIN_FOLLOW"
         },
         {
             "ParentScope": "AgEAvtrFlightLineProcType",
@@ -14170,13 +14170,13 @@
         },
         {
             "ParentScope": "AgEAvtrFlightLineProcType",
-            "OldName": "eProcTypeTerrainFollow",
-            "NewName": "PROCEDURE_TYPE_TERRAIN_FOLLOW"
+            "OldName": "eProcTypeEnroute",
+            "NewName": "PROCEDURE_TYPE_ENROUTE"
         },
         {
             "ParentScope": "AgEAvtrTransitionToHoverMode",
-            "OldName": "eFullStop",
-            "NewName": "FULL_STOP"
+            "OldName": "eTranslationAndAltitude",
+            "NewName": "TRANSLATION_AND_ALTITUDE"
         },
         {
             "ParentScope": "AgEAvtrTransitionToHoverMode",
@@ -14185,13 +14185,8 @@
         },
         {
             "ParentScope": "AgEAvtrTransitionToHoverMode",
-            "OldName": "eTranslationAndAltitude",
-            "NewName": "TRANSLATION_AND_ALTITUDE"
-        },
-        {
-            "ParentScope": "AgEAvtrVTOLRateMode",
-            "OldName": "eHaltAutomatic",
-            "NewName": "HALT_AUTOMATIC"
+            "OldName": "eFullStop",
+            "NewName": "FULL_STOP"
         },
         {
             "ParentScope": "AgEAvtrVTOLRateMode",
@@ -14199,9 +14194,14 @@
             "NewName": "ALWAYS_STOP"
         },
         {
+            "ParentScope": "AgEAvtrVTOLRateMode",
+            "OldName": "eHaltAutomatic",
+            "NewName": "HALT_AUTOMATIC"
+        },
+        {
             "ParentScope": "AgEAvtrHoldingProfileMode",
-            "OldName": "eSTK8Compatible",
-            "NewName": "STK8_COMPATIBLE"
+            "OldName": "eClimbDescentOnStation",
+            "NewName": "CLIMB_DESCENT_ON_STATION"
         },
         {
             "ParentScope": "AgEAvtrHoldingProfileMode",
@@ -14210,18 +14210,13 @@
         },
         {
             "ParentScope": "AgEAvtrHoldingProfileMode",
-            "OldName": "eClimbDescentOnStation",
-            "NewName": "CLIMB_DESCENT_ON_STATION"
+            "OldName": "eSTK8Compatible",
+            "NewName": "STK8_COMPATIBLE"
         },
         {
             "ParentScope": "AgEAvtrHoldingDirection",
-            "OldName": "eInboundLeftTurn",
-            "NewName": "INBOUND_LEFT_TURN"
-        },
-        {
-            "ParentScope": "AgEAvtrHoldingDirection",
-            "OldName": "eInboundRightTurn",
-            "NewName": "INBOUND_RIGHT_TURN"
+            "OldName": "eOutboundRightTurn",
+            "NewName": "OUTBOUND_RIGHT_TURN"
         },
         {
             "ParentScope": "AgEAvtrHoldingDirection",
@@ -14230,13 +14225,18 @@
         },
         {
             "ParentScope": "AgEAvtrHoldingDirection",
-            "OldName": "eOutboundRightTurn",
-            "NewName": "OUTBOUND_RIGHT_TURN"
+            "OldName": "eInboundRightTurn",
+            "NewName": "INBOUND_RIGHT_TURN"
+        },
+        {
+            "ParentScope": "AgEAvtrHoldingDirection",
+            "OldName": "eInboundLeftTurn",
+            "NewName": "INBOUND_LEFT_TURN"
         },
         {
             "ParentScope": "AgEAvtrHoldRefuelDumpMode",
-            "OldName": "eFullNumerOfTurns",
-            "NewName": "FULL_NUMER_OF_TURNS"
+            "OldName": "eImmediateExit",
+            "NewName": "IMMEDIATE_EXIT"
         },
         {
             "ParentScope": "AgEAvtrHoldRefuelDumpMode",
@@ -14245,13 +14245,13 @@
         },
         {
             "ParentScope": "AgEAvtrHoldRefuelDumpMode",
-            "OldName": "eImmediateExit",
-            "NewName": "IMMEDIATE_EXIT"
+            "OldName": "eFullNumerOfTurns",
+            "NewName": "FULL_NUMER_OF_TURNS"
         },
         {
             "ParentScope": "AgEAvtrHoldingEntryManeuver",
-            "OldName": "eHoldEntryNoManeuver",
-            "NewName": "HOLD_ENTRY_NO_MANEUVER"
+            "OldName": "eUseAlternateEntryPoints",
+            "NewName": "USE_ALTERNATE_ENTRY_POINTS"
         },
         {
             "ParentScope": "AgEAvtrHoldingEntryManeuver",
@@ -14260,13 +14260,13 @@
         },
         {
             "ParentScope": "AgEAvtrHoldingEntryManeuver",
-            "OldName": "eUseAlternateEntryPoints",
-            "NewName": "USE_ALTERNATE_ENTRY_POINTS"
+            "OldName": "eHoldEntryNoManeuver",
+            "NewName": "HOLD_ENTRY_NO_MANEUVER"
         },
         {
             "ParentScope": "AgEAvtrVTOLTransitionMode",
-            "OldName": "eTransitionRelativeHdg",
-            "NewName": "TRANSITION_RELATIVE_HDG"
+            "OldName": "eTransitionIntoWind",
+            "NewName": "TRANSITION_INTO_WIND"
         },
         {
             "ParentScope": "AgEAvtrVTOLTransitionMode",
@@ -14275,13 +14275,13 @@
         },
         {
             "ParentScope": "AgEAvtrVTOLTransitionMode",
-            "OldName": "eTransitionIntoWind",
-            "NewName": "TRANSITION_INTO_WIND"
+            "OldName": "eTransitionRelativeHdg",
+            "NewName": "TRANSITION_RELATIVE_HDG"
         },
         {
             "ParentScope": "AgEAvtrVTOLFinalHeadingMode",
-            "OldName": "eFinalHeadingRelative",
-            "NewName": "FINAL_HEADING_RELATIVE"
+            "OldName": "eFinalHeadingTranslationCourse",
+            "NewName": "FINAL_HEADING_TRANSLATION_COURSE"
         },
         {
             "ParentScope": "AgEAvtrVTOLFinalHeadingMode",
@@ -14290,13 +14290,13 @@
         },
         {
             "ParentScope": "AgEAvtrVTOLFinalHeadingMode",
-            "OldName": "eFinalHeadingTranslationCourse",
-            "NewName": "FINAL_HEADING_TRANSLATION_COURSE"
+            "OldName": "eFinalHeadingRelative",
+            "NewName": "FINAL_HEADING_RELATIVE"
         },
         {
             "ParentScope": "AgEAvtrVTOLTranslationMode",
-            "OldName": "eSetBearingAndRange",
-            "NewName": "SET_BEARING_AND_RANGE"
+            "OldName": "eMaintainRate",
+            "NewName": "MAINTAIN_RATE"
         },
         {
             "ParentScope": "AgEAvtrVTOLTranslationMode",
@@ -14305,13 +14305,13 @@
         },
         {
             "ParentScope": "AgEAvtrVTOLTranslationMode",
-            "OldName": "eMaintainRate",
-            "NewName": "MAINTAIN_RATE"
+            "OldName": "eSetBearingAndRange",
+            "NewName": "SET_BEARING_AND_RANGE"
         },
         {
             "ParentScope": "AgEAvtrVTOLTranslationFinalCourseMode",
-            "OldName": "eTranslateDirect",
-            "NewName": "TRANSLATE_DIRECT"
+            "OldName": "eAnticipateNextTranslation",
+            "NewName": "ANTICIPATE_NEXT_TRANSLATION"
         },
         {
             "ParentScope": "AgEAvtrVTOLTranslationFinalCourseMode",
@@ -14320,13 +14320,8 @@
         },
         {
             "ParentScope": "AgEAvtrVTOLTranslationFinalCourseMode",
-            "OldName": "eAnticipateNextTranslation",
-            "NewName": "ANTICIPATE_NEXT_TRANSLATION"
-        },
-        {
-            "ParentScope": "AgEAvtrHoverMode",
-            "OldName": "eHoverModeFixedTime",
-            "NewName": "HOVER_MODE_FIXED_TIME"
+            "OldName": "eTranslateDirect",
+            "NewName": "TRANSLATE_DIRECT"
         },
         {
             "ParentScope": "AgEAvtrHoverMode",
@@ -14334,9 +14329,14 @@
             "NewName": "HOVER_MODE_MANEUVER"
         },
         {
+            "ParentScope": "AgEAvtrHoverMode",
+            "OldName": "eHoverModeFixedTime",
+            "NewName": "HOVER_MODE_FIXED_TIME"
+        },
+        {
             "ParentScope": "AgEAvtrVTOLHeadingMode",
-            "OldName": "eHeadingIndependent",
-            "NewName": "HEADING_INDEPENDENT"
+            "OldName": "eHeadingIntoWind",
+            "NewName": "HEADING_INTO_WIND"
         },
         {
             "ParentScope": "AgEAvtrVTOLHeadingMode",
@@ -14345,18 +14345,13 @@
         },
         {
             "ParentScope": "AgEAvtrVTOLHeadingMode",
-            "OldName": "eHeadingIntoWind",
-            "NewName": "HEADING_INTO_WIND"
+            "OldName": "eHeadingIndependent",
+            "NewName": "HEADING_INDEPENDENT"
         },
         {
             "ParentScope": "AgEAvtrVertLandingMode",
-            "OldName": "eVertLandingIndependent",
-            "NewName": "VERT_LANDING_INDEPENDENT"
-        },
-        {
-            "ParentScope": "AgEAvtrVertLandingMode",
-            "OldName": "eVertLandingAlignTranslationCourse",
-            "NewName": "VERT_LANDING_ALIGN_TRANSLATION_COURSE"
+            "OldName": "eVertLandingAlignTranslationCourseOverride",
+            "NewName": "VERT_LANDING_ALIGN_TRANSLATION_COURSE_OVERRIDE"
         },
         {
             "ParentScope": "AgEAvtrVertLandingMode",
@@ -14365,13 +14360,18 @@
         },
         {
             "ParentScope": "AgEAvtrVertLandingMode",
-            "OldName": "eVertLandingAlignTranslationCourseOverride",
-            "NewName": "VERT_LANDING_ALIGN_TRANSLATION_COURSE_OVERRIDE"
+            "OldName": "eVertLandingAlignTranslationCourse",
+            "NewName": "VERT_LANDING_ALIGN_TRANSLATION_COURSE"
+        },
+        {
+            "ParentScope": "AgEAvtrVertLandingMode",
+            "OldName": "eVertLandingIndependent",
+            "NewName": "VERT_LANDING_INDEPENDENT"
         },
         {
             "ParentScope": "AgEAvtrLaunchAttitudeMode",
-            "OldName": "eLaunchAlignDirectionVector",
-            "NewName": "LAUNCH_ALIGN_DIRECTION_VECTOR"
+            "OldName": "eLaunchVTOL",
+            "NewName": "LAUNCH_VTOL"
         },
         {
             "ParentScope": "AgEAvtrLaunchAttitudeMode",
@@ -14380,28 +14380,13 @@
         },
         {
             "ParentScope": "AgEAvtrLaunchAttitudeMode",
-            "OldName": "eLaunchVTOL",
-            "NewName": "LAUNCH_VTOL"
+            "OldName": "eLaunchAlignDirectionVector",
+            "NewName": "LAUNCH_ALIGN_DIRECTION_VECTOR"
         },
         {
             "ParentScope": "AgEAvtrFuelFlowType",
-            "OldName": "eFuelFlowTakeoff",
-            "NewName": "FUEL_FLOW_TAKEOFF"
-        },
-        {
-            "ParentScope": "AgEAvtrFuelFlowType",
-            "OldName": "eFuelFlowCruise",
-            "NewName": "FUEL_FLOW_CRUISE"
-        },
-        {
-            "ParentScope": "AgEAvtrFuelFlowType",
-            "OldName": "eFuelFlowLanding",
-            "NewName": "FUEL_FLOW_LANDING"
-        },
-        {
-            "ParentScope": "AgEAvtrFuelFlowType",
-            "OldName": "eFuelFlowVTOL",
-            "NewName": "FUEL_FLOW_VTOL"
+            "OldName": "eFuelFlowOverride",
+            "NewName": "FUEL_FLOW_OVERRIDE"
         },
         {
             "ParentScope": "AgEAvtrFuelFlowType",
@@ -14410,13 +14395,23 @@
         },
         {
             "ParentScope": "AgEAvtrFuelFlowType",
-            "OldName": "eFuelFlowOverride",
-            "NewName": "FUEL_FLOW_OVERRIDE"
+            "OldName": "eFuelFlowVTOL",
+            "NewName": "FUEL_FLOW_VTOL"
         },
         {
-            "ParentScope": "AgEAvtrLineOrientation",
-            "OldName": "eFlightLineToLeft",
-            "NewName": "FLIGHT_LINE_TO_LEFT"
+            "ParentScope": "AgEAvtrFuelFlowType",
+            "OldName": "eFuelFlowLanding",
+            "NewName": "FUEL_FLOW_LANDING"
+        },
+        {
+            "ParentScope": "AgEAvtrFuelFlowType",
+            "OldName": "eFuelFlowCruise",
+            "NewName": "FUEL_FLOW_CRUISE"
+        },
+        {
+            "ParentScope": "AgEAvtrFuelFlowType",
+            "OldName": "eFuelFlowTakeoff",
+            "NewName": "FUEL_FLOW_TAKEOFF"
         },
         {
             "ParentScope": "AgEAvtrLineOrientation",
@@ -14424,9 +14419,14 @@
             "NewName": "FLIGHT_LINE_TO_RIGHT"
         },
         {
+            "ParentScope": "AgEAvtrLineOrientation",
+            "OldName": "eFlightLineToLeft",
+            "NewName": "FLIGHT_LINE_TO_LEFT"
+        },
+        {
             "ParentScope": "AgEAvtrRelAbsBearing",
-            "OldName": "eRelativeBearing",
-            "NewName": "RELATIVE_BEARING"
+            "OldName": "eMagneticBearing",
+            "NewName": "MAGNETIC_BEARING"
         },
         {
             "ParentScope": "AgEAvtrRelAbsBearing",
@@ -14435,13 +14435,8 @@
         },
         {
             "ParentScope": "AgEAvtrRelAbsBearing",
-            "OldName": "eMagneticBearing",
-            "NewName": "MAGNETIC_BEARING"
-        },
-        {
-            "ParentScope": "AgEAvtrBasicFixedWingPropMode",
-            "OldName": "eSpecifyThrust",
-            "NewName": "SPECIFY_THRUST"
+            "OldName": "eRelativeBearing",
+            "NewName": "RELATIVE_BEARING"
         },
         {
             "ParentScope": "AgEAvtrBasicFixedWingPropMode",
@@ -14449,14 +14444,14 @@
             "NewName": "SPECIFY_POWER"
         },
         {
-            "ParentScope": "AgEAvtrClimbSpeedType",
-            "OldName": "eClimbSpeedBestRate",
-            "NewName": "CLIMB_SPEED_BEST_RATE"
+            "ParentScope": "AgEAvtrBasicFixedWingPropMode",
+            "OldName": "eSpecifyThrust",
+            "NewName": "SPECIFY_THRUST"
         },
         {
             "ParentScope": "AgEAvtrClimbSpeedType",
-            "OldName": "eClimbSpeedBestAngle",
-            "NewName": "CLIMB_SPEED_BEST_ANGLE"
+            "OldName": "eClimbSpeedOverride",
+            "NewName": "CLIMB_SPEED_OVERRIDE"
         },
         {
             "ParentScope": "AgEAvtrClimbSpeedType",
@@ -14465,23 +14460,18 @@
         },
         {
             "ParentScope": "AgEAvtrClimbSpeedType",
-            "OldName": "eClimbSpeedOverride",
-            "NewName": "CLIMB_SPEED_OVERRIDE"
+            "OldName": "eClimbSpeedBestAngle",
+            "NewName": "CLIMB_SPEED_BEST_ANGLE"
+        },
+        {
+            "ParentScope": "AgEAvtrClimbSpeedType",
+            "OldName": "eClimbSpeedBestRate",
+            "NewName": "CLIMB_SPEED_BEST_RATE"
         },
         {
             "ParentScope": "AgEAvtrCruiseMaxPerfSpeedType",
-            "OldName": "eCornerSpeed",
-            "NewName": "CORNER_SPEED"
-        },
-        {
-            "ParentScope": "AgEAvtrCruiseMaxPerfSpeedType",
-            "OldName": "eMaxPsDryThrust",
-            "NewName": "MAX_PS_DRY_THRUST"
-        },
-        {
-            "ParentScope": "AgEAvtrCruiseMaxPerfSpeedType",
-            "OldName": "eMaxPsAfterburner",
-            "NewName": "MAX_PS_AFTERBURNER"
+            "OldName": "eMaxRangeAfterburner",
+            "NewName": "MAX_RANGE_AFTERBURNER"
         },
         {
             "ParentScope": "AgEAvtrCruiseMaxPerfSpeedType",
@@ -14490,23 +14480,23 @@
         },
         {
             "ParentScope": "AgEAvtrCruiseMaxPerfSpeedType",
-            "OldName": "eMaxRangeAfterburner",
-            "NewName": "MAX_RANGE_AFTERBURNER"
+            "OldName": "eMaxPsAfterburner",
+            "NewName": "MAX_PS_AFTERBURNER"
+        },
+        {
+            "ParentScope": "AgEAvtrCruiseMaxPerfSpeedType",
+            "OldName": "eMaxPsDryThrust",
+            "NewName": "MAX_PS_DRY_THRUST"
+        },
+        {
+            "ParentScope": "AgEAvtrCruiseMaxPerfSpeedType",
+            "OldName": "eCornerSpeed",
+            "NewName": "CORNER_SPEED"
         },
         {
             "ParentScope": "AgEAvtrDescentSpeedType",
-            "OldName": "eDescentMaxRangeCruise",
-            "NewName": "DESCENT_MAX_RANGE_CRUISE"
-        },
-        {
-            "ParentScope": "AgEAvtrDescentSpeedType",
-            "OldName": "eDescentMaxGlideRatio",
-            "NewName": "DESCENT_MAX_GLIDE_RATIO"
-        },
-        {
-            "ParentScope": "AgEAvtrDescentSpeedType",
-            "OldName": "eDescentMinSinkRate",
-            "NewName": "DESCENT_MIN_SINK_RATE"
+            "OldName": "eDescentSpeedOverride",
+            "NewName": "DESCENT_SPEED_OVERRIDE"
         },
         {
             "ParentScope": "AgEAvtrDescentSpeedType",
@@ -14515,13 +14505,18 @@
         },
         {
             "ParentScope": "AgEAvtrDescentSpeedType",
-            "OldName": "eDescentSpeedOverride",
-            "NewName": "DESCENT_SPEED_OVERRIDE"
+            "OldName": "eDescentMinSinkRate",
+            "NewName": "DESCENT_MIN_SINK_RATE"
         },
         {
-            "ParentScope": "AgEAvtrTakeoffLandingSpeedMode",
-            "OldName": "eTakeoffLandingStallSpeedRatio",
-            "NewName": "TAKEOFF_LANDING_STALL_SPEED_RATIO"
+            "ParentScope": "AgEAvtrDescentSpeedType",
+            "OldName": "eDescentMaxGlideRatio",
+            "NewName": "DESCENT_MAX_GLIDE_RATIO"
+        },
+        {
+            "ParentScope": "AgEAvtrDescentSpeedType",
+            "OldName": "eDescentMaxRangeCruise",
+            "NewName": "DESCENT_MAX_RANGE_CRUISE"
         },
         {
             "ParentScope": "AgEAvtrTakeoffLandingSpeedMode",
@@ -14529,9 +14524,14 @@
             "NewName": "TAKEOFF_LANDING_ANGLE_OF_ATTACK"
         },
         {
+            "ParentScope": "AgEAvtrTakeoffLandingSpeedMode",
+            "OldName": "eTakeoffLandingStallSpeedRatio",
+            "NewName": "TAKEOFF_LANDING_STALL_SPEED_RATIO"
+        },
+        {
             "ParentScope": "AgEAvtrDepartureSpeedMode",
-            "OldName": "eMaxClimbAngle",
-            "NewName": "MAX_CLIMB_ANGLE"
+            "OldName": "eUseClimbModel",
+            "NewName": "USE_CLIMB_MODEL"
         },
         {
             "ParentScope": "AgEAvtrDepartureSpeedMode",
@@ -14540,23 +14540,13 @@
         },
         {
             "ParentScope": "AgEAvtrDepartureSpeedMode",
-            "OldName": "eUseClimbModel",
-            "NewName": "USE_CLIMB_MODEL"
+            "OldName": "eMaxClimbAngle",
+            "NewName": "MAX_CLIMB_ANGLE"
         },
         {
             "ParentScope": "AgEAvtrAdvFixedWingAeroStrategy",
-            "OldName": "eExternalAeroFile",
-            "NewName": "EXTERNAL_AERODYNAMIC_FILE"
-        },
-        {
-            "ParentScope": "AgEAvtrAdvFixedWingAeroStrategy",
-            "OldName": "eSubSuperHyperAero",
-            "NewName": "SUB_SUPER_HYPER_AERODYNAMIC"
-        },
-        {
-            "ParentScope": "AgEAvtrAdvFixedWingAeroStrategy",
-            "OldName": "eSubsonicAero",
-            "NewName": "SUBSONIC_AERODYNAMIC"
+            "OldName": "eFourPointAero",
+            "NewName": "FOUR_POINT_AERODYNAMIC"
         },
         {
             "ParentScope": "AgEAvtrAdvFixedWingAeroStrategy",
@@ -14565,13 +14555,18 @@
         },
         {
             "ParentScope": "AgEAvtrAdvFixedWingAeroStrategy",
-            "OldName": "eFourPointAero",
-            "NewName": "FOUR_POINT_AERODYNAMIC"
+            "OldName": "eSubsonicAero",
+            "NewName": "SUBSONIC_AERODYNAMIC"
         },
         {
-            "ParentScope": "AgEAvtrAdvFixedWingGeometry",
-            "OldName": "eBasicGeometry",
-            "NewName": "BASIC_GEOMETRY"
+            "ParentScope": "AgEAvtrAdvFixedWingAeroStrategy",
+            "OldName": "eSubSuperHyperAero",
+            "NewName": "SUB_SUPER_HYPER_AERODYNAMIC"
+        },
+        {
+            "ParentScope": "AgEAvtrAdvFixedWingAeroStrategy",
+            "OldName": "eExternalAeroFile",
+            "NewName": "EXTERNAL_AERODYNAMIC_FILE"
         },
         {
             "ParentScope": "AgEAvtrAdvFixedWingGeometry",
@@ -14579,54 +14574,14 @@
             "NewName": "VARIABLE_GEOMETRY"
         },
         {
-            "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
-            "OldName": "eElectricPowerplant",
-            "NewName": "ELECTRIC_POWERPLANT"
+            "ParentScope": "AgEAvtrAdvFixedWingGeometry",
+            "OldName": "eBasicGeometry",
+            "NewName": "BASIC_GEOMETRY"
         },
         {
             "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
-            "OldName": "eExternalPropFile",
-            "NewName": "EXTERNAL_PROPULSION_FILE"
-        },
-        {
-            "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
-            "OldName": "ePistonPowerplant",
-            "NewName": "PISTON_POWERPLANT"
-        },
-        {
-            "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
-            "OldName": "eSubSuperHyperPowerplant",
-            "NewName": "SUB_SUPER_HYPER_POWERPLANT"
-        },
-        {
-            "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
-            "OldName": "eTurbofanBasicAB",
-            "NewName": "TURBOFAN_BASIC_AB"
-        },
-        {
-            "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
-            "OldName": "eTurbofanHighBypass",
-            "NewName": "TURBOFAN_HIGH_BYPASS"
-        },
-        {
-            "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
-            "OldName": "eTurbofanLowBypass",
-            "NewName": "TURBOFAN_LOW_BYPASS"
-        },
-        {
-            "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
-            "OldName": "eTurbofanLowBypassAfterburning",
-            "NewName": "TURBOFAN_LOW_BYPASS_AFTERBURNING"
-        },
-        {
-            "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
-            "OldName": "eTurbojetAfterburning",
-            "NewName": "TURBOJET_AFTERBURNING"
-        },
-        {
-            "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
-            "OldName": "eTurbojetBasicAB",
-            "NewName": "TURBOJET_BASIC_AB"
+            "OldName": "eTurboprop",
+            "NewName": "TURBOPROP"
         },
         {
             "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
@@ -14635,18 +14590,58 @@
         },
         {
             "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
-            "OldName": "eTurboprop",
-            "NewName": "TURBOPROP"
+            "OldName": "eTurbojetBasicAB",
+            "NewName": "TURBOJET_BASIC_AB"
+        },
+        {
+            "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
+            "OldName": "eTurbojetAfterburning",
+            "NewName": "TURBOJET_AFTERBURNING"
+        },
+        {
+            "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
+            "OldName": "eTurbofanLowBypassAfterburning",
+            "NewName": "TURBOFAN_LOW_BYPASS_AFTERBURNING"
+        },
+        {
+            "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
+            "OldName": "eTurbofanLowBypass",
+            "NewName": "TURBOFAN_LOW_BYPASS"
+        },
+        {
+            "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
+            "OldName": "eTurbofanHighBypass",
+            "NewName": "TURBOFAN_HIGH_BYPASS"
+        },
+        {
+            "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
+            "OldName": "eTurbofanBasicAB",
+            "NewName": "TURBOFAN_BASIC_AB"
+        },
+        {
+            "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
+            "OldName": "eSubSuperHyperPowerplant",
+            "NewName": "SUB_SUPER_HYPER_POWERPLANT"
+        },
+        {
+            "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
+            "OldName": "ePistonPowerplant",
+            "NewName": "PISTON_POWERPLANT"
+        },
+        {
+            "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
+            "OldName": "eExternalPropFile",
+            "NewName": "EXTERNAL_PROPULSION_FILE"
+        },
+        {
+            "ParentScope": "AgEAvtrAdvFixedWingPowerplantStrategy",
+            "OldName": "eElectricPowerplant",
+            "NewName": "ELECTRIC_POWERPLANT"
         },
         {
             "ParentScope": "AgEAvtrMissileAeroStrategy",
-            "OldName": "eMissileAeroSimple",
-            "NewName": "MISSILE_AERODYNAMIC_SIMPLE"
-        },
-        {
-            "ParentScope": "AgEAvtrMissileAeroStrategy",
-            "OldName": "eMissileAeroExternalFile",
-            "NewName": "MISSILE_AERODYNAMIC_EXTERNAL_FILE"
+            "OldName": "eMissileAeroFourPoint",
+            "NewName": "MISSILE_AERODYNAMIC_FOUR_POINT"
         },
         {
             "ParentScope": "AgEAvtrMissileAeroStrategy",
@@ -14655,23 +14650,18 @@
         },
         {
             "ParentScope": "AgEAvtrMissileAeroStrategy",
-            "OldName": "eMissileAeroFourPoint",
-            "NewName": "MISSILE_AERODYNAMIC_FOUR_POINT"
+            "OldName": "eMissileAeroExternalFile",
+            "NewName": "MISSILE_AERODYNAMIC_EXTERNAL_FILE"
+        },
+        {
+            "ParentScope": "AgEAvtrMissileAeroStrategy",
+            "OldName": "eMissileAeroSimple",
+            "NewName": "MISSILE_AERODYNAMIC_SIMPLE"
         },
         {
             "ParentScope": "AgEAvtrMissilePropStrategy",
-            "OldName": "eMissilePropSimple",
-            "NewName": "MISSILE_PROPULSION_SIMPLE"
-        },
-        {
-            "ParentScope": "AgEAvtrMissilePropStrategy",
-            "OldName": "eMissilePropExternalFile",
-            "NewName": "MISSILE_PROPULSION_EXTERNAL_FILE"
-        },
-        {
-            "ParentScope": "AgEAvtrMissilePropStrategy",
-            "OldName": "eMissilePropRamjet",
-            "NewName": "MISSILE_PROPULSION_RAMJET"
+            "OldName": "eMissilePropTurbojet",
+            "NewName": "MISSILE_PROPULSION_TURBOJET"
         },
         {
             "ParentScope": "AgEAvtrMissilePropStrategy",
@@ -14680,13 +14670,23 @@
         },
         {
             "ParentScope": "AgEAvtrMissilePropStrategy",
-            "OldName": "eMissilePropTurbojet",
-            "NewName": "MISSILE_PROPULSION_TURBOJET"
+            "OldName": "eMissilePropRamjet",
+            "NewName": "MISSILE_PROPULSION_RAMJET"
+        },
+        {
+            "ParentScope": "AgEAvtrMissilePropStrategy",
+            "OldName": "eMissilePropExternalFile",
+            "NewName": "MISSILE_PROPULSION_EXTERNAL_FILE"
+        },
+        {
+            "ParentScope": "AgEAvtrMissilePropStrategy",
+            "OldName": "eMissilePropSimple",
+            "NewName": "MISSILE_PROPULSION_SIMPLE"
         },
         {
             "ParentScope": "AgEAvtrRotorcraftPowerplantType",
-            "OldName": "eRotorcraftElectric",
-            "NewName": "ROTORCRAFT_ELECTRIC"
+            "OldName": "eRotorcraftPiston",
+            "NewName": "ROTORCRAFT_PISTON"
         },
         {
             "ParentScope": "AgEAvtrRotorcraftPowerplantType",
@@ -14695,13 +14695,13 @@
         },
         {
             "ParentScope": "AgEAvtrRotorcraftPowerplantType",
-            "OldName": "eRotorcraftPiston",
-            "NewName": "ROTORCRAFT_PISTON"
+            "OldName": "eRotorcraftElectric",
+            "NewName": "ROTORCRAFT_ELECTRIC"
         },
         {
             "ParentScope": "AgEAvtrMinimizeSiteProcTimeDiff",
-            "OldName": "eMinimizeTimeDifferenceOff",
-            "NewName": "MINIMIZE_TIME_DIFFERENCE_OFF"
+            "OldName": "eMinimizeTimeDifferenceNextUpdate",
+            "NewName": "MINIMIZE_TIME_DIFFERENCE_NEXT_UPDATE"
         },
         {
             "ParentScope": "AgEAvtrMinimizeSiteProcTimeDiff",
@@ -14710,18 +14710,13 @@
         },
         {
             "ParentScope": "AgEAvtrMinimizeSiteProcTimeDiff",
-            "OldName": "eMinimizeTimeDifferenceNextUpdate",
-            "NewName": "MINIMIZE_TIME_DIFFERENCE_NEXT_UPDATE"
+            "OldName": "eMinimizeTimeDifferenceOff",
+            "NewName": "MINIMIZE_TIME_DIFFERENCE_OFF"
         },
         {
             "ParentScope": "AgEAvtrSTKObjectWaypointOffsetMode",
-            "OldName": "eOffsetNone",
-            "NewName": "OFFSET_NONE"
-        },
-        {
-            "ParentScope": "AgEAvtrSTKObjectWaypointOffsetMode",
-            "OldName": "eOffsetBearingRange",
-            "NewName": "OFFSET_BEARING_RANGE"
+            "OldName": "eOffsetRelativeBearingRange",
+            "NewName": "OFFSET_RELATIVE_BEARING_RANGE"
         },
         {
             "ParentScope": "AgEAvtrSTKObjectWaypointOffsetMode",
@@ -14730,13 +14725,18 @@
         },
         {
             "ParentScope": "AgEAvtrSTKObjectWaypointOffsetMode",
-            "OldName": "eOffsetRelativeBearingRange",
-            "NewName": "OFFSET_RELATIVE_BEARING_RANGE"
+            "OldName": "eOffsetBearingRange",
+            "NewName": "OFFSET_BEARING_RANGE"
+        },
+        {
+            "ParentScope": "AgEAvtrSTKObjectWaypointOffsetMode",
+            "OldName": "eOffsetNone",
+            "NewName": "OFFSET_NONE"
         },
         {
             "ParentScope": "AgEAvtrSearchPatternCourseMode",
-            "OldName": "eCourseModeLow",
-            "NewName": "COURSE_MODE_LOW"
+            "OldName": "eCourseModeOverride",
+            "NewName": "COURSE_MODE_OVERRIDE"
         },
         {
             "ParentScope": "AgEAvtrSearchPatternCourseMode",
@@ -14745,13 +14745,13 @@
         },
         {
             "ParentScope": "AgEAvtrSearchPatternCourseMode",
-            "OldName": "eCourseModeOverride",
-            "NewName": "COURSE_MODE_OVERRIDE"
+            "OldName": "eCourseModeLow",
+            "NewName": "COURSE_MODE_LOW"
         },
         {
             "ParentScope": "AgEAvtrDelayTurnDir",
-            "OldName": "eDelayTurnAuto",
-            "NewName": "DELAY_TURN_AUTO"
+            "OldName": "eDelayTurnRight",
+            "NewName": "DELAY_TURN_RIGHT"
         },
         {
             "ParentScope": "AgEAvtrDelayTurnDir",
@@ -14760,28 +14760,13 @@
         },
         {
             "ParentScope": "AgEAvtrDelayTurnDir",
-            "OldName": "eDelayTurnRight",
-            "NewName": "DELAY_TURN_RIGHT"
+            "OldName": "eDelayTurnAuto",
+            "NewName": "DELAY_TURN_AUTO"
         },
         {
             "ParentScope": "AgEAvtrTrajectoryBlendMode",
-            "OldName": "eBlendBodyQuadratic",
-            "NewName": "BLEND_BODY_QUADRATIC"
-        },
-        {
-            "ParentScope": "AgEAvtrTrajectoryBlendMode",
-            "OldName": "eBlendBodyCubic",
-            "NewName": "BLEND_BODY_CUBIC"
-        },
-        {
-            "ParentScope": "AgEAvtrTrajectoryBlendMode",
-            "OldName": "eBlendLHQuadratic",
-            "NewName": "BLEND_LH_QUADRATIC"
-        },
-        {
-            "ParentScope": "AgEAvtrTrajectoryBlendMode",
-            "OldName": "eBlendLHCubic",
-            "NewName": "BLEND_LH_CUBIC"
+            "OldName": "eBlendECFCubic",
+            "NewName": "BLEND_ECF_CUBIC"
         },
         {
             "ParentScope": "AgEAvtrTrajectoryBlendMode",
@@ -14790,38 +14775,28 @@
         },
         {
             "ParentScope": "AgEAvtrTrajectoryBlendMode",
-            "OldName": "eBlendECFCubic",
-            "NewName": "BLEND_ECF_CUBIC"
+            "OldName": "eBlendLHCubic",
+            "NewName": "BLEND_LH_CUBIC"
+        },
+        {
+            "ParentScope": "AgEAvtrTrajectoryBlendMode",
+            "OldName": "eBlendLHQuadratic",
+            "NewName": "BLEND_LH_QUADRATIC"
+        },
+        {
+            "ParentScope": "AgEAvtrTrajectoryBlendMode",
+            "OldName": "eBlendBodyCubic",
+            "NewName": "BLEND_BODY_CUBIC"
+        },
+        {
+            "ParentScope": "AgEAvtrTrajectoryBlendMode",
+            "OldName": "eBlendBodyQuadratic",
+            "NewName": "BLEND_BODY_QUADRATIC"
         },
         {
             "ParentScope": "AgEAvtrRefStatePerfMode",
-            "OldName": "eRefStateClimb",
-            "NewName": "REFERENCE_STATE_CLIMB"
-        },
-        {
-            "ParentScope": "AgEAvtrRefStatePerfMode",
-            "OldName": "eRefStateCruise",
-            "NewName": "REFERENCE_STATE_CRUISE"
-        },
-        {
-            "ParentScope": "AgEAvtrRefStatePerfMode",
-            "OldName": "eRefStateDescend",
-            "NewName": "REFERENCE_STATE_DESCEND"
-        },
-        {
-            "ParentScope": "AgEAvtrRefStatePerfMode",
-            "OldName": "eRefStateHover",
-            "NewName": "REFERENCE_STATE_HOVER"
-        },
-        {
-            "ParentScope": "AgEAvtrRefStatePerfMode",
-            "OldName": "eRefStateLanding",
-            "NewName": "REFERENCE_STATE_LANDING"
-        },
-        {
-            "ParentScope": "AgEAvtrRefStatePerfMode",
-            "OldName": "eRefStateTakeoff",
-            "NewName": "REFERENCE_STATE_TAKEOFF"
+            "OldName": "eRefStateTakeoffRun",
+            "NewName": "REFERENCE_STATE_TAKEOFF_RUN"
         },
         {
             "ParentScope": "AgEAvtrRefStatePerfMode",
@@ -14830,13 +14805,33 @@
         },
         {
             "ParentScope": "AgEAvtrRefStatePerfMode",
-            "OldName": "eRefStateTakeoffRun",
-            "NewName": "REFERENCE_STATE_TAKEOFF_RUN"
+            "OldName": "eRefStateTakeoff",
+            "NewName": "REFERENCE_STATE_TAKEOFF"
         },
         {
-            "ParentScope": "AgEAvtrRefStateLongitudinalAccelMode",
-            "OldName": "eSpecifyTASDot",
-            "NewName": "SPECIFY_TAS_DOT"
+            "ParentScope": "AgEAvtrRefStatePerfMode",
+            "OldName": "eRefStateLanding",
+            "NewName": "REFERENCE_STATE_LANDING"
+        },
+        {
+            "ParentScope": "AgEAvtrRefStatePerfMode",
+            "OldName": "eRefStateHover",
+            "NewName": "REFERENCE_STATE_HOVER"
+        },
+        {
+            "ParentScope": "AgEAvtrRefStatePerfMode",
+            "OldName": "eRefStateDescend",
+            "NewName": "REFERENCE_STATE_DESCEND"
+        },
+        {
+            "ParentScope": "AgEAvtrRefStatePerfMode",
+            "OldName": "eRefStateCruise",
+            "NewName": "REFERENCE_STATE_CRUISE"
+        },
+        {
+            "ParentScope": "AgEAvtrRefStatePerfMode",
+            "OldName": "eRefStateClimb",
+            "NewName": "REFERENCE_STATE_CLIMB"
         },
         {
             "ParentScope": "AgEAvtrRefStateLongitudinalAccelMode",
@@ -14844,9 +14839,9 @@
             "NewName": "SPECIFY_GROUND_SPEED_DOT"
         },
         {
-            "ParentScope": "AgEAvtrRefStateLateralAccelMode",
-            "OldName": "eSpecifyHeadingDot",
-            "NewName": "SPECIFY_HEADING_DOT"
+            "ParentScope": "AgEAvtrRefStateLongitudinalAccelMode",
+            "OldName": "eSpecifyTASDot",
+            "NewName": "SPECIFY_TAS_DOT"
         },
         {
             "ParentScope": "AgEAvtrRefStateLateralAccelMode",
@@ -14854,9 +14849,9 @@
             "NewName": "SPECIFY_COURSE_DOT"
         },
         {
-            "ParentScope": "AgEAvtrRefStateAttitudeMode",
-            "OldName": "eSpecifyPushPullG",
-            "NewName": "SPECIFY_PUSH_PULL_G"
+            "ParentScope": "AgEAvtrRefStateLateralAccelMode",
+            "OldName": "eSpecifyHeadingDot",
+            "NewName": "SPECIFY_HEADING_DOT"
         },
         {
             "ParentScope": "AgEAvtrRefStateAttitudeMode",
@@ -14864,9 +14859,9 @@
             "NewName": "SPECIFY_PITCH_RATE"
         },
         {
-            "ParentScope": "AgEAvtrAndOr",
-            "OldName": "eAvtrAND",
-            "NewName": "AND"
+            "ParentScope": "AgEAvtrRefStateAttitudeMode",
+            "OldName": "eSpecifyPushPullG",
+            "NewName": "SPECIFY_PUSH_PULL_G"
         },
         {
             "ParentScope": "AgEAvtrAndOr",
@@ -14874,24 +14869,14 @@
             "NewName": "OR"
         },
         {
-            "ParentScope": "AgEAvtrJetEngineTechnologyLevel",
-            "OldName": "eIdeal",
-            "NewName": "IDEAL"
+            "ParentScope": "AgEAvtrAndOr",
+            "OldName": "eAvtrAND",
+            "NewName": "AND"
         },
         {
             "ParentScope": "AgEAvtrJetEngineTechnologyLevel",
-            "OldName": "eLevel1",
-            "NewName": "LEVEL1"
-        },
-        {
-            "ParentScope": "AgEAvtrJetEngineTechnologyLevel",
-            "OldName": "eLevel2",
-            "NewName": "LEVEL2"
-        },
-        {
-            "ParentScope": "AgEAvtrJetEngineTechnologyLevel",
-            "OldName": "eLevel3",
-            "NewName": "LEVEL3"
+            "OldName": "eLevel5",
+            "NewName": "LEVEL5"
         },
         {
             "ParentScope": "AgEAvtrJetEngineTechnologyLevel",
@@ -14900,13 +14885,28 @@
         },
         {
             "ParentScope": "AgEAvtrJetEngineTechnologyLevel",
-            "OldName": "eLevel5",
-            "NewName": "LEVEL5"
+            "OldName": "eLevel3",
+            "NewName": "LEVEL3"
+        },
+        {
+            "ParentScope": "AgEAvtrJetEngineTechnologyLevel",
+            "OldName": "eLevel2",
+            "NewName": "LEVEL2"
+        },
+        {
+            "ParentScope": "AgEAvtrJetEngineTechnologyLevel",
+            "OldName": "eLevel1",
+            "NewName": "LEVEL1"
+        },
+        {
+            "ParentScope": "AgEAvtrJetEngineTechnologyLevel",
+            "OldName": "eIdeal",
+            "NewName": "IDEAL"
         },
         {
             "ParentScope": "AgEAvtrJetEngineIntakeType",
-            "OldName": "eSubsonicNacelles",
-            "NewName": "SUBSONIC_NACELLES"
+            "OldName": "eSupersonicEmbedded",
+            "NewName": "SUPERSONIC_EMBEDDED"
         },
         {
             "ParentScope": "AgEAvtrJetEngineIntakeType",
@@ -14915,13 +14915,8 @@
         },
         {
             "ParentScope": "AgEAvtrJetEngineIntakeType",
-            "OldName": "eSupersonicEmbedded",
-            "NewName": "SUPERSONIC_EMBEDDED"
-        },
-        {
-            "ParentScope": "AgEAvtrJetEngineTurbineType",
-            "OldName": "eUncooled",
-            "NewName": "UNCOOLED"
+            "OldName": "eSubsonicNacelles",
+            "NewName": "SUBSONIC_NACELLES"
         },
         {
             "ParentScope": "AgEAvtrJetEngineTurbineType",
@@ -14929,9 +14924,14 @@
             "NewName": "COOLED"
         },
         {
+            "ParentScope": "AgEAvtrJetEngineTurbineType",
+            "OldName": "eUncooled",
+            "NewName": "UNCOOLED"
+        },
+        {
             "ParentScope": "AgEAvtrJetEngineExhaustNozzleType",
-            "OldName": "eFixedAreaConvergent",
-            "NewName": "FIXED_AREA_CONVERGENT"
+            "OldName": "eVariableAreaConvergentDivergent",
+            "NewName": "VARIABLE_AREA_CONVERGENT_DIVERGENT"
         },
         {
             "ParentScope": "AgEAvtrJetEngineExhaustNozzleType",
@@ -14940,13 +14940,13 @@
         },
         {
             "ParentScope": "AgEAvtrJetEngineExhaustNozzleType",
-            "OldName": "eVariableAreaConvergentDivergent",
-            "NewName": "VARIABLE_AREA_CONVERGENT_DIVERGENT"
+            "OldName": "eFixedAreaConvergent",
+            "NewName": "FIXED_AREA_CONVERGENT"
         },
         {
             "ParentScope": "AgEAvtrJetFuelType",
-            "OldName": "eKeroseneAFPROP",
-            "NewName": "KEROSENE_AFPROP"
+            "OldName": "eHydrogen",
+            "NewName": "HYDROGEN"
         },
         {
             "ParentScope": "AgEAvtrJetFuelType",
@@ -14955,23 +14955,13 @@
         },
         {
             "ParentScope": "AgEAvtrJetFuelType",
-            "OldName": "eHydrogen",
-            "NewName": "HYDROGEN"
+            "OldName": "eKeroseneAFPROP",
+            "NewName": "KEROSENE_AFPROP"
         },
         {
             "ParentScope": "AgEAvtrAFPROPFuelType",
-            "OldName": "eAFPROPOverride",
-            "NewName": "AFPROP_OVERRIDE"
-        },
-        {
-            "ParentScope": "AgEAvtrAFPROPFuelType",
-            "OldName": "eAFPROPJetA",
-            "NewName": "AFPROP_JET_A"
-        },
-        {
-            "ParentScope": "AgEAvtrAFPROPFuelType",
-            "OldName": "eAFPROPJetA1",
-            "NewName": "AFPROP_JET_A1"
+            "OldName": "eAFPROPJP7",
+            "NewName": "AFPROPJP7"
         },
         {
             "ParentScope": "AgEAvtrAFPROPFuelType",
@@ -14980,23 +14970,23 @@
         },
         {
             "ParentScope": "AgEAvtrAFPROPFuelType",
-            "OldName": "eAFPROPJP7",
-            "NewName": "AFPROPJP7"
+            "OldName": "eAFPROPJetA1",
+            "NewName": "AFPROP_JET_A1"
+        },
+        {
+            "ParentScope": "AgEAvtrAFPROPFuelType",
+            "OldName": "eAFPROPJetA",
+            "NewName": "AFPROP_JET_A"
+        },
+        {
+            "ParentScope": "AgEAvtrAFPROPFuelType",
+            "OldName": "eAFPROPOverride",
+            "NewName": "AFPROP_OVERRIDE"
         },
         {
             "ParentScope": "AgEAvtrCEAFuelType",
-            "OldName": "eCEAOverride",
-            "NewName": "CEA_OVERRIDE"
-        },
-        {
-            "ParentScope": "AgEAvtrCEAFuelType",
-            "OldName": "eCEAJetA",
-            "NewName": "CEA_JET_A"
-        },
-        {
-            "ParentScope": "AgEAvtrCEAFuelType",
-            "OldName": "eCEAJetA1",
-            "NewName": "CEA_JET_A1"
+            "OldName": "eCEAJP7",
+            "NewName": "CEAJP7"
         },
         {
             "ParentScope": "AgEAvtrCEAFuelType",
@@ -15005,13 +14995,23 @@
         },
         {
             "ParentScope": "AgEAvtrCEAFuelType",
-            "OldName": "eCEAJP7",
-            "NewName": "CEAJP7"
+            "OldName": "eCEAJetA1",
+            "NewName": "CEA_JET_A1"
+        },
+        {
+            "ParentScope": "AgEAvtrCEAFuelType",
+            "OldName": "eCEAJetA",
+            "NewName": "CEA_JET_A"
+        },
+        {
+            "ParentScope": "AgEAvtrCEAFuelType",
+            "OldName": "eCEAOverride",
+            "NewName": "CEA_OVERRIDE"
         },
         {
             "ParentScope": "AgEAvtrTurbineMode",
-            "OldName": "eTurbineModeDisabled",
-            "NewName": "TURBINE_MODE_DISABLED"
+            "OldName": "eTurbineModeTurbofanBasicAB",
+            "NewName": "TURBINE_MODE_TURBOFAN_BASIC_AB"
         },
         {
             "ParentScope": "AgEAvtrTurbineMode",
@@ -15020,13 +15020,8 @@
         },
         {
             "ParentScope": "AgEAvtrTurbineMode",
-            "OldName": "eTurbineModeTurbofanBasicAB",
-            "NewName": "TURBINE_MODE_TURBOFAN_BASIC_AB"
-        },
-        {
-            "ParentScope": "AgEAvtrRamjetMode",
-            "OldName": "eRamjetModeDisabled",
-            "NewName": "RAMJET_MODE_DISABLED"
+            "OldName": "eTurbineModeDisabled",
+            "NewName": "TURBINE_MODE_DISABLED"
         },
         {
             "ParentScope": "AgEAvtrRamjetMode",
@@ -15034,9 +15029,9 @@
             "NewName": "RAMJET_MODE_BASIC"
         },
         {
-            "ParentScope": "AgEAvtrScramjetMode",
-            "OldName": "eScramjetModeDisabled",
-            "NewName": "SCRAMJET_MODE_DISABLED"
+            "ParentScope": "AgEAvtrRamjetMode",
+            "OldName": "eRamjetModeDisabled",
+            "NewName": "RAMJET_MODE_DISABLED"
         },
         {
             "ParentScope": "AgEAvtrScramjetMode",
@@ -15044,9 +15039,9 @@
             "NewName": "SCRAMJET_MODE_BASIC"
         },
         {
-            "ParentScope": "AgEAvtrNumericalIntegrator",
-            "OldName": "eRK4",
-            "NewName": "RUNGE_KUTTA4"
+            "ParentScope": "AgEAvtrScramjetMode",
+            "OldName": "eScramjetModeDisabled",
+            "NewName": "SCRAMJET_MODE_DISABLED"
         },
         {
             "ParentScope": "AgEAvtrNumericalIntegrator",
@@ -15054,9 +15049,14 @@
             "NewName": "RUNGE_KUTTA45"
         },
         {
+            "ParentScope": "AgEAvtrNumericalIntegrator",
+            "OldName": "eRK4",
+            "NewName": "RUNGE_KUTTA4"
+        },
+        {
             "ParentScope": "AgEAvtrBallistic3DControlMode",
-            "OldName": "eBallistic3DCompensateForWind",
-            "NewName": "BALLISTIC_3D_COMPENSATE_FOR_WIND"
+            "OldName": "eBallistic3DParachuteMode",
+            "NewName": "BALLISTIC_3D_PARACHUTE_MODE"
         },
         {
             "ParentScope": "AgEAvtrBallistic3DControlMode",
@@ -15065,13 +15065,8 @@
         },
         {
             "ParentScope": "AgEAvtrBallistic3DControlMode",
-            "OldName": "eBallistic3DParachuteMode",
-            "NewName": "BALLISTIC_3D_PARACHUTE_MODE"
-        },
-        {
-            "ParentScope": "AgEAvtrLaunchDynStateCoordFrame",
-            "OldName": "eLaunchDynStateCoordFrameBody",
-            "NewName": "LAUNCH_DYNAMIC_STATE_COORD_FRAME_BODY"
+            "OldName": "eBallistic3DCompensateForWind",
+            "NewName": "BALLISTIC_3D_COMPENSATE_FOR_WIND"
         },
         {
             "ParentScope": "AgEAvtrLaunchDynStateCoordFrame",
@@ -15079,9 +15074,14 @@
             "NewName": "LAUNCH_DYNAMIC_STATE_COORD_FRAME_LOCAL_HORIZONTAL"
         },
         {
+            "ParentScope": "AgEAvtrLaunchDynStateCoordFrame",
+            "OldName": "eLaunchDynStateCoordFrameBody",
+            "NewName": "LAUNCH_DYNAMIC_STATE_COORD_FRAME_BODY"
+        },
+        {
             "ParentScope": "AgEAvtrLaunchDynStateBearingRef",
-            "OldName": "eLaunchDynStateBearingRefVelocity",
-            "NewName": "LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE_VELOCITY"
+            "OldName": "eLaunchDynStateBearingRefNorth",
+            "NewName": "LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE_NORTH"
         },
         {
             "ParentScope": "AgEAvtrLaunchDynStateBearingRef",
@@ -15090,13 +15090,13 @@
         },
         {
             "ParentScope": "AgEAvtrLaunchDynStateBearingRef",
-            "OldName": "eLaunchDynStateBearingRefNorth",
-            "NewName": "LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE_NORTH"
+            "OldName": "eLaunchDynStateBearingRefVelocity",
+            "NewName": "LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE_VELOCITY"
         },
         {
             "ParentScope": "AgEAvtrAltitudeRef",
-            "OldName": "eAltitudeRefWGS84",
-            "NewName": "ALTITUDE_REFERENCE_WGS84"
+            "OldName": "eAltitudeRefTerrain",
+            "NewName": "ALTITUDE_REFERENCE_TERRAIN"
         },
         {
             "ParentScope": "AgEAvtrAltitudeRef",
@@ -15105,13 +15105,8 @@
         },
         {
             "ParentScope": "AgEAvtrAltitudeRef",
-            "OldName": "eAltitudeRefTerrain",
-            "NewName": "ALTITUDE_REFERENCE_TERRAIN"
-        },
-        {
-            "ParentScope": "AgEAvtrSmoothTurnFPAMode",
-            "OldName": "eSmoothTurnFPAHoldInitial",
-            "NewName": "SMOOTH_TURN_FLIGHT_PATH_ANGLE_HOLD_INITIAL"
+            "OldName": "eAltitudeRefWGS84",
+            "NewName": "ALTITUDE_REFERENCE_WGS84"
         },
         {
             "ParentScope": "AgEAvtrSmoothTurnFPAMode",
@@ -15119,9 +15114,9 @@
             "NewName": "SMOOTH_TURN_FLIGHT_PATH_ANGLE_LEVEL_OFF"
         },
         {
-            "ParentScope": "AgEAvtrPitch3DControlMode",
-            "OldName": "ePitch3DCompensateForWind",
-            "NewName": "PITCH_3D_COMPENSATE_FOR_WIND"
+            "ParentScope": "AgEAvtrSmoothTurnFPAMode",
+            "OldName": "eSmoothTurnFPAHoldInitial",
+            "NewName": "SMOOTH_TURN_FLIGHT_PATH_ANGLE_HOLD_INITIAL"
         },
         {
             "ParentScope": "AgEAvtrPitch3DControlMode",
@@ -15129,34 +15124,14 @@
             "NewName": "PITCH_3D_WIND_PUSHES_VEHICLE"
         },
         {
-            "ParentScope": "AgEAvtrRefuelDumpMode",
-            "OldName": "eRefuelDumpDisabled",
-            "NewName": "REFUEL_DUMP_DISABLED"
+            "ParentScope": "AgEAvtrPitch3DControlMode",
+            "OldName": "ePitch3DCompensateForWind",
+            "NewName": "PITCH_3D_COMPENSATE_FOR_WIND"
         },
         {
             "ParentScope": "AgEAvtrRefuelDumpMode",
-            "OldName": "eRefuelTopOff",
-            "NewName": "REFUEL_TOP_OFF"
-        },
-        {
-            "ParentScope": "AgEAvtrRefuelDumpMode",
-            "OldName": "eRefuelToFuelState",
-            "NewName": "REFUEL_TO_FUEL_STATE"
-        },
-        {
-            "ParentScope": "AgEAvtrRefuelDumpMode",
-            "OldName": "eRefuelToWeight",
-            "NewName": "REFUEL_TO_WEIGHT"
-        },
-        {
-            "ParentScope": "AgEAvtrRefuelDumpMode",
-            "OldName": "eRefuelQuantity",
-            "NewName": "REFUEL_QUANTITY"
-        },
-        {
-            "ParentScope": "AgEAvtrRefuelDumpMode",
-            "OldName": "eDumpToFuelState",
-            "NewName": "DUMP_TO_FUEL_STATE"
+            "OldName": "eDumpQuantity",
+            "NewName": "DUMP_QUANTITY"
         },
         {
             "ParentScope": "AgEAvtrRefuelDumpMode",
@@ -15165,13 +15140,33 @@
         },
         {
             "ParentScope": "AgEAvtrRefuelDumpMode",
-            "OldName": "eDumpQuantity",
-            "NewName": "DUMP_QUANTITY"
+            "OldName": "eDumpToFuelState",
+            "NewName": "DUMP_TO_FUEL_STATE"
         },
         {
-            "ParentScope": "AgEAvtrBasicManeuverGlideSpeedControlMode",
-            "OldName": "eGlideSpeedImmediateChange",
-            "NewName": "GLIDE_SPEED_IMMEDIATE_CHANGE"
+            "ParentScope": "AgEAvtrRefuelDumpMode",
+            "OldName": "eRefuelQuantity",
+            "NewName": "REFUEL_QUANTITY"
+        },
+        {
+            "ParentScope": "AgEAvtrRefuelDumpMode",
+            "OldName": "eRefuelToWeight",
+            "NewName": "REFUEL_TO_WEIGHT"
+        },
+        {
+            "ParentScope": "AgEAvtrRefuelDumpMode",
+            "OldName": "eRefuelToFuelState",
+            "NewName": "REFUEL_TO_FUEL_STATE"
+        },
+        {
+            "ParentScope": "AgEAvtrRefuelDumpMode",
+            "OldName": "eRefuelTopOff",
+            "NewName": "REFUEL_TOP_OFF"
+        },
+        {
+            "ParentScope": "AgEAvtrRefuelDumpMode",
+            "OldName": "eRefuelDumpDisabled",
+            "NewName": "REFUEL_DUMP_DISABLED"
         },
         {
             "ParentScope": "AgEAvtrBasicManeuverGlideSpeedControlMode",
@@ -15179,9 +15174,14 @@
             "NewName": "GLIDE_SPEED_AT_ALTITUDE"
         },
         {
+            "ParentScope": "AgEAvtrBasicManeuverGlideSpeedControlMode",
+            "OldName": "eGlideSpeedImmediateChange",
+            "NewName": "GLIDE_SPEED_IMMEDIATE_CHANGE"
+        },
+        {
             "ParentScope": "AgEAvtrTargetPosVelType",
-            "OldName": "eSurfaceTargetPosVel",
-            "NewName": "SURFACE_TARGET_POSITION_VELOCITY"
+            "OldName": "eDisabledPosVel",
+            "NewName": "DISABLED_POSITION_VELOCITY"
         },
         {
             "ParentScope": "AgEAvtrTargetPosVelType",
@@ -15190,13 +15190,13 @@
         },
         {
             "ParentScope": "AgEAvtrTargetPosVelType",
-            "OldName": "eDisabledPosVel",
-            "NewName": "DISABLED_POSITION_VELOCITY"
+            "OldName": "eSurfaceTargetPosVel",
+            "NewName": "SURFACE_TARGET_POSITION_VELOCITY"
         },
         {
             "ParentScope": "AgEAvtrEphemShiftRotateAltMode",
-            "OldName": "eAltModeMSL",
-            "NewName": "ALTITUDE_MODE_MSL"
+            "OldName": "eAltModeRel",
+            "NewName": "ALTITUDE_MODE_RELATIVE"
         },
         {
             "ParentScope": "AgEAvtrEphemShiftRotateAltMode",
@@ -15205,13 +15205,13 @@
         },
         {
             "ParentScope": "AgEAvtrEphemShiftRotateAltMode",
-            "OldName": "eAltModeRel",
-            "NewName": "ALTITUDE_MODE_RELATIVE"
+            "OldName": "eAltModeMSL",
+            "NewName": "ALTITUDE_MODE_MSL"
         },
         {
             "ParentScope": "AgEAvtrEphemShiftRotateCourseMode",
-            "OldName": "eCourseModeTrue",
-            "NewName": "COURSE_MODE_TRUE"
+            "OldName": "eCourseModeRel",
+            "NewName": "COURSE_MODE_RELATIVE"
         },
         {
             "ParentScope": "AgEAvtrEphemShiftRotateCourseMode",
@@ -15220,8 +15220,8 @@
         },
         {
             "ParentScope": "AgEAvtrEphemShiftRotateCourseMode",
-            "OldName": "eCourseModeRel",
-            "NewName": "COURSE_MODE_RELATIVE"
+            "OldName": "eCourseModeTrue",
+            "NewName": "COURSE_MODE_TRUE"
         }
     ],
     "NamedArgumentMappings": []

@@ -34,11 +34,11 @@ class COMObject(object):
 
     def __init__(self):
         """Construct an object of type COMObject."""
-        self._pUnk = None
+        self._intf : "IUnknown" = None
 
     def get_pointer(self) -> c_void_p:
         """Return the COM object pointer as a ctypes.c_void_p."""
-        if self._pUnk is None:
+        if self._intf is None:
             return c_void_p()
         else:
-            return self._pUnk.p
+            return self._intf.p

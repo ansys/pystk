@@ -3649,6 +3649,15 @@ class GatorHelper(object):
 
             scriptingTool.language_type = Language.J_SCRIPT
             Assert.assertEqual(Language.J_SCRIPT, scriptingTool.language_type)
+            scriptingTool.language_type = Language.VB_SCRIPT
+            Assert.assertEqual(Language.VB_SCRIPT, scriptingTool.language_type)
+            scriptingTool.language_type = Language.MATLAB
+            Assert.assertEqual(Language.MATLAB, scriptingTool.language_type)
+            scriptingTool.language_type = Language.PYTHON
+            Assert.assertEqual(Language.PYTHON, scriptingTool.language_type)
+
+            scriptingTool.language_type = Language.J_SCRIPT
+            Assert.assertEqual(Language.J_SCRIPT, scriptingTool.language_type)
             scriptingTool.script_text("int j = 1;")
 
     @staticmethod
@@ -7253,6 +7262,15 @@ class GatorHelper(object):
         GatorHelper.TestScriptingToolParameters(scriptingTool.parameters)
 
         GatorHelper.TestScriptingToolCalcObjects(scriptingTool.calculation_objects)
+
+        scriptingTool.language_type = Language.J_SCRIPT
+        Assert.assertEqual(Language.J_SCRIPT, scriptingTool.language_type)
+        scriptingTool.language_type = Language.VB_SCRIPT
+        Assert.assertEqual(Language.VB_SCRIPT, scriptingTool.language_type)
+        scriptingTool.language_type = Language.MATLAB
+        Assert.assertEqual(Language.MATLAB, scriptingTool.language_type)
+        scriptingTool.language_type = Language.PYTHON
+        Assert.assertEqual(Language.PYTHON, scriptingTool.language_type)
 
         scriptingTool.language_type = Language.J_SCRIPT
         Assert.assertEqual(Language.J_SCRIPT, scriptingTool.language_type)
