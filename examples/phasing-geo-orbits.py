@@ -49,7 +49,7 @@ semimajor_axis = 42164.0
 eccentricity = 0.0001
 inclination = 0.0
 raan = 0.0
-arg_of_periapsis = 0.0 
+arg_of_periapsis = 0.0
 
 true_anomaly_target = 20.0
 true_anomaly_chaser = 70.0
@@ -129,8 +129,12 @@ phase_angle_awb = earth_angle_factory.create("Phase", "Phase", AngleType.DIHEDRA
 
 # Next, retrieve all of the vectors associated with the Earth, the target satellite, and the chaser satellite:
 
-target_vectors = awb_root.get_provider(target_satellite.class_name+"/"+target_satellite.instance_name).vectors
-chaser_vectors = awb_root.get_provider(chaser_satellite.class_name+"/"+chaser_satellite.instance_name).vectors
+target_vectors = awb_root.get_provider(
++    target_satellite.class_name + "/" + target_satellite.instance_name
++).vectors
++chaser_vectors = awb_root.get_provider(
++    chaser_satellite.class_name + "/" + chaser_satellite.instance_name
++).vectors
 
 # Retrieve the target satellite's position vector, which is automatically created on STK objects when they are created. Then, designate this vector as the vector that the dihedral angle sweeps to:
 
@@ -153,7 +157,9 @@ phase_angle_awb.signed_angle = True
 
 # Finally, create a scalar calculation using the dihedral angle as input in order to record the angle values over time:
 
-earth_calc_scalar_factory = awb_root.get_provider("CentralBody/Earth").calculation_scalars.factory
+earth_calc_scalar_factory = awb_root.get_provider(
+    "CentralBody/Earth"
+).calculation_scalars.factory
 phase_angle_calc = earth_calc_scalar_factory.create_angle("PhaseAngle", "PhaseAngle")
 phase_angle_calc.input_angle = phase_angle_awb
 
@@ -212,9 +218,9 @@ target_propagate_segment = target_satellite.propagator.main_sequence.insert(
 )
 target_propagate_segment.propagator_name = "Earth point mass"
 
-target_propagate_segment.stopping_conditions["Duration"].properties.trip = (
-     propagation_time
-)
+target_propagate_segment.stopping_conditions[
+    "Duration"
+].properties.trip = propagation_time
 # -
 
 # Use the color red to identify the target satellite:
@@ -413,7 +419,7 @@ phasing_start_sequence.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
 # Next, add an impulsive maneuver segment, through which Astrogator calculates the new state of the satellite by adding a Delta-V vector to the final state velocity of the previous segment. Configure the maneuver to use a Cartesian X control parameter:
 
 # +
-from ansys.stk.core.stkobjects.astrogator import ManeuverType, ControlManeuver
+from ansys.stk.core.stkobjects.astrogator import ControlManeuver, ManeuverType
 
 
 first_delta_v_maneuver = phasing_start_sequence.segments.insert(
@@ -585,7 +591,9 @@ maneuver_data_provider = chaser_satellite.data_providers["Maneuver Summary"]
 
 # Retrieve the data for this provider over the entire scenario and convert the data to a Pandas dataframe:
 
-maneuver_result = maneuver_data_provider.execute(scenario.start_time, scenario.stop_time)
+maneuver_result = maneuver_data_provider.execute(
+    scenario.start_time, scenario.stop_time
+)
 maneuver_dataframe = maneuver_result.data_sets.to_pandas_dataframe()
 
 # Retrieve the actual delta v:
@@ -619,7 +627,9 @@ import numpy as np
 import pandas as pd
 
 
-phase_angle_data = scenario.data_providers.item("Scalar Calculations").group.item("Earth PhaseAngle")
+phase_angle_data = scenario.data_providers.item("Scalar Calculations").group.item(
+    "Earth PhaseAngle"
+)
 angle_result = phase_angle_data.execute(scenario.start_time, scenario.stop_time, 3600)
 angle_dataframe = angle_result.data_sets.to_pandas_dataframe()
 # Convert columns to correct types
@@ -635,9 +645,9 @@ phase_angles = angle_dataframe["scalar"]
 # Create the plot
 plt.figure(figsize=(10, 6))
 plt.plot(time, phase_angles, '-', linewidth=2, color="dodgerblue")
-plt.xlabel('Time', fontsize=12)
-plt.ylabel('Phase Angle (degrees)', fontsize=12)
-plt.title('Phase Angle History During Phasing Maneuver', fontsize=14)
+plt.xlabel("Time", fontsize=12)
+plt.ylabel("Phase Angle (degrees)", fontsize=12)
+plt.title("Phase Angle History During Phasing Maneuver", fontsize=14)
 plt.grid(True, alpha=0.3)
 plt.tight_layout()
 plt.show()
@@ -652,8 +662,12 @@ from datetime import datetime
 
 
 # Get altitude data for chaser satellite
-chaser_altitude_provider = chaser_satellite.data_providers["Cartesian Position"].group["Fixed"]
-chaser_altitude_result = chaser_altitude_provider.execute(scenario.start_time, scenario.stop_time, 3600)
+chaser_altitude_provider = chaser_satellite.data_providers["Cartesian Position"].group[
+    "Fixed"
+]
+chaser_altitude_result = chaser_altitude_provider.execute(
+    scenario.start_time, scenario.stop_time, 3600
+)
 chaser_altitude_df = chaser_altitude_result.data_sets.to_pandas_dataframe()
 
 # Calculate magnitude of position vector and subtract Earth radius
@@ -664,8 +678,12 @@ chaser_z = chaser_altitude_df["z"].values.astype(float)
 chaser_altitude = np.sqrt(chaser_x**2 + chaser_y**2 + chaser_z**2) - earth_radius
 
 # Get altitude data for target satellite
-target_altitude_provider = target_satellite.data_providers["Cartesian Position"].group["Fixed"]
-target_altitude_result = target_altitude_provider.execute(scenario.start_time, scenario.stop_time, 3600)
+target_altitude_provider = target_satellite.data_providers["Cartesian Position"].group[
+    "Fixed"
+]
+target_altitude_result = target_altitude_provider.execute(
+    scenario.start_time, scenario.stop_time, 3600
+)
 target_altitude_df = target_altitude_result.data_sets.to_pandas_dataframe()
 
 target_x = target_altitude_df["x"].values.astype(float)
@@ -682,11 +700,20 @@ target_time_days = (target_altitude_df["time"].values - start) / 86400.0
 
 # Create the plot
 plt.figure(figsize=(10, 6))
-plt.plot(chaser_time_days, chaser_altitude, '-', linewidth=2, label='Chaser', color="dodgerblue")
-plt.plot(target_time_days, target_altitude, '--', linewidth=2, label='Target', color="coral")
-plt.xlabel('Time (days)', fontsize=12)
-plt.ylabel('Altitude (km)', fontsize=12)
-plt.title('Altitude History During Phasing Maneuver', fontsize=14)
+plt.plot(
+    chaser_time_days,
+    chaser_altitude,
+    "-",
+    linewidth=2,
+    label="Chaser",
+    color="dodgerblue",
+)
+plt.plot(
+    target_time_days, target_altitude, "--", linewidth=2, label="Target", color="coral"
+)
+plt.xlabel("Time (days)", fontsize=12)
+plt.ylabel("Altitude (km)", fontsize=12)
+plt.title("Altitude History During Phasing Maneuver", fontsize=14)
 plt.legend(fontsize=11)
 plt.grid(True, alpha=0.3)
 plt.tight_layout()
