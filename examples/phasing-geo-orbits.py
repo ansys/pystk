@@ -130,11 +130,11 @@ phase_angle_awb = earth_angle_factory.create("Phase", "Phase", AngleType.DIHEDRA
 # Next, retrieve all of the vectors associated with the Earth, the target satellite, and the chaser satellite:
 
 target_vectors = awb_root.get_provider(
-+    target_satellite.class_name + "/" + target_satellite.instance_name
-+).vectors
-+chaser_vectors = awb_root.get_provider(
-+    chaser_satellite.class_name + "/" + chaser_satellite.instance_name
-+).vectors
+    target_satellite.class_name + "/" + target_satellite.instance_name
+).vectors
+chaser_vectors = awb_root.get_provider(
+    chaser_satellite.class_name + "/" + chaser_satellite.instance_name
+).vectors
 
 # Retrieve the target satellite's position vector, which is automatically created on STK objects when they are created. Then, designate this vector as the vector that the dihedral angle sweeps to:
 
