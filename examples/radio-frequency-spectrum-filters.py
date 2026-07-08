@@ -1,4 +1,4 @@
-# # STK Radio Frequency (RF) Spectrum Filters
+# # Radio Frequency (RF) Spectrum Filters
 
 # This tutorial demonstrates how to use STK's Communications capability and RF spectrum filters to enable transmission reception using PySTK. It is inspired by [this tutorial](https://help.agi.com/stk/Content/training/DetailedInterferenceAnalysis.htm).
 
@@ -65,6 +65,17 @@ scenario = root.current_scenario
 
 # ## Acquaint Yourself With the Scenario
 
+# View the communications site.
+
+# +
+import ipywidgets as widgets
+
+
+url = "https://help.agi.com/stk/Content/training/images/CommGndSite.png"
+
+widgets.HTML(value=f'<img src="{url}" width="300">')
+# -
+
 # Position the camera so that the satellite is viewable along with the communications site in the background. Notice how the satellite is targeting the communications site.
 
 # + tags=["nbsphinx-thumbnail"]
@@ -91,10 +102,8 @@ from ansys.stk.core.stkobjects import STKObjectType
 
 
 receiver_constellation = scenario.children.new(STKObjectType.CONSTELLATION, "Receiver")
-urgent_receiver = (
-    scenario.children.get_item_by_name("Urgent_Comms")
-    .children.get_item_by_name("Tgt_Tdrs")
-    .children.get_item_by_name("Urgent_Rcv")
+urgent_receiver = root.get_object_from_path(
+    "Facility/Urgent_Comms/Sensor/Tgt_Tdrs/Receiver/Urgent_Rcv"
 )
 receiver_constellation.objects.add_object(urgent_receiver)
 # -
@@ -105,10 +114,10 @@ receiver_constellation.objects.add_object(urgent_receiver)
 transmitter_constellation = scenario.children.new(
     STKObjectType.CONSTELLATION, "Transmitter"
 )
-tdrs_satellite = scenario.children.get_item_by_name("Tdrs3_19548")
-urgent_transmitter = tdrs_satellite.children.get_item_by_name(
-    "Tgt_Uc"
-).children.get_item_by_name("Urgent_Xmt")
+tdrs_satellite = root.get_object_from_path("Satellite/Tdrs3_19548")
+urgent_transmitter = root.get_object_from_path(
+    "Satellite/Tdrs3_19548/Sensor/Tgt_Uc/Transmitter/Urgent_Xmt"
+)
 transmitter_constellation.objects.add_object(urgent_transmitter)
 # -
 
@@ -118,9 +127,9 @@ transmitter_constellation.objects.add_object(urgent_transmitter)
 interference_constellation = scenario.children.new(
     STKObjectType.CONSTELLATION, "Interference"
 )
-routine_transmitter = tdrs_satellite.children.get_item_by_name(
-    "Tgt_Rc"
-).children.get_item_by_name("Routine_Xmt")
+routine_transmitter = root.get_object_from_path(
+    "Satellite/Tdrs3_19548/Sensor/Tgt_Rc/Transmitter/Routine_Xmt"
+)
 interference_constellation.objects.add_object(routine_transmitter)
 # -
 
