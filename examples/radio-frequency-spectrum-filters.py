@@ -66,15 +66,10 @@ scenario = root.current_scenario
 # ## Acquaint Yourself With the Scenario
 
 # View the communications site.
-
-# +
-import ipywidgets as widgets
-
-
-url = "https://help.agi.com/stk/Content/training/images/CommGndSite.png"
-
-widgets.HTML(value=f'<img src="{url}" width="300">')
-# -
+#
+# .. image:: https://help.agi.com/stk/Content/training/images/CommGndSite.png
+#    :alt: Communications Site
+#    :width: 300px
 
 # Position the camera so that the satellite is viewable along with the communications site in the background. Notice how the satellite is targeting the communications site.
 
