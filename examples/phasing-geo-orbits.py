@@ -74,14 +74,9 @@ print(f"Using {stk.version}")
 #
 # Start by creating a new scenario in STK:
 
-# +
-from ansys.stk.core.stkobjects import STKObjectType
-
-
 root = stk.new_object_root()
 root.new_scenario("Phasing_orbit")
 scenario = root.current_scenario
-# -
 
 # Configure the scenario time to cover a 16 day period starting July 1, 2026:
 
@@ -91,7 +86,7 @@ scenario.set_time_period(start_time, stop_time)
 # It is now possible to show a 3D graphics window by running:
 
 # +
-from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
+from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
 
 
 plotter = GlobeWidget(root, 640, 480)
@@ -102,7 +97,12 @@ plotter.show()
 
 # Create the target satellite which will remain at a fixed position in geostationary orbit. This satellite serves as the reference point for the phasing maneuver:
 
+# +
+from ansys.stk.core.stkobjects import STKObjectType
+
+
 target_satellite = scenario.children.new(STKObjectType.SATELLITE, "Target")
+# -
 
 # Create the chaser satellite, which will need to approach the target satellite:
 
