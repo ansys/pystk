@@ -40,7 +40,7 @@
 # - RAAN: 0.0 degrees
 # - Argument of periapsis: 0.0 degrees
 #
-# Compute the required $\Delta v$ for the phasing maneuvers and determine the phasing orbit parameters.
+# Compute the required $\Delta V$ for the phasing maneuvers and determine the phasing orbit parameters.
 
 # First, define the initial orbital parameters for use during calculations:
 
@@ -98,7 +98,7 @@ plotter = GlobeWidget(root, 640, 480)
 plotter.show()
 # -
 
-# ## Create the satellites
+# ## Add the satellites
 
 # Create the target satellite which will remain at a fixed position in geostationary orbit. This satellite serves as the reference point for the phasing maneuver:
 
@@ -114,7 +114,7 @@ chaser_satellite = scenario.children.new(STKObjectType.SATELLITE, "Chaser")
 
 awb_root = root.analysis_workbench_components_root
 
-# The phase angle component will be associated with the Earth central body, so retrieve the factory that allows creating AWB components on this body:
+# The phase angle component is associated with the Earth central body, so retrieve the factory that allows creating AWB components on this body:
 
 earth_angle_factory = awb_root.get_provider("CentralBody/Earth").angles.factory
 
@@ -127,7 +127,7 @@ from ansys.stk.core.analysis_workbench import AngleType
 phase_angle_awb = earth_angle_factory.create("Phase", "Phase", AngleType.DIHEDRAL_ANGLE)
 # -
 
-# Next, retrieve all of the vectors associated with the Earth, the target satellite, and the chaser satellite:
+# Next, retrieve all of the vectors associated with the target satellite and the chaser satellite:
 
 target_vectors = awb_root.get_provider(
     target_satellite.class_name + "/" + target_satellite.instance_name
@@ -136,7 +136,7 @@ chaser_vectors = awb_root.get_provider(
     chaser_satellite.class_name + "/" + chaser_satellite.instance_name
 ).vectors
 
-# Retrieve the target satellite's position vector, which is automatically created on STK objects when they are created. Then, designate this vector as the vector that the dihedral angle sweeps to:
+# Retrieve the target satellite's position vector. Position vectors are automatically created on STK objects when they are added to a scenario. Then, designate this vector as the vector that the dihedral angle sweeps to:
 
 target_position_vector = target_vectors.item("Position")
 phase_angle_awb.to_vector.set_vector(target_position_vector)
@@ -197,7 +197,7 @@ target_initial_state.set_element_type(ElementSetType.KEPLERIAN)
 target_initial_state.initial_state.epoch = scenario.start_time
 # -
 
-# Delcare the Keplerian elements for the initial state using the previously defined parameters:
+# Declare the Keplerian elements for the initial state using the previously defined parameters:
 
 # +
 target_keplerian_elements = target_initial_state.element
@@ -256,7 +256,7 @@ chaser_satellite.propagator.main_sequence.remove_all()
 
 # Configure graphics settings to allow 3D trajectory visualization:
 
-chaser_satellite.propagator.options.draw_trajectory_in_3d = False
+chaser_satellite.propagator.options.draw_trajectory_in_3d = True
 
 # ## Set up the initial state of the chaser satellite
 #
@@ -398,13 +398,13 @@ velocity_periapsis_final = math.sqrt(
     * ((2 / initial_radius) - (1 / transfer_semi_major_axis))
 )
 
-# Finally, estimate the velocity change (Delta V) needed for phasing:
+# Finally, estimate the velocity change (Delta-V) needed for phasing:
 
 delta_v_estimate = velocity_periapsis_final - velocity_periapsis_initial
 
 # ## Set up the phasing maneuver sequence
 #
-# Add a target sequence to perform the first delta-V maneuver and propagate through the phasing orbits. Add the first target sequence segment and configure it to use the active profiles:
+# Add a target sequence to perform the first Delta-V maneuver and propagate through the phasing orbits. Add the first target sequence segment and configure it to use the active profiles:
 
 # +
 from ansys.stk.core.stkobjects.astrogator import TargetSequenceAction
@@ -429,7 +429,7 @@ first_delta_v_maneuver.set_maneuver_type(ManeuverType.IMPULSIVE)
 first_delta_v_maneuver.enable_control_parameter(ControlManeuver.IMPULSIVE_CARTESIAN_X)
 # -
 
-# Configure the maneuver attitude to use a thrust vector with an x component 1000 times the estimated delta V:
+# Configure the maneuver attitude to use a thrust vector with an x component 1000 times the estimated Delta-V:
 
 # +
 from ansys.stk.core.stkobjects.astrogator import AttitudeControl
@@ -477,7 +477,7 @@ phasing_orbit_propagate.results[0].vector2_name = "Satellite/Target Position"
 
 # ## Configure the differential corrector for phasing
 #
-# Set up the differential corrector to adjust the first delta-V to achieve zero phase angle at the end of the phasing orbits:
+# Set up the differential corrector to adjust the first Delta-V to achieve zero phase angle at the end of the phasing orbits:
 
 # +
 from ansys.stk.core.stkobjects.astrogator import ProfileMode
@@ -511,7 +511,7 @@ phasing_angle_result.tolerance = 0.1
 
 # ## Set up the circularization maneuver
 #
-# Add a second target sequence to perform the circularization delta-V to return to the original circular orbit.
+# Add a second target sequence to perform the circularization Delta-V to return to the original circular orbit.
 
 # First, add a second target sequence segment to the chaser satellite's main sequence and configure it to use the active profiles:
 
@@ -585,7 +585,7 @@ root.rewind()
 
 # ## Retrieve the results
 #
-# Once the analysis has been performed, retrieve the delta-V values and phasing orbit parameters using the chaser satellite's Maneuver Summary data provider:
+# Once the analysis has been performed, retrieve the Delta-V values and phasing orbit parameters using the chaser satellite's Maneuver Summary data provider:
 
 maneuver_data_provider = chaser_satellite.data_providers["Maneuver Summary"]
 
@@ -596,7 +596,7 @@ maneuver_result = maneuver_data_provider.execute(
 )
 maneuver_dataframe = maneuver_result.data_sets.to_pandas_dataframe()
 
-# Retrieve the actual delta v:
+# Retrieve the actual Delta-V:
 
 delta_v_actual = maneuver_dataframe.at[0, "delta v"]
 
@@ -609,7 +609,7 @@ print(f"Period           = {phasing_orbit_period:.2f} sec")
 print(f"SMA              = {transfer_semi_major_axis:.2f} km")
 print(f"Perigee radius   = {periapsis_radius:.2f} km")
 print(f"Apogee radius    = {apoapsis_radius:.2f} km")
-print(f"Delta V          = {delta_v_actual} m/sec")
+print(f"Delta-V          = {delta_v_actual} m/sec")
 print(f"Transfer time    = {phasing_orbit_period * phasing_orbits / 86400:.4f} days")
 print("")
 
@@ -625,6 +625,7 @@ plotter.show()
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from datetime import datetime
 
 
 phase_angle_data = scenario.data_providers.item("Scalar Calculations").group.item(
@@ -639,17 +640,26 @@ angle_dataframe["scalar"] = angle_dataframe["scalar"].apply(pd.to_numeric)
 # Get the time values
 time = angle_dataframe["time"]
 
+# Convert time to days
+start = np.datetime64(datetime.strptime(start_time, "%d %b %Y %H:%M:%S.%f"))
+time_days = (time.values - start) / 86400.0
+
 # Get the angle values
 phase_angles = angle_dataframe["scalar"]
 
 # Create the plot
 plt.figure(figsize=(10, 6))
-plt.plot(time, phase_angles, '-', linewidth=2, color="dodgerblue")
-plt.xlabel("Time", fontsize=12)
+plt.plot(time_days, phase_angles, "-", linewidth=2, color="dodgerblue")
+plt.xlabel("Time (days from start of maneuver)", fontsize=12)
 plt.ylabel("Phase Angle (degrees)", fontsize=12)
 plt.title("Phase Angle History During Phasing Maneuver", fontsize=14)
 plt.grid(True, alpha=0.3)
 plt.tight_layout()
+
+# Configure style
+plt.gca().set_facecolor("whitesmoke")
+plt.gca().grid(visible=True, which="both", linestyle="--")
+
 plt.show()
 # -
 
@@ -658,9 +668,6 @@ plt.show()
 # Retrieve and plot the altitude of both satellites to visualize the phasing orbit:
 
 # +
-from datetime import datetime
-
-
 # Get altitude data for chaser satellite
 chaser_altitude_provider = chaser_satellite.data_providers["Cartesian Position"].group[
     "Fixed"
@@ -711,12 +718,17 @@ plt.plot(
 plt.plot(
     target_time_days, target_altitude, "--", linewidth=2, label="Target", color="coral"
 )
-plt.xlabel("Time (days)", fontsize=12)
+plt.xlabel("Time (days from start of maneuver)", fontsize=12)
 plt.ylabel("Altitude (km)", fontsize=12)
 plt.title("Altitude History During Phasing Maneuver", fontsize=14)
 plt.legend(fontsize=11)
 plt.grid(True, alpha=0.3)
 plt.tight_layout()
+
+# Configure style
+plt.gca().set_facecolor("whitesmoke")
+plt.gca().grid(visible=True, which="both", linestyle="--")
+
 plt.show()
 # -
 
