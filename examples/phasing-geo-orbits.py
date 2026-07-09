@@ -622,10 +622,11 @@ plotter.show()
 # Retrieve and plot the phase angle between the chaser and target satellites over time. To do so, use the scalar calculation AWB component representing the value of the phase angle:
 
 # +
+from datetime import datetime
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from datetime import datetime
 
 
 phase_angle_data = scenario.data_providers.item("Scalar Calculations").group.item(
