@@ -238,7 +238,7 @@ target_propagate_segment.properties.color = Colors.Red
 from ansys.stk.core.stkobjects.astrogator import RunCode
 
 
-run_code = target_satellite.propagator.run_mcs2()
+run_code = target_satellite.propagator.run_mcs()
 if run_code != RunCode.MARCHING:
     raise ValueError("Could not propagate target satellite orbit.")
 # -
@@ -292,7 +292,7 @@ chaser_propagate_segment.stopping_conditions.remove("Duration")
 
 # Run the mission control sequence of the chaser and verify that the propagation was successful:
 
-run_code = chaser_satellite.propagator.run_mcs2()
+run_code = chaser_satellite.propagator.run_mcs()
 if run_code != RunCode.MARCHING:
     raise ValueError("Could not propagate chaser satellite orbit.")
 
