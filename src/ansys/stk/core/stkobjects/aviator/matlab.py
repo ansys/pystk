@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -44,11 +44,6 @@ from ...internal.apiutil import (
 )
 from ...internal.comutil import IUnknown
 from ...stkobjects.aviator import ClosureMode, IAutomationStrategyFactory, IBasicManeuverStrategy
-from ...utilities.exceptions import STKRuntimeError
-
-
-def _raise_uninitialized_error(*args):
-    raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
 
 class StrategyMATLABNavigation(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -64,7 +59,7 @@ class StrategyMATLABNavigation(IBasicManeuverStrategy, SupportsDeleteCallback):
     _get_display_output_method_offset = 6
     _set_display_output_method_offset = 7
     _metadata = {
-        "iid_data" : (5227863432379747556, 7965596508726907792),
+        "iid_data" : (4693738194356967383, 14734181398989770921),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -145,7 +140,7 @@ class StrategyMATLABNavigation(IBasicManeuverStrategy, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StrategyMATLABNavigation, [StrategyMATLABNavigation, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((4922865625757889154, 4997589758508718220), StrategyMATLABNavigation)
+agcls.AgClassCatalog.add_catalog_entry((5225404421302427357, 16343776315648835216), StrategyMATLABNavigation)
 agcls.AgTypeNameMap["StrategyMATLABNavigation"] = StrategyMATLABNavigation
 
 class StrategyMATLABProfile(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -161,7 +156,7 @@ class StrategyMATLABProfile(IBasicManeuverStrategy, SupportsDeleteCallback):
     _get_display_output_method_offset = 6
     _set_display_output_method_offset = 7
     _metadata = {
-        "iid_data" : (5762811461223097488, 815303183833033109),
+        "iid_data" : (5148147632220002052, 17898467848992200636),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -242,7 +237,7 @@ class StrategyMATLABProfile(IBasicManeuverStrategy, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StrategyMATLABProfile, [StrategyMATLABProfile, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5431676618088683906, 7176732423655266234), StrategyMATLABProfile)
+agcls.AgClassCatalog.add_catalog_entry((4727677235214853696, 1637040926132612234), StrategyMATLABProfile)
 agcls.AgTypeNameMap["StrategyMATLABProfile"] = StrategyMATLABProfile
 
 class StrategyMATLABFull3D(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -258,7 +253,7 @@ class StrategyMATLABFull3D(IBasicManeuverStrategy, SupportsDeleteCallback):
     _get_display_output_method_offset = 6
     _set_display_output_method_offset = 7
     _metadata = {
-        "iid_data" : (4991766284198429486, 11343135184924199837),
+        "iid_data" : (4933395837275083186, 5728383285686110601),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -339,7 +334,7 @@ class StrategyMATLABFull3D(IBasicManeuverStrategy, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StrategyMATLABFull3D, [StrategyMATLABFull3D, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5699885202707284005, 15299874748251640476), StrategyMATLABFull3D)
+agcls.AgClassCatalog.add_catalog_entry((5373249918517851774, 5395661847088340112), StrategyMATLABFull3D)
 agcls.AgTypeNameMap["StrategyMATLABFull3D"] = StrategyMATLABFull3D
 
 class StrategyMATLAB3DGuidance(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -377,7 +372,7 @@ class StrategyMATLAB3DGuidance(IBasicManeuverStrategy, SupportsDeleteCallback):
     _get_position_velocity_strategies_method_offset = 28
     _cancel_target_position_velocity_method_offset = 29
     _metadata = {
-        "iid_data" : (5207808632699689454, 11389872158525712815),
+        "iid_data" : (5143209814694955910, 16817896824929652403),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -644,7 +639,7 @@ class StrategyMATLAB3DGuidance(IBasicManeuverStrategy, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StrategyMATLAB3DGuidance, [StrategyMATLAB3DGuidance, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((4932746689876178541, 12483900520759435676), StrategyMATLAB3DGuidance)
+agcls.AgClassCatalog.add_catalog_entry((5423305017016857142, 9141607060078030747), StrategyMATLAB3DGuidance)
 agcls.AgTypeNameMap["StrategyMATLAB3DGuidance"] = StrategyMATLAB3DGuidance
 
 class BasicManeuverMATLABFactory(IAutomationStrategyFactory, SupportsDeleteCallback):
@@ -663,5 +658,5 @@ class BasicManeuverMATLABFactory(IAutomationStrategyFactory, SupportsDeleteCallb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverMATLABFactory, [IAutomationStrategyFactory])
 
-agcls.AgClassCatalog.add_catalog_entry((5583954005185604195, 6409795893672302240), BasicManeuverMATLABFactory)
+agcls.AgClassCatalog.add_catalog_entry((4698013157004820294, 14854422989691544197), BasicManeuverMATLABFactory)
 agcls.AgTypeNameMap["BasicManeuverMATLABFactory"] = BasicManeuverMATLABFactory

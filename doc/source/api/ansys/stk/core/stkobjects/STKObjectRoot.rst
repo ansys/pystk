@@ -46,10 +46,6 @@ Overview
               - Use Load method. Loads a scenario using the specified path. The method throws an exception if there is a scenario already loaded.
             * - :py:attr:`~ansys.stk.core.stkobjects.STKObjectRoot.load_vdf`
               - Load a vdf using the specified path. The method throws an exception if there is a scenario already loaded. If the password isn't needed, enter an empty string.
-            * - :py:attr:`~ansys.stk.core.stkobjects.STKObjectRoot.load_vdf_from_sdf`
-              - Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Loads a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded.
-            * - :py:attr:`~ansys.stk.core.stkobjects.STKObjectRoot.load_vdf_from_sdf_with_version`
-              - Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Loads a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded.
             * - :py:attr:`~ansys.stk.core.stkobjects.STKObjectRoot.new_scenario`
               - Create a new scenario. User must close a scenario before creating a new one; otherwise an exception will occur.
             * - :py:attr:`~ansys.stk.core.stkobjects.STKObjectRoot.object_exists`
@@ -64,8 +60,6 @@ Overview
               - Use SaveAs method. Saves the changes made to the scenario to a specified path and file name.
             * - :py:attr:`~ansys.stk.core.stkobjects.STKObjectRoot.save_vdf_as`
               - Save the changes made to the scenario to a specified path and file name as a vdf file.
-            * - :py:attr:`~ansys.stk.core.stkobjects.STKObjectRoot.save_vdf_to_sdf`
-              - Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Saves a vdf to SDF at the specified location. The method throws an exception if the VDF creation or upload fails.
             * - :py:attr:`~ansys.stk.core.stkobjects.STKObjectRoot.subscribe`
               - """Return an ISTKObjectRootEventHandler that is subscribed to handle events associated with this instance of STKObjectRoot."""
 
@@ -313,7 +307,7 @@ Open a Viewer Data File
 
     # STKObjectRoot root: STK Object Model Root
     if os.name == "nt":
-        installPath = r"C:\Program Files\AGI\STK 12"
+        installPath = r"C:\Program Files\AGI\STK_ODTK 13"
     else:
         installPath = os.environ["STK_INSTALL_DIR"]
     vdfPath = "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"
@@ -594,46 +588,12 @@ Method detail
 
         # STKObjectRoot root: STK Object Model Root
         if os.name == "nt":
-            installPath = r"C:\Program Files\AGI\STK 12"
+            installPath = r"C:\Program Files\AGI\STK_ODTK 13"
         else:
             installPath = os.environ["STK_INSTALL_DIR"]
         vdfPath = "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"
         root.load_vdf(os.path.join(installPath, *vdfPath), "")
 
-
-.. py:method:: load_vdf_from_sdf(self, vdf_path: str, password: str) -> None
-    :canonical: ansys.stk.core.stkobjects.STKObjectRoot.load_vdf_from_sdf
-
-    Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Loads a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded.
-
-    :Parameters:
-
-        **vdf_path** : :obj:`~str`
-
-        **password** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: load_vdf_from_sdf_with_version(self, vdf_path: str, password: str, version: float) -> None
-    :canonical: ansys.stk.core.stkobjects.STKObjectRoot.load_vdf_from_sdf_with_version
-
-    Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Loads a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded.
-
-    :Parameters:
-
-        **vdf_path** : :obj:`~str`
-
-        **password** : :obj:`~str`
-
-        **version** : :obj:`~float`
-
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: new_scenario(self, scenario_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.STKObjectRoot.new_scenario
@@ -737,20 +697,6 @@ Method detail
         **description** : :obj:`~str`
 
         **window_id** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: save_vdf_to_sdf(self, sdf_path: str) -> None
-    :canonical: ansys.stk.core.stkobjects.STKObjectRoot.save_vdf_to_sdf
-
-    Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Saves a vdf to SDF at the specified location. The method throws an exception if the VDF creation or upload fails.
-
-    :Parameters:
-
-        **sdf_path** : :obj:`~str`
 
 
     :Returns:

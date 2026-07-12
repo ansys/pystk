@@ -1,0 +1,17 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.utilities.exceptions",
+        "NewRootScope": "ansys.stk.core.utilities.exceptions"
+    },
+    "MemberMappings": [],
+    "InterfaceMappings": [],
+    "ClassMappings": [
+        {
+            "OldName": "GrpcUtilitiesException",
+            "NewName": "GrpcUtilitiesError"
+        }
+    ],
+    "EnumTypeMappings": [],
+    "EnumValueMappings": [],
+    "NamedArgumentMappings": []
+}

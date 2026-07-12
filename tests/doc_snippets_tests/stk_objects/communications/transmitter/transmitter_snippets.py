@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -86,8 +86,8 @@ class TransmitterSnippets(CodeSnippetsTestBase):
     )
     def ModifyTransmitterSnippet(self, transmitter):
         # Transmitter transmitter: Transmitter object
-        transmitter.set_model("Complex Transmitter Model")
-        txModel = transmitter.model
+        transmitter.model_component_linking.set_component("Complex Transmitter Model")
+        txModel = transmitter.model_component_linking.component
         txModel.frequency = 14  # GHz
         txModel.power = 25  # dBW
         txModel.data_rate = 15  # Mb/sec
@@ -110,11 +110,11 @@ class TransmitterSnippets(CodeSnippetsTestBase):
     )
     def ModifyTransmitterAntennaSnippet(self, transmitter):
         # Transmitter transmitter: Transmitter object
-        transmitter.set_model("Complex Transmitter Model")
-        txModel = transmitter.model
+        transmitter.model_component_linking.set_component("Complex Transmitter Model")
+        txModel = transmitter.model_component_linking.component
         antennaControl = txModel.antenna_control
-        antennaControl.set_embedded_model("Isotropic")
-        antennaControl.embedded_model.efficiency = 85  # Percent
+        antennaControl.embedded_model_component_linking.set_component("Isotropic")
+        antennaControl.embedded_model_component_linking.component.efficiency = 85  # Percent
 
     def test_ModifyTransmitterPolarizationPropertiesSnippet(self):
         try:
@@ -134,8 +134,8 @@ class TransmitterSnippets(CodeSnippetsTestBase):
     )
     def ModifyTransmitterPolarizationPropertiesSnippet(self, transmitter):
         # Transmitter transmitter: Transmitter object
-        transmitter.set_model("Complex Transmitter Model")
-        txModel = transmitter.model
+        transmitter.model_component_linking.set_component("Complex Transmitter Model")
+        txModel = transmitter.model_component_linking.component
         txModel.enable_polarization = True
         txModel.set_polarization_type(PolarizationType.LINEAR)
         polarization = txModel.polarization
@@ -160,8 +160,8 @@ class TransmitterSnippets(CodeSnippetsTestBase):
     )
     def ModifyTransmitterPolarizationOrientationAndPositionSnippet(self, transmitter):
         # Transmitter transmitter: Transmitter object
-        transmitter.set_model("Complex Transmitter Model")
-        txModel = transmitter.model
+        transmitter.model_component_linking.set_component("Complex Transmitter Model")
+        txModel = transmitter.model_component_linking.component
         antennaControl = txModel.antenna_control
         antOrientation = antennaControl.embedded_model_orientation
         antOrientation.assign_az_el(0, 90, 1)  # 1 represents Rotate About Boresight
@@ -187,7 +187,7 @@ class TransmitterSnippets(CodeSnippetsTestBase):
     )
     def ModifyTransmitterModulatorSnippet(self, transmitter):
         # Transmitter transmitter: Transmitter object
-        txModel = transmitter.model
+        txModel = transmitter.model_component_linking.component
         txModel.set_modulator("BPSK")
         txModel.modulator.scale_bandwidth_automatically = True
 
@@ -209,10 +209,10 @@ class TransmitterSnippets(CodeSnippetsTestBase):
     )
     def ModifyTransmitterFilterSnippet(self, transmitter):
         # Transmitter transmitter: Transmitter object
-        txModel = transmitter.model
+        txModel = transmitter.model_component_linking.component
         txModel.enable_filter = True
-        txModel.set_filter("Butterworth")
-        recFilter = txModel.filter
+        txModel.filter_component_linking.set_component("Butterworth")
+        recFilter = txModel.filter_component_linking.component
         recFilter.lower_bandwidth_limit = -20
         recFilter.upper_bandwidth_limit = 20
         recFilter.cut_off_frequency = 10
@@ -235,6 +235,6 @@ class TransmitterSnippets(CodeSnippetsTestBase):
     )
     def TransmitteradditionalGainSnippet(self, transmitter):
         # Transmitter transmitter: Transmitter object
-        txModel = transmitter.model
+        txModel = transmitter.model_component_linking.component
         gain = txModel.post_transmit_gains_losses.add(-5)  # dB
         gain.identifier = "Example Loss"

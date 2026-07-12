@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -146,6 +146,8 @@ class AntennaHelper(object):
             return "Uniform Aperture Rectangular"
         elif antennaModelType == AntennaModelType.HFSS_EEP_ARRAY:
             return "HFSS EEP Array"
+        elif antennaModelType == AntennaModelType.HFSS_DESIGN:
+            return "HFSS Design"
         else:
             return "UNKNOWN"
 
@@ -154,7 +156,19 @@ class AntennaHelper(object):
     # region Run
     def Run(self, antennaModel: "IAntennaModel", antennaModelName: str, designFrequencyEnabled: bool):
         Console.WriteLine(antennaModelName)  # Debug
-        if not designFrequencyEnabled:
+
+        # Determine if AEDT is installed
+        aedtInstalled: bool = True
+        if antennaModel.type == AntennaModelType.HFSS_DESIGN:
+            try:
+                (clr.CastAs(antennaModel, AntennaModelHFSSDesign)).set_design_type(
+                    AntennaHFSSDesignType.SLOT_GAP
+                )  # works if AEDT installed
+
+            except:
+                aedtInstalled = False
+
+        if (not designFrequencyEnabled) or (not aedtInstalled):
             with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 antennaModel.design_frequency = 1.0
 
@@ -176,7 +190,7 @@ class AntennaHelper(object):
             Assert.assertEqual(AntennaModelType.ANSYS_FFD_FORMAT, antennaModel.type)
             self.Test_IAgAntennaModelANSYSffdFormat(clr.CastAs(antennaModel, AntennaModelANSYSffdFormat))
         elif antennaModelName == "Antenna Script":
-            if not OSHelper.IsLinux():
+            if OSHelper.SupportsScriptPlugins():
                 # script plugins do not work on linux
                 Assert.assertEqual(AntennaModelType.SCRIPT_PLUGIN, antennaModel.type)
                 self.Test_IAgAntennaModelScriptPlugin(clr.CastAs(antennaModel, AntennaModelScriptPlugin))
@@ -264,6 +278,14 @@ class AntennaHelper(object):
         elif antennaModelName == "Hemispherical":
             Assert.assertEqual(AntennaModelType.HEMISPHERICAL, antennaModel.type)
             self.Test_IAgAntennaModelHemispherical(clr.CastAs(antennaModel, AntennaModelHemispherical))
+        elif antennaModelName == "HFSS Design":
+            Assert.assertEqual(AntennaModelType.HFSS_DESIGN, antennaModel.type)
+            if aedtInstalled:
+                self.Test_IAgAntennaModelHFSSDesign(clr.CastAs(antennaModel, AntennaModelHFSSDesign))
+
+            else:
+                self.Test_IAgAntennaModelHFSSDesignNotInstalled(clr.CastAs(antennaModel, AntennaModelHFSSDesign))
+
         elif antennaModelName == "HFSS EEP Array":
             Assert.assertEqual(AntennaModelType.HFSS_EEP_ARRAY, antennaModel.type)
             self.Test_IAgAntennaModelHfssEepArray(clr.CastAs(antennaModel, AntennaModelHfssEepArray))
@@ -2699,7 +2721,7 @@ class AntennaHelper(object):
             script.filename = r"C:\bogus.vbs"
         with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
             script.filename = r"ChainTest\ChainTest.sc"
-        if not OSHelper.IsLinux():
+        if OSHelper.SupportsScriptPlugins():
             # script plugins don't work on linux
             script.filename = TestBase.GetScenarioFile(filename)
             Assert.assertEqual(filename, script.filename)
@@ -3083,7 +3105,6 @@ class AntennaHelper(object):
         # Beam Direction Provider sub-tab
         supportedTypes = phasedArray.supported_beam_direction_provider_types
         Assert.assertEqual(4, len(supportedTypes))
-
         i: int = 0
         while i < len(supportedTypes):
             if DirectionProviderType(int(supportedTypes[i])) == DirectionProviderType.ASCII_FILE:
@@ -3122,7 +3143,6 @@ class AntennaHelper(object):
         # Null Direction Provider sub-tab
         supportedTypes = phasedArray.supported_null_direction_provider_types
         Assert.assertEqual(3, len(supportedTypes))
-
         i: int = 0
         while i < len(supportedTypes):
             if DirectionProviderType(int(supportedTypes[i])) == DirectionProviderType.ASCII_FILE:
@@ -3186,10 +3206,109 @@ class AntennaHelper(object):
             script.filename = r"C:\bogus.vbs"
         with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
             script.filename = r"ChainTest\ChainTest.sc"
-        if not OSHelper.IsLinux():
+        if OSHelper.SupportsScriptPlugins():
             # script plugins don't work on linux
             script.filename = TestBase.GetScenarioFile("CommRad", "VB_Beamformer.vbs")
             Assert.assertEqual(r"CommRad\VB_Beamformer.vbs", script.filename)
+
+    def Test_IAgAntennaModelHFSSDesignNotInstalled(self, hfssDesign: "AntennaModelHFSSDesign"):
+        Assert.assertEqual(AntennaHFSSDesignStatus.NOT_GENERATED, hfssDesign.status)
+        Assert.assertEqual("HFSS not installed", hfssDesign.availability)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            hfssDesign.set_design_type(AntennaHFSSDesignType.SLOT_GAP)
+
+        designCommon: "IAntennaHFSSDesign" = hfssDesign.design
+        Assert.assertEqual(AntennaHFSSDesignType.WIRE_DIPOLE, hfssDesign.design.type)
+        Assert.assertEqual(PolarizationReferenceAxis.Z, designCommon.polarization_reference_axis)
+
+        designWireDipole: "AntennaHFSSDesignWireDipole" = clr.CastAs(hfssDesign.design, AntennaHFSSDesignWireDipole)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            designWireDipole.dipole_length = 111.111
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            designWireDipole.feed_gap = 222.222
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            designWireDipole.dipole_radius = 333.333
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid HFSS install detected")):
+            hfssDesign.generate()
+
+    def Test_IAgAntennaModelHFSSDesign(self, hfssDesign: "AntennaModelHFSSDesign"):
+        Assert.assertEqual(AntennaHFSSDesignStatus.NOT_GENERATED, hfssDesign.status)
+        designCommon: "IAntennaHFSSDesign" = hfssDesign.design
+
+        # Wire Dipole
+        hfssDesign.set_design_type(AntennaHFSSDesignType.WIRE_DIPOLE)
+        Assert.assertEqual(AntennaHFSSDesignType.WIRE_DIPOLE, hfssDesign.design.type)
+        Assert.assertEqual(PolarizationReferenceAxis.Z, designCommon.polarization_reference_axis)
+        designWireDipole: "AntennaHFSSDesignWireDipole" = clr.CastAs(hfssDesign.design, AntennaHFSSDesignWireDipole)
+        designWireDipole.dipole_length = 111.111
+        Assert.assertEqual(111.111, designWireDipole.dipole_length)
+        designWireDipole.dipole_radius = 222.222
+        Assert.assertEqual(222.222, designWireDipole.dipole_radius)
+        designWireDipole.feed_gap = 333.333
+        Assert.assertEqual(333.333, designWireDipole.feed_gap)
+
+        # Slot Gap
+        hfssDesign.set_design_type(AntennaHFSSDesignType.SLOT_GAP)
+        Assert.assertEqual(AntennaHFSSDesignType.SLOT_GAP, hfssDesign.design.type)
+        Assert.assertEqual(PolarizationReferenceAxis.Z, designCommon.polarization_reference_axis)
+        designSlotGap: "AntennaHFSSDesignSlotGap" = clr.CastAs(hfssDesign.design, AntennaHFSSDesignSlotGap)
+        designSlotGap.slot_length = 111.111
+        Assert.assertEqual(111.111, designSlotGap.slot_length)
+        designSlotGap.slot_width = 222.222
+        Assert.assertEqual(222.222, designSlotGap.slot_width)
+        designSlotGap.feed_offset = 333.333
+        Assert.assertEqual(333.333, designSlotGap.feed_offset)
+        designSlotGap.substrate_height = 444.444
+        Assert.assertEqual(444.444, designSlotGap.substrate_height)
+        designSlotGap.substrate_dimension_x = 555.555
+        Assert.assertEqual(555.555, designSlotGap.substrate_dimension_x)
+        designSlotGap.substrate_dimension_y = 666.666
+        Assert.assertEqual(666.666, designSlotGap.substrate_dimension_y)
+
+        # Wire Monopole
+        hfssDesign.set_design_type(AntennaHFSSDesignType.WIRE_MONOPOLE)
+        Assert.assertEqual(AntennaHFSSDesignType.WIRE_MONOPOLE, hfssDesign.design.type)
+        Assert.assertEqual(PolarizationReferenceAxis.Z, designCommon.polarization_reference_axis)
+        designWireMonopole: "AntennaHFSSDesignWireMonopole" = clr.CastAs(
+            hfssDesign.design, AntennaHFSSDesignWireMonopole
+        )
+        designWireMonopole.monopole_length = 111.111
+        Assert.assertEqual(111.111, designWireMonopole.monopole_length)
+        designWireMonopole.monopole_radius = 222.222
+        Assert.assertEqual(222.222, designWireMonopole.monopole_radius)
+        designWireMonopole.feed_gap = 333.333
+        Assert.assertEqual(333.333, designWireMonopole.feed_gap)
+        designWireMonopole.ground_plane_width = 444.444
+        Assert.assertEqual(444.444, designWireMonopole.ground_plane_width)
+
+        # Helix Quadrifilar Short
+        hfssDesign.set_design_type(AntennaHFSSDesignType.HELIX_QUADRIFILAR_SHORT)
+        Assert.assertEqual(AntennaHFSSDesignType.HELIX_QUADRIFILAR_SHORT, hfssDesign.design.type)
+        Assert.assertEqual(PolarizationReferenceAxis.Z, designCommon.polarization_reference_axis)
+        designHelixQuadrifilarShort: "AntennaHFSSDesignHelixQuadrifilarShort" = clr.CastAs(
+            hfssDesign.design, AntennaHFSSDesignHelixQuadrifilarShort
+        )
+        designHelixQuadrifilarShort.helix_diameter = 111.111
+        Assert.assertEqual(111.111, designHelixQuadrifilarShort.helix_diameter)
+        designHelixQuadrifilarShort.helix_spacing = 222.222
+        Assert.assertEqual(222.222, designHelixQuadrifilarShort.helix_spacing)
+        designHelixQuadrifilarShort.wire_diameter = 333.333
+        Assert.assertEqual(333.333, designHelixQuadrifilarShort.wire_diameter)
+        designHelixQuadrifilarShort.number_of_turns = 50
+        Assert.assertEqual(50, designHelixQuadrifilarShort.number_of_turns)
+        designHelixQuadrifilarShort.feed_port_height = 444.444
+        Assert.assertEqual(444.444, designHelixQuadrifilarShort.feed_port_height)
+        designHelixQuadrifilarShort.ground_plane_x = 555.555
+        Assert.assertEqual(555.555, designHelixQuadrifilarShort.ground_plane_x)
+        designHelixQuadrifilarShort.ground_plane_y = 666.666
+        Assert.assertEqual(666.666, designHelixQuadrifilarShort.ground_plane_y)
+        designHelixQuadrifilarShort.turn_direction = AntennaHFSSDesignHelixTurnDirection.LEFT
+        Assert.assertEqual(AntennaHFSSDesignHelixTurnDirection.LEFT, designHelixQuadrifilarShort.turn_direction)
+        designHelixQuadrifilarShort.turn_direction = AntennaHFSSDesignHelixTurnDirection.RIGHT
+        Assert.assertEqual(AntennaHFSSDesignHelixTurnDirection.RIGHT, designHelixQuadrifilarShort.turn_direction)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            designHelixQuadrifilarShort.turn_direction = AntennaHFSSDesignHelixTurnDirection.UNKNOWN
 
     def Test_IAgAntennaModelHfssEepArray(self, hfssEepArray: "AntennaModelHfssEepArray"):
         # Initial State
@@ -3278,7 +3397,6 @@ class AntennaHelper(object):
 
         supportedTypes = hfssEepArray.supported_beam_direction_provider_types
         Assert.assertEqual(4, len(supportedTypes))
-
         i: int = 0
         while i < len(supportedTypes):
             if DirectionProviderType(int(supportedTypes[i])) == DirectionProviderType.ASCII_FILE:
@@ -3406,29 +3524,6 @@ class AntennaHelper(object):
 
         hfssEepArray.beamformer_type = BeamformerType.UNIFORM
         Assert.assertEqual(BeamformerType.UNIFORM, hfssEepArray.beamformer_type)
-
-        hfssEepArray.beamformer_type = BeamformerType.TAYLOR
-        Assert.assertEqual(BeamformerType.TAYLOR, hfssEepArray.beamformer_type)
-
-        taylor: "BeamformerTaylor" = clr.CastAs(hfssEepArray.beamformer, BeamformerTaylor)
-
-        taylor.sidelobe_level = -100
-        Assert.assertEqual(-100, taylor.sidelobe_level)
-        taylor.sidelobe_level = 0
-        Assert.assertEqual(0, taylor.sidelobe_level)
-        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            taylor.sidelobe_level = -101
-        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            taylor.sidelobe_level = 1
-
-        taylor.sidelobe_count = 1
-        Assert.assertEqual(1, taylor.sidelobe_count)
-        taylor.sidelobe_count = 50
-        Assert.assertEqual(50, taylor.sidelobe_count)
-        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            taylor.sidelobe_count = 0
-        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            taylor.sidelobe_count = 51
 
         # Use a different file
 
@@ -4725,7 +4820,10 @@ class AntennaControlHelper(object):
         antennaControl.reference_type = AntennaControlReferenceType.EMBED
         Assert.assertEqual(AntennaControlReferenceType.EMBED, antennaControl.reference_type)
 
-        numExpectedSupportedEmbeddedModels: int = 53
+        numExpectedSupportedEmbeddedModels: int = 54
+        if OSHelper.IsLinux():
+            # HFSS Design not available for Linux
+            numExpectedSupportedEmbeddedModels -= 1
 
         arSupportedEmbeddedModels = antennaControl.embedded_model_component_linking.supported_components
         Assert.assertEqual(numExpectedSupportedEmbeddedModels, len(arSupportedEmbeddedModels))
@@ -4750,7 +4848,7 @@ class AntennaControlHelper(object):
         Assert.assertEqual(AntennaControlReferenceType.LINK, antennaControl.reference_type)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            antennaControl.set_embedded_model("Dipole")
+            antennaControl.embedded_model_component_linking.set_component("Dipole")
 
         arSupportedLinkedAntennaObjects = antennaControl.supported_linked_antenna_objects
 
@@ -4766,28 +4864,23 @@ class AntennaControlHelper(object):
 
         antennaControl.reference_type = AntennaControlReferenceType.EMBED
 
-        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
-            antennaControl.set_embedded_model("bogus")
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
+            antennaControl.embedded_model_component_linking.set_component("bogus")
         self.m_root.units_preferences.set_current_unit("FrequencyUnit", "GHz")
         antennaHelper = AntennaHelper(self.m_root)
         antennaModelType: "AntennaModelType"
         for antennaModelType in Enum.GetValues(clr.TypeOf(AntennaModelType)):
             if (
                 (
-                    (
-                        (
-                            (
-                                (AntennaModelType.UNKNOWN != antennaModelType)
-                                and (AntennaModelType.OPTICAL_SIMPLE != antennaModelType)
-                            )
-                            and (AntennaModelType.OPTICAL_GAUSSIAN != antennaModelType)
-                        )
-                        and (AntennaModelType.REMCOM_UAN_FORMAT != antennaModelType)
-                    )
-                    and (AntennaModelType.ANSYS_FFD_FORMAT != antennaModelType)
+                    (AntennaModelType.UNKNOWN != antennaModelType)
+                    and (AntennaModelType.OPTICAL_SIMPLE != antennaModelType)
                 )
-                and (AntennaModelType.TICRA_GRASP_FORMAT != antennaModelType)
-            ) and (AntennaModelType.HFSS_EEP_ARRAY != antennaModelType):
+                and (AntennaModelType.OPTICAL_GAUSSIAN != antennaModelType)
+            ) and (AntennaModelType.TICRA_GRASP_FORMAT != antennaModelType):
+                if OSHelper.IsLinux() and (antennaModelType == AntennaModelType.HFSS_DESIGN):
+                    # HFSS Design not available for Linux
+                    continue
+
                 antennaModelName: str = AntennaHelper.TypeToName(antennaModelType)
                 Console.WriteLine(antennaModelType)
                 antennaControl.embedded_model_component_linking.set_component(antennaModelName)
@@ -4796,6 +4889,10 @@ class AntennaControlHelper(object):
                     antennaModelName,
                     designFrequencyEnabled,
                 )
+
+        antennaControl.embedded_model_component_linking.set_component(
+            AntennaHelper.TypeToName(AntennaModelType.GAUSSIAN)
+        )
 
         # Antenna tab - Orientation sub-tab
         antennaControl.reference_type = AntennaControlReferenceType.EMBED  # to make orientation read-write
@@ -5391,7 +5488,7 @@ class AntennaBeamSelectionStrategyScriptPluginHelper(object):
 
     # region Run
     def Run(self, scriptPlugin: "AntennaBeamSelectionStrategyScriptPlugin"):
-        if not OSHelper.IsLinux():
+        if OSHelper.SupportsScriptPlugins():
             # script plugins do not work on linux
             with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                 scriptPlugin.filename = r"C:\bogus.vbs"
@@ -5470,23 +5567,20 @@ class AntennaBeamHelper(object):
         for antennaModelType in Enum.GetValues(clr.TypeOf(AntennaModelType)):
             if (
                 (
-                    (
-                        (
-                            (
-                                (AntennaModelType.UNKNOWN != antennaModelType)
-                                and (AntennaModelType.OPTICAL_SIMPLE != antennaModelType)
-                            )
-                            and (AntennaModelType.OPTICAL_GAUSSIAN != antennaModelType)
-                        )
-                        and (AntennaModelType.REMCOM_UAN_FORMAT != antennaModelType)
-                    )
-                    and (AntennaModelType.ANSYS_FFD_FORMAT != antennaModelType)
+                    (AntennaModelType.UNKNOWN != antennaModelType)
+                    and (AntennaModelType.OPTICAL_SIMPLE != antennaModelType)
                 )
-                and (AntennaModelType.TICRA_GRASP_FORMAT != antennaModelType)
-            ) and (AntennaModelType.HFSS_EEP_ARRAY != antennaModelType):
+                and (AntennaModelType.OPTICAL_GAUSSIAN != antennaModelType)
+            ) and (AntennaModelType.TICRA_GRASP_FORMAT != antennaModelType):
+                if OSHelper.IsLinux() and (antennaModelType == AntennaModelType.HFSS_DESIGN):
+                    # HFSS Design not available for Linux
+                    continue
+
                 antennaModelName: str = AntennaHelper.TypeToName(antennaModelType)
                 beam.antenna_model_name = antennaModelName
                 antennaHelper.Run(beam.antenna_model, antennaModelName, True)
+
+        beam.antenna_model_name = AntennaHelper.TypeToName(AntennaModelType.GAUSSIAN)
 
         # Beams tab, Antenna sub-tab, Polarization sub-tab
 
@@ -5572,87 +5666,10 @@ class AntennaBeamCollectionHelper(object):
 # endregion
 
 
-# region RadarClutterMapInheritableHelper
-class RadarClutterMapInheritableHelper(object):
-    def __init__(self, *args, **kwargs):
-        pass
-
-    # endregion
-
-    # region Run
-    def Run(self, clutterMapInheritable: "IRadarClutterMapInheritable"):
-        clutterMap: "IRadarClutterMap" = clutterMapInheritable.clutter_map
-
-        clutterMapInheritable.inherit = True
-        Assert.assertTrue(clutterMapInheritable.inherit)
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            clutterMap.set_model("Constant Coefficient")
-
-        clutterMapInheritable.inherit = False
-        Assert.assertFalse(clutterMapInheritable.inherit)
-
-        arSupportedModels = clutterMap.supported_models
-        numSupportedModels: int = Array.Length(arSupportedModels)
-        Assert.assertGreaterEqual(numSupportedModels, 1)  # There might be additional plugin models
-        Assert.assertTrue(
-            (Array.IndexOf(arSupportedModels, "Constant Coefficient") >= 0),
-            "Expected [Constant Coefficient] model not found",
-        )
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid object type")):
-            clutterMap.set_model("Bogus")
-
-        clutterMap.set_model("Constant Coefficient")
-        model: "IRadarClutterMapModel" = clutterMap.model
-        Assert.assertEqual(RadarClutterMapModelType.CONSTANT_COEFFICIENT, model.type)
-        Assert.assertEqual("Constant Coefficient", model.name)
-
-        constantCoefficient: "IRadarClutterMapModelConstantCoefficient" = clr.CastAs(
-            model, IRadarClutterMapModelConstantCoefficient
-        )
-        constantCoefficient.constant_coefficient = -200
-        Assert.assertEqual(-200, constantCoefficient.constant_coefficient)
-        constantCoefficient.constant_coefficient = 200
-        Assert.assertEqual(200, constantCoefficient.constant_coefficient)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            constantCoefficient.constant_coefficient = -201
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            constantCoefficient.constant_coefficient = 201
-
-
-# endregion
-
-
 # region RadarCrossSectionInheritableHelper
 class RadarCrossSectionInheritableHelper(object):
     def __init__(self, *args, **kwargs):
         pass
-
-    # endregion
-
-    # region Run_DeprecatedModelInterface
-    def Run_DeprecatedModelInterface(self, crossSectionInheritable: "RadarCrossSectionInheritable"):
-        crossSectionInheritable.inherit = True
-        Assert.assertTrue(crossSectionInheritable.inherit)
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            crossSectionInheritable.set_model("Radar Cross Section")
-
-        crossSectionInheritable.inherit = False
-        Assert.assertFalse(crossSectionInheritable.inherit)
-
-        arSupportedModels = crossSectionInheritable.supported_models
-        Assert.assertEqual(1, Array.Length(arSupportedModels))
-        rcsModelName: str
-        for rcsModelName in arSupportedModels:
-            crossSectionInheritable.set_model(rcsModelName)
-            rcsModel: "RadarCrossSectionModel" = crossSectionInheritable.model
-            Assert.assertEqual(rcsModelName, rcsModel.name)
-            if rcsModelName == "Radar Cross Section":
-                self.Test_IAgRadarCrossSectionModel(rcsModel)
-            else:
-                Assert.fail("Unknown Radar Cross Section model.")
 
     # endregion
 
@@ -5759,7 +5776,7 @@ class RadarCrossSectionInheritableHelper(object):
                     TestBase.PathCombine("CommRad", "RCS_External_File.txt"), strategyExternalFile.filename
                 )
             elif eComputeStrategy == RCSComputeStrategy.SCRIPT_PLUGIN:
-                if not OSHelper.IsLinux():
+                if OSHelper.SupportsScriptPlugins():
                     # script plugins do not work on linux
                     band.set_compute_strategy("Script Plugin")
                     Assert.assertEqual("Script Plugin", band.compute_strategy.name)
@@ -5785,6 +5802,7 @@ class RadarCrossSectionInheritableHelper(object):
                     band.set_compute_strategy("Plugin")
                 Assert.assertFalse(self.IsSupportedComputeStrategy("Plugin", band.supported_compute_strategies))
             elif eComputeStrategy == RCSComputeStrategy.ANSYS_CSV_FILE:
+
                 band.set_compute_strategy("Ansys HFSS CSV File")
                 Assert.assertEqual("Ansys HFSS CSV File", band.compute_strategy.name)
                 Assert.assertEqual(RCSComputeStrategy.ANSYS_CSV_FILE, band.compute_strategy.type)
@@ -6183,7 +6201,7 @@ class IAgAntennaContourSpectralFluxDensity_Helper(object):
 # region AtmosphereLocalRainDataHelper
 class AtmosphereLocalRainDataHelper(object):
     # region Run
-    def Run(self, atmosphere: "Atmosphere", root: "STKObjectRoot"):
+    def Run(self, atmosphere: "PlatformRFEnvironment", root: "STKObjectRoot"):
         abbr: str = root.units_preferences.get_current_unit_abbrv("Temperature")
         root.units_preferences.set_current_unit("Temperature", "degC")
 
@@ -6194,8 +6212,6 @@ class AtmosphereLocalRainDataHelper(object):
             atmosphere.local_rain_height = 2
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             atmosphere.local_rain_rate = 0
-        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            atmosphere.local_surface_temperature = -100
 
         atmosphere.enable_local_rain_data = True
         Assert.assertTrue(atmosphere.enable_local_rain_data)
@@ -6218,331 +6234,7 @@ class AtmosphereLocalRainDataHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             atmosphere.local_rain_rate = 251
 
-        atmosphere.local_surface_temperature = -99.9
-        Assert.assertEqual(-99.9, atmosphere.local_surface_temperature)
-        atmosphere.local_surface_temperature = 100
-        Assert.assertEqual(100, atmosphere.local_surface_temperature)
-        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            atmosphere.local_surface_temperature = -101
-        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            atmosphere.local_surface_temperature = 101
-
         root.units_preferences.set_current_unit("Temperature", abbr)
-
-
-# endregion
-
-
-# region AtmosphereHelper
-class AtmosphereHelper(object):
-    def __init__(self, root: "STKObjectRoot"):
-        self.m_root: "STKObjectRoot" = root
-
-    # endregion
-
-    # region Run
-    def Run(self, atmosphere: "Atmosphere"):
-        atmosphere.inherit_atmospheric_absorption_model = True
-        Assert.assertTrue(atmosphere.inherit_atmospheric_absorption_model)
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            atmosphere.set_local_atmospheric_absorption_model("ITU-R P676-13")
-
-        atmosphere.inherit_atmospheric_absorption_model = False
-        Assert.assertFalse(atmosphere.inherit_atmospheric_absorption_model)
-
-        supportedAtmosAbsorptionModels = atmosphere.supported_local_atmospheric_absorption_models
-        aaModelName: str
-        for aaModelName in supportedAtmosAbsorptionModels:
-            atmosphere.set_local_atmospheric_absorption_model(aaModelName)
-            aaModel: "IAtmosphericAbsorptionModel" = atmosphere.local_atmospheric_absorption_model
-            Assert.assertEqual(aaModelName, aaModel.name)
-            if aaModelName == "ITU-R P676-13":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.ITURP676_13, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelITURP676(
-                    clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
-                )
-            elif aaModelName == "ITU-R P676-9":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.ITURP676_9, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelITURP676(
-                    clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
-                )
-            elif aaModelName == "Script Plugin":
-                if not OSHelper.IsLinux():
-                    # script plugins do not work on linux
-                    Assert.assertEqual(AtmosphericAbsorptionModelType.SCRIPT_PLUGIN, aaModel.type)
-                    self.Test_IAgAtmosphericAbsorptionModelScriptPlugin(
-                        clr.CastAs(aaModel, AtmosphericAbsorptionModelScriptPlugin)
-                    )
-
-            elif aaModelName == "Simple Satcom":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.SIMPLE_SATCOM, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelSimpleSatcom(
-                    clr.CastAs(aaModel, AtmosphericAbsorptionModelSimpleSatcom)
-                )
-            elif aaModelName == "TIREM 3.31":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.TIREM331, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
-            elif aaModelName == "TIREM 3.20":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.TIREM320, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
-            elif aaModelName == "TIREM 5.50":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.TIREM550, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
-            elif aaModelName == "VOACAP":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.GRAPHICS_3D_ACAP, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelVoacap(
-                    clr.CastAs(aaModel, AtmosphericAbsorptionModelGraphics3DACAP)
-                )
-            elif aaModelName == "Early ITU Foliage Model CSharp Example":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.COM_PLUGIN, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
-                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), False
-                )
-            elif aaModelName == "Early ITU Foliage Model JScript Example":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.COM_PLUGIN, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
-                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), False
-                )
-            elif aaModelName == "Python Plugin":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.COM_PLUGIN, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
-                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), True
-                )
-            else:
-                Assert.fail(String.Format("Unknown model type ({0})", aaModelName))
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
-            atmosphere.set_local_atmospheric_absorption_model("bogus")
-
-    # endregion
-
-    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "IAtmosphericAbsorptionModelITURP676"):
-        iturp676.fast_approximation_method = False
-        Assert.assertFalse(iturp676.fast_approximation_method)
-        iturp676.fast_approximation_method = True
-        Assert.assertTrue(iturp676.fast_approximation_method)
-
-        iturp676.seasonal_regional_method = False
-        Assert.assertFalse(iturp676.seasonal_regional_method)
-        iturp676.seasonal_regional_method = True
-        Assert.assertTrue(iturp676.seasonal_regional_method)
-
-    def Test_IAgAtmosphericAbsorptionModelScriptPlugin(self, scriptPlugin: "AtmosphericAbsorptionModelScriptPlugin"):
-        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
-            scriptPlugin.filename = r"C:\bogus.vbs"
-        with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
-            scriptPlugin.filename = TestBase.GetScenarioFile("ChainTest", "ChainTest.sc")
-
-        scriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
-        Assert.assertEqual(TestBase.PathCombine("CommRad", "VB_AbsorpModel.vbs"), scriptPlugin.filename)
-
-    def Test_IAgAtmosphericAbsorptionModelSimpleSatcom(self, simpleSatcom: "AtmosphericAbsorptionModelSimpleSatcom"):
-        self.m_root.units_preferences.set_current_unit("DistanceUnit", "m")
-        simpleSatcom.water_vapor_concentration = 0
-        Assert.assertEqual(0, simpleSatcom.water_vapor_concentration)
-        simpleSatcom.water_vapor_concentration = 100
-        Assert.assertEqual(100, simpleSatcom.water_vapor_concentration)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            simpleSatcom.water_vapor_concentration = -1
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            simpleSatcom.water_vapor_concentration = 101
-
-        self.m_root.units_preferences.set_current_unit("Temperature", "degC")
-        simpleSatcom.surface_temperature = -99.9
-        Assert.assertEqual(-99.9, simpleSatcom.surface_temperature)
-        simpleSatcom.surface_temperature = 100
-        Assert.assertEqual(100, simpleSatcom.surface_temperature)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            simpleSatcom.surface_temperature = -101
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            simpleSatcom.surface_temperature = 101
-
-    def Test_IAgAtmosphericAbsorptionModelTirem(self, tirem: "IAtmosphericAbsorptionModelTIREM"):
-        self.m_root.units_preferences.set_current_unit("Temperature", "degC")
-        tirem.surface_temperature = -99.9
-        Assert.assertEqual(-99.9, tirem.surface_temperature)
-        tirem.surface_temperature = 100
-        Assert.assertEqual(100, tirem.surface_temperature)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.surface_temperature = -101
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.surface_temperature = 101
-
-        self.m_root.units_preferences.set_current_unit("DistanceUnit", "m")
-        tirem.surface_humidity = 0
-        Assert.assertEqual(0, tirem.surface_humidity)
-        tirem.surface_humidity = 13.25
-        Assert.assertEqual(13.25, tirem.surface_humidity)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.surface_humidity = -1
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.surface_humidity = 14
-
-        tirem.surface_conductivity = 1e-05
-        Assert.assertEqual(1e-05, tirem.surface_conductivity)
-        tirem.surface_conductivity = 100
-        Assert.assertEqual(100, tirem.surface_conductivity)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.surface_conductivity = 0
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.surface_conductivity = 101
-
-        tirem.surface_refractivity = 200
-        Assert.assertEqual(200, tirem.surface_refractivity)
-        tirem.surface_refractivity = 450
-        Assert.assertEqual(450, tirem.surface_refractivity)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.surface_refractivity = 199
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.surface_refractivity = 451
-
-        tirem.relative_permittivity = 0
-        Assert.assertEqual(0, tirem.relative_permittivity)
-        tirem.relative_permittivity = 100
-        Assert.assertEqual(100, tirem.relative_permittivity)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.relative_permittivity = -1
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.relative_permittivity = 101
-
-        tirem.override_terrain_sample_resolution = False
-        Assert.assertFalse(tirem.override_terrain_sample_resolution)
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            tirem.terrain_sample_resolution = 1
-
-        tirem.override_terrain_sample_resolution = True
-        Assert.assertTrue(tirem.override_terrain_sample_resolution)
-
-        self.m_root.units_preferences.set_current_unit("DistanceUnit", "km")
-        tirem.terrain_sample_resolution = 0.0001
-        Assert.assertEqual(0.0001, tirem.terrain_sample_resolution)
-        tirem.terrain_sample_resolution = 10
-        Assert.assertEqual(10, tirem.terrain_sample_resolution)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.terrain_sample_resolution = 0
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.terrain_sample_resolution = 11
-
-    def Test_IAgAtmosphericAbsorptionModelCOMPlugin(
-        self, plugin: "AtmosphericAbsorptionModelCOMPlugin", isPython: bool
-    ):
-        rawPluginObject: typing.Any = plugin.raw_plugin_object
-        if (
-            (EngineLifetimeManager.target != TestTarget.eStkGrpc)
-            and (EngineLifetimeManager.target != TestTarget.eStkRuntime)
-        ) and (EngineLifetimeManager.target != TestTarget.eStkRuntimeNoGfx):
-            Assert.assertIsNotNone(rawPluginObject)
-
-        pluginConfigPy: "CommRadPluginConfiguration" = plugin.plugin_configuration
-        arPropsPy = pluginConfigPy.available_properties
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            pluginConfigPy.set_property("BogusProperty", 123)
-        if isPython:
-            return
-
-        Assert.assertEqual(1, Array.Length(arPropsPy))
-        pluginConfigPy.set_property("MaxFoliageDepth", 900)
-        Assert.assertEqual(900, float(pluginConfigPy.get_property("MaxFoliageDepth")))
-        return
-
-    def Test_IAgAtmosphericAbsorptionModelVoacap(self, voacap: "AtmosphericAbsorptionModelGraphics3DACAP"):
-        with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
-            voacap.solar_activity_configuration_type = Graphics3DACAPSolarActivityConfigurationType.UNKNOWN
-
-        voacap.solar_activity_configuration_type = Graphics3DACAPSolarActivityConfigurationType.SUNSPOT_NUMBER
-        Assert.assertEqual(
-            Graphics3DACAPSolarActivityConfigurationType.SUNSPOT_NUMBER, voacap.solar_activity_configuration_type
-        )
-
-        configSolarFlux1: "SolarActivityConfigurationSolarFlux" = clr.CastAs(
-            voacap.solar_activity_configuration, SolarActivityConfigurationSolarFlux
-        )
-        Assert.assertIsNone(configSolarFlux1)
-
-        configSunspotNumber: "SolarActivityConfigurationSunspotNumber" = clr.CastAs(
-            voacap.solar_activity_configuration, SolarActivityConfigurationSunspotNumber
-        )
-        configSunspotNumber.sunspot_number = 0
-        Assert.assertEqual(0, configSunspotNumber.sunspot_number)
-        configSunspotNumber.sunspot_number = 200
-        Assert.assertEqual(200, configSunspotNumber.sunspot_number)
-        Assert.assertEqual(200, voacap.sunspot_number)  # verify against old property
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            configSunspotNumber.sunspot_number = -1
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            configSunspotNumber.sunspot_number = 301
-
-        voacap.sunspot_number = 0
-        Assert.assertEqual(0, voacap.sunspot_number)
-        voacap.sunspot_number = 300
-        Assert.assertEqual(300, voacap.sunspot_number)
-        Assert.assertEqual(300, configSunspotNumber.sunspot_number)  # verify against new property
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            voacap.sunspot_number = -1
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            voacap.sunspot_number = 301
-
-        voacap.solar_activity_configuration_type = Graphics3DACAPSolarActivityConfigurationType.SOLAR_FLUX
-        Assert.assertEqual(
-            Graphics3DACAPSolarActivityConfigurationType.SOLAR_FLUX, voacap.solar_activity_configuration_type
-        )
-
-        configSunspotNumber1: "SolarActivityConfigurationSunspotNumber" = clr.CastAs(
-            voacap.solar_activity_configuration, SolarActivityConfigurationSunspotNumber
-        )
-        Assert.assertIsNone(configSunspotNumber1)
-
-        configSolarFlux: "SolarActivityConfigurationSolarFlux" = clr.CastAs(
-            voacap.solar_activity_configuration, SolarActivityConfigurationSolarFlux
-        )
-        configSolarFlux.solar_flux = 0.0
-        Assert.assertEqual(0.0, configSolarFlux.solar_flux)
-        configSolarFlux.solar_flux = 362.2
-        Assert.assertEqual(362.2, configSolarFlux.solar_flux)
-        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            configSolarFlux.solar_flux = -1.0
-        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            configSolarFlux.solar_flux = 362.3
-
-        voacap.multipath_power_tolerance = 0.0
-        Assert.assertEqual(0.0, voacap.multipath_power_tolerance)
-        voacap.multipath_power_tolerance = 40.0
-        Assert.assertEqual(40.0, voacap.multipath_power_tolerance)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            voacap.multipath_power_tolerance = -0.1
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            voacap.multipath_power_tolerance = 40.1
-
-        voacap.multipath_delay_tolerance = 0.0
-        Assert.assertEqual(0.0, voacap.multipath_delay_tolerance)
-        voacap.multipath_delay_tolerance = 0.09999
-        Assert.assertEqual(0.09999, voacap.multipath_delay_tolerance)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            voacap.multipath_delay_tolerance = -0.1
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            voacap.multipath_delay_tolerance = 0.1
-
-        voacap.coefficient_data_type = Graphics3DACAPCoefficientDataType.CCIR
-        Assert.assertEqual(Graphics3DACAPCoefficientDataType.CCIR, voacap.coefficient_data_type)
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            voacap.use_day_of_month_average = True
-
-        voacap.coefficient_data_type = Graphics3DACAPCoefficientDataType.URSI
-        Assert.assertEqual(Graphics3DACAPCoefficientDataType.URSI, voacap.coefficient_data_type)
-
-        voacap.use_day_of_month_average = True
-        Assert.assertTrue(voacap.use_day_of_month_average)
-        voacap.use_day_of_month_average = False
-        Assert.assertFalse(voacap.use_day_of_month_average)
-
-        voacap.compute_alternate_frequencies = True
-        Assert.assertTrue(voacap.compute_alternate_frequencies)
-        voacap.compute_alternate_frequencies = False
-        Assert.assertFalse(voacap.compute_alternate_frequencies)
 
 
 # endregion
@@ -6550,31 +6242,6 @@ class AtmosphereHelper(object):
 
 # region LaserEnvAtmosLossBBLLHelper
 class LaserEnvAtmosLossBBLLHelper(object):
-    def RunDeprecatedModelInterface(self, laserEnv: "ObjectLaserEnvironment"):
-        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
-
-        laserPropChan.enable_atmospheric_loss_model = False
-        Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
-
-        laserAtmosLossModel: "ILaserAtmosphericLossModel" = laserPropChan.atmospheric_loss_model
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            laserPropChan.set_atmospheric_loss_model("Beer-Bouguer-Lambert Law")
-
-        laserPropChan.enable_atmospheric_loss_model = True
-        Assert.assertTrue(laserPropChan.enable_atmospheric_loss_model)
-
-        laserAtmosLossModel = laserPropChan.atmospheric_loss_model
-        laserPropChan.set_atmospheric_loss_model("Beer-Bouguer-Lambert Law")
-        Assert.assertEqual("Beer-Bouguer-Lambert Law", laserPropChan.atmospheric_loss_model.name)
-        Assert.assertEqual(
-            LaserPropagationLossModelType.BEER_BOUGUER_LAMBERT_LAW, laserPropChan.atmospheric_loss_model.type
-        )
-
-        bbll: "LaserAtmosphericLossModelBeerBouguerLambertLaw" = clr.CastAs(
-            laserPropChan.atmospheric_loss_model, LaserAtmosphericLossModelBeerBouguerLambertLaw
-        )
-        self.TestBeerBouguerLamberLawModel(bbll)
-
     def TestBeerBouguerLamberLawModel(self, bbll: "LaserAtmosphericLossModelBeerBouguerLambertLaw"):
         bbll.create_evenly_spaced_layers(5, 100)
         Assert.assertTrue(bbll.enable_evenly_spaced_heights)
@@ -6636,7 +6303,7 @@ class LaserEnvAtmosLossBBLLHelper(object):
     # region Run
     def Run(self, laserEnv: "ObjectLaserEnvironment"):
         # LaserEnvironment laserEnv = AG_SC.LaserEnvironment;
-        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
+        laserPropChan: "LaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_atmospheric_loss_model = False
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
@@ -6676,34 +6343,6 @@ class LaserEnvAtmosLossBBLLHelper(object):
 
 # region LaserEnvAtmosLossModtranHelper
 class LaserEnvAtmosLossModtranHelper(object):
-    def RunDeprecatedModelInterface(self, laserEnv: "ObjectLaserEnvironment"):
-        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
-
-        laserPropChan.enable_atmospheric_loss_model = False
-        Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
-
-        laserAtmosLossModel: "ILaserAtmosphericLossModel" = laserPropChan.atmospheric_loss_model
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            laserPropChan.set_atmospheric_loss_model("MODTRAN-derived Lookup Table")
-
-        laserPropChan.enable_atmospheric_loss_model = True
-        Assert.assertTrue(laserPropChan.enable_atmospheric_loss_model)
-
-        laserAtmosLossModel = laserPropChan.atmospheric_loss_model
-        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-            laserPropChan.set_atmospheric_loss_model("Bogus")
-        laserPropChan.set_atmospheric_loss_model("MODTRAN-derived Lookup Table")
-
-        Assert.assertEqual("MODTRAN-derived Lookup Table", laserPropChan.atmospheric_loss_model.name)
-        Assert.assertEqual(
-            LaserPropagationLossModelType.MODTRAN_LOOKUP_TABLE, laserPropChan.atmospheric_loss_model.type
-        )
-
-        modtran: "MODTRANLookupTablePropagationModel" = clr.CastAs(
-            laserPropChan.atmospheric_loss_model, MODTRANLookupTablePropagationModel
-        )
-        self.TestModtranModel(modtran)
-
     def TestModtranModel(self, modtran: "MODTRANLookupTablePropagationModel"):
         modtran.aerosol_model_type = ModtranAerosolModelType.MARITIME
         Assert.assertEqual(ModtranAerosolModelType.MARITIME, modtran.aerosol_model_type)
@@ -6743,7 +6382,7 @@ class LaserEnvAtmosLossModtranHelper(object):
 
     # region Run
     def Run(self, laserEnv: "ObjectLaserEnvironment"):
-        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
+        laserPropChan: "LaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_atmospheric_loss_model = False
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
@@ -6786,36 +6425,6 @@ class LaserEnvAtmosLossModtranHelper(object):
 
 # region LaserEnvTropoScintLossHelper
 class LaserEnvTropoScintLossHelper(object):
-    def RunDeprecatedModelInterface(self, laserEnv: "ObjectLaserEnvironment"):
-        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
-
-        laserPropChan.enable_tropospheric_scintillation_loss_model = False
-        Assert.assertFalse(laserPropChan.enable_tropospheric_scintillation_loss_model)
-
-        laserTropoScint: "ILaserTroposphericScintillationLossModel" = (
-            laserPropChan.tropospheric_scintillation_loss_model
-        )
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            laserPropChan.set_tropospheric_scintillation_loss_model("ITU-R P1814")
-
-        laserPropChan.enable_tropospheric_scintillation_loss_model = True
-        Assert.assertTrue(laserPropChan.enable_tropospheric_scintillation_loss_model)
-
-        laserTropoScint = laserPropChan.tropospheric_scintillation_loss_model
-        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-            laserPropChan.set_tropospheric_scintillation_loss_model("Bogus")
-        laserPropChan.set_tropospheric_scintillation_loss_model("ITU-R P1814")
-        Assert.assertEqual("ITU-R P1814", laserPropChan.tropospheric_scintillation_loss_model.name)
-        Assert.assertEqual(
-            LaserTroposphericScintillationLossModelType.ITURP_1814,
-            laserPropChan.tropospheric_scintillation_loss_model.type,
-        )
-
-        iturp1814: "LaserTroposphericScintillationLossModelITURP1814" = clr.CastAs(
-            laserTropoScint, LaserTroposphericScintillationLossModelITURP1814
-        )
-        self.TestTroposphericScintModel(iturp1814)
-
     def TestTroposphericScintModel(self, iturp1814: "LaserTroposphericScintillationLossModelITURP1814"):
         iturp1814.set_atmospheric_turbulence_model_type(AtmosphericTurbulenceModelType.CONSTANT)
         Assert.assertEqual(AtmosphericTurbulenceModelType.CONSTANT, iturp1814.atmospheric_turbulence_model.type)
@@ -6839,7 +6448,7 @@ class LaserEnvTropoScintLossHelper(object):
 
     # region Run
     def Run(self, laserEnv: "ObjectLaserEnvironment"):
-        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
+        laserPropChan: "LaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_tropospheric_scintillation_loss_model = False
         Assert.assertFalse(laserPropChan.enable_tropospheric_scintillation_loss_model)
@@ -6884,84 +6493,46 @@ class LaserEnvTropoScintLossHelper(object):
 # endregion
 
 
-# region RF_Environment_EnvironmentalDataHelper
-class RF_Environment_EnvironmentalDataHelper(object):
-    # region Run
-    def Run(self, rfEnv: "ObjectRFEnvironment"):
-        propChan: "PropagationChannel" = rfEnv.propagation_channel
+# region PropagationChannelHelper
+class RFPropagationChannelHelper(object):
+    def __init__(self, propChannel: "PropagationChannel", root: "STKObjectRoot"):
+        self.m_propagationChannel: "PropagationChannel" = propChannel
+        self.m_root: "STKObjectRoot" = root
 
-        propChan.enable_itu_618_section2_p5 = False
-        Assert.assertFalse(propChan.enable_itu_618_section2_p5)
-        propChan.enable_itu_618_section2_p5 = True
-        Assert.assertTrue(propChan.enable_itu_618_section2_p5)
+    # endregion
 
+    # region RunITU618Section2p5
+    def RunITU618Section2p5(self):
+        self.m_propagationChannel.enable_itu_618_section2_p5 = False
+        Assert.assertFalse(self.m_propagationChannel.enable_itu_618_section2_p5)
+        self.m_propagationChannel.enable_itu_618_section2_p5 = True
+        Assert.assertTrue(self.m_propagationChannel.enable_itu_618_section2_p5)
 
-# endregion
+    # endregion
 
+    # region RunRain
+    def RunRain(self):
+        holdUnit: str = self.m_root.units_preferences.get_current_unit_abbrv("Temperature")
+        self.m_root.units_preferences.set_current_unit("Temperature", "degC")
 
-# region RF_Environment_RainCloudFog_RainModelHelper
-class RF_Environment_RainCloudFog_RainModelHelper(object):
-    def RunDeprecatedModelInterface(self, rfEnv: "ObjectRFEnvironment", root: "STKObjectRoot"):
-        holdUnit: str = root.units_preferences.get_current_unit_abbrv("Temperature")
-        root.units_preferences.set_current_unit("Temperature", "degC")
-
-        propChan: "PropagationChannel" = rfEnv.propagation_channel
-
-        propChan.enable_rain_loss = False
-        Assert.assertFalse(propChan.enable_rain_loss)
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            propChan.set_rain_loss_model("Crane 1985")
-
-        propChan.enable_rain_loss = True
-        Assert.assertTrue(propChan.enable_rain_loss)
-
-        numModels: int = 7
-        arSupportedRainLossModels = propChan.supported_rain_loss_models
-        Assert.assertEqual(numModels, len(arSupportedRainLossModels))
-
-        propChan.set_rain_loss_model("Crane 1982")
-        rainLossModel: "IRainLossModel" = propChan.rain_loss_model
-        Assert.assertEqual("Crane 1982", rainLossModel.name)
-
-        Assert.assertEqual(RainLossModelType.CRANE1982, rainLossModel.type)
-        crane82: "RainLossModelCrane1982" = clr.CastAs(rainLossModel, RainLossModelCrane1982)
-        crane82.surface_temperature = -100
-        Assert.assertEqual(-100, crane82.surface_temperature)
-        crane82.surface_temperature = 100
-        Assert.assertEqual(100, crane82.surface_temperature)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            crane82.surface_temperature = -101
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            crane82.surface_temperature = 101
-
-        root.units_preferences.set_current_unit("Temperature", holdUnit)
-
-    # region Run
-    def Run(self, rfEnv: "ObjectRFEnvironment", root: "STKObjectRoot"):
-        holdUnit: str = root.units_preferences.get_current_unit_abbrv("Temperature")
-        root.units_preferences.set_current_unit("Temperature", "degC")
-
-        propChan: "PropagationChannel" = rfEnv.propagation_channel
-
-        propChan.enable_rain_loss = False
-        Assert.assertFalse(propChan.enable_rain_loss)
+        self.m_propagationChannel.enable_rain_loss = False
+        Assert.assertFalse(self.m_propagationChannel.enable_rain_loss)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            propChan.rain_loss_model_component_linking.set_component("Crane 1985")
+            self.m_propagationChannel.rain_loss_model_component_linking.set_component("Crane 1985")
 
-        propChan.enable_rain_loss = True
-        Assert.assertTrue(propChan.enable_rain_loss)
+        self.m_propagationChannel.enable_rain_loss = True
+        Assert.assertTrue(self.m_propagationChannel.enable_rain_loss)
 
         numModels: int = 7
-        STKUtilHelper.TestComponentLinking(propChan.rain_loss_model_component_linking, numModels)
+        STKUtilHelper.TestComponentLinking(self.m_propagationChannel.rain_loss_model_component_linking, numModels)
 
-        arSupportedRainLossModels = propChan.rain_loss_model_component_linking.supported_components
+        arSupportedRainLossModels = self.m_propagationChannel.rain_loss_model_component_linking.supported_components
         rainLossModelName: str
         for rainLossModelName in arSupportedRainLossModels:
-            propChan.rain_loss_model_component_linking.set_component(rainLossModelName)
+            self.m_propagationChannel.rain_loss_model_component_linking.set_component(rainLossModelName)
             rainLossModel: "IRainLossModel" = clr.CastAs(
-                propChan.rain_loss_model_component_linking.component, IRainLossModel
+                self.m_propagationChannel.rain_loss_model_component_linking.component, IRainLossModel
             )
             Assert.assertEqual(rainLossModelName, rainLossModel.name)
             if rainLossModelName == "Crane 1985":
@@ -6977,7 +6548,7 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
                     crane85.surface_temperature = 101
 
             elif rainLossModelName == "Script Plugin":
-                if not OSHelper.IsLinux():
+                if OSHelper.SupportsScriptPlugins():
                     # script plugins do not work on linux
                     Assert.assertEqual(RainLossModelType.SCRIPT_PLUGIN, rainLossModel.type)
                     scriptPlugin: "RainLossModelScriptPlugin" = clr.CastAs(rainLossModel, RainLossModelScriptPlugin)
@@ -7100,86 +6671,63 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.fail(("Unknown Rain Loss Model name: " + rainLossModelName))
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
-            propChan.rain_loss_model_component_linking.set_component("bogus")
-        root.units_preferences.set_current_unit("Temperature", holdUnit)
+            self.m_propagationChannel.rain_loss_model_component_linking.set_component("bogus")
+        self.m_root.units_preferences.set_current_unit("Temperature", holdUnit)
 
+    # endregion
 
-# endregion
+    # region RunCloudsFog
+    def RunCloudsFog(self):
+        holdUnit: str = self.m_root.units_preferences.get_current_unit_abbrv("Temperature")
+        self.m_root.units_preferences.set_current_unit("Temperature", "degC")
+        self.m_root.units_preferences.set_current_unit("MassUnit", "g")
 
-
-# region RF_Environment_RainCloudFog_CloudsAndFogModelHelper
-class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
-    def RunDeprecatedModelInterface(self, rfEnv: "ObjectRFEnvironment", root: "STKObjectRoot"):
-        holdUnit: str = root.units_preferences.get_current_unit_abbrv("Temperature")
-        root.units_preferences.set_current_unit("Temperature", "degC")
-        root.units_preferences.set_current_unit("MassUnit", "g")
-
-        propChan: "PropagationChannel" = rfEnv.propagation_channel
-
-        arSupportedCFFLM = propChan.supported_clouds_and_fog_fading_loss_models
+        arSupportedCFFLM = (
+            self.m_propagationChannel.clouds_and_fog_fading_loss_model_component_linking.supported_components
+        )
         Assert.assertEqual(2, Array.Length(arSupportedCFFLM))
         Assert.assertEqual("ITU-R P840-7", arSupportedCFFLM[0])
         Assert.assertEqual("ITU-R P840-6", arSupportedCFFLM[1])
 
-        propChan.enable_clouds_and_fog_fading_loss = False
-        Assert.assertFalse(propChan.enable_clouds_and_fog_fading_loss)
+        self.m_propagationChannel.enable_clouds_and_fog_fading_loss = False
+        Assert.assertFalse(self.m_propagationChannel.enable_clouds_and_fog_fading_loss)
 
-        propChan.enable_clouds_and_fog_fading_loss = True
-        Assert.assertTrue(propChan.enable_clouds_and_fog_fading_loss)
+        self.m_propagationChannel.enable_clouds_and_fog_fading_loss = True
+        Assert.assertTrue(self.m_propagationChannel.enable_clouds_and_fog_fading_loss)
 
-        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
-            propChan.set_clouds_and_fog_fading_loss_model("ITU-R P840-5")
-
-        propChan.set_clouds_and_fog_fading_loss_model("ITU-R P840-6")
-        cfflm: "ICloudsAndFogFadingLossModel" = propChan.clouds_and_fog_fading_loss_model
-        Assert.assertEqual("ITU-R P840-6", cfflm.name)
-        Assert.assertEqual(CloudsAndFogFadingLossModelType.P_840_6_TYPE, cfflm.type)
-        self.Test_IAgCloudsAndFogFadingLossModelP840_6(clr.CastAs(cfflm, CloudsAndFogFadingLossModelP840Version6))
-
-        root.units_preferences.set_current_unit("Temperature", holdUnit)
-
-    def Run(self, rfEnv: "ObjectRFEnvironment", root: "STKObjectRoot"):
-        holdUnit: str = root.units_preferences.get_current_unit_abbrv("Temperature")
-        root.units_preferences.set_current_unit("Temperature", "degC")
-        root.units_preferences.set_current_unit("MassUnit", "g")
-
-        propChan: "PropagationChannel" = rfEnv.propagation_channel
-
-        arSupportedCFFLM = propChan.clouds_and_fog_fading_loss_model_component_linking.supported_components
-        Assert.assertEqual(2, Array.Length(arSupportedCFFLM))
-        Assert.assertEqual("ITU-R P840-7", arSupportedCFFLM[0])
-        Assert.assertEqual("ITU-R P840-6", arSupportedCFFLM[1])
-
-        propChan.enable_clouds_and_fog_fading_loss = False
-        Assert.assertFalse(propChan.enable_clouds_and_fog_fading_loss)
-
-        propChan.enable_clouds_and_fog_fading_loss = True
-        Assert.assertTrue(propChan.enable_clouds_and_fog_fading_loss)
-
-        STKUtilHelper.TestComponentLinking(propChan.clouds_and_fog_fading_loss_model_component_linking, 2)
+        STKUtilHelper.TestComponentLinking(
+            self.m_propagationChannel.clouds_and_fog_fading_loss_model_component_linking, 2
+        )
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
-            propChan.clouds_and_fog_fading_loss_model_component_linking.set_component("ITU-R P840-5")
+            self.m_propagationChannel.clouds_and_fog_fading_loss_model_component_linking.set_component("ITU-R P840-5")
 
-        propChan.clouds_and_fog_fading_loss_model_component_linking.set_component("ITU-R P840-7")
+        self.m_propagationChannel.clouds_and_fog_fading_loss_model_component_linking.set_component("ITU-R P840-7")
         cfflm: "ICloudsAndFogFadingLossModel" = clr.CastAs(
-            propChan.clouds_and_fog_fading_loss_model_component_linking.component, ICloudsAndFogFadingLossModel
+            self.m_propagationChannel.clouds_and_fog_fading_loss_model_component_linking.component,
+            ICloudsAndFogFadingLossModel,
         )
         Assert.assertEqual("ITU-R P840-7", cfflm.name)
         Assert.assertEqual(CloudsAndFogFadingLossModelType.P_840_7_TYPE, cfflm.type)
-        self.Test_IAgCloudsAndFogFadingLossModelP840_7(clr.CastAs(cfflm, CloudsAndFogFadingLossModelP840Version7))
+        RFPropagationChannelHelper.Test_IAgCloudsAndFogFadingLossModelP840_7(
+            clr.CastAs(cfflm, CloudsAndFogFadingLossModelP840Version7)
+        )
 
-        propChan.clouds_and_fog_fading_loss_model_component_linking.set_component("ITU-R P840-6")
+        self.m_propagationChannel.clouds_and_fog_fading_loss_model_component_linking.set_component("ITU-R P840-6")
         cfflm = clr.CastAs(
-            propChan.clouds_and_fog_fading_loss_model_component_linking.component, ICloudsAndFogFadingLossModel
+            self.m_propagationChannel.clouds_and_fog_fading_loss_model_component_linking.component,
+            ICloudsAndFogFadingLossModel,
         )
         Assert.assertEqual("ITU-R P840-6", cfflm.name)
         Assert.assertEqual(CloudsAndFogFadingLossModelType.P_840_6_TYPE, cfflm.type)
-        self.Test_IAgCloudsAndFogFadingLossModelP840_6(clr.CastAs(cfflm, CloudsAndFogFadingLossModelP840Version6))
+        RFPropagationChannelHelper.Test_IAgCloudsAndFogFadingLossModelP840_6(
+            clr.CastAs(cfflm, CloudsAndFogFadingLossModelP840Version6)
+        )
 
-        root.units_preferences.set_current_unit("Temperature", holdUnit)
+        self.m_root.units_preferences.set_current_unit("Temperature", holdUnit)
 
-    def Test_IAgCloudsAndFogFadingLossModelP840_7(self, cfflm7: "CloudsAndFogFadingLossModelP840Version7"):
+    @staticmethod
+    def Test_IAgCloudsAndFogFadingLossModelP840_7(cfflm7: "CloudsAndFogFadingLossModelP840Version7"):
         cfflm7.cloud_ceiling = 0
         Assert.assertEqual(0, cfflm7.cloud_ceiling)
         cfflm7.cloud_ceiling = 20
@@ -7283,7 +6831,8 @@ class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm7.liquid_water_percent_annual_exceeded = 1
 
-    def Test_IAgCloudsAndFogFadingLossModelP840_6(self, cfflm6: "CloudsAndFogFadingLossModelP840Version6"):
+    @staticmethod
+    def Test_IAgCloudsAndFogFadingLossModelP840_6(cfflm6: "CloudsAndFogFadingLossModelP840Version6"):
         cfflm6.cloud_ceiling = 0
         Assert.assertEqual(0, cfflm6.cloud_ceiling)
         cfflm6.cloud_ceiling = 20
@@ -7377,103 +6926,64 @@ class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm6.liquid_water_percent_annual_exceeded = 1
 
-
-# endregion
-
-
-# region RF_Environment_AtmosphericAbsorptionHelper
-class RF_Environment_AtmosphericAbsorptionHelper(object):
-    def __init__(self, root: "STKObjectRoot"):
-        self._root: "STKObjectRoot" = root
-
     # endregion
 
-    def RunDeprecatedModelInterface(self, rfEnv: "ObjectRFEnvironment"):
-        holdUnit: str = self._root.units_preferences.get_current_unit_abbrv("Temperature")
-        self._root.units_preferences.set_current_unit("Temperature", "degC")
+    # region RunAtmosphericAbsorption
+    def RunAtmosphericAbsorption(self):
+        holdTemperatureUnit: str = self.m_root.units_preferences.get_current_unit_abbrv("Temperature")
+        self.m_root.units_preferences.set_current_unit("Temperature", "degC")
 
-        propChan: "PropagationChannel" = rfEnv.propagation_channel
-        atmosAbsorb: "IAtmosphericAbsorptionModel" = propChan.atmospheric_absorption_model
-
-        propChan.enable_atmospheric_absorption = False
-        Assert.assertFalse(propChan.enable_atmospheric_absorption)
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            propChan.set_atmospheric_absorption_model("ITU-R P676-13")
-
-        propChan.enable_atmospheric_absorption = True
-        Assert.assertTrue(propChan.enable_atmospheric_absorption)
-        helper = AtmosphereHelper(self._root)
-        supportedAtmosAbsorptionModels = propChan.supported_atmospheric_absorption_models
-
-        numModels: int = 10
-        if OSHelper.IsLinux():
-            numModels = 7
-
-        Assert.assertEqual(numModels, len(supportedAtmosAbsorptionModels))
-
-        Assert.assertEqual(
-            len(propChan.atmospheric_absorption_model_component_linking.supported_components),
-            len(supportedAtmosAbsorptionModels),
-        )
-
-        propChan.set_atmospheric_absorption_model("Simple Satcom")
-        aaModel: "IAtmosphericAbsorptionModel" = propChan.atmospheric_absorption_model
-        Assert.assertEqual("Simple Satcom", aaModel.name)
-
-        Assert.assertEqual(AtmosphericAbsorptionModelType.SIMPLE_SATCOM, aaModel.type)
-        self.Test_IAgAtmosphericAbsorptionModelSimpleSatcom(clr.CastAs(aaModel, AtmosphericAbsorptionModelSimpleSatcom))
-
-        self._root.units_preferences.set_current_unit("Temperature", holdUnit)
-
-    def Run(self, rfEnv: "ObjectRFEnvironment"):
-        holdUnit: str = self._root.units_preferences.get_current_unit_abbrv("Temperature")
-        self._root.units_preferences.set_current_unit("Temperature", "degC")
-
-        propChan: "PropagationChannel" = rfEnv.propagation_channel
         atmosAbsorb: "IAtmosphericAbsorptionModel" = clr.CastAs(
-            propChan.atmospheric_absorption_model_component_linking.component, IAtmosphericAbsorptionModel
+            self.m_propagationChannel.atmospheric_absorption_model_component_linking.component,
+            IAtmosphericAbsorptionModel,
         )
 
-        propChan.enable_atmospheric_absorption = False
-        Assert.assertFalse(propChan.enable_atmospheric_absorption)
+        self.m_propagationChannel.enable_atmospheric_absorption = False
+        Assert.assertFalse(self.m_propagationChannel.enable_atmospheric_absorption)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            propChan.atmospheric_absorption_model_component_linking.set_component("ITU-R P676-9")
+            self.m_propagationChannel.atmospheric_absorption_model_component_linking.set_component("ITU-R P676-9")
 
-        propChan.enable_atmospheric_absorption = True
-        Assert.assertTrue(propChan.enable_atmospheric_absorption)
+        self.m_propagationChannel.enable_atmospheric_absorption = True
+        Assert.assertTrue(self.m_propagationChannel.enable_atmospheric_absorption)
 
-        numModels: int = 10
-        if OSHelper.IsLinux():
-            numModels = 7
+        numModels: int = 7
+        if OSHelper.SupportsScriptPlugins():
+            numModels += 2
 
-        STKUtilHelper.TestComponentLinking(propChan.atmospheric_absorption_model_component_linking, numModels)
+        if OSHelper.SupportsCSharpPlugins():
+            numModels += 1
 
-        helper = AtmosphereHelper(self._root)
-        supportedAtmosAbsorptionModels = propChan.atmospheric_absorption_model_component_linking.supported_components
+        STKUtilHelper.TestComponentLinking(
+            self.m_propagationChannel.atmospheric_absorption_model_component_linking, numModels
+        )
+
+        supportedAtmosAbsorptionModels = (
+            self.m_propagationChannel.atmospheric_absorption_model_component_linking.supported_components
+        )
         aaModelName: str
         for aaModelName in supportedAtmosAbsorptionModels:
-            propChan.atmospheric_absorption_model_component_linking.set_component(aaModelName)
+            self.m_propagationChannel.atmospheric_absorption_model_component_linking.set_component(aaModelName)
             aaModel: "IAtmosphericAbsorptionModel" = clr.CastAs(
-                propChan.atmospheric_absorption_model_component_linking.component, IAtmosphericAbsorptionModel
+                self.m_propagationChannel.atmospheric_absorption_model_component_linking.component,
+                IAtmosphericAbsorptionModel,
             )
             Assert.assertEqual(aaModelName, aaModel.name)
             if aaModelName == "ITU-R P676-13":
                 Assert.assertEqual(AtmosphericAbsorptionModelType.ITURP676_13, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelITURP676(
-                    clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
+                RFPropagationChannelHelper.Test_IAgAtmosphericAbsorptionModelITURP676_13(
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelITURP676Version13)
                 )
             elif aaModelName == "ITU-R P676-9":
                 Assert.assertEqual(AtmosphericAbsorptionModelType.ITURP676_9, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelITURP676(
-                    clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
+                RFPropagationChannelHelper.Test_IAgAtmosphericAbsorptionModelITURP676_9(
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelITURP676Version9)
                 )
             elif aaModelName == "Script Plugin":
-                if not OSHelper.IsLinux():
+                if OSHelper.SupportsScriptPlugins():
                     # script plugins do not work on linux
                     Assert.assertEqual(AtmosphericAbsorptionModelType.SCRIPT_PLUGIN, aaModel.type)
-                    self.Test_IAgAtmosphericAbsorptionModelScriptPlugin(
+                    RFPropagationChannelHelper.Test_IAgAtmosphericAbsorptionModelScriptPlugin(
                         clr.CastAs(aaModel, AtmosphericAbsorptionModelScriptPlugin)
                     )
 
@@ -7482,61 +6992,92 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
                 self.Test_IAgAtmosphericAbsorptionModelSimpleSatcom(
                     clr.CastAs(aaModel, AtmosphericAbsorptionModelSimpleSatcom)
                 )
-            elif aaModelName == "TIREM 3.31":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.TIREM331, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
-            elif aaModelName == "TIREM 3.20":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.TIREM320, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
             elif aaModelName == "TIREM 5.50":
                 Assert.assertEqual(AtmosphericAbsorptionModelType.TIREM550, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
+            elif aaModelName == "TIREM 6.30":
+                Assert.assertEqual(AtmosphericAbsorptionModelType.TIREM630, aaModel.type)
+                self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
             elif aaModelName == "VOACAP":
                 Assert.assertEqual(AtmosphericAbsorptionModelType.GRAPHICS_3D_ACAP, aaModel.type)
-                helper.Test_IAgAtmosphericAbsorptionModelVoacap(
+                self.Test_IAgAtmosphericAbsorptionModelVoacap(
                     clr.CastAs(aaModel, AtmosphericAbsorptionModelGraphics3DACAP)
                 )
             elif aaModelName == "Early ITU Foliage Model CSharp Example":
-                if not OSHelper.IsLinux():
+                if OSHelper.SupportsCSharpPlugins():
                     # CSharp plugins do not work on linux
                     Assert.assertEqual(AtmosphericAbsorptionModelType.COM_PLUGIN, aaModel.type)
-                    helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+                    self.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
                         clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), False
                     )
 
             elif aaModelName == "Early ITU Foliage Model JScript Example":
-                if not OSHelper.IsLinux():
+                if OSHelper.SupportsScriptPlugins():
                     # JScript plugins do not work on linux
                     Assert.assertEqual(AtmosphericAbsorptionModelType.COM_PLUGIN, aaModel.type)
-                    helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+                    self.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
                         clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), False
                     )
 
             elif aaModelName == "Python Plugin":
                 Assert.assertEqual(AtmosphericAbsorptionModelType.COM_PLUGIN, aaModel.type)
-                helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+                self.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
                     clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), True
                 )
             else:
                 Assert.fail("Unknown model type")
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
-            propChan.atmospheric_absorption_model_component_linking.set_component("bogus")
+            self.m_propagationChannel.atmospheric_absorption_model_component_linking.set_component("bogus")
 
-        self._root.units_preferences.set_current_unit("Temperature", holdUnit)
+        self.m_root.units_preferences.set_current_unit("Temperature", holdTemperatureUnit)
 
-    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "IAtmosphericAbsorptionModelITURP676"):
-        iturp676.fast_approximation_method = False
-        Assert.assertFalse(iturp676.fast_approximation_method)
-        iturp676.fast_approximation_method = True
-        Assert.assertTrue(iturp676.fast_approximation_method)
+    @staticmethod
+    def Test_IAgAtmosphericAbsorptionModelITURP676_9(iturp676_9: "AtmosphericAbsorptionModelITURP676Version9"):
+        iturp676_9.fast_approximation_method = False
+        Assert.assertFalse(iturp676_9.fast_approximation_method)
+        iturp676_9.fast_approximation_method = True
+        Assert.assertTrue(iturp676_9.fast_approximation_method)
 
-        iturp676.seasonal_regional_method = False
-        Assert.assertFalse(iturp676.seasonal_regional_method)
-        iturp676.seasonal_regional_method = True
-        Assert.assertTrue(iturp676.seasonal_regional_method)
+        iturp676_9.seasonal_regional_method = False
+        Assert.assertFalse(iturp676_9.seasonal_regional_method)
+        iturp676_9.seasonal_regional_method = True
+        Assert.assertTrue(iturp676_9.seasonal_regional_method)
 
-    def Test_IAgAtmosphericAbsorptionModelScriptPlugin(self, scriptPlugin: "AtmosphericAbsorptionModelScriptPlugin"):
+    @staticmethod
+    def Test_IAgAtmosphericAbsorptionModelITURP676_13(iturp676_13: "AtmosphericAbsorptionModelITURP676Version13"):
+        iturp676_13.fast_approximation_method = False
+        Assert.assertFalse(iturp676_13.fast_approximation_method)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            iturp676_13.use_water_vapor_from_section2_2 = True
+
+        iturp676_13.fast_approximation_method = True
+        Assert.assertTrue(iturp676_13.fast_approximation_method)
+
+        iturp676_13.use_water_vapor_from_section2_2 = False
+        Assert.assertFalse(iturp676_13.use_water_vapor_from_section2_2)
+        iturp676_13.use_water_vapor_from_section2_2 = True
+        Assert.assertTrue(iturp676_13.use_water_vapor_from_section2_2)
+
+        iturp676_13.atmosphere_data_type = ITURP676AtmosphereDataType.ANNUAL_GLOBAL
+        Assert.assertEqual(ITURP676AtmosphereDataType.ANNUAL_GLOBAL, iturp676_13.atmosphere_data_type)
+        iturp676_13.atmosphere_data_type = ITURP676AtmosphereDataType.SEASONAL_REGIONAL
+        Assert.assertEqual(ITURP676AtmosphereDataType.SEASONAL_REGIONAL, iturp676_13.atmosphere_data_type)
+
+        iturp676_13.atmosphere_data_type = ITURP676AtmosphereDataType.USER_SPECIFIED
+        Assert.assertEqual(ITURP676AtmosphereDataType.USER_SPECIFIED, iturp676_13.atmosphere_data_type)
+        userProfileFilename: str = TestBase.PathCombine("CommRad", "vProfile_placeExton_day70.apf")
+        iturp676_13.user_profile_filename = TestBase.GetScenarioFile(userProfileFilename)
+        Assert.assertEqual(userProfileFilename, iturp676_13.user_profile_filename)
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
+            iturp676_13.user_profile_filename = r"C:\bogus.apf"
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            iturp676_13.atmosphere_data_type = ITURP676AtmosphereDataType.UNKNOWN
+
+    @staticmethod
+    def Test_IAgAtmosphericAbsorptionModelScriptPlugin(scriptPlugin: "AtmosphericAbsorptionModelScriptPlugin"):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             scriptPlugin.filename = r"C:\bogus.vbs"
         with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
@@ -7546,7 +7087,8 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
         Assert.assertEqual(r"CommRad\VB_AbsorpModel.vbs", scriptPlugin.filename)
 
     def Test_IAgAtmosphericAbsorptionModelSimpleSatcom(self, simpleSatcom: "AtmosphericAbsorptionModelSimpleSatcom"):
-        self._root.units_preferences.set_current_unit("DistanceUnit", "m")
+        self.m_root.units_preferences.set_current_unit("DistanceUnit", "m")
+
         simpleSatcom.water_vapor_concentration = 0
         Assert.assertEqual(0, simpleSatcom.water_vapor_concentration)
         simpleSatcom.water_vapor_concentration = 100
@@ -7575,13 +7117,14 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_temperature = 101
 
-        self._root.units_preferences.set_current_unit("DistanceUnit", "m")
-        tirem.surface_humidity = 0
-        Assert.assertEqual(0, tirem.surface_humidity)
+        self.m_root.units_preferences.set_current_unit("DistanceUnit", "m")
+
+        tirem.surface_humidity = 1e-05
+        Assert.assertEqual(1e-05, tirem.surface_humidity)
         tirem.surface_humidity = 13.25
         Assert.assertEqual(13.25, tirem.surface_humidity)
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.surface_humidity = -1
+            tirem.surface_humidity = 1e-06
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_humidity = 14
 
@@ -7603,12 +7146,12 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_refractivity = 451
 
-        tirem.relative_permittivity = 0
-        Assert.assertEqual(0, tirem.relative_permittivity)
+        tirem.relative_permittivity = 1
+        Assert.assertEqual(1, tirem.relative_permittivity)
         tirem.relative_permittivity = 100
         Assert.assertEqual(100, tirem.relative_permittivity)
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.relative_permittivity = -1
+            tirem.relative_permittivity = 0.5
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.relative_permittivity = 101
 
@@ -7621,7 +7164,7 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
         tirem.override_terrain_sample_resolution = True
         Assert.assertTrue(tirem.override_terrain_sample_resolution)
 
-        self._root.units_preferences.set_current_unit("DistanceUnit", "km")
+        self.m_root.units_preferences.set_current_unit("DistanceUnit", "km")
         tirem.terrain_sample_resolution = 0.0001
         Assert.assertEqual(0.0001, tirem.terrain_sample_resolution)
         tirem.terrain_sample_resolution = 10
@@ -7631,81 +7174,154 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.terrain_sample_resolution = 11
 
+    def Test_IAgAtmosphericAbsorptionModelVoacap(self, voacap: "AtmosphericAbsorptionModelGraphics3DACAP"):
+        with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
+            voacap.solar_activity_configuration_type = Graphics3DACAPSolarActivityConfigurationType.UNKNOWN
 
-# endregion
+        voacap.solar_activity_configuration_type = Graphics3DACAPSolarActivityConfigurationType.SUNSPOT_NUMBER
+        Assert.assertEqual(
+            Graphics3DACAPSolarActivityConfigurationType.SUNSPOT_NUMBER, voacap.solar_activity_configuration_type
+        )
 
+        configSolarFlux1: "SolarActivityConfigurationSolarFlux" = clr.CastAs(
+            voacap.solar_activity_configuration, SolarActivityConfigurationSolarFlux
+        )
+        Assert.assertIsNone(configSolarFlux1)
 
-# region RF_Environment_UrbanAndTerrestrialHelper
-class RF_Environment_UrbanAndTerrestrialHelper(object):
-    def __init__(self, root: "STKObjectRoot"):
-        self._root: "STKObjectRoot" = root
+        configSunspotNumber: "SolarActivityConfigurationSunspotNumber" = clr.CastAs(
+            voacap.solar_activity_configuration, SolarActivityConfigurationSunspotNumber
+        )
+        configSunspotNumber.sunspot_number = 0
+        Assert.assertEqual(0, configSunspotNumber.sunspot_number)
+        configSunspotNumber.sunspot_number = 200
+        Assert.assertEqual(200, configSunspotNumber.sunspot_number)
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
+            configSunspotNumber.sunspot_number = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
+            configSunspotNumber.sunspot_number = 301
+
+        voacap.solar_activity_configuration_type = Graphics3DACAPSolarActivityConfigurationType.SOLAR_FLUX
+        Assert.assertEqual(
+            Graphics3DACAPSolarActivityConfigurationType.SOLAR_FLUX, voacap.solar_activity_configuration_type
+        )
+
+        configSunspotNumber1: "SolarActivityConfigurationSunspotNumber" = clr.CastAs(
+            voacap.solar_activity_configuration, SolarActivityConfigurationSunspotNumber
+        )
+        Assert.assertIsNone(configSunspotNumber1)
+
+        configSolarFlux: "SolarActivityConfigurationSolarFlux" = clr.CastAs(
+            voacap.solar_activity_configuration, SolarActivityConfigurationSolarFlux
+        )
+        configSolarFlux.solar_flux = 0.0
+        Assert.assertEqual(0.0, configSolarFlux.solar_flux)
+        configSolarFlux.solar_flux = 362.2
+        Assert.assertEqual(362.2, configSolarFlux.solar_flux)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            configSolarFlux.solar_flux = -1.0
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            configSolarFlux.solar_flux = 362.3
+
+        voacap.multipath_power_tolerance = 0.0
+        Assert.assertEqual(0.0, voacap.multipath_power_tolerance)
+        voacap.multipath_power_tolerance = 40.0
+        Assert.assertEqual(40.0, voacap.multipath_power_tolerance)
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
+            voacap.multipath_power_tolerance = -0.1
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
+            voacap.multipath_power_tolerance = 40.1
+
+        voacap.multipath_delay_tolerance = 0.0
+        Assert.assertEqual(0.0, voacap.multipath_delay_tolerance)
+        voacap.multipath_delay_tolerance = 0.09999
+        Assert.assertEqual(0.09999, voacap.multipath_delay_tolerance)
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
+            voacap.multipath_delay_tolerance = -0.1
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
+            voacap.multipath_delay_tolerance = 0.1
+
+        voacap.coefficient_data_type = Graphics3DACAPCoefficientDataType.CCIR
+        Assert.assertEqual(Graphics3DACAPCoefficientDataType.CCIR, voacap.coefficient_data_type)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            voacap.use_day_of_month_average = True
+
+        voacap.coefficient_data_type = Graphics3DACAPCoefficientDataType.URSI
+        Assert.assertEqual(Graphics3DACAPCoefficientDataType.URSI, voacap.coefficient_data_type)
+
+        voacap.use_day_of_month_average = True
+        Assert.assertTrue(voacap.use_day_of_month_average)
+        voacap.use_day_of_month_average = False
+        Assert.assertFalse(voacap.use_day_of_month_average)
+
+        voacap.compute_alternate_frequencies = True
+        Assert.assertTrue(voacap.compute_alternate_frequencies)
+        voacap.compute_alternate_frequencies = False
+        Assert.assertFalse(voacap.compute_alternate_frequencies)
+
+    def Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+        self, plugin: "AtmosphericAbsorptionModelCOMPlugin", isPython: bool
+    ):
+        rawPluginObject: typing.Any = plugin.raw_plugin_object
+        if (
+            (EngineLifetimeManager.target != TestTarget.eStkGrpc)
+            and (EngineLifetimeManager.target != TestTarget.eStkRuntime)
+        ) and (EngineLifetimeManager.target != TestTarget.eStkRuntimeNoGfx):
+            Assert.assertIsNotNone(rawPluginObject)
+
+        pluginConfigPy: "CommRadPluginConfiguration" = plugin.plugin_configuration
+        arPropsPy = pluginConfigPy.available_properties
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            pluginConfigPy.set_property("BogusProperty", 123)
+        if isPython:
+            return
+
+        Assert.assertEqual(1, Array.Length(arPropsPy))
+        pluginConfigPy.set_property("MaxFoliageDepth", 900)
+        Assert.assertEqual(900, float(pluginConfigPy.get_property("MaxFoliageDepth")))
+        return
 
     # endregion
 
-    def RunDeprecatedModelInterface(self, rfEnv: "ObjectRFEnvironment"):
-        holdUnit: str = self._root.units_preferences.get_current_unit_abbrv("Temperature")
-        self._root.units_preferences.set_current_unit("Temperature", "degC")
+    # region RunUrbanTerrestrial
+    def RunUrbanTerrestrial(self, allowUprop: bool):
+        holdUnit: str = self.m_root.units_preferences.get_current_unit_abbrv("Temperature")
+        self.m_root.units_preferences.set_current_unit("Temperature", "degC")
 
-        propChan: "PropagationChannel" = rfEnv.propagation_channel
-
-        propChan.enable_urban_terrestrial_loss = False
-        Assert.assertFalse(propChan.enable_urban_terrestrial_loss)
+        self.m_propagationChannel.enable_urban_terrestrial_loss = False
+        Assert.assertFalse(self.m_propagationChannel.enable_urban_terrestrial_loss)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            propChan.set_urban_terrestrial_loss_model("Two Ray")
+            self.m_propagationChannel.urban_terrestrial_loss_model_component_linking.set_component("Two Ray")
 
-        propChan.enable_urban_terrestrial_loss = True
-        Assert.assertTrue(propChan.enable_urban_terrestrial_loss)
+        self.m_propagationChannel.enable_urban_terrestrial_loss = True
+        Assert.assertTrue(self.m_propagationChannel.enable_urban_terrestrial_loss)
 
-        supportedUrbTerrModels = propChan.supported_urban_terrestrial_loss_models
-        Assert.assertEqual(
-            len(propChan.urban_terrestrial_loss_model_component_linking.supported_components),
-            len(supportedUrbTerrModels),
+        numModels: int = 1
+        if allowUprop and OSHelper.SupportsInSite64():
+            numModels += 1
+
+        STKUtilHelper.TestComponentLinking(
+            self.m_propagationChannel.urban_terrestrial_loss_model_component_linking, numModels
         )
-        if not OSHelper.IsLinux():
-            propChan.set_urban_terrestrial_loss_model("Urban Propagation Wireless InSite 64")
-            utModel: "IUrbanTerrestrialLossModel" = propChan.urban_terrestrial_loss_model
-            Assert.assertEqual("Urban Propagation Wireless InSite 64", utModel.name)
 
-            Assert.assertEqual(UrbanTerrestrialLossModelType.WIRELESS_INSITE_64, utModel.type)  # was RT
-            self.Test_IAgUrbanTerrestrialLossModelWirelessInSite64(
-                clr.CastAs(utModel, UrbanTerrestrialLossModelWirelessInSite64)
-            )
-
-        self._root.units_preferences.set_current_unit("Temperature", holdUnit)
-
-    def Run(self, rfEnv: "ObjectRFEnvironment"):
-        holdUnit: str = self._root.units_preferences.get_current_unit_abbrv("Temperature")
-        self._root.units_preferences.set_current_unit("Temperature", "degC")
-
-        propChan: "PropagationChannel" = rfEnv.propagation_channel
-
-        propChan.enable_urban_terrestrial_loss = False
-        Assert.assertFalse(propChan.enable_urban_terrestrial_loss)
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            propChan.urban_terrestrial_loss_model_component_linking.set_component("Two Ray")
-
-        propChan.enable_urban_terrestrial_loss = True
-        Assert.assertTrue(propChan.enable_urban_terrestrial_loss)
-
-        numModels: int = 2
-        if OSHelper.IsLinux():
-            numModels = 1
-
-        STKUtilHelper.TestComponentLinking(propChan.urban_terrestrial_loss_model_component_linking, numModels)
-
-        supportedUrbTerrModels = propChan.urban_terrestrial_loss_model_component_linking.supported_components
+        supportedUrbTerrModels = (
+            self.m_propagationChannel.urban_terrestrial_loss_model_component_linking.supported_components
+        )
         utModelName: str
         for utModelName in supportedUrbTerrModels:
-            propChan.urban_terrestrial_loss_model_component_linking.set_component(utModelName)
+            self.m_propagationChannel.urban_terrestrial_loss_model_component_linking.set_component(utModelName)
             utModel: "IUrbanTerrestrialLossModel" = clr.CastAs(
-                propChan.urban_terrestrial_loss_model_component_linking.component, IUrbanTerrestrialLossModel
+                self.m_propagationChannel.urban_terrestrial_loss_model_component_linking.component,
+                IUrbanTerrestrialLossModel,
             )
             Assert.assertEqual(utModelName, utModel.name)
             if utModelName == "Two Ray":
                 Assert.assertEqual(UrbanTerrestrialLossModelType.TWO_RAY, utModel.type)
-                self.Test_IAgUrbanTerrestrialLossModelTwoRay(clr.CastAs(utModel, UrbanTerrestrialLossModelTwoRay))
+                RFPropagationChannelHelper.Test_IAgUrbanTerrestrialLossModelTwoRay(
+                    clr.CastAs(utModel, UrbanTerrestrialLossModelTwoRay)
+                )
             elif utModelName == "Urban Propagation Wireless InSite 64":
                 Assert.assertEqual(UrbanTerrestrialLossModelType.WIRELESS_INSITE_64, utModel.type)  # was RT
                 self.Test_IAgUrbanTerrestrialLossModelWirelessInSite64(
@@ -7715,10 +7331,11 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
                 Assert.fail("Unknown model type")
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
-            propChan.urban_terrestrial_loss_model_component_linking.set_component("bogus")
-        self._root.units_preferences.set_current_unit("Temperature", holdUnit)
+            self.m_propagationChannel.urban_terrestrial_loss_model_component_linking.set_component("bogus")
+        self.m_root.units_preferences.set_current_unit("Temperature", holdUnit)
 
-    def Test_IAgUrbanTerrestrialLossModelTwoRay(self, twoRay: "UrbanTerrestrialLossModelTwoRay"):
+    @staticmethod
+    def Test_IAgUrbanTerrestrialLossModelTwoRay(twoRay: "UrbanTerrestrialLossModelTwoRay"):
         twoRay.loss_factor = 0.1
         Assert.assertEqual(0.1, twoRay.loss_factor)
         twoRay.loss_factor = 10
@@ -7738,7 +7355,6 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
             twoRay.surface_temperature = 101
 
     def Test_IAgUrbanTerrestrialLossModelWirelessInSite64(self, wisRT: "UrbanTerrestrialLossModelWirelessInSite64"):
-        # System.Windows.Forms.MessageBox.Show("A");
         arSupportedCalculationMethods = wisRT.supported_calculation_methods
         Assert.assertEqual(4, Array.Length(arSupportedCalculationMethods))  # was 5 in WirelessInSiteRT
         sCalcMethod: str
@@ -7838,95 +7454,65 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
             Assert.assertAlmostEqual(41.99, float(geometryData.terrain_extent_minimum_latitude), delta=0.01)
             Assert.assertAlmostEqual(21.42, float(geometryData.terrain_extent_minimum_longitude), delta=0.01)
 
-
-# endregion
-
-
-# region RF_Environment_TropoScintillationHelper
-class RF_Environment_TropoScintillationHelper(object):
-    def __init__(self, root: "STKObjectRoot"):
-        self._root: "STKObjectRoot" = root
-
     # endregion
 
-    def RunDeprecatedModelInterface(self, rfEnv: "ObjectRFEnvironment"):
-        holdUnit: str = self._root.units_preferences.get_current_unit_abbrv("Temperature")
-        self._root.units_preferences.set_current_unit("Temperature", "degC")
+    # region RunTroposphericScintillation
+    def RunTroposphericScintillation(self):
+        holdUnit: str = self.m_root.units_preferences.get_current_unit_abbrv("Temperature")
+        self.m_root.units_preferences.set_current_unit("Temperature", "degC")
 
-        propChan: "PropagationChannel" = rfEnv.propagation_channel
-
-        arSupportedTSFLM = propChan.supported_tropospheric_scintillation_fading_loss_models
+        arSupportedTSFLM = (
+            self.m_propagationChannel.tropospheric_scintillation_fading_loss_model_component_linking.supported_components
+        )
         Assert.assertEqual(2, Array.Length(arSupportedTSFLM))
         Assert.assertEqual("ITU-R P618-12", arSupportedTSFLM[0])
         Assert.assertEqual("ITU-R P618-8", arSupportedTSFLM[1])
 
-        propChan.enable_tropospheric_scintillation_fading_loss = False
-        Assert.assertFalse(propChan.enable_tropospheric_scintillation_fading_loss)
+        self.m_propagationChannel.enable_tropospheric_scintillation_fading_loss = False
+        Assert.assertFalse(self.m_propagationChannel.enable_tropospheric_scintillation_fading_loss)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            propChan.set_tropospheric_scintillation_fading_loss_model("ITU-R P618-12")
+            self.m_propagationChannel.tropospheric_scintillation_fading_loss_model_component_linking.set_component(
+                "ITU-R P618-12"
+            )
 
-        propChan.enable_tropospheric_scintillation_fading_loss = True
-        Assert.assertTrue(propChan.enable_tropospheric_scintillation_fading_loss)
+        self.m_propagationChannel.enable_tropospheric_scintillation_fading_loss = True
+        Assert.assertTrue(self.m_propagationChannel.enable_tropospheric_scintillation_fading_loss)
 
-        propChan.set_tropospheric_scintillation_fading_loss_model("ITU-R P618-8")
-        tsflm: "ITroposphericScintillationFadingLossModel" = propChan.tropospheric_scintillation_fading_loss_model
-        Assert.assertEqual("ITU-R P618-8", tsflm.name)
-        Assert.assertEqual(TroposphericScintillationFadingLossModelType.P_618_8, tsflm.type)
-        self.Test_IAgTroposphericScintillationFadingLossModelP618_8(
-            clr.CastAs(tsflm, TroposphericScintillationFadingLossModelP618Version8)
+        STKUtilHelper.TestComponentLinking(
+            self.m_propagationChannel.tropospheric_scintillation_fading_loss_model_component_linking, 2
         )
 
-    def Run(self, rfEnv: "ObjectRFEnvironment"):
-        holdUnit: str = self._root.units_preferences.get_current_unit_abbrv("Temperature")
-        self._root.units_preferences.set_current_unit("Temperature", "degC")
-
-        propChan: "PropagationChannel" = rfEnv.propagation_channel
-
-        arSupportedTSFLM = propChan.tropospheric_scintillation_fading_loss_model_component_linking.supported_components
-        Assert.assertEqual(2, Array.Length(arSupportedTSFLM))
-        Assert.assertEqual("ITU-R P618-12", arSupportedTSFLM[0])
-        Assert.assertEqual("ITU-R P618-8", arSupportedTSFLM[1])
-
-        propChan.enable_tropospheric_scintillation_fading_loss = False
-        Assert.assertFalse(propChan.enable_tropospheric_scintillation_fading_loss)
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            propChan.tropospheric_scintillation_fading_loss_model_component_linking.set_component("ITU-R P618-12")
-
-        propChan.enable_tropospheric_scintillation_fading_loss = True
-        Assert.assertTrue(propChan.enable_tropospheric_scintillation_fading_loss)
-
-        STKUtilHelper.TestComponentLinking(propChan.tropospheric_scintillation_fading_loss_model_component_linking, 2)
-
-        propChan.tropospheric_scintillation_fading_loss_model_component_linking.set_component("ITU-R P618-12")
+        self.m_propagationChannel.tropospheric_scintillation_fading_loss_model_component_linking.set_component(
+            "ITU-R P618-12"
+        )
         tsflm: "ITroposphericScintillationFadingLossModel" = clr.CastAs(
-            propChan.tropospheric_scintillation_fading_loss_model_component_linking.component,
+            self.m_propagationChannel.tropospheric_scintillation_fading_loss_model_component_linking.component,
             ITroposphericScintillationFadingLossModel,
         )
         Assert.assertEqual("ITU-R P618-12", tsflm.name)
         Assert.assertEqual(TroposphericScintillationFadingLossModelType.P_618_12, tsflm.type)
-        self.Test_IAgTroposphericScintillationFadingLossModelP618_12(
+        RFPropagationChannelHelper.Test_IAgTroposphericScintillationFadingLossModelP618_12(
             clr.CastAs(tsflm, TroposphericScintillationFadingLossModelP618Version12)
         )
 
-        propChan.tropospheric_scintillation_fading_loss_model_component_linking.set_component("ITU-R P618-8")
+        self.m_propagationChannel.tropospheric_scintillation_fading_loss_model_component_linking.set_component(
+            "ITU-R P618-8"
+        )
         tsflm = clr.CastAs(
-            propChan.tropospheric_scintillation_fading_loss_model_component_linking.component,
+            self.m_propagationChannel.tropospheric_scintillation_fading_loss_model_component_linking.component,
             ITroposphericScintillationFadingLossModel,
         )
         Assert.assertEqual("ITU-R P618-8", tsflm.name)
         Assert.assertEqual(TroposphericScintillationFadingLossModelType.P_618_8, tsflm.type)
-        self.Test_IAgTroposphericScintillationFadingLossModelP618_8(
+        RFPropagationChannelHelper.Test_IAgTroposphericScintillationFadingLossModelP618_8(
             clr.CastAs(tsflm, TroposphericScintillationFadingLossModelP618Version8)
         )
 
+    @staticmethod
     def Test_IAgTroposphericScintillationFadingLossModelP618_12(
-        self, tsflm12: "TroposphericScintillationFadingLossModelP618Version12"
+        tsflm12: "TroposphericScintillationFadingLossModelP618Version12",
     ):
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):  # Deprecated and should not be used.
-            tsflm12.compute_deep_fade = True
-
         tsflm12.surface_temperature = -100
         Assert.assertEqual(-100, tsflm12.surface_temperature)
         tsflm12.surface_temperature = 100
@@ -7935,15 +7521,6 @@ class RF_Environment_TropoScintillationHelper(object):
             tsflm12.surface_temperature = -101
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm12.surface_temperature = 101
-
-        tsflm12.fade_outage = 0.01
-        Assert.assertEqual(0.01, tsflm12.fade_outage)
-        tsflm12.fade_outage = 40
-        Assert.assertEqual(40, tsflm12.fade_outage)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tsflm12.fade_outage = 0
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tsflm12.fade_outage = 51
 
         tsflm12.fade_exceeded = 0.01
         Assert.assertEqual(0.01, tsflm12.fade_exceeded)
@@ -7970,8 +7547,9 @@ class RF_Environment_TropoScintillationHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             tsflm12.average_time_choice = TroposphericScintillationAverageTimeChoiceType.UNKNOWN
 
+    @staticmethod
     def Test_IAgTroposphericScintillationFadingLossModelP618_8(
-        self, tsflm8: "TroposphericScintillationFadingLossModelP618Version8"
+        tsflm8: "TroposphericScintillationFadingLossModelP618Version8",
     ):
         tsflm8.compute_deep_fade = False
         Assert.assertFalse(tsflm8.compute_deep_fade)
@@ -8011,26 +7589,17 @@ class RF_Environment_TropoScintillationHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm8.percent_time_refractivity_gradient = 101
 
-
-# endregion
-
-
-# region RF_Environment_CustomModelsHelper
-class RF_Environment_CustomModelsHelper(object):
-    def __init__(self, root: "STKObjectRoot"):
-        self._root: "STKObjectRoot" = root
-
     # endregion
 
-    def Run(self, rfEnv: "ObjectRFEnvironment"):
-        propChan: "PropagationChannel" = rfEnv.propagation_channel
+    # region RunCustomModels
+    def RunCustomModels(self):
+        RFPropagationChannelHelper.Test_IAgCustomPropagationModel(self.m_propagationChannel.custom_a)
+        RFPropagationChannelHelper.Test_IAgCustomPropagationModel(self.m_propagationChannel.custom_b)
+        RFPropagationChannelHelper.Test_IAgCustomPropagationModel(self.m_propagationChannel.custom_c)
 
-        self.Test_IAgCustomPropagationModel(propChan.custom_a)
-        self.Test_IAgCustomPropagationModel(propChan.custom_b)
-        self.Test_IAgCustomPropagationModel(propChan.custom_c)
-
-    def Test_IAgCustomPropagationModel(self, customModel: "CustomPropagationModel"):
-        if not OSHelper.IsLinux():
+    @staticmethod
+    def Test_IAgCustomPropagationModel(customModel: "CustomPropagationModel"):
+        if OSHelper.SupportsScriptPlugins():
             customModel.enable = False
             Assert.assertFalse(customModel.enable)
 
@@ -8047,7 +7616,11 @@ class RF_Environment_CustomModelsHelper(object):
             customModel.filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
             Assert.assertEqual(TestBase.PathCombine("CommRad", "VB_AbsorpModel.vbs"), customModel.filename)
 
+    # endregion
 
+
+# endregion
+# endregion
 # endregion
 # endregion
 # endregion

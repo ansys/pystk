@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -7228,6 +7228,7 @@ class EarlyBoundTests(TestBase):
     # region AdvancedLandingModel
     @category("Aircraft Tests")
     def test_AdvancedLandingModel(self):
+
         newAC: "AircraftModel" = clr.CastAs(
             EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
@@ -8870,6 +8871,7 @@ class EarlyBoundTests(TestBase):
     # region PrivateProcedureMethods
 
     def EmptyProcedures(self):
+        # Starts from the last procedure and works to the front
         index: int = EarlyBoundTests.AG_Procedures.count - 1
         while index >= 0:
             EarlyBoundTests.AG_Procedures.remove_at_index(index)

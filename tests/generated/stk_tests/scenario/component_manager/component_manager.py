@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -309,10 +309,10 @@ class EarlyBoundTests(TestBase):
         # DEBUG Console.WriteLine(new String(' ', 5*(recursionLevel-1)) + "***" + compInfoColl.FolderName + ", " + compInfoColl.FolderCount + ", " + compInfoColl.Count);
 
         thisFolderName: str = compInfoColl.folder_name
-        # Console.WriteLine("FolderName: " + thisFolderName);
+        if thisFolderName == "Flight Dynamics Records":
+            return
 
         compInfo: "IComponentInfo"
-        # Console.WriteLine("FolderName: " + thisFolderName);
 
         for compInfo in compInfoColl:
             Assert.assertIsNotNone(compInfo)
@@ -472,28 +472,18 @@ class EarlyBoundTests(TestBase):
                     compInfoDup3: "IComponentInfo" = compInfoColl.duplicate_component(compInfoColl.count, dupName2)
                 with pytest.raises(Exception):
                     compInfoDup4: "IComponentInfo" = compInfoColl.duplicate_component("bogus", dupName2)
-
-                # Clone
-                # Console.WriteLine(compInfo.Name);
-                cloneName: str = None
-                # if (compInfo.Name == "MODTRAN Table")
-                # {
-                #    cloneName = "MODTRAN Table2";
-                # }
-                # else
-                # {
-                cloneName = compInfoByIndex.name + "1"
-                # }
-                compInfoClone: "IComponentInfo" = clr.CastAs(
-                    (ICloneable(compInfoByIndex)).clone_object(), IComponentInfo
-                )
-                Assert.assertEqual((origCount + 1), compInfoColl.count)
-                Assert.assertEqual(cloneName, compInfoClone.name)
-                self.TestComponent(compInfoClone, False)
-                Assert.assertEqual((origCount + 1), compInfoColl.count)
-                Assert.assertEqual(cloneName, compInfoClone.name)
-                compInfoColl.remove(cloneName)
-                Assert.assertEqual(origCount, compInfoColl.count)
+                if not ("AsteroidTemplate" in compInfoByIndex.name):
+                    cloneName: str = compInfoByIndex.name + "1"
+                    compInfoClone: "IComponentInfo" = clr.CastAs(
+                        (ICloneable(compInfoByIndex)).clone_object(), IComponentInfo
+                    )
+                    Assert.assertEqual((origCount + 1), compInfoColl.count)
+                    Assert.assertEqual(cloneName, compInfoClone.name)
+                    self.TestComponent(compInfoClone, False)
+                    Assert.assertEqual((origCount + 1), compInfoColl.count)
+                    Assert.assertEqual(cloneName, compInfoClone.name)
+                    compInfoColl.remove(cloneName)
+                    Assert.assertEqual(origCount, compInfoColl.count)
 
             i += 1
 
@@ -547,11 +537,12 @@ class EarlyBoundTests(TestBase):
         aAvailFolders = components.available_folders
         sFolder: str
         for sFolder in aAvailFolders:
-            if (((sFolder != "Design Tools")) and ((sFolder != "Central Bodies"))) and ((sFolder != "Star Catalogs")):
+            if (
+                (((sFolder != "Design Tools")) and ((sFolder != "Central Bodies"))) and ((sFolder != "Star Catalogs"))
+            ) and ((sFolder != "Flight Dynamics Records")):
                 folder: "ComponentInfoCollection" = components.get_folder(sFolder)
 
                 count: int = folder.count
-
                 i: int = count - 1
                 while i >= 0:
                     compInfo: "IComponentInfo" = clr.CastAs(folder[i], IComponentInfo)
@@ -567,7 +558,6 @@ class EarlyBoundTests(TestBase):
                     folder2: "ComponentInfoCollection" = folder.get_folder(sFolder2)
 
                     count2: int = folder2.count
-
                     j: int = count2 - 1
                     while j >= 0:
                         compInfo: "IComponentInfo" = clr.CastAs(folder2[j], IComponentInfo)
@@ -588,11 +578,12 @@ class EarlyBoundTests(TestBase):
         aAvailFolders = components.available_folders
         sFolder: str
         for sFolder in aAvailFolders:
-            if (((sFolder != "Design Tools")) and ((sFolder != "Central Bodies"))) and ((sFolder != "Star Catalogs")):
+            if (
+                (((sFolder != "Design Tools")) and ((sFolder != "Central Bodies"))) and ((sFolder != "Star Catalogs"))
+            ) and ((sFolder != "Flight Dynamics Records")):
                 folder: "ComponentInfoCollection" = components.get_folder(sFolder)
 
                 count: int = folder.count
-
                 i: int = count - 1
                 while i >= 0:
                     # Console.WriteLine(sFolder);
@@ -608,7 +599,6 @@ class EarlyBoundTests(TestBase):
                     folder2: "ComponentInfoCollection" = folder.get_folder(sFolder2)
 
                     count2: int = folder2.count
-
                     j: int = count2 - 1
                     while j >= 0:
                         self.Test_ExportWithFilenamePath(folder2, folder2[j])
@@ -705,12 +695,16 @@ class EarlyBoundTests(TestBase):
         )
         Assert.assertIsNotNone(components)
         comp: "IComponentInfo" = None
+        # int count = 0;
 
+        # Console.WriteLine("FolderCount: " + components.FolderCount.ToString());
         i: int = 0
         while i < components.folder_count:
             # Console.WriteLine("Procesing folder: " + i.ToString());
             compFolder: "ComponentInfoCollection" = components.get_folder(i)
+            # Console.WriteLine("FolderName:       " + compFolder.FolderName);
 
+            # Console.WriteLine("CompCount: " + compFolder.Count.ToString());
             j: int = 0
             while j < compFolder.count:
                 # logger.WriteLine("processing: " + j);
@@ -875,8 +869,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(gravFilePath, radius.gravity_filename)
         constantElems.remove((clr.CastAs(radius, IComponentInfo)).name)
 
-        gravCoeff: "StateCalcGravCoeff" = clr.CastAs(
-            (ICloneable(constantElems["Gravity Coefficient"])).clone_object(), StateCalcGravCoeff
+        gravCoeff: "StateCalcGravCoefficient" = clr.CastAs(
+            (ICloneable(constantElems["Gravity Coefficient"])).clone_object(), StateCalcGravCoefficient
         )
         Assert.assertIsNotNone(gravCoeff)
         gravCoeff.central_body_name = "Jupiter"
@@ -2076,6 +2070,16 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(CalculationObjectElement.OSCULATING, se.element_type)
         otherOrbitElems.remove((clr.CastAs(se, IComponentInfo)).name)
 
+        signedInclination: "StateCalcSignedInclination" = clr.CastAs(
+            (ICloneable(otherOrbitElems["SignedInclination"])).clone_object(), StateCalcSignedInclination
+        )
+        Assert.assertIsNotNone(signedInclination)
+        signedInclination.coord_system_name = "CentralBody/Earth Inertial"
+        Assert.assertEqual("CentralBody/Earth Inertial", signedInclination.coord_system_name)
+        signedInclination.element_type = CalculationObjectElement.OSCULATING
+        Assert.assertEqual(CalculationObjectElement.OSCULATING, signedInclination.element_type)
+        otherOrbitElems.remove((clr.CastAs(signedInclination, IComponentInfo)).name)
+
         trueLong: "StateCalcTrueLon" = clr.CastAs(
             (ICloneable(otherOrbitElems["True Longitude"])).clone_object(), StateCalcTrueLon
         )
@@ -2549,9 +2553,7 @@ class EarlyBoundTests(TestBase):
         compinfo: "IComponentInfo" = calcObjectCollection[0]
 
         s: str = compinfo.name
-
-        compinfo = calcObjectCollection[0]
-        s = compinfo.name
+        Assert.assertEqual(s, "BTheta")
 
         self.TestCalcObjectCollection(calcObjectCollection)
 
@@ -2580,6 +2582,34 @@ class EarlyBoundTests(TestBase):
         mScript.unit_dimension = "AngleUnit"
         Assert.assertEqual("AngleUnit", mScript.unit_dimension)
         scripts.remove((clr.CastAs(mScript, IComponentInfo)).name)
+
+        # Scripts - Python
+
+        pythonScript: "StateCalcPythonScript" = clr.CastAs(
+            (ICloneable(scripts["Python"])).clone_object(), StateCalcPythonScript
+        )
+        Assert.assertIsNotNone(pythonScript)
+
+        pythonCalcObjectCollection: "CalculationObjectCollection" = pythonScript.calculation_object_arguments
+        pythonCalcObjectCollection.add("MultiBody/BTheta")
+
+        pythonCompinfo: "IComponentInfo" = pythonCalcObjectCollection[0]
+
+        sName: str = pythonCompinfo.name
+        Assert.assertEqual(sName, "BTheta")
+
+        self.TestCalcObjectCollection(pythonCalcObjectCollection)
+
+        pythonScript.custom_script = ("Test line 1" + Environment.NewLine) + "Test line 2"
+        Assert.assertEqual(((("Test line 1" + Environment.NewLine) + "Test line 2")), pythonScript.custom_script)
+        pythonScript.return_variable = "TestVar"
+        Assert.assertEqual("TestVar", pythonScript.return_variable)
+        pythonScript.unit_dimension = "AngleUnit"
+        Assert.assertEqual("AngleUnit", pythonScript.unit_dimension)
+
+        self.TestCalcObjectLinkEmbedControlCollection(pythonScript.calculation_object_arguments_link_embed)
+
+        scripts.remove((clr.CastAs(pythonScript, IComponentInfo)).name)
 
         # Segments
 
@@ -3011,7 +3041,6 @@ class EarlyBoundTests(TestBase):
             "Custom Functions"
         )
         comp: "IComponentInfo" = None
-
         i: int = 0
         while i < components.count:
             comp = components[i]
@@ -3037,7 +3066,6 @@ class EarlyBoundTests(TestBase):
         )
         Assert.assertIsNotNone(components)
         comp: "IComponentInfo" = None
-
         i: int = 0
         while i < components.count:
             comp = components[i]
@@ -3117,7 +3145,7 @@ class EarlyBoundTests(TestBase):
 
         cbSaturn: "CentralBodyComponent" = clr.CastAs(compSaturn, CentralBodyComponent)
         MoonsOfSaturn: "CentralBodyComponentCollection" = cbSaturn.children
-
+        # Console.WriteLine(MoonsOfSaturn.Count);
         i: int = 0
         while i < MoonsOfSaturn.count:
             # Console.WriteLine("     Trying: " + i.ToString());
@@ -3138,7 +3166,6 @@ class EarlyBoundTests(TestBase):
         )
         Assert.assertIsNotNone(components)
         comp: "IComponentInfo" = None
-
         i: int = 0
         while i < components.count:
             comp = components[i]
@@ -3149,28 +3176,18 @@ class EarlyBoundTests(TestBase):
         component: "IComponentInfo"
 
         for component in components:
-            # Console.WriteLine(component.Name);
-            # Console.WriteLine(component.UserComment);
-            # Console.WriteLine(component.Description);
-            # Console.WriteLine(component.IsReadOnly());
-
             cb2: "CentralBodyComponent" = clr.CastAs(component, CentralBodyComponent)
             if cb2 != None:
                 cbCollection: "CentralBodyComponentCollection" = cb2.children
-
                 i: int = 0
                 while i < cbCollection.count:
-                    # Console.WriteLine("     Trying: " + i.ToString());
                     cb3: "CentralBodyComponent" = cbCollection[i]
                     Assert.assertIsNotNone(cb3)
                     compInfo: "IComponentInfo" = clr.CastAs(cb3, IComponentInfo)
 
                     i += 1
 
-                # Console.WriteLine();
-
                 cbEnum: "CentralBodyComponent"
-                # Console.WriteLine();
 
                 for cbEnum in cbCollection:
                     Assert.assertIsNotNone(cbEnum)
@@ -3183,105 +3200,71 @@ class EarlyBoundTests(TestBase):
         self.TestComponent(comp, comp.is_read_only())
 
         cb: "CentralBodyComponent" = clr.CastAs(comp, CentralBodyComponent)
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cb.gravitational_parameter = 71
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             cb.parent_name = "Deimos"
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cb.add_gravity_model(CentralBodyGravityModel.EARTH_SIMPLE, "Unique1")
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("could not be located")):
             cb.set_default_gravity_model_by_name("Earth Simple")
 
         comp = components["Iapetus"]
         gm: "CentralBodyComponentGravityModel" = cb.default_gravity_model_data
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             gm.gravitational_parameter = 71
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             gm.j2 = 1
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             gm.j3 = 1
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             gm.j4 = 1
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             gm.reference_distance = 481
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cb.add_shape(CentralBodyShape.SPHERE, "Unique")
 
         os: "CentralBodyComponentShapeOblateSpheroid" = clr.CastAs(
             cb.default_shape_data, CentralBodyComponentShapeOblateSpheroid
         )
-        with pytest.raises(Exception):
-            os.min_radius = 477
+        Assert.assertIsNone(os)
 
-        with pytest.raises(Exception):
-            os.max_radius = 481
-
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cb.add_attitude(CentralBodyAttitude.IAU1994, "UniqueName")
 
         file: "CentralBodyComponentAttitudeRotationCoefficientsFile" = clr.CastAs(
             cb.default_attitude_data, CentralBodyComponentAttitudeRotationCoefficientsFile
         )
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             file.filename = r"CentralBodies\Ceres\CeresAttitude2000.rot"
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cb.add_ephemeris(CentralBodyEphemeris.JPLDE, "UniqueName")
 
         ao: "CentralBodyComponentEphemerisAnalyticOrbit" = clr.CastAs(
             cb.default_ephemeris_data, CentralBodyComponentEphemerisAnalyticOrbit
         )
-        with pytest.raises(Exception):
-            ao.epoch = 2451200
+        Assert.assertIsNone(ao)
 
-        with pytest.raises(Exception):
-            ao.semimajor_axis = 413739000
+        # PLAT-40755
+        # TryCatchAssertBlock.ExpectedException("read-only", delegate () { ((ICloneable)components["Earth"]).CloneObject(); });
+        # System.Runtime.InteropServices.COMException : An invalid field name was used in a query string(Exception from HRESULT: 0x80040204)
 
-        with pytest.raises(Exception):
-            ao.semimajor_axis_rate = 1
+        comp = components["AsteroidTemplate"]
+        oComp: typing.Any = (ICloneable(comp)).clone_object()
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("One or more arguments are invalid")
+        ):  # cannot remove this
+            components.remove("AsteroidTemplate")
 
-        with pytest.raises(Exception):
-            ao.eccentricity = 0.08
-
-        with pytest.raises(Exception):
-            ao.eccentricity_rate = 1
-
-        with pytest.raises(Exception):
-            ao.inclination = 11
-
-        with pytest.raises(Exception):
-            ao.inclination_rate = 1
-
-        with pytest.raises(Exception):
-            ao.raan = 81
-
-        with pytest.raises(Exception):
-            ao.raan_rate = 1
-
-        with pytest.raises(Exception):
-            ao.arg_of_periapsis = 155
-
-        with pytest.raises(Exception):
-            ao.arg_of_periapsis_rate = 1
-
-        with pytest.raises(Exception):
-            ao.mean_longitude = 450
-
-        with pytest.raises(Exception):
-            ao.mean_longitude_rate = 1
-
-        with pytest.raises(Exception):
-            (ICloneable(components["Earth"])).clone_object()
-
-        oComp: typing.Any = (ICloneable(comp)).clone_object()  # Iapetus1
         comp = clr.CastAs(oComp, IComponentInfo)
         self.TestComponent(comp, False)
 
@@ -3318,19 +3301,14 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("ZonalsToJ4", cb.default_gravity_model_name)
 
         # There is now only one gravity model; you should not be able to remove it.
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot erase elements below minimum allowed")):
             cb.remove_gravity_model_by_name("ZonalsToJ4")
 
-        os = clr.CastAs(cb.default_shape_data, CentralBodyComponentShapeOblateSpheroid)
-        os.min_radius = 0.4
-        Assert.assertEqual(0.4, os.min_radius)
-        os.max_radius = 0.5
-        Assert.assertEqual(0.5, os.max_radius)
-        Assert.assertAlmostEqual(float(0.029166), float(os.flattening_coefficient), delta=float(6))
+        sphere: "CentralBodyComponentShapeSphere" = clr.CastAs(cb.default_shape_data, CentralBodyComponentShapeSphere)
+        sphere.radius = 1.0
+        Assert.assertEqual(1.0, sphere.radius)
 
-        sphere: "CentralBodyComponentShapeSphere" = clr.CastAs(
-            cb.add_shape(CentralBodyShape.SPHERE, "UniqueSphere"), CentralBodyComponentShapeSphere
-        )
+        sphere = clr.CastAs(cb.add_shape(CentralBodyShape.SPHERE, "UniqueSphere"), CentralBodyComponentShapeSphere)
         sphere.radius = 6400
         Assert.assertEqual(6400, sphere.radius)
 
@@ -3358,9 +3336,10 @@ class EarlyBoundTests(TestBase):
         cb.remove_shape_by_name("UniqueEllipsoid")
         Assert.assertEqual("Oblate Spheroid", cb.default_shape_name)
 
-        file = clr.CastAs(cb.default_attitude_data, CentralBodyComponentAttitudeRotationCoefficientsFile)
-        file.filename = r"CentralBodies\Iapetus\IapetusAttitude2009.rot"
-        Assert.assertEqual(TestBase.PathCombine("CentralBodies", "Iapetus", "IapetusAttitude2009.rot"), file.filename)
+        attitude: "CentralBodyComponentAttitudeIAU1994" = clr.CastAs(
+            cb.default_attitude_data, CentralBodyComponentAttitudeIAU1994
+        )
+        Assert.assertIsNotNone(attitude)
 
         u1994: "CentralBodyComponentAttitudeIAU1994" = clr.CastAs(
             cb.add_attitude(CentralBodyAttitude.IAU1994, "U1994"), CentralBodyComponentAttitudeIAU1994
@@ -3432,7 +3411,7 @@ class EarlyBoundTests(TestBase):
             ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides,
         )
         jpldeFile: str = jplde.jplde_filename
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             jplde.jplde_filename = "TestFile.e"
         cb.set_default_ephemeris_by_name("UniqueJPLDE")
         Assert.assertEqual("UniqueJPLDE", cb.default_ephemeris_name)
@@ -3470,7 +3449,6 @@ class EarlyBoundTests(TestBase):
         )
         Assert.assertIsNotNone(components)
         comp: "IComponentInfo" = None
-
         i: int = 0
         while i < components.count:
             comp = components[i]
@@ -3501,7 +3479,6 @@ class EarlyBoundTests(TestBase):
             thrusters.thrusters.remove_all()
 
         thruster: "Thruster" = None
-
         i: int = 0
         while i < thrusters.thrusters.count:
             thruster = thrusters.thrusters[i]
@@ -3677,7 +3654,6 @@ class EarlyBoundTests(TestBase):
         )
         Assert.assertIsNotNone(components)
         comp: "IComponentInfo" = None
-
         i: int = 0
         while i < components.count:
             comp = components[i]
@@ -3802,7 +3778,7 @@ class EarlyBoundTests(TestBase):
         count: int = len(lighting.available_eclipsing_bodies)
         eclipsingBody: str
         for eclipsingBody in lighting.available_eclipsing_bodies:
-            if ((eclipsingBody == "MyMoon1") or (eclipsingBody == "MyMoon2")) or (eclipsingBody == "Iapetus1"):
+            if ((eclipsingBody == "MyMoon1") or (eclipsingBody == "MyMoon2")) or (eclipsingBody == "AsteroidTemplate1"):
                 count -= 1
 
         Assert.assertEqual(33, count)  # 33
@@ -4016,7 +3992,6 @@ class EarlyBoundTests(TestBase):
         )
         Assert.assertIsNotNone(components)
         comp: "IComponentInfo" = None
-
         i: int = 0
         while i < components.count:
             comp = components[i]
@@ -4235,7 +4210,6 @@ class EarlyBoundTests(TestBase):
             compFolder: "ComponentInfoCollection" = components.get_folder(i)
 
             compNames: "List[str]" = Array.Create(compFolder.count)
-
             j: int = 0
             while j < compFolder.count:
                 # Console.WriteLine(j.ToString());
@@ -4644,7 +4618,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             dens.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         dens.variable_area_history_file = fileName
         Assert.assertEqual(fileName, dens.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -4700,8 +4674,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(False, pluginProps.get_property("PluginEnabled"))
         pluginProps.set_property("VectorName", "Periapsis")
         Assert.assertEqual("Periapsis", pluginProps.get_property("VectorName"))
-        pluginProps.set_property("AccelRefFrame", "eUtFrameFixed")
-        Assert.assertEqual("eUtFrameFixed", pluginProps.get_property("AccelRefFrame"))
+        pluginProps.set_property("AccelRefFrame", self.GetFrameEnumString("Fixed"))
+        Assert.assertEqual(self.GetFrameEnumString("Fixed"), pluginProps.get_property("AccelRefFrame"))
         pluginProps.set_property("AccelX", 0.01)
         Assert.assertEqual(0.01, pluginProps.get_property("AccelX"))
         pluginProps.set_property("AccelY", 0.08)
@@ -4751,7 +4725,7 @@ class EarlyBoundTests(TestBase):
         srpVarArea.include_boundary_mitigation = True
         Assert.assertTrue(srpVarArea.include_boundary_mitigation)
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         srpVarArea.variable_area_history_file = fileName
         Assert.assertEqual(fileName, srpVarArea.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -4849,8 +4823,8 @@ class EarlyBoundTests(TestBase):
         # Assert.AreEqual(7, arProps.Length);
         pluginProps.set_property("SRPArea", 1)
         Assert.assertEqual(1, pluginProps.get_property("SRPArea"))
-        pluginProps.set_property("RefFrame", "eUtFrameInertial")
-        Assert.assertEqual("eUtFrameInertial", pluginProps.get_property("RefFrame"))
+        pluginProps.set_property("RefFrame", self.GetFrameEnumString("Inertial"))
+        Assert.assertEqual(self.GetFrameEnumString("Inertial"), pluginProps.get_property("RefFrame"))
         # pluginProps.SetProperty("PluginName", "MyName");          // PluginName property not on JScript plugin
         # Assert.AreEqual("MyName", pluginProps.GetProperty("PluginName"));
         pluginProps.set_property("PluginEnabled", False)
@@ -4922,6 +4896,16 @@ class EarlyBoundTests(TestBase):
         cira72.drag_model_type = DragModelType.SPHERICAL
         Assert.assertEqual(DragModelType.SPHERICAL, cira72.drag_model_type)
 
+        cira72.use_stochastic_ballistic_coefficient = True
+        cira72.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, cira72.drag_correction_type)
+        cira72.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, cira72.drag_correction_type)
+        cira72.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, cira72.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            cira72.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cira72.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -4959,6 +4943,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cira72.drag_model_plugin_name = "Drag Lift CSharp"
 
+        self.Test_IAgVANPlateStochasticParamsCollection(cira72.n_plate_stochastic_parameters)
+
         cira72.drag_model_type = DragModelType.VARIABLE_AREA
         Assert.assertEqual(DragModelType.VARIABLE_AREA, cira72.drag_model_type)
 
@@ -4967,13 +4953,64 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cira72.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         cira72.variable_area_history_file = fileName
         Assert.assertEqual(fileName, cira72.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             cira72.variable_area_history_file = r"STKData\Astrogator\Bogus.dat"
         if not OSHelper.IsLinux():
             pass
+
+    def Test_IAgVANPlateStochasticParamsCollection(self, nplateStochParamsCol: "NPlateStochasticParametersCollection"):
+        Assert.assertEqual(2, nplateStochParamsCol.count)
+
+        names: str = ""
+        nplateStochParam1: "NPlateStochasticParameter"
+        for nplateStochParam1 in nplateStochParamsCol:
+            names += nplateStochParam1.name
+
+        Assert.assertEqual("SolarPanelsBody", names)
+
+        names = ""
+        i: int = 0
+        while i < nplateStochParamsCol.count:
+            nplateStochParam2: "NPlateStochasticParameter" = nplateStochParamsCol[i]
+            names += nplateStochParam2.name
+
+            i += 1
+
+        Assert.assertEqual("SolarPanelsBody", names)
+
+        nplateStochParam3: "NPlateStochasticParameter" = nplateStochParamsCol.get_item_by_name("SolarPanels")
+        self.Test_IAgVANPlateStochasticParam(nplateStochParam3, "SolarPanels")
+
+        nplateStochParam4: "NPlateStochasticParameter" = nplateStochParamsCol.get_item_by_index(1)  # Body
+        self.Test_IAgVANPlateStochasticParam(nplateStochParam4, "Body")
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("could not be found")):
+            nplateStochParam3 = nplateStochParamsCol.get_item_by_name("Bogus")
+        with pytest.raises(Exception, match=RegexSubstringMatch("Out of Range")):
+            nplateStochParam3 = nplateStochParamsCol.get_item_by_index(2)
+
+    def Test_IAgVANPlateStochasticParam(self, param: "NPlateStochasticParameter", name: str):
+        Assert.assertEqual(name, param.name)
+
+        param.nominal_value = 2
+        Assert.assertEqual(2, param.nominal_value)
+
+        param.estimate_parameter = True
+        Assert.assertTrue(param.estimate_parameter)
+        param.estimate_parameter = False
+        Assert.assertFalse(param.estimate_parameter)
+
+        param.half_life = 86401
+        Assert.assertEqual(86401, param.half_life)
+
+        param.sigma = 3
+        Assert.assertEqual(3, param.sigma)
+
+        param.long_term_sigma = 4
+        Assert.assertEqual(4, param.long_term_sigma)
 
     def TestDTM2012(self, dtm2012: "DTM2012"):
         Assert.assertTrue(dtm2012.computes_pressure)
@@ -5046,6 +5083,16 @@ class EarlyBoundTests(TestBase):
         dtm2012.drag_model_type = DragModelType.SPHERICAL
         Assert.assertEqual(DragModelType.SPHERICAL, dtm2012.drag_model_type)
 
+        dtm2012.use_stochastic_ballistic_coefficient = True
+        dtm2012.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, dtm2012.drag_correction_type)
+        dtm2012.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, dtm2012.drag_correction_type)
+        dtm2012.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, dtm2012.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            dtm2012.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             dtm2012.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5063,6 +5110,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             dtm2012.n_plate_definition_file = TestBase.GetScenarioFile("bogus.nplate")
 
+        self.Test_IAgVANPlateStochasticParamsCollection(dtm2012.n_plate_stochastic_parameters)
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             dtm2012.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5076,7 +5125,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             dtm2012.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         dtm2012.variable_area_history_file = fileName
         Assert.assertEqual(fileName, dtm2012.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -5155,6 +5204,16 @@ class EarlyBoundTests(TestBase):
         dtm2020.drag_model_type = DragModelType.SPHERICAL
         Assert.assertEqual(DragModelType.SPHERICAL, dtm2020.drag_model_type)
 
+        dtm2020.use_stochastic_ballistic_coefficient = True
+        dtm2020.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, dtm2020.drag_correction_type)
+        dtm2020.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, dtm2020.drag_correction_type)
+        dtm2020.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, dtm2020.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            dtm2020.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             dtm2020.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5172,6 +5231,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             dtm2020.n_plate_definition_file = TestBase.GetScenarioFile("bogus.nplate")
 
+        self.Test_IAgVANPlateStochasticParamsCollection(dtm2020.n_plate_stochastic_parameters)
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             dtm2020.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5185,7 +5246,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             dtm2020.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         dtm2020.variable_area_history_file = fileName
         Assert.assertEqual(fileName, dtm2020.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -5226,6 +5287,16 @@ class EarlyBoundTests(TestBase):
         hp.drag_model_type = DragModelType.SPHERICAL
         Assert.assertEqual(DragModelType.SPHERICAL, hp.drag_model_type)
 
+        hp.use_stochastic_ballistic_coefficient = True
+        hp.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, hp.drag_correction_type)
+        hp.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, hp.drag_correction_type)
+        hp.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, hp.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            hp.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             hp.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5243,6 +5314,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             hp.n_plate_definition_file = TestBase.GetScenarioFile("bogus.nplate")
 
+        self.Test_IAgVANPlateStochasticParamsCollection(hp.n_plate_stochastic_parameters)
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             hp.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5256,7 +5329,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             hp.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         hp.variable_area_history_file = fileName
         Assert.assertEqual(fileName, hp.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -5320,6 +5393,16 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             msis1986.drag_model_plugin_name = "Drag Lift CSharp"
 
+        msis1986.use_stochastic_ballistic_coefficient = True
+        msis1986.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, msis1986.drag_correction_type)
+        msis1986.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, msis1986.drag_correction_type)
+        msis1986.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, msis1986.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            msis1986.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         dragModelPlugin: "DragModelPlugin" = None
 
         msis1986.drag_model_type = DragModelType.N_PLATE
@@ -5329,6 +5412,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(("SRP_NPlate_Test.nplate" in msis1986.n_plate_definition_file))
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             msis1986.n_plate_definition_file = TestBase.GetScenarioFile("bogus.nplate")
+
+        self.Test_IAgVANPlateStochasticParamsCollection(msis1986.n_plate_stochastic_parameters)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             msis1986.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
@@ -5343,7 +5428,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             msis1986.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         msis1986.variable_area_history_file = fileName
         Assert.assertEqual(fileName, msis1986.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -5400,6 +5485,16 @@ class EarlyBoundTests(TestBase):
         msise1990.drag_model_type = DragModelType.SPHERICAL
         Assert.assertEqual(DragModelType.SPHERICAL, msise1990.drag_model_type)
 
+        msise1990.use_stochastic_ballistic_coefficient = True
+        msise1990.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, msise1990.drag_correction_type)
+        msise1990.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, msise1990.drag_correction_type)
+        msise1990.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, msise1990.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            msise1990.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             msise1990.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5417,6 +5512,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             msise1990.n_plate_definition_file = TestBase.GetScenarioFile("bogus.nplate")
 
+        self.Test_IAgVANPlateStochasticParamsCollection(msise1990.n_plate_stochastic_parameters)
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             msise1990.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5430,7 +5527,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             msise1990.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         msise1990.variable_area_history_file = fileName
         Assert.assertEqual(fileName, msise1990.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -5487,6 +5584,16 @@ class EarlyBoundTests(TestBase):
         nrlmsise2000.drag_model_type = DragModelType.SPHERICAL
         Assert.assertEqual(DragModelType.SPHERICAL, nrlmsise2000.drag_model_type)
 
+        nrlmsise2000.use_stochastic_ballistic_coefficient = True
+        nrlmsise2000.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, nrlmsise2000.drag_correction_type)
+        nrlmsise2000.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, nrlmsise2000.drag_correction_type)
+        nrlmsise2000.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, nrlmsise2000.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            nrlmsise2000.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             nrlmsise2000.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5504,6 +5611,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             nrlmsise2000.n_plate_definition_file = TestBase.GetScenarioFile("bogus.nplate")
 
+        self.Test_IAgVANPlateStochasticParamsCollection(nrlmsise2000.n_plate_stochastic_parameters)
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             nrlmsise2000.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5517,7 +5626,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             nrlmsise2000.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         nrlmsise2000.variable_area_history_file = fileName
         Assert.assertEqual(fileName, nrlmsise2000.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -5537,6 +5646,16 @@ class EarlyBoundTests(TestBase):
         sa.drag_model_type = DragModelType.SPHERICAL
         Assert.assertEqual(DragModelType.SPHERICAL, sa.drag_model_type)
 
+        sa.use_stochastic_ballistic_coefficient = True
+        sa.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, sa.drag_correction_type)
+        sa.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, sa.drag_correction_type)
+        sa.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, sa.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            sa.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             sa.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5554,6 +5673,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             sa.n_plate_definition_file = TestBase.GetScenarioFile("bogus.nplate")
 
+        self.Test_IAgVANPlateStochasticParamsCollection(sa.n_plate_stochastic_parameters)
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             sa.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5567,7 +5688,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             sa.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         sa.variable_area_history_file = fileName
         Assert.assertEqual(fileName, sa.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -5632,6 +5753,16 @@ class EarlyBoundTests(TestBase):
         jr.drag_model_type = DragModelType.SPHERICAL
         Assert.assertEqual(DragModelType.SPHERICAL, jr.drag_model_type)
 
+        jr.use_stochastic_ballistic_coefficient = True
+        jr.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, jr.drag_correction_type)
+        jr.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, jr.drag_correction_type)
+        jr.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, jr.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            jr.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             jr.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5649,6 +5780,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             jr.n_plate_definition_file = TestBase.GetScenarioFile("bogus.nplate")
 
+        self.Test_IAgVANPlateStochasticParamsCollection(jr.n_plate_stochastic_parameters)
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             jr.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5662,7 +5795,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             jr.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         jr.variable_area_history_file = fileName
         Assert.assertEqual(fileName, jr.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -5699,6 +5832,16 @@ class EarlyBoundTests(TestBase):
         jr.drag_model_type = DragModelType.SPHERICAL
         Assert.assertEqual(DragModelType.SPHERICAL, jr.drag_model_type)
 
+        jr.use_stochastic_ballistic_coefficient = True
+        jr.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, jr.drag_correction_type)
+        jr.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, jr.drag_correction_type)
+        jr.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, jr.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            jr.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             jr.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5716,6 +5859,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             jr.n_plate_definition_file = TestBase.GetScenarioFile("bogus.nplate")
 
+        self.Test_IAgVANPlateStochasticParamsCollection(jr.n_plate_stochastic_parameters)
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             jr.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5729,7 +5874,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             jr.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         jr.variable_area_history_file = fileName
         Assert.assertEqual(fileName, jr.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -5794,6 +5939,16 @@ class EarlyBoundTests(TestBase):
         jr.drag_model_type = DragModelType.SPHERICAL
         Assert.assertEqual(DragModelType.SPHERICAL, jr.drag_model_type)
 
+        jr.use_stochastic_ballistic_coefficient = True
+        jr.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, jr.drag_correction_type)
+        jr.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, jr.drag_correction_type)
+        jr.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, jr.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            jr.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             jr.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5811,6 +5966,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             jr.n_plate_definition_file = TestBase.GetScenarioFile("bogus.nplate")
 
+        self.Test_IAgVANPlateStochasticParamsCollection(jr.n_plate_stochastic_parameters)
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             jr.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5824,7 +5981,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             jr.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         jr.variable_area_history_file = fileName
         Assert.assertEqual(fileName, jr.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -5891,6 +6048,16 @@ class EarlyBoundTests(TestBase):
         jr.drag_model_type = DragModelType.SPHERICAL
         Assert.assertEqual(DragModelType.SPHERICAL, jr.drag_model_type)
 
+        jr.use_stochastic_ballistic_coefficient = True
+        jr.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, jr.drag_correction_type)
+        jr.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, jr.drag_correction_type)
+        jr.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, jr.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            jr.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             jr.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5908,6 +6075,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             jr.n_plate_definition_file = TestBase.GetScenarioFile("bogus.nplate")
 
+        self.Test_IAgVANPlateStochasticParamsCollection(jr.n_plate_stochastic_parameters)
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             jr.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -5921,7 +6090,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             jr.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         jr.variable_area_history_file = fileName
         Assert.assertEqual(fileName, jr.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -6038,6 +6207,16 @@ class EarlyBoundTests(TestBase):
         jb.drag_model_type = DragModelType.SPHERICAL
         Assert.assertEqual(DragModelType.SPHERICAL, jb.drag_model_type)
 
+        jb.use_stochastic_ballistic_coefficient = True
+        jb.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, jb.drag_correction_type)
+        jb.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, jb.drag_correction_type)
+        jb.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, jb.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            jb.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             jb.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -6055,6 +6234,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             jb.n_plate_definition_file = TestBase.GetScenarioFile("bogus.nplate")
 
+        self.Test_IAgVANPlateStochasticParamsCollection(jb.n_plate_stochastic_parameters)
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             jb.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -6068,7 +6249,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             jb.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         jb.variable_area_history_file = fileName
         Assert.assertEqual(fileName, jb.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -6142,6 +6323,16 @@ class EarlyBoundTests(TestBase):
         mg.drag_model_type = DragModelType.SPHERICAL
         Assert.assertEqual(DragModelType.SPHERICAL, mg.drag_model_type)
 
+        mg.use_stochastic_ballistic_coefficient = True
+        mg.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, mg.drag_correction_type)
+        mg.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, mg.drag_correction_type)
+        mg.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, mg.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            mg.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mg.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -6159,6 +6350,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             mg.n_plate_definition_file = TestBase.GetScenarioFile("bogus.nplate")
 
+        self.Test_IAgVANPlateStochasticParamsCollection(mg.n_plate_stochastic_parameters)
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mg.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -6172,7 +6365,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mg.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         mg.variable_area_history_file = fileName
         Assert.assertEqual(fileName, mg.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -6246,6 +6439,16 @@ class EarlyBoundTests(TestBase):
         mg.drag_model_type = DragModelType.SPHERICAL
         Assert.assertEqual(DragModelType.SPHERICAL, mg.drag_model_type)
 
+        mg.use_stochastic_ballistic_coefficient = True
+        mg.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, mg.drag_correction_type)
+        mg.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, mg.drag_correction_type)
+        mg.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, mg.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            mg.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mg.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -6263,6 +6466,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             mg.n_plate_definition_file = TestBase.GetScenarioFile("bogus.nplate")
 
+        self.Test_IAgVANPlateStochasticParamsCollection(mg.n_plate_stochastic_parameters)
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mg.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -6276,7 +6481,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mg.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         mg.variable_area_history_file = fileName
         Assert.assertEqual(fileName, mg.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -6350,6 +6555,16 @@ class EarlyBoundTests(TestBase):
         mg.drag_model_type = DragModelType.SPHERICAL
         Assert.assertEqual(DragModelType.SPHERICAL, mg.drag_model_type)
 
+        mg.use_stochastic_ballistic_coefficient = True
+        mg.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, mg.drag_correction_type)
+        mg.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, mg.drag_correction_type)
+        mg.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, mg.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            mg.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mg.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -6367,6 +6582,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             mg.n_plate_definition_file = TestBase.GetScenarioFile("bogus.nplate")
 
+        self.Test_IAgVANPlateStochasticParamsCollection(mg.n_plate_stochastic_parameters)
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mg.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -6380,7 +6597,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mg.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         mg.variable_area_history_file = fileName
         Assert.assertEqual(fileName, mg.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -6454,6 +6671,16 @@ class EarlyBoundTests(TestBase):
         mg.drag_model_type = DragModelType.SPHERICAL
         Assert.assertEqual(DragModelType.SPHERICAL, mg.drag_model_type)
 
+        mg.use_stochastic_ballistic_coefficient = True
+        mg.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, mg.drag_correction_type)
+        mg.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, mg.drag_correction_type)
+        mg.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, mg.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            mg.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mg.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -6471,6 +6698,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             mg.n_plate_definition_file = TestBase.GetScenarioFile("bogus.nplate")
 
+        self.Test_IAgVANPlateStochasticParamsCollection(mg.n_plate_stochastic_parameters)
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mg.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -6484,7 +6713,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mg.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         mg.variable_area_history_file = fileName
         Assert.assertEqual(fileName, mg.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -6505,6 +6734,16 @@ class EarlyBoundTests(TestBase):
         mg.drag_model_type = DragModelType.SPHERICAL
         Assert.assertEqual(DragModelType.SPHERICAL, mg.drag_model_type)
 
+        mg.use_stochastic_ballistic_coefficient = True
+        mg.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, mg.drag_correction_type)
+        mg.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, mg.drag_correction_type)
+        mg.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, mg.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            mg.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mg.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -6522,6 +6761,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             mg.n_plate_definition_file = TestBase.GetScenarioFile("bogus.nplate")
 
+        self.Test_IAgVANPlateStochasticParamsCollection(mg.n_plate_stochastic_parameters)
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mg.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -6535,7 +6776,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mg.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         mg.variable_area_history_file = fileName
         Assert.assertEqual(fileName, mg.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -6636,6 +6877,16 @@ class EarlyBoundTests(TestBase):
         vg.drag_model_type = DragModelType.SPHERICAL
         Assert.assertEqual(DragModelType.SPHERICAL, vg.drag_model_type)
 
+        vg.use_stochastic_ballistic_coefficient = True
+        vg.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, vg.drag_correction_type)
+        vg.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, vg.drag_correction_type)
+        vg.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, vg.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            vg.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             vg.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -6653,6 +6904,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             vg.n_plate_definition_file = TestBase.GetScenarioFile("bogus.nplate")
 
+        self.Test_IAgVANPlateStochasticParamsCollection(vg.n_plate_stochastic_parameters)
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             vg.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -6666,7 +6919,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             vg.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         vg.variable_area_history_file = fileName
         Assert.assertEqual(fileName, vg.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -6711,6 +6964,11 @@ class EarlyBoundTests(TestBase):
             695700.0, t20.solar_radius, delta=1e-08
         )  # default value, update whenever Sun.cb file changes
 
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):  # needs GATOR-3456
+            smParams: "StochasticModelParameters" = t20.k1_stochastic_srp_coefficient
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):  # needs GATOR-3456
+            smParams: "StochasticModelParameters" = t20.k2_stochastic_srp_coefficient
+
     def TestAeroT30(self, t30: "SRPAerospaceT30"):
         t30.atmosphere_altitude = 1
         Assert.assertEqual(1, t30.atmosphere_altitude)
@@ -6747,6 +7005,11 @@ class EarlyBoundTests(TestBase):
         Assert.assertAlmostEqual(
             695700.0, t30.solar_radius, delta=1e-08
         )  # default value, update whenever Sun.cb file changes
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):  # needs GATOR-3456
+            smParams: "StochasticModelParameters" = t30.k1_stochastic_srp_coefficient
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):  # needs GATOR-3456
+            smParams: "StochasticModelParameters" = t30.k2_stochastic_srp_coefficient
 
     def TestSRPGSPM04aIIA(self, i04aIIA: "SRPGSPM04aIIA"):
         i04aIIA.atmosphere_altitude = 1
@@ -6785,6 +7048,11 @@ class EarlyBoundTests(TestBase):
             695700.0, i04aIIA.solar_radius, delta=1e-08
         )  # default value, update whenever Sun.cb file changes
 
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):  # needs GATOR-3456
+            smParams: "StochasticModelParameters" = i04aIIA.k1_stochastic_srp_coefficient
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):  # needs GATOR-3456
+            smParams: "StochasticModelParameters" = i04aIIA.k2_stochastic_srp_coefficient
+
     def TestSRPGSPM04aIIR(self, i04aIIR: "SRPGSPM04aIIR"):
         i04aIIR.atmosphere_altitude = 1
         Assert.assertEqual(1, i04aIIR.atmosphere_altitude)
@@ -6821,6 +7089,11 @@ class EarlyBoundTests(TestBase):
         Assert.assertAlmostEqual(
             695700.0, i04aIIR.solar_radius, delta=1e-08
         )  # default value, update whenever Sun.cb file changes
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):  # needs GATOR-3456
+            smParams: "StochasticModelParameters" = i04aIIR.k1_stochastic_srp_coefficient
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):  # needs GATOR-3456
+            smParams: "StochasticModelParameters" = i04aIIR.k2_stochastic_srp_coefficient
 
     def TestSRPGSPM04aeIIA(self, i04aeIIA: "SRPGSPM04aeIIA"):
         i04aeIIA.atmosphere_altitude = 1
@@ -6859,6 +7132,11 @@ class EarlyBoundTests(TestBase):
             695700.0, i04aeIIA.solar_radius, delta=1e-08
         )  # default value, update whenever Sun.cb file changes
 
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):  # needs GATOR-3456
+            smParams: "StochasticModelParameters" = i04aeIIA.k1_stochastic_srp_coefficient
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):  # needs GATOR-3456
+            smParams: "StochasticModelParameters" = i04aeIIA.k2_stochastic_srp_coefficient
+
     def TestSRPGSPM04aeIIR(self, i04aeIIR: "SRPGSPM04aeIIR"):
         i04aeIIR.atmosphere_altitude = 1
         Assert.assertEqual(1, i04aeIIR.atmosphere_altitude)
@@ -6896,6 +7174,11 @@ class EarlyBoundTests(TestBase):
             695700.0, i04aeIIR.solar_radius, delta=1e-08
         )  # default value, update whenever Sun.cb file changes
 
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):  # needs GATOR-3456
+            smParams: "StochasticModelParameters" = i04aeIIR.k1_stochastic_srp_coefficient
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):  # needs GATOR-3456
+            smParams: "StochasticModelParameters" = i04aeIIR.k2_stochastic_srp_coefficient
+
     def TestCentralBodyCollection(self, cbc: "CentralBodyComponentCollection"):
         cbc.add("Sun")
         cbc.add("Pluto")
@@ -6906,6 +7189,8 @@ class EarlyBoundTests(TestBase):
         z: "CentralBodyComponent" = cbc.get_item_by_name("Sun")
         Assert.assertEqual(x.gravitational_parameter, y.gravitational_parameter)
         Assert.assertEqual(x.gravitational_parameter, z.gravitational_parameter)
+        # Assert.AreEqual(x.ParentName, y.ParentName);
+        # Assert.AreEqual(x.ParentName, z.ParentName);
 
         i: int = 0
         while i < cbc.count:
@@ -6961,29 +7246,7 @@ class EarlyBoundTests(TestBase):
         )
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             rpf.ground_reflection_model_filename = "STKData\\CentralBodies\\Earth\\Bogus.txt"
-
         Assert.assertEqual("Earth", rpf.central_body_name)
-
-        rpf.override_segment_settings = False
-        Assert.assertFalse(rpf.override_segment_settings)
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            rpf.radiation_pressure_coefficient = 1
-        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            rpf.radiation_pressure_area = 20
-
-        rpf.override_segment_settings = True
-        Assert.assertTrue(rpf.override_segment_settings)
-
-        rpf.radiation_pressure_coefficient = 10
-        Assert.assertEqual(10, rpf.radiation_pressure_coefficient)
-        rpf.radiation_pressure_coefficient = 20
-        Assert.assertEqual(20, rpf.radiation_pressure_coefficient)
-
-        rpf.radiation_pressure_area = 30
-        Assert.assertEqual(30, rpf.radiation_pressure_area)
-        rpf.radiation_pressure_area = 40
-        Assert.assertEqual(40, rpf.radiation_pressure_area)
 
     def TestYarkovskyFunc(self, yark: "YarkovskyFunc"):
         Assert.assertIsNotNone(yark)
@@ -7035,6 +7298,16 @@ class EarlyBoundTests(TestBase):
         exp.drag_model_type = DragModelType.SPHERICAL
         Assert.assertEqual(DragModelType.SPHERICAL, exp.drag_model_type)
 
+        exp.use_stochastic_ballistic_coefficient = True
+        exp.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, exp.drag_correction_type)
+        exp.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, exp.drag_correction_type)
+        exp.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, exp.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            exp.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             exp.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -7052,6 +7325,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             exp.n_plate_definition_file = TestBase.GetScenarioFile("bogus.nplate")
 
+        self.Test_IAgVANPlateStochasticParamsCollection(exp.n_plate_stochastic_parameters)
+
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             exp.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -7065,7 +7340,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             exp.drag_model_plugin_name = "Drag Lift CSharp"
 
-        fileName: str = TestBase.PathCombine("STKData", "Astrogator", "VariableArea_Example.dat")
+        fileName: str = TestBase.PathCombine("STKData", "Flight_Dynamics", "VariableArea_Example.dat")
         exp.variable_area_history_file = fileName
         Assert.assertEqual(fileName, exp.variable_area_history_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -7168,12 +7443,12 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(gff.use_secular_variations)
 
     def TestTwoBodyFunc(self, tbf: "TwoBodyFunction"):
-        tbf.gravitational_parameter_source = GravParamSource.CENTRAL_BODY_FILE
-        Assert.assertEqual(GravParamSource.CENTRAL_BODY_FILE, tbf.gravitational_parameter_source)
+        tbf.gravitational_parameter_source = GravParameterSource.CENTRAL_BODY_FILE
+        Assert.assertEqual(GravParameterSource.CENTRAL_BODY_FILE, tbf.gravitational_parameter_source)
         with pytest.raises(Exception):
-            tbf.gravitational_parameter_source = GravParamSource.DESIGN_EXPLORER_OPTIMIZER_FILE
-        tbf.gravitational_parameter_source = GravParamSource.USER
-        Assert.assertEqual(GravParamSource.USER, tbf.gravitational_parameter_source)
+            tbf.gravitational_parameter_source = GravParameterSource.DESIGN_EXPLORER_OPTIMIZER_FILE
+        tbf.gravitational_parameter_source = GravParameterSource.USER
+        Assert.assertEqual(GravParameterSource.USER, tbf.gravitational_parameter_source)
         tbf.mu = 398601
         Assert.assertEqual(398601, tbf.mu)
         tbf.min_radius_percent = 98
@@ -7197,22 +7472,22 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Earth", tbf.third_body_name)
 
         pmf: "PointMassFunction" = clr.CastAs(tbf.mode, PointMassFunction)
-        pmf.gravitational_parameter_source = GravParamSource.CENTRAL_BODY_FILE
-        Assert.assertEqual(GravParamSource.CENTRAL_BODY_FILE, pmf.gravitational_parameter_source)
+        pmf.gravitational_parameter_source = GravParameterSource.CENTRAL_BODY_FILE
+        Assert.assertEqual(GravParameterSource.CENTRAL_BODY_FILE, pmf.gravitational_parameter_source)
         with pytest.raises(Exception):
             pmf.mu = 390000.0
-        pmf.gravitational_parameter_source = GravParamSource.CENTRAL_BODY_FILE_SYSTEM
-        Assert.assertEqual(GravParamSource.CENTRAL_BODY_FILE_SYSTEM, pmf.gravitational_parameter_source)
-        pmf.gravitational_parameter_source = GravParamSource.DESIGN_EXPLORER_OPTIMIZER_FILE
-        Assert.assertEqual(GravParamSource.DESIGN_EXPLORER_OPTIMIZER_FILE, pmf.gravitational_parameter_source)
-        pmf.gravitational_parameter_source = GravParamSource.USER
-        Assert.assertEqual(GravParamSource.USER, pmf.gravitational_parameter_source)
+        pmf.gravitational_parameter_source = GravParameterSource.CENTRAL_BODY_FILE_SYSTEM
+        Assert.assertEqual(GravParameterSource.CENTRAL_BODY_FILE_SYSTEM, pmf.gravitational_parameter_source)
+        pmf.gravitational_parameter_source = GravParameterSource.DESIGN_EXPLORER_OPTIMIZER_FILE
+        Assert.assertEqual(GravParameterSource.DESIGN_EXPLORER_OPTIMIZER_FILE, pmf.gravitational_parameter_source)
+        pmf.gravitational_parameter_source = GravParameterSource.USER
+        Assert.assertEqual(GravParameterSource.USER, pmf.gravitational_parameter_source)
         pmf.mu = 390000.0
         Assert.assertEqual(390000.0, pmf.mu)
         pmf.mu = 398600.4418
         Assert.assertEqual(398600.4418, pmf.mu)
         tbf.ephemeris_source = EphemerisSource.DESIGN_EXPLORER_OPTIMIZER_FILE
-        pmf.gravitational_parameter_source = GravParamSource.CENTRAL_BODY_FILE_SYSTEM
+        pmf.gravitational_parameter_source = GravParameterSource.CENTRAL_BODY_FILE_SYSTEM
         Assert.assertNotEqual("", tbf.ephemeris_source_warning)
         TestBase.logger.WriteLine(tbf.ephemeris_source_warning)
 
@@ -7228,15 +7503,15 @@ class EarlyBoundTests(TestBase):
         sphere.shadow_model = ShadowModel.NONE
         Assert.assertEqual(ShadowModel.NONE, sphere.shadow_model)
 
-        Assert.assertEqual(SunPosition.APPARENT_TO_TRUE_CENTRAL_BODY, sphere.sun_position)
-        sphere.sun_position = SunPosition.APPARENT
         Assert.assertEqual(SunPosition.APPARENT, sphere.sun_position)
         sphere.sun_position = SunPosition.APPARENT_TO_TRUE_CENTRAL_BODY
         Assert.assertEqual(SunPosition.APPARENT_TO_TRUE_CENTRAL_BODY, sphere.sun_position)
+        sphere.sun_position = SunPosition.APPARENT
+        Assert.assertEqual(SunPosition.APPARENT, sphere.sun_position)
         sphere.sun_position = SunPosition.TRUE
         Assert.assertEqual(SunPosition.TRUE, sphere.sun_position)
 
-        Assert.assertEqual(0, sphere.atmosphere_altitude)
+        Assert.assertEqual(25, sphere.atmosphere_altitude)
         sphere.atmosphere_altitude = 8
         Assert.assertEqual(8, sphere.atmosphere_altitude)
 
@@ -7317,23 +7592,23 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             tabareavec.include_boundary_mitigation = True
 
-        Assert.assertEqual(SunPosition.APPARENT_TO_TRUE_CENTRAL_BODY, tabareavec.sun_position)
-        tabareavec.sun_position = SunPosition.APPARENT
         Assert.assertEqual(SunPosition.APPARENT, tabareavec.sun_position)
         tabareavec.sun_position = SunPosition.APPARENT_TO_TRUE_CENTRAL_BODY
         Assert.assertEqual(SunPosition.APPARENT_TO_TRUE_CENTRAL_BODY, tabareavec.sun_position)
+        tabareavec.sun_position = SunPosition.APPARENT
+        Assert.assertEqual(SunPosition.APPARENT, tabareavec.sun_position)
         tabareavec.sun_position = SunPosition.TRUE
         Assert.assertEqual(SunPosition.TRUE, tabareavec.sun_position)
 
-        Assert.assertEqual(0, tabareavec.atmosphere_altitude)
+        Assert.assertEqual(25, tabareavec.atmosphere_altitude)
         tabareavec.atmosphere_altitude = 8
         Assert.assertEqual(8, tabareavec.atmosphere_altitude)
 
         self.TestCentralBodyCollection(tabareavec.eclipsing_bodies)
 
-        tabareavec.tab_area_vector_definition_file = r"STKData\Astrogator\SRP_TabAreaVector_Example.txt"
+        tabareavec.tab_area_vector_definition_file = r"STKData\Flight_Dynamics\SRP_TabAreaVector_Example.txt"
         Assert.assertEqual(
-            TestBase.PathCombine("STKData", "Astrogator", "SRP_TabAreaVector_Example.txt"),
+            TestBase.PathCombine("STKData", "Flight_Dynamics", "SRP_TabAreaVector_Example.txt"),
             tabareavec.tab_area_vector_definition_file,
         )
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
@@ -7400,15 +7675,15 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             nplate.include_boundary_mitigation = True
 
-        Assert.assertEqual(SunPosition.APPARENT_TO_TRUE_CENTRAL_BODY, nplate.sun_position)
-        nplate.sun_position = SunPosition.APPARENT
         Assert.assertEqual(SunPosition.APPARENT, nplate.sun_position)
         nplate.sun_position = SunPosition.APPARENT_TO_TRUE_CENTRAL_BODY
         Assert.assertEqual(SunPosition.APPARENT_TO_TRUE_CENTRAL_BODY, nplate.sun_position)
+        nplate.sun_position = SunPosition.APPARENT
+        Assert.assertEqual(SunPosition.APPARENT, nplate.sun_position)
         nplate.sun_position = SunPosition.TRUE
         Assert.assertEqual(SunPosition.TRUE, nplate.sun_position)
 
-        Assert.assertEqual(0, nplate.atmosphere_altitude)
+        Assert.assertEqual(25, nplate.atmosphere_altitude)
         nplate.atmosphere_altitude = 8
         Assert.assertEqual(8, nplate.atmosphere_altitude)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
@@ -9231,7 +9506,6 @@ class EarlyBoundTests(TestBase):
         )
         Assert.assertIsNotNone(components)
         comp: "IComponentInfo" = None
-
         i: int = components.count - 1
         while i >= 0:
             comp = components[i]
@@ -9264,7 +9538,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(wrapper.use_variation_of_parameters)
 
         pfc: "PropagatorFunctionCollection" = wrapper.propagator_functions
-
         i: int = 0
         while i < pfc.count:
             comp1: "IComponentInfo" = pfc[i]
@@ -9334,12 +9607,14 @@ class EarlyBoundTests(TestBase):
         twoBodyFunc: "TwoBodyFunction" = clr.CastAs(
             wrapper.propagator_functions.add("Gravity Models/TwoBody Force"), TwoBodyFunction
         )
-        twoBodyFunc.gravitational_parameter_source = GravParamSource.CENTRAL_BODY_FILE
-        Assert.assertEqual(GravParamSource.CENTRAL_BODY_FILE, twoBodyFunc.gravitational_parameter_source)
-        twoBodyFunc.gravitational_parameter_source = GravParamSource.DESIGN_EXPLORER_OPTIMIZER_FILE
-        Assert.assertEqual(GravParamSource.DESIGN_EXPLORER_OPTIMIZER_FILE, twoBodyFunc.gravitational_parameter_source)
-        twoBodyFunc.gravitational_parameter_source = GravParamSource.USER
-        Assert.assertEqual(GravParamSource.USER, twoBodyFunc.gravitational_parameter_source)
+        twoBodyFunc.gravitational_parameter_source = GravParameterSource.CENTRAL_BODY_FILE
+        Assert.assertEqual(GravParameterSource.CENTRAL_BODY_FILE, twoBodyFunc.gravitational_parameter_source)
+        twoBodyFunc.gravitational_parameter_source = GravParameterSource.DESIGN_EXPLORER_OPTIMIZER_FILE
+        Assert.assertEqual(
+            GravParameterSource.DESIGN_EXPLORER_OPTIMIZER_FILE, twoBodyFunc.gravitational_parameter_source
+        )
+        twoBodyFunc.gravitational_parameter_source = GravParameterSource.USER
+        Assert.assertEqual(GravParameterSource.USER, twoBodyFunc.gravitational_parameter_source)
         twoBodyFunc.mu = 398601
         Assert.assertEqual(398601, twoBodyFunc.mu)
         twoBodyFunc.min_radius_percent = 98
@@ -9368,17 +9643,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(NumericalIntegrator.GAUSS_JACKSON, wrapper.numerical_integrator_type)
         self.TestGaussJackson(clr.CastAs(wrapper.numerical_integrator, GaussJacksonIntegrator))
 
-        wrapper.set_numerical_integrator(NumericalIntegrator.RUNGE_KUTTA_2ND_3RD)
-        Assert.assertEqual(NumericalIntegrator.RUNGE_KUTTA_2ND_3RD, wrapper.numerical_integrator_type)
-        self.TestRK2nd3rd(clr.CastAs(wrapper.numerical_integrator, RungeKutta2nd3rd))
-
         wrapper.set_numerical_integrator(NumericalIntegrator.RUNGE_KUTTA_4TH)
         Assert.assertEqual(NumericalIntegrator.RUNGE_KUTTA_4TH, wrapper.numerical_integrator_type)
         self.TestRK4th(clr.CastAs(wrapper.numerical_integrator, RungeKutta4th))
-
-        wrapper.set_numerical_integrator(NumericalIntegrator.RUNGE_KUTTA_4TH_ADAPT)
-        Assert.assertEqual(NumericalIntegrator.RUNGE_KUTTA_4TH_ADAPT, wrapper.numerical_integrator_type)
-        self.TestRK4thAdapt(clr.CastAs(wrapper.numerical_integrator, RungeKutta4thAdapt))
 
         wrapper.set_numerical_integrator(NumericalIntegrator.RUNGE_KUTTA_FEHLBERG_7TH_8TH)
         Assert.assertEqual(NumericalIntegrator.RUNGE_KUTTA_FEHLBERG_7TH_8TH, wrapper.numerical_integrator_type)
@@ -9440,51 +9707,6 @@ class EarlyBoundTests(TestBase):
         components.remove("Three Body1")
         PFcomponents.remove("CR3BP Force1")
 
-        # /////////////////////////////
-
-        # Create "ER3BP Force1" propagator function to add to the Three Body propagator
-        compInfoER3BP: "IComponentInfo" = PFcomponents["ER3BP Force"]
-        compInfoER3BPclone: "IComponentInfo" = clr.CastAs(
-            (clr.CastAs(compInfoER3BP, ICloneable)).clone_object(), IComponentInfo
-        )
-        self.TestComponent(compInfoER3BPclone, False)
-
-        # Create a Three Body propagator
-        wrapperER3BP: "NumericalPropagatorWrapperCR3BP" = clr.CastAs(
-            (ICloneable(components["Three Body"])).clone_object(), NumericalPropagatorWrapperCR3BP
-        )
-        propFuncs = wrapperER3BP.propagator_functions
-
-        # Add the propagator function to the propagator
-        propFuncs.remove("CR3BP Force")  # Remove the existing CR3BP, so ER3BP can be added
-        ER3BPFuncGravModel: "ER3BPFunc" = clr.CastAs(propFuncs.add("Gravity Models/ER3BP Force1"), ER3BPFunc)
-
-        # Test the ER3BPFunc interface
-
-        Assert.assertEqual("Set Secondary Body", ER3BPFuncGravModel.secondary_name)  # Initial State
-        Assert.assertEqual("1 Jan 2000 11:58:55.816", ER3BPFuncGravModel.ephemeris_epoch)
-        Assert.assertEqual(0, ER3BPFuncGravModel.true_anomaly)
-        Assert.assertEqual(0, ER3BPFuncGravModel.eccentricity)
-        Assert.assertEqual(1, ER3BPFuncGravModel.mass_parameter)
-        Assert.assertEqual(1, ER3BPFuncGravModel.characteristic_distance)
-        Assert.assertEqual(1, ER3BPFuncGravModel.characteristic_time)
-        Assert.assertEqual(1, ER3BPFuncGravModel.characteristic_velocity)
-        Assert.assertEqual(1, ER3BPFuncGravModel.characteristic_acceleration)
-
-        ER3BPFuncGravModel.secondary_name = "Moon"
-        Assert.assertEqual("Moon", ER3BPFuncGravModel.secondary_name)
-        Assert.assertEqual("13 Dec 1949 23:59:17.816", ER3BPFuncGravModel.ephemeris_epoch)
-        Assert.assertAlmostEqual(318.347, float(ER3BPFuncGravModel.true_anomaly), delta=0.001)
-        Assert.assertAlmostEqual(0.051369, ER3BPFuncGravModel.eccentricity, delta=1e-06)
-        Assert.assertAlmostEqual(0.01215, ER3BPFuncGravModel.mass_parameter, delta=1e-06)
-        Assert.assertAlmostEqual(370128182, ER3BPFuncGravModel.characteristic_distance, delta=1)  # meters.  GUI is km
-        Assert.assertAlmostEqual(354490, ER3BPFuncGravModel.characteristic_time, delta=1)
-        Assert.assertAlmostEqual(1044.1, ER3BPFuncGravModel.characteristic_velocity, delta=0.1)
-        Assert.assertAlmostEqual(0.0029453, ER3BPFuncGravModel.characteristic_acceleration, delta=1e-07)
-
-        components.remove("Three Body1")
-        PFcomponents.remove("ER3BP Force1")
-
     def TestRK8th9th(self, fa: "RungeKuttaV8th9th"):
         fa.initial_step = 6
         Assert.assertEqual(6, fa.initial_step)
@@ -9522,49 +9744,12 @@ class EarlyBoundTests(TestBase):
         fa.max_iterations = 99
         Assert.assertEqual(99, fa.max_iterations)
 
-        fa.coefficient_type = CoeffRungeKuttaV8th9th.COEFFICIENT_1978
-        Assert.assertEqual(CoeffRungeKuttaV8th9th.COEFFICIENT_1978, fa.coefficient_type)
-        fa.coefficient_type = CoeffRungeKuttaV8th9th.EFFICIENT
-        Assert.assertEqual(CoeffRungeKuttaV8th9th.EFFICIENT, fa.coefficient_type)
+        fa.coefficient_type = CoefficientRungeKuttaV8th9th.COEFFICIENT_1978
+        Assert.assertEqual(CoefficientRungeKuttaV8th9th.COEFFICIENT_1978, fa.coefficient_type)
+        fa.coefficient_type = CoefficientRungeKuttaV8th9th.EFFICIENT
+        Assert.assertEqual(CoefficientRungeKuttaV8th9th.EFFICIENT, fa.coefficient_type)
 
     def TestRK7th8th(self, fa: "RungeKuttaF7th8th"):
-        fa.initial_step = 6
-        Assert.assertEqual(6, fa.initial_step)
-        fa.use_fixed_step = True
-        Assert.assertEqual(True, fa.use_fixed_step)
-        fa.use_fixed_step = False
-        Assert.assertFalse(fa.use_fixed_step)
-        fa.use_min_step = True
-        Assert.assertTrue(fa.use_min_step)
-        fa.min_step = 2
-        Assert.assertEqual(2, fa.min_step)
-        fa.use_max_step = True
-        Assert.assertTrue(fa.use_max_step)
-        fa.max_step = 86399
-        Assert.assertEqual(86399, fa.max_step)
-        fa.error_control = ErrorControl.ABSOLUTE
-        Assert.assertEqual(ErrorControl.ABSOLUTE, fa.error_control)
-        fa.error_control = ErrorControl.RELATIVE_BY_COMPONENT
-        Assert.assertEqual(ErrorControl.RELATIVE_BY_COMPONENT, fa.error_control)
-        fa.error_control = ErrorControl.RELATIVE_TO_STATE
-        Assert.assertEqual(ErrorControl.RELATIVE_TO_STATE, fa.error_control)
-        fa.error_control = ErrorControl.RELATIVE_TO_STEP
-        Assert.assertEqual(ErrorControl.RELATIVE_TO_STEP, fa.error_control)
-
-        fa.max_absolute_err = 1e-10
-        Assert.assertEqual(1e-10, fa.max_absolute_err)
-        fa.max_relative_err = 1e-12
-        Assert.assertEqual(1e-12, fa.max_relative_err)
-
-        fa.low_safety_coefficient = 0.8
-        Assert.assertEqual(0.8, fa.low_safety_coefficient)
-        fa.high_safety_coefficient = 0.91
-        Assert.assertEqual(0.91, fa.high_safety_coefficient)
-
-        fa.max_iterations = 99
-        Assert.assertEqual(99, fa.max_iterations)
-
-    def TestRK4thAdapt(self, fa: "RungeKutta4thAdapt"):
         fa.initial_step = 6
         Assert.assertEqual(6, fa.initial_step)
         fa.use_fixed_step = True
@@ -9605,43 +9790,6 @@ class EarlyBoundTests(TestBase):
         f.initial_step = 4
         Assert.assertEqual(4, f.initial_step)
 
-    def TestRK2nd3rd(self, st: "RungeKutta2nd3rd"):
-        st.initial_step = 6
-        Assert.assertEqual(6, st.initial_step)
-        st.use_fixed_step = True
-        Assert.assertEqual(True, st.use_fixed_step)
-        st.use_fixed_step = False
-        Assert.assertFalse(st.use_fixed_step)
-        st.use_min_step = True
-        Assert.assertTrue(st.use_min_step)
-        st.min_step = 2
-        Assert.assertEqual(2, st.min_step)
-        st.use_max_step = True
-        Assert.assertTrue(st.use_max_step)
-        st.max_step = 86399
-        Assert.assertEqual(86399, st.max_step)
-        st.error_control = ErrorControl.ABSOLUTE
-        Assert.assertEqual(ErrorControl.ABSOLUTE, st.error_control)
-        st.error_control = ErrorControl.RELATIVE_BY_COMPONENT
-        Assert.assertEqual(ErrorControl.RELATIVE_BY_COMPONENT, st.error_control)
-        st.error_control = ErrorControl.RELATIVE_TO_STATE
-        Assert.assertEqual(ErrorControl.RELATIVE_TO_STATE, st.error_control)
-        st.error_control = ErrorControl.RELATIVE_TO_STEP
-        Assert.assertEqual(ErrorControl.RELATIVE_TO_STEP, st.error_control)
-
-        st.max_absolute_err = 1e-10
-        Assert.assertEqual(1e-10, st.max_absolute_err)
-        st.max_relative_err = 1e-12
-        Assert.assertEqual(1e-12, st.max_relative_err)
-
-        st.low_safety_coefficient = 0.8
-        Assert.assertEqual(0.8, st.low_safety_coefficient)
-        st.high_safety_coefficient = 0.91
-        Assert.assertEqual(0.91, st.high_safety_coefficient)
-
-        st.max_iterations = 99
-        Assert.assertEqual(99, st.max_iterations)
-
     def TestGaussJackson(self, gji: "GaussJacksonIntegrator"):
         gji.corrector_mode = PredictorCorrector.FULL
         Assert.assertEqual(PredictorCorrector.FULL, gji.corrector_mode)
@@ -9661,10 +9809,6 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             gji.set_single_step_integrator(NumericalIntegrator.GAUSS_JACKSON)
 
-        gji.set_single_step_integrator(NumericalIntegrator.RUNGE_KUTTA_2ND_3RD)
-        Assert.assertEqual(NumericalIntegrator.RUNGE_KUTTA_2ND_3RD, gji.single_step_integrator_type)
-        self.TestRK2nd3rd(clr.CastAs(gji.single_step_integrator, RungeKutta2nd3rd))
-
         gji.set_single_step_integrator(NumericalIntegrator.RUNGE_KUTTA_4TH)
         Assert.assertEqual(NumericalIntegrator.RUNGE_KUTTA_4TH, gji.single_step_integrator_type)
         self.TestRK4th(clr.CastAs(gji.single_step_integrator, RungeKutta4th))
@@ -9672,10 +9816,6 @@ class EarlyBoundTests(TestBase):
         gji.set_single_step_integrator(NumericalIntegrator.RUNGE_KUTTA_4TH_5TH)
         Assert.assertEqual(NumericalIntegrator.RUNGE_KUTTA_4TH_5TH, gji.single_step_integrator_type)
         self.TestRK4th5th(clr.CastAs(gji.single_step_integrator, RungeKutta4th5th))
-
-        gji.set_single_step_integrator(NumericalIntegrator.RUNGE_KUTTA_4TH_ADAPT)
-        Assert.assertEqual(NumericalIntegrator.RUNGE_KUTTA_4TH_ADAPT, gji.single_step_integrator_type)
-        self.TestRK4thAdapt(clr.CastAs(gji.single_step_integrator, RungeKutta4thAdapt))
 
         gji.set_single_step_integrator(NumericalIntegrator.RUNGE_KUTTA_FEHLBERG_7TH_8TH)
         Assert.assertEqual(NumericalIntegrator.RUNGE_KUTTA_FEHLBERG_7TH_8TH, gji.single_step_integrator_type)
@@ -9801,7 +9941,6 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual("CentralBody/Earth Inertial", props.display_coordinate_system)
             segment.results.add("Epoch")
             Assert.assertEqual(1, segment.results.count)
-
             i: int = 0
             while i < segment.results.count:
                 calcObject: "IComponentInfo" = segment.results[i]
@@ -9857,3 +9996,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             old: "IComponentInfo" = components["NewNewName"]
         TestBase.Application.save_scenario()
+
+    def GetFrameEnumString(self, frame: str):
+        frameEnumString: str = "eUtFrame"
+        return frameEnumString + frame

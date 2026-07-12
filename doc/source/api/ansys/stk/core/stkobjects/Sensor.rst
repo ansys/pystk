@@ -51,6 +51,8 @@ Overview
               - Get the az-el mask.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.az_el_mask_data`
               - Get az-el mask data for the sensor.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.chain_analysis_options`
+              - Get the sensor's chain analysis options.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.common_tasks`
               - Return an interface that exposes common tasks.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.detector_pitch`
@@ -95,7 +97,7 @@ Sensor Body Mask
 
     # Sensor sensor: Sensor object
     if os.name == "nt":
-        installPath = r"C:\Program Files\AGI\STK 12"
+        installPath = r"C:\Program Files\AGI\STK_ODTK 13"
     else:
         installPath = os.environ["STK_INSTALL_DIR"]
     bmskPath = ["Data", "Resources", "stktraining", "text", "BodyMask_hga.bmsk"]
@@ -152,6 +154,12 @@ Property detail
     :type: IAzElMaskData
 
     Get az-el mask data for the sensor.
+
+.. py:property:: chain_analysis_options
+    :canonical: ansys.stk.core.stkobjects.Sensor.chain_analysis_options
+    :type: ChainAnalysisOptions
+
+    Get the sensor's chain analysis options.
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.stkobjects.Sensor.common_tasks
@@ -252,6 +260,7 @@ Property detail
 
 Method detail
 -------------
+
 
 
 

@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -27,10 +27,11 @@ GrpcCallBatcher may be used to reduce the number of remote communications
 by batching together API commands that do not require return values.
 """
 
+from enum import Enum
+import os
 import typing
 
 from ..internal.apiutil import SupportsDeleteCallback
-from .exceptions import GrpcUtilitiesError
 
 try:
     from ..internal.AgGrpcServices_pb2 import BatchedInvokeRequest, InvokeRequest
@@ -38,6 +39,20 @@ try:
     _DEFAULT_BATCH_DISABLE = False
 except ImportError:
     _DEFAULT_BATCH_DISABLE = True
+
+class GrpcAuthenticationMode(Enum):
+    """Specify the method of client-server authentication to use for gRPC."""
+
+    SINGLE_USER = 0
+    """Ensure client and server user match. Only available on Windows."""
+    UNIX_DOMAIN_SOCKET = 1
+    """Ensure client has permission to access server socket file using Unix domain socket names. Only available on Linux."""
+    MUTUAL_TLS = 2
+    """Perform mutual TLS by providing paths for client and server certificate, key, and certificate authority files."""
+    INSECURE = 3
+    """Disable authentication, not recommended. Before using this method, consider a secure connection."""
+    DEFAULT = UNIX_DOMAIN_SOCKET if os.name != "nt" else SINGLE_USER
+    """The default mode for starting or attaching to an STK application. SINGLE_USER on Windows, UNIX_DOMAIN_SOCKET on Linux."""
 
 class GrpcCallBatcher(object):
     """
@@ -103,7 +118,7 @@ class GrpcCallBatcher(object):
         self._batching = False
         if max_batch is not None:
             if max_batch > GrpcCallBatcher._default_max_batch_size:
-                raise GrpcUtilitiesError(f"Batch size cannot exceed {GrpcCallBatcher._default_max_batch_size} due to gRPC message size restrictions.")
+                raise SyntaxError(f"Batch size cannot exceed {GrpcCallBatcher._default_max_batch_size} due to gRPC message size restrictions.")
             self._max_batch = max_batch
 
     def __enter__(self):
@@ -178,7 +193,7 @@ class GrpcCallBatcher(object):
                         attr_name = superclass._property_names[future_provider]
                         break
             if attr_name is None:
-                raise GrpcUtilitiesError("Cannot create gRPC future; incorrect type.")
+                raise SyntaxError("Cannot create gRPC future; incorrect type.")
             return getattr(source_obj, attr_name)
 
     def create_future(self, source_obj:typing.Any, future_provider:typing.Union[typing.Callable, property], future_type:typing.Any, *args) -> typing.Any:
@@ -193,12 +208,12 @@ class GrpcCallBatcher(object):
         if self._disable_batching:
             return GrpcCallBatcher._bypass_future_creation(source_obj, future_provider, *args)
         if not self._batching:
-            raise GrpcUtilitiesError("Batcher must be active to create futures.")
+            raise SyntaxError("Batcher must be active to create futures.")
         if not callable(future_type):
-            raise GrpcUtilitiesError("Future class type must be a full STK Object type (e.g. Scenario, not Scenario).")
+            raise SyntaxError("Future class type must be a full STK Object type (e.g. Scenario, not Scenario).")
         future = future_type()
         if not isinstance(future, SupportsDeleteCallback):
-            raise GrpcUtilitiesError("Future class type must be a full STK Object type (e.g. Scenario, not Scenario).")
+            raise SyntaxError("Future class type must be a full STK Object type (e.g. Scenario, not Scenario).")
         intf_proxy = GrpcInterfaceFuture(self, self._next_future_id, source_obj, future_provider, *args)
         intf_pimpl = GrpcInterfacePimpl(intf_proxy)
         future._private_init(intf_pimpl)
@@ -206,3 +221,23 @@ class GrpcCallBatcher(object):
         self._unbound_futures[self._next_future_id] = intf_pimpl
         self._next_future_id += 1
         return future
+
+def _get_authentication_mode_string(authentication_mode:GrpcAuthenticationMode):
+    if authentication_mode == GrpcAuthenticationMode.UNIX_DOMAIN_SOCKET:
+        return "uds"
+    elif authentication_mode == GrpcAuthenticationMode.MUTUAL_TLS:
+        return "mtls"
+    elif authentication_mode == GrpcAuthenticationMode.INSECURE:
+        return "insecure"
+    else:
+        return "uds" if os.name != "nt" else "single-user"
+
+def _validate_authentication_mode(authentication_mode:GrpcAuthenticationMode, grpc_host:str):
+    if authentication_mode == GrpcAuthenticationMode.SINGLE_USER:
+        if os.name != "nt":
+            raise RuntimeError("Single user authentication is not supported on Linux. Choose another authentication method.")
+        if grpc_host not in ["localhost", "127.0.0.1"]:
+            raise RuntimeError("Single user authentication is not supported with remote server. Choose another authentication method.")
+    elif authentication_mode == GrpcAuthenticationMode.UNIX_DOMAIN_SOCKET:
+        if os.name == "nt":
+            raise RuntimeError("UDS is not supported on Windows. Choose another authentication method.")

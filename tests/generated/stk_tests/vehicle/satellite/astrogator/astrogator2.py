@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -649,9 +649,9 @@ class EarlyBoundTests(TestBase):
 
         diffAcrossSegs: "StoppingConditionElement" = prop2.stopping_conditions.add("UserSelect")
 
-        (
-            StoppingCondition(diffAcrossSegs.properties)
-        ).user_calculation_object_name = "Segments/Difference Across Segments"
+        (StoppingCondition(diffAcrossSegs.properties)).user_calculation_object_name = (
+            "Segments/Difference Across Segments"
+        )
         stopCondCalcObj: "StateCalcDifferenceOtherSegment" = StateCalcDifferenceOtherSegment(
             (StoppingCondition(diffAcrossSegs.properties)).user_calculation_object
         )

@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -23,8 +23,8 @@
 """The STK UI Application library is a COM library containing classes, interfaces and enumerations for the Application Object Model."""
 
 __all__ = ["ApplicationConstants", "ApplicationErrorCodes", "ApplicationLogMessageType", "ApplicationOpenLogFileMode",
-"IUiApplicationPartnerAccess", "MostRecentlyUsedCollection", "UiApplication", "UiFileOpenDialogExtension",
-"UiFileOpenDialogExtensionCollection"]
+"IUiApplicationPartnerAccess", "MostRecentlyUsedCollection", "PreferencesFilesMode", "UiApplication",
+"UiFileOpenDialogExtension", "UiFileOpenDialogExtensionCollection"]
 
 from ctypes import POINTER
 from enum import IntEnum
@@ -43,11 +43,7 @@ from .internal.apiutil import (
 )
 from .internal.comutil import IDispatch, IUnknown
 from .uicore import ApplicationWindowState
-from .utilities.exceptions import STKRuntimeError
 
-
-def _raise_uninitialized_error(*args):
-    raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
 class ApplicationOpenLogFileMode(IntEnum):
     """Log file open modes."""
@@ -83,6 +79,22 @@ ApplicationLogMessageType.WARNING.__doc__ = "Log messages that provide warning t
 ApplicationLogMessageType.ALARM.__doc__ = "Log messages that provide alarm text."
 
 agcls.AgTypeNameMap["ApplicationLogMessageType"] = ApplicationLogMessageType
+
+class PreferencesFilesMode(IntEnum):
+    """Specify how application should handle user preference files"""
+
+    _NO_LOAD_NO_SAVE = 0
+    """Neither Load nor Save user preference files."""
+    _LOAD_NO_SAVE = 1
+    """Only Load (on startup) but do not Save user preference files."""
+    _LOAD_AND_SAVE = 2
+    """Both Load (on startup) and Save (on exit) user preference files."""
+
+PreferencesFilesMode._NO_LOAD_NO_SAVE.__doc__ = "Neither Load nor Save user preference files."
+PreferencesFilesMode._LOAD_NO_SAVE.__doc__ = "Only Load (on startup) but do not Save user preference files."
+PreferencesFilesMode._LOAD_AND_SAVE.__doc__ = "Both Load (on startup) and Save (on exit) user preference files."
+
+agcls.AgTypeNameMap["PreferencesFilesMode"] = PreferencesFilesMode
 
 class ApplicationConstants(IntEnum):
     """ApplicationConstants contains base IDs for various structures."""
@@ -124,7 +136,7 @@ class IUiApplicationPartnerAccess(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _grant_partner_access_method_offset = 1
     _metadata = {
-        "iid_data" : (5167873979092294442, 1106320289392679061),
+        "iid_data" : (5077062202653651173, 4012358305108718229),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -151,7 +163,7 @@ class IUiApplicationPartnerAccess(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5167873979092294442, 1106320289392679061), IUiApplicationPartnerAccess)
+agcls.AgClassCatalog.add_catalog_entry((5077062202653651173, 4012358305108718229), IUiApplicationPartnerAccess)
 agcls.AgTypeNameMap["IUiApplicationPartnerAccess"] = IUiApplicationPartnerAccess
 
 
@@ -167,7 +179,7 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
     >>> uiApplication.shutdown()
     """
 
-    _num_methods = 37
+    _num_methods = 39
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _load_personality_method_offset = 1
     _get_personality_method_offset = 2
@@ -206,8 +218,10 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
     _set_display_alerts_method_offset = 35
     _create_application_method_offset = 36
     _get_process_id_method_offset = 37
+    _get_preferences_files_mode_method_offset = 38
+    _set_preferences_files_mode_method_offset = 39
     _metadata = {
-        "iid_data" : (5152548327130061473, 179254138349634492),
+        "iid_data" : (5664619422046306087, 8136869108016025256),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -499,6 +513,22 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
         """Get process id for the current instance."""
         return self._intf.get_property(UiApplication._metadata, UiApplication._get_process_id_metadata)
 
+    _get_preferences_files_mode_metadata = { "offset" : _get_preferences_files_mode_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(PreferencesFilesMode),) }
+    @property
+    def preferences_files_mode(self) -> "PreferencesFilesMode":
+        """Get or set whether to use saved user preference files."""
+        return self._intf.get_property(UiApplication._metadata, UiApplication._get_preferences_files_mode_metadata)
+
+    _set_preferences_files_mode_metadata = { "offset" : _set_preferences_files_mode_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(PreferencesFilesMode),) }
+    @preferences_files_mode.setter
+    def preferences_files_mode(self, pref_mode:"PreferencesFilesMode") -> None:
+        """Get or set whether to use saved user preference files."""
+        return self._intf.set_property(UiApplication._metadata, UiApplication._set_preferences_files_mode_metadata, pref_mode)
+
     _property_names[personality] = "personality"
     _property_names[visible] = "visible"
     _property_names[user_control] = "user_control"
@@ -516,6 +546,7 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
     _property_names[log_file] = "log_file"
     _property_names[display_alerts] = "display_alerts"
     _property_names[process_id] = "process_id"
+    _property_names[preferences_files_mode] = "preferences_files_mode"
 
     def __init__(self, source_object=None):
         """Construct an object of type UiApplication."""
@@ -532,7 +563,7 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UiApplication, [UiApplication, IUiApplicationPartnerAccess])
 
-agcls.AgClassCatalog.add_catalog_entry((5006026089128684578, 1580294365369460875), UiApplication)
+agcls.AgClassCatalog.add_catalog_entry((4897994545220499919, 9857477482842131391), UiApplication)
 agcls.AgTypeNameMap["UiApplication"] = UiApplication
 
 class MostRecentlyUsedCollection(SupportsDeleteCallback):
@@ -544,7 +575,7 @@ class MostRecentlyUsedCollection(SupportsDeleteCallback):
     _get_count_method_offset = 2
     _get__new_enum_method_offset = 3
     _metadata = {
-        "iid_data" : (5511485448271886598, 17798322995058890112),
+        "iid_data" : (5483367896848674890, 10589458234430986426),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -606,7 +637,7 @@ class MostRecentlyUsedCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MostRecentlyUsedCollection, [MostRecentlyUsedCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4906190746948977919, 5654723336100906907), MostRecentlyUsedCollection)
+agcls.AgClassCatalog.add_catalog_entry((5689642888327568715, 9796270372090483644), MostRecentlyUsedCollection)
 agcls.AgTypeNameMap["MostRecentlyUsedCollection"] = MostRecentlyUsedCollection
 
 class UiFileOpenDialogExtensionCollection(SupportsDeleteCallback):
@@ -618,7 +649,7 @@ class UiFileOpenDialogExtensionCollection(SupportsDeleteCallback):
     _get__new_enum_method_offset = 2
     _item_method_offset = 3
     _metadata = {
-        "iid_data" : (5663541480808773789, 6468980721787839653),
+        "iid_data" : (5324456244233588029, 5769450117707913606),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -680,7 +711,7 @@ class UiFileOpenDialogExtensionCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UiFileOpenDialogExtensionCollection, [UiFileOpenDialogExtensionCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4816855088544067481, 231753964531063469), UiFileOpenDialogExtensionCollection)
+agcls.AgClassCatalog.add_catalog_entry((4847810269717329271, 12920386918459678637), UiFileOpenDialogExtensionCollection)
 agcls.AgTypeNameMap["UiFileOpenDialogExtensionCollection"] = UiFileOpenDialogExtensionCollection
 
 class UiFileOpenDialogExtension(SupportsDeleteCallback):
@@ -695,7 +726,7 @@ class UiFileOpenDialogExtension(SupportsDeleteCallback):
     _get_filter_pattern_method_offset = 5
     _set_filter_pattern_method_offset = 6
     _metadata = {
-        "iid_data" : (5740546309910143078, 16304364896762750623),
+        "iid_data" : (5027325736684803044, 12965350138807499181),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -767,5 +798,5 @@ class UiFileOpenDialogExtension(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UiFileOpenDialogExtension, [UiFileOpenDialogExtension, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4850055024671377715, 12513386433369472389), UiFileOpenDialogExtension)
+agcls.AgClassCatalog.add_catalog_entry((5014475772752047883, 13237035948763404201), UiFileOpenDialogExtension)
 agcls.AgTypeNameMap["UiFileOpenDialogExtension"] = UiFileOpenDialogExtension

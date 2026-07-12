@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -87,8 +87,8 @@ class ReceiverSnippets(CodeSnippetsTestBase):
     )
     def ModifyReceiverModelSnippet(self, receiver):
         # Receiver receiver: Receiver object
-        receiver.set_model("Complex Receiver Model")
-        recModel = receiver.model
+        receiver.model_component_linking.set_component("Complex Receiver Model")
+        recModel = receiver.model_component_linking.component
         recModel.track_frequency_automatically = False
         recModel.frequency = 11.81
 
@@ -110,11 +110,11 @@ class ReceiverSnippets(CodeSnippetsTestBase):
     )
     def ModifyReceiverAntennaSnippet(self, receiver):
         # Receiver receiver: Receiver object
-        receiver.set_model("Complex Receiver Model")
-        recModel = receiver.model
+        receiver.model_component_linking.set_component("Complex Receiver Model")
+        recModel = receiver.model_component_linking.component
         antennaControl = recModel.antenna_control
-        antennaControl.set_embedded_model("Hemispherical")
-        antennaControl.embedded_model.efficiency = 85  # Percent
+        antennaControl.embedded_model_component_linking.set_component("Hemispherical")
+        antennaControl.embedded_model_component_linking.component.efficiency = 85  # Percent
 
     def test_ModifyReceiverPolarizationSnippet(self):
         try:
@@ -134,7 +134,7 @@ class ReceiverSnippets(CodeSnippetsTestBase):
     )
     def ModifyReceiverPolarizationSnippet(self, receiver):
         # Receiver receiver: Receiver object
-        recModel = receiver.model
+        recModel = receiver.model_component_linking.component
         recModel.enable_polarization = True
         recModel.set_polarization_type(PolarizationType.LINEAR)
         polarization = recModel.polarization
@@ -160,8 +160,8 @@ class ReceiverSnippets(CodeSnippetsTestBase):
     def ModifyReceiverOrientationSnippet(self, receiver):
         # Complex receivers Only
         # Receiver receiver: Receiver object
-        receiver.set_model("Complex Receiver Model")
-        recModel = receiver.model
+        receiver.model_component_linking.set_component("Complex Receiver Model")
+        recModel = receiver.model_component_linking.component
         antennaControl = recModel.antenna_control
         antOrientation = antennaControl.embedded_model_orientation
         antOrientation.assign_az_el(45, 85, AzElAboutBoresight.ROTATE)
@@ -187,8 +187,8 @@ class ReceiverSnippets(CodeSnippetsTestBase):
     )
     def ModifyReceiverSysNoiseTempSnippet(self, receiver):
         # Receiver receiver: Receiver object
-        receiver.set_model("Complex Receiver Model")
-        recModel = receiver.model
+        receiver.model_component_linking.set_component("Complex Receiver Model")
+        recModel = receiver.model_component_linking.component
         recModel.system_noise_temperature.constant_noise_temperature = 280  # K
 
     def test_ModifyReceiverDemodulatorSnippet(self):
@@ -209,7 +209,7 @@ class ReceiverSnippets(CodeSnippetsTestBase):
     )
     def ModifyReceiverDemodulatorSnippet(self, receiver):
         # Receiver receiver: Receiver object
-        recModel = receiver.model
+        recModel = receiver.model_component_linking.component
         recModel.select_demodulator_automatically = False
         recModel.set_demodulator("16PSK")
 
@@ -231,10 +231,10 @@ class ReceiverSnippets(CodeSnippetsTestBase):
     )
     def ModifyReceiverFilterSnippet(self, receiver):
         # Receiver receiver: Receiver object
-        recModel = receiver.model
+        recModel = receiver.model_component_linking.component
         recModel.enable_filter = True
-        recModel.set_filter("Bessel")
-        recFilter = recModel.filter
+        recModel.filter_component_linking.set_component("Bessel")
+        recFilter = recModel.filter_component_linking.component
         recFilter.lower_bandwidth_limit = -20
         recFilter.upper_bandwidth_limit = 20
         recFilter.cut_off_frequency = 10
@@ -257,6 +257,6 @@ class ReceiverSnippets(CodeSnippetsTestBase):
     )
     def ReceiverAdditionalGainSnippet(self, receiver):
         # Receiver receiver: Receiver object
-        recModel = receiver.model
+        recModel = receiver.model_component_linking.component
         gain = recModel.pre_receive_gains_losses.add(5)  # dB
         gain.identifier = "Example Gain"

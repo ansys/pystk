@@ -1,6 +1,6 @@
 # By default, start from the base STK Engine Python image
-ARG basePythonImage=ansys/stk-12.10:dev-windowsservercore-ltsc2019-pybase
-FROM ${basePythonImage} as builder
+ARG basePythonImage=ansys/stk-13.1:dev-windowsservercore-ltsc2019-pybase
+FROM ${basePythonImage} AS builder
 
 USER ContainerAdministrator
 
@@ -9,7 +9,7 @@ COPY scripts C:/dist/
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
 # Install Python
-RUN Invoke-WebRequest -Uri "https://www.python.org/ftp/python/3.12.4/python-3.12.4-amd64.exe" -OutFile C:\dist\python-3.12.4-amd64.exe
+ADD "https://www.python.org/ftp/python/3.12.4/python-3.12.4-amd64.exe" "C:\dist\python-3.12.4-amd64.exe"
 
 RUN C:\dist\install.ps1
 

@@ -34,6 +34,9 @@ Overview
             * - :py:attr:`~STRAND_METRIC_DURATION`
               - Chain optimal strand duration metric.
 
+            * - :py:attr:`~STRAND_METRIC_DATA_RATE`
+              - Chain optimal strand data rate metric.
+
 
 Import detail
 -------------

@@ -3,7 +3,7 @@ ScatteringPointProviderSinglePoint
 
 .. py:class:: ansys.stk.core.stkobjects.ScatteringPointProviderSinglePoint
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IScatteringPointProvider`, :py:class:`~ansys.stk.core.stkobjects.IRadarClutterGeometryModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IScatteringPointProvider`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a single point scattring point provider.
 

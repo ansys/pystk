@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -23,6 +23,7 @@
 """Test the `chain_graphs` module."""
 
 import pytest
+from pathlib import Path
 from ansys.stk.extensions.data_analysis.graphs.chain_graphs import complete_chain_access_interval_graph, individual_object_access_interval_graph, individual_strand_access_interval_graph, number_of_accesses_line_chart
 from stk_environment import stk_root
 
@@ -38,7 +39,8 @@ def chain(stk_root):
     satellite = stk_root.current_scenario.children.new(STKObjectType.SATELLITE, "Satellite")
     satellite.set_propagator_type(PropagatorType.SGP4)
     propagator = satellite.propagator
-    propagator.common_tasks.add_segments_from_online_source("25544")
+    tle_file = Path(__file__).parent / "data" / "iss_5Jun2022.tle"
+    propagator.common_tasks.add_segments_from_file("25544", str(tle_file.resolve()))
     propagator.propagate()
 
     chain = scenario.children.new(STKObjectType.CHAIN, "Chain")

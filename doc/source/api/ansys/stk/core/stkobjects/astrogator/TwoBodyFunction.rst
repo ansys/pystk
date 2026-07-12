@@ -42,7 +42,7 @@ Property detail
 
 .. py:property:: gravitational_parameter_source
     :canonical: ansys.stk.core.stkobjects.astrogator.TwoBodyFunction.gravitational_parameter_source
-    :type: GravParamSource
+    :type: GravParameterSource
 
     Get or set the source for the gravitational parameter.
 

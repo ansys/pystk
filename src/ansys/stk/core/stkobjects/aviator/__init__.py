@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -137,11 +137,7 @@ from ...internal.apiutil import (
     set_interface_attribute,
 )
 from ...internal.comutil import IDispatch, IUnknown
-from ...utilities.exceptions import STKRuntimeError
 
-
-def _raise_uninitialized_error(*args):
-    raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
 class ErrorCodes(IntEnum):
     """Error Codes."""
@@ -2723,7 +2719,7 @@ class ISite(object):
     _get_name_method_offset = 1
     _set_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5465348812426829484, 1980086686715111829),
+        "iid_data" : (5481984384749695325, 5006655980790848699),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2760,7 +2756,7 @@ class ISite(object):
     _property_names[name] = "name"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5465348812426829484, 1980086686715111829), ISite)
+agcls.AgClassCatalog.add_catalog_entry((5481984384749695325, 5006655980790848699), ISite)
 agcls.AgTypeNameMap["ISite"] = ISite
 
 class ICatalogItem(object):
@@ -2801,7 +2797,7 @@ class ICatalogItem(object):
     _add_child_of_type_method_offset = 12
     _contains_child_item_method_offset = 13
     _metadata = {
-        "iid_data" : (5458227820228317150, 3292997058202486194),
+        "iid_data" : (5389228566797267371, 11705576102420281758),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2923,7 +2919,7 @@ class ICatalogItem(object):
     _property_names[child_types] = "child_types"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5458227820228317150, 3292997058202486194), ICatalogItem)
+agcls.AgClassCatalog.add_catalog_entry((5389228566797267371, 11705576102420281758), ICatalogItem)
 agcls.AgTypeNameMap["ICatalogItem"] = ICatalogItem
 
 class IBasicManeuverStrategy(object):
@@ -2932,7 +2928,7 @@ class IBasicManeuverStrategy(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (4744335311711001158, 10362982119561193112),
+        "iid_data" : (5573887709486746981, 2739439666577999256),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2952,7 +2948,7 @@ class IBasicManeuverStrategy(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4744335311711001158, 10362982119561193112), IBasicManeuverStrategy)
+agcls.AgClassCatalog.add_catalog_entry((5573887709486746981, 2739439666577999256), IBasicManeuverStrategy)
 agcls.AgTypeNameMap["IBasicManeuverStrategy"] = IBasicManeuverStrategy
 
 class IAviatorVehicle(object):
@@ -2962,7 +2958,7 @@ class IAviatorVehicle(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_as_catalog_item_method_offset = 1
     _metadata = {
-        "iid_data" : (5343444076281023740, 16945725846674352552),
+        "iid_data" : (5743378214114209399, 8370517781867787446),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2989,7 +2985,7 @@ class IAviatorVehicle(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5343444076281023740, 16945725846674352552), IAviatorVehicle)
+agcls.AgClassCatalog.add_catalog_entry((5743378214114209399, 8370517781867787446), IAviatorVehicle)
 agcls.AgTypeNameMap["IAviatorVehicle"] = IAviatorVehicle
 
 class IARINC424Item(object):
@@ -3003,7 +2999,7 @@ class IARINC424Item(object):
     _get_all_fields_and_values_method_offset = 4
     _copy_site_method_offset = 5
     _metadata = {
-        "iid_data" : (5321250993774161200, 8939444136967404965),
+        "iid_data" : (5572904334218717321, 1643465761959212977),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3058,7 +3054,7 @@ class IARINC424Item(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5321250993774161200, 8939444136967404965), IARINC424Item)
+agcls.AgClassCatalog.add_catalog_entry((5572904334218717321, 1643465761959212977), IARINC424Item)
 agcls.AgTypeNameMap["IARINC424Item"] = IARINC424Item
 
 class IStation(object):
@@ -3067,7 +3063,7 @@ class IStation(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5722385785492826861, 3941921955448583610),
+        "iid_data" : (5147880106658825049, 16109010350714406054),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3087,7 +3083,7 @@ class IStation(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5722385785492826861, 3941921955448583610), IStation)
+agcls.AgClassCatalog.add_catalog_entry((5147880106658825049, 16109010350714406054), IStation)
 agcls.AgTypeNameMap["IStation"] = IStation
 
 class ICatalogSource(object):
@@ -3100,7 +3096,7 @@ class ICatalogSource(object):
     _remove_child_method_offset = 3
     _save_method_offset = 4
     _metadata = {
-        "iid_data" : (5049762571904518511, 12921546796455048600),
+        "iid_data" : (4791604356888917744, 5754806587711248512),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3150,7 +3146,7 @@ class ICatalogSource(object):
     _property_names[child_names] = "child_names"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5049762571904518511, 12921546796455048600), ICatalogSource)
+agcls.AgClassCatalog.add_catalog_entry((4791604356888917744, 5754806587711248512), ICatalogSource)
 agcls.AgTypeNameMap["ICatalogSource"] = ICatalogSource
 
 class IBasicFixedWingLiftHelper(object):
@@ -3159,7 +3155,7 @@ class IBasicFixedWingLiftHelper(object):
     _num_methods = 0
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
-        "iid_data" : (4688474907311176393, 2468997903478744199),
+        "iid_data" : (5022902796636327012, 2894866780524139705),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -3179,7 +3175,7 @@ class IBasicFixedWingLiftHelper(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4688474907311176393, 2468997903478744199), IBasicFixedWingLiftHelper)
+agcls.AgClassCatalog.add_catalog_entry((5022902796636327012, 2894866780524139705), IBasicFixedWingLiftHelper)
 agcls.AgTypeNameMap["IBasicFixedWingLiftHelper"] = IBasicFixedWingLiftHelper
 
 class ICatalogRunway(object):
@@ -3188,7 +3184,7 @@ class ICatalogRunway(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5582374247106176888, 13141122444054183846),
+        "iid_data" : (5362388507027656609, 11461809533698263454),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3208,7 +3204,7 @@ class ICatalogRunway(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5582374247106176888, 13141122444054183846), ICatalogRunway)
+agcls.AgClassCatalog.add_catalog_entry((5362388507027656609, 11461809533698263454), ICatalogRunway)
 agcls.AgTypeNameMap["ICatalogRunway"] = ICatalogRunway
 
 class ICatalogAirport(object):
@@ -3217,7 +3213,7 @@ class ICatalogAirport(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5517232244535054220, 17256594794181634488),
+        "iid_data" : (4828587618520333901, 1567744945368590758),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3237,7 +3233,7 @@ class ICatalogAirport(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5517232244535054220, 17256594794181634488), ICatalogAirport)
+agcls.AgClassCatalog.add_catalog_entry((4828587618520333901, 1567744945368590758), ICatalogAirport)
 agcls.AgTypeNameMap["ICatalogAirport"] = ICatalogAirport
 
 class ICatalogNavaid(object):
@@ -3246,7 +3242,7 @@ class ICatalogNavaid(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5313582233894378368, 56929069166080155),
+        "iid_data" : (4617935519194584227, 12560850307158085021),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3266,7 +3262,7 @@ class ICatalogNavaid(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5313582233894378368, 56929069166080155), ICatalogNavaid)
+agcls.AgClassCatalog.add_catalog_entry((4617935519194584227, 12560850307158085021), ICatalogNavaid)
 agcls.AgTypeNameMap["ICatalogNavaid"] = ICatalogNavaid
 
 class ICatalogVTOLPoint(object):
@@ -3275,7 +3271,7 @@ class ICatalogVTOLPoint(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5738919117285590368, 14261233550328315012),
+        "iid_data" : (5364632595061277624, 13869284949033168827),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3295,7 +3291,7 @@ class ICatalogVTOLPoint(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5738919117285590368, 14261233550328315012), ICatalogVTOLPoint)
+agcls.AgClassCatalog.add_catalog_entry((5364632595061277624, 13869284949033168827), ICatalogVTOLPoint)
 agcls.AgTypeNameMap["ICatalogVTOLPoint"] = ICatalogVTOLPoint
 
 class ICatalogWaypoint(object):
@@ -3304,7 +3300,7 @@ class ICatalogWaypoint(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5532823826035277770, 17986873366649893022),
+        "iid_data" : (5164196981115823907, 12004997252002824106),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3324,7 +3320,7 @@ class ICatalogWaypoint(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5532823826035277770, 17986873366649893022), ICatalogWaypoint)
+agcls.AgClassCatalog.add_catalog_entry((5164196981115823907, 12004997252002824106), ICatalogWaypoint)
 agcls.AgTypeNameMap["ICatalogWaypoint"] = ICatalogWaypoint
 
 class IARINC424Airport(object):
@@ -3334,7 +3330,7 @@ class IARINC424Airport(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_as_catalog_item_method_offset = 1
     _metadata = {
-        "iid_data" : (4806586137712321246, 15546437888766560677),
+        "iid_data" : (5653629679048032457, 16964280029940651679),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3361,7 +3357,7 @@ class IARINC424Airport(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4806586137712321246, 15546437888766560677), IARINC424Airport)
+agcls.AgClassCatalog.add_catalog_entry((5653629679048032457, 16964280029940651679), IARINC424Airport)
 agcls.AgTypeNameMap["IARINC424Airport"] = IARINC424Airport
 
 class IDAFIFItem(object):
@@ -3375,7 +3371,7 @@ class IDAFIFItem(object):
     _copy_site_method_offset = 4
     _get_as_catalog_item_method_offset = 5
     _metadata = {
-        "iid_data" : (5172829076274399625, 12291090328348071297),
+        "iid_data" : (5424375220139513046, 18075107433961119166),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3430,7 +3426,7 @@ class IDAFIFItem(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5172829076274399625, 12291090328348071297), IDAFIFItem)
+agcls.AgClassCatalog.add_catalog_entry((5424375220139513046, 18075107433961119166), IDAFIFItem)
 agcls.AgTypeNameMap["IDAFIFItem"] = IDAFIFItem
 
 class IVerticalPlaneOptions(object):
@@ -3445,7 +3441,7 @@ class IVerticalPlaneOptions(object):
     _get_max_vert_plane_radius_factor_method_offset = 5
     _set_max_vert_plane_radius_factor_method_offset = 6
     _metadata = {
-        "iid_data" : (5520552088906406195, 394820396869463446),
+        "iid_data" : (5568274413826852124, 3801700532934262663),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3516,7 +3512,7 @@ class IVerticalPlaneOptions(object):
     _property_names[max_vert_plane_radius_factor] = "max_vert_plane_radius_factor"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5520552088906406195, 394820396869463446), IVerticalPlaneOptions)
+agcls.AgClassCatalog.add_catalog_entry((5568274413826852124, 3801700532934262663), IVerticalPlaneOptions)
 agcls.AgTypeNameMap["IVerticalPlaneOptions"] = IVerticalPlaneOptions
 
 class IEnrouteAndDelayOptions(object):
@@ -3531,7 +3527,7 @@ class IEnrouteAndDelayOptions(object):
     _get_max_turn_radius_factor_method_offset = 5
     _set_max_turn_radius_factor_method_offset = 6
     _metadata = {
-        "iid_data" : (5068556317467918075, 1237280450976607145),
+        "iid_data" : (5352151983781140885, 1740064623576630187),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3602,7 +3598,7 @@ class IEnrouteAndDelayOptions(object):
     _property_names[max_turn_radius_factor] = "max_turn_radius_factor"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5068556317467918075, 1237280450976607145), IEnrouteAndDelayOptions)
+agcls.AgClassCatalog.add_catalog_entry((5352151983781140885, 1740064623576630187), IEnrouteAndDelayOptions)
 agcls.AgTypeNameMap["IEnrouteAndDelayOptions"] = IEnrouteAndDelayOptions
 
 class ICruiseAirspeedAndProfileOptions(object):
@@ -3618,7 +3614,7 @@ class ICruiseAirspeedAndProfileOptions(object):
     _get_fly_cruise_airspeed_profile_method_offset = 6
     _set_fly_cruise_airspeed_profile_method_offset = 7
     _metadata = {
-        "iid_data" : (5050149451706347699, 5240254480125122223),
+        "iid_data" : (4973732435265337854, 7346167307232485816),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3697,7 +3693,7 @@ class ICruiseAirspeedAndProfileOptions(object):
     _property_names[fly_cruise_airspeed_profile] = "fly_cruise_airspeed_profile"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5050149451706347699, 5240254480125122223), ICruiseAirspeedAndProfileOptions)
+agcls.AgClassCatalog.add_catalog_entry((4973732435265337854, 7346167307232485816), ICruiseAirspeedAndProfileOptions)
 agcls.AgTypeNameMap["ICruiseAirspeedAndProfileOptions"] = ICruiseAirspeedAndProfileOptions
 
 class IAutomationStrategyFactory(object):
@@ -3707,7 +3703,7 @@ class IAutomationStrategyFactory(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _construct_strategy_method_offset = 1
     _metadata = {
-        "iid_data" : (5748143157570064853, 17141228144581304450),
+        "iid_data" : (4670019456808808872, 11334627785681256108),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3734,7 +3730,7 @@ class IAutomationStrategyFactory(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5748143157570064853, 17141228144581304450), IAutomationStrategyFactory)
+agcls.AgClassCatalog.add_catalog_entry((4670019456808808872, 11334627785681256108), IAutomationStrategyFactory)
 agcls.AgTypeNameMap["IAutomationStrategyFactory"] = IAutomationStrategyFactory
 
 class IConnect(object):
@@ -3744,7 +3740,7 @@ class IConnect(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _execute_command_method_offset = 1
     _metadata = {
-        "iid_data" : (5321476311283717631, 17088119313231705791),
+        "iid_data" : (5577581503145379972, 3089880841710594474),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3771,7 +3767,7 @@ class IConnect(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5321476311283717631, 17088119313231705791), IConnect)
+agcls.AgClassCatalog.add_catalog_entry((5577581503145379972, 3089880841710594474), IConnect)
 agcls.AgTypeNameMap["IConnect"] = IConnect
 
 class IProcedure(object):
@@ -3838,7 +3834,7 @@ class IProcedure(object):
     _get_refuel_dump_properties_method_offset = 9
     _get_fast_time_options_method_offset = 10
     _metadata = {
-        "iid_data" : (5354902126736355035, 15840099138053069727),
+        "iid_data" : (5570322008998709689, 12261462696089618576),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3947,7 +3943,7 @@ class IProcedure(object):
     _property_names[fast_time_options] = "fast_time_options"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5354902126736355035, 15840099138053069727), IProcedure)
+agcls.AgClassCatalog.add_catalog_entry((5570322008998709689, 12261462696089618576), IProcedure)
 agcls.AgTypeNameMap["IProcedure"] = IProcedure
 
 class IPerformanceModel(object):
@@ -3975,7 +3971,7 @@ class IPerformanceModel(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (4722239720283002114, 10874464253498804653),
+        "iid_data" : (4617910780832763797, 4291562551105112984),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3995,7 +3991,7 @@ class IPerformanceModel(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4722239720283002114, 10874464253498804653), IPerformanceModel)
+agcls.AgClassCatalog.add_catalog_entry((4617910780832763797, 4291562551105112984), IPerformanceModel)
 agcls.AgTypeNameMap["IPerformanceModel"] = IPerformanceModel
 
 class IAdvancedFixedWingGeometry(object):
@@ -4004,7 +4000,7 @@ class IAdvancedFixedWingGeometry(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (4940865896231186286, 11578475062663105194),
+        "iid_data" : (4842325557736522147, 8373701035508891296),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4024,7 +4020,7 @@ class IAdvancedFixedWingGeometry(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4940865896231186286, 11578475062663105194), IAdvancedFixedWingGeometry)
+agcls.AgClassCatalog.add_catalog_entry((4842325557736522147, 8373701035508891296), IAdvancedFixedWingGeometry)
 agcls.AgTypeNameMap["IAdvancedFixedWingGeometry"] = IAdvancedFixedWingGeometry
 
 class IAdvancedFixedWingPowerplant(object):
@@ -4033,7 +4029,7 @@ class IAdvancedFixedWingPowerplant(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5713896957878092641, 17244840932805749889),
+        "iid_data" : (5395986213589186967, 15204422325171027593),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4053,7 +4049,7 @@ class IAdvancedFixedWingPowerplant(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5713896957878092641, 17244840932805749889), IAdvancedFixedWingPowerplant)
+agcls.AgClassCatalog.add_catalog_entry((5395986213589186967, 15204422325171027593), IAdvancedFixedWingPowerplant)
 agcls.AgTypeNameMap["IAdvancedFixedWingPowerplant"] = IAdvancedFixedWingPowerplant
 
 class ISiteUnknown(object):
@@ -4062,7 +4058,7 @@ class ISiteUnknown(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (4927199749278391215, 245580461777180035),
+        "iid_data" : (5211561424015093591, 17098256284643440308),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4082,7 +4078,7 @@ class ISiteUnknown(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4927199749278391215, 245580461777180035), ISiteUnknown)
+agcls.AgClassCatalog.add_catalog_entry((5211561424015093591, 17098256284643440308), ISiteUnknown)
 agcls.AgTypeNameMap["ISiteUnknown"] = ISiteUnknown
 
 
@@ -4098,7 +4094,7 @@ class SiteWaypoint(ISite, SupportsDeleteCallback):
     _set_longitude_method_offset = 4
     _get_as_site_method_offset = 5
     _metadata = {
-        "iid_data" : (5613574524731284566, 17207683338010306734),
+        "iid_data" : (5531628342418609068, 17901864945654415503),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4162,7 +4158,7 @@ class SiteWaypoint(ISite, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteWaypoint, [SiteWaypoint, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((5108603041944758707, 10578588674234114712), SiteWaypoint)
+agcls.AgClassCatalog.add_catalog_entry((5282731772039321807, 18067711197479375791), SiteWaypoint)
 agcls.AgTypeNameMap["SiteWaypoint"] = SiteWaypoint
 
 class SiteEndOfPrevProcedure(ISite, SupportsDeleteCallback):
@@ -4172,7 +4168,7 @@ class SiteEndOfPrevProcedure(ISite, SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_as_site_method_offset = 1
     _metadata = {
-        "iid_data" : (5004093185145679190, 7313314850458100887),
+        "iid_data" : (4705107889092560356, 9730022837889651359),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4202,7 +4198,7 @@ class SiteEndOfPrevProcedure(ISite, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteEndOfPrevProcedure, [SiteEndOfPrevProcedure, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((5621720374100682259, 1489086470013473170), SiteEndOfPrevProcedure)
+agcls.AgClassCatalog.add_catalog_entry((5635184887888611418, 5105512445994434713), SiteEndOfPrevProcedure)
 agcls.AgTypeNameMap["SiteEndOfPrevProcedure"] = SiteEndOfPrevProcedure
 
 class SiteVTOLPoint(ISite, SupportsDeleteCallback):
@@ -4220,7 +4216,7 @@ class SiteVTOLPoint(ISite, SupportsDeleteCallback):
     _set_altitude_reference_method_offset = 8
     _get_as_site_method_offset = 9
     _metadata = {
-        "iid_data" : (5600278003038443155, 12434436858381676162),
+        "iid_data" : (5715870581817499486, 13914953219602859677),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4318,7 +4314,7 @@ class SiteVTOLPoint(ISite, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteVTOLPoint, [SiteVTOLPoint, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((4843052394715389444, 16917492219472377009), SiteVTOLPoint)
+agcls.AgClassCatalog.add_catalog_entry((4870135363382145074, 17506570168913664158), SiteVTOLPoint)
 agcls.AgTypeNameMap["SiteVTOLPoint"] = SiteVTOLPoint
 
 class SiteReferenceState(ISite, SupportsDeleteCallback):
@@ -4328,7 +4324,7 @@ class SiteReferenceState(ISite, SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_as_site_method_offset = 1
     _metadata = {
-        "iid_data" : (5183490168050866731, 113889888384022661),
+        "iid_data" : (5308335938447604682, 3130115903905703356),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4358,7 +4354,7 @@ class SiteReferenceState(ISite, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteReferenceState, [SiteReferenceState, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((5669257357524304127, 16224037961252013460), SiteReferenceState)
+agcls.AgClassCatalog.add_catalog_entry((4851382695019364339, 9123027776898378149), SiteReferenceState)
 agcls.AgTypeNameMap["SiteReferenceState"] = SiteReferenceState
 
 class SiteSTKVehicle(ISite, SupportsDeleteCallback):
@@ -4371,7 +4367,7 @@ class SiteSTKVehicle(ISite, SupportsDeleteCallback):
     _get_valid_object_names_method_offset = 3
     _get_as_site_method_offset = 4
     _metadata = {
-        "iid_data" : (5253646862927661627, 14251339590362269831),
+        "iid_data" : (4677714305112549420, 12858924315316881079),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4427,7 +4423,7 @@ class SiteSTKVehicle(ISite, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteSTKVehicle, [SiteSTKVehicle, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((5597757840433509036, 13479290176329506690), SiteSTKVehicle)
+agcls.AgClassCatalog.add_catalog_entry((5462451311399559277, 15841410262914831034), SiteSTKVehicle)
 agcls.AgTypeNameMap["SiteSTKVehicle"] = SiteSTKVehicle
 
 class SiteSuperProcedure(ISite, SupportsDeleteCallback):
@@ -4437,7 +4433,7 @@ class SiteSuperProcedure(ISite, SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_as_site_method_offset = 1
     _metadata = {
-        "iid_data" : (5571997691972875262, 2757918785063417476),
+        "iid_data" : (4734282914072062109, 11692640177805633201),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4467,7 +4463,7 @@ class SiteSuperProcedure(ISite, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteSuperProcedure, [SiteSuperProcedure, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((5371976027007327351, 12208188571124011188), SiteSuperProcedure)
+agcls.AgClassCatalog.add_catalog_entry((5162678480399696314, 11376629868463851165), SiteSuperProcedure)
 agcls.AgTypeNameMap["SiteSuperProcedure"] = SiteSuperProcedure
 
 class SiteRelativeToPrevProcedure(ISite, SupportsDeleteCallback):
@@ -4483,7 +4479,7 @@ class SiteRelativeToPrevProcedure(ISite, SupportsDeleteCallback):
     _set_range_method_offset = 6
     _get_as_site_method_offset = 7
     _metadata = {
-        "iid_data" : (5759285823815417596, 3125305812269783207),
+        "iid_data" : (5585160139056472801, 10055664332089244342),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4564,7 +4560,7 @@ class SiteRelativeToPrevProcedure(ISite, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteRelativeToPrevProcedure, [SiteRelativeToPrevProcedure, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((4958528407379756360, 17186724269580697779), SiteRelativeToPrevProcedure)
+agcls.AgClassCatalog.add_catalog_entry((5621457017004787159, 448361746049335996), SiteRelativeToPrevProcedure)
 agcls.AgTypeNameMap["SiteRelativeToPrevProcedure"] = SiteRelativeToPrevProcedure
 
 class SiteSTKObjectWaypoint(ISite, SupportsDeleteCallback):
@@ -4593,7 +4589,7 @@ class SiteSTKObjectWaypoint(ISite, SupportsDeleteCallback):
     _set_vgt_point_method_offset = 19
     _get_as_site_method_offset = 20
     _metadata = {
-        "iid_data" : (4734056756504829268, 17555142127045754021),
+        "iid_data" : (5335865049999615733, 13216785841693925535),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4786,7 +4782,7 @@ class SiteSTKObjectWaypoint(ISite, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteSTKObjectWaypoint, [SiteSTKObjectWaypoint, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((4708768213832241837, 15242180819678770347), SiteSTKObjectWaypoint)
+agcls.AgClassCatalog.add_catalog_entry((5635653338849030178, 17131012289204344213), SiteSTKObjectWaypoint)
 agcls.AgTypeNameMap["SiteSTKObjectWaypoint"] = SiteSTKObjectWaypoint
 
 class SiteSTKStaticObject(ISite, SupportsDeleteCallback):
@@ -4799,7 +4795,7 @@ class SiteSTKStaticObject(ISite, SupportsDeleteCallback):
     _get_valid_object_names_method_offset = 3
     _get_as_site_method_offset = 4
     _metadata = {
-        "iid_data" : (5314851912555770583, 18348917179993581711),
+        "iid_data" : (5301306685111389825, 16629259594561111709),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4855,7 +4851,7 @@ class SiteSTKStaticObject(ISite, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteSTKStaticObject, [SiteSTKStaticObject, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((5632434088179407466, 7029154613056126903), SiteSTKStaticObject)
+agcls.AgClassCatalog.add_catalog_entry((4820540346293997263, 17367732033140944512), SiteSTKStaticObject)
 agcls.AgTypeNameMap["SiteSTKStaticObject"] = SiteSTKStaticObject
 
 class SiteRelativeToSTKObject(ISite, SupportsDeleteCallback):
@@ -4874,7 +4870,7 @@ class SiteRelativeToSTKObject(ISite, SupportsDeleteCallback):
     _set_range_method_offset = 9
     _get_as_site_method_offset = 10
     _metadata = {
-        "iid_data" : (5151549297227299121, 9177416622143414688),
+        "iid_data" : (5540813582750587025, 12671494969242193822),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4981,7 +4977,7 @@ class SiteRelativeToSTKObject(ISite, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteRelativeToSTKObject, [SiteRelativeToSTKObject, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((5732220974452340660, 18011894982964506785), SiteRelativeToSTKObject)
+agcls.AgClassCatalog.add_catalog_entry((5607507794337097435, 8240491491739971752), SiteRelativeToSTKObject)
 agcls.AgTypeNameMap["SiteRelativeToSTKObject"] = SiteRelativeToSTKObject
 
 class SiteSTKAreaTarget(ISite, SupportsDeleteCallback):
@@ -4994,7 +4990,7 @@ class SiteSTKAreaTarget(ISite, SupportsDeleteCallback):
     _get_valid_object_names_method_offset = 3
     _get_as_site_method_offset = 4
     _metadata = {
-        "iid_data" : (4695342907041492328, 2553066883356031928),
+        "iid_data" : (5222610803956519581, 10746118367493803710),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -5050,7 +5046,7 @@ class SiteSTKAreaTarget(ISite, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteSTKAreaTarget, [SiteSTKAreaTarget, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((4643775838845076022, 17375698151001436338), SiteSTKAreaTarget)
+agcls.AgClassCatalog.add_catalog_entry((5632302281246211111, 17805007504813860500), SiteSTKAreaTarget)
 agcls.AgTypeNameMap["SiteSTKAreaTarget"] = SiteSTKAreaTarget
 
 class SiteRunway(ISite, SupportsDeleteCallback):
@@ -5117,7 +5113,7 @@ class SiteRunway(ISite, SupportsDeleteCallback):
     _copy_from_catalog_method_offset = 18
     _get_as_site_method_offset = 19
     _metadata = {
-        "iid_data" : (5308502759604380100, 9664305760779056786),
+        "iid_data" : (4930961393575326588, 4194757871142811028),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -5297,7 +5293,7 @@ class SiteRunway(ISite, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteRunway, [SiteRunway, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((5138752020114409457, 17128394562080548993), SiteRunway)
+agcls.AgClassCatalog.add_catalog_entry((5442980532313511929, 9946662188408707489), SiteRunway)
 agcls.AgTypeNameMap["SiteRunway"] = SiteRunway
 
 class Site(ISite, ISiteUnknown, SupportsDeleteCallback):
@@ -5318,7 +5314,7 @@ class Site(ISite, ISiteUnknown, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Site, [ISite, ISiteUnknown])
 
-agcls.AgClassCatalog.add_catalog_entry((4930703979729104237, 439084692498343612), Site)
+agcls.AgClassCatalog.add_catalog_entry((4656425023189749378, 17663610799902753727), Site)
 agcls.AgTypeNameMap["Site"] = Site
 
 class ProcedureLanding(IProcedure, SupportsDeleteCallback):
@@ -5365,7 +5361,7 @@ class ProcedureLanding(IProcedure, SupportsDeleteCallback):
     _set_approach_mode_method_offset = 10
     _get_as_procedure_method_offset = 11
     _metadata = {
-        "iid_data" : (5173821936820820516, 1444667070054508934),
+        "iid_data" : (5695005588738974615, 7215986159370051232),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -5484,7 +5480,7 @@ class ProcedureLanding(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureLanding, [ProcedureLanding, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5217645111817093152, 16954556210728333749), ProcedureLanding)
+agcls.AgClassCatalog.add_catalog_entry((4929969899995916497, 17603898597201970605), ProcedureLanding)
 agcls.AgTypeNameMap["ProcedureLanding"] = ProcedureLanding
 
 class ProcedureEnroute(IProcedure, SupportsDeleteCallback):
@@ -5531,7 +5527,7 @@ class ProcedureEnroute(IProcedure, SupportsDeleteCallback):
     _get_enroute_cruise_airspeed_options_method_offset = 4
     _get_as_procedure_method_offset = 5
     _metadata = {
-        "iid_data" : (5434799576980412844, 10892687876198075050),
+        "iid_data" : (5314171383937901333, 2162140372584599974),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -5597,7 +5593,7 @@ class ProcedureEnroute(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureEnroute, [ProcedureEnroute, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5519935132979626266, 10381875481096635325), ProcedureEnroute)
+agcls.AgClassCatalog.add_catalog_entry((4895475484117050719, 6326688336060254654), ProcedureEnroute)
 agcls.AgTypeNameMap["ProcedureEnroute"] = ProcedureEnroute
 
 class ProcedureExtEphem(IProcedure, SupportsDeleteCallback):
@@ -5635,7 +5631,7 @@ class ProcedureExtEphem(IProcedure, SupportsDeleteCallback):
     _set_altitude_mode_method_offset = 28
     _shift_rotate_set_method_offset = 29
     _metadata = {
-        "iid_data" : (4706318164488420241, 10859321374984907949),
+        "iid_data" : (4685975497848421216, 8973129897699798458),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -5902,7 +5898,7 @@ class ProcedureExtEphem(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureExtEphem, [ProcedureExtEphem, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5229605635028001773, 1223198393308242336), ProcedureExtEphem)
+agcls.AgClassCatalog.add_catalog_entry((5506456461545109343, 9251687647276316339), ProcedureExtEphem)
 agcls.AgTypeNameMap["ProcedureExtEphem"] = ProcedureExtEphem
 
 class ProcedureFormationFlyer(IProcedure, SupportsDeleteCallback):
@@ -5930,7 +5926,7 @@ class ProcedureFormationFlyer(IProcedure, SupportsDeleteCallback):
     _set_stop_on_hover_method_offset = 18
     _get_stop_on_hover_method_offset = 19
     _metadata = {
-        "iid_data" : (4637041047160961161, 14166705763825796783),
+        "iid_data" : (4887512233733267459, 8956966972266340762),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -6113,7 +6109,7 @@ class ProcedureFormationFlyer(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureFormationFlyer, [ProcedureFormationFlyer, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5626350792346175468, 8231896308722198688), ProcedureFormationFlyer)
+agcls.AgClassCatalog.add_catalog_entry((4963318933444556292, 5042407550852165021), ProcedureFormationFlyer)
 agcls.AgTypeNameMap["ProcedureFormationFlyer"] = ProcedureFormationFlyer
 
 class ProcedureBasicPointToPoint(IProcedure, SupportsDeleteCallback):
@@ -6128,7 +6124,7 @@ class ProcedureBasicPointToPoint(IProcedure, SupportsDeleteCallback):
     _get_vertical_plane_options_method_offset = 5
     _get_as_procedure_method_offset = 6
     _metadata = {
-        "iid_data" : (5190483266878387264, 613211873364248510),
+        "iid_data" : (5711393487754724708, 4128272102711494312),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -6203,7 +6199,7 @@ class ProcedureBasicPointToPoint(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureBasicPointToPoint, [ProcedureBasicPointToPoint, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((4658651044347023593, 13646940327219296687), ProcedureBasicPointToPoint)
+agcls.AgClassCatalog.add_catalog_entry((5488540749487259276, 14285042743891213734), ProcedureBasicPointToPoint)
 agcls.AgTypeNameMap["ProcedureBasicPointToPoint"] = ProcedureBasicPointToPoint
 
 class ProcedureArcEnroute(IProcedure, SupportsDeleteCallback):
@@ -6219,7 +6215,7 @@ class ProcedureArcEnroute(IProcedure, SupportsDeleteCallback):
     _get_enroute_turn_direction_options_method_offset = 6
     _get_as_procedure_method_offset = 7
     _metadata = {
-        "iid_data" : (5178802862750644614, 11742865424791326105),
+        "iid_data" : (5181110064075162389, 16980576531151803571),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -6303,7 +6299,7 @@ class ProcedureArcEnroute(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureArcEnroute, [ProcedureArcEnroute, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5255200399109307333, 13934917253357422254), ProcedureArcEnroute)
+agcls.AgClassCatalog.add_catalog_entry((5010885621758466936, 5075360305544126864), ProcedureArcEnroute)
 agcls.AgTypeNameMap["ProcedureArcEnroute"] = ProcedureArcEnroute
 
 class ProcedureArcPointToPoint(IProcedure, SupportsDeleteCallback):
@@ -6322,7 +6318,7 @@ class ProcedureArcPointToPoint(IProcedure, SupportsDeleteCallback):
     _get_vertical_plane_options_method_offset = 9
     _get_as_procedure_method_offset = 10
     _metadata = {
-        "iid_data" : (4627887812079693651, 17276351109473528244),
+        "iid_data" : (5693620093321291735, 14543348638300948366),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -6432,7 +6428,7 @@ class ProcedureArcPointToPoint(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureArcPointToPoint, [ProcedureArcPointToPoint, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((4700081710069607543, 13277755077444961177), ProcedureArcPointToPoint)
+agcls.AgClassCatalog.add_catalog_entry((5432235328328424507, 12636756347283237049), ProcedureArcPointToPoint)
 agcls.AgTypeNameMap["ProcedureArcPointToPoint"] = ProcedureArcPointToPoint
 
 class ProcedureFlightLine(IProcedure, SupportsDeleteCallback):
@@ -6461,7 +6457,7 @@ class ProcedureFlightLine(IProcedure, SupportsDeleteCallback):
     _set_level_off_mode_method_offset = 19
     _get_as_procedure_method_offset = 20
     _metadata = {
-        "iid_data" : (5641659199997018566, 6013725867356615561),
+        "iid_data" : (5065136691935316378, 5558593309035032704),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -6655,7 +6651,7 @@ class ProcedureFlightLine(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureFlightLine, [ProcedureFlightLine, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5232752425516520970, 13442831997956569777), ProcedureFlightLine)
+agcls.AgClassCatalog.add_catalog_entry((4843516284907002423, 2730973708302081196), ProcedureFlightLine)
 agcls.AgTypeNameMap["ProcedureFlightLine"] = ProcedureFlightLine
 
 class ProcedureDelay(IProcedure, SupportsDeleteCallback):
@@ -6673,7 +6669,7 @@ class ProcedureDelay(IProcedure, SupportsDeleteCallback):
     _get_turn_radius_factor_method_offset = 8
     _set_turn_radius_factor_method_offset = 9
     _metadata = {
-        "iid_data" : (5716195463449211488, 12706362011475005615),
+        "iid_data" : (4692134644254926811, 9700754730202127492),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -6773,7 +6769,7 @@ class ProcedureDelay(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureDelay, [ProcedureDelay, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5704318683765486662, 710367158900072076), ProcedureDelay)
+agcls.AgClassCatalog.add_catalog_entry((5436184661232607641, 8541136062712029874), ProcedureDelay)
 agcls.AgTypeNameMap["ProcedureDelay"] = ProcedureDelay
 
 class ProcedureTakeoff(IProcedure, SupportsDeleteCallback):
@@ -6816,7 +6812,7 @@ class ProcedureTakeoff(IProcedure, SupportsDeleteCallback):
     _set_takeoff_mode_method_offset = 6
     _get_as_procedure_method_offset = 7
     _metadata = {
-        "iid_data" : (4746749933092015974, 13227298329395480749),
+        "iid_data" : (5409712074751557715, 2576013344347231633),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -6899,7 +6895,7 @@ class ProcedureTakeoff(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureTakeoff, [ProcedureTakeoff, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((4622436812587213547, 17163227853363219857), ProcedureTakeoff)
+agcls.AgClassCatalog.add_catalog_entry((4827170666407319744, 9391490635564856249), ProcedureTakeoff)
 agcls.AgTypeNameMap["ProcedureTakeoff"] = ProcedureTakeoff
 
 class ProcedureCollection(SupportsDeleteCallback):
@@ -7057,7 +7053,7 @@ class ProcedureCollection(SupportsDeleteCallback):
     _enable_auto_propagate_method_offset = 8
     _disable_auto_propagate_method_offset = 9
     _metadata = {
-        "iid_data" : (4672125039402126824, 4866911027730476462),
+        "iid_data" : (4705864481346410733, 10980135180185759391),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -7161,7 +7157,7 @@ class ProcedureCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureCollection, [ProcedureCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5616253919542791990, 16838747785619043462), ProcedureCollection)
+agcls.AgClassCatalog.add_catalog_entry((5496882016739177006, 12702677027209765769), ProcedureCollection)
 agcls.AgTypeNameMap["ProcedureCollection"] = ProcedureCollection
 
 class Phase(SupportsDeleteCallback):
@@ -7207,7 +7203,7 @@ class Phase(SupportsDeleteCallback):
     _copy_performance_models_method_offset = 6
     _paste_performance_models_method_offset = 7
     _metadata = {
-        "iid_data" : (5065421894605992373, 7712798079751778479),
+        "iid_data" : (5376092008244312891, 3324244741149993132),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -7282,7 +7278,7 @@ class Phase(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Phase, [Phase, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5327259017682921546, 13780760074728122774), Phase)
+agcls.AgClassCatalog.add_catalog_entry((5648333756227387400, 17529948280854288043), Phase)
 agcls.AgTypeNameMap["Phase"] = Phase
 
 class PhaseCollection(SupportsDeleteCallback):
@@ -7312,7 +7308,7 @@ class PhaseCollection(SupportsDeleteCallback):
     _remove_method_offset = 6
     _remove_at_index_method_offset = 7
     _metadata = {
-        "iid_data" : (5253053724572556766, 10071354963761500314),
+        "iid_data" : (5719722257361476420, 13227262981387124916),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -7402,7 +7398,7 @@ class PhaseCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PhaseCollection, [PhaseCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5426301579413729339, 2385420409047666822), PhaseCollection)
+agcls.AgClassCatalog.add_catalog_entry((5226859312411847601, 12558498025883058054), PhaseCollection)
 agcls.AgTypeNameMap["PhaseCollection"] = PhaseCollection
 
 class Mission(SupportsDeleteCallback):
@@ -7522,7 +7518,7 @@ class Mission(SupportsDeleteCallback):
     _get_is_valid_method_offset = 7
     _get_first_invalid_procedure_method_offset = 8
     _metadata = {
-        "iid_data" : (5166308313264454994, 7736963905921891476),
+        "iid_data" : (4900805732542629800, 18179903226597526691),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -7612,7 +7608,7 @@ class Mission(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Mission, [Mission, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5084660225869613847, 3815698403988913814), Mission)
+agcls.AgClassCatalog.add_catalog_entry((5347110604653178099, 4655392754248006287), Mission)
 agcls.AgTypeNameMap["Mission"] = Mission
 
 class AviatorPropagator(SupportsDeleteCallback):
@@ -7647,7 +7643,7 @@ class AviatorPropagator(SupportsDeleteCallback):
     _set_auto_recalculate_method_offset = 4
     _get_aviator_catalog_method_offset = 5
     _metadata = {
-        "iid_data" : (5661397388601039162, 10681986619092325766),
+        "iid_data" : (5485111006271422816, 6011279983446318524),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -7710,7 +7706,7 @@ class AviatorPropagator(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AviatorPropagator, [AviatorPropagator, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4966342315327056185, 8021477894575781281), AviatorPropagator)
+agcls.AgClassCatalog.add_catalog_entry((4841436048216026975, 10139854431872293299), AviatorPropagator)
 agcls.AgTypeNameMap["AviatorPropagator"] = AviatorPropagator
 
 class ProcedureBasicManeuver(IProcedure, SupportsDeleteCallback):
@@ -7796,7 +7792,7 @@ class ProcedureBasicManeuver(IProcedure, SupportsDeleteCallback):
     _set_control_time_constant_method_offset = 36
     _get_as_procedure_method_offset = 37
     _metadata = {
-        "iid_data" : (4946730629668897604, 11088550870477238442),
+        "iid_data" : (4994750454795561000, 9741175847225364635),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -8127,7 +8123,7 @@ class ProcedureBasicManeuver(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureBasicManeuver, [ProcedureBasicManeuver, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5438306318378493224, 5970325316227680169), ProcedureBasicManeuver)
+agcls.AgClassCatalog.add_catalog_entry((5535758776307025908, 3030330840174814851), ProcedureBasicManeuver)
 agcls.AgTypeNameMap["ProcedureBasicManeuver"] = ProcedureBasicManeuver
 
 class BasicManeuverStrategyWeave(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -8149,7 +8145,7 @@ class BasicManeuverStrategyWeave(IBasicManeuverStrategy, SupportsDeleteCallback)
     _get_compensate_for_coriolis_acceleration_method_offset = 12
     _set_compensate_for_coriolis_acceleration_method_offset = 13
     _metadata = {
-        "iid_data" : (5498161033082324708, 15050332780891237523),
+        "iid_data" : (5142170851792937386, 934336530958296747),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -8279,7 +8275,7 @@ class BasicManeuverStrategyWeave(IBasicManeuverStrategy, SupportsDeleteCallback)
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyWeave, [BasicManeuverStrategyWeave, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((4741432811209582740, 17876430357664068016), BasicManeuverStrategyWeave)
+agcls.AgClassCatalog.add_catalog_entry((5396798309067024176, 13774548586811068042), BasicManeuverStrategyWeave)
 agcls.AgTypeNameMap["BasicManeuverStrategyWeave"] = BasicManeuverStrategyWeave
 
 class ProcedureTimeOptions(SupportsDeleteCallback):
@@ -8318,7 +8314,7 @@ class ProcedureTimeOptions(SupportsDeleteCallback):
     _get_stop_time_method_offset = 14
     _set_stop_time_method_offset = 15
     _metadata = {
-        "iid_data" : (5431356329456530164, 11282614112339302277),
+        "iid_data" : (4667831806631610349, 12412774730905649300),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -8465,7 +8461,7 @@ class ProcedureTimeOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureTimeOptions, [ProcedureTimeOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4806824256453033598, 10159111947367507632), ProcedureTimeOptions)
+agcls.AgClassCatalog.add_catalog_entry((5339378358954023130, 9347695091683422098), ProcedureTimeOptions)
 agcls.AgTypeNameMap["ProcedureTimeOptions"] = ProcedureTimeOptions
 
 class CalculationOptions(SupportsDeleteCallback):
@@ -8488,7 +8484,7 @@ class CalculationOptions(SupportsDeleteCallback):
     _get_integrator_type_string_method_offset = 13
     _set_integrator_type_string_method_offset = 14
     _metadata = {
-        "iid_data" : (4930309390064999262, 5777468632786382513),
+        "iid_data" : (5504829748820005356, 7071903874291452049),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -8628,7 +8624,7 @@ class CalculationOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationOptions, [CalculationOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5747373335486459111, 3684632747864185757), CalculationOptions)
+agcls.AgClassCatalog.add_catalog_entry((5213506158115439797, 13366459857623739266), CalculationOptions)
 agcls.AgTypeNameMap["CalculationOptions"] = CalculationOptions
 
 class AircraftCategory(SupportsDeleteCallback):
@@ -8659,7 +8655,7 @@ class AircraftCategory(SupportsDeleteCallback):
     _get_missile_models_method_offset = 2
     _get_rotorcraft_models_method_offset = 3
     _metadata = {
-        "iid_data" : (5393766329145449059, 6703502100005194163),
+        "iid_data" : (5489685917864336956, 3606560879644657037),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -8707,7 +8703,7 @@ class AircraftCategory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftCategory, [AircraftCategory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5038526480345777203, 17565896557184368030), AircraftCategory)
+agcls.AgClassCatalog.add_catalog_entry((4849081697748131536, 1141273701239428995), AircraftCategory)
 agcls.AgTypeNameMap["AircraftCategory"] = AircraftCategory
 
 class Catalog(SupportsDeleteCallback):
@@ -8753,7 +8749,7 @@ class Catalog(SupportsDeleteCallback):
     _get_vtol_point_category_method_offset = 5
     _get_waypoint_category_method_offset = 6
     _metadata = {
-        "iid_data" : (4867560862593147186, 13685186326758395068),
+        "iid_data" : (4973474064043300778, 4070770747530553996),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -8828,7 +8824,7 @@ class Catalog(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Catalog, [Catalog, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4907045706268839733, 1198668682488985004), Catalog)
+agcls.AgClassCatalog.add_catalog_entry((5688422380518345070, 604876087749257635), Catalog)
 agcls.AgTypeNameMap["Catalog"] = Catalog
 
 class AircraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
@@ -8996,7 +8992,7 @@ class AircraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
     _get_vtol_method_offset = 11
     _get_terrain_follow_method_offset = 12
     _metadata = {
-        "iid_data" : (4972221985443648774, 11607092758271299260),
+        "iid_data" : (5636509926916226332, 6253617867022735504),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -9127,7 +9123,7 @@ class AircraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftModel, [AircraftModel, IAviatorVehicle, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5272649341851046442, 10204808036967213963), AircraftModel)
+agcls.AgClassCatalog.add_catalog_entry((5193525929020974998, 15077056609836361906), AircraftModel)
 agcls.AgTypeNameMap["AircraftModel"] = AircraftModel
 
 class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
@@ -9183,7 +9179,7 @@ class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
     _get_propulsion_method_offset = 46
     _get_as_catalog_item_method_offset = 47
     _metadata = {
-        "iid_data" : (5036037641348746326, 5450613477693494170),
+        "iid_data" : (4681295760763136822, 11460975852987198110),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -9607,7 +9603,7 @@ class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileModel, [MissileModel, IAviatorVehicle, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5537525572496185256, 6677635249753434025), MissileModel)
+agcls.AgClassCatalog.add_catalog_entry((4766252405608863918, 7257145030441010058), MissileModel)
 agcls.AgTypeNameMap["MissileModel"] = MissileModel
 
 class RotorcraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
@@ -9660,7 +9656,7 @@ class RotorcraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
     _get_propulsion_method_offset = 43
     _get_as_catalog_item_method_offset = 44
     _metadata = {
-        "iid_data" : (5082120676369899385, 4325334539633823629),
+        "iid_data" : (5088341758162941266, 15561215917683915412),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10058,7 +10054,7 @@ class RotorcraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RotorcraftModel, [RotorcraftModel, IAviatorVehicle, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5132696765661705826, 14502770979691808656), RotorcraftModel)
+agcls.AgClassCatalog.add_catalog_entry((5013427988367669320, 1396261823066560442), RotorcraftModel)
 agcls.AgTypeNameMap["RotorcraftModel"] = RotorcraftModel
 
 class RotorcraftAerodynamic(SupportsDeleteCallback):
@@ -10089,7 +10085,7 @@ class RotorcraftAerodynamic(SupportsDeleteCallback):
     _get_induced_power_correction_factor_method_offset = 21
     _set_induced_power_correction_factor_method_offset = 22
     _metadata = {
-        "iid_data" : (5318240503192117773, 12951249891304096688),
+        "iid_data" : (4936104753732431050, 6523856254366325674),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10297,7 +10293,7 @@ class RotorcraftAerodynamic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RotorcraftAerodynamic, [RotorcraftAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5254408426110746023, 3824899600395506365), RotorcraftAerodynamic)
+agcls.AgClassCatalog.add_catalog_entry((5538979821403607519, 246927089272441010), RotorcraftAerodynamic)
 agcls.AgTypeNameMap["RotorcraftAerodynamic"] = RotorcraftAerodynamic
 
 class RotorcraftPropulsion(SupportsDeleteCallback):
@@ -10312,7 +10308,7 @@ class RotorcraftPropulsion(SupportsDeleteCallback):
     _get_max_sl_fuel_flow_method_offset = 5
     _set_max_sl_fuel_flow_method_offset = 6
     _metadata = {
-        "iid_data" : (5259623472655829368, 12428325399528728501),
+        "iid_data" : (5466234358335710643, 13481373944602217368),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10384,7 +10380,7 @@ class RotorcraftPropulsion(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RotorcraftPropulsion, [RotorcraftPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5760757719442343448, 132377700848243866), RotorcraftPropulsion)
+agcls.AgClassCatalog.add_catalog_entry((4954925872482214284, 5826600120804496822), RotorcraftPropulsion)
 agcls.AgTypeNameMap["RotorcraftPropulsion"] = RotorcraftPropulsion
 
 class AircraftAcceleration(ICatalogItem, SupportsDeleteCallback):
@@ -10459,7 +10455,7 @@ class AircraftAcceleration(ICatalogItem, SupportsDeleteCallback):
     _get_advanced_acceleration_by_name_method_offset = 3
     _get_as_catalog_item_method_offset = 4
     _metadata = {
-        "iid_data" : (5381104812027548008, 3758078246891655319),
+        "iid_data" : (4965847864246375211, 5723404589153578646),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10510,7 +10506,7 @@ class AircraftAcceleration(ICatalogItem, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftAcceleration, [AircraftAcceleration, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5513893073497569268, 18062891268736021946), AircraftAcceleration)
+agcls.AgClassCatalog.add_catalog_entry((4765253812932881041, 1671874116885209782), AircraftAcceleration)
 agcls.AgTypeNameMap["AircraftAcceleration"] = AircraftAcceleration
 
 class AircraftBasicAccelerationModel(IPerformanceModel, ICatalogItem, SupportsDeleteCallback):
@@ -10572,7 +10568,7 @@ class AircraftBasicAccelerationModel(IPerformanceModel, ICatalogItem, SupportsDe
     _get_propulsion_method_offset = 5
     _get_as_catalog_item_method_offset = 6
     _metadata = {
-        "iid_data" : (4918589609424149010, 10824534501852204216),
+        "iid_data" : (5396688568158518981, 938996353364453046),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10649,7 +10645,7 @@ class AircraftBasicAccelerationModel(IPerformanceModel, ICatalogItem, SupportsDe
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftBasicAccelerationModel, [AircraftBasicAccelerationModel, IPerformanceModel, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5233981690568010157, 10284429996961284255), AircraftBasicAccelerationModel)
+agcls.AgClassCatalog.add_catalog_entry((5580269657148049658, 7947549533235399817), AircraftBasicAccelerationModel)
 agcls.AgTypeNameMap["AircraftBasicAccelerationModel"] = AircraftBasicAccelerationModel
 
 class AircraftClimb(ICatalogItem, SupportsDeleteCallback):
@@ -10662,7 +10658,7 @@ class AircraftClimb(ICatalogItem, SupportsDeleteCallback):
     _get_advanced_climb_by_name_method_offset = 3
     _get_as_catalog_item_method_offset = 4
     _metadata = {
-        "iid_data" : (5263267494218211610, 12329219289477949313),
+        "iid_data" : (5008952249113546711, 9691814473869667734),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10713,7 +10709,7 @@ class AircraftClimb(ICatalogItem, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftClimb, [AircraftClimb, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5617790646698935986, 14996628473608278423), AircraftClimb)
+agcls.AgClassCatalog.add_catalog_entry((5643739233514792193, 9307666444047251116), AircraftClimb)
 agcls.AgTypeNameMap["AircraftClimb"] = AircraftClimb
 
 class AircraftCruise(ICatalogItem, SupportsDeleteCallback):
@@ -10765,7 +10761,7 @@ class AircraftCruise(ICatalogItem, SupportsDeleteCallback):
     _get_advanced_cruise_by_name_method_offset = 3
     _get_as_catalog_item_method_offset = 4
     _metadata = {
-        "iid_data" : (5128623341727715783, 9002706155677001097),
+        "iid_data" : (5156569774916860241, 1985722768343125135),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10816,7 +10812,7 @@ class AircraftCruise(ICatalogItem, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftCruise, [AircraftCruise, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((4952713164558545716, 391472350963315864), AircraftCruise)
+agcls.AgClassCatalog.add_catalog_entry((4746417084949936245, 4531765965440607874), AircraftCruise)
 agcls.AgTypeNameMap["AircraftCruise"] = AircraftCruise
 
 class AircraftDescent(ICatalogItem, SupportsDeleteCallback):
@@ -10829,7 +10825,7 @@ class AircraftDescent(ICatalogItem, SupportsDeleteCallback):
     _get_advanced_descent_by_name_method_offset = 3
     _get_as_catalog_item_method_offset = 4
     _metadata = {
-        "iid_data" : (5297052565690495579, 8482664394541642129),
+        "iid_data" : (5148500345786319934, 5475931448375770533),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10880,7 +10876,7 @@ class AircraftDescent(ICatalogItem, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftDescent, [AircraftDescent, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5218114732559411329, 18271609367029705879), AircraftDescent)
+agcls.AgClassCatalog.add_catalog_entry((5482907857424580499, 11891668127096258730), AircraftDescent)
 agcls.AgTypeNameMap["AircraftDescent"] = AircraftDescent
 
 class AircraftLanding(ICatalogItem, SupportsDeleteCallback):
@@ -10893,7 +10889,7 @@ class AircraftLanding(ICatalogItem, SupportsDeleteCallback):
     _get_advanced_landing_by_name_method_offset = 3
     _get_as_catalog_item_method_offset = 4
     _metadata = {
-        "iid_data" : (4810761550589613477, 16758738712672605105),
+        "iid_data" : (5380649205211566885, 11536877373284635036),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10944,7 +10940,7 @@ class AircraftLanding(ICatalogItem, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftLanding, [AircraftLanding, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((4740693708489443339, 736458658073889207), AircraftLanding)
+agcls.AgClassCatalog.add_catalog_entry((5677008395997001239, 6865536198166893722), AircraftLanding)
 agcls.AgTypeNameMap["AircraftLanding"] = AircraftLanding
 
 class AircraftTakeoff(ICatalogItem, SupportsDeleteCallback):
@@ -10957,7 +10953,7 @@ class AircraftTakeoff(ICatalogItem, SupportsDeleteCallback):
     _get_advanced_takeoff_by_name_method_offset = 3
     _get_as_catalog_item_method_offset = 4
     _metadata = {
-        "iid_data" : (5694947358439793555, 17623821908663075205),
+        "iid_data" : (5371661512941348070, 5452167388218524078),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -11008,7 +11004,7 @@ class AircraftTakeoff(ICatalogItem, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftTakeoff, [AircraftTakeoff, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5587969153310880849, 14792461406398889898), AircraftTakeoff)
+agcls.AgClassCatalog.add_catalog_entry((5520225686224600366, 7779319977820902066), AircraftTakeoff)
 agcls.AgTypeNameMap["AircraftTakeoff"] = AircraftTakeoff
 
 class AircraftBasicClimbModel(IPerformanceModel, ICatalogItem, SupportsDeleteCallback):
@@ -11035,7 +11031,7 @@ class AircraftBasicClimbModel(IPerformanceModel, ICatalogItem, SupportsDeleteCal
     _set_relative_airspeed_tolerance_method_offset = 17
     _get_as_catalog_item_method_offset = 18
     _metadata = {
-        "iid_data" : (4965986558778284076, 16667235744495728830),
+        "iid_data" : (5504996431594551951, 9980915875655069615),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -11211,7 +11207,7 @@ class AircraftBasicClimbModel(IPerformanceModel, ICatalogItem, SupportsDeleteCal
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftBasicClimbModel, [AircraftBasicClimbModel, IPerformanceModel, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5488216727438286377, 10220011439221355917), AircraftBasicClimbModel)
+agcls.AgClassCatalog.add_catalog_entry((4918238711963724874, 11923535033853012869), AircraftBasicClimbModel)
 agcls.AgTypeNameMap["AircraftBasicClimbModel"] = AircraftBasicClimbModel
 
 class AircraftAdvancedClimbModel(IPerformanceModel, ICatalogItem, SupportsDeleteCallback):
@@ -11241,7 +11237,7 @@ class AircraftAdvancedClimbModel(IPerformanceModel, ICatalogItem, SupportsDelete
     _set_compute_delta_altitude_method_offset = 20
     _get_as_catalog_item_method_offset = 21
     _metadata = {
-        "iid_data" : (5543563085120883607, 6217179742438742698),
+        "iid_data" : (5695051257584060625, 1426291770129389447),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -11441,7 +11437,7 @@ class AircraftAdvancedClimbModel(IPerformanceModel, ICatalogItem, SupportsDelete
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftAdvancedClimbModel, [AircraftAdvancedClimbModel, IPerformanceModel, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((4736708800223409411, 13979770057904007563), AircraftAdvancedClimbModel)
+agcls.AgClassCatalog.add_catalog_entry((4771562046338436835, 817636075685375616), AircraftAdvancedClimbModel)
 agcls.AgTypeNameMap["AircraftAdvancedClimbModel"] = AircraftAdvancedClimbModel
 
 class AircraftBasicCruiseModel(IPerformanceModel, ICatalogItem, SupportsDeleteCallback):
@@ -11520,7 +11516,7 @@ class AircraftBasicCruiseModel(IPerformanceModel, ICatalogItem, SupportsDeleteCa
     _set_max_performance_airspeed_fuel_flow_method_offset = 30
     _get_as_catalog_item_method_offset = 31
     _metadata = {
-        "iid_data" : (5314586510594823485, 6471808013847381131),
+        "iid_data" : (5749495954270543953, 128745199597452177),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -11807,7 +11803,7 @@ class AircraftBasicCruiseModel(IPerformanceModel, ICatalogItem, SupportsDeleteCa
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftBasicCruiseModel, [AircraftBasicCruiseModel, IPerformanceModel, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5471844237425838798, 12111710160149214125), AircraftBasicCruiseModel)
+agcls.AgClassCatalog.add_catalog_entry((5632701006039063888, 13175790382043705248), AircraftBasicCruiseModel)
 agcls.AgTypeNameMap["AircraftBasicCruiseModel"] = AircraftBasicCruiseModel
 
 class AircraftAdvancedCruiseModel(IPerformanceModel, ICatalogItem, SupportsDeleteCallback):
@@ -11830,7 +11826,7 @@ class AircraftAdvancedCruiseModel(IPerformanceModel, ICatalogItem, SupportsDelet
     _set_compute_delta_downrange_method_offset = 13
     _get_as_catalog_item_method_offset = 14
     _metadata = {
-        "iid_data" : (4951863565701278341, 9812484038019628430),
+        "iid_data" : (4816497776213729714, 7836896889112638124),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -11972,7 +11968,7 @@ class AircraftAdvancedCruiseModel(IPerformanceModel, ICatalogItem, SupportsDelet
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftAdvancedCruiseModel, [AircraftAdvancedCruiseModel, IPerformanceModel, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5455870576064233751, 10403403645709593512), AircraftAdvancedCruiseModel)
+agcls.AgClassCatalog.add_catalog_entry((5733141764420385001, 16310650300397023886), AircraftAdvancedCruiseModel)
 agcls.AgTypeNameMap["AircraftAdvancedCruiseModel"] = AircraftAdvancedCruiseModel
 
 class AircraftBasicDescentModel(IPerformanceModel, ICatalogItem, SupportsDeleteCallback):
@@ -11999,7 +11995,7 @@ class AircraftBasicDescentModel(IPerformanceModel, ICatalogItem, SupportsDeleteC
     _set_relative_airspeed_tolerance_method_offset = 17
     _get_as_catalog_item_method_offset = 18
     _metadata = {
-        "iid_data" : (4619424590425145819, 1963764848038236049),
+        "iid_data" : (4901651452483084696, 1328596866946163386),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12175,7 +12171,7 @@ class AircraftBasicDescentModel(IPerformanceModel, ICatalogItem, SupportsDeleteC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftBasicDescentModel, [AircraftBasicDescentModel, IPerformanceModel, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((4788927177679408495, 6388236481941240196), AircraftBasicDescentModel)
+agcls.AgClassCatalog.add_catalog_entry((5058042699067731334, 7035827920342965160), AircraftBasicDescentModel)
 agcls.AgTypeNameMap["AircraftBasicDescentModel"] = AircraftBasicDescentModel
 
 class AircraftAdvancedDescentModel(IPerformanceModel, ICatalogItem, SupportsDeleteCallback):
@@ -12203,7 +12199,7 @@ class AircraftAdvancedDescentModel(IPerformanceModel, ICatalogItem, SupportsDele
     _set_compute_delta_altitude_method_offset = 18
     _get_as_catalog_item_method_offset = 19
     _metadata = {
-        "iid_data" : (5138930714286807665, 1693484297723898786),
+        "iid_data" : (4994746524817632594, 12331294364870024110),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12387,7 +12383,7 @@ class AircraftAdvancedDescentModel(IPerformanceModel, ICatalogItem, SupportsDele
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftAdvancedDescentModel, [AircraftAdvancedDescentModel, IPerformanceModel, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5324825486015993906, 2788835445536991165), AircraftAdvancedDescentModel)
+agcls.AgClassCatalog.add_catalog_entry((4810392645192815715, 10661088986066670519), AircraftAdvancedDescentModel)
 agcls.AgTypeNameMap["AircraftAdvancedDescentModel"] = AircraftAdvancedDescentModel
 
 class AircraftBasicTakeoffModel(IPerformanceModel, ICatalogItem, SupportsDeleteCallback):
@@ -12413,7 +12409,7 @@ class AircraftBasicTakeoffModel(IPerformanceModel, ICatalogItem, SupportsDeleteC
     _set_departure_fuel_flow_method_offset = 16
     _get_as_catalog_item_method_offset = 17
     _metadata = {
-        "iid_data" : (5032744767634970533, 755518156549444771),
+        "iid_data" : (5063487560725686991, 3104166190668644788),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12580,7 +12576,7 @@ class AircraftBasicTakeoffModel(IPerformanceModel, ICatalogItem, SupportsDeleteC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftBasicTakeoffModel, [AircraftBasicTakeoffModel, IPerformanceModel, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5606729336629723337, 16741769561151290246), AircraftBasicTakeoffModel)
+agcls.AgClassCatalog.add_catalog_entry((5069809862486470317, 3059198612246675100), AircraftBasicTakeoffModel)
 agcls.AgTypeNameMap["AircraftBasicTakeoffModel"] = AircraftBasicTakeoffModel
 
 class AircraftAdvancedTakeoffModel(IPerformanceModel, ICatalogItem, SupportsDeleteCallback):
@@ -12605,7 +12601,7 @@ class AircraftAdvancedTakeoffModel(IPerformanceModel, ICatalogItem, SupportsDele
     _set_use_afterburner_method_offset = 15
     _get_as_catalog_item_method_offset = 16
     _metadata = {
-        "iid_data" : (5320830156872402224, 10166003988108511629),
+        "iid_data" : (4804300080922443331, 7569114345341915778),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12762,7 +12758,7 @@ class AircraftAdvancedTakeoffModel(IPerformanceModel, ICatalogItem, SupportsDele
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftAdvancedTakeoffModel, [AircraftAdvancedTakeoffModel, IPerformanceModel, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5096944394266841251, 9249196675554252163), AircraftAdvancedTakeoffModel)
+agcls.AgClassCatalog.add_catalog_entry((5471485850669885308, 15130642533728754350), AircraftAdvancedTakeoffModel)
 agcls.AgTypeNameMap["AircraftAdvancedTakeoffModel"] = AircraftAdvancedTakeoffModel
 
 class AircraftBasicLandingModel(IPerformanceModel, ICatalogItem, SupportsDeleteCallback):
@@ -12783,7 +12779,7 @@ class AircraftBasicLandingModel(IPerformanceModel, ICatalogItem, SupportsDeleteC
     _set_fuel_flow_method_offset = 11
     _get_as_catalog_item_method_offset = 12
     _metadata = {
-        "iid_data" : (4905149018706593974, 16513096893308921742),
+        "iid_data" : (5241427296760465661, 17520311546848145847),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12908,7 +12904,7 @@ class AircraftBasicLandingModel(IPerformanceModel, ICatalogItem, SupportsDeleteC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftBasicLandingModel, [AircraftBasicLandingModel, IPerformanceModel, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((4668682694342627584, 2103924401706785409), AircraftBasicLandingModel)
+agcls.AgClassCatalog.add_catalog_entry((4657893715710463471, 7503168794398356380), AircraftBasicLandingModel)
 agcls.AgTypeNameMap["AircraftBasicLandingModel"] = AircraftBasicLandingModel
 
 class AircraftAdvancedLandingModel(IPerformanceModel, ICatalogItem, SupportsDeleteCallback):
@@ -12930,7 +12926,7 @@ class AircraftAdvancedLandingModel(IPerformanceModel, ICatalogItem, SupportsDele
     _set_braking_deceleration_g_method_offset = 12
     _get_as_catalog_item_method_offset = 13
     _metadata = {
-        "iid_data" : (5277953693984597077, 10394557647785555631),
+        "iid_data" : (5162617842852180659, 14238651546623653544),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13062,7 +13058,7 @@ class AircraftAdvancedLandingModel(IPerformanceModel, ICatalogItem, SupportsDele
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftAdvancedLandingModel, [AircraftAdvancedLandingModel, IPerformanceModel, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((4698133591076713687, 3121932985451287191), AircraftAdvancedLandingModel)
+agcls.AgClassCatalog.add_catalog_entry((5154614846813645806, 13368939455716680083), AircraftAdvancedLandingModel)
 agcls.AgTypeNameMap["AircraftAdvancedLandingModel"] = AircraftAdvancedLandingModel
 
 class AirportCategory(SupportsDeleteCallback):
@@ -13072,7 +13068,7 @@ class AirportCategory(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_arinc424_airports_method_offset = 1
     _metadata = {
-        "iid_data" : (4716319275932126710, 2976160558904714927),
+        "iid_data" : (5562610252669120732, 11789923023901548460),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13102,7 +13098,7 @@ class AirportCategory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AirportCategory, [AirportCategory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4948677995080953579, 11068242944747772575), AirportCategory)
+agcls.AgClassCatalog.add_catalog_entry((5480253489012621428, 15015007664775040415), AirportCategory)
 agcls.AgTypeNameMap["AirportCategory"] = AirportCategory
 
 class ARINC424Airport(IARINC424Item, ICatalogAirport, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
@@ -13127,7 +13123,7 @@ class ARINC424Airport(IARINC424Item, ICatalogAirport, ICatalogWaypoint, ICatalog
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ARINC424Airport, [IARINC424Item, ICatalogAirport, ICatalogWaypoint, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5153344260385549656, 2532207200311691662), ARINC424Airport)
+agcls.AgClassCatalog.add_catalog_entry((5695880047840506734, 13619481651860910229), ARINC424Airport)
 agcls.AgTypeNameMap["ARINC424Airport"] = ARINC424Airport
 
 class ARINC424Runway(IARINC424Item, ICatalogRunway, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
@@ -13137,7 +13133,7 @@ class ARINC424Runway(IARINC424Item, ICatalogRunway, ICatalogWaypoint, ICatalogIt
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_as_catalog_item_method_offset = 1
     _metadata = {
-        "iid_data" : (5300123620389747771, 18053247007351242896),
+        "iid_data" : (5518374434334432230, 11352550347428610450),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13173,7 +13169,7 @@ class ARINC424Runway(IARINC424Item, ICatalogRunway, ICatalogWaypoint, ICatalogIt
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ARINC424Runway, [ARINC424Runway, IARINC424Item, ICatalogRunway, ICatalogWaypoint, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((4920080154187198702, 7391099673982507661), ARINC424Runway)
+agcls.AgClassCatalog.add_catalog_entry((5240728262480282462, 6974955247575409538), ARINC424Runway)
 agcls.AgTypeNameMap["ARINC424Runway"] = ARINC424Runway
 
 class DAFIFRunway(IDAFIFItem, ICatalogRunway, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
@@ -13198,7 +13194,7 @@ class DAFIFRunway(IDAFIFItem, ICatalogRunway, ICatalogWaypoint, ICatalogItem, Su
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DAFIFRunway, [IDAFIFItem, ICatalogRunway, ICatalogWaypoint, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((4742072681057648609, 7698952542910555306), DAFIFRunway)
+agcls.AgClassCatalog.add_catalog_entry((4639316452576795159, 10754418360078932356), DAFIFRunway)
 agcls.AgTypeNameMap["DAFIFRunway"] = DAFIFRunway
 
 class DAFIFHelipad(IDAFIFItem, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
@@ -13223,7 +13219,7 @@ class DAFIFHelipad(IDAFIFItem, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DAFIFHelipad, [IDAFIFItem, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5242889605316044604, 11897854504103653769), DAFIFHelipad)
+agcls.AgClassCatalog.add_catalog_entry((5381049473006726170, 15524975654624003494), DAFIFHelipad)
 agcls.AgTypeNameMap["DAFIFHelipad"] = DAFIFHelipad
 
 class DAFIFWaypoint(IDAFIFItem, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
@@ -13246,7 +13242,7 @@ class DAFIFWaypoint(IDAFIFItem, ICatalogWaypoint, ICatalogItem, SupportsDeleteCa
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DAFIFWaypoint, [IDAFIFItem, ICatalogWaypoint, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((4681954691512884825, 10308348976302292395), DAFIFWaypoint)
+agcls.AgClassCatalog.add_catalog_entry((5054138932508819325, 1926192081655789481), DAFIFWaypoint)
 agcls.AgTypeNameMap["DAFIFWaypoint"] = DAFIFWaypoint
 
 class RunwayCategory(SupportsDeleteCallback):
@@ -13258,7 +13254,7 @@ class RunwayCategory(SupportsDeleteCallback):
     _get_arinc424_runways_method_offset = 2
     _get_dafif_runways_method_offset = 3
     _metadata = {
-        "iid_data" : (5167318891465223627, 14287069589925218227),
+        "iid_data" : (4711442299839593451, 13126145326095319704),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13306,7 +13302,7 @@ class RunwayCategory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RunwayCategory, [RunwayCategory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5469050913701344868, 8227015865766767039), RunwayCategory)
+agcls.AgClassCatalog.add_catalog_entry((5648699905031174973, 11613715701558742457), RunwayCategory)
 agcls.AgTypeNameMap["RunwayCategory"] = RunwayCategory
 
 class UserRunwaySource(ICatalogSource, SupportsDeleteCallback):
@@ -13334,7 +13330,7 @@ class UserRunwaySource(ICatalogSource, SupportsDeleteCallback):
     _add_user_runway_method_offset = 2
     _get_as_catalog_source_method_offset = 3
     _metadata = {
-        "iid_data" : (4676451489891113138, 8977042287783605675),
+        "iid_data" : (5266156379691721799, 11489472974535228319),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13378,7 +13374,7 @@ class UserRunwaySource(ICatalogSource, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UserRunwaySource, [UserRunwaySource, ICatalogSource])
 
-agcls.AgClassCatalog.add_catalog_entry((5635637392444233572, 17245173151766416020), UserRunwaySource)
+agcls.AgClassCatalog.add_catalog_entry((5166644176318206180, 13492131181876452525), UserRunwaySource)
 agcls.AgTypeNameMap["UserRunwaySource"] = UserRunwaySource
 
 class UserRunway(ICatalogRunway, ICatalogItem, ICatalogWaypoint, SupportsDeleteCallback):
@@ -13405,7 +13401,7 @@ class UserRunway(ICatalogRunway, ICatalogItem, ICatalogWaypoint, SupportsDeleteC
     _copy_site_method_offset = 17
     _paste_site_method_offset = 18
     _metadata = {
-        "iid_data" : (4820628736157176607, 17908593095754821544),
+        "iid_data" : (5012720820414260687, 15615585527543738281),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13579,7 +13575,7 @@ class UserRunway(ICatalogRunway, ICatalogItem, ICatalogWaypoint, SupportsDeleteC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UserRunway, [UserRunway, ICatalogRunway, ICatalogItem, ICatalogWaypoint])
 
-agcls.AgClassCatalog.add_catalog_entry((5691789674305805005, 304905329320076219), UserRunway)
+agcls.AgClassCatalog.add_catalog_entry((5760526383855429399, 11512719369215089043), UserRunway)
 agcls.AgTypeNameMap["UserRunway"] = UserRunway
 
 class AltitudeMSLOptions(SupportsDeleteCallback):
@@ -13592,7 +13588,7 @@ class AltitudeMSLOptions(SupportsDeleteCallback):
     _get_msl_altitude_method_offset = 3
     _set_msl_altitude_method_offset = 4
     _metadata = {
-        "iid_data" : (5354678070619953400, 16650566902719874200),
+        "iid_data" : (5192746625142469395, 9436369468948997792),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13647,7 +13643,7 @@ class AltitudeMSLOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AltitudeMSLOptions, [AltitudeMSLOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4711346236767512285, 12895539298887267007), AltitudeMSLOptions)
+agcls.AgClassCatalog.add_catalog_entry((5554272562511364283, 2993466492885613712), AltitudeMSLOptions)
 agcls.AgTypeNameMap["AltitudeMSLOptions"] = AltitudeMSLOptions
 
 class AltitudeOptions(SupportsDeleteCallback):
@@ -13662,7 +13658,7 @@ class AltitudeOptions(SupportsDeleteCallback):
     _get_altitude_method_offset = 5
     _set_altitude_method_offset = 6
     _metadata = {
-        "iid_data" : (4916664038627200200, 6937122557711862173),
+        "iid_data" : (5155023780155275642, 5843115366069349549),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13734,7 +13730,7 @@ class AltitudeOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AltitudeOptions, [AltitudeOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5605824035098034871, 2592958110125322650), AltitudeOptions)
+agcls.AgClassCatalog.add_catalog_entry((5734503174630273988, 15369752099600976549), AltitudeOptions)
 agcls.AgTypeNameMap["AltitudeOptions"] = AltitudeOptions
 
 class ArcAltitudeOptions(SupportsDeleteCallback):
@@ -13749,7 +13745,7 @@ class ArcAltitudeOptions(SupportsDeleteCallback):
     _get_stop_arc_altitude_method_offset = 5
     _set_stop_arc_altitude_method_offset = 6
     _metadata = {
-        "iid_data" : (5311428139126596917, 7870750672865060761),
+        "iid_data" : (5406740074900250429, 10345780200987241349),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13821,7 +13817,7 @@ class ArcAltitudeOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ArcAltitudeOptions, [ArcAltitudeOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5643814476002063505, 18340846669876596410), ArcAltitudeOptions)
+agcls.AgClassCatalog.add_catalog_entry((4687435126929753454, 17653931878033330091), ArcAltitudeOptions)
 agcls.AgTypeNameMap["ArcAltitudeOptions"] = ArcAltitudeOptions
 
 class ArcAltitudeAndDelayOptions(SupportsDeleteCallback):
@@ -13838,7 +13834,7 @@ class ArcAltitudeAndDelayOptions(SupportsDeleteCallback):
     _get_stop_arc_altitude_method_offset = 7
     _set_stop_arc_altitude_method_offset = 8
     _metadata = {
-        "iid_data" : (5091741236913358761, 4527708200198965125),
+        "iid_data" : (5068246691171908643, 7715317223099941788),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13927,7 +13923,7 @@ class ArcAltitudeAndDelayOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ArcAltitudeAndDelayOptions, [ArcAltitudeAndDelayOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5626426987589423015, 10342354197599988640), ArcAltitudeAndDelayOptions)
+agcls.AgClassCatalog.add_catalog_entry((5752539890904690784, 1553275434483071365), ArcAltitudeAndDelayOptions)
 agcls.AgTypeNameMap["ArcAltitudeAndDelayOptions"] = ArcAltitudeAndDelayOptions
 
 class ArcOptions(SupportsDeleteCallback):
@@ -13950,7 +13946,7 @@ class ArcOptions(SupportsDeleteCallback):
     _get_exit_arc_method_offset = 13
     _set_exit_arc_method_offset = 14
     _metadata = {
-        "iid_data" : (4881719014414109863, 13875083150837249449),
+        "iid_data" : (5018730939163766686, 18413116871402416016),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14090,7 +14086,7 @@ class ArcOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ArcOptions, [ArcOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4985001686384732151, 3276579562627893893), ArcOptions)
+agcls.AgClassCatalog.add_catalog_entry((4958050966300033771, 9797159204439857043), ArcOptions)
 agcls.AgTypeNameMap["ArcOptions"] = ArcOptions
 
 class AltitudeMSLAndLevelOffOptions(SupportsDeleteCallback):
@@ -14140,7 +14136,7 @@ class AltitudeMSLAndLevelOffOptions(SupportsDeleteCallback):
     _get_level_off_mode_method_offset = 7
     _set_level_off_mode_method_offset = 8
     _metadata = {
-        "iid_data" : (4970555218238608998, 11906085318817631130),
+        "iid_data" : (4863612412406756989, 3886928405294117022),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14229,7 +14225,7 @@ class AltitudeMSLAndLevelOffOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AltitudeMSLAndLevelOffOptions, [AltitudeMSLAndLevelOffOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4623922148496958771, 14914904139938911918), AltitudeMSLAndLevelOffOptions)
+agcls.AgClassCatalog.add_catalog_entry((4900389687801392814, 9065727710603320996), AltitudeMSLAndLevelOffOptions)
 agcls.AgTypeNameMap["AltitudeMSLAndLevelOffOptions"] = AltitudeMSLAndLevelOffOptions
 
 class CruiseAirspeedOptions(SupportsDeleteCallback):
@@ -14276,7 +14272,7 @@ class CruiseAirspeedOptions(SupportsDeleteCallback):
     _get_other_airspeed_method_offset = 4
     _set_other_airspeed_method_offset = 5
     _metadata = {
-        "iid_data" : (4775037409602090834, 14321643648366655389),
+        "iid_data" : (4838475914553442406, 10657970885226365364),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14339,7 +14335,7 @@ class CruiseAirspeedOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CruiseAirspeedOptions, [CruiseAirspeedOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5589499567568918408, 8793492467480374660), CruiseAirspeedOptions)
+agcls.AgClassCatalog.add_catalog_entry((5442623305892701977, 4478253591644417470), CruiseAirspeedOptions)
 agcls.AgTypeNameMap["CruiseAirspeedOptions"] = CruiseAirspeedOptions
 
 class CruiseAirspeedProfile(SupportsDeleteCallback):
@@ -14350,7 +14346,7 @@ class CruiseAirspeedProfile(SupportsDeleteCallback):
     _get_fly_cruise_airspeed_profile_method_offset = 1
     _set_fly_cruise_airspeed_profile_method_offset = 2
     _metadata = {
-        "iid_data" : (4932691083798754313, 2757480245686328988),
+        "iid_data" : (4677696975103187278, 6711917474839431584),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14388,7 +14384,7 @@ class CruiseAirspeedProfile(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CruiseAirspeedProfile, [CruiseAirspeedProfile, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5042125039608830422, 186775197327029686), CruiseAirspeedProfile)
+agcls.AgClassCatalog.add_catalog_entry((5574732315361160780, 284231404862579371), CruiseAirspeedProfile)
 agcls.AgTypeNameMap["CruiseAirspeedProfile"] = CruiseAirspeedProfile
 
 class CruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions, SupportsDeleteCallback):
@@ -14407,7 +14403,7 @@ class CruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions, Supports
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CruiseAirspeedAndProfileOptions, [ICruiseAirspeedAndProfileOptions])
 
-agcls.AgClassCatalog.add_catalog_entry((5023146659635499349, 10240031022027307191), CruiseAirspeedAndProfileOptions)
+agcls.AgClassCatalog.add_catalog_entry((5731117687366463971, 2219706640085936316), CruiseAirspeedAndProfileOptions)
 agcls.AgTypeNameMap["CruiseAirspeedAndProfileOptions"] = CruiseAirspeedAndProfileOptions
 
 class LandingCruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions, SupportsDeleteCallback):
@@ -14426,7 +14422,7 @@ class LandingCruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions, S
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, LandingCruiseAirspeedAndProfileOptions, [ICruiseAirspeedAndProfileOptions])
 
-agcls.AgClassCatalog.add_catalog_entry((5282497060921620892, 7823813257265650837), LandingCruiseAirspeedAndProfileOptions)
+agcls.AgClassCatalog.add_catalog_entry((5556811465510407436, 14593697919726835347), LandingCruiseAirspeedAndProfileOptions)
 agcls.AgTypeNameMap["LandingCruiseAirspeedAndProfileOptions"] = LandingCruiseAirspeedAndProfileOptions
 
 class EnrouteOptions(SupportsDeleteCallback):
@@ -14439,7 +14435,7 @@ class EnrouteOptions(SupportsDeleteCallback):
     _get_max_turn_radius_factor_method_offset = 3
     _set_max_turn_radius_factor_method_offset = 4
     _metadata = {
-        "iid_data" : (5388097155578164474, 7061394601143800450),
+        "iid_data" : (5122111393695442822, 8859071155128448440),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14494,7 +14490,7 @@ class EnrouteOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EnrouteOptions, [EnrouteOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5601440232813659681, 2626155638734127273), EnrouteOptions)
+agcls.AgClassCatalog.add_catalog_entry((4865779387900888246, 13180381114587025328), EnrouteOptions)
 agcls.AgTypeNameMap["EnrouteOptions"] = EnrouteOptions
 
 class EnrouteAndDelayOptions(IEnrouteAndDelayOptions, SupportsDeleteCallback):
@@ -14513,7 +14509,7 @@ class EnrouteAndDelayOptions(IEnrouteAndDelayOptions, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EnrouteAndDelayOptions, [IEnrouteAndDelayOptions])
 
-agcls.AgClassCatalog.add_catalog_entry((5633379882483759369, 15566420089287312029), EnrouteAndDelayOptions)
+agcls.AgClassCatalog.add_catalog_entry((5152005487488067743, 5472963551568619392), EnrouteAndDelayOptions)
 agcls.AgTypeNameMap["EnrouteAndDelayOptions"] = EnrouteAndDelayOptions
 
 class LandingEnrouteOptions(IEnrouteAndDelayOptions, SupportsDeleteCallback):
@@ -14532,7 +14528,7 @@ class LandingEnrouteOptions(IEnrouteAndDelayOptions, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, LandingEnrouteOptions, [IEnrouteAndDelayOptions])
 
-agcls.AgClassCatalog.add_catalog_entry((5505692743636881819, 1797000207370880952), LandingEnrouteOptions)
+agcls.AgClassCatalog.add_catalog_entry((4787634954632798662, 17263952360538447806), LandingEnrouteOptions)
 agcls.AgTypeNameMap["LandingEnrouteOptions"] = LandingEnrouteOptions
 
 class EnrouteTurnDirectionOptions(SupportsDeleteCallback):
@@ -14545,7 +14541,7 @@ class EnrouteTurnDirectionOptions(SupportsDeleteCallback):
     _get_enroute_second_turn_method_offset = 3
     _set_enroute_second_turn_method_offset = 4
     _metadata = {
-        "iid_data" : (4825843845888691284, 5666336038605995175),
+        "iid_data" : (5640757882732516878, 7985551418961018801),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14600,7 +14596,7 @@ class EnrouteTurnDirectionOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EnrouteTurnDirectionOptions, [EnrouteTurnDirectionOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5525734658029426163, 7829029184116166294), EnrouteTurnDirectionOptions)
+agcls.AgClassCatalog.add_catalog_entry((4800151134475803483, 2006904964009746340), EnrouteTurnDirectionOptions)
 agcls.AgTypeNameMap["EnrouteTurnDirectionOptions"] = EnrouteTurnDirectionOptions
 
 class NavigationOptions(SupportsDeleteCallback):
@@ -14652,7 +14648,7 @@ class NavigationOptions(SupportsDeleteCallback):
     _get_enroute_second_turn_method_offset = 9
     _set_enroute_second_turn_method_offset = 10
     _metadata = {
-        "iid_data" : (4993099939815057319, 3478925526245202352),
+        "iid_data" : (4766182303946454781, 3855043144717730236),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14758,7 +14754,7 @@ class NavigationOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, NavigationOptions, [NavigationOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5297554030905568728, 15312492039192405176), NavigationOptions)
+agcls.AgClassCatalog.add_catalog_entry((4645352055708711623, 14202127048887297445), NavigationOptions)
 agcls.AgTypeNameMap["NavigationOptions"] = NavigationOptions
 
 class VerticalPlaneOptions(IVerticalPlaneOptions, SupportsDeleteCallback):
@@ -14777,7 +14773,7 @@ class VerticalPlaneOptions(IVerticalPlaneOptions, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VerticalPlaneOptions, [IVerticalPlaneOptions])
 
-agcls.AgClassCatalog.add_catalog_entry((4791831385042236424, 17790584228054945718), VerticalPlaneOptions)
+agcls.AgClassCatalog.add_catalog_entry((4972107905237233189, 12111208988046608042), VerticalPlaneOptions)
 agcls.AgTypeNameMap["VerticalPlaneOptions"] = VerticalPlaneOptions
 
 class ArcVerticalPlaneOptions(SupportsDeleteCallback):
@@ -14796,7 +14792,7 @@ class ArcVerticalPlaneOptions(SupportsDeleteCallback):
     _get_max_vert_plane_radius_factor_method_offset = 9
     _set_max_vert_plane_radius_factor_method_offset = 10
     _metadata = {
-        "iid_data" : (5401521584591596237, 12745820344260646540),
+        "iid_data" : (4758778893665829185, 4275343518533404592),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14902,7 +14898,7 @@ class ArcVerticalPlaneOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ArcVerticalPlaneOptions, [ArcVerticalPlaneOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4652016757415061557, 6686714748074581137), ArcVerticalPlaneOptions)
+agcls.AgClassCatalog.add_catalog_entry((5521208610992223945, 15798455181193491609), ArcVerticalPlaneOptions)
 agcls.AgTypeNameMap["ArcVerticalPlaneOptions"] = ArcVerticalPlaneOptions
 
 class VerticalPlaneAndFlightPathOptions(SupportsDeleteCallback):
@@ -14919,7 +14915,7 @@ class VerticalPlaneAndFlightPathOptions(SupportsDeleteCallback):
     _get_max_vert_plane_radius_factor_method_offset = 7
     _set_max_vert_plane_radius_factor_method_offset = 8
     _metadata = {
-        "iid_data" : (4866221299348241801, 14897448743116069797),
+        "iid_data" : (5319689673775542654, 4520288455864500610),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15008,7 +15004,7 @@ class VerticalPlaneAndFlightPathOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VerticalPlaneAndFlightPathOptions, [VerticalPlaneAndFlightPathOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4880113513667107889, 8420899053888797363), VerticalPlaneAndFlightPathOptions)
+agcls.AgClassCatalog.add_catalog_entry((5127538977089647469, 6137288678311912086), VerticalPlaneAndFlightPathOptions)
 agcls.AgTypeNameMap["VerticalPlaneAndFlightPathOptions"] = VerticalPlaneAndFlightPathOptions
 
 class LandingVerticalPlaneOptions(IVerticalPlaneOptions, SupportsDeleteCallback):
@@ -15027,7 +15023,7 @@ class LandingVerticalPlaneOptions(IVerticalPlaneOptions, SupportsDeleteCallback)
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, LandingVerticalPlaneOptions, [IVerticalPlaneOptions])
 
-agcls.AgClassCatalog.add_catalog_entry((4626924203837884328, 7628565386577197988), LandingVerticalPlaneOptions)
+agcls.AgClassCatalog.add_catalog_entry((4888031637281152344, 5745993177391157387), LandingVerticalPlaneOptions)
 agcls.AgTypeNameMap["LandingVerticalPlaneOptions"] = LandingVerticalPlaneOptions
 
 class RunwayHeadingOptions(SupportsDeleteCallback):
@@ -15088,7 +15084,7 @@ class RunwayHeadingOptions(SupportsDeleteCallback):
     _get_runway_mode_method_offset = 1
     _set_runway_mode_method_offset = 2
     _metadata = {
-        "iid_data" : (4772948616711334669, 8458670227314885548),
+        "iid_data" : (5242633157894481446, 3393019592040356765),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15126,7 +15122,7 @@ class RunwayHeadingOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RunwayHeadingOptions, [RunwayHeadingOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5151356003940587454, 7154037557713333679), RunwayHeadingOptions)
+agcls.AgClassCatalog.add_catalog_entry((4699449372305649021, 4672281170931822732), RunwayHeadingOptions)
 agcls.AgTypeNameMap["RunwayHeadingOptions"] = RunwayHeadingOptions
 
 class LandingEnterDownwindPattern(SupportsDeleteCallback):
@@ -15153,7 +15149,7 @@ class LandingEnterDownwindPattern(SupportsDeleteCallback):
     _get_touch_and_go_method_offset = 17
     _set_touch_and_go_method_offset = 18
     _metadata = {
-        "iid_data" : (4734513232810016191, 3083046802263741063),
+        "iid_data" : (5480179321700824197, 10416434249875162754),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15327,7 +15323,7 @@ class LandingEnterDownwindPattern(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, LandingEnterDownwindPattern, [LandingEnterDownwindPattern, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5264644757506879488, 10964076385913793182), LandingEnterDownwindPattern)
+agcls.AgClassCatalog.add_catalog_entry((5034507006877487912, 9440447462639297412), LandingEnterDownwindPattern)
 agcls.AgTypeNameMap["LandingEnterDownwindPattern"] = LandingEnterDownwindPattern
 
 class LandingInterceptGlideslope(SupportsDeleteCallback):
@@ -15348,7 +15344,7 @@ class LandingInterceptGlideslope(SupportsDeleteCallback):
     _get_touch_and_go_method_offset = 11
     _set_touch_and_go_method_offset = 12
     _metadata = {
-        "iid_data" : (4722193432406915614, 3919694554656369318),
+        "iid_data" : (5217299874073430731, 16956942887144793751),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15471,7 +15467,7 @@ class LandingInterceptGlideslope(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, LandingInterceptGlideslope, [LandingInterceptGlideslope, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5366344207817725495, 12409533042992159899), LandingInterceptGlideslope)
+agcls.AgClassCatalog.add_catalog_entry((4923073007103717834, 257787957972910995), LandingInterceptGlideslope)
 agcls.AgTypeNameMap["LandingInterceptGlideslope"] = LandingInterceptGlideslope
 
 class LandingStandardInstrumentApproach(SupportsDeleteCallback):
@@ -15523,7 +15519,7 @@ class LandingStandardInstrumentApproach(SupportsDeleteCallback):
     _get_touch_and_go_method_offset = 15
     _set_touch_and_go_method_offset = 16
     _metadata = {
-        "iid_data" : (5318231538284992196, 1134507381071316131),
+        "iid_data" : (5272246719629093624, 13594628248469641657),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15680,7 +15676,7 @@ class LandingStandardInstrumentApproach(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, LandingStandardInstrumentApproach, [LandingStandardInstrumentApproach, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4840677424178112842, 5244220578861766065), LandingStandardInstrumentApproach)
+agcls.AgClassCatalog.add_catalog_entry((5104862220104991994, 10373465547964258710), LandingStandardInstrumentApproach)
 agcls.AgTypeNameMap["LandingStandardInstrumentApproach"] = LandingStandardInstrumentApproach
 
 class TakeoffDeparturePoint(SupportsDeleteCallback):
@@ -15701,7 +15697,7 @@ class TakeoffDeparturePoint(SupportsDeleteCallback):
     _get_hold_on_deck_method_offset = 11
     _set_hold_on_deck_method_offset = 12
     _metadata = {
-        "iid_data" : (5384974105934402717, 12902722603171464861),
+        "iid_data" : (5427044407078698762, 4958266085494000529),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15824,7 +15820,7 @@ class TakeoffDeparturePoint(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TakeoffDeparturePoint, [TakeoffDeparturePoint, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5170363125142911430, 3874157076900173501), TakeoffDeparturePoint)
+agcls.AgClassCatalog.add_catalog_entry((4624646358522882830, 1434402489093495982), TakeoffDeparturePoint)
 agcls.AgTypeNameMap["TakeoffDeparturePoint"] = TakeoffDeparturePoint
 
 class TakeoffLowTransition(SupportsDeleteCallback):
@@ -15839,7 +15835,7 @@ class TakeoffLowTransition(SupportsDeleteCallback):
     _get_hold_on_deck_method_offset = 5
     _set_hold_on_deck_method_offset = 6
     _metadata = {
-        "iid_data" : (5665343166367508418, 13893054072396564138),
+        "iid_data" : (4749214285695824476, 13563279868149964959),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15911,7 +15907,7 @@ class TakeoffLowTransition(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TakeoffLowTransition, [TakeoffLowTransition, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5668791560561038875, 16923029776143935925), TakeoffLowTransition)
+agcls.AgClassCatalog.add_catalog_entry((5348834264122221942, 13015376062531045546), TakeoffLowTransition)
 agcls.AgTypeNameMap["TakeoffLowTransition"] = TakeoffLowTransition
 
 class TakeoffNormal(SupportsDeleteCallback):
@@ -15957,7 +15953,7 @@ class TakeoffNormal(SupportsDeleteCallback):
     _get_hold_on_deck_method_offset = 9
     _set_hold_on_deck_method_offset = 10
     _metadata = {
-        "iid_data" : (5498845233375819305, 14637385257810436005),
+        "iid_data" : (5373046836958400953, 9974188734981709467),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16063,7 +16059,7 @@ class TakeoffNormal(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TakeoffNormal, [TakeoffNormal, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4982205817421927695, 3283745831502333602), TakeoffNormal)
+agcls.AgClassCatalog.add_catalog_entry((5494155662041698767, 6046196446416431540), TakeoffNormal)
 agcls.AgTypeNameMap["TakeoffNormal"] = TakeoffNormal
 
 class LevelTurns(SupportsDeleteCallback):
@@ -16129,7 +16125,7 @@ class LevelTurns(SupportsDeleteCallback):
     _set_maneuver_mode_method_offset = 9
     _get_maneuver_mode_helper_method_offset = 10
     _metadata = {
-        "iid_data" : (5723269250337285450, 7849803881290906029),
+        "iid_data" : (4854373873852211808, 10519558108067584917),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16237,7 +16233,7 @@ class LevelTurns(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, LevelTurns, [LevelTurns, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4842031065400171495, 15335149086412210363), LevelTurns)
+agcls.AgClassCatalog.add_catalog_entry((5554936401080213081, 10718769669080559495), LevelTurns)
 agcls.AgTypeNameMap["LevelTurns"] = LevelTurns
 
 class AttitudeTransitions(SupportsDeleteCallback):
@@ -16299,7 +16295,7 @@ class AttitudeTransitions(SupportsDeleteCallback):
     _get_yaw_rate_method_offset = 5
     _set_yaw_rate_method_offset = 6
     _metadata = {
-        "iid_data" : (4809317354746996248, 3931367782668783024),
+        "iid_data" : (4776225480359389807, 5750204035722807984),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16371,7 +16367,7 @@ class AttitudeTransitions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AttitudeTransitions, [AttitudeTransitions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5584586404333393428, 12387107037886590612), AttitudeTransitions)
+agcls.AgClassCatalog.add_catalog_entry((4964533484255734767, 7573778694450301630), AttitudeTransitions)
 agcls.AgTypeNameMap["AttitudeTransitions"] = AttitudeTransitions
 
 class ClimbAndDescentTransitions(SupportsDeleteCallback):
@@ -16436,7 +16432,7 @@ class ClimbAndDescentTransitions(SupportsDeleteCallback):
     _set_ignore_flight_path_angle_method_offset = 8
     _get_maneuver_mode_helper_method_offset = 9
     _metadata = {
-        "iid_data" : (4787497693753872718, 5667952407318575531),
+        "iid_data" : (4977187959422170704, 2730238719769779103),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16534,7 +16530,7 @@ class ClimbAndDescentTransitions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ClimbAndDescentTransitions, [ClimbAndDescentTransitions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5374744943989914698, 12300077720877790391), ClimbAndDescentTransitions)
+agcls.AgClassCatalog.add_catalog_entry((4743667745372513897, 8931342206211522453), ClimbAndDescentTransitions)
 agcls.AgTypeNameMap["ClimbAndDescentTransitions"] = ClimbAndDescentTransitions
 
 class AerodynamicPropulsionManeuverModeHelper(SupportsDeleteCallback):
@@ -16562,7 +16558,7 @@ class AerodynamicPropulsionManeuverModeHelper(SupportsDeleteCallback):
     _set_control_authority_method_offset = 18
     _get_status_message_method_offset = 19
     _metadata = {
-        "iid_data" : (5328095794674712717, 8005940665812164797),
+        "iid_data" : (5539063462023777473, 7119045128402220478),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16745,7 +16741,7 @@ class AerodynamicPropulsionManeuverModeHelper(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AerodynamicPropulsionManeuverModeHelper, [AerodynamicPropulsionManeuverModeHelper, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5554483294060101200, 8600938976610717093), AerodynamicPropulsionManeuverModeHelper)
+agcls.AgClassCatalog.add_catalog_entry((5369498693494457531, 7737834542045926328), AerodynamicPropulsionManeuverModeHelper)
 agcls.AgTypeNameMap["AerodynamicPropulsionManeuverModeHelper"] = AerodynamicPropulsionManeuverModeHelper
 
 class AircraftAdvancedAccelerationModel(IPerformanceModel, ICatalogItem, SupportsDeleteCallback):
@@ -16759,7 +16755,7 @@ class AircraftAdvancedAccelerationModel(IPerformanceModel, ICatalogItem, Support
     _get_acceleration_mode_method_offset = 4
     _get_as_catalog_item_method_offset = 5
     _metadata = {
-        "iid_data" : (5313840907341593770, 18068732340055302845),
+        "iid_data" : (5240372956195028431, 11897914145697780148),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16827,7 +16823,7 @@ class AircraftAdvancedAccelerationModel(IPerformanceModel, ICatalogItem, Support
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftAdvancedAccelerationModel, [AircraftAdvancedAccelerationModel, IPerformanceModel, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5358492534817326369, 10261995905994973359), AircraftAdvancedAccelerationModel)
+agcls.AgClassCatalog.add_catalog_entry((5318707862976748158, 7717813452354151083), AircraftAdvancedAccelerationModel)
 agcls.AgTypeNameMap["AircraftAdvancedAccelerationModel"] = AircraftAdvancedAccelerationModel
 
 class AircraftAccelerationMode(SupportsDeleteCallback):
@@ -16840,7 +16836,7 @@ class AircraftAccelerationMode(SupportsDeleteCallback):
     _get_acceleration_g_method_offset = 3
     _set_acceleration_g_method_offset = 4
     _metadata = {
-        "iid_data" : (5657217427469576289, 12897697484585064127),
+        "iid_data" : (4752141133044688394, 4592493384747200640),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16895,7 +16891,7 @@ class AircraftAccelerationMode(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftAccelerationMode, [AircraftAccelerationMode, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5216102563964361198, 17187029792935920802), AircraftAccelerationMode)
+agcls.AgClassCatalog.add_catalog_entry((5330175313472771802, 15537463141448191669), AircraftAccelerationMode)
 agcls.AgTypeNameMap["AircraftAccelerationMode"] = AircraftAccelerationMode
 
 class AircraftSimpleAerodynamic(SupportsDeleteCallback):
@@ -16959,7 +16955,7 @@ class AircraftSimpleAerodynamic(SupportsDeleteCallback):
     _get_cd_method_offset = 7
     _set_cd_method_offset = 8
     _metadata = {
-        "iid_data" : (4795364640067016059, 13915158584522730163),
+        "iid_data" : (5331942885108705115, 17121753745968594096),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17048,7 +17044,7 @@ class AircraftSimpleAerodynamic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftSimpleAerodynamic, [AircraftSimpleAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4949274632612681163, 16986168694659548566), AircraftSimpleAerodynamic)
+agcls.AgClassCatalog.add_catalog_entry((5157602041302145705, 4394695156581999758), AircraftSimpleAerodynamic)
 agcls.AgTypeNameMap["AircraftSimpleAerodynamic"] = AircraftSimpleAerodynamic
 
 class AircraftExternalAerodynamic(SupportsDeleteCallback):
@@ -17071,7 +17067,7 @@ class AircraftExternalAerodynamic(SupportsDeleteCallback):
     _get_can_set_takeoff_landing_reference_area_method_offset = 13
     _get_is_takeoff_landing_valid_method_offset = 14
     _metadata = {
-        "iid_data" : (4995292197392587210, 1860972800833287599),
+        "iid_data" : (5338527425414652960, 7096384455155477152),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17208,7 +17204,7 @@ class AircraftExternalAerodynamic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftExternalAerodynamic, [AircraftExternalAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5605284744680812914, 13571106235899430788), AircraftExternalAerodynamic)
+agcls.AgClassCatalog.add_catalog_entry((4881287357457567340, 14028984092060226445), AircraftExternalAerodynamic)
 agcls.AgTypeNameMap["AircraftExternalAerodynamic"] = AircraftExternalAerodynamic
 
 class AircraftAerodynamic(SupportsDeleteCallback):
@@ -17275,7 +17271,7 @@ class AircraftAerodynamic(SupportsDeleteCallback):
     _set_drag_factor_method_offset = 10
     _get_mode_as_four_point_method_offset = 11
     _metadata = {
-        "iid_data" : (5120934689185363706, 8628502199224761519),
+        "iid_data" : (5085078103874317281, 1965204837244414898),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17392,7 +17388,7 @@ class AircraftAerodynamic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftAerodynamic, [AircraftAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5082480556701513469, 17564547437981405094), AircraftAerodynamic)
+agcls.AgClassCatalog.add_catalog_entry((5584080801822231371, 10869197941392029887), AircraftAerodynamic)
 agcls.AgTypeNameMap["AircraftAerodynamic"] = AircraftAerodynamic
 
 class AircraftBasicFixedWingAerodynamic(SupportsDeleteCallback):
@@ -17433,7 +17429,7 @@ class AircraftBasicFixedWingAerodynamic(SupportsDeleteCallback):
     _get_takeoff_landing_k_method_offset = 31
     _set_takeoff_landing_k_method_offset = 32
     _metadata = {
-        "iid_data" : (5194727978343587927, 16517105265377487783),
+        "iid_data" : (5123503869044915842, 6718800966471882426),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17726,7 +17722,7 @@ class AircraftBasicFixedWingAerodynamic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftBasicFixedWingAerodynamic, [AircraftBasicFixedWingAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4615386614829789996, 13505783508724948142), AircraftBasicFixedWingAerodynamic)
+agcls.AgClassCatalog.add_catalog_entry((4689197091155916634, 15690717519235476103), AircraftBasicFixedWingAerodynamic)
 agcls.AgTypeNameMap["AircraftBasicFixedWingAerodynamic"] = AircraftBasicFixedWingAerodynamic
 
 class AircraftPropulsion(SupportsDeleteCallback):
@@ -17794,7 +17790,7 @@ class AircraftPropulsion(SupportsDeleteCallback):
     _get_mode_as_turbojet_method_offset = 11
     _get_mode_as_rocket_method_offset = 12
     _metadata = {
-        "iid_data" : (4760545169458717566, 10855594368442160788),
+        "iid_data" : (4695696700640593539, 7419900639301848475),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17920,7 +17916,7 @@ class AircraftPropulsion(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftPropulsion, [AircraftPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5577330394102227800, 15792983096793871031), AircraftPropulsion)
+agcls.AgClassCatalog.add_catalog_entry((4945489043853936254, 16058787679536694706), AircraftPropulsion)
 agcls.AgTypeNameMap["AircraftPropulsion"] = AircraftPropulsion
 
 class AircraftSimplePropulsion(SupportsDeleteCallback):
@@ -17983,7 +17979,7 @@ class AircraftSimplePropulsion(SupportsDeleteCallback):
     _get_density_ratio_exponent_method_offset = 6
     _set_density_scaling_method_offset = 7
     _metadata = {
-        "iid_data" : (5408389755499298173, 7791957774431135407),
+        "iid_data" : (5746128055979695032, 7582127427285011611),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18063,7 +18059,7 @@ class AircraftSimplePropulsion(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftSimplePropulsion, [AircraftSimplePropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5707285421522482526, 1559585226005544595), AircraftSimplePropulsion)
+agcls.AgClassCatalog.add_catalog_entry((5494772946414649436, 6121298918138767289), AircraftSimplePropulsion)
 agcls.AgTypeNameMap["AircraftSimplePropulsion"] = AircraftSimplePropulsion
 
 class AircraftExternalPropulsion(SupportsDeleteCallback):
@@ -18084,7 +18080,7 @@ class AircraftExternalPropulsion(SupportsDeleteCallback):
     _get_density_ratio_exponent_method_offset = 11
     _set_density_scaling_method_offset = 12
     _metadata = {
-        "iid_data" : (4857533303974722191, 17014078191631793548),
+        "iid_data" : (4902560556232077255, 17619894773480591748),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18205,7 +18201,7 @@ class AircraftExternalPropulsion(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftExternalPropulsion, [AircraftExternalPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4931266991254779167, 11152857308621733023), AircraftExternalPropulsion)
+agcls.AgClassCatalog.add_catalog_entry((5703377511013819325, 8938021026333150360), AircraftExternalPropulsion)
 agcls.AgTypeNameMap["AircraftExternalPropulsion"] = AircraftExternalPropulsion
 
 class AircraftBasicFixedWingPropulsion(SupportsDeleteCallback):
@@ -18237,7 +18233,7 @@ class AircraftBasicFixedWingPropulsion(SupportsDeleteCallback):
     _get_density_ratio_exponent_method_offset = 22
     _set_density_scaling_method_offset = 23
     _metadata = {
-        "iid_data" : (5283772667304000625, 2502042123150193025),
+        "iid_data" : (4967974643317920480, 539188243362341566),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18453,7 +18449,7 @@ class AircraftBasicFixedWingPropulsion(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftBasicFixedWingPropulsion, [AircraftBasicFixedWingPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5671810767600845155, 12908412790033902229), AircraftBasicFixedWingPropulsion)
+agcls.AgClassCatalog.add_catalog_entry((5413698530318280119, 2208250368348247967), AircraftBasicFixedWingPropulsion)
 agcls.AgTypeNameMap["AircraftBasicFixedWingPropulsion"] = AircraftBasicFixedWingPropulsion
 
 class ARINC424Source(ICatalogSource, SupportsDeleteCallback):
@@ -18470,7 +18466,7 @@ class ARINC424Source(ICatalogSource, SupportsDeleteCallback):
     _set_override_data_filepath_method_offset = 7
     _get_as_catalog_source_method_offset = 8
     _metadata = {
-        "iid_data" : (5252096220626246087, 6835548189431916434),
+        "iid_data" : (4616005417398609915, 11098165896320266897),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18558,7 +18554,7 @@ class ARINC424Source(ICatalogSource, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ARINC424Source, [ARINC424Source, ICatalogSource])
 
-agcls.AgClassCatalog.add_catalog_entry((4990508709075858532, 869911397036924554), ARINC424Source)
+agcls.AgClassCatalog.add_catalog_entry((4715562598668855310, 8788791952518305420), ARINC424Source)
 agcls.AgTypeNameMap["ARINC424Source"] = ARINC424Source
 
 class DAFIFSource(ICatalogSource, SupportsDeleteCallback):
@@ -18574,7 +18570,7 @@ class DAFIFSource(ICatalogSource, SupportsDeleteCallback):
     _get_spec_revision_method_offset = 6
     _get_as_catalog_source_method_offset = 7
     _metadata = {
-        "iid_data" : (4761423141073607641, 6693699497707172788),
+        "iid_data" : (5450796940252205347, 14744113145114578066),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18655,7 +18651,7 @@ class DAFIFSource(ICatalogSource, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DAFIFSource, [DAFIFSource, ICatalogSource])
 
-agcls.AgClassCatalog.add_catalog_entry((4669407446549507698, 4351897649948657831), DAFIFSource)
+agcls.AgClassCatalog.add_catalog_entry((4762533257066684972, 3250079802010023830), DAFIFSource)
 agcls.AgTypeNameMap["DAFIFSource"] = DAFIFSource
 
 class BasicFixedWingForwardFlightLiftHelper(IBasicFixedWingLiftHelper, SupportsDeleteCallback):
@@ -18674,7 +18670,7 @@ class BasicFixedWingForwardFlightLiftHelper(IBasicFixedWingLiftHelper, SupportsD
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicFixedWingForwardFlightLiftHelper, [IBasicFixedWingLiftHelper])
 
-agcls.AgClassCatalog.add_catalog_entry((4835967416678721147, 2787928793404869025), BasicFixedWingForwardFlightLiftHelper)
+agcls.AgClassCatalog.add_catalog_entry((5096472523097694711, 11459893150503563698), BasicFixedWingForwardFlightLiftHelper)
 agcls.AgTypeNameMap["BasicFixedWingForwardFlightLiftHelper"] = BasicFixedWingForwardFlightLiftHelper
 
 class BasicManeuverStrategyStraightAhead(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -18727,7 +18723,7 @@ class BasicManeuverStrategyStraightAhead(IBasicManeuverStrategy, SupportsDeleteC
     _get_compensate_for_coriolis_acceleration_method_offset = 3
     _set_compensate_for_coriolis_acceleration_method_offset = 4
     _metadata = {
-        "iid_data" : (5334953136761860956, 12274532353622486171),
+        "iid_data" : (4769251696643978820, 7163020191161936294),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18782,7 +18778,7 @@ class BasicManeuverStrategyStraightAhead(IBasicManeuverStrategy, SupportsDeleteC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyStraightAhead, [BasicManeuverStrategyStraightAhead, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5762754887795241020, 9551154128583839911), BasicManeuverStrategyStraightAhead)
+agcls.AgClassCatalog.add_catalog_entry((5162933731028384002, 12673391437057121416), BasicManeuverStrategyStraightAhead)
 agcls.AgTypeNameMap["BasicManeuverStrategyStraightAhead"] = BasicManeuverStrategyStraightAhead
 
 class BasicManeuverStrategyCruiseProfile(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -18804,7 +18800,7 @@ class BasicManeuverStrategyCruiseProfile(IBasicManeuverStrategy, SupportsDeleteC
     _get_compensate_for_coriolis_acceleration_method_offset = 12
     _set_compensate_for_coriolis_acceleration_method_offset = 13
     _metadata = {
-        "iid_data" : (5262849801508960856, 3879152463803584443),
+        "iid_data" : (5527847317881706507, 10077558940520665987),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18932,7 +18928,7 @@ class BasicManeuverStrategyCruiseProfile(IBasicManeuverStrategy, SupportsDeleteC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyCruiseProfile, [BasicManeuverStrategyCruiseProfile, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5155340788332291990, 16249532636986922650), BasicManeuverStrategyCruiseProfile)
+agcls.AgClassCatalog.add_catalog_entry((4892470122467052397, 5885557106444023459), BasicManeuverStrategyCruiseProfile)
 agcls.AgTypeNameMap["BasicManeuverStrategyCruiseProfile"] = BasicManeuverStrategyCruiseProfile
 
 class BasicManeuverStrategyGlideProfile(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -18962,7 +18958,7 @@ class BasicManeuverStrategyGlideProfile(IBasicManeuverStrategy, SupportsDeleteCa
     _get_glide_speed_control_altitude_method_offset = 20
     _set_glide_speed_control_mode_method_offset = 21
     _metadata = {
-        "iid_data" : (4628954868529909208, 11969696804235099030),
+        "iid_data" : (5419377784868129930, 10437204407278625944),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19156,7 +19152,7 @@ class BasicManeuverStrategyGlideProfile(IBasicManeuverStrategy, SupportsDeleteCa
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyGlideProfile, [BasicManeuverStrategyGlideProfile, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((4657086743565098834, 777569838434134160), BasicManeuverStrategyGlideProfile)
+agcls.AgClassCatalog.add_catalog_entry((5278426065270220344, 8175190655503274175), BasicManeuverStrategyGlideProfile)
 agcls.AgTypeNameMap["BasicManeuverStrategyGlideProfile"] = BasicManeuverStrategyGlideProfile
 
 class AircraftModels(ICatalogSource, SupportsDeleteCallback):
@@ -19187,7 +19183,7 @@ class AircraftModels(ICatalogSource, SupportsDeleteCallback):
     _add_aircraft_method_offset = 2
     _get_as_catalog_source_method_offset = 3
     _metadata = {
-        "iid_data" : (5532977963223465883, 2562918225304965306),
+        "iid_data" : (5338846109489308717, 11820181352880586634),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19231,7 +19227,7 @@ class AircraftModels(ICatalogSource, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftModels, [AircraftModels, ICatalogSource])
 
-agcls.AgClassCatalog.add_catalog_entry((5011113197862459825, 1955468045810840253), AircraftModels)
+agcls.AgClassCatalog.add_catalog_entry((5466125568017895565, 12208300867391597443), AircraftModels)
 agcls.AgTypeNameMap["AircraftModels"] = AircraftModels
 
 class MissileModels(ICatalogSource, SupportsDeleteCallback):
@@ -19243,7 +19239,7 @@ class MissileModels(ICatalogSource, SupportsDeleteCallback):
     _add_missile_method_offset = 2
     _get_as_catalog_source_method_offset = 3
     _metadata = {
-        "iid_data" : (5743346569435433873, 13121286000592656059),
+        "iid_data" : (4644889044618181348, 7077075111350783367),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19287,7 +19283,7 @@ class MissileModels(ICatalogSource, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileModels, [MissileModels, ICatalogSource])
 
-agcls.AgClassCatalog.add_catalog_entry((5458626493784151642, 8851974794936787594), MissileModels)
+agcls.AgClassCatalog.add_catalog_entry((4907218606680133120, 9091153452395575730), MissileModels)
 agcls.AgTypeNameMap["MissileModels"] = MissileModels
 
 class RotorcraftModels(ICatalogSource, SupportsDeleteCallback):
@@ -19299,7 +19295,7 @@ class RotorcraftModels(ICatalogSource, SupportsDeleteCallback):
     _add_rotorcraft_method_offset = 2
     _get_as_catalog_source_method_offset = 3
     _metadata = {
-        "iid_data" : (4915094205029700951, 4941116414444796071),
+        "iid_data" : (5527345473858281844, 8642267180739894679),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19343,7 +19339,7 @@ class RotorcraftModels(ICatalogSource, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RotorcraftModels, [RotorcraftModels, ICatalogSource])
 
-agcls.AgClassCatalog.add_catalog_entry((4915131170068152456, 13033369765679804092), RotorcraftModels)
+agcls.AgClassCatalog.add_catalog_entry((5075982812091197952, 16282549462466652804), RotorcraftModels)
 agcls.AgTypeNameMap["RotorcraftModels"] = RotorcraftModels
 
 class Configuration(SupportsDeleteCallback):
@@ -19408,7 +19404,7 @@ class Configuration(SupportsDeleteCallback):
     _get_initial_fuel_state_method_offset = 20
     _save_method_offset = 21
     _metadata = {
-        "iid_data" : (5280899498048713762, 810766960610207137),
+        "iid_data" : (5545837967513034455, 9742896963972343181),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19607,7 +19603,7 @@ class Configuration(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Configuration, [Configuration, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5502172263085938336, 11038115258664074394), Configuration)
+agcls.AgClassCatalog.add_catalog_entry((4827440048221450016, 5531213747491929484), Configuration)
 agcls.AgTypeNameMap["Configuration"] = Configuration
 
 class FuelTankInternal(IStation, SupportsDeleteCallback):
@@ -19628,7 +19624,7 @@ class FuelTankInternal(IStation, SupportsDeleteCallback):
     _get_position_z_method_offset = 11
     _set_position_method_offset = 12
     _metadata = {
-        "iid_data" : (5440065042223753089, 12828699753905969307),
+        "iid_data" : (5566696234566195625, 740566913538151845),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19753,7 +19749,7 @@ class FuelTankInternal(IStation, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FuelTankInternal, [FuelTankInternal, IStation])
 
-agcls.AgClassCatalog.add_catalog_entry((5698710575945433930, 4905622930256443042), FuelTankInternal)
+agcls.AgClassCatalog.add_catalog_entry((5051349724134275144, 6664936572792871593), FuelTankInternal)
 agcls.AgTypeNameMap["FuelTankInternal"] = FuelTankInternal
 
 class FuelTankExternal(SupportsDeleteCallback):
@@ -19809,7 +19805,7 @@ class FuelTankExternal(SupportsDeleteCallback):
     _get_drag_index_method_offset = 11
     _set_drag_index_method_offset = 12
     _metadata = {
-        "iid_data" : (4846798690762926704, 3432907411207715728),
+        "iid_data" : (5695438150882403295, 13898631280494471811),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19932,7 +19928,7 @@ class FuelTankExternal(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FuelTankExternal, [FuelTankExternal, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5088636907529171975, 9695710133478895033), FuelTankExternal)
+agcls.AgClassCatalog.add_catalog_entry((5709040279172124952, 9402940164413462966), FuelTankExternal)
 agcls.AgTypeNameMap["FuelTankExternal"] = FuelTankExternal
 
 class PayloadStation(IStation, SupportsDeleteCallback):
@@ -19985,7 +19981,7 @@ class PayloadStation(IStation, SupportsDeleteCallback):
     _add_external_fuel_tank_method_offset = 8
     _get_external_fuel_tank_method_offset = 9
     _metadata = {
-        "iid_data" : (5521773172300241787, 15166706855028673429),
+        "iid_data" : (5614157591548039420, 6745077419093439112),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20080,7 +20076,7 @@ class PayloadStation(IStation, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PayloadStation, [PayloadStation, IStation])
 
-agcls.AgClassCatalog.add_catalog_entry((4867009326142863941, 2812515302507571881), PayloadStation)
+agcls.AgClassCatalog.add_catalog_entry((5225776359002343222, 1315251210123518882), PayloadStation)
 agcls.AgTypeNameMap["PayloadStation"] = PayloadStation
 
 class StationCollection(SupportsDeleteCallback):
@@ -20135,7 +20131,7 @@ class StationCollection(SupportsDeleteCallback):
     _remove_at_index_method_offset = 10
     _get_station_names_method_offset = 11
     _metadata = {
-        "iid_data" : (5717486039973532966, 2606205282693497753),
+        "iid_data" : (5676053526607890037, 7302072674765004713),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -20255,7 +20251,7 @@ class StationCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StationCollection, [StationCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5099395785168966975, 1882908027836215685), StationCollection)
+agcls.AgClassCatalog.add_catalog_entry((5425788541235349740, 11435877363883603619), StationCollection)
 agcls.AgTypeNameMap["StationCollection"] = StationCollection
 
 class WindModel(SupportsDeleteCallback):
@@ -20330,7 +20326,7 @@ class WindModel(SupportsDeleteCallback):
     _copy_method_offset = 9
     _paste_method_offset = 10
     _metadata = {
-        "iid_data" : (5313829494376101000, 1944389693743602836),
+        "iid_data" : (4981283606558076027, 2507574051302280328),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20434,7 +20430,7 @@ class WindModel(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, WindModel, [WindModel, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5465426116498822924, 12151378126490156939), WindModel)
+agcls.AgClassCatalog.add_catalog_entry((5011890197222405529, 9897352810162195844), WindModel)
 agcls.AgTypeNameMap["WindModel"] = WindModel
 
 class WindModelConstant(SupportsDeleteCallback):
@@ -20507,7 +20503,7 @@ class WindModelConstant(SupportsDeleteCallback):
     _get_wind_bearing_method_offset = 7
     _set_wind_bearing_method_offset = 8
     _metadata = {
-        "iid_data" : (4784209068649467141, 469699507877676171),
+        "iid_data" : (4971405515763186817, 18310043801631290001),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20596,7 +20592,7 @@ class WindModelConstant(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, WindModelConstant, [WindModelConstant, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4773128217099375110, 6648421707046788495), WindModelConstant)
+agcls.AgClassCatalog.add_catalog_entry((5035850521479163070, 17545876096059299461), WindModelConstant)
 agcls.AgTypeNameMap["WindModelConstant"] = WindModelConstant
 
 class WindModelADDS(SupportsDeleteCallback):
@@ -20619,7 +20615,7 @@ class WindModelADDS(SupportsDeleteCallback):
     _add_current_forecast_method_offset = 13
     _get_messages_method_offset = 14
     _metadata = {
-        "iid_data" : (4929481172783018289, 15319225642889104538),
+        "iid_data" : (5478049232979014594, 7598504899564008577),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20758,7 +20754,7 @@ class WindModelADDS(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, WindModelADDS, [WindModelADDS, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5314200917457773823, 13436542406830958478), WindModelADDS)
+agcls.AgClassCatalog.add_catalog_entry((5562144929930970171, 11969626413707232959), WindModelADDS)
 agcls.AgTypeNameMap["WindModelADDS"] = WindModelADDS
 
 class ADDSMessage(SupportsDeleteCallback):
@@ -20772,7 +20768,7 @@ class ADDSMessage(SupportsDeleteCallback):
     _get_type_method_offset = 4
     _get_source_method_offset = 5
     _metadata = {
-        "iid_data" : (4954408490634457473, 9817060035689406896),
+        "iid_data" : (4758175084524405231, 15414538770422881463),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20838,7 +20834,7 @@ class ADDSMessage(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ADDSMessage, [ADDSMessage, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5002038927778140066, 17045237219658894480), ADDSMessage)
+agcls.AgClassCatalog.add_catalog_entry((5039311283684709076, 5226625794155584684), ADDSMessage)
 agcls.AgTypeNameMap["ADDSMessage"] = ADDSMessage
 
 class ADDSMessageCollection(SupportsDeleteCallback):
@@ -20852,7 +20848,7 @@ class ADDSMessageCollection(SupportsDeleteCallback):
     _remove_message_method_offset = 4
     _clear_messages_method_offset = 5
     _metadata = {
-        "iid_data" : (5658302478233079681, 5797263501393998991),
+        "iid_data" : (5617890145631169828, 10823910401870769829),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -20928,7 +20924,7 @@ class ADDSMessageCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ADDSMessageCollection, [ADDSMessageCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4843115847057028331, 5361510963980995996), ADDSMessageCollection)
+agcls.AgClassCatalog.add_catalog_entry((5427015554833032624, 6699305733858417798), ADDSMessageCollection)
 agcls.AgTypeNameMap["ADDSMessageCollection"] = ADDSMessageCollection
 
 class Procedure(IProcedure, IConnect, SupportsDeleteCallback):
@@ -20949,7 +20945,7 @@ class Procedure(IProcedure, IConnect, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Procedure, [IProcedure, IConnect])
 
-agcls.AgClassCatalog.add_catalog_entry((5442570590760532794, 10773970218224780928), Procedure)
+agcls.AgClassCatalog.add_catalog_entry((5094211857843449702, 7253509544602901168), Procedure)
 agcls.AgTypeNameMap["Procedure"] = Procedure
 
 class AtmosphereModel(SupportsDeleteCallback):
@@ -21021,7 +21017,7 @@ class AtmosphereModel(SupportsDeleteCallback):
     _copy_method_offset = 6
     _paste_method_offset = 7
     _metadata = {
-        "iid_data" : (4612100852660352663, 4935595692858863267),
+        "iid_data" : (4691784999732281899, 18243469245277104015),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21099,7 +21095,7 @@ class AtmosphereModel(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AtmosphereModel, [AtmosphereModel, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4816409432479909563, 6760252487080053377), AtmosphereModel)
+agcls.AgClassCatalog.add_catalog_entry((4682485484217003647, 5691169109227838361), AtmosphereModel)
 agcls.AgTypeNameMap["AtmosphereModel"] = AtmosphereModel
 
 class AtmosphereModelBasic(SupportsDeleteCallback):
@@ -21175,7 +21171,7 @@ class AtmosphereModelBasic(SupportsDeleteCallback):
     _set_pressure_method_offset = 10
     _get_density_altitude_method_offset = 11
     _metadata = {
-        "iid_data" : (4838283917811043743, 3421562503707738005),
+        "iid_data" : (4681817031029840072, 12165211966645030836),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21290,7 +21286,7 @@ class AtmosphereModelBasic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AtmosphereModelBasic, [AtmosphereModelBasic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5663532273578424694, 5065893472194973362), AtmosphereModelBasic)
+agcls.AgClassCatalog.add_catalog_entry((4934944958524803486, 9306412402587956395), AtmosphereModelBasic)
 agcls.AgTypeNameMap["AtmosphereModelBasic"] = AtmosphereModelBasic
 
 class BasicManeuverStrategySimpleTurn(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -21307,7 +21303,7 @@ class BasicManeuverStrategySimpleTurn(IBasicManeuverStrategy, SupportsDeleteCall
     _get_compensate_for_coriolis_acceleration_method_offset = 7
     _set_compensate_for_coriolis_acceleration_method_offset = 8
     _metadata = {
-        "iid_data" : (5493616845962227984, 7381268894000172433),
+        "iid_data" : (5635935421827500257, 13919796466798279075),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21397,7 +21393,7 @@ class BasicManeuverStrategySimpleTurn(IBasicManeuverStrategy, SupportsDeleteCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategySimpleTurn, [BasicManeuverStrategySimpleTurn, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5173456712779159400, 17189367846460491146), BasicManeuverStrategySimpleTurn)
+agcls.AgClassCatalog.add_catalog_entry((5513099832780520454, 8187103781245652133), BasicManeuverStrategySimpleTurn)
 agcls.AgTypeNameMap["BasicManeuverStrategySimpleTurn"] = BasicManeuverStrategySimpleTurn
 
 class BasicManeuverStrategyAileronRoll(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -21421,7 +21417,7 @@ class BasicManeuverStrategyAileronRoll(IBasicManeuverStrategy, SupportsDeleteCal
     _set_override_roll_rate_method_offset = 14
     _get_airspeed_options_method_offset = 15
     _metadata = {
-        "iid_data" : (5221198706419766648, 15496892745081320075),
+        "iid_data" : (5645950174815256737, 444312069828726456),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21572,7 +21568,7 @@ class BasicManeuverStrategyAileronRoll(IBasicManeuverStrategy, SupportsDeleteCal
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyAileronRoll, [BasicManeuverStrategyAileronRoll, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5093290527015015737, 14374001182007497380), BasicManeuverStrategyAileronRoll)
+agcls.AgClassCatalog.add_catalog_entry((4730845823280123937, 12254870858293380787), BasicManeuverStrategyAileronRoll)
 agcls.AgTypeNameMap["BasicManeuverStrategyAileronRoll"] = BasicManeuverStrategyAileronRoll
 
 class BasicManeuverStrategyFlyAOA(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -21598,7 +21594,7 @@ class BasicManeuverStrategyFlyAOA(IBasicManeuverStrategy, SupportsDeleteCallback
     _set_aoa_method_offset = 16
     _get_airspeed_options_method_offset = 17
     _metadata = {
-        "iid_data" : (5644301695187384245, 6051879162680875696),
+        "iid_data" : (5245838093573718756, 2301513853230806678),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21766,7 +21762,7 @@ class BasicManeuverStrategyFlyAOA(IBasicManeuverStrategy, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyFlyAOA, [BasicManeuverStrategyFlyAOA, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((4797166551721930210, 6154861526904101792), BasicManeuverStrategyFlyAOA)
+agcls.AgClassCatalog.add_catalog_entry((5573747193160166995, 2238457350671452811), BasicManeuverStrategyFlyAOA)
 agcls.AgTypeNameMap["BasicManeuverStrategyFlyAOA"] = BasicManeuverStrategyFlyAOA
 
 class BasicManeuverStrategyPull(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -21784,7 +21780,7 @@ class BasicManeuverStrategyPull(IBasicManeuverStrategy, SupportsDeleteCallback):
     _set_override_pull_g_method_offset = 8
     _get_airspeed_options_method_offset = 9
     _metadata = {
-        "iid_data" : (5637166632065085547, 16269096880734304689),
+        "iid_data" : (4861236034867538547, 3796087817415555486),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21884,7 +21880,7 @@ class BasicManeuverStrategyPull(IBasicManeuverStrategy, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyPull, [BasicManeuverStrategyPull, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5112232216588763203, 9403131292386721187), BasicManeuverStrategyPull)
+agcls.AgClassCatalog.add_catalog_entry((5092267730290629264, 17466435880980189858), BasicManeuverStrategyPull)
 agcls.AgTypeNameMap["BasicManeuverStrategyPull"] = BasicManeuverStrategyPull
 
 class BasicManeuverStrategyRollingPull(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -21910,7 +21906,7 @@ class BasicManeuverStrategyRollingPull(IBasicManeuverStrategy, SupportsDeleteCal
     _set_override_pull_g_method_offset = 16
     _get_airspeed_options_method_offset = 17
     _metadata = {
-        "iid_data" : (5112425247810861068, 15870398362261631162),
+        "iid_data" : (4964830964333965020, 9226633867206746039),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22078,7 +22074,7 @@ class BasicManeuverStrategyRollingPull(IBasicManeuverStrategy, SupportsDeleteCal
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyRollingPull, [BasicManeuverStrategyRollingPull, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5201286070707408939, 16266359450549158825), BasicManeuverStrategyRollingPull)
+agcls.AgClassCatalog.add_catalog_entry((4681099053956304502, 12375842510832512167), BasicManeuverStrategyRollingPull)
 agcls.AgTypeNameMap["BasicManeuverStrategyRollingPull"] = BasicManeuverStrategyRollingPull
 
 class BasicManeuverStrategySmoothAcceleration(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -22116,7 +22112,7 @@ class BasicManeuverStrategySmoothAcceleration(IBasicManeuverStrategy, SupportsDe
     _set_stop_on_pitch_angle_method_offset = 28
     _get_airspeed_options_method_offset = 29
     _metadata = {
-        "iid_data" : (5575657865929804238, 7979276300648358334),
+        "iid_data" : (5525552795640041730, 12889884483579073671),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22386,7 +22382,7 @@ class BasicManeuverStrategySmoothAcceleration(IBasicManeuverStrategy, SupportsDe
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategySmoothAcceleration, [BasicManeuverStrategySmoothAcceleration, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5309213016362285124, 9310491107287959706), BasicManeuverStrategySmoothAcceleration)
+agcls.AgClassCatalog.add_catalog_entry((5582835490292436609, 13424822524268979081), BasicManeuverStrategySmoothAcceleration)
 agcls.AgTypeNameMap["BasicManeuverStrategySmoothAcceleration"] = BasicManeuverStrategySmoothAcceleration
 
 class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -22414,7 +22410,7 @@ class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategy, SupportsDeleteCall
     _get_flight_path_angle_mode_method_offset = 18
     _set_flight_path_angle_mode_method_offset = 19
     _metadata = {
-        "iid_data" : (5493265518926974794, 14820752937463885992),
+        "iid_data" : (5630482954305695551, 9102239819197496234),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22599,7 +22595,7 @@ class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategy, SupportsDeleteCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategySmoothTurn, [BasicManeuverStrategySmoothTurn, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((4631515585365048851, 223936628880623543), BasicManeuverStrategySmoothTurn)
+agcls.AgClassCatalog.add_catalog_entry((5378042109952670272, 6107036737491963815), BasicManeuverStrategySmoothTurn)
 agcls.AgTypeNameMap["BasicManeuverStrategySmoothTurn"] = BasicManeuverStrategySmoothTurn
 
 class BasicManeuverAirspeedOptions(SupportsDeleteCallback):
@@ -22683,7 +22679,7 @@ class BasicManeuverAirspeedOptions(SupportsDeleteCallback):
     _set_interpolate_stop_at_end_time_method_offset = 34
     _get_thrust_method_offset = 35
     _metadata = {
-        "iid_data" : (5465091044897022664, 7818739737937967787),
+        "iid_data" : (5533769817027665911, 10101882965102165680),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23002,7 +22998,7 @@ class BasicManeuverAirspeedOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverAirspeedOptions, [BasicManeuverAirspeedOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4817576889599620828, 4935414545747067064), BasicManeuverAirspeedOptions)
+agcls.AgClassCatalog.add_catalog_entry((4752728720202397933, 9331891510344925342), BasicManeuverAirspeedOptions)
 agcls.AgTypeNameMap["BasicManeuverAirspeedOptions"] = BasicManeuverAirspeedOptions
 
 class PropulsionThrust(SupportsDeleteCallback):
@@ -23029,7 +23025,7 @@ class PropulsionThrust(SupportsDeleteCallback):
     _get_max_airspeed_method_offset = 17
     _set_max_airspeed_method_offset = 18
     _metadata = {
-        "iid_data" : (4642771003123318015, 5598955518200320685),
+        "iid_data" : (5321601649376279332, 13622420919152535477),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23202,7 +23198,7 @@ class PropulsionThrust(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PropulsionThrust, [PropulsionThrust, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5602735193462223002, 11939510195580016258), PropulsionThrust)
+agcls.AgClassCatalog.add_catalog_entry((5266482539490547199, 10898545806418560955), PropulsionThrust)
 agcls.AgTypeNameMap["PropulsionThrust"] = PropulsionThrust
 
 class BasicManeuverStrategyAutopilotNavigation(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -23226,7 +23222,7 @@ class BasicManeuverStrategyAutopilotNavigation(IBasicManeuverStrategy, SupportsD
     _get_stop_when_conditions_met_method_offset = 14
     _set_stop_when_conditions_met_method_offset = 15
     _metadata = {
-        "iid_data" : (5500937120651946827, 13117878096294151558),
+        "iid_data" : (5528823053485584624, 4167472705976387995),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23376,7 +23372,7 @@ class BasicManeuverStrategyAutopilotNavigation(IBasicManeuverStrategy, SupportsD
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyAutopilotNavigation, [BasicManeuverStrategyAutopilotNavigation, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((4732726606686848626, 4213261683524251822), BasicManeuverStrategyAutopilotNavigation)
+agcls.AgClassCatalog.add_catalog_entry((5407397940544218609, 1979705668912285110), BasicManeuverStrategyAutopilotNavigation)
 agcls.AgTypeNameMap["BasicManeuverStrategyAutopilotNavigation"] = BasicManeuverStrategyAutopilotNavigation
 
 class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -23454,7 +23450,7 @@ class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategy, SupportsDeleteC
     _get_stop_when_conditions_met_method_offset = 28
     _set_stop_when_conditions_met_method_offset = 29
     _metadata = {
-        "iid_data" : (4666067371598022379, 6220797713878132123),
+        "iid_data" : (5454959780484675601, 6675972699371961494),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23723,7 +23719,7 @@ class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategy, SupportsDeleteC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyAutopilotProf, [BasicManeuverStrategyAutopilotProf, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5709838463678627713, 16791243628197529479), BasicManeuverStrategyAutopilotProf)
+agcls.AgClassCatalog.add_catalog_entry((5591461901627255515, 7704700784830760372), BasicManeuverStrategyAutopilotProf)
 agcls.AgTypeNameMap["BasicManeuverStrategyAutopilotProf"] = BasicManeuverStrategyAutopilotProf
 
 class BasicManeuverStrategyBarrelRoll(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -23748,7 +23744,7 @@ class BasicManeuverStrategyBarrelRoll(IBasicManeuverStrategy, SupportsDeleteCall
     _get_bottom_airspeed_method_offset = 15
     _set_airspeeds_method_offset = 16
     _metadata = {
-        "iid_data" : (4690648775118107246, 6407640789399177151),
+        "iid_data" : (4901736065305118001, 17931869309529918609),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23907,7 +23903,7 @@ class BasicManeuverStrategyBarrelRoll(IBasicManeuverStrategy, SupportsDeleteCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyBarrelRoll, [BasicManeuverStrategyBarrelRoll, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5355659262358528065, 9078756396061716909), BasicManeuverStrategyBarrelRoll)
+agcls.AgClassCatalog.add_catalog_entry((5053718999532365932, 11074054934900080024), BasicManeuverStrategyBarrelRoll)
 agcls.AgTypeNameMap["BasicManeuverStrategyBarrelRoll"] = BasicManeuverStrategyBarrelRoll
 
 class BasicManeuverStrategyLoop(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -23930,7 +23926,7 @@ class BasicManeuverStrategyLoop(IBasicManeuverStrategy, SupportsDeleteCallback):
     _get_bottom_airspeed_method_offset = 13
     _set_airspeeds_method_offset = 14
     _metadata = {
-        "iid_data" : (4966194871769355176, 4776523075554737546),
+        "iid_data" : (5065212878961841945, 16203245391117959099),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24072,7 +24068,7 @@ class BasicManeuverStrategyLoop(IBasicManeuverStrategy, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyLoop, [BasicManeuverStrategyLoop, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((4691659063102541300, 9389394676268526500), BasicManeuverStrategyLoop)
+agcls.AgClassCatalog.add_catalog_entry((5311506726426567114, 8694431280002319787), BasicManeuverStrategyLoop)
 agcls.AgTypeNameMap["BasicManeuverStrategyLoop"] = BasicManeuverStrategyLoop
 
 class BasicManeuverStrategyLTAHover(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -24105,7 +24101,7 @@ class BasicManeuverStrategyLTAHover(IBasicManeuverStrategy, SupportsDeleteCallba
     _get_parachute_cd_method_offset = 23
     _set_parachute_cd_method_offset = 24
     _metadata = {
-        "iid_data" : (5443386974052830055, 10444063467016189095),
+        "iid_data" : (5570731666653799832, 16715525894464043409),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24332,7 +24328,7 @@ class BasicManeuverStrategyLTAHover(IBasicManeuverStrategy, SupportsDeleteCallba
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyLTAHover, [BasicManeuverStrategyLTAHover, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5624469055344737798, 8341335282646269584), BasicManeuverStrategyLTAHover)
+agcls.AgClassCatalog.add_catalog_entry((5370129164369298835, 5722626848232323228), BasicManeuverStrategyLTAHover)
 agcls.AgTypeNameMap["BasicManeuverStrategyLTAHover"] = BasicManeuverStrategyLTAHover
 
 class BasicManeuverStrategyIntercept(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -24375,7 +24371,7 @@ class BasicManeuverStrategyIntercept(IBasicManeuverStrategy, SupportsDeleteCallb
     _get_position_velocity_strategies_method_offset = 33
     _cancel_target_position_velocity_method_offset = 34
     _metadata = {
-        "iid_data" : (5313400505422947784, 17687416165806767533),
+        "iid_data" : (5264258633285591119, 10422935046155899810),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24685,7 +24681,7 @@ class BasicManeuverStrategyIntercept(IBasicManeuverStrategy, SupportsDeleteCallb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyIntercept, [BasicManeuverStrategyIntercept, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5159952174471101760, 4758727950404349881), BasicManeuverStrategyIntercept)
+agcls.AgClassCatalog.add_catalog_entry((5571891932976068458, 3774998738662299826), BasicManeuverStrategyIntercept)
 agcls.AgTypeNameMap["BasicManeuverStrategyIntercept"] = BasicManeuverStrategyIntercept
 
 class BasicManeuverStrategyRelativeBearing(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -24712,7 +24708,7 @@ class BasicManeuverStrategyRelativeBearing(IBasicManeuverStrategy, SupportsDelet
     _get_position_velocity_strategies_method_offset = 17
     _cancel_target_position_velocity_method_offset = 18
     _metadata = {
-        "iid_data" : (4866238946930048015, 14417521249700002203),
+        "iid_data" : (5545745978551060058, 4323840634346686891),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24887,7 +24883,7 @@ class BasicManeuverStrategyRelativeBearing(IBasicManeuverStrategy, SupportsDelet
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyRelativeBearing, [BasicManeuverStrategyRelativeBearing, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5655899589593519305, 304724110097198999), BasicManeuverStrategyRelativeBearing)
+agcls.AgClassCatalog.add_catalog_entry((4814730816210933725, 12484748463839947146), BasicManeuverStrategyRelativeBearing)
 agcls.AgTypeNameMap["BasicManeuverStrategyRelativeBearing"] = BasicManeuverStrategyRelativeBearing
 
 class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -24930,7 +24926,7 @@ class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategy, SupportsDelete
     _get_position_velocity_strategies_method_offset = 33
     _cancel_target_position_velocity_method_offset = 34
     _metadata = {
-        "iid_data" : (5054084160759805633, 8063128821334535086),
+        "iid_data" : (5239099332855704210, 4297465711380378293),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25241,7 +25237,7 @@ class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategy, SupportsDelete
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyRelativeCourse, [BasicManeuverStrategyRelativeCourse, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5147571040876942273, 10395763520339013003), BasicManeuverStrategyRelativeCourse)
+agcls.AgClassCatalog.add_catalog_entry((4823112212229275312, 11639242114351797912), BasicManeuverStrategyRelativeCourse)
 agcls.AgTypeNameMap["BasicManeuverStrategyRelativeCourse"] = BasicManeuverStrategyRelativeCourse
 
 class BasicManeuverStrategyRendezvous(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -25289,7 +25285,7 @@ class BasicManeuverStrategyRendezvous(IBasicManeuverStrategy, SupportsDeleteCall
     _get_position_velocity_strategies_method_offset = 38
     _cancel_target_position_velocity_method_offset = 39
     _metadata = {
-        "iid_data" : (5284660652818080215, 12593108281635057289),
+        "iid_data" : (5584135952774219612, 2990494884668748204),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25642,7 +25638,7 @@ class BasicManeuverStrategyRendezvous(IBasicManeuverStrategy, SupportsDeleteCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyRendezvous, [BasicManeuverStrategyRendezvous, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((4675174661932178731, 17343095513377294464), BasicManeuverStrategyRendezvous)
+agcls.AgClassCatalog.add_catalog_entry((4806154608996720754, 713194180511470213), BasicManeuverStrategyRendezvous)
 agcls.AgTypeNameMap["BasicManeuverStrategyRendezvous"] = BasicManeuverStrategyRendezvous
 
 class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -25689,7 +25685,7 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategy, SupportsDelete
     _get_position_velocity_strategies_method_offset = 37
     _cancel_target_position_velocity_method_offset = 38
     _metadata = {
-        "iid_data" : (5315651566696080808, 8511792787367462056),
+        "iid_data" : (5512524593749306764, 3696700151959131544),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26034,7 +26030,7 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategy, SupportsDelete
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyStationkeeping, [BasicManeuverStrategyStationkeeping, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5702255453772112199, 1626181488337625527), BasicManeuverStrategyStationkeeping)
+agcls.AgClassCatalog.add_catalog_entry((5469350664645767000, 14628685467522935714), BasicManeuverStrategyStationkeeping)
 agcls.AgTypeNameMap["BasicManeuverStrategyStationkeeping"] = BasicManeuverStrategyStationkeeping
 
 class BasicManeuverStrategyRelativeFlightPathAngle(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -26067,7 +26063,7 @@ class BasicManeuverStrategyRelativeFlightPathAngle(IBasicManeuverStrategy, Suppo
     _get_compensate_for_coriolis_acceleration_method_offset = 23
     _set_compensate_for_coriolis_acceleration_method_offset = 24
     _metadata = {
-        "iid_data" : (5255887612627280946, 16294942005206168238),
+        "iid_data" : (5759415321392054818, 15097455270274483383),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26291,7 +26287,7 @@ class BasicManeuverStrategyRelativeFlightPathAngle(IBasicManeuverStrategy, Suppo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyRelativeFlightPathAngle, [BasicManeuverStrategyRelativeFlightPathAngle, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5235810298562675973, 15451148610208858280), BasicManeuverStrategyRelativeFlightPathAngle)
+agcls.AgClassCatalog.add_catalog_entry((4969387907270348020, 7583129106230915969), BasicManeuverStrategyRelativeFlightPathAngle)
 agcls.AgTypeNameMap["BasicManeuverStrategyRelativeFlightPathAngle"] = BasicManeuverStrategyRelativeFlightPathAngle
 
 class BasicManeuverStrategyRelativeSpeedAltitude(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -26338,7 +26334,7 @@ class BasicManeuverStrategyRelativeSpeedAltitude(IBasicManeuverStrategy, Support
     _get_position_velocity_strategies_method_offset = 37
     _cancel_target_position_velocity_method_offset = 38
     _metadata = {
-        "iid_data" : (5691163621320581131, 205069969700959880),
+        "iid_data" : (4889411162144115192, 5982343704451064235),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26681,7 +26677,7 @@ class BasicManeuverStrategyRelativeSpeedAltitude(IBasicManeuverStrategy, Support
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyRelativeSpeedAltitude, [BasicManeuverStrategyRelativeSpeedAltitude, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((4894758819387771869, 8683178293969344168), BasicManeuverStrategyRelativeSpeedAltitude)
+agcls.AgClassCatalog.add_catalog_entry((5609633177578279507, 5438930160760812160), BasicManeuverStrategyRelativeSpeedAltitude)
 agcls.AgTypeNameMap["BasicManeuverStrategyRelativeSpeedAltitude"] = BasicManeuverStrategyRelativeSpeedAltitude
 
 class BasicManeuverStrategyBezier(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -26712,7 +26708,7 @@ class BasicManeuverStrategyBezier(IBasicManeuverStrategy, SupportsDeleteCallback
     _get_compensate_for_coriolis_acceleration_method_offset = 21
     _set_compensate_for_coriolis_acceleration_method_offset = 22
     _metadata = {
-        "iid_data" : (5595669399647378963, 17571238138391423883),
+        "iid_data" : (5130566883751390464, 15899505623918494632),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26920,7 +26916,7 @@ class BasicManeuverStrategyBezier(IBasicManeuverStrategy, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyBezier, [BasicManeuverStrategyBezier, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5222291178848850719, 6629227373768158352), BasicManeuverStrategyBezier)
+agcls.AgClassCatalog.add_catalog_entry((5122555601701283440, 3693593198182710717), BasicManeuverStrategyBezier)
 agcls.AgTypeNameMap["BasicManeuverStrategyBezier"] = BasicManeuverStrategyBezier
 
 class BasicManeuverStrategyPushPull(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -26956,7 +26952,7 @@ class BasicManeuverStrategyPushPull(IBasicManeuverStrategy, SupportsDeleteCallba
     _get_compensate_for_coriolis_acceleration_method_offset = 26
     _set_compensate_for_coriolis_acceleration_method_offset = 27
     _metadata = {
-        "iid_data" : (5379525353037390362, 8450611450859654847),
+        "iid_data" : (5486483717629800709, 15466175706788859555),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27207,7 +27203,7 @@ class BasicManeuverStrategyPushPull(IBasicManeuverStrategy, SupportsDeleteCallba
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyPushPull, [BasicManeuverStrategyPushPull, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5657445006848612225, 10751136478487384450), BasicManeuverStrategyPushPull)
+agcls.AgClassCatalog.add_catalog_entry((5490397002689485043, 1993785009881503132), BasicManeuverStrategyPushPull)
 agcls.AgTypeNameMap["BasicManeuverStrategyPushPull"] = BasicManeuverStrategyPushPull
 
 class ProcedureHoldingCircular(IProcedure, SupportsDeleteCallback):
@@ -27243,7 +27239,7 @@ class ProcedureHoldingCircular(IProcedure, SupportsDeleteCallback):
     _get_minimum_diameter_method_offset = 26
     _get_as_procedure_method_offset = 27
     _metadata = {
-        "iid_data" : (5040350194063280561, 12538380298232867459),
+        "iid_data" : (5674182186635272233, 3217996947907308203),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27495,7 +27491,7 @@ class ProcedureHoldingCircular(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureHoldingCircular, [ProcedureHoldingCircular, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5374995383901064165, 6409085697245498811), ProcedureHoldingCircular)
+agcls.AgClassCatalog.add_catalog_entry((5290416926859937714, 827646136833711494), ProcedureHoldingCircular)
 agcls.AgTypeNameMap["ProcedureHoldingCircular"] = ProcedureHoldingCircular
 
 class ProcedureHoldingFigure8(IProcedure, SupportsDeleteCallback):
@@ -27531,7 +27527,7 @@ class ProcedureHoldingFigure8(IProcedure, SupportsDeleteCallback):
     _get_minimum_width_method_offset = 26
     _get_as_procedure_method_offset = 27
     _metadata = {
-        "iid_data" : (5057504402673113506, 16387967675821578932),
+        "iid_data" : (5513909925028885856, 12277113752680136587),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27783,7 +27779,7 @@ class ProcedureHoldingFigure8(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureHoldingFigure8, [ProcedureHoldingFigure8, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5040902702432878542, 2657564633102253195), ProcedureHoldingFigure8)
+agcls.AgClassCatalog.add_catalog_entry((5057065564822796215, 4995013846903598263), ProcedureHoldingFigure8)
 agcls.AgTypeNameMap["ProcedureHoldingFigure8"] = ProcedureHoldingFigure8
 
 class ProcedureHoldingRacetrack(IProcedure, SupportsDeleteCallback):
@@ -27819,7 +27815,7 @@ class ProcedureHoldingRacetrack(IProcedure, SupportsDeleteCallback):
     _get_minimum_width_method_offset = 26
     _get_as_procedure_method_offset = 27
     _metadata = {
-        "iid_data" : (4842277984816642990, 12984619644259900564),
+        "iid_data" : (5437384992112672035, 18199157578150369431),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28071,7 +28067,7 @@ class ProcedureHoldingRacetrack(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureHoldingRacetrack, [ProcedureHoldingRacetrack, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5686552538982805981, 15746507684010401214), ProcedureHoldingRacetrack)
+agcls.AgClassCatalog.add_catalog_entry((5322299753740427832, 100740513041423804), ProcedureHoldingRacetrack)
 agcls.AgTypeNameMap["ProcedureHoldingRacetrack"] = ProcedureHoldingRacetrack
 
 class ProcedureTransitionToHover(IProcedure, SupportsDeleteCallback):
@@ -28095,7 +28091,7 @@ class ProcedureTransitionToHover(IProcedure, SupportsDeleteCallback):
     _set_smooth_transition_mode_method_offset = 14
     _get_as_procedure_method_offset = 15
     _metadata = {
-        "iid_data" : (5350110137894207342, 13890695915349771698),
+        "iid_data" : (5510452569912444562, 9497139874493204132),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28244,7 +28240,7 @@ class ProcedureTransitionToHover(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureTransitionToHover, [ProcedureTransitionToHover, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5499213008247255937, 18176109542300513441), ProcedureTransitionToHover)
+agcls.AgClassCatalog.add_catalog_entry((5007197514632250988, 10945689118224027552), ProcedureTransitionToHover)
 agcls.AgTypeNameMap["ProcedureTransitionToHover"] = ProcedureTransitionToHover
 
 class ProcedureTerrainFollow(IProcedure, SupportsDeleteCallback):
@@ -28262,7 +28258,7 @@ class ProcedureTerrainFollow(IProcedure, SupportsDeleteCallback):
     _set_turn_factor_method_offset = 8
     _get_as_procedure_method_offset = 9
     _metadata = {
-        "iid_data" : (5088963624823228270, 17025317602044178563),
+        "iid_data" : (5276347823007119658, 2362131622346216601),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28361,7 +28357,7 @@ class ProcedureTerrainFollow(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureTerrainFollow, [ProcedureTerrainFollow, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((4637705811759712830, 3762655096574013604), ProcedureTerrainFollow)
+agcls.AgClassCatalog.add_catalog_entry((4725625526145423287, 5015925469956116923), ProcedureTerrainFollow)
 agcls.AgTypeNameMap["ProcedureTerrainFollow"] = ProcedureTerrainFollow
 
 class ProcedureHover(IProcedure, SupportsDeleteCallback):
@@ -28401,7 +28397,7 @@ class ProcedureHover(IProcedure, SupportsDeleteCallback):
     _set_radius_factor_method_offset = 30
     _get_as_procedure_method_offset = 31
     _metadata = {
-        "iid_data" : (4746140938652922276, 18383641478313139114),
+        "iid_data" : (4777581046112331315, 5747953918719378859),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28684,7 +28680,7 @@ class ProcedureHover(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureHover, [ProcedureHover, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((4637757686110696229, 14943083538204818584), ProcedureHover)
+agcls.AgClassCatalog.add_catalog_entry((4753290115499160591, 13469628354460050867), ProcedureHover)
 agcls.AgTypeNameMap["ProcedureHover"] = ProcedureHover
 
 class ProcedureHoverTranslate(IProcedure, SupportsDeleteCallback):
@@ -28712,7 +28708,7 @@ class ProcedureHoverTranslate(IProcedure, SupportsDeleteCallback):
     _set_radius_factor_method_offset = 18
     _get_as_procedure_method_offset = 19
     _metadata = {
-        "iid_data" : (5662964070338846544, 4864949394049088699),
+        "iid_data" : (5676044262881406547, 10031452594488028803),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28893,7 +28889,7 @@ class ProcedureHoverTranslate(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureHoverTranslate, [ProcedureHoverTranslate, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5420214741440535853, 18125981861350198176), ProcedureHoverTranslate)
+agcls.AgClassCatalog.add_catalog_entry((5153393681698894354, 17535831202183499403), ProcedureHoverTranslate)
 agcls.AgTypeNameMap["ProcedureHoverTranslate"] = ProcedureHoverTranslate
 
 class ProcedureTransitionToForwardFlight(IProcedure, SupportsDeleteCallback):
@@ -28912,7 +28908,7 @@ class ProcedureTransitionToForwardFlight(IProcedure, SupportsDeleteCallback):
     _set_flight_path_angle_method_offset = 9
     _get_as_procedure_method_offset = 10
     _metadata = {
-        "iid_data" : (5172158911162988128, 12605206831299636140),
+        "iid_data" : (5464515781848996742, 10497743720649945762),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29016,7 +29012,7 @@ class ProcedureTransitionToForwardFlight(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureTransitionToForwardFlight, [ProcedureTransitionToForwardFlight, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5262760007562529134, 8656628601888141195), ProcedureTransitionToForwardFlight)
+agcls.AgClassCatalog.add_catalog_entry((4690146323521818312, 9117745938987861905), ProcedureTransitionToForwardFlight)
 agcls.AgTypeNameMap["ProcedureTransitionToForwardFlight"] = ProcedureTransitionToForwardFlight
 
 class HoverAltitudeOptions(SupportsDeleteCallback):
@@ -29031,7 +29027,7 @@ class HoverAltitudeOptions(SupportsDeleteCallback):
     _get_final_altitude_rate_method_offset = 5
     _set_final_altitude_rate_method_offset = 6
     _metadata = {
-        "iid_data" : (4635993456199635708, 13678738623190303391),
+        "iid_data" : (4661407670915866306, 11376061576740134582),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29103,7 +29099,7 @@ class HoverAltitudeOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, HoverAltitudeOptions, [HoverAltitudeOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5129030188012039213, 13778514413080775075), HoverAltitudeOptions)
+agcls.AgClassCatalog.add_catalog_entry((4740571741405690216, 2222911051242398634), HoverAltitudeOptions)
 agcls.AgTypeNameMap["HoverAltitudeOptions"] = HoverAltitudeOptions
 
 class ProcedureVerticalTakeoff(IProcedure, SupportsDeleteCallback):
@@ -29126,7 +29122,7 @@ class ProcedureVerticalTakeoff(IProcedure, SupportsDeleteCallback):
     _set_hold_on_deck_method_offset = 13
     _get_as_procedure_method_offset = 14
     _metadata = {
-        "iid_data" : (5748758660416097725, 5478054864104337286),
+        "iid_data" : (5583445033875094647, 17386031209931035556),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29266,7 +29262,7 @@ class ProcedureVerticalTakeoff(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureVerticalTakeoff, [ProcedureVerticalTakeoff, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((4791321845834673536, 13367423232266428341), ProcedureVerticalTakeoff)
+agcls.AgClassCatalog.add_catalog_entry((5317022368103576352, 4250541870776121235), ProcedureVerticalTakeoff)
 agcls.AgTypeNameMap["ProcedureVerticalTakeoff"] = ProcedureVerticalTakeoff
 
 class ProcedureVerticalLanding(IProcedure, SupportsDeleteCallback):
@@ -29289,7 +29285,7 @@ class ProcedureVerticalLanding(IProcedure, SupportsDeleteCallback):
     _set_radius_factor_method_offset = 13
     _get_as_procedure_method_offset = 14
     _metadata = {
-        "iid_data" : (5077635317155011109, 11487885256739439786),
+        "iid_data" : (5025227154372844576, 4045737423791519399),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29429,7 +29425,7 @@ class ProcedureVerticalLanding(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureVerticalLanding, [ProcedureVerticalLanding, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5365072422615651427, 462059424097126035), ProcedureVerticalLanding)
+agcls.AgClassCatalog.add_catalog_entry((5711794928182915745, 6880974135842464913), ProcedureVerticalLanding)
 agcls.AgTypeNameMap["ProcedureVerticalLanding"] = ProcedureVerticalLanding
 
 class ProcedureReferenceState(IProcedure, SupportsDeleteCallback):
@@ -29459,7 +29455,7 @@ class ProcedureReferenceState(IProcedure, SupportsDeleteCallback):
     _get_mode_as_hover_method_offset = 20
     _get_mode_as_weight_on_wheels_method_offset = 21
     _metadata = {
-        "iid_data" : (5635558193097324645, 13481034554753658046),
+        "iid_data" : (5032767814355680504, 1277412112984607633),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29661,7 +29657,7 @@ class ProcedureReferenceState(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureReferenceState, [ProcedureReferenceState, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((4812781112846854856, 13811130182470939556), ProcedureReferenceState)
+agcls.AgClassCatalog.add_catalog_entry((5644090731336516046, 9698562720785769101), ProcedureReferenceState)
 agcls.AgTypeNameMap["ProcedureReferenceState"] = ProcedureReferenceState
 
 class ProcedureSuperProcedure(IProcedure, SupportsDeleteCallback):
@@ -29673,7 +29669,7 @@ class ProcedureSuperProcedure(IProcedure, SupportsDeleteCallback):
     _load_procedures_from_clipboard_method_offset = 2
     _load_procedures_from_file_method_offset = 3
     _metadata = {
-        "iid_data" : (4976634188254865349, 4662999449300962743),
+        "iid_data" : (5517410931095465213, 9741453568725629850),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29717,7 +29713,7 @@ class ProcedureSuperProcedure(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureSuperProcedure, [ProcedureSuperProcedure, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5251086126458868149, 1670994784482352541), ProcedureSuperProcedure)
+agcls.AgClassCatalog.add_catalog_entry((5087636182251477219, 8519186884360466820), ProcedureSuperProcedure)
 agcls.AgTypeNameMap["ProcedureSuperProcedure"] = ProcedureSuperProcedure
 
 class ProcedureLaunch(IProcedure, SupportsDeleteCallback):
@@ -29748,7 +29744,7 @@ class ProcedureLaunch(IProcedure, SupportsDeleteCallback):
     _get_true_course_hint_method_offset = 21
     _set_true_course_hint_method_offset = 22
     _metadata = {
-        "iid_data" : (4997115185128623189, 1319403736513253293),
+        "iid_data" : (5552902677796974266, 11537605188822380705),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29956,7 +29952,7 @@ class ProcedureLaunch(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureLaunch, [ProcedureLaunch, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((4915172643493226120, 10856906451169746841), ProcedureLaunch)
+agcls.AgClassCatalog.add_catalog_entry((4662136260822430726, 14681346789224749469), ProcedureLaunch)
 agcls.AgTypeNameMap["ProcedureLaunch"] = ProcedureLaunch
 
 class ProcedureAirway(IProcedure, SupportsDeleteCallback):
@@ -29983,7 +29979,7 @@ class ProcedureAirway(IProcedure, SupportsDeleteCallback):
     _get_waypoints_method_offset = 17
     _copy_procedures_method_offset = 18
     _metadata = {
-        "iid_data" : (5113338053800770439, 8104523135851895734),
+        "iid_data" : (5703143220930276492, 16175388535203229367),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -30153,7 +30149,7 @@ class ProcedureAirway(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureAirway, [ProcedureAirway, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5692509012567053828, 17361800954042551713), ProcedureAirway)
+agcls.AgClassCatalog.add_catalog_entry((5379658148804536679, 2322041471763609746), ProcedureAirway)
 agcls.AgTypeNameMap["ProcedureAirway"] = ProcedureAirway
 
 class ProcedureAirwayRouter(IProcedure, SupportsDeleteCallback):
@@ -30181,7 +30177,7 @@ class ProcedureAirwayRouter(IProcedure, SupportsDeleteCallback):
     _get_segments_method_offset = 18
     _copy_procedures_method_offset = 19
     _metadata = {
-        "iid_data" : (5008084498985926846, 600814285428910999),
+        "iid_data" : (5035480345558407429, 5079786993006483360),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -30360,7 +30356,7 @@ class ProcedureAirwayRouter(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureAirwayRouter, [ProcedureAirwayRouter, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((4819096666789441106, 4134135321931006376), ProcedureAirwayRouter)
+agcls.AgClassCatalog.add_catalog_entry((4774522286712050812, 5754696563537468351), ProcedureAirwayRouter)
 agcls.AgTypeNameMap["ProcedureAirwayRouter"] = ProcedureAirwayRouter
 
 class ProcedureAreaTargetSearch(IProcedure, SupportsDeleteCallback):
@@ -30390,7 +30386,7 @@ class ProcedureAreaTargetSearch(IProcedure, SupportsDeleteCallback):
     _set_level_off_mode_method_offset = 20
     _copy_procedures_method_offset = 21
     _metadata = {
-        "iid_data" : (5304016268201673934, 12422724768842932378),
+        "iid_data" : (5161868992949042871, 3575484425588241561),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -30590,7 +30586,7 @@ class ProcedureAreaTargetSearch(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureAreaTargetSearch, [ProcedureAreaTargetSearch, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5703169694398522635, 8200198528211558019), ProcedureAreaTargetSearch)
+agcls.AgClassCatalog.add_catalog_entry((5707838076032405080, 15778780023636119170), ProcedureAreaTargetSearch)
 agcls.AgTypeNameMap["ProcedureAreaTargetSearch"] = ProcedureAreaTargetSearch
 
 class ProcedureFormationRecover(IProcedure, SupportsDeleteCallback):
@@ -30637,7 +30633,7 @@ class ProcedureFormationRecover(IProcedure, SupportsDeleteCallback):
     _get_delay_turn_direction_method_offset = 37
     _set_delay_turn_direction_method_offset = 38
     _metadata = {
-        "iid_data" : (4870593204797535676, 9491535379450674305),
+        "iid_data" : (4908906760497704405, 7810309778570985380),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -30980,7 +30976,7 @@ class ProcedureFormationRecover(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureFormationRecover, [ProcedureFormationRecover, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((4646585276692074522, 9641621253891545000), ProcedureFormationRecover)
+agcls.AgClassCatalog.add_catalog_entry((4951419833680116890, 7549111202707140501), ProcedureFormationRecover)
 agcls.AgTypeNameMap["ProcedureFormationRecover"] = ProcedureFormationRecover
 
 class ProcedureInFormation(IProcedure, SupportsDeleteCallback):
@@ -31008,7 +31004,7 @@ class ProcedureInFormation(IProcedure, SupportsDeleteCallback):
     _get_consider_acceleration_for_fuel_flow_method_offset = 18
     _set_consider_acceleration_for_fuel_flow_method_offset = 19
     _metadata = {
-        "iid_data" : (5297555687400448155, 1815741588290416825),
+        "iid_data" : (5143715110970341811, 4368016272525911718),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -31191,7 +31187,7 @@ class ProcedureInFormation(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureInFormation, [ProcedureInFormation, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5532593623227038087, 13258620445025064627), ProcedureInFormation)
+agcls.AgClassCatalog.add_catalog_entry((5710447443137054683, 2810492245160406413), ProcedureInFormation)
 agcls.AgTypeNameMap["ProcedureInFormation"] = ProcedureInFormation
 
 class ProcedureParallelFlightLine(IProcedure, SupportsDeleteCallback):
@@ -31219,7 +31215,7 @@ class ProcedureParallelFlightLine(IProcedure, SupportsDeleteCallback):
     _set_level_off_mode_method_offset = 18
     _get_as_procedure_method_offset = 19
     _metadata = {
-        "iid_data" : (5007645273842850441, 258664155243137693),
+        "iid_data" : (4625500086405095788, 70484841705450686),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -31404,7 +31400,7 @@ class ProcedureParallelFlightLine(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureParallelFlightLine, [ProcedureParallelFlightLine, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5109471054028572559, 5414478772883439545), ProcedureParallelFlightLine)
+agcls.AgClassCatalog.add_catalog_entry((5418466463007429437, 11856086607004421255), ProcedureParallelFlightLine)
 agcls.AgTypeNameMap["ProcedureParallelFlightLine"] = ProcedureParallelFlightLine
 
 class ProcedureVGTPoint(IProcedure, SupportsDeleteCallback):
@@ -31436,7 +31432,7 @@ class ProcedureVGTPoint(IProcedure, SupportsDeleteCallback):
     _get_display_step_time_method_offset = 22
     _set_display_step_time_method_offset = 23
     _metadata = {
-        "iid_data" : (5352911337839501133, 797182055070628029),
+        "iid_data" : (4780414969670369684, 2058212949074634884),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -31654,7 +31650,7 @@ class ProcedureVGTPoint(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureVGTPoint, [ProcedureVGTPoint, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5185311090544048998, 8831984788416391870), ProcedureVGTPoint)
+agcls.AgClassCatalog.add_catalog_entry((5074330445549351998, 1802246813825324735), ProcedureVGTPoint)
 agcls.AgTypeNameMap["ProcedureVGTPoint"] = ProcedureVGTPoint
 
 class PerformanceModelOptions(SupportsDeleteCallback):
@@ -31691,7 +31687,7 @@ class PerformanceModelOptions(SupportsDeleteCallback):
     _get_is_linked_to_catalog_method_offset = 7
     _get_properties_method_offset = 8
     _metadata = {
-        "iid_data" : (5482067015907007282, 18267973121590324881),
+        "iid_data" : (5320033637949659277, 8595592380201193111),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -31774,7 +31770,7 @@ class PerformanceModelOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PerformanceModelOptions, [PerformanceModelOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5564371800440964119, 7517434752528760714), PerformanceModelOptions)
+agcls.AgClassCatalog.add_catalog_entry((5061108020101782780, 5324006017130354868), PerformanceModelOptions)
 agcls.AgTypeNameMap["PerformanceModelOptions"] = PerformanceModelOptions
 
 class AdvancedFixedWingTool(SupportsDeleteCallback):
@@ -31864,7 +31860,7 @@ class AdvancedFixedWingTool(SupportsDeleteCallback):
     _get_powerplant_mode_as_sub_super_hypersonic_method_offset = 41
     _get_aerodynamic_mode_as_four_point_method_offset = 42
     _metadata = {
-        "iid_data" : (5237019780042636595, 13473390248537517999),
+        "iid_data" : (5496358338233728574, 10608992348063631250),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -32247,7 +32243,7 @@ class AdvancedFixedWingTool(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingTool, [AdvancedFixedWingTool, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4959167576758306460, 5150777901270384053), AdvancedFixedWingTool)
+agcls.AgClassCatalog.add_catalog_entry((4928018853012863706, 8022324796017947528), AdvancedFixedWingTool)
 agcls.AgTypeNameMap["AdvancedFixedWingTool"] = AdvancedFixedWingTool
 
 class AdvancedFixedWingExternalAerodynamic(SupportsDeleteCallback):
@@ -32259,7 +32255,7 @@ class AdvancedFixedWingExternalAerodynamic(SupportsDeleteCallback):
     _set_filepath_method_offset = 2
     _get_is_valid_method_offset = 3
     _metadata = {
-        "iid_data" : (4718562149881086212, 5213103095226551192),
+        "iid_data" : (4773202368349412793, 10669353128838433464),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -32305,7 +32301,7 @@ class AdvancedFixedWingExternalAerodynamic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingExternalAerodynamic, [AdvancedFixedWingExternalAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4930872444534161422, 10999827858917784511), AdvancedFixedWingExternalAerodynamic)
+agcls.AgClassCatalog.add_catalog_entry((4963023332936860465, 10058982315527249067), AdvancedFixedWingExternalAerodynamic)
 agcls.AgTypeNameMap["AdvancedFixedWingExternalAerodynamic"] = AdvancedFixedWingExternalAerodynamic
 
 class AdvancedFixedWingSubsonicAerodynamic(SupportsDeleteCallback):
@@ -32326,7 +32322,7 @@ class AdvancedFixedWingSubsonicAerodynamic(SupportsDeleteCallback):
     _get_transonic_mach_drag_factor_method_offset = 11
     _set_transonic_mach_drag_factor_method_offset = 12
     _metadata = {
-        "iid_data" : (4697303484004482935, 3130684680515483791),
+        "iid_data" : (4946159600863735082, 7747479264704361917),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -32450,7 +32446,7 @@ class AdvancedFixedWingSubsonicAerodynamic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingSubsonicAerodynamic, [AdvancedFixedWingSubsonicAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5062145481846871754, 6094659154782220179), AdvancedFixedWingSubsonicAerodynamic)
+agcls.AgClassCatalog.add_catalog_entry((5500229245771464010, 3428128094711936941), AdvancedFixedWingSubsonicAerodynamic)
 agcls.AgTypeNameMap["AdvancedFixedWingSubsonicAerodynamic"] = AdvancedFixedWingSubsonicAerodynamic
 
 class AdvancedFixedWingSubSuperHypersonicAerodynamic(SupportsDeleteCallback):
@@ -32475,7 +32471,7 @@ class AdvancedFixedWingSubSuperHypersonicAerodynamic(SupportsDeleteCallback):
     _get_wave_drag_factor_method_offset = 15
     _set_wave_drag_factor_method_offset = 16
     _metadata = {
-        "iid_data" : (5006549268881285727, 2704518954570612897),
+        "iid_data" : (4622370106386705049, 3498020364575167393),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -32632,7 +32628,7 @@ class AdvancedFixedWingSubSuperHypersonicAerodynamic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingSubSuperHypersonicAerodynamic, [AdvancedFixedWingSubSuperHypersonicAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4952686633379458317, 2294599711029805235), AdvancedFixedWingSubSuperHypersonicAerodynamic)
+agcls.AgClassCatalog.add_catalog_entry((5154128837156888980, 1529507729951954070), AdvancedFixedWingSubSuperHypersonicAerodynamic)
 agcls.AgTypeNameMap["AdvancedFixedWingSubSuperHypersonicAerodynamic"] = AdvancedFixedWingSubSuperHypersonicAerodynamic
 
 class AdvancedFixedWingSupersonicAerodynamic(SupportsDeleteCallback):
@@ -32661,7 +32657,7 @@ class AdvancedFixedWingSupersonicAerodynamic(SupportsDeleteCallback):
     _get_leading_edge_suction_efficiency_method_offset = 19
     _set_leading_edge_suction_efficiency_method_offset = 20
     _metadata = {
-        "iid_data" : (4670617610581468956, 16867775200645798805),
+        "iid_data" : (5753808050118628916, 12287143320731499922),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -32853,7 +32849,7 @@ class AdvancedFixedWingSupersonicAerodynamic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingSupersonicAerodynamic, [AdvancedFixedWingSupersonicAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5450196044160187843, 1674866698247736221), AdvancedFixedWingSupersonicAerodynamic)
+agcls.AgClassCatalog.add_catalog_entry((4970742532353084344, 12200676144218077080), AdvancedFixedWingSupersonicAerodynamic)
 agcls.AgTypeNameMap["AdvancedFixedWingSupersonicAerodynamic"] = AdvancedFixedWingSupersonicAerodynamic
 
 class PerformanceModel(IPerformanceModel, ICatalogItem, SupportsDeleteCallback):
@@ -32874,7 +32870,7 @@ class PerformanceModel(IPerformanceModel, ICatalogItem, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PerformanceModel, [IPerformanceModel, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((4906634384985166370, 1876213520004692359), PerformanceModel)
+agcls.AgClassCatalog.add_catalog_entry((5231795292270207719, 2934337615553342630), PerformanceModel)
 agcls.AgTypeNameMap["PerformanceModel"] = PerformanceModel
 
 class AdvancedFixedWingGeometryBasic(IAdvancedFixedWingGeometry, SupportsDeleteCallback):
@@ -32887,7 +32883,7 @@ class AdvancedFixedWingGeometryBasic(IAdvancedFixedWingGeometry, SupportsDeleteC
     _get_wing_sweep_method_offset = 3
     _set_wing_sweep_method_offset = 4
     _metadata = {
-        "iid_data" : (5059005218786994271, 963439622374066585),
+        "iid_data" : (5386100230413044414, 9023697300579007617),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -32943,7 +32939,7 @@ class AdvancedFixedWingGeometryBasic(IAdvancedFixedWingGeometry, SupportsDeleteC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingGeometryBasic, [AdvancedFixedWingGeometryBasic, IAdvancedFixedWingGeometry])
 
-agcls.AgClassCatalog.add_catalog_entry((4777932001523849137, 741639022048858530), AdvancedFixedWingGeometryBasic)
+agcls.AgClassCatalog.add_catalog_entry((4819318356383203784, 16484619949198997667), AdvancedFixedWingGeometryBasic)
 agcls.AgTypeNameMap["AdvancedFixedWingGeometryBasic"] = AdvancedFixedWingGeometryBasic
 
 class AdvancedFixedWingGeometryVariable(IAdvancedFixedWingGeometry, SupportsDeleteCallback):
@@ -32962,7 +32958,7 @@ class AdvancedFixedWingGeometryVariable(IAdvancedFixedWingGeometry, SupportsDele
     _get_max_sweep_angle_method_offset = 9
     _set_max_sweep_angle_method_offset = 10
     _metadata = {
-        "iid_data" : (5135497072626624642, 14268566815327029893),
+        "iid_data" : (4713558489202167824, 14574949078019799427),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -33069,7 +33065,7 @@ class AdvancedFixedWingGeometryVariable(IAdvancedFixedWingGeometry, SupportsDele
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingGeometryVariable, [AdvancedFixedWingGeometryVariable, IAdvancedFixedWingGeometry])
 
-agcls.AgClassCatalog.add_catalog_entry((4714699656490854060, 4645343672878635960), AdvancedFixedWingGeometryVariable)
+agcls.AgClassCatalog.add_catalog_entry((4695864864519126360, 5615890575652680321), AdvancedFixedWingGeometryVariable)
 agcls.AgTypeNameMap["AdvancedFixedWingGeometryVariable"] = AdvancedFixedWingGeometryVariable
 
 class AdvancedFixedWingElectricPowerplant(SupportsDeleteCallback):
@@ -33084,7 +33080,7 @@ class AdvancedFixedWingElectricPowerplant(SupportsDeleteCallback):
     _get_propeller_diameter_method_offset = 5
     _set_propeller_diameter_method_offset = 6
     _metadata = {
-        "iid_data" : (5323567609941829628, 9517624223825083288),
+        "iid_data" : (4809377716117650321, 8840406303890270339),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -33156,7 +33152,7 @@ class AdvancedFixedWingElectricPowerplant(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingElectricPowerplant, [AdvancedFixedWingElectricPowerplant, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5409750622288828148, 653894210607339956), AdvancedFixedWingElectricPowerplant)
+agcls.AgClassCatalog.add_catalog_entry((5609635811849248787, 18178934007806007474), AdvancedFixedWingElectricPowerplant)
 agcls.AgTypeNameMap["AdvancedFixedWingElectricPowerplant"] = AdvancedFixedWingElectricPowerplant
 
 class AdvancedFixedWingExternalPropulsion(SupportsDeleteCallback):
@@ -33168,7 +33164,7 @@ class AdvancedFixedWingExternalPropulsion(SupportsDeleteCallback):
     _set_filepath_method_offset = 2
     _get_is_valid_method_offset = 3
     _metadata = {
-        "iid_data" : (4997979588924974553, 2131361272405219996),
+        "iid_data" : (5089862738829701125, 438372225190315681),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -33214,7 +33210,7 @@ class AdvancedFixedWingExternalPropulsion(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingExternalPropulsion, [AdvancedFixedWingExternalPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5248810364255474372, 10276250267386325905), AdvancedFixedWingExternalPropulsion)
+agcls.AgClassCatalog.add_catalog_entry((4664695498244619338, 10908626457961250487), AdvancedFixedWingExternalPropulsion)
 agcls.AgTypeNameMap["AdvancedFixedWingExternalPropulsion"] = AdvancedFixedWingExternalPropulsion
 
 class AdvancedFixedWingSubSuperHypersonicPropulsion(SupportsDeleteCallback):
@@ -33248,7 +33244,7 @@ class AdvancedFixedWingSubSuperHypersonicPropulsion(SupportsDeleteCallback):
     _get_max_ram_scram_burner_total_temperature_method_offset = 24
     _set_max_ram_scram_burner_total_temperature_method_offset = 25
     _metadata = {
-        "iid_data" : (5230764198344016963, 5005012326381662389),
+        "iid_data" : (4863678376342959639, 9126102427488418487),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -33485,7 +33481,7 @@ class AdvancedFixedWingSubSuperHypersonicPropulsion(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingSubSuperHypersonicPropulsion, [AdvancedFixedWingSubSuperHypersonicPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5011678706765634819, 12159855238285393045), AdvancedFixedWingSubSuperHypersonicPropulsion)
+agcls.AgClassCatalog.add_catalog_entry((4777960070391673675, 4449306542864124319), AdvancedFixedWingSubSuperHypersonicPropulsion)
 agcls.AgTypeNameMap["AdvancedFixedWingSubSuperHypersonicPropulsion"] = AdvancedFixedWingSubSuperHypersonicPropulsion
 
 class AdvancedFixedWingPistonPowerplant(SupportsDeleteCallback):
@@ -33504,7 +33500,7 @@ class AdvancedFixedWingPistonPowerplant(SupportsDeleteCallback):
     _get_fuel_flow_method_offset = 9
     _set_fuel_flow_method_offset = 10
     _metadata = {
-        "iid_data" : (4935298023931483912, 9470029545764234654),
+        "iid_data" : (4736622816267667641, 13483573259365303231),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -33610,7 +33606,7 @@ class AdvancedFixedWingPistonPowerplant(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingPistonPowerplant, [AdvancedFixedWingPistonPowerplant, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5404022589632298539, 3796637743485632914), AdvancedFixedWingPistonPowerplant)
+agcls.AgClassCatalog.add_catalog_entry((4842750122841254187, 15048305741117560495), AdvancedFixedWingPistonPowerplant)
 agcls.AgTypeNameMap["AdvancedFixedWingPistonPowerplant"] = AdvancedFixedWingPistonPowerplant
 
 class AdvancedFixedWingEmpiricalJetEngine(SupportsDeleteCallback):
@@ -33627,7 +33623,7 @@ class AdvancedFixedWingEmpiricalJetEngine(SupportsDeleteCallback):
     _get_fuel_flow_method_offset = 7
     _set_fuel_flow_method_offset = 8
     _metadata = {
-        "iid_data" : (5442029511614548464, 3220950130539061420),
+        "iid_data" : (4912668165658320225, 17818151344355558061),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -33716,7 +33712,7 @@ class AdvancedFixedWingEmpiricalJetEngine(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingEmpiricalJetEngine, [AdvancedFixedWingEmpiricalJetEngine, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5173205300249269855, 3414284464176281766), AdvancedFixedWingEmpiricalJetEngine)
+agcls.AgClassCatalog.add_catalog_entry((5361383509802335414, 13419413960835439768), AdvancedFixedWingEmpiricalJetEngine)
 agcls.AgTypeNameMap["AdvancedFixedWingEmpiricalJetEngine"] = AdvancedFixedWingEmpiricalJetEngine
 
 class AdvancedFixedWingTurbofanBasicABPowerplant(SupportsDeleteCallback):
@@ -33725,7 +33721,7 @@ class AdvancedFixedWingTurbofanBasicABPowerplant(SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5223411323882695032, 13652349525015224452),
+        "iid_data" : (5497516979773436420, 7583234011265098430),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -33746,7 +33742,7 @@ class AdvancedFixedWingTurbofanBasicABPowerplant(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingTurbofanBasicABPowerplant, [AdvancedFixedWingTurbofanBasicABPowerplant, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5401994752137022731, 14788126705060767635), AdvancedFixedWingTurbofanBasicABPowerplant)
+agcls.AgClassCatalog.add_catalog_entry((4702598981667888296, 6477430681492587680), AdvancedFixedWingTurbofanBasicABPowerplant)
 agcls.AgTypeNameMap["AdvancedFixedWingTurbofanBasicABPowerplant"] = AdvancedFixedWingTurbofanBasicABPowerplant
 
 class AdvancedFixedWingTurbojetBasicABPowerplant(SupportsDeleteCallback):
@@ -33755,7 +33751,7 @@ class AdvancedFixedWingTurbojetBasicABPowerplant(SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5118902128297752052, 18407274306204316800),
+        "iid_data" : (4914985134123118671, 2529992250251021736),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -33776,7 +33772,7 @@ class AdvancedFixedWingTurbojetBasicABPowerplant(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingTurbojetBasicABPowerplant, [AdvancedFixedWingTurbojetBasicABPowerplant, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5440608781197312823, 13762363781635156626), AdvancedFixedWingTurbojetBasicABPowerplant)
+agcls.AgClassCatalog.add_catalog_entry((4699953241621600270, 14349421450435587511), AdvancedFixedWingTurbojetBasicABPowerplant)
 agcls.AgTypeNameMap["AdvancedFixedWingTurbojetBasicABPowerplant"] = AdvancedFixedWingTurbojetBasicABPowerplant
 
 class AdvancedFixedWingTurbofanBasicABPropulsion(SupportsDeleteCallback):
@@ -33812,7 +33808,7 @@ class AdvancedFixedWingTurbofanBasicABPropulsion(SupportsDeleteCallback):
     _get_fuel_mode_as_afprop_method_offset = 26
     _get_fuel_mode_as_cea_method_offset = 27
     _metadata = {
-        "iid_data" : (5166061279867733857, 6770102323018610328),
+        "iid_data" : (5477688447826762030, 4074118146321671352),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -34064,7 +34060,7 @@ class AdvancedFixedWingTurbofanBasicABPropulsion(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingTurbofanBasicABPropulsion, [AdvancedFixedWingTurbofanBasicABPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4926635412744452730, 7898790107185743281), AdvancedFixedWingTurbofanBasicABPropulsion)
+agcls.AgClassCatalog.add_catalog_entry((5223402699429243935, 18246726373023190409), AdvancedFixedWingTurbofanBasicABPropulsion)
 agcls.AgTypeNameMap["AdvancedFixedWingTurbofanBasicABPropulsion"] = AdvancedFixedWingTurbofanBasicABPropulsion
 
 class AdvancedFixedWingTurbojetBasicABPropulsion(SupportsDeleteCallback):
@@ -34098,7 +34094,7 @@ class AdvancedFixedWingTurbojetBasicABPropulsion(SupportsDeleteCallback):
     _get_fuel_mode_as_afprop_method_offset = 24
     _get_fuel_mode_as_cea_method_offset = 25
     _metadata = {
-        "iid_data" : (4804351312805502443, 1729423068310996360),
+        "iid_data" : (4765247299731250675, 3247412640804576896),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -34333,7 +34329,7 @@ class AdvancedFixedWingTurbojetBasicABPropulsion(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingTurbojetBasicABPropulsion, [AdvancedFixedWingTurbojetBasicABPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5587093581665900282, 11546350750593065653), AdvancedFixedWingTurbojetBasicABPropulsion)
+agcls.AgClassCatalog.add_catalog_entry((5073952730513355349, 5855273723058609337), AdvancedFixedWingTurbojetBasicABPropulsion)
 agcls.AgTypeNameMap["AdvancedFixedWingTurbojetBasicABPropulsion"] = AdvancedFixedWingTurbojetBasicABPropulsion
 
 class AdvancedFixedWingTurbopropPowerplant(SupportsDeleteCallback):
@@ -34350,7 +34346,7 @@ class AdvancedFixedWingTurbopropPowerplant(SupportsDeleteCallback):
     _get_fuel_flow_method_offset = 7
     _set_fuel_flow_method_offset = 8
     _metadata = {
-        "iid_data" : (5310999714701599668, 10622134511892274314),
+        "iid_data" : (5304459441123273038, 679657590465809561),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -34439,7 +34435,7 @@ class AdvancedFixedWingTurbopropPowerplant(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingTurbopropPowerplant, [AdvancedFixedWingTurbopropPowerplant, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5749297225109159978, 6837240057346569620), AdvancedFixedWingTurbopropPowerplant)
+agcls.AgClassCatalog.add_catalog_entry((5593584633049405936, 4905500532368898739), AdvancedFixedWingTurbopropPowerplant)
 agcls.AgTypeNameMap["AdvancedFixedWingTurbopropPowerplant"] = AdvancedFixedWingTurbopropPowerplant
 
 class MissileSimpleAerodynamic(SupportsDeleteCallback):
@@ -34457,7 +34453,7 @@ class MissileSimpleAerodynamic(SupportsDeleteCallback):
     _get_max_aoa_method_offset = 8
     _set_max_aoa_method_offset = 9
     _metadata = {
-        "iid_data" : (4678957940349729997, 9265137374292967825),
+        "iid_data" : (5113982231583759545, 7651587789557450141),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -34554,7 +34550,7 @@ class MissileSimpleAerodynamic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileSimpleAerodynamic, [MissileSimpleAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4705636248765593079, 6791367994635073692), MissileSimpleAerodynamic)
+agcls.AgClassCatalog.add_catalog_entry((5384095255479075807, 1246512519944294313), MissileSimpleAerodynamic)
 agcls.AgTypeNameMap["MissileSimpleAerodynamic"] = MissileSimpleAerodynamic
 
 class MissileExternalAerodynamic(SupportsDeleteCallback):
@@ -34570,7 +34566,7 @@ class MissileExternalAerodynamic(SupportsDeleteCallback):
     _get_can_set_reference_area_method_offset = 6
     _get_is_valid_method_offset = 7
     _metadata = {
-        "iid_data" : (4736392640115188686, 5273808291474334094),
+        "iid_data" : (5256592762389015420, 6001213466574208437),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -34649,7 +34645,7 @@ class MissileExternalAerodynamic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileExternalAerodynamic, [MissileExternalAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5636656773253566004, 13838327309331494071), MissileExternalAerodynamic)
+agcls.AgClassCatalog.add_catalog_entry((4848093339092998496, 8894786888651131060), MissileExternalAerodynamic)
 agcls.AgTypeNameMap["MissileExternalAerodynamic"] = MissileExternalAerodynamic
 
 class MissileAdvancedAerodynamic(SupportsDeleteCallback):
@@ -34706,7 +34702,7 @@ class MissileAdvancedAerodynamic(SupportsDeleteCallback):
     _get_tail_lift_fraction_method_offset = 47
     _set_tail_lift_fraction_method_offset = 48
     _metadata = {
-        "iid_data" : (4964129577173509264, 2983138932485106581),
+        "iid_data" : (5290062030451562454, 16722252473086471564),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -35135,7 +35131,7 @@ class MissileAdvancedAerodynamic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileAdvancedAerodynamic, [MissileAdvancedAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5052893031100834404, 2206664014496294047), MissileAdvancedAerodynamic)
+agcls.AgClassCatalog.add_catalog_entry((5056199283753364754, 1675800471274541220), MissileAdvancedAerodynamic)
 agcls.AgTypeNameMap["MissileAdvancedAerodynamic"] = MissileAdvancedAerodynamic
 
 class MissileAerodynamic(SupportsDeleteCallback):
@@ -35150,7 +35146,7 @@ class MissileAerodynamic(SupportsDeleteCallback):
     _get_mode_as_advanced_method_offset = 5
     _get_mode_as_four_point_method_offset = 6
     _metadata = {
-        "iid_data" : (5364173899613717274, 6266031543543176121),
+        "iid_data" : (4959078315927753462, 789191467969933493),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -35224,7 +35220,7 @@ class MissileAerodynamic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileAerodynamic, [MissileAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5323354002225726516, 2938484025708401802), MissileAerodynamic)
+agcls.AgClassCatalog.add_catalog_entry((5479133980560898800, 14221146284968110507), MissileAerodynamic)
 agcls.AgTypeNameMap["MissileAerodynamic"] = MissileAerodynamic
 
 class MissilePropulsion(SupportsDeleteCallback):
@@ -35240,7 +35236,7 @@ class MissilePropulsion(SupportsDeleteCallback):
     _get_mode_as_turbojet_method_offset = 6
     _get_mode_as_rocket_method_offset = 7
     _metadata = {
-        "iid_data" : (4913907629478761898, 14650265376795744152),
+        "iid_data" : (5524705492369253319, 3491390650031274905),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -35323,7 +35319,7 @@ class MissilePropulsion(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissilePropulsion, [MissilePropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5659655677833601230, 74880851413770914), MissilePropulsion)
+agcls.AgClassCatalog.add_catalog_entry((5701156311192518745, 13807549275551900059), MissilePropulsion)
 agcls.AgTypeNameMap["MissilePropulsion"] = MissilePropulsion
 
 class MissileSimplePropulsion(SupportsDeleteCallback):
@@ -35338,7 +35334,7 @@ class MissileSimplePropulsion(SupportsDeleteCallback):
     _get_no_thrust_when_no_fuel_method_offset = 5
     _set_no_thrust_when_no_fuel_method_offset = 6
     _metadata = {
-        "iid_data" : (5725392479848476812, 5093874335426318747),
+        "iid_data" : (5541000199116120572, 6429741441517845938),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -35410,7 +35406,7 @@ class MissileSimplePropulsion(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileSimplePropulsion, [MissileSimplePropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5403921619446802984, 4318640400048778903), MissileSimplePropulsion)
+agcls.AgClassCatalog.add_catalog_entry((4907294180171895759, 3139272134738676155), MissileSimplePropulsion)
 agcls.AgTypeNameMap["MissileSimplePropulsion"] = MissileSimplePropulsion
 
 class MissileExternalPropulsion(SupportsDeleteCallback):
@@ -35425,7 +35421,7 @@ class MissileExternalPropulsion(SupportsDeleteCallback):
     _set_no_thrust_when_no_fuel_method_offset = 5
     _get_is_valid_method_offset = 6
     _metadata = {
-        "iid_data" : (5134992612305711861, 891238092002507934),
+        "iid_data" : (4890592461852724861, 11299849752889776559),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -35495,7 +35491,7 @@ class MissileExternalPropulsion(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileExternalPropulsion, [MissileExternalPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4988835713659863239, 13600985963996914596), MissileExternalPropulsion)
+agcls.AgClassCatalog.add_catalog_entry((4817420385346657902, 4926464154136857255), MissileExternalPropulsion)
 agcls.AgTypeNameMap["MissileExternalPropulsion"] = MissileExternalPropulsion
 
 class MissileRamjetPropulsion(SupportsDeleteCallback):
@@ -35526,7 +35522,7 @@ class MissileRamjetPropulsion(SupportsDeleteCallback):
     _get_no_thrust_when_no_fuel_method_offset = 21
     _set_no_thrust_when_no_fuel_method_offset = 22
     _metadata = {
-        "iid_data" : (4953229289448602378, 1061703612136417712),
+        "iid_data" : (4682053458703919301, 13895503025750516096),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -35734,7 +35730,7 @@ class MissileRamjetPropulsion(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileRamjetPropulsion, [MissileRamjetPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5614474896998347186, 3316151172710167988), MissileRamjetPropulsion)
+agcls.AgClassCatalog.add_catalog_entry((4877700563818520914, 9636588370357633727), MissileRamjetPropulsion)
 agcls.AgTypeNameMap["MissileRamjetPropulsion"] = MissileRamjetPropulsion
 
 class MissileRocketPropulsion(SupportsDeleteCallback):
@@ -35761,7 +35757,7 @@ class MissileRocketPropulsion(SupportsDeleteCallback):
     _get_no_thrust_when_no_fuel_method_offset = 17
     _set_no_thrust_when_no_fuel_method_offset = 18
     _metadata = {
-        "iid_data" : (4680524213606493608, 17871549589587163067),
+        "iid_data" : (5373197025614284544, 4475560274426122381),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -35935,7 +35931,7 @@ class MissileRocketPropulsion(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileRocketPropulsion, [MissileRocketPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4829527676256086967, 2901581551454081419), MissileRocketPropulsion)
+agcls.AgClassCatalog.add_catalog_entry((5653144213200469660, 1102584677116372400), MissileRocketPropulsion)
 agcls.AgTypeNameMap["MissileRocketPropulsion"] = MissileRocketPropulsion
 
 class MissileTurbojetPropulsion(SupportsDeleteCallback):
@@ -35974,7 +35970,7 @@ class MissileTurbojetPropulsion(SupportsDeleteCallback):
     _get_no_thrust_when_no_fuel_method_offset = 29
     _set_no_thrust_when_no_fuel_method_offset = 30
     _metadata = {
-        "iid_data" : (4912983800323282819, 1816753828352084142),
+        "iid_data" : (5022695827456209283, 1214501036951110788),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -36250,7 +36246,7 @@ class MissileTurbojetPropulsion(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileTurbojetPropulsion, [MissileTurbojetPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4617727346808770983, 17951140982718247851), MissileTurbojetPropulsion)
+agcls.AgClassCatalog.add_catalog_entry((4822814114959084334, 326902315115999365), MissileTurbojetPropulsion)
 agcls.AgTypeNameMap["MissileTurbojetPropulsion"] = MissileTurbojetPropulsion
 
 class ReferenceStateForwardFlightOptions(SupportsDeleteCallback):
@@ -36292,7 +36288,7 @@ class ReferenceStateForwardFlightOptions(SupportsDeleteCallback):
     _get_attitude_rate_type_method_offset = 32
     _set_attitude_rate_method_offset = 33
     _metadata = {
-        "iid_data" : (5013024766168834944, 7318791218673534633),
+        "iid_data" : (4897716678250471596, 16379838388899002278),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -36593,7 +36589,7 @@ class ReferenceStateForwardFlightOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ReferenceStateForwardFlightOptions, [ReferenceStateForwardFlightOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5234709410703539467, 10676721452242537360), ReferenceStateForwardFlightOptions)
+agcls.AgClassCatalog.add_catalog_entry((5337992958030348169, 11159563696669908157), ReferenceStateForwardFlightOptions)
 agcls.AgTypeNameMap["ReferenceStateForwardFlightOptions"] = ReferenceStateForwardFlightOptions
 
 class ReferenceStateTakeoffLandingOptions(SupportsDeleteCallback):
@@ -36635,7 +36631,7 @@ class ReferenceStateTakeoffLandingOptions(SupportsDeleteCallback):
     _get_attitude_rate_type_method_offset = 32
     _set_attitude_rate_method_offset = 33
     _metadata = {
-        "iid_data" : (4651719458875810155, 1686236741447702718),
+        "iid_data" : (4791495936197649179, 12879177992858652323),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -36936,7 +36932,7 @@ class ReferenceStateTakeoffLandingOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ReferenceStateTakeoffLandingOptions, [ReferenceStateTakeoffLandingOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4691645314423358479, 2511314558928168111), ReferenceStateTakeoffLandingOptions)
+agcls.AgClassCatalog.add_catalog_entry((5120525525568712740, 950710780386397871), ReferenceStateTakeoffLandingOptions)
 agcls.AgTypeNameMap["ReferenceStateTakeoffLandingOptions"] = ReferenceStateTakeoffLandingOptions
 
 class ReferenceStateHoverOptions(SupportsDeleteCallback):
@@ -36973,7 +36969,7 @@ class ReferenceStateHoverOptions(SupportsDeleteCallback):
     _get_attitude_rate_type_method_offset = 27
     _set_attitude_rate_method_offset = 28
     _metadata = {
-        "iid_data" : (4967723453880432265, 4533941470478217912),
+        "iid_data" : (5062268418414365156, 12730988542805351063),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -37232,7 +37228,7 @@ class ReferenceStateHoverOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ReferenceStateHoverOptions, [ReferenceStateHoverOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4935166501266633550, 18202366864290377365), ReferenceStateHoverOptions)
+agcls.AgClassCatalog.add_catalog_entry((5512983194972474879, 1378335161761332099), ReferenceStateHoverOptions)
 agcls.AgTypeNameMap["ReferenceStateHoverOptions"] = ReferenceStateHoverOptions
 
 class ReferenceStateWeightOnWheelsOptions(SupportsDeleteCallback):
@@ -37255,7 +37251,7 @@ class ReferenceStateWeightOnWheelsOptions(SupportsDeleteCallback):
     _get_lateral_acceleration_type_method_offset = 13
     _set_lateral_acceleration_method_offset = 14
     _metadata = {
-        "iid_data" : (4614298239361583107, 13743389205874316980),
+        "iid_data" : (5381738102617028229, 14714191710393940638),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -37395,7 +37391,7 @@ class ReferenceStateWeightOnWheelsOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ReferenceStateWeightOnWheelsOptions, [ReferenceStateWeightOnWheelsOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4746073259629533532, 13362726578078342823), ReferenceStateWeightOnWheelsOptions)
+agcls.AgClassCatalog.add_catalog_entry((5302785925909024265, 9180921193782467005), ReferenceStateWeightOnWheelsOptions)
 agcls.AgTypeNameMap["ReferenceStateWeightOnWheelsOptions"] = ReferenceStateWeightOnWheelsOptions
 
 class SiteRunwayFromCatalog(ISite, SupportsDeleteCallback):
@@ -37407,7 +37403,7 @@ class SiteRunwayFromCatalog(ISite, SupportsDeleteCallback):
     _set_catalog_runway_method_offset = 2
     _get_as_site_method_offset = 3
     _metadata = {
-        "iid_data" : (5634494088710483634, 4136369912068985016),
+        "iid_data" : (5580150848559543518, 3323048833055393170),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -37451,7 +37447,7 @@ class SiteRunwayFromCatalog(ISite, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteRunwayFromCatalog, [SiteRunwayFromCatalog, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((5432583218947739306, 4484750288509271693), SiteRunwayFromCatalog)
+agcls.AgClassCatalog.add_catalog_entry((5539853789257849045, 9893445331109238189), SiteRunwayFromCatalog)
 agcls.AgTypeNameMap["SiteRunwayFromCatalog"] = SiteRunwayFromCatalog
 
 class SiteAirportFromCatalog(ISite, SupportsDeleteCallback):
@@ -37463,7 +37459,7 @@ class SiteAirportFromCatalog(ISite, SupportsDeleteCallback):
     _set_catalog_airport_method_offset = 2
     _get_as_site_method_offset = 3
     _metadata = {
-        "iid_data" : (5145879454474821904, 9199213237675117193),
+        "iid_data" : (5198886675072011442, 14704498803737523115),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -37507,7 +37503,7 @@ class SiteAirportFromCatalog(ISite, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteAirportFromCatalog, [SiteAirportFromCatalog, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((4736989613571461001, 1367197901097188494), SiteAirportFromCatalog)
+agcls.AgClassCatalog.add_catalog_entry((4902139860265246934, 6000180232048831896), SiteAirportFromCatalog)
 agcls.AgTypeNameMap["SiteAirportFromCatalog"] = SiteAirportFromCatalog
 
 class SiteNavaidFromCatalog(ISite, SupportsDeleteCallback):
@@ -37519,7 +37515,7 @@ class SiteNavaidFromCatalog(ISite, SupportsDeleteCallback):
     _set_catalog_navaid_method_offset = 2
     _get_as_site_method_offset = 3
     _metadata = {
-        "iid_data" : (4957428865343325572, 11959601014297479563),
+        "iid_data" : (5531324790216331933, 16780742283387739807),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -37563,7 +37559,7 @@ class SiteNavaidFromCatalog(ISite, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteNavaidFromCatalog, [SiteNavaidFromCatalog, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((5491384812081208211, 8045247953710753921), SiteNavaidFromCatalog)
+agcls.AgClassCatalog.add_catalog_entry((5010069744097919194, 17614347949423614614), SiteNavaidFromCatalog)
 agcls.AgTypeNameMap["SiteNavaidFromCatalog"] = SiteNavaidFromCatalog
 
 class SiteVTOLPointFromCatalog(ISite, SupportsDeleteCallback):
@@ -37575,7 +37571,7 @@ class SiteVTOLPointFromCatalog(ISite, SupportsDeleteCallback):
     _set_catalog_vtol_point_method_offset = 2
     _get_as_site_method_offset = 3
     _metadata = {
-        "iid_data" : (5029003088096487458, 10941850249683653276),
+        "iid_data" : (5579500370989791430, 14963793817210590613),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -37619,7 +37615,7 @@ class SiteVTOLPointFromCatalog(ISite, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteVTOLPointFromCatalog, [SiteVTOLPointFromCatalog, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((4778256137753234442, 15315831279471165362), SiteVTOLPointFromCatalog)
+agcls.AgClassCatalog.add_catalog_entry((4910586676727986472, 2655186081162601876), SiteVTOLPointFromCatalog)
 agcls.AgTypeNameMap["SiteVTOLPointFromCatalog"] = SiteVTOLPointFromCatalog
 
 class SiteWaypointFromCatalog(ISite, SupportsDeleteCallback):
@@ -37631,7 +37627,7 @@ class SiteWaypointFromCatalog(ISite, SupportsDeleteCallback):
     _set_catalog_waypoint_method_offset = 2
     _get_as_site_method_offset = 3
     _metadata = {
-        "iid_data" : (5020241597903773768, 13236896574173633725),
+        "iid_data" : (5744362260176238710, 4675674172340366005),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -37675,7 +37671,7 @@ class SiteWaypointFromCatalog(ISite, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteWaypointFromCatalog, [SiteWaypointFromCatalog, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((4884194644614735130, 4678068853271565703), SiteWaypointFromCatalog)
+agcls.AgClassCatalog.add_catalog_entry((5551672425670651473, 15620061386491150001), SiteWaypointFromCatalog)
 agcls.AgTypeNameMap["SiteWaypointFromCatalog"] = SiteWaypointFromCatalog
 
 class NavaidCategory(SupportsDeleteCallback):
@@ -37685,7 +37681,7 @@ class NavaidCategory(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_arinc424_navaids_method_offset = 1
     _metadata = {
-        "iid_data" : (4767324386243364667, 11619546343216473789),
+        "iid_data" : (4748117981270517141, 4474314231439508610),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -37715,7 +37711,7 @@ class NavaidCategory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, NavaidCategory, [NavaidCategory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5432459549836284524, 13783249384820279445), NavaidCategory)
+agcls.AgClassCatalog.add_catalog_entry((5145473171914342292, 14558717059825636235), NavaidCategory)
 agcls.AgTypeNameMap["NavaidCategory"] = NavaidCategory
 
 class VTOLPointCategory(SupportsDeleteCallback):
@@ -37727,7 +37723,7 @@ class VTOLPointCategory(SupportsDeleteCallback):
     _get_arinc424_helipads_method_offset = 2
     _get_dafif_helipads_method_offset = 3
     _metadata = {
-        "iid_data" : (5140292971359621491, 7182381113514930067),
+        "iid_data" : (5706957154690963866, 17812843698002649787),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -37775,7 +37771,7 @@ class VTOLPointCategory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VTOLPointCategory, [VTOLPointCategory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5167063348405119438, 2498351164565518994), VTOLPointCategory)
+agcls.AgClassCatalog.add_catalog_entry((5520975065093782437, 12713566112169544594), VTOLPointCategory)
 agcls.AgTypeNameMap["VTOLPointCategory"] = VTOLPointCategory
 
 class WaypointCategory(SupportsDeleteCallback):
@@ -37795,7 +37791,7 @@ class WaypointCategory(SupportsDeleteCallback):
     _get_dafif_runways_method_offset = 10
     _get_dafif_waypoints_method_offset = 11
     _metadata = {
-        "iid_data" : (4821896888722457850, 11063217582704392345),
+        "iid_data" : (4750905948065436383, 1519766469276218035),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -37915,7 +37911,7 @@ class WaypointCategory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, WaypointCategory, [WaypointCategory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5334398087905690330, 105878899444753553), WaypointCategory)
+agcls.AgClassCatalog.add_catalog_entry((5326441454442747384, 2073575240450078368), WaypointCategory)
 agcls.AgTypeNameMap["WaypointCategory"] = WaypointCategory
 
 class ARINC424Navaid(IARINC424Item, ICatalogNavaid, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
@@ -37940,7 +37936,7 @@ class ARINC424Navaid(IARINC424Item, ICatalogNavaid, ICatalogWaypoint, ICatalogIt
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ARINC424Navaid, [IARINC424Item, ICatalogNavaid, ICatalogWaypoint, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5197157372005485531, 1093323223683680135), ARINC424Navaid)
+agcls.AgClassCatalog.add_catalog_entry((5216715001832530197, 16517200569905518255), ARINC424Navaid)
 agcls.AgTypeNameMap["ARINC424Navaid"] = ARINC424Navaid
 
 class ARINC424Helipad(IARINC424Item, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
@@ -37965,7 +37961,7 @@ class ARINC424Helipad(IARINC424Item, ICatalogVTOLPoint, ICatalogWaypoint, ICatal
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ARINC424Helipad, [IARINC424Item, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5277898751387810758, 3304972005706513837), ARINC424Helipad)
+agcls.AgClassCatalog.add_catalog_entry((4670549705480382402, 916438465994146192), ARINC424Helipad)
 agcls.AgTypeNameMap["ARINC424Helipad"] = ARINC424Helipad
 
 class ARINC424Waypoint(IARINC424Item, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
@@ -37988,7 +37984,7 @@ class ARINC424Waypoint(IARINC424Item, ICatalogWaypoint, ICatalogItem, SupportsDe
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ARINC424Waypoint, [IARINC424Item, ICatalogWaypoint, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5082141889769092101, 1479692394985179811), ARINC424Waypoint)
+agcls.AgClassCatalog.add_catalog_entry((5601032934008740925, 17789045552929056426), ARINC424Waypoint)
 agcls.AgTypeNameMap["ARINC424Waypoint"] = ARINC424Waypoint
 
 class UserVTOLPointSource(ICatalogSource, SupportsDeleteCallback):
@@ -38000,7 +37996,7 @@ class UserVTOLPointSource(ICatalogSource, SupportsDeleteCallback):
     _add_user_vtol_point_method_offset = 2
     _get_as_catalog_source_method_offset = 3
     _metadata = {
-        "iid_data" : (5545256129940298652, 8073919850080497329),
+        "iid_data" : (4723002020032450660, 11744749075757789836),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -38044,7 +38040,7 @@ class UserVTOLPointSource(ICatalogSource, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UserVTOLPointSource, [UserVTOLPointSource, ICatalogSource])
 
-agcls.AgClassCatalog.add_catalog_entry((5591773936808407339, 9073311703179615419), UserVTOLPointSource)
+agcls.AgClassCatalog.add_catalog_entry((4832907339396429452, 16486915269607607941), UserVTOLPointSource)
 agcls.AgTypeNameMap["UserVTOLPointSource"] = UserVTOLPointSource
 
 class UserVTOLPoint(ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
@@ -38063,7 +38059,7 @@ class UserVTOLPoint(ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem, SupportsD
     _paste_site_method_offset = 9
     _get_as_catalog_item_method_offset = 10
     _metadata = {
-        "iid_data" : (4642085616828634150, 1045311095125105541),
+        "iid_data" : (4954785303890371029, 2656448307080622270),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -38169,7 +38165,7 @@ class UserVTOLPoint(ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem, SupportsD
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UserVTOLPoint, [UserVTOLPoint, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5188231581110256829, 4041576687601455523), UserVTOLPoint)
+agcls.AgClassCatalog.add_catalog_entry((5458061058872091906, 5035083090710448034), UserVTOLPoint)
 agcls.AgTypeNameMap["UserVTOLPoint"] = UserVTOLPoint
 
 class UserWaypointSource(ICatalogSource, SupportsDeleteCallback):
@@ -38181,7 +38177,7 @@ class UserWaypointSource(ICatalogSource, SupportsDeleteCallback):
     _add_user_waypoint_method_offset = 2
     _get_as_catalog_source_method_offset = 3
     _metadata = {
-        "iid_data" : (5279612640020866043, 15570877531294755481),
+        "iid_data" : (5376773348374859226, 11589838290259983758),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -38225,7 +38221,7 @@ class UserWaypointSource(ICatalogSource, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UserWaypointSource, [UserWaypointSource, ICatalogSource])
 
-agcls.AgClassCatalog.add_catalog_entry((5553700995735085871, 15015689302005296311), UserWaypointSource)
+agcls.AgClassCatalog.add_catalog_entry((5463757210190071522, 4162510810664425621), UserWaypointSource)
 agcls.AgTypeNameMap["UserWaypointSource"] = UserWaypointSource
 
 class UserWaypoint(ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
@@ -38241,7 +38237,7 @@ class UserWaypoint(ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
     _paste_site_method_offset = 6
     _get_as_catalog_item_method_offset = 7
     _metadata = {
-        "iid_data" : (4742016672898529376, 10155203190602153088),
+        "iid_data" : (5065009623163117365, 5455225696149940923),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -38321,7 +38317,7 @@ class UserWaypoint(ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UserWaypoint, [UserWaypoint, ICatalogWaypoint, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((4655366019608724573, 12962300198636569770), UserWaypoint)
+agcls.AgClassCatalog.add_catalog_entry((5397627786986416032, 14496270655539582643), UserWaypoint)
 agcls.AgTypeNameMap["UserWaypoint"] = UserWaypoint
 
 class PropulsionEfficiencies(SupportsDeleteCallback):
@@ -38338,7 +38334,7 @@ class PropulsionEfficiencies(SupportsDeleteCallback):
     _get_exhaust_nozzle_type_method_offset = 7
     _set_exhaust_nozzle_type_method_offset = 8
     _metadata = {
-        "iid_data" : (4674082899564096187, 17478685343173365401),
+        "iid_data" : (4819296424032663483, 13973288991567394737),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -38427,7 +38423,7 @@ class PropulsionEfficiencies(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PropulsionEfficiencies, [PropulsionEfficiencies, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5669950747571598906, 12810061537460991396), PropulsionEfficiencies)
+agcls.AgClassCatalog.add_catalog_entry((5578004742798872706, 14350227263750241439), PropulsionEfficiencies)
 agcls.AgTypeNameMap["PropulsionEfficiencies"] = PropulsionEfficiencies
 
 class FuelModelKeroseneAFPROP(SupportsDeleteCallback):
@@ -38440,7 +38436,7 @@ class FuelModelKeroseneAFPROP(SupportsDeleteCallback):
     _get_specific_energy_method_offset = 3
     _set_specific_energy_method_offset = 4
     _metadata = {
-        "iid_data" : (5688721802955479363, 6483120801106639768),
+        "iid_data" : (5120976243020802794, 1818596310032749740),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -38495,7 +38491,7 @@ class FuelModelKeroseneAFPROP(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FuelModelKeroseneAFPROP, [FuelModelKeroseneAFPROP, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5351779965155399689, 16994867648074421433), FuelModelKeroseneAFPROP)
+agcls.AgClassCatalog.add_catalog_entry((4674225752678530308, 6802605803604511377), FuelModelKeroseneAFPROP)
 agcls.AgTypeNameMap["FuelModelKeroseneAFPROP"] = FuelModelKeroseneAFPROP
 
 class FuelModelKeroseneCEA(SupportsDeleteCallback):
@@ -38508,7 +38504,7 @@ class FuelModelKeroseneCEA(SupportsDeleteCallback):
     _get_specific_energy_method_offset = 3
     _set_specific_energy_method_offset = 4
     _metadata = {
-        "iid_data" : (5088149015662987308, 10086007103281585070),
+        "iid_data" : (5353528637886612458, 2983684110953873568),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -38563,7 +38559,7 @@ class FuelModelKeroseneCEA(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FuelModelKeroseneCEA, [FuelModelKeroseneCEA, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5679718093274217092, 12398336171793532820), FuelModelKeroseneCEA)
+agcls.AgClassCatalog.add_catalog_entry((5301229343532104568, 8295388934812399540), FuelModelKeroseneCEA)
 agcls.AgTypeNameMap["FuelModelKeroseneCEA"] = FuelModelKeroseneCEA
 
 class AdvancedFixedWingRamjetBasic(SupportsDeleteCallback):
@@ -38587,7 +38583,7 @@ class AdvancedFixedWingRamjetBasic(SupportsDeleteCallback):
     _get_fuel_mode_as_cea_method_offset = 14
     _get_efficiencies_and_losses_method_offset = 15
     _metadata = {
-        "iid_data" : (4825685751456030732, 5762067210430664113),
+        "iid_data" : (5544115511956809116, 5830929502581928347),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -38737,7 +38733,7 @@ class AdvancedFixedWingRamjetBasic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingRamjetBasic, [AdvancedFixedWingRamjetBasic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4800059996755934875, 16027503078820577432), AdvancedFixedWingRamjetBasic)
+agcls.AgClassCatalog.add_catalog_entry((4717200923782653470, 10784441280995828398), AdvancedFixedWingRamjetBasic)
 agcls.AgTypeNameMap["AdvancedFixedWingRamjetBasic"] = AdvancedFixedWingRamjetBasic
 
 class AdvancedFixedWingScramjetBasic(SupportsDeleteCallback):
@@ -38761,7 +38757,7 @@ class AdvancedFixedWingScramjetBasic(SupportsDeleteCallback):
     _get_fuel_mode_as_cea_method_offset = 14
     _get_efficiencies_and_losses_method_offset = 15
     _metadata = {
-        "iid_data" : (5739887637508413990, 943923446550695301),
+        "iid_data" : (5030343991429046044, 7401203840507521956),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -38911,7 +38907,7 @@ class AdvancedFixedWingScramjetBasic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingScramjetBasic, [AdvancedFixedWingScramjetBasic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5139325106206458342, 4967878671621867145), AdvancedFixedWingScramjetBasic)
+agcls.AgClassCatalog.add_catalog_entry((5000419005933266660, 3682651177763062683), AdvancedFixedWingScramjetBasic)
 agcls.AgTypeNameMap["AdvancedFixedWingScramjetBasic"] = AdvancedFixedWingScramjetBasic
 
 class AircraftVTOLModel(SupportsDeleteCallback):
@@ -38945,7 +38941,7 @@ class AircraftVTOLModel(SupportsDeleteCallback):
     _get_forward_flight_transition_time_method_offset = 24
     _set_forward_flight_transition_time_method_offset = 25
     _metadata = {
-        "iid_data" : (5759405462565022892, 5032690834817875131),
+        "iid_data" : (5654012398282322491, 17423966746879976068),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -39178,7 +39174,7 @@ class AircraftVTOLModel(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftVTOLModel, [AircraftVTOLModel, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4651691522976222621, 3232698111153459360), AircraftVTOLModel)
+agcls.AgClassCatalog.add_catalog_entry((5237701985516988439, 1726465989214152354), AircraftVTOLModel)
 agcls.AgTypeNameMap["AircraftVTOLModel"] = AircraftVTOLModel
 
 class AircraftVTOL(ICatalogItem, SupportsDeleteCallback):
@@ -39189,7 +39185,7 @@ class AircraftVTOL(ICatalogItem, SupportsDeleteCallback):
     _get_vtol_by_name_method_offset = 1
     _get_as_catalog_item_method_offset = 2
     _metadata = {
-        "iid_data" : (4997466023368198583, 2582936896164038578),
+        "iid_data" : (4815383733249964513, 11905137718550618245),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -39226,7 +39222,7 @@ class AircraftVTOL(ICatalogItem, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftVTOL, [AircraftVTOL, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((4853877629771391834, 2473824918069775760), AircraftVTOL)
+agcls.AgClassCatalog.add_catalog_entry((5359671714976649722, 16741953261151065736), AircraftVTOL)
 agcls.AgTypeNameMap["AircraftVTOL"] = AircraftVTOL
 
 class AircraftTerrainFollowModel(SupportsDeleteCallback):
@@ -39266,7 +39262,7 @@ class AircraftTerrainFollowModel(SupportsDeleteCallback):
     _set_terrain_window_method_offset = 30
     _get_max_load_factor_method_offset = 31
     _metadata = {
-        "iid_data" : (5083354620477340854, 10481718300900310965),
+        "iid_data" : (5745222007997230876, 7790205396681339047),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -39551,7 +39547,7 @@ class AircraftTerrainFollowModel(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftTerrainFollowModel, [AircraftTerrainFollowModel, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4928571652541958513, 102701150438612899), AircraftTerrainFollowModel)
+agcls.AgClassCatalog.add_catalog_entry((4623529049263520476, 17564063709179636143), AircraftTerrainFollowModel)
 agcls.AgTypeNameMap["AircraftTerrainFollowModel"] = AircraftTerrainFollowModel
 
 class AircraftTerrainFollow(ICatalogItem, SupportsDeleteCallback):
@@ -39562,7 +39558,7 @@ class AircraftTerrainFollow(ICatalogItem, SupportsDeleteCallback):
     _get_terrain_follow_by_name_method_offset = 1
     _get_as_catalog_item_method_offset = 2
     _metadata = {
-        "iid_data" : (5356275649931379516, 11489826839698717631),
+        "iid_data" : (5542486259148291247, 2539923865686538381),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -39599,7 +39595,7 @@ class AircraftTerrainFollow(ICatalogItem, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftTerrainFollow, [AircraftTerrainFollow, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry((5402676046702832653, 16456783136885484449), AircraftTerrainFollow)
+agcls.AgClassCatalog.add_catalog_entry((5489777676101200119, 5107347106916454048), AircraftTerrainFollow)
 agcls.AgTypeNameMap["AircraftTerrainFollow"] = AircraftTerrainFollow
 
 class BasicManeuverStrategyBallistic3D(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -39617,7 +39613,7 @@ class BasicManeuverStrategyBallistic3D(IBasicManeuverStrategy, SupportsDeleteCal
     _get_wind_force_effective_area_method_offset = 8
     _set_wind_force_effective_area_method_offset = 9
     _metadata = {
-        "iid_data" : (5513664194462998876, 11966460193713901738),
+        "iid_data" : (5722195992053771433, 15283275513078932132),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -39717,7 +39713,7 @@ class BasicManeuverStrategyBallistic3D(IBasicManeuverStrategy, SupportsDeleteCal
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyBallistic3D, [BasicManeuverStrategyBallistic3D, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5015647986010523822, 9925779917142272656), BasicManeuverStrategyBallistic3D)
+agcls.AgClassCatalog.add_catalog_entry((5062305306059161296, 12007222118761229449), BasicManeuverStrategyBallistic3D)
 agcls.AgTypeNameMap["BasicManeuverStrategyBallistic3D"] = BasicManeuverStrategyBallistic3D
 
 class ProcedureLaunchDynamicState(IProcedure, SupportsDeleteCallback):
@@ -39752,7 +39748,7 @@ class ProcedureLaunchDynamicState(IProcedure, SupportsDeleteCallback):
     _set_true_course_hint_method_offset = 25
     _get_as_procedure_method_offset = 26
     _metadata = {
-        "iid_data" : (5422937096765915618, 8286874079330926474),
+        "iid_data" : (4957399069850571955, 11496453593225872781),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -39994,7 +39990,7 @@ class ProcedureLaunchDynamicState(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureLaunchDynamicState, [ProcedureLaunchDynamicState, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5103080724342277659, 9519329222150555578), ProcedureLaunchDynamicState)
+agcls.AgClassCatalog.add_catalog_entry((5135506615608951961, 14293750622466319505), ProcedureLaunchDynamicState)
 agcls.AgTypeNameMap["ProcedureLaunchDynamicState"] = ProcedureLaunchDynamicState
 
 class ProcedureLaunchWaypoint(IProcedure, SupportsDeleteCallback):
@@ -40023,7 +40019,7 @@ class ProcedureLaunchWaypoint(IProcedure, SupportsDeleteCallback):
     _set_override_fuel_flow_method_offset = 19
     _get_as_procedure_method_offset = 20
     _metadata = {
-        "iid_data" : (5346148590434943901, 2615963635447694235),
+        "iid_data" : (5056608483420513737, 11276685384162610605),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -40214,7 +40210,7 @@ class ProcedureLaunchWaypoint(IProcedure, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureLaunchWaypoint, [ProcedureLaunchWaypoint, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5333950039959211110, 14850972797194543528), ProcedureLaunchWaypoint)
+agcls.AgClassCatalog.add_catalog_entry((5112890846973536728, 16780975081618947986), ProcedureLaunchWaypoint)
 agcls.AgTypeNameMap["ProcedureLaunchWaypoint"] = ProcedureLaunchWaypoint
 
 class SiteDynamicState(ISite, SupportsDeleteCallback):
@@ -40227,7 +40223,7 @@ class SiteDynamicState(ISite, SupportsDeleteCallback):
     _get_valid_object_names_method_offset = 3
     _get_as_site_method_offset = 4
     _metadata = {
-        "iid_data" : (5104605018364334696, 9914056885151665295),
+        "iid_data" : (5679982430105206324, 8352738077493099679),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -40283,7 +40279,7 @@ class SiteDynamicState(ISite, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteDynamicState, [SiteDynamicState, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((4847814716997792407, 18231396679680366494), SiteDynamicState)
+agcls.AgClassCatalog.add_catalog_entry((5283525930957505335, 14928362892645429394), SiteDynamicState)
 agcls.AgTypeNameMap["SiteDynamicState"] = SiteDynamicState
 
 class BasicManeuverStrategyPitch3D(IBasicManeuverStrategy, SupportsDeleteCallback):
@@ -40303,7 +40299,7 @@ class BasicManeuverStrategyPitch3D(IBasicManeuverStrategy, SupportsDeleteCallbac
     _get_wind_force_effective_area_method_offset = 10
     _set_wind_force_effective_area_method_offset = 11
     _metadata = {
-        "iid_data" : (5105306656992613469, 3540505748559672255),
+        "iid_data" : (5125216255543006366, 2013647168736143776),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -40420,7 +40416,7 @@ class BasicManeuverStrategyPitch3D(IBasicManeuverStrategy, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyPitch3D, [BasicManeuverStrategyPitch3D, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5136301321259769219, 4000378802845039279), BasicManeuverStrategyPitch3D)
+agcls.AgClassCatalog.add_catalog_entry((5643364717381781050, 14294630456628444050), BasicManeuverStrategyPitch3D)
 agcls.AgTypeNameMap["BasicManeuverStrategyPitch3D"] = BasicManeuverStrategyPitch3D
 
 class RefuelDumpProperties(SupportsDeleteCallback):
@@ -40439,7 +40435,7 @@ class RefuelDumpProperties(SupportsDeleteCallback):
     _get_use_end_of_enroute_segment_as_epoch_method_offset = 9
     _set_use_end_of_enroute_segment_as_epoch_method_offset = 10
     _metadata = {
-        "iid_data" : (5003191604278196525, 17721617824266326670),
+        "iid_data" : (5374174168724732200, 7458522955236745393),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -40545,7 +40541,7 @@ class RefuelDumpProperties(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RefuelDumpProperties, [RefuelDumpProperties, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5061480753212287074, 15441067619561720244), RefuelDumpProperties)
+agcls.AgClassCatalog.add_catalog_entry((5685914195942242113, 6852779786104836004), RefuelDumpProperties)
 agcls.AgTypeNameMap["RefuelDumpProperties"] = RefuelDumpProperties
 
 class ProcedureFastTimeOptions(SupportsDeleteCallback):
@@ -40559,7 +40555,7 @@ class ProcedureFastTimeOptions(SupportsDeleteCallback):
     _get_stop_time_method_offset = 4
     _set_stop_time_method_offset = 5
     _metadata = {
-        "iid_data" : (5526509407324515531, 1179628310041269673),
+        "iid_data" : (4657185857234426055, 11627323599967743932),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -40619,7 +40615,7 @@ class ProcedureFastTimeOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureFastTimeOptions, [ProcedureFastTimeOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5256046032572971350, 11552615131980125109), ProcedureFastTimeOptions)
+agcls.AgClassCatalog.add_catalog_entry((4898432426863825799, 2187192218446960795), ProcedureFastTimeOptions)
 agcls.AgTypeNameMap["ProcedureFastTimeOptions"] = ProcedureFastTimeOptions
 
 class BasicManeuverTargetPositionVelocity(SupportsDeleteCallback):
@@ -40636,7 +40632,7 @@ class BasicManeuverTargetPositionVelocity(SupportsDeleteCallback):
     _apply_position_velocity_method_offset = 7
     _cancel_position_velocity_method_offset = 8
     _metadata = {
-        "iid_data" : (5569224259406810828, 11943865142217919666),
+        "iid_data" : (5185746920587075869, 2644925666436554418),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -40723,7 +40719,7 @@ class BasicManeuverTargetPositionVelocity(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVelocity, [BasicManeuverTargetPositionVelocity, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5720707950419700583, 14220721990871486647), BasicManeuverTargetPositionVelocity)
+agcls.AgClassCatalog.add_catalog_entry((5247958009204993329, 469826529997977495), BasicManeuverTargetPositionVelocity)
 agcls.AgTypeNameMap["BasicManeuverTargetPositionVelocity"] = BasicManeuverTargetPositionVelocity
 
 class BasicManeuverTargetPositionVelocityNoisyBearingRange(SupportsDeleteCallback):
@@ -40744,7 +40740,7 @@ class BasicManeuverTargetPositionVelocityNoisyBearingRange(SupportsDeleteCallbac
     _cancel_position_velocity_method_offset = 11
     _set_base_dynamic_state_link_name_method_offset = 12
     _metadata = {
-        "iid_data" : (5036622950677551442, 17790904143506270117),
+        "iid_data" : (5206161864401841566, 5924401225130820495),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -40857,7 +40853,7 @@ class BasicManeuverTargetPositionVelocityNoisyBearingRange(SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVelocityNoisyBearingRange, [BasicManeuverTargetPositionVelocityNoisyBearingRange, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5183636736005802859, 6010191698451056009), BasicManeuverTargetPositionVelocityNoisyBearingRange)
+agcls.AgClassCatalog.add_catalog_entry((4699844876088612099, 4743274621838066565), BasicManeuverTargetPositionVelocityNoisyBearingRange)
 agcls.AgTypeNameMap["BasicManeuverTargetPositionVelocityNoisyBearingRange"] = BasicManeuverTargetPositionVelocityNoisyBearingRange
 
 class BasicManeuverTargetPositionVelocityNoisySurfTarget(SupportsDeleteCallback):
@@ -40878,7 +40874,7 @@ class BasicManeuverTargetPositionVelocityNoisySurfTarget(SupportsDeleteCallback)
     _cancel_position_velocity_method_offset = 11
     _set_base_dynamic_state_link_name_method_offset = 12
     _metadata = {
-        "iid_data" : (5603321029489925551, 13135773816960132759),
+        "iid_data" : (5394322249151675747, 1055645356665736626),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -40991,7 +40987,7 @@ class BasicManeuverTargetPositionVelocityNoisySurfTarget(SupportsDeleteCallback)
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVelocityNoisySurfTarget, [BasicManeuverTargetPositionVelocityNoisySurfTarget, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5226338563214008525, 1195314219041710241), BasicManeuverTargetPositionVelocityNoisySurfTarget)
+agcls.AgClassCatalog.add_catalog_entry((4789097400567760704, 3492670802161326976), BasicManeuverTargetPositionVelocityNoisySurfTarget)
 agcls.AgTypeNameMap["BasicManeuverTargetPositionVelocityNoisySurfTarget"] = BasicManeuverTargetPositionVelocityNoisySurfTarget
 
 class AdvancedFixedWingFourPointAerodynamic(SupportsDeleteCallback):
@@ -41036,7 +41032,7 @@ class AdvancedFixedWingFourPointAerodynamic(SupportsDeleteCallback):
     _validate_lift_design_points_method_offset = 35
     _validate_drag_design_points_method_offset = 36
     _metadata = {
-        "iid_data" : (4877073665632949624, 11672716552880349597),
+        "iid_data" : (5755986253862821603, 6453181916006557363),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -41360,7 +41356,7 @@ class AdvancedFixedWingFourPointAerodynamic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingFourPointAerodynamic, [AdvancedFixedWingFourPointAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5395193493490888646, 11199330471138564483), AdvancedFixedWingFourPointAerodynamic)
+agcls.AgClassCatalog.add_catalog_entry((5331005799741369489, 14887346850095822473), AdvancedFixedWingFourPointAerodynamic)
 agcls.AgTypeNameMap["AdvancedFixedWingFourPointAerodynamic"] = AdvancedFixedWingFourPointAerodynamic
 
 class MissileFourPointAerodynamic(SupportsDeleteCallback):
@@ -41409,7 +41405,7 @@ class MissileFourPointAerodynamic(SupportsDeleteCallback):
     _get_max_endurance_aoa_method_offset = 39
     _get_max_range_aoa_method_offset = 40
     _metadata = {
-        "iid_data" : (4730269207064615935, 16334924616545939868),
+        "iid_data" : (5145112976437567144, 9286809103295585688),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -41767,7 +41763,7 @@ class MissileFourPointAerodynamic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileFourPointAerodynamic, [MissileFourPointAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5716462331802832450, 2304689591626170533), MissileFourPointAerodynamic)
+agcls.AgClassCatalog.add_catalog_entry((4651245616606558491, 5214673419430591912), MissileFourPointAerodynamic)
 agcls.AgTypeNameMap["MissileFourPointAerodynamic"] = MissileFourPointAerodynamic
 
 class FourPointAerodynamic(SupportsDeleteCallback):
@@ -41814,7 +41810,7 @@ class FourPointAerodynamic(SupportsDeleteCallback):
     _get_max_aoa_method_offset = 37
     _set_max_aoa_method_offset = 38
     _metadata = {
-        "iid_data" : (5484477733759286553, 11826654122719919528),
+        "iid_data" : (5025043033034931791, 12670330311348837003),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -42155,5 +42151,5 @@ class FourPointAerodynamic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FourPointAerodynamic, [FourPointAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5736042625051820997, 10368039465623093694), FourPointAerodynamic)
+agcls.AgClassCatalog.add_catalog_entry((5680737772628247648, 10500995021692728709), FourPointAerodynamic)
 agcls.AgTypeNameMap["FourPointAerodynamic"] = FourPointAerodynamic

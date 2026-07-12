@@ -24,6 +24,8 @@ Overview
               - Return an Ephemeris file of the CCSDS ephemeris type for export.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteExportTools.get_ephemeris_ccsds_v2_export_tool`
               - Return an Ephemeris file of the CCSDS v2 ephemeris type for export.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteExportTools.get_ephemeris_ccsds_v3_export_tool`
+              - Return an Ephemeris file of the CCSDS v3 ephemeris type for export.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteExportTools.get_ephemeris_code500_export_tool`
               - Return an Ephemeris file of the Code500Ephem ephemeris type for export; AgAsCode500.dll must be copied to your install data's 'Modules' directory.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteExportTools.get_ephemeris_spice_export_tool`
@@ -89,6 +91,15 @@ Method detail
     :Returns:
 
         :obj:`~VehicleEphemerisCCSDSv2ExportTool`
+
+.. py:method:: get_ephemeris_ccsds_v3_export_tool(self) -> VehicleEphemerisCCSDSv3ExportTool
+    :canonical: ansys.stk.core.stkobjects.SatelliteExportTools.get_ephemeris_ccsds_v3_export_tool
+
+    Return an Ephemeris file of the CCSDS v3 ephemeris type for export.
+
+    :Returns:
+
+        :obj:`~VehicleEphemerisCCSDSv3ExportTool`
 
 .. py:method:: get_ephemeris_code500_export_tool(self) -> VehicleEphemerisCode500ExportTool
     :canonical: ansys.stk.core.stkobjects.SatelliteExportTools.get_ephemeris_code500_export_tool

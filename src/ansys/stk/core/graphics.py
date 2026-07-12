@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -39,26 +39,27 @@ __all__ = ["AGICustomTerrainOverlay", "AGICustomTerrainOverlayFactory", "AGIProc
 "BandOrderFilterFactory", "BatchPrimitiveIndex", "BinaryLogicOperation", "BlurFilter", "BlurFilterFactory",
 "BlurMethod", "BoundingSphere", "BoundingSphereFactory", "BoxTriangulatorInitializer", "BrightnessFilter",
 "BrightnessFilterFactory", "Camera", "CameraSnapshot", "CameraVideoRecording", "CentralBodyGraphics",
-"CentralBodyGraphicsIndexer", "Clouds", "ColorToLuminanceFilter", "ColorToLuminanceFilterFactory",
-"CompositeDisplayCondition", "CompositeDisplayConditionFactory", "CompositePrimitive", "CompositePrimitiveFactory",
-"ConstantDisplayCondition", "ConstantDisplayConditionFactory", "ConstrainedUpAxis", "ContrastFilter",
-"ContrastFilterFactory", "ConvolutionFilter", "ConvolutionFilterFactory", "CustomImageGlobeOverlay",
-"CustomImageGlobeOverlayPluginActivator", "CustomImageGlobeOverlayPluginActivatorFactory",
-"CustomImageGlobeOverlayPluginProxy", "CylinderFillOptions", "CylinderTriangulatorInitializer", "DisplayCondition",
-"DistanceDisplayCondition", "DistanceDisplayConditionFactory", "DistanceToGlobeOverlayDisplayCondition",
-"DistanceToGlobeOverlayDisplayConditionFactory", "DistanceToPositionDisplayCondition",
-"DistanceToPositionDisplayConditionFactory", "DistanceToPrimitiveDisplayCondition",
-"DistanceToPrimitiveDisplayConditionFactory", "DurationPathPrimitiveUpdatePolicy",
-"DurationPathPrimitiveUpdatePolicyFactory", "EdgeDetectFilter", "EdgeDetectFilterFactory", "EdgeDetectMethod",
-"EllipsoidTriangulatorInitializer", "ExtrudedPolylineTriangulatorInitializer", "ExtrudedPolylineTriangulatorResult",
-"FaceCullingMode", "FactoryAndInitializers", "FilteringRasterStream", "FilteringRasterStreamFactory", "FlipFilter",
-"FlipFilterFactory", "FontStyle", "FrameRate", "GammaCorrectionFilter", "GammaCorrectionFilterFactory",
-"GaussianBlurFilter", "GaussianBlurFilterFactory", "GeospatialImageGlobeOverlay", "GeospatialImageGlobeOverlayFactory",
-"GlobeImageOverlay", "GlobeImageOverlayAddCompleteEventArgs", "GlobeImageOverlayInitializer", "GlobeOverlay",
-"GlobeOverlaySettings", "GradientDetectFilter", "GradientDetectFilterFactory", "GradientDetectMethod", "GraphicsFont",
-"GraphicsFontFactory", "GreatArcInterpolator", "GreatArcInterpolatorFactory", "IConvolutionFilter", "IDisplayCondition",
-"IGlobeImageOverlay", "IGlobeOverlay", "IKmlContainer", "IKmlFeature", "IOverlay", "IPathPrimitiveUpdatePolicy",
-"IPositionInterpolator", "IPrimitive", "IProjection", "IRaster", "IRasterFilter", "IRasterStream", "IScreenOverlay",
+"CentralBodyGraphicsIndexer", "CesiumIonTerrainOverlay", "CesiumIonTerrainOverlayFactory", "Clouds",
+"ColorToLuminanceFilter", "ColorToLuminanceFilterFactory", "CompositeDisplayCondition",
+"CompositeDisplayConditionFactory", "CompositePrimitive", "CompositePrimitiveFactory", "ConstantDisplayCondition",
+"ConstantDisplayConditionFactory", "ConstrainedUpAxis", "ContrastFilter", "ContrastFilterFactory", "ConvolutionFilter",
+"ConvolutionFilterFactory", "CustomImageGlobeOverlay", "CustomImageGlobeOverlayPluginActivator",
+"CustomImageGlobeOverlayPluginActivatorFactory", "CustomImageGlobeOverlayPluginProxy", "CylinderFillOptions",
+"CylinderTriangulatorInitializer", "DisplayCondition", "DistanceDisplayCondition", "DistanceDisplayConditionFactory",
+"DistanceToGlobeOverlayDisplayCondition", "DistanceToGlobeOverlayDisplayConditionFactory",
+"DistanceToPositionDisplayCondition", "DistanceToPositionDisplayConditionFactory",
+"DistanceToPrimitiveDisplayCondition", "DistanceToPrimitiveDisplayConditionFactory",
+"DurationPathPrimitiveUpdatePolicy", "DurationPathPrimitiveUpdatePolicyFactory", "EdgeDetectFilter",
+"EdgeDetectFilterFactory", "EdgeDetectMethod", "EllipsoidTriangulatorInitializer",
+"ExtrudedPolylineTriangulatorInitializer", "ExtrudedPolylineTriangulatorResult", "FaceCullingMode",
+"FactoryAndInitializers", "FilteringRasterStream", "FilteringRasterStreamFactory", "FlipFilter", "FlipFilterFactory",
+"FontStyle", "FrameRate", "GammaCorrectionFilter", "GammaCorrectionFilterFactory", "GaussianBlurFilter",
+"GaussianBlurFilterFactory", "GeospatialImageGlobeOverlay", "GeospatialImageGlobeOverlayFactory", "GlobeImageOverlay",
+"GlobeImageOverlayAddCompleteEventArgs", "GlobeImageOverlayInitializer", "GlobeOverlay", "GlobeOverlaySettings",
+"GradientDetectFilter", "GradientDetectFilterFactory", "GradientDetectMethod", "GraphicsFont", "GraphicsFontFactory",
+"GreatArcInterpolator", "GreatArcInterpolatorFactory", "IConvolutionFilter", "IDisplayCondition", "IGlobeImageOverlay",
+"IGlobeOverlay", "IKmlContainer", "IKmlFeature", "IOverlay", "IPathPrimitiveUpdatePolicy", "IPositionInterpolator",
+"IPrimitive", "IProjection", "IRaster", "IRasterFilter", "IRasterStream", "IScreenOverlay",
 "IScreenOverlayCollectionBase", "IScreenOverlayContainer", "ITerrainOverlay", "ITriangulatorResult", "ImageCollection",
 "Jpeg2000CompressionProfile", "Jpeg2000WriterInitializer", "KmlContainer", "KmlDocument", "KmlDocumentCollection",
 "KmlDocumentLoadedEventArgs", "KmlFeature", "KmlFeatureCollection", "KmlFolder", "KmlGraphics", "KmlNetworkLink",
@@ -131,11 +132,7 @@ from .internal.eventutil import (
 )
 from .stkutil import Date, IOrientation
 from .utilities import colors as agcolor
-from .utilities.exceptions import STKRuntimeError
 
-
-def _raise_uninitialized_error(*args):
-    raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
 class CylinderFillOptions(IntFlag):
     """
@@ -209,14 +206,17 @@ class VideoFormat(IntEnum):
     """H.264 file format."""
     WMV = 1
     """Windows Media Video (WMV) file format."""
+    PRO_RES = 2
+    """Apple ProRes file format."""
 
 VideoFormat.H264.__doc__ = "H.264 file format."
 VideoFormat.WMV.__doc__ = "Windows Media Video (WMV) file format."
+VideoFormat.PRO_RES.__doc__ = "Apple ProRes file format."
 
 agcls.AgTypeNameMap["VideoFormat"] = VideoFormat
 
 class ConstrainedUpAxis(IntEnum):
-    """When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen."""
+    """When setting the camera's axes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen."""
 
     X = 0
     """The X axis is constrained."""
@@ -266,7 +266,7 @@ OverlayRole.NONE.__doc__ = "The role of the globe overlay isn't set."
 agcls.AgTypeNameMap["OverlayRole"] = OverlayRole
 
 class PrimitiveIndicesOrderHint(IntEnum):
-    """An optimization hint optionally provided to a primitive'sSetPartial method to enhance performance."""
+    """An optimization hint optionally provided to a primitive's SetPartial method to enhance performance."""
 
     NOT_SORTED = 0
     """The indices passed to SetPartial are not sorted. Therefore, the primitive may sort them to improve performance of writing its geometry to video memory."""
@@ -433,6 +433,8 @@ class ModelTransformationType(IntEnum):
     """Translate the green band of color associated with the geometry."""
     TRANSLATE_BLUE = 22
     """Translate the blue band of color associated with the geometry."""
+    ANIMATION = 23
+    """Control an animation cycle defined on the model."""
 
 ModelTransformationType.TRANSLATE_X.__doc__ = "Translate the geometry along the X axis."
 ModelTransformationType.TRANSLATE_Y.__doc__ = "Translate the geometry along the Y axis."
@@ -457,6 +459,7 @@ ModelTransformationType.TEXTURE_SCALE_UNIFORM.__doc__ = "Scale the texture assoc
 ModelTransformationType.TRANSLATE_RED.__doc__ = "Translate the red band of color associated with the geometry."
 ModelTransformationType.TRANSLATE_GREEN.__doc__ = "Translate the green band of color associated with the geometry."
 ModelTransformationType.TRANSLATE_BLUE.__doc__ = "Translate the blue band of color associated with the geometry."
+ModelTransformationType.ANIMATION.__doc__ = "Control an animation cycle defined on the model."
 
 agcls.AgTypeNameMap["ModelTransformationType"] = ModelTransformationType
 
@@ -559,7 +562,7 @@ RenderPass.TERRAIN.__doc__ = "Render after the terrain is rendered."
 agcls.AgTypeNameMap["RenderPass"] = RenderPass
 
 class RenderPassHint(IntEnum):
-    """An optimization hint optionally provided to a primitive'sSet method to enhance performance when per-position colors are used."""
+    """An optimization hint optionally provided to a primitive's Set method to enhance performance when per-position colors are used."""
 
     OPAQUE = 0
     """The collection of colors contains only opaque colors. This implies that each color's alpha component is 255."""
@@ -861,7 +864,7 @@ RasterBand.LUMINANCE.__doc__ = "A band containing luminance values."
 agcls.AgTypeNameMap["RasterBand"] = RasterBand
 
 class RasterFormat(IntEnum):
-    """Common raster band layouts that may be contained within a raster dataset. Each pixel of the raster will contain the bands defined by the layout in the specified order. A typical color raster image will have an rgbraster format."""
+    """Common raster band layouts that may be contained within a raster dataset. Each pixel of the raster will contain the bands defined by the layout in the specified order. A typical color raster image will have an rgb raster format."""
 
     RED = 0
     """The format of the raster is a single band consisting of red values."""
@@ -1003,7 +1006,7 @@ KmlNetworkLinkViewRefreshMode.ON_REGION.__doc__ = "Refresh the network link when
 agcls.AgTypeNameMap["KmlNetworkLinkViewRefreshMode"] = KmlNetworkLinkViewRefreshMode
 
 class ModelUpAxis(IntEnum):
-    """When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen."""
+    """When setting the camera's axes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen."""
 
     X = 0
     """The positive X axis."""
@@ -2987,7 +2990,7 @@ class IOverlay(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def parent(self) -> "IScreenOverlayContainer":
-        """Get the overlay's parent. This may be another overlay if this overlay was added to that overlay's overlays collection. Or, it may be the screen overlay manager if this overlay was added to the scene manager'sscreen overlays collection."""
+        """Get the overlay's parent. This may be another overlay if this overlay was added to that overlay's overlays collection. Or, it may be the screen overlay manager if this overlay was added to the scene manager's screen overlays collection."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_parent_metadata)
 
     _get_translucency_metadata = { "offset" : _get_translucency_method_offset,
@@ -3677,7 +3680,7 @@ class PathPoint(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PathPoint, [PathPoint, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5556206296547912371, 8503175498596258195), PathPoint)
+agcls.AgClassCatalog.add_catalog_entry((4949721281594789357, 6117417435675314350), PathPoint)
 agcls.AgTypeNameMap["PathPoint"] = PathPoint
 
 class PathPointFactory(SupportsDeleteCallback):
@@ -3747,7 +3750,7 @@ class PathPointFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PathPointFactory, [PathPointFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5489537290029782725, 4580717587449338530), PathPointFactory)
+agcls.AgClassCatalog.add_catalog_entry((4916780781573170136, 10726661587275533499), PathPointFactory)
 agcls.AgTypeNameMap["PathPointFactory"] = PathPointFactory
 
 class BoundingSphere(SupportsDeleteCallback):
@@ -3806,7 +3809,7 @@ class BoundingSphere(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BoundingSphere, [BoundingSphere, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5560913133829781863, 6998370718496213136), BoundingSphere)
+agcls.AgClassCatalog.add_catalog_entry((4830804229923390554, 15424555710076731038), BoundingSphere)
 agcls.AgTypeNameMap["BoundingSphere"] = BoundingSphere
 
 class BoundingSphereFactory(SupportsDeleteCallback):
@@ -3854,7 +3857,7 @@ class BoundingSphereFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BoundingSphereFactory, [BoundingSphereFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5271520243375596029, 5819040470255887235), BoundingSphereFactory)
+agcls.AgClassCatalog.add_catalog_entry((5588634139578840010, 6098193137855532221), BoundingSphereFactory)
 agcls.AgTypeNameMap["BoundingSphereFactory"] = BoundingSphereFactory
 
 class TextureFilter2D(SupportsDeleteCallback):
@@ -3964,7 +3967,7 @@ class TextureFilter2D(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextureFilter2D, [TextureFilter2D, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5701511467830951335, 18354553182752180127), TextureFilter2D)
+agcls.AgClassCatalog.add_catalog_entry((5531078546101115421, 13916741998195711374), TextureFilter2D)
 agcls.AgTypeNameMap["TextureFilter2D"] = TextureFilter2D
 
 class TextureFilter2DFactory(SupportsDeleteCallback):
@@ -4058,7 +4061,7 @@ class TextureFilter2DFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextureFilter2DFactory, [TextureFilter2DFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5071727819948482052, 5422654417578581655), TextureFilter2DFactory)
+agcls.AgClassCatalog.add_catalog_entry((5316402815302073436, 18366094128851394188), TextureFilter2DFactory)
 agcls.AgTypeNameMap["TextureFilter2DFactory"] = TextureFilter2DFactory
 
 class RendererTexture2D(SupportsDeleteCallback):
@@ -4098,7 +4101,7 @@ class RendererTexture2D(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RendererTexture2D, [RendererTexture2D, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5381155970277415318, 3622939501334827702), RendererTexture2D)
+agcls.AgClassCatalog.add_catalog_entry((5373421657900225945, 13015890299130046139), RendererTexture2D)
 agcls.AgTypeNameMap["RendererTexture2D"] = RendererTexture2D
 
 class RendererTextureTemplate2D(SupportsDeleteCallback):
@@ -4158,7 +4161,7 @@ class RendererTextureTemplate2D(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RendererTextureTemplate2D, [RendererTextureTemplate2D, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4903592959625323336, 10408150276974255496), RendererTextureTemplate2D)
+agcls.AgClassCatalog.add_catalog_entry((4942457160203296608, 11995073579180911784), RendererTextureTemplate2D)
 agcls.AgTypeNameMap["RendererTextureTemplate2D"] = RendererTextureTemplate2D
 
 class PathPointCollection(SupportsDeleteCallback):
@@ -4232,7 +4235,7 @@ class PathPointCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PathPointCollection, [PathPointCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4718379932532326826, 11444711569154001853), PathPointCollection)
+agcls.AgClassCatalog.add_catalog_entry((5361154354686562292, 9778320965562547860), PathPointCollection)
 agcls.AgTypeNameMap["PathPointCollection"] = PathPointCollection
 
 class ObjectCollection(SupportsDeleteCallback):
@@ -4306,7 +4309,7 @@ class ObjectCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ObjectCollection, [ObjectCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5689274977493123915, 2183068153647623591), ObjectCollection)
+agcls.AgClassCatalog.add_catalog_entry((5599980880177303614, 7732095528622376073), ObjectCollection)
 agcls.AgTypeNameMap["ObjectCollection"] = ObjectCollection
 
 class SceneCollection(SupportsDeleteCallback):
@@ -4380,7 +4383,7 @@ class SceneCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SceneCollection, [SceneCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5301811212438284748, 14423411918377718926), SceneCollection)
+agcls.AgClassCatalog.add_catalog_entry((5733265757536798646, 15784337225742436789), SceneCollection)
 agcls.AgTypeNameMap["SceneCollection"] = SceneCollection
 
 class ScreenOverlayPickResultCollection(SupportsDeleteCallback):
@@ -4454,7 +4457,7 @@ class ScreenOverlayPickResultCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScreenOverlayPickResultCollection, [ScreenOverlayPickResultCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4677343897895766869, 11872430607576403131), ScreenOverlayPickResultCollection)
+agcls.AgClassCatalog.add_catalog_entry((5326375754712058530, 10255580984360749230), ScreenOverlayPickResultCollection)
 agcls.AgTypeNameMap["ScreenOverlayPickResultCollection"] = ScreenOverlayPickResultCollection
 
 class GlobeImageOverlayAddCompleteEventArgs(SupportsDeleteCallback):
@@ -4494,7 +4497,7 @@ class GlobeImageOverlayAddCompleteEventArgs(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GlobeImageOverlayAddCompleteEventArgs, [GlobeImageOverlayAddCompleteEventArgs, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5231802800479662057, 2104184534495932053), GlobeImageOverlayAddCompleteEventArgs)
+agcls.AgClassCatalog.add_catalog_entry((4691167064435911335, 216212989075947147), GlobeImageOverlayAddCompleteEventArgs)
 agcls.AgTypeNameMap["GlobeImageOverlayAddCompleteEventArgs"] = GlobeImageOverlayAddCompleteEventArgs
 
 class TerrainOverlayAddCompleteEventArgs(SupportsDeleteCallback):
@@ -4534,7 +4537,7 @@ class TerrainOverlayAddCompleteEventArgs(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TerrainOverlayAddCompleteEventArgs, [TerrainOverlayAddCompleteEventArgs, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4866096509316980678, 14412758423447289486), TerrainOverlayAddCompleteEventArgs)
+agcls.AgClassCatalog.add_catalog_entry((5113588343720964337, 11755160548894278313), TerrainOverlayAddCompleteEventArgs)
 agcls.AgTypeNameMap["TerrainOverlayAddCompleteEventArgs"] = TerrainOverlayAddCompleteEventArgs
 
 class PickResultCollection(SupportsDeleteCallback):
@@ -4608,7 +4611,7 @@ class PickResultCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PickResultCollection, [PickResultCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5712441455425732440, 17907447014582202282), PickResultCollection)
+agcls.AgClassCatalog.add_catalog_entry((5749296816216136740, 14465105284498583713), PickResultCollection)
 agcls.AgTypeNameMap["PickResultCollection"] = PickResultCollection
 
 class RenderingEventArgs(SupportsDeleteCallback):
@@ -4658,7 +4661,7 @@ class RenderingEventArgs(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RenderingEventArgs, [RenderingEventArgs, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5392329581593296225, 914494406188763269), RenderingEventArgs)
+agcls.AgClassCatalog.add_catalog_entry((5508440329315922877, 3060830579259026859), RenderingEventArgs)
 agcls.AgTypeNameMap["RenderingEventArgs"] = RenderingEventArgs
 
 class BatchPrimitiveIndex(SupportsDeleteCallback):
@@ -4708,7 +4711,7 @@ class BatchPrimitiveIndex(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BatchPrimitiveIndex, [BatchPrimitiveIndex, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5200164995912440169, 5658385359959925641), BatchPrimitiveIndex)
+agcls.AgClassCatalog.add_catalog_entry((5297141160340260105, 5212519940367339659), BatchPrimitiveIndex)
 agcls.AgTypeNameMap["BatchPrimitiveIndex"] = BatchPrimitiveIndex
 
 class KmlDocumentCollection(SupportsDeleteCallback):
@@ -4782,7 +4785,7 @@ class KmlDocumentCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, KmlDocumentCollection, [KmlDocumentCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5215825726924847476, 8941538243989311415), KmlDocumentCollection)
+agcls.AgClassCatalog.add_catalog_entry((5724313987381943452, 12090250210102941074), KmlDocumentCollection)
 agcls.AgTypeNameMap["KmlDocumentCollection"] = KmlDocumentCollection
 
 class KmlFeatureCollection(SupportsDeleteCallback):
@@ -4856,7 +4859,7 @@ class KmlFeatureCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, KmlFeatureCollection, [KmlFeatureCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5727078008905494174, 12095817447017663925), KmlFeatureCollection)
+agcls.AgClassCatalog.add_catalog_entry((5230320945309436316, 3140761502646319547), KmlFeatureCollection)
 agcls.AgTypeNameMap["KmlFeatureCollection"] = KmlFeatureCollection
 
 class KmlDocumentLoadedEventArgs(SupportsDeleteCallback):
@@ -4906,13 +4909,13 @@ class KmlDocumentLoadedEventArgs(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, KmlDocumentLoadedEventArgs, [KmlDocumentLoadedEventArgs, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5646942824342644840, 16385106561904486318), KmlDocumentLoadedEventArgs)
+agcls.AgClassCatalog.add_catalog_entry((5451151110314093697, 4972924819512288940), KmlDocumentLoadedEventArgs)
 agcls.AgTypeNameMap["KmlDocumentLoadedEventArgs"] = KmlDocumentLoadedEventArgs
 
 class FactoryAndInitializers(SupportsDeleteCallback):
     """Methods and properties are used to initialize new primitives, display conditions, screen overlays, textures and many other types; compute and retrieve triangulator results and access global properties (what's known as static properties, static methods a..."""
 
-    _num_methods = 83
+    _num_methods = 84
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_box_triangulator_method_offset = 1
     _get_cylinder_triangulator_method_offset = 2
@@ -4997,6 +5000,7 @@ class FactoryAndInitializers(SupportsDeleteCallback):
     _get_vector_primitive_method_offset = 81
     _get_polyline_primitive_optional_parameters_method_offset = 82
     _get_point_batch_primitive_optional_parameters_method_offset = 83
+    _get_cesium_ion_terrain_overlay_method_offset = 84
     _metadata = {
         "iid_data" : (5413969555641802483, 7605805363040079775),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -5669,6 +5673,14 @@ class FactoryAndInitializers(SupportsDeleteCallback):
         """Access global methods and properties of PointBatchPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(FactoryAndInitializers._metadata, FactoryAndInitializers._get_point_batch_primitive_optional_parameters_metadata)
 
+    _get_cesium_ion_terrain_overlay_metadata = { "offset" : _get_cesium_ion_terrain_overlay_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def cesium_ion_terrain_overlay(self) -> "CesiumIonTerrainOverlayFactory":
+        """Access global methods and properties of CesiumionTerrainOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
+        return self._intf.get_property(FactoryAndInitializers._metadata, FactoryAndInitializers._get_cesium_ion_terrain_overlay_metadata)
+
     _property_names[box_triangulator] = "box_triangulator"
     _property_names[cylinder_triangulator] = "cylinder_triangulator"
     _property_names[ellipsoid_triangulator] = "ellipsoid_triangulator"
@@ -5752,6 +5764,7 @@ class FactoryAndInitializers(SupportsDeleteCallback):
     _property_names[vector_primitive] = "vector_primitive"
     _property_names[polyline_primitive_optional_parameters] = "polyline_primitive_optional_parameters"
     _property_names[point_batch_primitive_optional_parameters] = "point_batch_primitive_optional_parameters"
+    _property_names[cesium_ion_terrain_overlay] = "cesium_ion_terrain_overlay"
 
     def __init__(self, source_object=None):
         """Construct an object of type FactoryAndInitializers."""
@@ -5766,7 +5779,7 @@ class FactoryAndInitializers(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FactoryAndInitializers, [FactoryAndInitializers, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5029710387976957897, 13954049756575440778), FactoryAndInitializers)
+agcls.AgClassCatalog.add_catalog_entry((5483799955106671784, 4039048167507315635), FactoryAndInitializers)
 agcls.AgTypeNameMap["FactoryAndInitializers"] = FactoryAndInitializers
 
 class ExtrudedPolylineTriangulatorResult(ITriangulatorResult, SupportsDeleteCallback):
@@ -5828,7 +5841,7 @@ class ExtrudedPolylineTriangulatorResult(ITriangulatorResult, SupportsDeleteCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ExtrudedPolylineTriangulatorResult, [ExtrudedPolylineTriangulatorResult, ITriangulatorResult])
 
-agcls.AgClassCatalog.add_catalog_entry((4874148548191491803, 705205959735039921), ExtrudedPolylineTriangulatorResult)
+agcls.AgClassCatalog.add_catalog_entry((5432247316242051175, 8508360002852026764), ExtrudedPolylineTriangulatorResult)
 agcls.AgTypeNameMap["ExtrudedPolylineTriangulatorResult"] = ExtrudedPolylineTriangulatorResult
 
 class SolidTriangulatorResult(ITriangulatorResult, SupportsDeleteCallback):
@@ -5900,7 +5913,7 @@ class SolidTriangulatorResult(ITriangulatorResult, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SolidTriangulatorResult, [SolidTriangulatorResult, ITriangulatorResult])
 
-agcls.AgClassCatalog.add_catalog_entry((5292312989871528695, 2932714005618817949), SolidTriangulatorResult)
+agcls.AgClassCatalog.add_catalog_entry((5325681590037629443, 15387741810622714532), SolidTriangulatorResult)
 agcls.AgTypeNameMap["SolidTriangulatorResult"] = SolidTriangulatorResult
 
 class SurfaceShapesResult(SupportsDeleteCallback):
@@ -5960,7 +5973,7 @@ class SurfaceShapesResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SurfaceShapesResult, [SurfaceShapesResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5562832838748717934, 17103991771881976193), SurfaceShapesResult)
+agcls.AgClassCatalog.add_catalog_entry((5725977211271640284, 905543062273141426), SurfaceShapesResult)
 agcls.AgTypeNameMap["SurfaceShapesResult"] = SurfaceShapesResult
 
 class SurfaceTriangulatorResult(ITriangulatorResult, SupportsDeleteCallback):
@@ -6042,7 +6055,7 @@ class SurfaceTriangulatorResult(ITriangulatorResult, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SurfaceTriangulatorResult, [SurfaceTriangulatorResult, ITriangulatorResult])
 
-agcls.AgClassCatalog.add_catalog_entry((5317895839875531743, 55317102968090019), SurfaceTriangulatorResult)
+agcls.AgClassCatalog.add_catalog_entry((5212811510324177379, 4977760969201582495), SurfaceTriangulatorResult)
 agcls.AgTypeNameMap["SurfaceTriangulatorResult"] = SurfaceTriangulatorResult
 
 class TriangulatorResult(ITriangulatorResult, SupportsDeleteCallback):
@@ -6061,7 +6074,7 @@ class TriangulatorResult(ITriangulatorResult, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TriangulatorResult, [ITriangulatorResult])
 
-agcls.AgClassCatalog.add_catalog_entry((5139444277268572249, 3108066989369069979), TriangulatorResult)
+agcls.AgClassCatalog.add_catalog_entry((4826873719817789203, 6969464852944992409), TriangulatorResult)
 agcls.AgTypeNameMap["TriangulatorResult"] = TriangulatorResult
 
 class AGICustomTerrainOverlay(ITerrainOverlay, IGlobeOverlay, SupportsDeleteCallback):
@@ -6095,7 +6108,7 @@ class AGICustomTerrainOverlay(ITerrainOverlay, IGlobeOverlay, SupportsDeleteCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AGICustomTerrainOverlay, [AGICustomTerrainOverlay, ITerrainOverlay, IGlobeOverlay])
 
-agcls.AgClassCatalog.add_catalog_entry((5233896634715199280, 3319534929678221749), AGICustomTerrainOverlay)
+agcls.AgClassCatalog.add_catalog_entry((5125909837912753757, 6001761083297873301), AGICustomTerrainOverlay)
 agcls.AgTypeNameMap["AGICustomTerrainOverlay"] = AGICustomTerrainOverlay
 
 class AGIProcessedImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteCallback):
@@ -6129,7 +6142,7 @@ class AGIProcessedImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsD
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AGIProcessedImageGlobeOverlay, [AGIProcessedImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay])
 
-agcls.AgClassCatalog.add_catalog_entry((4698652200510509190, 4410810686274608779), AGIProcessedImageGlobeOverlay)
+agcls.AgClassCatalog.add_catalog_entry((5728610100786635849, 2957991857231083434), AGIProcessedImageGlobeOverlay)
 agcls.AgTypeNameMap["AGIProcessedImageGlobeOverlay"] = AGIProcessedImageGlobeOverlay
 
 class AGIProcessedTerrainOverlay(ITerrainOverlay, IGlobeOverlay, SupportsDeleteCallback):
@@ -6163,7 +6176,7 @@ class AGIProcessedTerrainOverlay(ITerrainOverlay, IGlobeOverlay, SupportsDeleteC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AGIProcessedTerrainOverlay, [AGIProcessedTerrainOverlay, ITerrainOverlay, IGlobeOverlay])
 
-agcls.AgClassCatalog.add_catalog_entry((5555210745660264736, 9436563425815460013), AGIProcessedTerrainOverlay)
+agcls.AgClassCatalog.add_catalog_entry((4951464777881402831, 2834766313611109823), AGIProcessedTerrainOverlay)
 agcls.AgTypeNameMap["AGIProcessedTerrainOverlay"] = AGIProcessedTerrainOverlay
 
 class AGIRoamImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteCallback):
@@ -6197,7 +6210,7 @@ class AGIRoamImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDelete
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AGIRoamImageGlobeOverlay, [AGIRoamImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay])
 
-agcls.AgClassCatalog.add_catalog_entry((5242539083339407783, 14850989973976265913), AGIRoamImageGlobeOverlay)
+agcls.AgClassCatalog.add_catalog_entry((5715213650622816929, 12966482154332360859), AGIRoamImageGlobeOverlay)
 agcls.AgTypeNameMap["AGIRoamImageGlobeOverlay"] = AGIRoamImageGlobeOverlay
 
 class CameraSnapshot(SupportsDeleteCallback):
@@ -6267,19 +6280,18 @@ class CameraSnapshot(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CameraSnapshot, [CameraSnapshot, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4857812757827340764, 12820205993576870016), CameraSnapshot)
+agcls.AgClassCatalog.add_catalog_entry((4739024314640205340, 4711659974622010507), CameraSnapshot)
 agcls.AgTypeNameMap["CameraSnapshot"] = CameraSnapshot
 
 class CameraVideoRecording(SupportsDeleteCallback):
     """Records the 3D window to either a movie file or to consecutively ordered image files each time the scene is rendered."""
 
-    _num_methods = 5
+    _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_is_recording_method_offset = 1
-    _start_recording_method_offset = 2
-    _start_recording_frame_stack_method_offset = 3
-    _stop_recording_method_offset = 4
-    _start_recording_video_method_offset = 5
+    _start_recording_frame_stack_method_offset = 2
+    _stop_recording_method_offset = 3
+    _start_recording_video_method_offset = 4
     _metadata = {
         "iid_data" : (4979543382962073210, 764756984121433475),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -6295,13 +6307,6 @@ class CameraVideoRecording(SupportsDeleteCallback):
     def is_recording(self) -> bool:
         """Get if recording is occurring or not."""
         return self._intf.get_property(CameraVideoRecording._metadata, CameraVideoRecording._get_is_recording_metadata)
-
-    _start_recording_metadata = { "offset" : _start_recording_method_offset,
-            "arg_types" : (agcom.BSTR, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.IntArg, agmarshall.IntArg,) }
-    def start_recording(self, wmv_filename:str, video_bit_rate:int, video_frame_rate:int) -> None:
-        """Do not use this method, as it is deprecated. Use the overload taking a video format instead. Starts recording a file in the WMV format at the specified bit and frame rate."""
-        return self._intf.invoke(CameraVideoRecording._metadata, CameraVideoRecording._start_recording_metadata, wmv_filename, video_bit_rate, video_frame_rate)
 
     _start_recording_frame_stack_metadata = { "offset" : _start_recording_frame_stack_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, agcom.INT, agcom.INT,),
@@ -6339,7 +6344,7 @@ class CameraVideoRecording(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CameraVideoRecording, [CameraVideoRecording, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4949773353057298900, 8240883984009465791), CameraVideoRecording)
+agcls.AgClassCatalog.add_catalog_entry((5476648130279223889, 10940299479633866121), CameraVideoRecording)
 agcls.AgTypeNameMap["CameraVideoRecording"] = CameraVideoRecording
 
 class CentralBodyGraphicsIndexer(SupportsDeleteCallback):
@@ -6418,8 +6423,42 @@ class CentralBodyGraphicsIndexer(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CentralBodyGraphicsIndexer, [CentralBodyGraphicsIndexer, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4664517785508533741, 18264689342556895135), CentralBodyGraphicsIndexer)
+agcls.AgClassCatalog.add_catalog_entry((4971703660372055745, 10560635250935329696), CentralBodyGraphicsIndexer)
 agcls.AgTypeNameMap["CentralBodyGraphicsIndexer"] = CentralBodyGraphicsIndexer
+
+class CesiumIonTerrainOverlay(ITerrainOverlay, IGlobeOverlay, SupportsDeleteCallback):
+    """A terrain overlay for handling Cesium Ion Streaming Terrain."""
+
+    _num_methods = 0
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _metadata = {
+        "iid_data" : (5413821471306969934, 17650523891090466977),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, CesiumIonTerrainOverlay)
+
+
+    def __init__(self, source_object=None):
+        """Construct an object of type CesiumIonTerrainOverlay."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, CesiumIonTerrainOverlay)
+        ITerrainOverlay.__init__(self, source_object)
+        IGlobeOverlay.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        ITerrainOverlay._private_init(self, intf)
+        IGlobeOverlay._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, CesiumIonTerrainOverlay, [CesiumIonTerrainOverlay, ITerrainOverlay, IGlobeOverlay])
+
+agcls.AgClassCatalog.add_catalog_entry((5588814396392368110, 9590680107563495603), CesiumIonTerrainOverlay)
+agcls.AgTypeNameMap["CesiumIonTerrainOverlay"] = CesiumIonTerrainOverlay
 
 class CustomImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteCallback):
     """A globe image overlay that allows for a user defined image to be specified."""
@@ -6522,7 +6561,7 @@ class CustomImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CustomImageGlobeOverlay, [CustomImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay])
 
-agcls.AgClassCatalog.add_catalog_entry((5121324544174012502, 11507939295407134083), CustomImageGlobeOverlay)
+agcls.AgClassCatalog.add_catalog_entry((5656837670811913720, 3241477885578549137), CustomImageGlobeOverlay)
 agcls.AgTypeNameMap["CustomImageGlobeOverlay"] = CustomImageGlobeOverlay
 
 class CustomImageGlobeOverlayPluginActivator(SupportsDeleteCallback):
@@ -6568,7 +6607,7 @@ class CustomImageGlobeOverlayPluginActivator(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CustomImageGlobeOverlayPluginActivator, [CustomImageGlobeOverlayPluginActivator, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5403836162981649170, 18332814256462960269), CustomImageGlobeOverlayPluginActivator)
+agcls.AgClassCatalog.add_catalog_entry((5626939466065562565, 16585155290889009282), CustomImageGlobeOverlayPluginActivator)
 agcls.AgTypeNameMap["CustomImageGlobeOverlayPluginActivator"] = CustomImageGlobeOverlayPluginActivator
 
 class CustomImageGlobeOverlayPluginProxy(SupportsDeleteCallback):
@@ -6628,7 +6667,7 @@ class CustomImageGlobeOverlayPluginProxy(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CustomImageGlobeOverlayPluginProxy, [CustomImageGlobeOverlayPluginProxy, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5287787800528969618, 3978382521805652152), CustomImageGlobeOverlayPluginProxy)
+agcls.AgClassCatalog.add_catalog_entry((5201281751252694547, 18081154752721968785), CustomImageGlobeOverlayPluginProxy)
 agcls.AgTypeNameMap["CustomImageGlobeOverlayPluginProxy"] = CustomImageGlobeOverlayPluginProxy
 
 class GeospatialImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteCallback):
@@ -6698,7 +6737,7 @@ class GeospatialImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDel
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GeospatialImageGlobeOverlay, [GeospatialImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay])
 
-agcls.AgClassCatalog.add_catalog_entry((5299127955564734487, 15153468011881559482), GeospatialImageGlobeOverlay)
+agcls.AgClassCatalog.add_catalog_entry((5658842201033278810, 14427834318395897995), GeospatialImageGlobeOverlay)
 agcls.AgTypeNameMap["GeospatialImageGlobeOverlay"] = GeospatialImageGlobeOverlay
 
 class GlobeOverlay(IGlobeOverlay, SupportsDeleteCallback):
@@ -6717,7 +6756,7 @@ class GlobeOverlay(IGlobeOverlay, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GlobeOverlay, [IGlobeOverlay])
 
-agcls.AgClassCatalog.add_catalog_entry((4864694773533807784, 5277725294694145455), GlobeOverlay)
+agcls.AgClassCatalog.add_catalog_entry((4632741904416915431, 4705778124012357269), GlobeOverlay)
 agcls.AgTypeNameMap["GlobeOverlay"] = GlobeOverlay
 
 class GlobeOverlaySettings(SupportsDeleteCallback):
@@ -6801,7 +6840,7 @@ class GlobeOverlaySettings(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GlobeOverlaySettings, [GlobeOverlaySettings, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5096239221085204322, 4767820054995129484), GlobeOverlaySettings)
+agcls.AgClassCatalog.add_catalog_entry((5183265892363228747, 8324629142456264895), GlobeOverlaySettings)
 agcls.AgTypeNameMap["GlobeOverlaySettings"] = GlobeOverlaySettings
 
 class Lighting(SupportsDeleteCallback):
@@ -6810,15 +6849,6 @@ class Lighting(SupportsDeleteCallback):
 
     Examples
     --------
-    Control the Lighting of the 3D scene:
-    >>> # Scenario scenario: Scenario object
-    >>> # Modify the lighting levels
-    >>> manager = scenario.scene_manager
-    >>> lighting = manager.scenes.item(0).lighting
-    >>> lighting.ambient_intensity = 0.20  # Percent
-    >>> lighting.diffuse_intensity = 4  # Percent
-    >>> lighting.night_lights_intensity = 5  # Percent
-
     Set Vehicle Lighting Properties:
     >>> # Satellite satellite: Satellite object
     >>> lighting = satellite.graphics.lighting
@@ -6837,6 +6867,15 @@ class Lighting(SupportsDeleteCallback):
     >>> umbra.visible = True
     >>> umbra.color = Colors.Red
     >>> umbra.line_width = LineWidth.WIDTH2
+
+    Control the Lighting of the 3D scene:
+    >>> # Scenario scenario: Scenario object
+    >>> # Modify the lighting levels
+    >>> manager = scenario.scene_manager
+    >>> lighting = manager.scenes.item(0).lighting
+    >>> lighting.ambient_intensity = 0.20  # Percent
+    >>> lighting.diffuse_intensity = 4  # Percent
+    >>> lighting.night_lights_intensity = 5  # Percent
     """
 
     _num_methods = 8
@@ -6935,7 +6974,7 @@ class Lighting(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Lighting, [Lighting, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5650660233190705200, 7654417412287974021), Lighting)
+agcls.AgClassCatalog.add_catalog_entry((5088631600420901754, 16467367791180788666), Lighting)
 agcls.AgTypeNameMap["Lighting"] = Lighting
 
 class PathPrimitiveUpdatePolicy(IPathPrimitiveUpdatePolicy, SupportsDeleteCallback):
@@ -6954,7 +6993,7 @@ class PathPrimitiveUpdatePolicy(IPathPrimitiveUpdatePolicy, SupportsDeleteCallba
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PathPrimitiveUpdatePolicy, [IPathPrimitiveUpdatePolicy])
 
-agcls.AgClassCatalog.add_catalog_entry((5489232455939643999, 11995564172842310537), PathPrimitiveUpdatePolicy)
+agcls.AgClassCatalog.add_catalog_entry((5042504947465020578, 10610304623301237652), PathPrimitiveUpdatePolicy)
 agcls.AgTypeNameMap["PathPrimitiveUpdatePolicy"] = PathPrimitiveUpdatePolicy
 
 class ProjectedRasterOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteCallback):
@@ -7314,7 +7353,7 @@ class ProjectedRasterOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteCa
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProjectedRasterOverlay, [ProjectedRasterOverlay, IGlobeImageOverlay, IGlobeOverlay])
 
-agcls.AgClassCatalog.add_catalog_entry((4696496787392859056, 16340637864943862462), ProjectedRasterOverlay)
+agcls.AgClassCatalog.add_catalog_entry((5368842251122674253, 8186137966652687494), ProjectedRasterOverlay)
 agcls.AgTypeNameMap["ProjectedRasterOverlay"] = ProjectedRasterOverlay
 
 class Projection(IProjection, SupportsDeleteCallback):
@@ -7333,7 +7372,7 @@ class Projection(IProjection, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Projection, [IProjection])
 
-agcls.AgClassCatalog.add_catalog_entry((4703414202910819741, 11526519806636668054), Projection)
+agcls.AgClassCatalog.add_catalog_entry((4620257198520347351, 14928361046741395353), Projection)
 agcls.AgTypeNameMap["Projection"] = Projection
 
 class ProjectionStream(IProjection, SupportsDeleteCallback):
@@ -7391,7 +7430,7 @@ class ProjectionStream(IProjection, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProjectionStream, [ProjectionStream, IProjection])
 
-agcls.AgClassCatalog.add_catalog_entry((5236009813300156213, 4436082934118817445), ProjectionStream)
+agcls.AgClassCatalog.add_catalog_entry((5376429272018049716, 17876823018591966080), ProjectionStream)
 agcls.AgTypeNameMap["ProjectionStream"] = ProjectionStream
 
 class SceneGlobeOverlaySettings(SupportsDeleteCallback):
@@ -7493,7 +7532,7 @@ class SceneGlobeOverlaySettings(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SceneGlobeOverlaySettings, [SceneGlobeOverlaySettings, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5538264776613401247, 14183016745653159312), SceneGlobeOverlaySettings)
+agcls.AgClassCatalog.add_catalog_entry((4853139694219127997, 3288098545662027437), SceneGlobeOverlaySettings)
 agcls.AgTypeNameMap["SceneGlobeOverlaySettings"] = SceneGlobeOverlaySettings
 
 class ScreenOverlayCollectionBase(IScreenOverlayCollectionBase, SupportsDeleteCallback):
@@ -7512,7 +7551,7 @@ class ScreenOverlayCollectionBase(IScreenOverlayCollectionBase, SupportsDeleteCa
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScreenOverlayCollectionBase, [IScreenOverlayCollectionBase])
 
-agcls.AgClassCatalog.add_catalog_entry((5029264620485230918, 9940193730906732965), ScreenOverlayCollectionBase)
+agcls.AgClassCatalog.add_catalog_entry((4646643414326237160, 8966645569737790375), ScreenOverlayCollectionBase)
 agcls.AgTypeNameMap["ScreenOverlayCollectionBase"] = ScreenOverlayCollectionBase
 
 class Texture2DFactory(SupportsDeleteCallback):
@@ -7558,7 +7597,7 @@ class Texture2DFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Texture2DFactory, [Texture2DFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5367179128558865548, 12869832894502700982), Texture2DFactory)
+agcls.AgClassCatalog.add_catalog_entry((4883048233419343068, 16280746063462896515), Texture2DFactory)
 agcls.AgTypeNameMap["Texture2DFactory"] = Texture2DFactory
 
 class VisualEffects(SupportsDeleteCallback):
@@ -7642,7 +7681,7 @@ class VisualEffects(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VisualEffects, [VisualEffects, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4977432288877815513, 5251131146797115811), VisualEffects)
+agcls.AgClassCatalog.add_catalog_entry((5315040260914490141, 15752412566100146614), VisualEffects)
 agcls.AgTypeNameMap["VisualEffects"] = VisualEffects
 
 class AltitudeDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
@@ -7728,7 +7767,7 @@ class AltitudeDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AltitudeDisplayCondition, [AltitudeDisplayCondition, IDisplayCondition])
 
-agcls.AgClassCatalog.add_catalog_entry((4955129817930386074, 3136574299604980158), AltitudeDisplayCondition)
+agcls.AgClassCatalog.add_catalog_entry((5164878513505568510, 17014167531004820902), AltitudeDisplayCondition)
 agcls.AgTypeNameMap["AltitudeDisplayCondition"] = AltitudeDisplayCondition
 
 class AxesPrimitive(IPrimitive, SupportsDeleteCallback):
@@ -7958,7 +7997,7 @@ class AxesPrimitive(IPrimitive, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AxesPrimitive, [AxesPrimitive, IPrimitive])
 
-agcls.AgClassCatalog.add_catalog_entry((5590121640589148486, 2256538052145833109), AxesPrimitive)
+agcls.AgClassCatalog.add_catalog_entry((5564556300014053111, 15388277050654776984), AxesPrimitive)
 agcls.AgTypeNameMap["AxesPrimitive"] = AxesPrimitive
 
 class Camera(SupportsDeleteCallback):
@@ -7986,7 +8025,7 @@ class Camera(SupportsDeleteCallback):
     >>> manager.render()
     """
 
-    _num_methods = 50
+    _num_methods = 51
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_position_method_offset = 1
     _set_position_method_offset = 2
@@ -8038,6 +8077,7 @@ class Camera(SupportsDeleteCallback):
     _view_offset_method_offset = 48
     _view_offset_direction_with_up_axis_method_offset = 49
     _view_offset_direction_method_offset = 50
+    _view_central_body_from_position_method_offset = 51
     _metadata = {
         "iid_data" : (5415728535553925060, 1568220948406149766),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -8417,6 +8457,13 @@ class Camera(SupportsDeleteCallback):
         """Set the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the direction vector."""
         return self._intf.invoke(Camera._metadata, Camera._view_offset_direction_metadata, axes, reference_point, direction)
 
+    _view_central_body_from_position_metadata = { "offset" : _view_central_body_from_position_method_offset,
+            "arg_types" : (agcom.BSTR, agcom.PVOID, agcom.PVOID,),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
+    def view_central_body_from_position(self, central_body:str, axes:"IVectorGeometryToolAxes", camera_position:"IVectorGeometryToolPoint") -> None:
+        """Zoom to a central body and use the specified axes for rotation. The reference point is set to the center of the central body."""
+        return self._intf.invoke(Camera._metadata, Camera._view_central_body_from_position_metadata, central_body, axes, camera_position)
+
     _property_names[position] = "position"
     _property_names[reference_point] = "reference_point"
     _property_names[direction] = "direction"
@@ -8452,7 +8499,7 @@ class Camera(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Camera, [Camera, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5108901659268738630, 12673905154193258132), Camera)
+agcls.AgClassCatalog.add_catalog_entry((5198255823771802535, 4741192004143569584), Camera)
 agcls.AgTypeNameMap["Camera"] = Camera
 
 class CentralBodyGraphics(SupportsDeleteCallback):
@@ -8466,7 +8513,7 @@ class CentralBodyGraphics(SupportsDeleteCallback):
     >>> # Retrieve the boundaries of the imported files
     >>> manager = scenario.scene_manager
     >>> # Add Terrain
-    >>> installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    >>> installPath = r"C:\Program Files\AGI\STK_ODTK 13" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
     >>> terrainTile = manager.scenes.item(0).central_bodies.earth.terrain.add_uri_string(
     >>>     os.path.join(installPath, "Data", "Resources", "stktraining", "samples", "SRTM_Skopje.pdtt")
     >>> )
@@ -8720,7 +8767,7 @@ class CentralBodyGraphics(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CentralBodyGraphics, [CentralBodyGraphics, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5237454306453849929, 16985193427983583917), CentralBodyGraphics)
+agcls.AgClassCatalog.add_catalog_entry((4694229187315860305, 17177661521686415236), CentralBodyGraphics)
 agcls.AgTypeNameMap["CentralBodyGraphics"] = CentralBodyGraphics
 
 class Clouds(SupportsDeleteCallback):
@@ -8832,7 +8879,7 @@ class Clouds(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Clouds, [Clouds, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4674132715452051907, 2514679956769629370), Clouds)
+agcls.AgClassCatalog.add_catalog_entry((5480413296962007688, 16147912134709035161), Clouds)
 agcls.AgTypeNameMap["Clouds"] = Clouds
 
 class CompositeDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
@@ -9048,7 +9095,7 @@ class CompositeDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CompositeDisplayCondition, [CompositeDisplayCondition, IDisplayCondition])
 
-agcls.AgClassCatalog.add_catalog_entry((5056547403870315286, 10247967535919804347), CompositeDisplayCondition)
+agcls.AgClassCatalog.add_catalog_entry((4898136613457749981, 10652270298504335275), CompositeDisplayCondition)
 agcls.AgTypeNameMap["CompositeDisplayCondition"] = CompositeDisplayCondition
 
 class CompositePrimitive(IPrimitive, SupportsDeleteCallback):
@@ -9163,7 +9210,7 @@ class CompositePrimitive(IPrimitive, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CompositePrimitive, [CompositePrimitive, IPrimitive])
 
-agcls.AgClassCatalog.add_catalog_entry((4679944565974591928, 1696005919734520764), CompositePrimitive)
+agcls.AgClassCatalog.add_catalog_entry((4628784849858007879, 4743514223628032935), CompositePrimitive)
 agcls.AgTypeNameMap["CompositePrimitive"] = CompositePrimitive
 
 class ConstantDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
@@ -9213,7 +9260,7 @@ class ConstantDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ConstantDisplayCondition, [ConstantDisplayCondition, IDisplayCondition])
 
-agcls.AgClassCatalog.add_catalog_entry((4696539255304361128, 11784871788123951251), ConstantDisplayCondition)
+agcls.AgClassCatalog.add_catalog_entry((4740021784578699321, 8090790051510581891), ConstantDisplayCondition)
 agcls.AgTypeNameMap["ConstantDisplayCondition"] = ConstantDisplayCondition
 
 class DisplayCondition(IDisplayCondition, SupportsDeleteCallback):
@@ -9232,7 +9279,7 @@ class DisplayCondition(IDisplayCondition, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DisplayCondition, [IDisplayCondition])
 
-agcls.AgClassCatalog.add_catalog_entry((5534179541775668715, 2760636606459100605), DisplayCondition)
+agcls.AgClassCatalog.add_catalog_entry((5273500874948119741, 4737451723868047243), DisplayCondition)
 agcls.AgTypeNameMap["DisplayCondition"] = DisplayCondition
 
 class DistanceDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
@@ -9320,7 +9367,7 @@ class DistanceDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DistanceDisplayCondition, [DistanceDisplayCondition, IDisplayCondition])
 
-agcls.AgClassCatalog.add_catalog_entry((4724647536857811400, 16315685751390164157), DistanceDisplayCondition)
+agcls.AgClassCatalog.add_catalog_entry((4737438963315021288, 10205820627831753653), DistanceDisplayCondition)
 agcls.AgTypeNameMap["DistanceDisplayCondition"] = DistanceDisplayCondition
 
 class DistanceToGlobeOverlayDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
@@ -9426,7 +9473,7 @@ class DistanceToGlobeOverlayDisplayCondition(IDisplayCondition, SupportsDeleteCa
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DistanceToGlobeOverlayDisplayCondition, [DistanceToGlobeOverlayDisplayCondition, IDisplayCondition])
 
-agcls.AgClassCatalog.add_catalog_entry((5635816365580515097, 2186556296694528415), DistanceToGlobeOverlayDisplayCondition)
+agcls.AgClassCatalog.add_catalog_entry((5478377612040759548, 3696286981928988052), DistanceToGlobeOverlayDisplayCondition)
 agcls.AgTypeNameMap["DistanceToGlobeOverlayDisplayCondition"] = DistanceToGlobeOverlayDisplayCondition
 
 class DistanceToPositionDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
@@ -9550,7 +9597,7 @@ class DistanceToPositionDisplayCondition(IDisplayCondition, SupportsDeleteCallba
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DistanceToPositionDisplayCondition, [DistanceToPositionDisplayCondition, IDisplayCondition])
 
-agcls.AgClassCatalog.add_catalog_entry((5302119056589105291, 9372472331107240618), DistanceToPositionDisplayCondition)
+agcls.AgClassCatalog.add_catalog_entry((5332701332566225975, 15997561687639669154), DistanceToPositionDisplayCondition)
 agcls.AgTypeNameMap["DistanceToPositionDisplayCondition"] = DistanceToPositionDisplayCondition
 
 class DistanceToPrimitiveDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
@@ -9656,7 +9703,7 @@ class DistanceToPrimitiveDisplayCondition(IDisplayCondition, SupportsDeleteCallb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DistanceToPrimitiveDisplayCondition, [DistanceToPrimitiveDisplayCondition, IDisplayCondition])
 
-agcls.AgClassCatalog.add_catalog_entry((4865980936982214573, 11744636288922726806), DistanceToPrimitiveDisplayCondition)
+agcls.AgClassCatalog.add_catalog_entry((4865496290337690108, 15885167697322977412), DistanceToPrimitiveDisplayCondition)
 agcls.AgTypeNameMap["DistanceToPrimitiveDisplayCondition"] = DistanceToPrimitiveDisplayCondition
 
 class DurationPathPrimitiveUpdatePolicy(IPathPrimitiveUpdatePolicy, SupportsDeleteCallback):
@@ -9724,7 +9771,7 @@ class DurationPathPrimitiveUpdatePolicy(IPathPrimitiveUpdatePolicy, SupportsDele
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DurationPathPrimitiveUpdatePolicy, [DurationPathPrimitiveUpdatePolicy, IPathPrimitiveUpdatePolicy])
 
-agcls.AgClassCatalog.add_catalog_entry((4983364944216509688, 6094502157445632944), DurationPathPrimitiveUpdatePolicy)
+agcls.AgClassCatalog.add_catalog_entry((5081368613892413484, 9968673406665266601), DurationPathPrimitiveUpdatePolicy)
 agcls.AgTypeNameMap["DurationPathPrimitiveUpdatePolicy"] = DurationPathPrimitiveUpdatePolicy
 
 class FrameRate(SupportsDeleteCallback):
@@ -9790,7 +9837,7 @@ class FrameRate(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FrameRate, [FrameRate, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5661427371560056203, 8596066061557213330), FrameRate)
+agcls.AgClassCatalog.add_catalog_entry((4762814398961866620, 7444512293783209882), FrameRate)
 agcls.AgTypeNameMap["FrameRate"] = FrameRate
 
 class GlobeImageOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteCallback):
@@ -9811,7 +9858,7 @@ class GlobeImageOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GlobeImageOverlay, [IGlobeImageOverlay, IGlobeOverlay])
 
-agcls.AgClassCatalog.add_catalog_entry((5054499037824607794, 413485819247292294), GlobeImageOverlay)
+agcls.AgClassCatalog.add_catalog_entry((5534560260889091115, 5264495537458439809), GlobeImageOverlay)
 agcls.AgTypeNameMap["GlobeImageOverlay"] = GlobeImageOverlay
 
 class GraphicsFont(SupportsDeleteCallback):
@@ -9931,7 +9978,7 @@ class GraphicsFont(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GraphicsFont, [GraphicsFont, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5356821517110532063, 5967199020230626694), GraphicsFont)
+agcls.AgClassCatalog.add_catalog_entry((5312756638010489634, 3896719871507724451), GraphicsFont)
 agcls.AgTypeNameMap["GraphicsFont"] = GraphicsFont
 
 class GreatArcInterpolator(IPositionInterpolator, SupportsDeleteCallback):
@@ -9999,7 +10046,7 @@ class GreatArcInterpolator(IPositionInterpolator, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GreatArcInterpolator, [GreatArcInterpolator, IPositionInterpolator])
 
-agcls.AgClassCatalog.add_catalog_entry((4684714647278503789, 7032991952565857945), GreatArcInterpolator)
+agcls.AgClassCatalog.add_catalog_entry((4935908088899530697, 14618182879920376210), GreatArcInterpolator)
 agcls.AgTypeNameMap["GreatArcInterpolator"] = GreatArcInterpolator
 
 class ImageCollection(SupportsDeleteCallback):
@@ -10214,7 +10261,7 @@ class ImageCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ImageCollection, [ImageCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4995629646927179478, 4428875884696510368), ImageCollection)
+agcls.AgClassCatalog.add_catalog_entry((4732689879986637734, 12426364130076588462), ImageCollection)
 agcls.AgTypeNameMap["ImageCollection"] = ImageCollection
 
 class AlphaFromLuminanceFilter(IRasterFilter, SupportsDeleteCallback):
@@ -10246,7 +10293,7 @@ class AlphaFromLuminanceFilter(IRasterFilter, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AlphaFromLuminanceFilter, [AlphaFromLuminanceFilter, IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((4722571570623942599, 5628231633018734501), AlphaFromLuminanceFilter)
+agcls.AgClassCatalog.add_catalog_entry((4889245883949745602, 12398151059468421519), AlphaFromLuminanceFilter)
 agcls.AgTypeNameMap["AlphaFromLuminanceFilter"] = AlphaFromLuminanceFilter
 
 class AlphaFromPixelFilter(IRasterFilter, SupportsDeleteCallback):
@@ -10278,7 +10325,7 @@ class AlphaFromPixelFilter(IRasterFilter, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AlphaFromPixelFilter, [AlphaFromPixelFilter, IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((5429264897698608035, 15843209762042389916), AlphaFromPixelFilter)
+agcls.AgClassCatalog.add_catalog_entry((5619942118836465443, 12848842401015708086), AlphaFromPixelFilter)
 agcls.AgTypeNameMap["AlphaFromPixelFilter"] = AlphaFromPixelFilter
 
 class AlphaFromRasterFilter(IRasterFilter, SupportsDeleteCallback):
@@ -10328,7 +10375,7 @@ class AlphaFromRasterFilter(IRasterFilter, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AlphaFromRasterFilter, [AlphaFromRasterFilter, IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((5547320112593478317, 12913140405057436290), AlphaFromRasterFilter)
+agcls.AgClassCatalog.add_catalog_entry((5305160086975792255, 13672844900729166474), AlphaFromRasterFilter)
 agcls.AgTypeNameMap["AlphaFromRasterFilter"] = AlphaFromRasterFilter
 
 class BandExtractFilter(IRasterFilter, SupportsDeleteCallback):
@@ -10378,7 +10425,7 @@ class BandExtractFilter(IRasterFilter, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BandExtractFilter, [BandExtractFilter, IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((4670582174218548926, 16305220027283324064), BandExtractFilter)
+agcls.AgClassCatalog.add_catalog_entry((5644054218443193923, 11565128260437470137), BandExtractFilter)
 agcls.AgTypeNameMap["BandExtractFilter"] = BandExtractFilter
 
 class BandOrderFilter(IRasterFilter, SupportsDeleteCallback):
@@ -10446,7 +10493,7 @@ class BandOrderFilter(IRasterFilter, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BandOrderFilter, [BandOrderFilter, IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((5508330069622562004, 4666322603866800813), BandOrderFilter)
+agcls.AgClassCatalog.add_catalog_entry((4810350491970368775, 6044333861244754317), BandOrderFilter)
 agcls.AgTypeNameMap["BandOrderFilter"] = BandOrderFilter
 
 class BlurFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback):
@@ -10498,7 +10545,7 @@ class BlurFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BlurFilter, [BlurFilter, IConvolutionFilter, IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((5356994569384825487, 17441113390663035052), BlurFilter)
+agcls.AgClassCatalog.add_catalog_entry((4994634682488807188, 9093550046838013106), BlurFilter)
 agcls.AgTypeNameMap["BlurFilter"] = BlurFilter
 
 class BrightnessFilter(IRasterFilter, SupportsDeleteCallback):
@@ -10548,7 +10595,7 @@ class BrightnessFilter(IRasterFilter, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BrightnessFilter, [BrightnessFilter, IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((4740712509231548782, 14535850336571086782), BrightnessFilter)
+agcls.AgClassCatalog.add_catalog_entry((5161145615277585093, 7650229717410671544), BrightnessFilter)
 agcls.AgTypeNameMap["BrightnessFilter"] = BrightnessFilter
 
 class ColorToLuminanceFilter(IRasterFilter, SupportsDeleteCallback):
@@ -10580,7 +10627,7 @@ class ColorToLuminanceFilter(IRasterFilter, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ColorToLuminanceFilter, [ColorToLuminanceFilter, IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((5263196667381229446, 16063846929670924173), ColorToLuminanceFilter)
+agcls.AgClassCatalog.add_catalog_entry((5512123793489684703, 359248077374422443), ColorToLuminanceFilter)
 agcls.AgTypeNameMap["ColorToLuminanceFilter"] = ColorToLuminanceFilter
 
 class ContrastFilter(IRasterFilter, SupportsDeleteCallback):
@@ -10630,7 +10677,7 @@ class ContrastFilter(IRasterFilter, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ContrastFilter, [ContrastFilter, IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((5610975873394682488, 7350282519019509636), ContrastFilter)
+agcls.AgClassCatalog.add_catalog_entry((5717669296288426119, 16024588023792736128), ContrastFilter)
 agcls.AgTypeNameMap["ContrastFilter"] = ContrastFilter
 
 class ConvolutionFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback):
@@ -10651,7 +10698,7 @@ class ConvolutionFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ConvolutionFilter, [IConvolutionFilter, IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((5313620495361217438, 6605686187729587107), ConvolutionFilter)
+agcls.AgClassCatalog.add_catalog_entry((4903916167346401546, 18050571324517180340), ConvolutionFilter)
 agcls.AgTypeNameMap["ConvolutionFilter"] = ConvolutionFilter
 
 class EdgeDetectFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback):
@@ -10703,7 +10750,7 @@ class EdgeDetectFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EdgeDetectFilter, [EdgeDetectFilter, IConvolutionFilter, IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((5684449418894848279, 6096710836454509957), EdgeDetectFilter)
+agcls.AgClassCatalog.add_catalog_entry((4618965326015230369, 10083450094752493226), EdgeDetectFilter)
 agcls.AgTypeNameMap["EdgeDetectFilter"] = EdgeDetectFilter
 
 class FilteringRasterStream(IRasterStream, IRaster, SupportsDeleteCallback):
@@ -10757,7 +10804,7 @@ class FilteringRasterStream(IRasterStream, IRaster, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FilteringRasterStream, [FilteringRasterStream, IRasterStream, IRaster])
 
-agcls.AgClassCatalog.add_catalog_entry((5586045703451962665, 1497506555285606334), FilteringRasterStream)
+agcls.AgClassCatalog.add_catalog_entry((4886934322517974375, 7626074965553001091), FilteringRasterStream)
 agcls.AgTypeNameMap["FilteringRasterStream"] = FilteringRasterStream
 
 class FlipFilter(IRasterFilter, SupportsDeleteCallback):
@@ -10807,7 +10854,7 @@ class FlipFilter(IRasterFilter, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FlipFilter, [FlipFilter, IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((5437148251484636253, 14073922228357934739), FlipFilter)
+agcls.AgClassCatalog.add_catalog_entry((5217994956063862435, 838631444483828117), FlipFilter)
 agcls.AgTypeNameMap["FlipFilter"] = FlipFilter
 
 class GammaCorrectionFilter(IRasterFilter, SupportsDeleteCallback):
@@ -10857,7 +10904,7 @@ class GammaCorrectionFilter(IRasterFilter, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GammaCorrectionFilter, [GammaCorrectionFilter, IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((4971206815743257794, 3457815322738687141), GammaCorrectionFilter)
+agcls.AgClassCatalog.add_catalog_entry((5010788086132577607, 3494219480755055776), GammaCorrectionFilter)
 agcls.AgTypeNameMap["GammaCorrectionFilter"] = GammaCorrectionFilter
 
 class GaussianBlurFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback):
@@ -10891,7 +10938,7 @@ class GaussianBlurFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallba
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GaussianBlurFilter, [GaussianBlurFilter, IConvolutionFilter, IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((5243991897188228892, 16020720209640064388), GaussianBlurFilter)
+agcls.AgClassCatalog.add_catalog_entry((5284497529541157160, 15105711353125986176), GaussianBlurFilter)
 agcls.AgTypeNameMap["GaussianBlurFilter"] = GaussianBlurFilter
 
 class GradientDetectFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback):
@@ -10943,7 +10990,7 @@ class GradientDetectFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GradientDetectFilter, [GradientDetectFilter, IConvolutionFilter, IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((5702333424249933103, 4668764555581523625), GradientDetectFilter)
+agcls.AgClassCatalog.add_catalog_entry((5554572745540491680, 18286560205896687004), GradientDetectFilter)
 agcls.AgTypeNameMap["GradientDetectFilter"] = GradientDetectFilter
 
 class LevelsFilter(IRasterFilter, SupportsDeleteCallback):
@@ -10991,7 +11038,7 @@ class LevelsFilter(IRasterFilter, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, LevelsFilter, [LevelsFilter, IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((5172734455644479740, 6694396930833260958), LevelsFilter)
+agcls.AgClassCatalog.add_catalog_entry((5161347856866748501, 14761311076606132917), LevelsFilter)
 agcls.AgTypeNameMap["LevelsFilter"] = LevelsFilter
 
 class ProjectionRasterStreamPluginActivator(SupportsDeleteCallback):
@@ -11037,7 +11084,7 @@ class ProjectionRasterStreamPluginActivator(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProjectionRasterStreamPluginActivator, [ProjectionRasterStreamPluginActivator, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5592773854379758628, 9250413242335431090), ProjectionRasterStreamPluginActivator)
+agcls.AgClassCatalog.add_catalog_entry((5487602891055834825, 16072764134838380416), ProjectionRasterStreamPluginActivator)
 agcls.AgTypeNameMap["ProjectionRasterStreamPluginActivator"] = ProjectionRasterStreamPluginActivator
 
 class ProjectionRasterStreamPluginProxy(SupportsDeleteCallback):
@@ -11117,7 +11164,7 @@ class ProjectionRasterStreamPluginProxy(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProjectionRasterStreamPluginProxy, [ProjectionRasterStreamPluginProxy, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4666815726913761780, 2357661832715587970), ProjectionRasterStreamPluginProxy)
+agcls.AgClassCatalog.add_catalog_entry((5252474097584780346, 8088749849408399290), ProjectionRasterStreamPluginProxy)
 agcls.AgTypeNameMap["ProjectionRasterStreamPluginProxy"] = ProjectionRasterStreamPluginProxy
 
 class Raster(IRaster, SupportsDeleteCallback):
@@ -11136,7 +11183,7 @@ class Raster(IRaster, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Raster, [IRaster])
 
-agcls.AgClassCatalog.add_catalog_entry((5051161684986260026, 10586440812956719515), Raster)
+agcls.AgClassCatalog.add_catalog_entry((4862605150294883511, 11423203967191612301), Raster)
 agcls.AgTypeNameMap["Raster"] = Raster
 
 class RasterAttributes(SupportsDeleteCallback):
@@ -11274,7 +11321,7 @@ class RasterAttributes(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RasterAttributes, [RasterAttributes, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4877134759318171914, 3568483647780173482), RasterAttributes)
+agcls.AgClassCatalog.add_catalog_entry((4790298824102126480, 15074278099329228956), RasterAttributes)
 agcls.AgTypeNameMap["RasterAttributes"] = RasterAttributes
 
 class RasterFilter(IRasterFilter, SupportsDeleteCallback):
@@ -11293,7 +11340,7 @@ class RasterFilter(IRasterFilter, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RasterFilter, [IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((4815410842910981470, 4827660083801860526), RasterFilter)
+agcls.AgClassCatalog.add_catalog_entry((5463049282505425099, 3929768135281876098), RasterFilter)
 agcls.AgTypeNameMap["RasterFilter"] = RasterFilter
 
 class RasterStream(IRasterStream, IRaster, SupportsDeleteCallback):
@@ -11314,7 +11361,7 @@ class RasterStream(IRasterStream, IRaster, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RasterStream, [IRasterStream, IRaster])
 
-agcls.AgClassCatalog.add_catalog_entry((5092607167961947230, 5072153283411839421), RasterStream)
+agcls.AgClassCatalog.add_catalog_entry((5199367312385243258, 8859718158367634816), RasterStream)
 agcls.AgTypeNameMap["RasterStream"] = RasterStream
 
 class RotateFilter(IRasterFilter, SupportsDeleteCallback):
@@ -11364,7 +11411,7 @@ class RotateFilter(IRasterFilter, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RotateFilter, [RotateFilter, IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((5555725880336034116, 6980653760117414296), RotateFilter)
+agcls.AgClassCatalog.add_catalog_entry((5105447682563555651, 2441565688961247366), RotateFilter)
 agcls.AgTypeNameMap["RotateFilter"] = RotateFilter
 
 class SequenceFilter(IRasterFilter, SupportsDeleteCallback):
@@ -11456,7 +11503,7 @@ class SequenceFilter(IRasterFilter, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SequenceFilter, [SequenceFilter, IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((5178454568068120612, 18196126380549294229), SequenceFilter)
+agcls.AgClassCatalog.add_catalog_entry((4887467353622102937, 4437525289466121122), SequenceFilter)
 agcls.AgTypeNameMap["SequenceFilter"] = SequenceFilter
 
 class SharpenFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback):
@@ -11508,7 +11555,7 @@ class SharpenFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SharpenFilter, [SharpenFilter, IConvolutionFilter, IRasterFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((4732670840778244873, 7942996488696084135), SharpenFilter)
+agcls.AgClassCatalog.add_catalog_entry((5150103383300954855, 1723906244725752467), SharpenFilter)
 agcls.AgTypeNameMap["SharpenFilter"] = SharpenFilter
 
 class VideoStream(IRasterStream, IRaster, SupportsDeleteCallback):
@@ -11854,7 +11901,7 @@ class VideoStream(IRasterStream, IRaster, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VideoStream, [VideoStream, IRasterStream, IRaster])
 
-agcls.AgClassCatalog.add_catalog_entry((5264945989350337942, 5699888751394667448), VideoStream)
+agcls.AgClassCatalog.add_catalog_entry((5566726138772464642, 6267343269253779357), VideoStream)
 agcls.AgTypeNameMap["VideoStream"] = VideoStream
 
 class KmlContainer(IKmlContainer, IKmlFeature, SupportsDeleteCallback):
@@ -11875,7 +11922,7 @@ class KmlContainer(IKmlContainer, IKmlFeature, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, KmlContainer, [IKmlContainer, IKmlFeature])
 
-agcls.AgClassCatalog.add_catalog_entry((5207640554160657301, 13820029748964872873), KmlContainer)
+agcls.AgClassCatalog.add_catalog_entry((5222030354213113690, 16940657724482971829), KmlContainer)
 agcls.AgTypeNameMap["KmlContainer"] = KmlContainer
 
 class KmlDocument(IKmlContainer, IKmlFeature, SupportsDeleteCallback):
@@ -11919,7 +11966,7 @@ class KmlDocument(IKmlContainer, IKmlFeature, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, KmlDocument, [KmlDocument, IKmlContainer, IKmlFeature])
 
-agcls.AgClassCatalog.add_catalog_entry((5491088363673258432, 7394732558227195802), KmlDocument)
+agcls.AgClassCatalog.add_catalog_entry((5057391367321126185, 1071572168971920829), KmlDocument)
 agcls.AgTypeNameMap["KmlDocument"] = KmlDocument
 
 class KmlFeature(IKmlFeature, SupportsDeleteCallback):
@@ -11938,7 +11985,7 @@ class KmlFeature(IKmlFeature, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, KmlFeature, [IKmlFeature])
 
-agcls.AgClassCatalog.add_catalog_entry((5287385400858546424, 10878200550364879277), KmlFeature)
+agcls.AgClassCatalog.add_catalog_entry((5391952809257358060, 9602362042431193499), KmlFeature)
 agcls.AgTypeNameMap["KmlFeature"] = KmlFeature
 
 class KmlFolder(IKmlContainer, IKmlFeature, SupportsDeleteCallback):
@@ -11972,7 +12019,7 @@ class KmlFolder(IKmlContainer, IKmlFeature, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, KmlFolder, [KmlFolder, IKmlContainer, IKmlFeature])
 
-agcls.AgClassCatalog.add_catalog_entry((4798630207118252685, 15038644232865021358), KmlFolder)
+agcls.AgClassCatalog.add_catalog_entry((5582221186645708226, 781614054663457451), KmlFolder)
 agcls.AgTypeNameMap["KmlFolder"] = KmlFolder
 
 class KmlGraphics(SupportsDeleteCallback):
@@ -12079,7 +12126,7 @@ class KmlGraphics(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, KmlGraphics, [KmlGraphics, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4645898364801840606, 1292503210015328640), KmlGraphics)
+agcls.AgClassCatalog.add_catalog_entry((5027342423219678778, 8448457315660903871), KmlGraphics)
 agcls.AgTypeNameMap["KmlGraphics"] = KmlGraphics
 
 class KmlNetworkLink(IKmlFeature, SupportsDeleteCallback):
@@ -12269,7 +12316,7 @@ class KmlNetworkLink(IKmlFeature, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, KmlNetworkLink, [KmlNetworkLink, IKmlFeature])
 
-agcls.AgClassCatalog.add_catalog_entry((5504684742633507453, 16929891538998501770), KmlNetworkLink)
+agcls.AgClassCatalog.add_catalog_entry((5678455910174228719, 9897579289629985978), KmlNetworkLink)
 agcls.AgTypeNameMap["KmlNetworkLink"] = KmlNetworkLink
 
 class MarkerBatchPrimitive(IPrimitive, SupportsDeleteCallback):
@@ -12773,7 +12820,7 @@ class MarkerBatchPrimitive(IPrimitive, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MarkerBatchPrimitive, [MarkerBatchPrimitive, IPrimitive])
 
-agcls.AgClassCatalog.add_catalog_entry((5505857127152130349, 2653133157377855163), MarkerBatchPrimitive)
+agcls.AgClassCatalog.add_catalog_entry((4803902589967982658, 13593932724921108120), MarkerBatchPrimitive)
 agcls.AgTypeNameMap["MarkerBatchPrimitive"] = MarkerBatchPrimitive
 
 class MarkerBatchPrimitiveOptionalParameters(SupportsDeleteCallback):
@@ -12883,7 +12930,7 @@ class MarkerBatchPrimitiveOptionalParameters(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MarkerBatchPrimitiveOptionalParameters, [MarkerBatchPrimitiveOptionalParameters, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4765125297646667603, 6704393496158662787), MarkerBatchPrimitiveOptionalParameters)
+agcls.AgClassCatalog.add_catalog_entry((5016248201579391853, 1701002970061407896), MarkerBatchPrimitiveOptionalParameters)
 agcls.AgTypeNameMap["MarkerBatchPrimitiveOptionalParameters"] = MarkerBatchPrimitiveOptionalParameters
 
 class MaximumCountPathPrimitiveUpdatePolicy(IPathPrimitiveUpdatePolicy, SupportsDeleteCallback):
@@ -12951,7 +12998,7 @@ class MaximumCountPathPrimitiveUpdatePolicy(IPathPrimitiveUpdatePolicy, Supports
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MaximumCountPathPrimitiveUpdatePolicy, [MaximumCountPathPrimitiveUpdatePolicy, IPathPrimitiveUpdatePolicy])
 
-agcls.AgClassCatalog.add_catalog_entry((5521743977193259552, 5353922303322892948), MaximumCountPathPrimitiveUpdatePolicy)
+agcls.AgClassCatalog.add_catalog_entry((5396951510880050199, 11234409365911491239), MaximumCountPathPrimitiveUpdatePolicy)
 agcls.AgTypeNameMap["MaximumCountPathPrimitiveUpdatePolicy"] = MaximumCountPathPrimitiveUpdatePolicy
 
 class ModelArticulation(SupportsDeleteCallback):
@@ -13059,7 +13106,7 @@ class ModelArticulation(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ModelArticulation, [ModelArticulation, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5583363848773512818, 10659230879766474660), ModelArticulation)
+agcls.AgClassCatalog.add_catalog_entry((5576976824463228452, 2100695041791155595), ModelArticulation)
 agcls.AgTypeNameMap["ModelArticulation"] = ModelArticulation
 
 class ModelArticulationCollection(SupportsDeleteCallback):
@@ -13157,13 +13204,13 @@ class ModelArticulationCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ModelArticulationCollection, [ModelArticulationCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4860630207067099658, 12153871741288218515), ModelArticulationCollection)
+agcls.AgClassCatalog.add_catalog_entry((4825254992117433302, 6870539866841991347), ModelArticulationCollection)
 agcls.AgTypeNameMap["ModelArticulationCollection"] = ModelArticulationCollection
 
 class ModelPrimitive(IPrimitive, SupportsDeleteCallback):
-    """The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models."""
+    """The model primitive loads and renders `glTF 2.0 <https://www.khronos.org/gltf/>`_ (.gltf, .glb), `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models/>`_ (MDL) models."""
 
-    _num_methods = 11
+    _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_uri_as_string_method_offset = 1
     _get_scale_method_offset = 2
@@ -13176,6 +13223,7 @@ class ModelPrimitive(IPrimitive, SupportsDeleteCallback):
     _load_with_string_uri_method_offset = 9
     _load_with_string_uri_and_up_axis_method_offset = 10
     _set_position_cartographic_method_offset = 11
+    _allow_collada_models_method_offset = 12
     _metadata = {
         "iid_data" : (5605268163691457879, 14557257887553554869),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -13249,14 +13297,14 @@ class ModelPrimitive(IPrimitive, SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def load_with_string_uri(self, uri:str) -> None:
-        """For convenience. Loads a `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) model using a file path."""
+        """For convenience. Loads a `glTF 2.0 <https://www.khronos.org/gltf/>`_ (.gltf, .glb), `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models/>`_ (MDL) model using a file path."""
         return self._intf.invoke(ModelPrimitive._metadata, ModelPrimitive._load_with_string_uri_metadata, uri)
 
     _load_with_string_uri_and_up_axis_metadata = { "offset" : _load_with_string_uri_and_up_axis_method_offset,
             "arg_types" : (agcom.BSTR, agcom.LONG,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(ModelUpAxis),) }
     def load_with_string_uri_and_up_axis(self, uri:str, up_axis:"ModelUpAxis") -> None:
-        """For convenience. Loads a `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) model using a file path."""
+        """For convenience. Loads a `glTF 2.0 <https://www.khronos.org/gltf/>`_ (.gltf, .glb), `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models/>`_ (MDL) model using a file path."""
         return self._intf.invoke(ModelPrimitive._metadata, ModelPrimitive._load_with_string_uri_and_up_axis_metadata, uri, up_axis)
 
     _set_position_cartographic_metadata = { "offset" : _set_position_cartographic_method_offset,
@@ -13265,6 +13313,13 @@ class ModelPrimitive(IPrimitive, SupportsDeleteCallback):
     def set_position_cartographic(self, central_body:str, position:list) -> None:
         """For convenience. Sets the cartographic position of the model. This also sets position."""
         return self._intf.invoke(ModelPrimitive._metadata, ModelPrimitive._set_position_cartographic_metadata, central_body, position)
+
+    _allow_collada_models_metadata = { "offset" : _allow_collada_models_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    def allow_collada_models(self, allow:bool) -> None:
+        """Do not use this method, as it is deprecated. support for COLLADA 3D models has been removed Support for loading COLLADA 3D model format has been officially removed. This method will allow users to continue loading COLLADA models for a short period of time."""
+        return self._intf.invoke(ModelPrimitive._metadata, ModelPrimitive._allow_collada_models_metadata, allow)
 
     _property_names[uri_as_string] = "uri_as_string"
     _property_names[scale] = "scale"
@@ -13287,7 +13342,7 @@ class ModelPrimitive(IPrimitive, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ModelPrimitive, [ModelPrimitive, IPrimitive])
 
-agcls.AgClassCatalog.add_catalog_entry((5272009851139634904, 10934403071105800840), ModelPrimitive)
+agcls.AgClassCatalog.add_catalog_entry((5585759762451222511, 3463385077042913443), ModelPrimitive)
 agcls.AgTypeNameMap["ModelPrimitive"] = ModelPrimitive
 
 class ModelTransformation(SupportsDeleteCallback):
@@ -13395,7 +13450,7 @@ class ModelTransformation(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ModelTransformation, [ModelTransformation, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5494058340694028521, 8976331231816559258), ModelTransformation)
+agcls.AgClassCatalog.add_catalog_entry((5160999044277047628, 526046815384543914), ModelTransformation)
 agcls.AgTypeNameMap["ModelTransformation"] = ModelTransformation
 
 class Overlay(IOverlay, IScreenOverlayContainer, SupportsDeleteCallback):
@@ -13416,7 +13471,7 @@ class Overlay(IOverlay, IScreenOverlayContainer, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Overlay, [IOverlay, IScreenOverlayContainer])
 
-agcls.AgClassCatalog.add_catalog_entry((4796068382168091195, 15893869600297649596), Overlay)
+agcls.AgClassCatalog.add_catalog_entry((5554871671157326660, 10715545733419260841), Overlay)
 agcls.AgTypeNameMap["Overlay"] = Overlay
 
 class PathPrimitive(IPrimitive, SupportsDeleteCallback):
@@ -13736,7 +13791,7 @@ class PathPrimitive(IPrimitive, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PathPrimitive, [PathPrimitive, IPrimitive])
 
-agcls.AgClassCatalog.add_catalog_entry((5627175414395611667, 1200547442396153242), PathPrimitive)
+agcls.AgClassCatalog.add_catalog_entry((5182144663596267792, 11697449807800278685), PathPrimitive)
 agcls.AgTypeNameMap["PathPrimitive"] = PathPrimitive
 
 class PickResult(SupportsDeleteCallback):
@@ -13796,7 +13851,7 @@ class PickResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PickResult, [PickResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4613396686185153582, 5313864718031071897), PickResult)
+agcls.AgClassCatalog.add_catalog_entry((4722730848117140379, 17932331979400191877), PickResult)
 agcls.AgTypeNameMap["PickResult"] = PickResult
 
 class PixelSizeDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
@@ -13864,7 +13919,7 @@ class PixelSizeDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PixelSizeDisplayCondition, [PixelSizeDisplayCondition, IDisplayCondition])
 
-agcls.AgClassCatalog.add_catalog_entry((5639872464997702223, 13268018770298113449), PixelSizeDisplayCondition)
+agcls.AgClassCatalog.add_catalog_entry((4791312542982973982, 14365263075798295742), PixelSizeDisplayCondition)
 agcls.AgTypeNameMap["PixelSizeDisplayCondition"] = PixelSizeDisplayCondition
 
 class PointBatchPrimitive(IPrimitive, SupportsDeleteCallback):
@@ -14211,7 +14266,7 @@ class PointBatchPrimitive(IPrimitive, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PointBatchPrimitive, [PointBatchPrimitive, IPrimitive])
 
-agcls.AgClassCatalog.add_catalog_entry((4771838424736961315, 17789363099158793403), PointBatchPrimitive)
+agcls.AgClassCatalog.add_catalog_entry((5509498041051877838, 1960325950542391683), PointBatchPrimitive)
 agcls.AgTypeNameMap["PointBatchPrimitive"] = PointBatchPrimitive
 
 class PointBatchPrimitiveOptionalParameters(SupportsDeleteCallback):
@@ -14249,7 +14304,7 @@ class PointBatchPrimitiveOptionalParameters(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PointBatchPrimitiveOptionalParameters, [PointBatchPrimitiveOptionalParameters, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5230597701691714270, 598952128910254753), PointBatchPrimitiveOptionalParameters)
+agcls.AgClassCatalog.add_catalog_entry((4862117010257917198, 2245465589510931094), PointBatchPrimitiveOptionalParameters)
 agcls.AgTypeNameMap["PointBatchPrimitiveOptionalParameters"] = PointBatchPrimitiveOptionalParameters
 
 class PolylinePrimitive(IPrimitive, SupportsDeleteCallback):
@@ -14641,7 +14696,7 @@ class PolylinePrimitive(IPrimitive, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PolylinePrimitive, [PolylinePrimitive, IPrimitive])
 
-agcls.AgClassCatalog.add_catalog_entry((5123752712456450241, 10739590127227499430), PolylinePrimitive)
+agcls.AgClassCatalog.add_catalog_entry((4730660947234706251, 5560651898611263873), PolylinePrimitive)
 agcls.AgTypeNameMap["PolylinePrimitive"] = PolylinePrimitive
 
 class PolylinePrimitiveOptionalParameters(SupportsDeleteCallback):
@@ -14679,7 +14734,7 @@ class PolylinePrimitiveOptionalParameters(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PolylinePrimitiveOptionalParameters, [PolylinePrimitiveOptionalParameters, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5054854826939456422, 15110470621112478879), PolylinePrimitiveOptionalParameters)
+agcls.AgClassCatalog.add_catalog_entry((5720942441802563568, 8240187428844005022), PolylinePrimitiveOptionalParameters)
 agcls.AgTypeNameMap["PolylinePrimitiveOptionalParameters"] = PolylinePrimitiveOptionalParameters
 
 class PositionInterpolator(IPositionInterpolator, SupportsDeleteCallback):
@@ -14698,7 +14753,7 @@ class PositionInterpolator(IPositionInterpolator, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PositionInterpolator, [IPositionInterpolator])
 
-agcls.AgClassCatalog.add_catalog_entry((5719643167839805508, 13043993113695684767), PositionInterpolator)
+agcls.AgClassCatalog.add_catalog_entry((5542909871381244096, 15903977999781605541), PositionInterpolator)
 agcls.AgTypeNameMap["PositionInterpolator"] = PositionInterpolator
 
 class Primitive(IPrimitive, SupportsDeleteCallback):
@@ -14717,24 +14772,22 @@ class Primitive(IPrimitive, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Primitive, [IPrimitive])
 
-agcls.AgClassCatalog.add_catalog_entry((4738072676921658624, 14848128681026293391), Primitive)
+agcls.AgClassCatalog.add_catalog_entry((4968302733073632195, 1665214764858136484), Primitive)
 agcls.AgTypeNameMap["Primitive"] = Primitive
 
 class PrimitiveManager(SupportsDeleteCallback):
     """The primitive manager contains spatial data structures used to efficiently render primitives. Once a primitive is constructed, it must be added to the primitive manager before it will be rendered."""
 
-    _num_methods = 10
+    _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_count_method_offset = 1
-    _get_precision_exponent_method_offset = 2
-    _set_precision_exponent_method_offset = 3
-    _get_translucent_primitives_sort_order_method_offset = 4
-    _set_translucent_primitives_sort_order_method_offset = 5
-    _add_method_offset = 6
-    _remove_method_offset = 7
-    _contains_method_offset = 8
-    _clear_method_offset = 9
-    _get__new_enum_method_offset = 10
+    _get_translucent_primitives_sort_order_method_offset = 2
+    _set_translucent_primitives_sort_order_method_offset = 3
+    _add_method_offset = 4
+    _remove_method_offset = 5
+    _contains_method_offset = 6
+    _clear_method_offset = 7
+    _get__new_enum_method_offset = 8
     _metadata = {
         "iid_data" : (5712467222312543641, 18164203771391217825),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -14763,21 +14816,6 @@ class PrimitiveManager(SupportsDeleteCallback):
     def count(self) -> int:
         """Get the number of primitives in the manager."""
         return self._intf.get_property(PrimitiveManager._metadata, PrimitiveManager._get_count_metadata)
-
-    _get_precision_exponent_metadata = { "offset" : _get_precision_exponent_method_offset,
-            "arg_types" : (POINTER(agcom.INT),),
-            "marshallers" : (agmarshall.IntArg,) }
-    @property
-    def precision_exponent(self) -> int:
-        """Do not use this property, as it is deprecated. This property is no longer in use Gets or sets the exponent used to compute the maximum precision for primitive rendering. For example, a value of -3 indicates the maximum precision of 2^-3, 0.125 m along the x, y, or z axis..."""
-        return self._intf.get_property(PrimitiveManager._metadata, PrimitiveManager._get_precision_exponent_metadata)
-
-    _set_precision_exponent_metadata = { "offset" : _set_precision_exponent_method_offset,
-            "arg_types" : (agcom.INT,),
-            "marshallers" : (agmarshall.IntArg,) }
-    @precision_exponent.setter
-    def precision_exponent(self, precision_exponent:int) -> None:
-        return self._intf.set_property(PrimitiveManager._metadata, PrimitiveManager._set_precision_exponent_metadata, precision_exponent)
 
     _get_translucent_primitives_sort_order_metadata = { "offset" : _get_translucent_primitives_sort_order_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -14831,7 +14869,6 @@ class PrimitiveManager(SupportsDeleteCallback):
         return self._intf.get_property(PrimitiveManager._metadata, PrimitiveManager._get__new_enum_metadata)
 
     _property_names[count] = "count"
-    _property_names[precision_exponent] = "precision_exponent"
     _property_names[translucent_primitives_sort_order] = "translucent_primitives_sort_order"
     _property_names[_new_enum] = "_new_enum"
 
@@ -14848,7 +14885,7 @@ class PrimitiveManager(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PrimitiveManager, [PrimitiveManager, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5759528432845737503, 11218549662454612891), PrimitiveManager)
+agcls.AgClassCatalog.add_catalog_entry((4880259949786006017, 2380156813031607723), PrimitiveManager)
 agcls.AgTypeNameMap["PrimitiveManager"] = PrimitiveManager
 
 class RasterImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteCallback):
@@ -14918,7 +14955,7 @@ class RasterImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RasterImageGlobeOverlay, [RasterImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay])
 
-agcls.AgClassCatalog.add_catalog_entry((5590537877066628758, 18201123914066150057), RasterImageGlobeOverlay)
+agcls.AgClassCatalog.add_catalog_entry((5717584864418149544, 10408587520159674552), RasterImageGlobeOverlay)
 agcls.AgTypeNameMap["RasterImageGlobeOverlay"] = RasterImageGlobeOverlay
 
 class RhumbLineInterpolator(IPositionInterpolator, SupportsDeleteCallback):
@@ -14986,7 +15023,7 @@ class RhumbLineInterpolator(IPositionInterpolator, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RhumbLineInterpolator, [RhumbLineInterpolator, IPositionInterpolator])
 
-agcls.AgClassCatalog.add_catalog_entry((4905411456932095490, 5486952346846465436), RhumbLineInterpolator)
+agcls.AgClassCatalog.add_catalog_entry((4623955146844874483, 2520075894438730912), RhumbLineInterpolator)
 agcls.AgTypeNameMap["RhumbLineInterpolator"] = RhumbLineInterpolator
 
 class Scene(SupportsDeleteCallback):
@@ -15204,7 +15241,7 @@ class Scene(SupportsDeleteCallback):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def visual_effects(self) -> "VisualEffects":
-        """Get the visual  effects associated with the scene."""
+        """Get the visual effects associated with the scene."""
         return self._intf.get_property(Scene._metadata, Scene._get_visual_effects_metadata)
 
     _get_clouds_metadata = { "offset" : _get_clouds_method_offset,
@@ -15258,7 +15295,7 @@ class Scene(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Scene, [Scene, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5425863975955114481, 4372717846621692570), Scene)
+agcls.AgClassCatalog.add_catalog_entry((4810876571052044683, 7416954478603628451), Scene)
 agcls.AgTypeNameMap["Scene"] = Scene
 
 class SceneDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
@@ -15314,7 +15351,7 @@ class SceneDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SceneDisplayCondition, [SceneDisplayCondition, IDisplayCondition])
 
-agcls.AgClassCatalog.add_catalog_entry((5504831685330777187, 14908496243111103623), SceneDisplayCondition)
+agcls.AgClassCatalog.add_catalog_entry((4787488241231315097, 13604724398180257709), SceneDisplayCondition)
 agcls.AgTypeNameMap["SceneDisplayCondition"] = SceneDisplayCondition
 
 class SceneManager(SupportsDeleteCallback):
@@ -15422,7 +15459,7 @@ class SceneManager(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SceneManager, [SceneManager, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5055513188644242239, 14100567721448590776), SceneManager)
+agcls.AgClassCatalog.add_catalog_entry((5306594234797624303, 4679881594478766240), SceneManager)
 agcls.AgTypeNameMap["SceneManager"] = SceneManager
 
 class ScreenOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer, SupportsDeleteCallback):
@@ -15445,7 +15482,7 @@ class ScreenOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer, SupportsD
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScreenOverlay, [IScreenOverlay, IOverlay, IScreenOverlayContainer])
 
-agcls.AgClassCatalog.add_catalog_entry((5135883245183464378, 7950147496367229875), ScreenOverlay)
+agcls.AgClassCatalog.add_catalog_entry((4743125395957708310, 7459301920615244467), ScreenOverlay)
 agcls.AgTypeNameMap["ScreenOverlay"] = ScreenOverlay
 
 class ScreenOverlayCollection(IScreenOverlayCollectionBase, SupportsDeleteCallback):
@@ -15477,7 +15514,7 @@ class ScreenOverlayCollection(IScreenOverlayCollectionBase, SupportsDeleteCallba
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScreenOverlayCollection, [ScreenOverlayCollection, IScreenOverlayCollectionBase])
 
-agcls.AgClassCatalog.add_catalog_entry((5428143835074754195, 7795253318375075755), ScreenOverlayCollection)
+agcls.AgClassCatalog.add_catalog_entry((4839524973401277912, 13812177292680967312), ScreenOverlayCollection)
 agcls.AgTypeNameMap["ScreenOverlayCollection"] = ScreenOverlayCollection
 
 class ScreenOverlayManager(IScreenOverlayCollectionBase, IScreenOverlayContainer, SupportsDeleteCallback):
@@ -15567,7 +15604,7 @@ class ScreenOverlayManager(IScreenOverlayCollectionBase, IScreenOverlayContainer
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScreenOverlayManager, [ScreenOverlayManager, IScreenOverlayCollectionBase, IScreenOverlayContainer])
 
-agcls.AgClassCatalog.add_catalog_entry((4941666073412103198, 3199753952958351539), ScreenOverlayManager)
+agcls.AgClassCatalog.add_catalog_entry((5351120916860665029, 16565177724228225461), ScreenOverlayManager)
 agcls.AgTypeNameMap["ScreenOverlayManager"] = ScreenOverlayManager
 
 class ScreenOverlayPickResult(SupportsDeleteCallback):
@@ -15627,7 +15664,7 @@ class ScreenOverlayPickResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScreenOverlayPickResult, [ScreenOverlayPickResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5411628992035762574, 18017194983832957605), ScreenOverlayPickResult)
+agcls.AgClassCatalog.add_catalog_entry((5627965958701801989, 1397927364919620020), ScreenOverlayPickResult)
 agcls.AgTypeNameMap["ScreenOverlayPickResult"] = ScreenOverlayPickResult
 
 class SolidPrimitive(IPrimitive, SupportsDeleteCallback):
@@ -16083,7 +16120,7 @@ class SolidPrimitive(IPrimitive, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SolidPrimitive, [SolidPrimitive, IPrimitive])
 
-agcls.AgClassCatalog.add_catalog_entry((5239544537293274560, 13352578250398471069), SolidPrimitive)
+agcls.AgClassCatalog.add_catalog_entry((5721823868217773568, 14674956308134902715), SolidPrimitive)
 agcls.AgTypeNameMap["SolidPrimitive"] = SolidPrimitive
 
 class Stereoscopic(SupportsDeleteCallback):
@@ -16185,7 +16222,7 @@ class Stereoscopic(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Stereoscopic, [Stereoscopic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5004629829167520124, 7449422875768445375), Stereoscopic)
+agcls.AgClassCatalog.add_catalog_entry((5532922144466366877, 3694167052578119042), Stereoscopic)
 agcls.AgTypeNameMap["Stereoscopic"] = Stereoscopic
 
 class SurfaceMeshPrimitive(IPrimitive, SupportsDeleteCallback):
@@ -16395,7 +16432,7 @@ class SurfaceMeshPrimitive(IPrimitive, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SurfaceMeshPrimitive, [SurfaceMeshPrimitive, IPrimitive])
 
-agcls.AgClassCatalog.add_catalog_entry((5411334062372739956, 6728209386876429451), SurfaceMeshPrimitive)
+agcls.AgClassCatalog.add_catalog_entry((5555800880500167985, 9402650612952761248), SurfaceMeshPrimitive)
 agcls.AgTypeNameMap["SurfaceMeshPrimitive"] = SurfaceMeshPrimitive
 
 class TerrainOverlayCollection(SupportsDeleteCallback):
@@ -16610,7 +16647,7 @@ class TerrainOverlayCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TerrainOverlayCollection, [TerrainOverlayCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5026986988139254343, 12046810184580739503), TerrainOverlayCollection)
+agcls.AgClassCatalog.add_catalog_entry((4713167164273178389, 14512113188453972354), TerrainOverlayCollection)
 agcls.AgTypeNameMap["TerrainOverlayCollection"] = TerrainOverlayCollection
 
 class TerrainOverlay(ITerrainOverlay, IGlobeOverlay, SupportsDeleteCallback):
@@ -16631,7 +16668,7 @@ class TerrainOverlay(ITerrainOverlay, IGlobeOverlay, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TerrainOverlay, [ITerrainOverlay, IGlobeOverlay])
 
-agcls.AgClassCatalog.add_catalog_entry((5009137188527673329, 1512801370180160660), TerrainOverlay)
+agcls.AgClassCatalog.add_catalog_entry((5123165973755789453, 16499785472623185565), TerrainOverlay)
 agcls.AgTypeNameMap["TerrainOverlay"] = TerrainOverlay
 
 class TextBatchPrimitive(IPrimitive, SupportsDeleteCallback):
@@ -16953,7 +16990,7 @@ class TextBatchPrimitive(IPrimitive, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextBatchPrimitive, [TextBatchPrimitive, IPrimitive])
 
-agcls.AgClassCatalog.add_catalog_entry((5192917499857114645, 15090987484832364472), TextBatchPrimitive)
+agcls.AgClassCatalog.add_catalog_entry((4916234742062123490, 18286488293041469356), TextBatchPrimitive)
 agcls.AgTypeNameMap["TextBatchPrimitive"] = TextBatchPrimitive
 
 class TextBatchPrimitiveOptionalParameters(SupportsDeleteCallback):
@@ -17105,7 +17142,7 @@ class TextBatchPrimitiveOptionalParameters(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextBatchPrimitiveOptionalParameters, [TextBatchPrimitiveOptionalParameters, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5647850369699816160, 11320403267934911642), TextBatchPrimitiveOptionalParameters)
+agcls.AgClassCatalog.add_catalog_entry((5652216850054852962, 2006004170580244876), TextBatchPrimitiveOptionalParameters)
 agcls.AgTypeNameMap["TextBatchPrimitiveOptionalParameters"] = TextBatchPrimitiveOptionalParameters
 
 class TextOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer, SupportsDeleteCallback):
@@ -17132,7 +17169,7 @@ class TextOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer, SupportsDel
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def text(self) -> str:
-        r"""Set the Text to be rendered to an overlay. Newline characters ('\n') will mark the start of the next line in the text."""
+        r"""Get or set the text to be rendered to an overlay. Newline characters ('\n') will mark the start of the next line in the text."""
         return self._intf.get_property(TextOverlay._metadata, TextOverlay._get_text_metadata)
 
     _set_text_metadata = { "offset" : _set_text_method_offset,
@@ -17162,7 +17199,7 @@ class TextOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer, SupportsDel
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def font(self) -> "GraphicsFont":
-        """Get the graphics font used to style the text."""
+        """Get or set the graphics font used to style the text."""
         return self._intf.get_property(TextOverlay._metadata, TextOverlay._get_font_metadata)
 
     _set_font_metadata = { "offset" : _set_font_method_offset,
@@ -17195,7 +17232,7 @@ class TextOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer, SupportsDel
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextOverlay, [TextOverlay, IScreenOverlay, IOverlay, IScreenOverlayContainer])
 
-agcls.AgClassCatalog.add_catalog_entry((5427148005289374195, 14840843638839670698), TextOverlay)
+agcls.AgClassCatalog.add_catalog_entry((4797073708373675002, 6737289127853172660), TextOverlay)
 agcls.AgTypeNameMap["TextOverlay"] = TextOverlay
 
 class TextureMatrix(SupportsDeleteCallback):
@@ -17385,7 +17422,7 @@ class TextureMatrix(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextureMatrix, [TextureMatrix, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5322719047750336006, 3163360220050271417), TextureMatrix)
+agcls.AgClassCatalog.add_catalog_entry((4829622967686228224, 3492268793794037672), TextureMatrix)
 agcls.AgTypeNameMap["TextureMatrix"] = TextureMatrix
 
 class TextureScreenOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer, SupportsDeleteCallback):
@@ -17399,7 +17436,7 @@ class TextureScreenOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer, Su
     >>> manager = scenario.scene_manager
     >>> overlays = manager.screen_overlays.overlays
     >>> textureOverlay = manager.initializers.texture_screen_overlay.initialize_with_xy_width_height(0, 0, 128, 128)
-    >>> installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    >>> installPath = r"C:\Program Files\AGI\STK_ODTK 13" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
     >>> textureOverlay.texture = manager.textures.load_from_string_uri(
     >>>     os.path.join(installPath, "STKData", "VO", "Textures", "agilogo3.ppm")
     >>> )
@@ -17500,7 +17537,7 @@ class TextureScreenOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer, Su
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextureScreenOverlay, [TextureScreenOverlay, IScreenOverlay, IOverlay, IScreenOverlayContainer])
 
-agcls.AgClassCatalog.add_catalog_entry((5607914524592267416, 13643758576656948403), TextureScreenOverlay)
+agcls.AgClassCatalog.add_catalog_entry((5333571152903494320, 10017321645474306458), TextureScreenOverlay)
 agcls.AgTypeNameMap["TextureScreenOverlay"] = TextureScreenOverlay
 
 class TimeIntervalDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
@@ -17568,7 +17605,7 @@ class TimeIntervalDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeIntervalDisplayCondition, [TimeIntervalDisplayCondition, IDisplayCondition])
 
-agcls.AgClassCatalog.add_catalog_entry((5451112938694421699, 7149618987495979392), TimeIntervalDisplayCondition)
+agcls.AgClassCatalog.add_catalog_entry((4760358691158391677, 15619635165824147340), TimeIntervalDisplayCondition)
 agcls.AgTypeNameMap["TimeIntervalDisplayCondition"] = TimeIntervalDisplayCondition
 
 class TriangleMeshPrimitive(IPrimitive, SupportsDeleteCallback):
@@ -17814,7 +17851,7 @@ class TriangleMeshPrimitive(IPrimitive, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TriangleMeshPrimitive, [TriangleMeshPrimitive, IPrimitive])
 
-agcls.AgClassCatalog.add_catalog_entry((5312225394571429699, 1015409093709215616), TriangleMeshPrimitive)
+agcls.AgClassCatalog.add_catalog_entry((5208001591952953242, 4627368845273092268), TriangleMeshPrimitive)
 agcls.AgTypeNameMap["TriangleMeshPrimitive"] = TriangleMeshPrimitive
 
 class TriangleMeshPrimitiveOptionalParameters(SupportsDeleteCallback):
@@ -17860,7 +17897,7 @@ class TriangleMeshPrimitiveOptionalParameters(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TriangleMeshPrimitiveOptionalParameters, [TriangleMeshPrimitiveOptionalParameters, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4642256431831602185, 8016648807998853514), TriangleMeshPrimitiveOptionalParameters)
+agcls.AgClassCatalog.add_catalog_entry((5207949352490107030, 12817821016521762692), TriangleMeshPrimitiveOptionalParameters)
 agcls.AgTypeNameMap["TriangleMeshPrimitiveOptionalParameters"] = TriangleMeshPrimitiveOptionalParameters
 
 class VectorPrimitive(IPrimitive, SupportsDeleteCallback):
@@ -18144,7 +18181,7 @@ class VectorPrimitive(IPrimitive, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorPrimitive, [VectorPrimitive, IPrimitive])
 
-agcls.AgClassCatalog.add_catalog_entry((4966641441207235541, 9073217279606378419), VectorPrimitive)
+agcls.AgClassCatalog.add_catalog_entry((4895630171048354557, 16558615223701190032), VectorPrimitive)
 agcls.AgTypeNameMap["VectorPrimitive"] = VectorPrimitive
 
 class BoxTriangulatorInitializer(SupportsDeleteCallback):
@@ -18182,7 +18219,7 @@ class BoxTriangulatorInitializer(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BoxTriangulatorInitializer, [BoxTriangulatorInitializer, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5115290424271597075, 14652160602906339211), BoxTriangulatorInitializer)
+agcls.AgClassCatalog.add_catalog_entry((4657545208228347031, 7028996864466946458), BoxTriangulatorInitializer)
 agcls.AgTypeNameMap["BoxTriangulatorInitializer"] = BoxTriangulatorInitializer
 
 class CylinderTriangulatorInitializer(SupportsDeleteCallback):
@@ -18228,7 +18265,7 @@ class CylinderTriangulatorInitializer(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CylinderTriangulatorInitializer, [CylinderTriangulatorInitializer, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5439315015983129571, 8771602325511016840), CylinderTriangulatorInitializer)
+agcls.AgClassCatalog.add_catalog_entry((5652776035142073110, 7302048739225094568), CylinderTriangulatorInitializer)
 agcls.AgTypeNameMap["CylinderTriangulatorInitializer"] = CylinderTriangulatorInitializer
 
 class EllipsoidTriangulatorInitializer(SupportsDeleteCallback):
@@ -18274,7 +18311,7 @@ class EllipsoidTriangulatorInitializer(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EllipsoidTriangulatorInitializer, [EllipsoidTriangulatorInitializer, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4999770647031458132, 9385182207773628042), EllipsoidTriangulatorInitializer)
+agcls.AgClassCatalog.add_catalog_entry((4827159167817465125, 7397628987005705088), EllipsoidTriangulatorInitializer)
 agcls.AgTypeNameMap["EllipsoidTriangulatorInitializer"] = EllipsoidTriangulatorInitializer
 
 class ExtrudedPolylineTriangulatorInitializer(SupportsDeleteCallback):
@@ -18400,7 +18437,7 @@ class ExtrudedPolylineTriangulatorInitializer(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ExtrudedPolylineTriangulatorInitializer, [ExtrudedPolylineTriangulatorInitializer, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4619921406117156753, 5415519835836977292), ExtrudedPolylineTriangulatorInitializer)
+agcls.AgClassCatalog.add_catalog_entry((4626496839800935813, 17269744041545889923), ExtrudedPolylineTriangulatorInitializer)
 agcls.AgTypeNameMap["ExtrudedPolylineTriangulatorInitializer"] = ExtrudedPolylineTriangulatorInitializer
 
 class SurfaceExtentTriangulatorInitializer(SupportsDeleteCallback):
@@ -18446,7 +18483,7 @@ class SurfaceExtentTriangulatorInitializer(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SurfaceExtentTriangulatorInitializer, [SurfaceExtentTriangulatorInitializer, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5535007049528422239, 11204546506755181214), SurfaceExtentTriangulatorInitializer)
+agcls.AgClassCatalog.add_catalog_entry((5068905163126970640, 5937046825433230740), SurfaceExtentTriangulatorInitializer)
 agcls.AgTypeNameMap["SurfaceExtentTriangulatorInitializer"] = SurfaceExtentTriangulatorInitializer
 
 class SurfacePolygonTriangulatorInitializer(SupportsDeleteCallback):
@@ -18458,7 +18495,7 @@ class SurfacePolygonTriangulatorInitializer(SupportsDeleteCallback):
     Draw a new Surface Extent Triangulator:
     >>> # Scenario scenario: Scenario object
     >>> manager = scenario.scene_manager
-    >>> installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    >>> installPath = r"C:\Program Files\AGI\STK_ODTK 13" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
     >>> texture_path = os.path.join(installPath, "STKData", "VO", "Textures", "AGI_logo_small.png")
     >>> texture = manager.textures.load_from_string_uri(texture_path)
     >>> mesh = manager.initializers.surface_mesh_primitive.initialize()
@@ -18552,7 +18589,7 @@ class SurfacePolygonTriangulatorInitializer(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SurfacePolygonTriangulatorInitializer, [SurfacePolygonTriangulatorInitializer, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5517975915110148377, 7732268155979254694), SurfacePolygonTriangulatorInitializer)
+agcls.AgClassCatalog.add_catalog_entry((4899740266310597792, 957197751417675945), SurfacePolygonTriangulatorInitializer)
 agcls.AgTypeNameMap["SurfacePolygonTriangulatorInitializer"] = SurfacePolygonTriangulatorInitializer
 
 class SurfaceShapesInitializer(SupportsDeleteCallback):
@@ -18678,7 +18715,7 @@ class SurfaceShapesInitializer(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SurfaceShapesInitializer, [SurfaceShapesInitializer, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4892417382403964679, 13571096819327492762), SurfaceShapesInitializer)
+agcls.AgClassCatalog.add_catalog_entry((5508581058536542998, 3565832539625553327), SurfaceShapesInitializer)
 agcls.AgTypeNameMap["SurfaceShapesInitializer"] = SurfaceShapesInitializer
 
 class AGICustomTerrainOverlayFactory(SupportsDeleteCallback):
@@ -18699,7 +18736,7 @@ class AGICustomTerrainOverlayFactory(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def initialize_with_string(self, uri:str) -> "AGICustomTerrainOverlay":
-        """Initialize an agi custom terrain overlay with the provided values."""
+        """Initialize a new instance with the provided values."""
         return self._intf.invoke(AGICustomTerrainOverlayFactory._metadata, AGICustomTerrainOverlayFactory._initialize_with_string_metadata, uri, OutArg())
 
 
@@ -18716,7 +18753,7 @@ class AGICustomTerrainOverlayFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AGICustomTerrainOverlayFactory, [AGICustomTerrainOverlayFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5020205725023089583, 6940143989295968643), AGICustomTerrainOverlayFactory)
+agcls.AgClassCatalog.add_catalog_entry((5455012846126934122, 16744861949560474534), AGICustomTerrainOverlayFactory)
 agcls.AgTypeNameMap["AGICustomTerrainOverlayFactory"] = AGICustomTerrainOverlayFactory
 
 class AGIProcessedImageGlobeOverlayFactory(SupportsDeleteCallback):
@@ -18754,7 +18791,7 @@ class AGIProcessedImageGlobeOverlayFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AGIProcessedImageGlobeOverlayFactory, [AGIProcessedImageGlobeOverlayFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4774766765894947271, 9336624974406837173), AGIProcessedImageGlobeOverlayFactory)
+agcls.AgClassCatalog.add_catalog_entry((5441361665085342865, 5272296584471475090), AGIProcessedImageGlobeOverlayFactory)
 agcls.AgTypeNameMap["AGIProcessedImageGlobeOverlayFactory"] = AGIProcessedImageGlobeOverlayFactory
 
 class AGIProcessedTerrainOverlayFactory(SupportsDeleteCallback):
@@ -18792,7 +18829,7 @@ class AGIProcessedTerrainOverlayFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AGIProcessedTerrainOverlayFactory, [AGIProcessedTerrainOverlayFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4897798652195826492, 8452616037484675760), AGIProcessedTerrainOverlayFactory)
+agcls.AgClassCatalog.add_catalog_entry((4840593439762448176, 1751992711232251297), AGIProcessedTerrainOverlayFactory)
 agcls.AgTypeNameMap["AGIProcessedTerrainOverlayFactory"] = AGIProcessedTerrainOverlayFactory
 
 class AGIRoamImageGlobeOverlayFactory(SupportsDeleteCallback):
@@ -18830,8 +18867,54 @@ class AGIRoamImageGlobeOverlayFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AGIRoamImageGlobeOverlayFactory, [AGIRoamImageGlobeOverlayFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5630193921900304952, 7930263226224999313), AGIRoamImageGlobeOverlayFactory)
+agcls.AgClassCatalog.add_catalog_entry((4814621635195026465, 18177799835216553112), AGIRoamImageGlobeOverlayFactory)
 agcls.AgTypeNameMap["AGIRoamImageGlobeOverlayFactory"] = AGIRoamImageGlobeOverlayFactory
+
+class CesiumIonTerrainOverlayFactory(SupportsDeleteCallback):
+    """A terrain overlay for handling Cesium Ion Streaming Terrain."""
+
+    _num_methods = 2
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _initialize_with_string_method_offset = 1
+    _initialize_with_asset_uri_method_offset = 2
+    _metadata = {
+        "iid_data" : (5374612392325347109, 12390133640255537061),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, CesiumIonTerrainOverlayFactory)
+
+    _initialize_with_string_metadata = { "offset" : _initialize_with_string_method_offset,
+            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
+    def initialize_with_string(self, tileset_name:str, api_endpoint_uri:str, access_token:str) -> "CesiumIonTerrainOverlay":
+        """Initialize a cesiumion terrain overlay with the provided values necessary to communicate with a Cesium ion endpoint."""
+        return self._intf.invoke(CesiumIonTerrainOverlayFactory._metadata, CesiumIonTerrainOverlayFactory._initialize_with_string_metadata, tileset_name, api_endpoint_uri, access_token, OutArg())
+
+    _initialize_with_asset_uri_metadata = { "offset" : _initialize_with_asset_uri_method_offset,
+            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
+    def initialize_with_asset_uri(self, asset_uri:str, api_endpoint_uri:str, access_token:str) -> "CesiumIonTerrainOverlay":
+        """Initialize a cesiumion terrain overlay with the provided values necessary to communicate with a Cesium ion endpoint."""
+        return self._intf.invoke(CesiumIonTerrainOverlayFactory._metadata, CesiumIonTerrainOverlayFactory._initialize_with_asset_uri_metadata, asset_uri, api_endpoint_uri, access_token, OutArg())
+
+
+    def __init__(self, source_object=None):
+        """Construct an object of type CesiumIonTerrainOverlayFactory."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, CesiumIonTerrainOverlayFactory)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, CesiumIonTerrainOverlayFactory, [CesiumIonTerrainOverlayFactory, ])
+
+agcls.AgClassCatalog.add_catalog_entry((4738980425621225871, 13751277333619526069), CesiumIonTerrainOverlayFactory)
+agcls.AgTypeNameMap["CesiumIonTerrainOverlayFactory"] = CesiumIonTerrainOverlayFactory
 
 class CustomImageGlobeOverlayPluginActivatorFactory(SupportsDeleteCallback):
     """The Activator class provides methods to load COM plugins that implement custom image globe overlays. For more information about custom image globe overlays, see the STK Programming Interface."""
@@ -18868,7 +18951,7 @@ class CustomImageGlobeOverlayPluginActivatorFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CustomImageGlobeOverlayPluginActivatorFactory, [CustomImageGlobeOverlayPluginActivatorFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4667288682943577893, 326361443353301181), CustomImageGlobeOverlayPluginActivatorFactory)
+agcls.AgClassCatalog.add_catalog_entry((4917255486905468717, 8311878354115311762), CustomImageGlobeOverlayPluginActivatorFactory)
 agcls.AgTypeNameMap["CustomImageGlobeOverlayPluginActivatorFactory"] = CustomImageGlobeOverlayPluginActivatorFactory
 
 class GeospatialImageGlobeOverlayFactory(SupportsDeleteCallback):
@@ -18906,7 +18989,7 @@ class GeospatialImageGlobeOverlayFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GeospatialImageGlobeOverlayFactory, [GeospatialImageGlobeOverlayFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5076482265562622621, 7956007731180983691), GeospatialImageGlobeOverlayFactory)
+agcls.AgClassCatalog.add_catalog_entry((5064019979529215533, 5046201785609888141), GeospatialImageGlobeOverlayFactory)
 agcls.AgTypeNameMap["GeospatialImageGlobeOverlayFactory"] = GeospatialImageGlobeOverlayFactory
 
 class ProjectedRasterOverlayFactory(SupportsDeleteCallback):
@@ -18954,7 +19037,7 @@ class ProjectedRasterOverlayFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProjectedRasterOverlayFactory, [ProjectedRasterOverlayFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5600426367971425017, 6297236579028457345), ProjectedRasterOverlayFactory)
+agcls.AgClassCatalog.add_catalog_entry((5531586200066878299, 7838095112499428770), ProjectedRasterOverlayFactory)
 agcls.AgTypeNameMap["ProjectedRasterOverlayFactory"] = ProjectedRasterOverlayFactory
 
 class ProjectionFactory(SupportsDeleteCallback):
@@ -19008,7 +19091,7 @@ class ProjectionFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProjectionFactory, [ProjectionFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4747243496013475585, 14717796182741063818), ProjectionFactory)
+agcls.AgClassCatalog.add_catalog_entry((4852141690082639572, 12322771392035537294), ProjectionFactory)
 agcls.AgTypeNameMap["ProjectionFactory"] = ProjectionFactory
 
 class AltitudeDisplayConditionFactory(SupportsDeleteCallback):
@@ -19062,7 +19145,7 @@ class AltitudeDisplayConditionFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AltitudeDisplayConditionFactory, [AltitudeDisplayConditionFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5200808533864861594, 13915814818108416149), AltitudeDisplayConditionFactory)
+agcls.AgClassCatalog.add_catalog_entry((5048390484947010376, 13018933239885188763), AltitudeDisplayConditionFactory)
 agcls.AgTypeNameMap["AltitudeDisplayConditionFactory"] = AltitudeDisplayConditionFactory
 
 class AxesPrimitiveFactory(SupportsDeleteCallback):
@@ -19100,7 +19183,7 @@ class AxesPrimitiveFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AxesPrimitiveFactory, [AxesPrimitiveFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5682434422397040845, 10186778082441572784), AxesPrimitiveFactory)
+agcls.AgClassCatalog.add_catalog_entry((5255973285973174089, 10743746418206010047), AxesPrimitiveFactory)
 agcls.AgTypeNameMap["AxesPrimitiveFactory"] = AxesPrimitiveFactory
 
 class CompositeDisplayConditionFactory(SupportsDeleteCallback):
@@ -19138,7 +19221,7 @@ class CompositeDisplayConditionFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CompositeDisplayConditionFactory, [CompositeDisplayConditionFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5655207749086761819, 8044584761807187362), CompositeDisplayConditionFactory)
+agcls.AgClassCatalog.add_catalog_entry((4626445608122592969, 5027126610219556012), CompositeDisplayConditionFactory)
 agcls.AgTypeNameMap["CompositeDisplayConditionFactory"] = CompositeDisplayConditionFactory
 
 class CompositePrimitiveFactory(SupportsDeleteCallback):
@@ -19176,7 +19259,7 @@ class CompositePrimitiveFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CompositePrimitiveFactory, [CompositePrimitiveFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5429504362741043601, 2495584971911784114), CompositePrimitiveFactory)
+agcls.AgClassCatalog.add_catalog_entry((5740237864608464932, 13143302383461291150), CompositePrimitiveFactory)
 agcls.AgTypeNameMap["CompositePrimitiveFactory"] = CompositePrimitiveFactory
 
 class ConstantDisplayConditionFactory(SupportsDeleteCallback):
@@ -19222,7 +19305,7 @@ class ConstantDisplayConditionFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ConstantDisplayConditionFactory, [ConstantDisplayConditionFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5349013282675406085, 9534837757228706749), ConstantDisplayConditionFactory)
+agcls.AgClassCatalog.add_catalog_entry((4647533922705444734, 3412550811458537136), ConstantDisplayConditionFactory)
 agcls.AgTypeNameMap["ConstantDisplayConditionFactory"] = ConstantDisplayConditionFactory
 
 class DistanceDisplayConditionFactory(SupportsDeleteCallback):
@@ -19268,7 +19351,7 @@ class DistanceDisplayConditionFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DistanceDisplayConditionFactory, [DistanceDisplayConditionFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5065052303529093084, 15532411777554433189), DistanceDisplayConditionFactory)
+agcls.AgClassCatalog.add_catalog_entry((5085594415700527817, 3399699454547949703), DistanceDisplayConditionFactory)
 agcls.AgTypeNameMap["DistanceDisplayConditionFactory"] = DistanceDisplayConditionFactory
 
 class DistanceToGlobeOverlayDisplayConditionFactory(SupportsDeleteCallback):
@@ -19314,7 +19397,7 @@ class DistanceToGlobeOverlayDisplayConditionFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DistanceToGlobeOverlayDisplayConditionFactory, [DistanceToGlobeOverlayDisplayConditionFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4754265214729837056, 9188364243086704805), DistanceToGlobeOverlayDisplayConditionFactory)
+agcls.AgClassCatalog.add_catalog_entry((5267870294709437644, 1339863606111227834), DistanceToGlobeOverlayDisplayConditionFactory)
 agcls.AgTypeNameMap["DistanceToGlobeOverlayDisplayConditionFactory"] = DistanceToGlobeOverlayDisplayConditionFactory
 
 class DistanceToPositionDisplayConditionFactory(SupportsDeleteCallback):
@@ -19368,7 +19451,7 @@ class DistanceToPositionDisplayConditionFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DistanceToPositionDisplayConditionFactory, [DistanceToPositionDisplayConditionFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5710493425944112313, 8261967060205205147), DistanceToPositionDisplayConditionFactory)
+agcls.AgClassCatalog.add_catalog_entry((5001000137222899925, 3861590764722637193), DistanceToPositionDisplayConditionFactory)
 agcls.AgTypeNameMap["DistanceToPositionDisplayConditionFactory"] = DistanceToPositionDisplayConditionFactory
 
 class DistanceToPrimitiveDisplayConditionFactory(SupportsDeleteCallback):
@@ -19414,7 +19497,7 @@ class DistanceToPrimitiveDisplayConditionFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DistanceToPrimitiveDisplayConditionFactory, [DistanceToPrimitiveDisplayConditionFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4851280165819875180, 7931937885030283949), DistanceToPrimitiveDisplayConditionFactory)
+agcls.AgClassCatalog.add_catalog_entry((5452979580459253851, 2799855028585291907), DistanceToPrimitiveDisplayConditionFactory)
 agcls.AgTypeNameMap["DistanceToPrimitiveDisplayConditionFactory"] = DistanceToPrimitiveDisplayConditionFactory
 
 class DurationPathPrimitiveUpdatePolicyFactory(SupportsDeleteCallback):
@@ -19460,7 +19543,7 @@ class DurationPathPrimitiveUpdatePolicyFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DurationPathPrimitiveUpdatePolicyFactory, [DurationPathPrimitiveUpdatePolicyFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4889439542627162004, 9986904305815943042), DurationPathPrimitiveUpdatePolicyFactory)
+agcls.AgClassCatalog.add_catalog_entry((4725396922385902835, 10721726893665473976), DurationPathPrimitiveUpdatePolicyFactory)
 agcls.AgTypeNameMap["DurationPathPrimitiveUpdatePolicyFactory"] = DurationPathPrimitiveUpdatePolicyFactory
 
 class GlobeImageOverlayInitializer(SupportsDeleteCallback):
@@ -19500,7 +19583,7 @@ class GlobeImageOverlayInitializer(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GlobeImageOverlayInitializer, [GlobeImageOverlayInitializer, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5145389423934137943, 372919645112059831), GlobeImageOverlayInitializer)
+agcls.AgClassCatalog.add_catalog_entry((4688415991854213284, 1666275320606961330), GlobeImageOverlayInitializer)
 agcls.AgTypeNameMap["GlobeImageOverlayInitializer"] = GlobeImageOverlayInitializer
 
 class GraphicsFontFactory(SupportsDeleteCallback):
@@ -19546,7 +19629,7 @@ class GraphicsFontFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GraphicsFontFactory, [GraphicsFontFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5711811913643509725, 17355393524528831380), GraphicsFontFactory)
+agcls.AgClassCatalog.add_catalog_entry((5462899191527412070, 6601431436605489563), GraphicsFontFactory)
 agcls.AgTypeNameMap["GraphicsFontFactory"] = GraphicsFontFactory
 
 class GreatArcInterpolatorFactory(SupportsDeleteCallback):
@@ -19615,7 +19698,7 @@ class GreatArcInterpolatorFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GreatArcInterpolatorFactory, [GreatArcInterpolatorFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5300096125846617544, 15382236120108922018), GreatArcInterpolatorFactory)
+agcls.AgClassCatalog.add_catalog_entry((5366806256760299261, 17514073968782953149), GreatArcInterpolatorFactory)
 agcls.AgTypeNameMap["GreatArcInterpolatorFactory"] = GreatArcInterpolatorFactory
 
 class AlphaFromLuminanceFilterFactory(SupportsDeleteCallback):
@@ -19653,7 +19736,7 @@ class AlphaFromLuminanceFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AlphaFromLuminanceFilterFactory, [AlphaFromLuminanceFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5428076649341058938, 12264952971470003123), AlphaFromLuminanceFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((5023843905705814360, 14611546673490963617), AlphaFromLuminanceFilterFactory)
 agcls.AgTypeNameMap["AlphaFromLuminanceFilterFactory"] = AlphaFromLuminanceFilterFactory
 
 class AlphaFromPixelFilterFactory(SupportsDeleteCallback):
@@ -19691,7 +19774,7 @@ class AlphaFromPixelFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AlphaFromPixelFilterFactory, [AlphaFromPixelFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5250854596551567928, 7378055081666140072), AlphaFromPixelFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((4771158793773236303, 18232003968377194627), AlphaFromPixelFilterFactory)
 agcls.AgTypeNameMap["AlphaFromPixelFilterFactory"] = AlphaFromPixelFilterFactory
 
 class AlphaFromRasterFilterFactory(SupportsDeleteCallback):
@@ -19737,7 +19820,7 @@ class AlphaFromRasterFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AlphaFromRasterFilterFactory, [AlphaFromRasterFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5423806334685966943, 8021373877449537194), AlphaFromRasterFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((5032456388882836085, 12761509886764112284), AlphaFromRasterFilterFactory)
 agcls.AgTypeNameMap["AlphaFromRasterFilterFactory"] = AlphaFromRasterFilterFactory
 
 class BandExtractFilterFactory(SupportsDeleteCallback):
@@ -19791,7 +19874,7 @@ class BandExtractFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BandExtractFilterFactory, [BandExtractFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5101154593245878612, 7889008741117033663), BandExtractFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((4674949277630731449, 13980234814084950416), BandExtractFilterFactory)
 agcls.AgTypeNameMap["BandExtractFilterFactory"] = BandExtractFilterFactory
 
 class BandOrderFilterFactory(SupportsDeleteCallback):
@@ -19845,7 +19928,7 @@ class BandOrderFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BandOrderFilterFactory, [BandOrderFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5064443659311181751, 12225493006765152427), BandOrderFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((5719127951920318447, 4100719339425068954), BandOrderFilterFactory)
 agcls.AgTypeNameMap["BandOrderFilterFactory"] = BandOrderFilterFactory
 
 class BlurFilterFactory(SupportsDeleteCallback):
@@ -19891,7 +19974,7 @@ class BlurFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BlurFilterFactory, [BlurFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4761191044981634241, 2280460864101009058), BlurFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((4762108303981840076, 12815614127278804650), BlurFilterFactory)
 agcls.AgTypeNameMap["BlurFilterFactory"] = BlurFilterFactory
 
 class BrightnessFilterFactory(SupportsDeleteCallback):
@@ -19937,7 +20020,7 @@ class BrightnessFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BrightnessFilterFactory, [BrightnessFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5192348196864259449, 152695209642318979), BrightnessFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((5024220417128720577, 4935187764138558891), BrightnessFilterFactory)
 agcls.AgTypeNameMap["BrightnessFilterFactory"] = BrightnessFilterFactory
 
 class ColorToLuminanceFilterFactory(SupportsDeleteCallback):
@@ -19975,7 +20058,7 @@ class ColorToLuminanceFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ColorToLuminanceFilterFactory, [ColorToLuminanceFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5419514809765967274, 4060370452243456929), ColorToLuminanceFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((5224414274530983196, 2371330225884699572), ColorToLuminanceFilterFactory)
 agcls.AgTypeNameMap["ColorToLuminanceFilterFactory"] = ColorToLuminanceFilterFactory
 
 class ContrastFilterFactory(SupportsDeleteCallback):
@@ -20021,7 +20104,7 @@ class ContrastFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ContrastFilterFactory, [ContrastFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5605125305352070134, 4826256083860431246), ContrastFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((5098112298631760635, 13047868050398383763), ContrastFilterFactory)
 agcls.AgTypeNameMap["ContrastFilterFactory"] = ContrastFilterFactory
 
 class ConvolutionFilterFactory(SupportsDeleteCallback):
@@ -20083,7 +20166,7 @@ class ConvolutionFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ConvolutionFilterFactory, [ConvolutionFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5194241966668323293, 10219248867443858857), ConvolutionFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((5745232423585680142, 16120937789420990), ConvolutionFilterFactory)
 agcls.AgTypeNameMap["ConvolutionFilterFactory"] = ConvolutionFilterFactory
 
 class EdgeDetectFilterFactory(SupportsDeleteCallback):
@@ -20129,7 +20212,7 @@ class EdgeDetectFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EdgeDetectFilterFactory, [EdgeDetectFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5369295687463539305, 16833644508996806546), EdgeDetectFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((5351730899564186832, 12182546251480443546), EdgeDetectFilterFactory)
 agcls.AgTypeNameMap["EdgeDetectFilterFactory"] = EdgeDetectFilterFactory
 
 class FilteringRasterStreamFactory(SupportsDeleteCallback):
@@ -20167,7 +20250,7 @@ class FilteringRasterStreamFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FilteringRasterStreamFactory, [FilteringRasterStreamFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5574129346456397425, 8077637960984957060), FilteringRasterStreamFactory)
+agcls.AgClassCatalog.add_catalog_entry((4748927967490749055, 3496370561197518747), FilteringRasterStreamFactory)
 agcls.AgTypeNameMap["FilteringRasterStreamFactory"] = FilteringRasterStreamFactory
 
 class FlipFilterFactory(SupportsDeleteCallback):
@@ -20213,7 +20296,7 @@ class FlipFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FlipFilterFactory, [FlipFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4813948222009584408, 8338997454324614542), FlipFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((4714720980140819084, 9906737125664217279), FlipFilterFactory)
 agcls.AgTypeNameMap["FlipFilterFactory"] = FlipFilterFactory
 
 class GammaCorrectionFilterFactory(SupportsDeleteCallback):
@@ -20259,7 +20342,7 @@ class GammaCorrectionFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GammaCorrectionFilterFactory, [GammaCorrectionFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5017412968260660081, 16818168171209361570), GammaCorrectionFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((5098197875999560800, 15070415561489183659), GammaCorrectionFilterFactory)
 agcls.AgTypeNameMap["GammaCorrectionFilterFactory"] = GammaCorrectionFilterFactory
 
 class GaussianBlurFilterFactory(SupportsDeleteCallback):
@@ -20297,7 +20380,7 @@ class GaussianBlurFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GaussianBlurFilterFactory, [GaussianBlurFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5656821005411861838, 14170591824334317207), GaussianBlurFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((5730409816723043185, 574269011063193266), GaussianBlurFilterFactory)
 agcls.AgTypeNameMap["GaussianBlurFilterFactory"] = GaussianBlurFilterFactory
 
 class GradientDetectFilterFactory(SupportsDeleteCallback):
@@ -20343,7 +20426,7 @@ class GradientDetectFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GradientDetectFilterFactory, [GradientDetectFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5261690937650539900, 9714627553001418677), GradientDetectFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((5321038454058640882, 3925324863652800412), GradientDetectFilterFactory)
 agcls.AgTypeNameMap["GradientDetectFilterFactory"] = GradientDetectFilterFactory
 
 class Jpeg2000WriterInitializer(SupportsDeleteCallback):
@@ -20413,7 +20496,7 @@ class Jpeg2000WriterInitializer(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Jpeg2000WriterInitializer, [Jpeg2000WriterInitializer, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4778908435752806977, 14293582151024777652), Jpeg2000WriterInitializer)
+agcls.AgClassCatalog.add_catalog_entry((5273363727156950832, 6043345203676618115), Jpeg2000WriterInitializer)
 agcls.AgTypeNameMap["Jpeg2000WriterInitializer"] = Jpeg2000WriterInitializer
 
 class LevelsFilterFactory(SupportsDeleteCallback):
@@ -20451,7 +20534,7 @@ class LevelsFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, LevelsFilterFactory, [LevelsFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5192249527130378627, 3644216997229494192), LevelsFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((5687798762475633774, 17801099149596841374), LevelsFilterFactory)
 agcls.AgTypeNameMap["LevelsFilterFactory"] = LevelsFilterFactory
 
 class ProjectionRasterStreamPluginActivatorFactory(SupportsDeleteCallback):
@@ -20489,7 +20572,7 @@ class ProjectionRasterStreamPluginActivatorFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProjectionRasterStreamPluginActivatorFactory, [ProjectionRasterStreamPluginActivatorFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5361222435032231866, 3381506882249052836), ProjectionRasterStreamPluginActivatorFactory)
+agcls.AgClassCatalog.add_catalog_entry((4918859965400045195, 7727198902650782654), ProjectionRasterStreamPluginActivatorFactory)
 agcls.AgTypeNameMap["ProjectionRasterStreamPluginActivatorFactory"] = ProjectionRasterStreamPluginActivatorFactory
 
 class RasterFactory(SupportsDeleteCallback):
@@ -20543,7 +20626,7 @@ class RasterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RasterFactory, [RasterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5238614875094016981, 11134375578786188696), RasterFactory)
+agcls.AgClassCatalog.add_catalog_entry((4617914908522115301, 12299563304216270757), RasterFactory)
 agcls.AgTypeNameMap["RasterFactory"] = RasterFactory
 
 class RasterAttributesFactory(SupportsDeleteCallback):
@@ -20621,7 +20704,7 @@ class RasterAttributesFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RasterAttributesFactory, [RasterAttributesFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5169373110399012045, 14977287242461110158), RasterAttributesFactory)
+agcls.AgClassCatalog.add_catalog_entry((5422323740721556346, 3331699505371995580), RasterAttributesFactory)
 agcls.AgTypeNameMap["RasterAttributesFactory"] = RasterAttributesFactory
 
 class RotateFilterFactory(SupportsDeleteCallback):
@@ -20667,7 +20750,7 @@ class RotateFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RotateFilterFactory, [RotateFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4937157270338855829, 7861741425991581097), RotateFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((5414884869365634699, 12023972405942759344), RotateFilterFactory)
 agcls.AgTypeNameMap["RotateFilterFactory"] = RotateFilterFactory
 
 class SequenceFilterFactory(SupportsDeleteCallback):
@@ -20705,7 +20788,7 @@ class SequenceFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SequenceFilterFactory, [SequenceFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5478266993910050783, 1540888659848167348), SequenceFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((5502932480155429958, 12467445776273760670), SequenceFilterFactory)
 agcls.AgTypeNameMap["SequenceFilterFactory"] = SequenceFilterFactory
 
 class SharpenFilterFactory(SupportsDeleteCallback):
@@ -20751,7 +20834,7 @@ class SharpenFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SharpenFilterFactory, [SharpenFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5759309636180187185, 3175896497566733228), SharpenFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((5138775718136816324, 15332316208208007829), SharpenFilterFactory)
 agcls.AgTypeNameMap["SharpenFilterFactory"] = SharpenFilterFactory
 
 class VideoStreamFactory(SupportsDeleteCallback):
@@ -20805,7 +20888,7 @@ class VideoStreamFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VideoStreamFactory, [VideoStreamFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5381933889788306137, 799357625502408624), VideoStreamFactory)
+agcls.AgClassCatalog.add_catalog_entry((4909549804129302566, 9104396464917818503), VideoStreamFactory)
 agcls.AgTypeNameMap["VideoStreamFactory"] = VideoStreamFactory
 
 class MarkerBatchPrimitiveFactory(SupportsDeleteCallback):
@@ -20891,7 +20974,7 @@ class MarkerBatchPrimitiveFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MarkerBatchPrimitiveFactory, [MarkerBatchPrimitiveFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5088828722420406024, 6797648096076766382), MarkerBatchPrimitiveFactory)
+agcls.AgClassCatalog.add_catalog_entry((5684543865037684486, 5820781907226607766), MarkerBatchPrimitiveFactory)
 agcls.AgTypeNameMap["MarkerBatchPrimitiveFactory"] = MarkerBatchPrimitiveFactory
 
 class MarkerBatchPrimitiveOptionalParametersFactory(SupportsDeleteCallback):
@@ -20929,7 +21012,7 @@ class MarkerBatchPrimitiveOptionalParametersFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MarkerBatchPrimitiveOptionalParametersFactory, [MarkerBatchPrimitiveOptionalParametersFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5195987611789658375, 17249169529742209427), MarkerBatchPrimitiveOptionalParametersFactory)
+agcls.AgClassCatalog.add_catalog_entry((5118462206333952420, 10415760301864910003), MarkerBatchPrimitiveOptionalParametersFactory)
 agcls.AgTypeNameMap["MarkerBatchPrimitiveOptionalParametersFactory"] = MarkerBatchPrimitiveOptionalParametersFactory
 
 class MaximumCountPathPrimitiveUpdatePolicyFactory(SupportsDeleteCallback):
@@ -20975,17 +21058,18 @@ class MaximumCountPathPrimitiveUpdatePolicyFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MaximumCountPathPrimitiveUpdatePolicyFactory, [MaximumCountPathPrimitiveUpdatePolicyFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5643119574581091275, 7566109842606566069), MaximumCountPathPrimitiveUpdatePolicyFactory)
+agcls.AgClassCatalog.add_catalog_entry((5737048646873301648, 7601779231663494806), MaximumCountPathPrimitiveUpdatePolicyFactory)
 agcls.AgTypeNameMap["MaximumCountPathPrimitiveUpdatePolicyFactory"] = MaximumCountPathPrimitiveUpdatePolicyFactory
 
 class ModelPrimitiveFactory(SupportsDeleteCallback):
-    """The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models."""
+    """The model primitive loads and renders `glTF 2.0 <https://www.khronos.org/gltf/>`_ (.gltf, .glb), `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models/>`_ (MDL) models."""
 
-    _num_methods = 3
+    _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _initialize_method_offset = 1
     _initialize_with_string_uri_method_offset = 2
     _initialize_with_string_uri_and_up_axis_method_offset = 3
+    _allow_collada_models_method_offset = 4
     _metadata = {
         "iid_data" : (5301455462249167343, 9954596141012220600),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -21015,6 +21099,13 @@ class ModelPrimitiveFactory(SupportsDeleteCallback):
         """For convenience. Initializes a model primitive with the specified file path and up axis."""
         return self._intf.invoke(ModelPrimitiveFactory._metadata, ModelPrimitiveFactory._initialize_with_string_uri_and_up_axis_metadata, uri, up_axis, OutArg())
 
+    _allow_collada_models_metadata = { "offset" : _allow_collada_models_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    def allow_collada_models(self, allow:bool) -> None:
+        """Support for loading COLLADA 3D model format has been officially removed. This method will allow users to continue loading COLLADA models for a short period of time."""
+        return self._intf.invoke(ModelPrimitiveFactory._metadata, ModelPrimitiveFactory._allow_collada_models_metadata, allow)
+
 
     def __init__(self, source_object=None):
         """Construct an object of type ModelPrimitiveFactory."""
@@ -21029,7 +21120,7 @@ class ModelPrimitiveFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ModelPrimitiveFactory, [ModelPrimitiveFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4760160901384551088, 7140373534144339897), ModelPrimitiveFactory)
+agcls.AgClassCatalog.add_catalog_entry((5724313041981228737, 8690216956280600472), ModelPrimitiveFactory)
 agcls.AgTypeNameMap["ModelPrimitiveFactory"] = ModelPrimitiveFactory
 
 class PathPrimitiveFactory(SupportsDeleteCallback):
@@ -21095,7 +21186,7 @@ class PathPrimitiveFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PathPrimitiveFactory, [PathPrimitiveFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4999495546751659691, 17351317838049696699), PathPrimitiveFactory)
+agcls.AgClassCatalog.add_catalog_entry((5010135034849482659, 3675344049273143710), PathPrimitiveFactory)
 agcls.AgTypeNameMap["PathPrimitiveFactory"] = PathPrimitiveFactory
 
 class PixelSizeDisplayConditionFactory(SupportsDeleteCallback):
@@ -21141,7 +21232,7 @@ class PixelSizeDisplayConditionFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PixelSizeDisplayConditionFactory, [PixelSizeDisplayConditionFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5278422861515345581, 5096673279112767674), PixelSizeDisplayConditionFactory)
+agcls.AgClassCatalog.add_catalog_entry((4804447385082121731, 845504895197403294), PixelSizeDisplayConditionFactory)
 agcls.AgTypeNameMap["PixelSizeDisplayConditionFactory"] = PixelSizeDisplayConditionFactory
 
 class PointBatchPrimitiveFactory(SupportsDeleteCallback):
@@ -21207,7 +21298,7 @@ class PointBatchPrimitiveFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PointBatchPrimitiveFactory, [PointBatchPrimitiveFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5691951381088805854, 9892261316027463820), PointBatchPrimitiveFactory)
+agcls.AgClassCatalog.add_catalog_entry((4966642605169071990, 2500350308703006632), PointBatchPrimitiveFactory)
 agcls.AgTypeNameMap["PointBatchPrimitiveFactory"] = PointBatchPrimitiveFactory
 
 class PointBatchPrimitiveOptionalParametersFactory(SupportsDeleteCallback):
@@ -21245,7 +21336,7 @@ class PointBatchPrimitiveOptionalParametersFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PointBatchPrimitiveOptionalParametersFactory, [PointBatchPrimitiveOptionalParametersFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5239649165248866017, 8920417599888238986), PointBatchPrimitiveOptionalParametersFactory)
+agcls.AgClassCatalog.add_catalog_entry((4969231705447386826, 3854581488602939038), PointBatchPrimitiveOptionalParametersFactory)
 agcls.AgTypeNameMap["PointBatchPrimitiveOptionalParametersFactory"] = PointBatchPrimitiveOptionalParametersFactory
 
 class PolylinePrimitiveFactory(SupportsDeleteCallback):
@@ -21343,7 +21434,7 @@ class PolylinePrimitiveFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PolylinePrimitiveFactory, [PolylinePrimitiveFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5689441306869114041, 5434853608110200975), PolylinePrimitiveFactory)
+agcls.AgClassCatalog.add_catalog_entry((5702927468070810401, 4807084683203007157), PolylinePrimitiveFactory)
 agcls.AgTypeNameMap["PolylinePrimitiveFactory"] = PolylinePrimitiveFactory
 
 class PolylinePrimitiveOptionalParametersFactory(SupportsDeleteCallback):
@@ -21381,7 +21472,7 @@ class PolylinePrimitiveOptionalParametersFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PolylinePrimitiveOptionalParametersFactory, [PolylinePrimitiveOptionalParametersFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5738339211798606524, 11308828612359481730), PolylinePrimitiveOptionalParametersFactory)
+agcls.AgClassCatalog.add_catalog_entry((5090823931571502825, 12619330874928256911), PolylinePrimitiveOptionalParametersFactory)
 agcls.AgTypeNameMap["PolylinePrimitiveOptionalParametersFactory"] = PolylinePrimitiveOptionalParametersFactory
 
 class RasterImageGlobeOverlayFactory(SupportsDeleteCallback):
@@ -21435,7 +21526,7 @@ class RasterImageGlobeOverlayFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RasterImageGlobeOverlayFactory, [RasterImageGlobeOverlayFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5435848080773098885, 17152672386737869751), RasterImageGlobeOverlayFactory)
+agcls.AgClassCatalog.add_catalog_entry((5687089577445831957, 3195830161002888359), RasterImageGlobeOverlayFactory)
 agcls.AgTypeNameMap["RasterImageGlobeOverlayFactory"] = RasterImageGlobeOverlayFactory
 
 class RhumbLineInterpolatorFactory(SupportsDeleteCallback):
@@ -21489,7 +21580,7 @@ class RhumbLineInterpolatorFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RhumbLineInterpolatorFactory, [RhumbLineInterpolatorFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5147795153744647357, 4102979680655849129), RhumbLineInterpolatorFactory)
+agcls.AgClassCatalog.add_catalog_entry((5590670185232371945, 8611802951594254469), RhumbLineInterpolatorFactory)
 agcls.AgTypeNameMap["RhumbLineInterpolatorFactory"] = RhumbLineInterpolatorFactory
 
 class SceneDisplayConditionFactory(SupportsDeleteCallback):
@@ -21527,7 +21618,7 @@ class SceneDisplayConditionFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SceneDisplayConditionFactory, [SceneDisplayConditionFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5079935465265927014, 13979694929789791122), SceneDisplayConditionFactory)
+agcls.AgClassCatalog.add_catalog_entry((4809111666387697420, 13233275733275410587), SceneDisplayConditionFactory)
 agcls.AgTypeNameMap["SceneDisplayConditionFactory"] = SceneDisplayConditionFactory
 
 class SceneManagerInitializer(SupportsDeleteCallback):
@@ -21625,7 +21716,7 @@ class SceneManagerInitializer(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SceneManagerInitializer, [SceneManagerInitializer, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5231096914349054333, 11970215315931446921), SceneManagerInitializer)
+agcls.AgClassCatalog.add_catalog_entry((5693600891677513345, 794264369633344165), SceneManagerInitializer)
 agcls.AgTypeNameMap["SceneManagerInitializer"] = SceneManagerInitializer
 
 class ScreenOverlayFactory(SupportsDeleteCallback):
@@ -21671,7 +21762,7 @@ class ScreenOverlayFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScreenOverlayFactory, [ScreenOverlayFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5534893721624354920, 8168061178950163841), ScreenOverlayFactory)
+agcls.AgClassCatalog.add_catalog_entry((5478851720457847506, 3492247434936517043), ScreenOverlayFactory)
 agcls.AgTypeNameMap["ScreenOverlayFactory"] = ScreenOverlayFactory
 
 class SolidPrimitiveFactory(SupportsDeleteCallback):
@@ -21737,7 +21828,7 @@ class SolidPrimitiveFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SolidPrimitiveFactory, [SolidPrimitiveFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5022037710637083726, 18395686854317049790), SolidPrimitiveFactory)
+agcls.AgClassCatalog.add_catalog_entry((5501849711882410440, 15764522435634645437), SolidPrimitiveFactory)
 agcls.AgTypeNameMap["SolidPrimitiveFactory"] = SolidPrimitiveFactory
 
 class SurfaceMeshPrimitiveFactory(SupportsDeleteCallback):
@@ -21807,7 +21898,7 @@ class SurfaceMeshPrimitiveFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SurfaceMeshPrimitiveFactory, [SurfaceMeshPrimitiveFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5105103782773260689, 7575932828570884018), SurfaceMeshPrimitiveFactory)
+agcls.AgClassCatalog.add_catalog_entry((5453312283290578348, 15756615055174557840), SurfaceMeshPrimitiveFactory)
 agcls.AgTypeNameMap["SurfaceMeshPrimitiveFactory"] = SurfaceMeshPrimitiveFactory
 
 class TerrainOverlayInitializer(SupportsDeleteCallback):
@@ -21847,7 +21938,7 @@ class TerrainOverlayInitializer(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TerrainOverlayInitializer, [TerrainOverlayInitializer, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5522744439362483683, 18287510901745470876), TerrainOverlayInitializer)
+agcls.AgClassCatalog.add_catalog_entry((5748330206594896693, 2073845019722375070), TerrainOverlayInitializer)
 agcls.AgTypeNameMap["TerrainOverlayInitializer"] = TerrainOverlayInitializer
 
 class TextBatchPrimitiveFactory(SupportsDeleteCallback):
@@ -21901,7 +21992,7 @@ class TextBatchPrimitiveFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextBatchPrimitiveFactory, [TextBatchPrimitiveFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5625080391433801130, 3938368286549985176), TextBatchPrimitiveFactory)
+agcls.AgClassCatalog.add_catalog_entry((5055532163421113397, 10144467059425856902), TextBatchPrimitiveFactory)
 agcls.AgTypeNameMap["TextBatchPrimitiveFactory"] = TextBatchPrimitiveFactory
 
 class TextBatchPrimitiveOptionalParametersFactory(SupportsDeleteCallback):
@@ -21939,7 +22030,7 @@ class TextBatchPrimitiveOptionalParametersFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextBatchPrimitiveOptionalParametersFactory, [TextBatchPrimitiveOptionalParametersFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5084407859987424006, 13610625296975832496), TextBatchPrimitiveOptionalParametersFactory)
+agcls.AgClassCatalog.add_catalog_entry((5292816531505599529, 8390350530511440308), TextBatchPrimitiveOptionalParametersFactory)
 agcls.AgTypeNameMap["TextBatchPrimitiveOptionalParametersFactory"] = TextBatchPrimitiveOptionalParametersFactory
 
 class TextOverlayFactory(SupportsDeleteCallback):
@@ -22001,7 +22092,7 @@ class TextOverlayFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextOverlayFactory, [TextOverlayFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5429288625969444261, 302037397631282851), TextOverlayFactory)
+agcls.AgClassCatalog.add_catalog_entry((5386821363606052460, 14426375787314488464), TextOverlayFactory)
 agcls.AgTypeNameMap["TextOverlayFactory"] = TextOverlayFactory
 
 class TextureMatrixFactory(SupportsDeleteCallback):
@@ -22063,7 +22154,7 @@ class TextureMatrixFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextureMatrixFactory, [TextureMatrixFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5617819546769021728, 7736419431304257422), TextureMatrixFactory)
+agcls.AgClassCatalog.add_catalog_entry((5484778704243443964, 17993631518305917616), TextureMatrixFactory)
 agcls.AgTypeNameMap["TextureMatrixFactory"] = TextureMatrixFactory
 
 class TextureScreenOverlayFactory(SupportsDeleteCallback):
@@ -22133,7 +22224,7 @@ class TextureScreenOverlayFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextureScreenOverlayFactory, [TextureScreenOverlayFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4669913133866159717, 12638065439748219572), TextureScreenOverlayFactory)
+agcls.AgClassCatalog.add_catalog_entry((5092155125926314593, 4040766871895992231), TextureScreenOverlayFactory)
 agcls.AgTypeNameMap["TextureScreenOverlayFactory"] = TextureScreenOverlayFactory
 
 class TimeIntervalDisplayConditionFactory(SupportsDeleteCallback):
@@ -22187,7 +22278,7 @@ class TimeIntervalDisplayConditionFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeIntervalDisplayConditionFactory, [TimeIntervalDisplayConditionFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5439747334997424084, 6755244645861550522), TimeIntervalDisplayConditionFactory)
+agcls.AgClassCatalog.add_catalog_entry((5300141093819919317, 4484807823526816403), TimeIntervalDisplayConditionFactory)
 agcls.AgTypeNameMap["TimeIntervalDisplayConditionFactory"] = TimeIntervalDisplayConditionFactory
 
 class TriangleMeshPrimitiveFactory(SupportsDeleteCallback):
@@ -22233,7 +22324,7 @@ class TriangleMeshPrimitiveFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TriangleMeshPrimitiveFactory, [TriangleMeshPrimitiveFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5626120386434613462, 12677846449352391835), TriangleMeshPrimitiveFactory)
+agcls.AgClassCatalog.add_catalog_entry((4829196614766055058, 1801210469818590369), TriangleMeshPrimitiveFactory)
 agcls.AgTypeNameMap["TriangleMeshPrimitiveFactory"] = TriangleMeshPrimitiveFactory
 
 class TriangleMeshPrimitiveOptionalParametersFactory(SupportsDeleteCallback):
@@ -22271,7 +22362,7 @@ class TriangleMeshPrimitiveOptionalParametersFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TriangleMeshPrimitiveOptionalParametersFactory, [TriangleMeshPrimitiveOptionalParametersFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5288556284052748615, 15585677714113157263), TriangleMeshPrimitiveOptionalParametersFactory)
+agcls.AgClassCatalog.add_catalog_entry((4915140274830797567, 18123597672638912933), TriangleMeshPrimitiveOptionalParametersFactory)
 agcls.AgTypeNameMap["TriangleMeshPrimitiveOptionalParametersFactory"] = TriangleMeshPrimitiveOptionalParametersFactory
 
 class VectorPrimitiveFactory(SupportsDeleteCallback):
@@ -22309,5 +22400,5 @@ class VectorPrimitiveFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorPrimitiveFactory, [VectorPrimitiveFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5718196077309239950, 14892362432078823827), VectorPrimitiveFactory)
+agcls.AgClassCatalog.add_catalog_entry((5719890928753353573, 1756846977004903819), VectorPrimitiveFactory)
 agcls.AgTypeNameMap["VectorPrimitiveFactory"] = VectorPrimitiveFactory

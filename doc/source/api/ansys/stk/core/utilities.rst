@@ -16,7 +16,6 @@ Summary
 
             * - :py:obj:`~ansys.stk.core.utilities.colors`
             * - :py:obj:`~ansys.stk.core.utilities.comobject`
-            * - :py:obj:`~ansys.stk.core.utilities.exceptions`
             * - :py:obj:`~ansys.stk.core.utilities.grpcutilities`
 
 
@@ -37,7 +36,6 @@ Utilities.
 
      🗎 colors<utilities/colors>
      🗎 comobject<utilities/comobject>
-     🗎 exceptions<utilities/exceptions>
      🗎 grpcutilities<utilities/grpcutilities>
 
 

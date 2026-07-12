@@ -28,6 +28,8 @@ Overview
               - View from a point to a point. Sets the camera's position and the reference point the camera is looking at.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.view_central_body`
               - Zoom to a central body and use the specified axes for rotation. The reference point is set to the center of the central body and the camera's position is set so the entire central body is visible.
+            * - :py:attr:`~ansys.stk.core.graphics.Camera.view_central_body_from_position`
+              - Zoom to a central body and use the specified axes for rotation. The reference point is set to the center of the central body.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.view_direction`
               - View from a point to a direction. Sets the camera's position and the direction vector indicating where the camera is looking.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.view_direction_with_up_axis`
@@ -382,6 +384,24 @@ Method detail
         **central_body** : :obj:`~str`
 
         **axes** : :obj:`~IVectorGeometryToolAxes`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: view_central_body_from_position(self, central_body: str, axes: IVectorGeometryToolAxes, camera_position: IVectorGeometryToolPoint) -> None
+    :canonical: ansys.stk.core.graphics.Camera.view_central_body_from_position
+
+    Zoom to a central body and use the specified axes for rotation. The reference point is set to the center of the central body.
+
+    :Parameters:
+
+        **central_body** : :obj:`~str`
+
+        **axes** : :obj:`~IVectorGeometryToolAxes`
+
+        **camera_position** : :obj:`~IVectorGeometryToolPoint`
 
 
     :Returns:

@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -78,14 +78,13 @@ class FacilitySnippets(CodeSnippetsTestBase):
     )
     def GetValidFacilitySnippet(self, root):
         # STKObjectRoot root: STK Object Model Root
-        from ansys.stk.core.utilities.exceptions import STKRuntimeError
         from ansys.stk.core.stkobjects import Facility, STKObjectType
 
         try:
             # this facility is not a valid STK reference
             my_facility_attempt = Facility()
             my_facility_attempt.height_above_ground = 123.4
-        except STKRuntimeError as e:
+        except RuntimeError as e:
             print(e)
 
         # this facility represents a valid STK object

@@ -27,7 +27,8 @@ from ansys.stk import __version__
 project = "ansys-stk"
 copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
 author = "ANSYS, Inc."
-release = version = __version__
+version = __version__
+release = get_version_match(version)
 cname = os.getenv("DOCUMENTATION_CNAME", "stk.docs.pyansys.com")
 
 # Configure the HTML theme
@@ -39,7 +40,7 @@ html_context = {
     "github_repo": "pystk",
     "github_version": "main",
     "doc_path": "doc/source",
-    "version": "main" if version.endswith("dev0") else f"release/{version.split('.')[:-1]}",
+    "version": "main" if version.endswith("dev0") else f"release/{release}",
     "base_url": f"https://github.com/ansys/pystk/blob/main",
     "edit_page_provider_name": "GitHub",
     "edit_page_url_template": "{{ base_url }}/{{ 'doc/source/' if 'examples/' not in file_name else '' }}{{ file_name }}",
@@ -66,7 +67,7 @@ html_theme_options = {
     ],
     "switcher": {
         "json_url": f"https://{cname}/versions.json",
-        "version_match": get_version_match(__version__),
+        "version_match": release,
     },
     "check_switcher": False,
     "navigation_with_keys": True,
@@ -101,8 +102,13 @@ html_static_path = ["_static"]
 html_css_files = [
     "css/highlight.css",
     "css/search.css",
+    "css/datatable.css",
 ]
 html_js_files = []
+
+# disable including and linking the reST sources in HTML builds
+html_copy_source = False
+html_show_sourcelink = False
 
 # Sphinx extensions
 extensions = [
@@ -197,16 +203,23 @@ autosectionlabel_maxdepth = 6
 
 # -- Linkcheck configuration -------------------------------------------------
 user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
+linkcheck_exclude_documents = ["artifacts", "changelog"]
 linkcheck_ignore = [
-    "https://www.ansys.com/*",
+    r"https://www.ansys.com/*",
     # Requires sign-in
-    f"https://github.com/{user_repo}/*",
-    "https://support.agi.com/3d-models",
-    "https://support.agi.com/downloads",
-    "https://www.khronos.org/collada/",
+    r"https://support.agi.com/3d-models",
+    r"https://support.agi.com/downloads",
+    # Spurious failures
+    r"https://www.khronos.org/collada/",
+    r"https://www.khronos.org/gltf/",
     # TODO: Determine a way to link to examples without breaking the linkcheck
     # https://github.com/ansys/pystk/issues/657
     r"../examples/",
+    # Ignore links to the examples pdf/ipynb/py files as they are not
+    # available until documentation is not published
+    rf"https://{cname}/version/{release}/examples/.*\.pdf",
+    rf"https://{cname}/version/{release}/examples/.*\.ipynb",
+    rf"https://{cname}/version/{release}/examples/.*\.py",
 ]
 
 # -- Declare the Jinja context -----------------------------------------------
@@ -380,10 +393,10 @@ if not WHEELHOUSE_PATH.exists():
 
 
 jinja_globals = {
-    "SUPPORTED_PYTHON_VERSIONS": ["3.11", "3.12", "3.13"],
+    "SUPPORTED_PYTHON_VERSIONS": ["3.10", "3.11", "3.12", "3.13"],
     "SUPPORTED_PLATFORMS": ["windows", "ubuntu"],
     "PYSTK_VERSION": version,
-    "STK_VERSION": "12.10.0",
+    "STK_VERSION": "13.1.0",
 }
 
 jinja_contexts = {
@@ -432,6 +445,13 @@ autodoc_mock_imports = ["tkinter"]
 
 # -- MyST Sphinx configuration -----------------------------------------------
 myst_heading_anchors = 3
+
+# -- Mermaid configuration ---------------------------------------------------
+# Load mermaid's d3 dependency before nbsphinx's RequireJS (priority 500) so
+# d3's UMD bundle exports a global instead of registering an anonymous AMD
+# module. Otherwise d3's anonymous define() corrupts RequireJS and breaks the
+# theme's Fuse.js static search (search.html).
+mermaid_js_priority = 100
 
 # -- LaTeX configuration
 latex_elements = {
@@ -498,13 +518,15 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
     # TODO: investigate issues when using OUTPUT_EXAMPLES instead of SOURCE_EXAMPLES
     # https://github.com/ansys/pystk/issues/415
     OUTPUT_EXAMPLES = pathlib.Path(app.outdir) / "examples"
+    OUTPUT_DATA = OUTPUT_EXAMPLES / "data"
     OUTPUT_IMAGES = OUTPUT_EXAMPLES / "img"
-    for directory in [OUTPUT_EXAMPLES, OUTPUT_IMAGES]:
+    for directory in [OUTPUT_EXAMPLES, OUTPUT_DATA, OUTPUT_IMAGES]:
         if not directory.exists():
             directory.mkdir(parents=True, exist_ok=True)
 
     SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
     EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
+    EXAMPLES_DATA_DIRECTORY = EXAMPLES_DIRECTORY / "data"
     IMAGES_DIRECTORY = EXAMPLES_DIRECTORY / "img"
 
     # Copy the examples
@@ -519,6 +541,20 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
         stringify_func=(lambda x: x.name),
     ):
         destination_file = OUTPUT_EXAMPLES / file.name
+        destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
+
+    # Copy the data files
+    all_data_files = list(EXAMPLES_DATA_DIRECTORY.glob("*.tle"))
+    data_files = [file for file in all_data_files]
+    for file in status_iterator(
+        data_files,
+        f"Copying example data to doc/_build/examples/data",
+        "green",
+        len(data_files),
+        verbosity=1,
+        stringify_func=(lambda x: x.name),
+    ):
+        destination_file = OUTPUT_DATA / file.name
         destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
 
     # Copy the static images
@@ -546,15 +582,17 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
 
     """
     SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
+    SOURCE_DATA = SOURCE_EXAMPLES / "data"
     SOURCE_IMAGES = SOURCE_EXAMPLES / "img"
-    for directory in [SOURCE_EXAMPLES, SOURCE_IMAGES]:
+    for directory in [SOURCE_EXAMPLES, SOURCE_DATA, SOURCE_IMAGES]:
         if not directory.exists():
             directory.mkdir(parents=True, exist_ok=True)
 
     EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
+    EXAMPLES_DATA_DIRECTORY = EXAMPLES_DIRECTORY / "data"
     IMAGES_DIRECTORY = EXAMPLES_DIRECTORY / "img"
 
-    # Copy the the examples
+    # Copy the examples
     all_examples = list(EXAMPLES_DIRECTORY.glob("*.py"))
     examples = [file for file in all_examples if f"{file.name}" not in exclude_examples]
     for file in status_iterator(
@@ -566,6 +604,20 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
         stringify_func=(lambda file: file.name),
     ):
         destination_file = SOURCE_EXAMPLES / file.name
+        destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
+
+    # Copy the data files
+    example_data_files = list(EXAMPLES_DATA_DIRECTORY.glob("*.tle"))
+    data_files = [file for file in example_data_files]
+    for file in status_iterator(
+        data_files,
+        f"Copying example data to doc/source/examples/data/",
+        "green",
+        len(data_files),
+        verbosity=1,
+        stringify_func=(lambda file: file.name),
+    ):
+        destination_file = SOURCE_DATA / file.name
         destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
 
     # Copy the static images

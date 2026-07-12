@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -27,6 +27,8 @@ import pytest
 
 import matplotlib
 
+from pathlib import Path
+
 from ansys.stk.extensions.data_analysis.graphs.access_graphs import access_duration_pie_chart, bit_error_rate_line_chart, carrier_to_noise_ratio_line_chart, cumulative_dwell_cumulative_pie_chart, ebno_line_chart, radar_sar_azimuth_resolution_line_chart, radar_sar_time_resolution_line_chart, revisit_diagram_interval_pie_chart, aer_line_chart, access_interval_graph, az_el_polar_center_90_graph, angular_rates_line_chart, elevation_angle_line_chart, gaps_interval_graph, probability_of_detection_line_chart, radar_antenna_gain_line_chart, radar_propagation_loss_line_chart, radar_searchtrack_integration_line_chart, radar_searchtrack_snr_line_chart, radar_system_noise_line_chart, signal_to_noise_ratio_line_chart, sun_rfi_line_chart
 from stk_environment import stk_root
 
@@ -35,17 +37,18 @@ def basic_access(stk_root):
     from ansys.stk.core.stkobjects import STKObjectType, PropagatorType, ConstraintLighting, AccessConstraintType
 
     stk_root.new_scenario("GraphTest")
+    stk_root.execute_command("Terrain * TerrainServer UseTerrainForAnalysis No")
     scenario = stk_root.current_scenario
     scenario.set_time_period("5 Jun 2022", "6 Jun 2022")
 
     facility = scenario.children.new(STKObjectType.FACILITY, "Facility")
-    facility.use_terrain = False
     facility.position.assign_planetodetic(39.95, -75.16, 0)
 
     satellite = scenario.children.new(STKObjectType.SATELLITE, "Satellite")
     satellite.set_propagator_type(PropagatorType.SGP4)
     propagator = satellite.propagator
-    propagator.common_tasks.add_segments_from_online_source("25544")
+    tle_file = Path(__file__).parent / "data" / "iss_5Jun2022.tle"
+    propagator.common_tasks.add_segments_from_file("25544", str(tle_file.resolve()))
     propagator.propagate()
 
     lighting_constraint = satellite.access_constraints.add_constraint(
@@ -63,17 +66,18 @@ def leap_second_access(stk_root):
     from ansys.stk.core.stkobjects import STKObjectType, PropagatorType
 
     stk_root.new_scenario("GraphTest")
+    stk_root.execute_command("Terrain * TerrainServer UseTerrainForAnalysis No")
     scenario = stk_root.current_scenario
     scenario.set_time_period("30 Jun 2015 16:00:00.000", "1 Jul 2015 16:00:00.000")
 
     place = scenario.children.new(STKObjectType.PLACE, "Place")
-    place.use_terrain = False
     place.position.assign_planetodetic(-43.0076, -11.2231, 0)
 
     satellite = scenario.children.new(STKObjectType.SATELLITE, "Satellite")
     satellite.set_propagator_type(PropagatorType.SGP4)
     propagator = satellite.propagator
-    propagator.common_tasks.add_segments_from_online_source("25544")
+    tle_file = Path(__file__).parent / "data" / "iss_30Jun2015.tle"
+    propagator.common_tasks.add_segments_from_file("25544", str(tle_file.resolve()))
     propagator.propagate()
 
     access = place.get_access_to_object(satellite)
@@ -86,6 +90,7 @@ def basic_radar_access(stk_root):
     from ansys.stk.core.stkobjects import STKObjectType
 
     stk_root.new_scenario("GraphTest")
+    stk_root.execute_command("Terrain * TerrainServer UseTerrainForAnalysis No")
     scenario = stk_root.current_scenario
     scenario.set_time_period("5 Jun 2022", "6 Jun 2022")
 
@@ -103,7 +108,6 @@ def basic_radar_access(stk_root):
     aircraft.route.propagate()
 
     radar_site = stk_root.current_scenario.children.new(STKObjectType.PLACE, "RadarSite")
-    radar_site.use_terrain = False
     radar_site.position.assign_geodetic(35.75174, 139.35621, 0.01524)
 
     sensor = radar_site.children.new(STKObjectType.SENSOR, "Sensor")
@@ -125,7 +129,8 @@ def communications_access(stk_root):
     satellite = stk_root.current_scenario.children.new(STKObjectType.SATELLITE, "Satellite")
     satellite.set_propagator_type(PropagatorType.SGP4)
     propagator = satellite.propagator
-    propagator.common_tasks.add_segments_from_online_source("25544")
+    tle_file = Path(__file__).parent / "data" / "iss_5Jun2022.tle"
+    propagator.common_tasks.add_segments_from_file("25544", str(tle_file.resolve()))
     propagator.propagate()
 
     facility = stk_root.current_scenario.children.new(STKObjectType.FACILITY, "Facility")
@@ -148,7 +153,8 @@ def sar_radar_access(stk_root):
     satellite = stk_root.current_scenario.children.new(STKObjectType.SATELLITE, "Satellite")
     satellite.set_propagator_type(PropagatorType.SGP4)
     propagator = satellite.propagator
-    propagator.common_tasks.add_segments_from_online_source("25544")
+    tle_file = Path(__file__).parent / "data" / "iss_5Jun2022.tle"
+    propagator.common_tasks.add_segments_from_file("25544", str(tle_file.resolve()))
     propagator.propagate()
 
     facility = stk_root.current_scenario.children.new(STKObjectType.FACILITY, "Facility")

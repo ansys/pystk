@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -23,8 +23,8 @@
 import pytest
 from test_util import *
 from access_constraints.access_constraint_helper import *
-from assert_extension import *
 from assertion_harness import *
+from chain_analysis_options_helper import *
 from interfaces.stk_objects import *
 from logger import *
 from ansys.stk.core.utilities.colors import *
@@ -59,83 +59,93 @@ class EarlyBoundTests(TestBase):
     # region Basic
     @category("Basic Tests")
     def test_Basic(self):
-        TestBase.logger.WriteLine("----- THE BASIC TEST ----- BEGIN -----")
-        # LocationDeclination
-        TestBase.logger.WriteLine6(
-            "The current LocationDeclination is: {0}", EarlyBoundTests.AG_SR.location_declination
-        )
-        self.Units.set_current_unit("AngleUnit", "DMS")
-        EarlyBoundTests.AG_SR.location_declination = "75:00:00.0001"
-        TestBase.logger.WriteLine6("The new LocationDeclination is: {0}", EarlyBoundTests.AG_SR.location_declination)
-        Assert.assertEqual("75:00:00.0001", EarlyBoundTests.AG_SR.location_declination)
-        # LocationRightAscension
-        TestBase.logger.WriteLine6(
-            "The current LocationRightAscension is: {0}", EarlyBoundTests.AG_SR.location_right_ascension
-        )
-        EarlyBoundTests.AG_SR.location_right_ascension = "90:00:01.0000"
-        TestBase.logger.WriteLine6(
-            "The new LocationRightAscension is: {0}", EarlyBoundTests.AG_SR.location_right_ascension
-        )
-        Assert.assertEqual("90:00:01.0000", EarlyBoundTests.AG_SR.location_right_ascension)
-        # Epoch
-        TestBase.logger.WriteLine5("The current Epoch is: {0}", EarlyBoundTests.AG_SR.epoch)
-        # Magnitude
-        TestBase.logger.WriteLine6("The current Magnitude is: {0}", EarlyBoundTests.AG_SR.magnitude)
-        EarlyBoundTests.AG_SR.magnitude = 60
-        TestBase.logger.WriteLine6("The new Magnitude is: {0}", EarlyBoundTests.AG_SR.magnitude)
-        Assert.assertEqual(60, EarlyBoundTests.AG_SR.magnitude)
-        # ProperMotionDeclination
-        self.Units.set_current_unit("TimeUnit", "yr")
-        self.Units.set_current_unit("AngleUnit", "arcSec")
-        TestBase.logger.WriteLine6(
-            "The current ProperMotionDeclination is: {0}", EarlyBoundTests.AG_SR.proper_motion_declination
-        )
-        EarlyBoundTests.AG_SR.proper_motion_declination = 1.5
-        TestBase.logger.WriteLine6(
-            "The new ProperMotionDeclination is: {0}", EarlyBoundTests.AG_SR.proper_motion_declination
-        )
-        Assert.assertAlmostEqual(1.5, EarlyBoundTests.AG_SR.proper_motion_declination, delta=1e-05)
-        # ProperMotionRightAscension
-        TestBase.logger.WriteLine6(
-            "The current ProperMotionRightAscension is: {0}", EarlyBoundTests.AG_SR.proper_motion_right_ascension
-        )
-        EarlyBoundTests.AG_SR.proper_motion_right_ascension = -0.5
-        TestBase.logger.WriteLine6(
-            "The current ProperMotionRightAscension is: {0}", EarlyBoundTests.AG_SR.proper_motion_right_ascension
-        )
-        Assert.assertAlmostEqual(-0.5, EarlyBoundTests.AG_SR.proper_motion_right_ascension, delta=1e-05)
-        # Parallax
-        TestBase.logger.WriteLine6("The current Parallax is: {0}", EarlyBoundTests.AG_SR.parallax)
-        EarlyBoundTests.AG_SR.parallax = 2.0
-        parallax: float = Convert.ToDouble(EarlyBoundTests.AG_SR.parallax)
-        TestBase.logger.WriteLine6("The new Parallax is: {0}", EarlyBoundTests.AG_SR.parallax)
-        Assert.assertAlmostEqual(2.0, parallax, delta=1e-05)
+        self.Units.set_current_unit("AngleUnit", "HMS")
+        EarlyBoundTests.AG_SR.location_right_ascension = "01:00:00.0000"
+        Assert.assertEqual("01:00:00.0000", EarlyBoundTests.AG_SR.location_right_ascension)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            EarlyBoundTests.AG_SR.location_right_ascension = "25:00:00.0000"
 
-        # Reference frame.
-        # Note: Reference frame is read-only for now. Might be writable in the future.
+        self.Units.set_current_unit("AngleUnit", "DMS")
+        EarlyBoundTests.AG_SR.location_declination = "02:00:00.0000"
+        Assert.assertEqual("02:00:00.0000", EarlyBoundTests.AG_SR.location_declination)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            EarlyBoundTests.AG_SR.location_declination = "91:00:00.0000"
+
+        EarlyBoundTests.AG_SR.magnitude = -3
+        Assert.assertEqual(-3, EarlyBoundTests.AG_SR.magnitude)
+        EarlyBoundTests.AG_SR.magnitude = 100
+        Assert.assertEqual(100, EarlyBoundTests.AG_SR.magnitude)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            EarlyBoundTests.AG_SR.magnitude = -4
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            EarlyBoundTests.AG_SR.magnitude = 101
+
+        self.Units.set_current_unit("AngleUnit", "arcSec")
+        self.Units.set_current_unit("TimeUnit", "yr")
+
+        EarlyBoundTests.AG_SR.proper_motion_right_ascension = -100
+        Assert.assertAlmostEqual(-100, EarlyBoundTests.AG_SR.proper_motion_right_ascension, delta=1e-05)
+        EarlyBoundTests.AG_SR.proper_motion_right_ascension = 100
+        Assert.assertAlmostEqual(100, EarlyBoundTests.AG_SR.proper_motion_right_ascension, delta=1e-05)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            EarlyBoundTests.AG_SR.proper_motion_right_ascension = -101
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            EarlyBoundTests.AG_SR.proper_motion_right_ascension = 101
+
+        EarlyBoundTests.AG_SR.proper_motion_declination = -100
+        Assert.assertAlmostEqual(-100, EarlyBoundTests.AG_SR.proper_motion_declination, delta=1e-05)
+        EarlyBoundTests.AG_SR.proper_motion_declination = 100
+        Assert.assertAlmostEqual(100, EarlyBoundTests.AG_SR.proper_motion_declination, delta=1e-05)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            EarlyBoundTests.AG_SR.proper_motion_declination = -101
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            EarlyBoundTests.AG_SR.proper_motion_declination = 101
+
+        EarlyBoundTests.AG_SR.parallax = 0
+        Assert.assertEqual(0, EarlyBoundTests.AG_SR.parallax)
+        EarlyBoundTests.AG_SR.parallax = 3600
+        Assert.assertAlmostEqual(3600, float(EarlyBoundTests.AG_SR.parallax), delta=0.0001)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            EarlyBoundTests.AG_SR.parallax = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            EarlyBoundTests.AG_SR.parallax = 3601
+
+        EarlyBoundTests.AG_SR.reference_frame = StarReferenceFrame.ICRF
+        Assert.assertEqual(StarReferenceFrame.ICRF, EarlyBoundTests.AG_SR.reference_frame)
+        EarlyBoundTests.AG_SR.reference_frame = StarReferenceFrame.J2000
         Assert.assertEqual(StarReferenceFrame.J2000, EarlyBoundTests.AG_SR.reference_frame)
 
+        Assert.assertTrue(("2000" in EarlyBoundTests.AG_SR.epoch))
+
         # Radial velocity
-        unit: str = (ISTKObject(EarlyBoundTests.AG_SR)).root.units_preferences.get_current_unit_abbrv("Distance")
+
         (ISTKObject(EarlyBoundTests.AG_SR)).root.units_preferences.set_current_unit("Distance", "m")
-        try:
-            EarlyBoundTests.AG_SR.proper_motion_radial_velocity = 10  # in meters
-            Assert.assertEqual(10, EarlyBoundTests.AG_SR.proper_motion_radial_velocity)
+        (ISTKObject(EarlyBoundTests.AG_SR)).root.units_preferences.set_current_unit("Time", "sec")
 
-            EarlyBoundTests.AG_SR.proper_motion_radial_velocity = -10000000000.0
-            EarlyBoundTests.AG_SR.proper_motion_radial_velocity = 10000000000.0
+        EarlyBoundTests.AG_SR.radial_velocity = 10  # m/sec
+        Assert.assertEqual(10, EarlyBoundTests.AG_SR.radial_velocity)
+        EarlyBoundTests.AG_SR.radial_velocity = -10000000000.0
+        Assert.assertEqual(-10000000000.0, EarlyBoundTests.AG_SR.radial_velocity)
+        EarlyBoundTests.AG_SR.radial_velocity = 10000000000.0
+        Assert.assertEqual(10000000000.0, EarlyBoundTests.AG_SR.radial_velocity)
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("invalid")
+        ):  # JUNIT.BUG:  CSToJava does not add "throws Exception" to implementaion of ActionDelegate as is defined in the ActionDelegate generation.
+            EarlyBoundTests.AG_SR.radial_velocity = -20000000000.0
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("invalid")
+        ):  # JUNIT.BUG:  CSToJava does not add "throws Exception" to implementaion of ActionDelegate as is defined in the ActionDelegate generation.
+            EarlyBoundTests.AG_SR.radial_velocity = 20000000000.0
 
-            with pytest.raises(
-                Exception
-            ):  # JUNIT.BUG:  CSToJava does not add "throws Exception" to implementaion of ActionDelegate as is defined in the ActionDelegate generation.
-                EarlyBoundTests.AG_SR.proper_motion_radial_velocity = -20000000000.0
-            with pytest.raises(
-                Exception
-            ):  # JUNIT.BUG:  CSToJava does not add "throws Exception" to implementaion of ActionDelegate as is defined in the ActionDelegate generation.
-                EarlyBoundTests.AG_SR.proper_motion_radial_velocity = 20000000000.0
+        EarlyBoundTests.AG_SR.radial_velocity = 1000000  # In m/sec
 
-        finally:
-            (ISTKObject(EarlyBoundTests.AG_SR)).root.units_preferences.set_current_unit("Distance", unit)
+        (ISTKObject(EarlyBoundTests.AG_SR)).root.units_preferences.set_current_unit("Distance", "km")
+        Assert.assertEqual(1000, EarlyBoundTests.AG_SR.radial_velocity)  # km/sec
+
+        (ISTKObject(EarlyBoundTests.AG_SR)).root.units_preferences.set_current_unit("Time", "min")
+        Assert.assertEqual(60000, EarlyBoundTests.AG_SR.radial_velocity)  # km/min
+
+        TestBase.Application.units_preferences.reset_units()
 
         TestBase.logger.WriteLine("----- THE BASIC TEST ----- END -----")
 
@@ -155,54 +165,54 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_Graphics(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS TEST ----- BEGIN -----")
-        gfx: "StarGraphics" = EarlyBoundTests.AG_SR.graphics
-        Assert.assertIsNotNone(gfx)
-        # IsObjectGraphicsVisible
-        TestBase.logger.WriteLine4("The current IsObjectGraphicsVisible is: {0}", gfx.show_graphics)
-        gfx.show_graphics = False
-        TestBase.logger.WriteLine4("The The IsObjectGraphicsVisible is: {0}", gfx.show_graphics)
-        Assert.assertFalse(gfx.show_graphics)
-        gfx.show_graphics = True
-        Assert.assertTrue(gfx.show_graphics)
-        # Color
-        TestBase.logger.WriteLine6("The current Color is: {0}", gfx.color)
-        gfx.color = Colors.from_argb(6636321)
-        TestBase.logger.WriteLine6("The new Color is: {0}", gfx.color)
-        AssertEx.AreEqual(Colors.from_argb(6636321), gfx.color)
-        # Marker Style
+
         scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
         arMarkers = scenario.graphics_3d.available_marker_types()
-        TestBase.logger.WriteLine5("The current MarkerStyle is: {0}", gfx.marker_style)
-        gfx.marker_style = str(arMarkers[1])
-        TestBase.logger.WriteLine5("The new MarkerStyle is: {0}", gfx.marker_style)
-        # Inherit
-        TestBase.logger.WriteLine4("The current Inherit flag is: {0}", gfx.inherit)
-        gfx.inherit = True
-        TestBase.logger.WriteLine4("The new Inherit flag is: {0}", gfx.inherit)
-        Assert.assertEqual(True, gfx.inherit)
-        bCaught: bool = False
-        try:
-            bCaught = False
+
+        gfx: "StarGraphics" = EarlyBoundTests.AG_SR.graphics
+
+        gfx.show_graphics = False
+        Assert.assertFalse(gfx.show_graphics)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            gfx.color = Colors.from_argb(6636321)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            gfx.marker_style = str(arMarkers[1])
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            gfx.inherit = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             gfx.show_label = True
 
-        except Exception as e:
-            bCaught = True
-            TestBase.logger.WriteLine5("Expected exception: {0}", str(e))
+        gfx.show_graphics = True
+        Assert.assertTrue(gfx.show_graphics)
 
-        if not bCaught:
-            Assert.fail("The property should be read-only.")
+        gfx.color = Colors.Red
+        Assert.assertEqual(Colors.Red, gfx.color)
+        gfx.color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, gfx.color)
+
+        Assert.assertEqual("Plus", str(arMarkers[1]))
+        Assert.assertEqual("Star", str(arMarkers[2]))
+
+        gfx.marker_style = "Plus"
+        Assert.assertEqual("Plus", gfx.marker_style)
+        gfx.marker_style = "Star"
+        Assert.assertEqual("Star", gfx.marker_style)
 
         gfx.inherit = False
-        TestBase.logger.WriteLine4("The new Inherit flag is: {0}", gfx.inherit)
-        Assert.assertEqual(False, gfx.inherit)
-        # LabelVisible
-        TestBase.logger.WriteLine4("The current LabelVisible flag is: {0}", gfx.show_label)
+        Assert.assertFalse(gfx.inherit)
+
         gfx.show_label = False
-        TestBase.logger.WriteLine4("The new LabelVisible flag is: {0}", gfx.show_label)
-        Assert.assertEqual(False, gfx.show_label)
+        Assert.assertFalse(gfx.show_label)
         gfx.show_label = True
-        TestBase.logger.WriteLine4("The new LabelVisible flag is: {0}", gfx.show_label)
-        Assert.assertEqual(True, gfx.show_label)
+        Assert.assertTrue(gfx.show_label)
+
+        gfx.inherit = True
+        Assert.assertTrue(gfx.inherit)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            gfx.show_label = True
+
         TestBase.logger.WriteLine("----- THE GRAPHICS TEST ----- END -----")
 
     # endregion
@@ -211,71 +221,40 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VO(self):
         TestBase.logger.WriteLine("----- THE VO TEST ----- BEGIN -----")
+
         vo: "StarGraphics3D" = EarlyBoundTests.AG_SR.graphics_3d
-        Assert.assertIsNotNone(vo)
-        # InertialPositionVisible
-        TestBase.logger.WriteLine4("The current InertialPositionVisible flag is: {0}", vo.show_inertial_position)
+
         vo.show_inertial_position = False
-        TestBase.logger.WriteLine4("The new InertialPositionVisible flag is: {0}", vo.show_inertial_position)
-        Assert.assertEqual(False, vo.show_inertial_position)
+        Assert.assertFalse(vo.show_inertial_position)
         vo.show_inertial_position = True
-        TestBase.logger.WriteLine4("The new InertialPositionVisible flag is: {0}", vo.show_inertial_position)
-        Assert.assertEqual(True, vo.show_inertial_position)
-        # SubStarPointVisible
-        TestBase.logger.WriteLine4("The current SubStarPointVisible flag is: {0}", vo.show_sub_star_point)
+        Assert.assertTrue(vo.show_inertial_position)
+
         vo.show_sub_star_point = False
-        TestBase.logger.WriteLine4("The new SubStarPointVisible flag is: {0}", vo.show_sub_star_point)
-        Assert.assertEqual(False, vo.show_sub_star_point)
+        Assert.assertFalse(vo.show_sub_star_point)
         vo.show_sub_star_point = True
-        TestBase.logger.WriteLine4("The new SubStarPointVisible flag is: {0}", vo.show_sub_star_point)
-        Assert.assertEqual(True, vo.show_sub_star_point)
-        # InheritFrom2dGfx
-        TestBase.logger.WriteLine4("The current InheritFrom2dGfx flag is: {0}", vo.inherit_from_2d_graphics_2d)
-        vo.inherit_from_2d_graphics_2d = True
-        TestBase.logger.WriteLine4("The new InheritFrom2dGfx flag is: {0}", vo.inherit_from_2d_graphics_2d)
-        Assert.assertEqual(True, vo.inherit_from_2d_graphics_2d)
-        bCaught: bool = False
-        try:
-            bCaught = False
-            vo.show_sub_star_label = True
-
-        except Exception as e:
-            bCaught = True
-            TestBase.logger.WriteLine5("Expected exception: {0}", str(e))
-
-        if not bCaught:
-            Assert.fail("The property should be read-only.")
-
-        try:
-            bCaught = False
-            vo.show_position_label = True
-
-        except Exception as e:
-            bCaught = True
-            TestBase.logger.WriteLine5("Expected exception: {0}", str(e))
-
-        if not bCaught:
-            Assert.fail("The property should be read-only.")
+        Assert.assertTrue(vo.show_sub_star_point)
 
         vo.inherit_from_2d_graphics_2d = False
-        TestBase.logger.WriteLine4("The new InheritFrom2dGfx flag is: {0}", vo.inherit_from_2d_graphics_2d)
-        Assert.assertEqual(False, vo.inherit_from_2d_graphics_2d)
-        # SubStarLabelVisible
-        TestBase.logger.WriteLine4("The current SubStarLabelVisible flag is: {0}", vo.show_sub_star_label)
-        vo.show_sub_star_label = False
-        TestBase.logger.WriteLine4("The new SubStarLabelVisible flag is: {0}", vo.show_sub_star_label)
-        Assert.assertEqual(False, vo.show_sub_star_label)
-        vo.show_sub_star_label = True
-        TestBase.logger.WriteLine4("The new SubStarLabelVisible flag is: {0}", vo.show_sub_star_label)
-        Assert.assertEqual(True, vo.show_sub_star_label)
-        # PositionLabelVisible
-        TestBase.logger.WriteLine4("The current PositionLabelVisible flag is: {0}", vo.show_position_label)
+        Assert.assertFalse(vo.inherit_from_2d_graphics_2d)
+
         vo.show_position_label = False
-        TestBase.logger.WriteLine4("The new PositionLabelVisible flag is: {0}", vo.show_position_label)
-        Assert.assertEqual(False, vo.show_position_label)
+        Assert.assertFalse(vo.show_position_label)
         vo.show_position_label = True
-        TestBase.logger.WriteLine4("The new PositionLabelVisible flag is: {0}", vo.show_position_label)
-        Assert.assertEqual(True, vo.show_position_label)
+        Assert.assertTrue(vo.show_position_label)
+
+        vo.show_sub_star_label = False
+        Assert.assertFalse(vo.show_sub_star_label)
+        vo.show_sub_star_label = True
+        Assert.assertTrue(vo.show_sub_star_label)
+
+        vo.inherit_from_2d_graphics_2d = True
+        Assert.assertTrue(vo.inherit_from_2d_graphics_2d)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            vo.show_position_label = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            vo.show_sub_star_label = True
+
         TestBase.logger.WriteLine("----- THE VO TEST ----- END -----")
 
     # endregion
@@ -287,5 +266,13 @@ class EarlyBoundTests(TestBase):
         oHelper.DoTest(
             EarlyBoundTests.AG_SR.access_constraints, ISTKObject(EarlyBoundTests.AG_SR), TestBase.TemporaryDirectory
         )
+
+    # endregion
+
+    # region ChainAnalysisOptions
+    @category("ChainAnalysisOptions Tests")
+    def test_ChainAnalysisOptions(self):
+        helper = ChainAnalysisOptionsHelper()
+        helper.Run(EarlyBoundTests.AG_SR.chain_analysis_options, False)
 
     # endregion

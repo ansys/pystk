@@ -265,7 +265,7 @@ Summary
               - Condition set based on single scalar calculation compared to set of threshold values.
 
             * - :py:class:`~ansys.stk.core.analysis_workbench.CalculationToolConditionTrajectoryWithinVolume`
-              - Defined by determining if input trajectory poiny is within extents of specified volume grid coordinate.
+              - Defined by determining if input trajectory point is within extents of specified volume grid coordinate.
 
             * - :py:class:`~ansys.stk.core.analysis_workbench.CalculationToolConvergeBasic`
               - Convergence definition includes parameters that determine criteria for accurate detection of extrema or condition crossings for scalar calculations.
@@ -338,6 +338,9 @@ Summary
 
             * - :py:class:`~ansys.stk.core.analysis_workbench.CalculationToolScalarAverage`
               - Integral of input scalar computed with respect to time using one of the specified numerical methods and using one of the specified accumulation types.
+
+            * - :py:class:`~ansys.stk.core.analysis_workbench.CalculationToolScalarCommonTasks`
+              - Common tasks for Calc Scalars.
 
             * - :py:class:`~ansys.stk.core.analysis_workbench.CalculationToolScalarConstant`
               - Constant scalar value of specified dimension.
@@ -1026,6 +1029,9 @@ Summary
             * - :py:class:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorSurfaceDisplacement`
               - Displacement between origin and destination points using surface distance and altitude difference.
 
+            * - :py:class:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorSurfaceNormal`
+              - The normal vector for the surface of a central body at a sub-point obtained using the geodetic projection of the selected point onto the central body.
+
             * - :py:class:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorTwoPlanesIntersection`
               - Defined along the intersection of two planes.
 
@@ -1412,6 +1418,7 @@ analysis.
      CalculationToolScalarAlongTrajectory<analysis_workbench/CalculationToolScalarAlongTrajectory>
      CalculationToolScalarAngle<analysis_workbench/CalculationToolScalarAngle>
      CalculationToolScalarAverage<analysis_workbench/CalculationToolScalarAverage>
+     CalculationToolScalarCommonTasks<analysis_workbench/CalculationToolScalarCommonTasks>
      CalculationToolScalarConstant<analysis_workbench/CalculationToolScalarConstant>
      CalculationToolScalarCustom<analysis_workbench/CalculationToolScalarCustom>
      CalculationToolScalarCustomInlineScript<analysis_workbench/CalculationToolScalarCustomInlineScript>
@@ -1641,6 +1648,7 @@ analysis.
      VectorGeometryToolVectorScalarScaled<analysis_workbench/VectorGeometryToolVectorScalarScaled>
      VectorGeometryToolVectorScaled<analysis_workbench/VectorGeometryToolVectorScaled>
      VectorGeometryToolVectorSurfaceDisplacement<analysis_workbench/VectorGeometryToolVectorSurfaceDisplacement>
+     VectorGeometryToolVectorSurfaceNormal<analysis_workbench/VectorGeometryToolVectorSurfaceNormal>
      VectorGeometryToolVectorTwoPlanesIntersection<analysis_workbench/VectorGeometryToolVectorTwoPlanesIntersection>
      VectorGeometryToolVectorVelocityAcceleration<analysis_workbench/VectorGeometryToolVectorVelocityAcceleration>
      VectorGeometryToolWellKnownAxes<analysis_workbench/VectorGeometryToolWellKnownAxes>

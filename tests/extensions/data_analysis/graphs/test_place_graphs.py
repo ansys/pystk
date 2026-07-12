@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -30,11 +30,11 @@ def place(stk_root):
     from ansys.stk.core.stkobjects import STKObjectType
 
     stk_root.new_scenario("GraphTest")
+    stk_root.execute_command("Terrain * TerrainServer UseTerrainForAnalysis No")
     scenario = stk_root.current_scenario
     scenario.set_time_period("5 Jun 2022", "6 Jun 2022")
 
     place = scenario.children.new(STKObjectType.PLACE, "Place")
-    place.use_terrain = False
     place.position.assign_planetodetic(39.95, -75.16, 0)
 
     yield place

@@ -39,7 +39,7 @@ root.new_scenario("MultifunctionRadar")
 # Once the scenario is created, it is possible to show a 3D graphics window by running:
 
 # +
-from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
+from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_plotter = GlobeWidget(root, 640, 480)
@@ -49,7 +49,7 @@ globe_plotter.show()
 # Show a 2D graphics window by running:
 
 # +
-from ansys.stk.core.stkengine.experimental.jupyterwidgets import MapWidget
+from ansys.stk.core.experimental.jupyterwidgets import MapWidget
 
 
 map_plotter = MapWidget(root, 640, 480)
@@ -277,7 +277,7 @@ horizon_search.identifier = "HorizonSearch"
 
 # First, set the beam width to $2^\circ$:
 
-horizon_search.beam_width = 2
+horizon_search.beamwidth = 2
 
 # The horizon search beam uses a rectangular waveform with a frequency of $3.5$ GHz. Get the rectangular waveform component from the component browser, then duplicate the component and name it "Horizon Search Rectangular":
 
@@ -422,7 +422,7 @@ interval.stop = first_time
 
 # First, set the beam width to $1.4^\circ$ and the gain to $30$ dB:
 
-horizon_targeted.beam_width = 1.4
+horizon_targeted.beamwidth = 1.4
 horizon_targeted.gain = 30
 
 # ## Create range-dependent waveform strategies
@@ -742,7 +742,7 @@ volume_search.identifier = "VolumeSearch"
 # First set the gain to $30$ dB and then the beam width to $5^\circ$:
 
 volume_search.gain = 30
-volume_search.beam_width = 5
+volume_search.beamwidth = 5
 
 # Next, configure the volume search beam's waveform strategy. The beam uses a volume search rectangular waveform, with a frequency of $3.5$ GHz and a power of $50$ dBW.
 

@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -22,6 +22,8 @@
 
 import os
 import sys
+
+from pathlib import Path
 
 
 # Add path to the parent directory to use some common utilities
@@ -96,6 +98,7 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
 
         satellite: Satellite
         for satellite in [circ_sat, repeat_sat, sun_sat]:
+
             satellite.set_propagator_type(PropagatorType.J4_PERTURBATION)
 
             propagator: PropagatorJ4Perturbation = satellite.propagator
@@ -188,7 +191,8 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         ksu_cubesat_propagator.ephemeris_interval.set_implicit_interval(
             root.current_scenario.analysis_workbench_components.time_intervals.item("AnalysisInterval")
         )
-        ksu_cubesat_propagator.common_tasks.add_segments_from_online_source("47954")
+        tle_file = Path(__file__).parent.parent / "data" / "KSU-CUBESAT_47954_1Jun2020.tle"
+        ksu_cubesat_propagator.common_tasks.add_segments_from_file("47954", str(tle_file.resolve()))
         ksu_cubesat_propagator.automatic_update_enabled = True
         ksu_cubesat_propagator.propagate()
 

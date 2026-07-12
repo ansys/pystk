@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -27,7 +27,7 @@ The next generation Python API for Systems Tool Kit (STK).
 """
 
 
-__version__ = "0.2.dev0"
+__version__ = "0.4.dev0"
 """Current version of PySTK."""
 
 __all__ = ["__version__"]

@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -56,12 +56,12 @@ __all__ = ["AberrationModelType", "AnalysisWorkbenchAngleFindAngleResult", "Anal
 "CalculationToolSamplingBasic", "CalculationToolSamplingCurvatureTolerance", "CalculationToolSamplingFixedStep",
 "CalculationToolSamplingMethod", "CalculationToolSamplingMethodFactory", "CalculationToolSamplingRelativeTolerance",
 "CalculationToolScalar", "CalculationToolScalarAlongTrajectory", "CalculationToolScalarAngle",
-"CalculationToolScalarAverage", "CalculationToolScalarConstant", "CalculationToolScalarCustom",
-"CalculationToolScalarCustomInlineScript", "CalculationToolScalarDataElement", "CalculationToolScalarDerivative",
-"CalculationToolScalarDotProduct", "CalculationToolScalarElapsedTime", "CalculationToolScalarFactory",
-"CalculationToolScalarFile", "CalculationToolScalarFixedAtTimeInstant", "CalculationToolScalarFunction",
-"CalculationToolScalarFunctionOf2Variables", "CalculationToolScalarGroup", "CalculationToolScalarIntegral",
-"CalculationToolScalarPlugin", "CalculationToolScalarStandardDeviation",
+"CalculationToolScalarAverage", "CalculationToolScalarCommonTasks", "CalculationToolScalarConstant",
+"CalculationToolScalarCustom", "CalculationToolScalarCustomInlineScript", "CalculationToolScalarDataElement",
+"CalculationToolScalarDerivative", "CalculationToolScalarDotProduct", "CalculationToolScalarElapsedTime",
+"CalculationToolScalarFactory", "CalculationToolScalarFile", "CalculationToolScalarFixedAtTimeInstant",
+"CalculationToolScalarFunction", "CalculationToolScalarFunctionOf2Variables", "CalculationToolScalarGroup",
+"CalculationToolScalarIntegral", "CalculationToolScalarPlugin", "CalculationToolScalarStandardDeviation",
 "CalculationToolScalarSurfaceDistanceBetweenPoints", "CalculationToolScalarVectorComponent",
 "CalculationToolScalarVectorMagnitude", "ClockHostType", "ConditionCombinedOperationType", "ConditionSetType",
 "ConditionThresholdType", "ConditionType", "DistanceToLocationType", "EventArrayFilterType", "EventArrayType",
@@ -164,12 +164,12 @@ __all__ = ["AberrationModelType", "AnalysisWorkbenchAngleFindAngleResult", "Anal
 "VectorGeometryToolVectorReflection", "VectorGeometryToolVectorRotationVector",
 "VectorGeometryToolVectorScalarLinearCombination", "VectorGeometryToolVectorScalarScaled",
 "VectorGeometryToolVectorScaled", "VectorGeometryToolVectorSurfaceDisplacement",
-"VectorGeometryToolVectorTwoPlanesIntersection", "VectorGeometryToolVectorVelocityAcceleration",
-"VectorGeometryToolWellKnownAxes", "VectorGeometryToolWellKnownEarthAxes", "VectorGeometryToolWellKnownEarthSystems",
-"VectorGeometryToolWellKnownSunAxes", "VectorGeometryToolWellKnownSunSystems", "VectorGeometryToolWellKnownSystems",
-"VectorType", "VolumeCombinedOperationType", "VolumeFromGridEdgeType", "VolumeGridType",
-"VolumeSatisfactionAccumulationType", "VolumeSatisfactionDurationType", "VolumeSatisfactionFilterType",
-"VolumeSatisfactionMetricType", "VolumeType"]
+"VectorGeometryToolVectorSurfaceNormal", "VectorGeometryToolVectorTwoPlanesIntersection",
+"VectorGeometryToolVectorVelocityAcceleration", "VectorGeometryToolWellKnownAxes",
+"VectorGeometryToolWellKnownEarthAxes", "VectorGeometryToolWellKnownEarthSystems", "VectorGeometryToolWellKnownSunAxes",
+"VectorGeometryToolWellKnownSunSystems", "VectorGeometryToolWellKnownSystems", "VectorType",
+"VolumeCombinedOperationType", "VolumeFromGridEdgeType", "VolumeGridType", "VolumeSatisfactionAccumulationType",
+"VolumeSatisfactionDurationType", "VolumeSatisfactionFilterType", "VolumeSatisfactionMetricType", "VolumeType"]
 
 from ctypes import POINTER
 from enum import IntEnum, IntFlag
@@ -188,11 +188,7 @@ from .internal.apiutil import (
 )
 from .internal.comutil import IDispatch, IUnknown
 from .stkutil import EulerOrientationSequenceType, ICartesian3Vector, IDirection, IOrientation, IPosition, Quantity
-from .utilities.exceptions import STKRuntimeError
 
-
-def _raise_uninitialized_error(*args):
-    raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
 class CalculationScalarType(IntEnum):
     """Define available calculation scalar types."""
@@ -1296,13 +1292,13 @@ class TimeSenseType(IntEnum):
     """Define whether object1 or object2 of an Access instance holds the clock for Access times."""
 
     UNKNOWN = -1
-    """Unklnown."""
+    """Unknown."""
     TRANSMIT = 0
     """Position is computed in Time Sense."""
     RECEIVE = 1
     """Position is computed in Receive Sense."""
 
-TimeSenseType.UNKNOWN.__doc__ = "Unklnown."
+TimeSenseType.UNKNOWN.__doc__ = "Unknown."
 TimeSenseType.TRANSMIT.__doc__ = "Position is computed in Time Sense."
 TimeSenseType.RECEIVE.__doc__ = "Position is computed in Receive Sense."
 
@@ -1654,6 +1650,8 @@ class VectorType(IntEnum):
     """Displacement between origin and destination points using surface distance and altitude difference."""
     FILE = 32
     """Vector interpolated from tabulated data from file."""
+    SURFACE_NORMAL = 33
+    """The normal vector for the surface of a central body at a sub-point obtained using the geodetic projection of the selected point onto the central body."""
 
 VectorType.UNKNOWN.__doc__ = "Unknown or unsupported vector type."
 VectorType.DISPLACEMENT.__doc__ = "Vector defined by its start and end points."
@@ -1688,6 +1686,7 @@ VectorType.PLUGIN.__doc__ = "A vector plugin point."
 VectorType.ROTATION_VECTOR.__doc__ = "Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."
 VectorType.DISPLACEMENT_ON_SURFACE.__doc__ = "Displacement between origin and destination points using surface distance and altitude difference."
 VectorType.FILE.__doc__ = "Vector interpolated from tabulated data from file."
+VectorType.SURFACE_NORMAL.__doc__ = "The normal vector for the surface of a central body at a sub-point obtained using the geodetic projection of the selected point onto the central body."
 
 agcls.AgTypeNameMap["VectorType"] = VectorType
 
@@ -1943,7 +1942,7 @@ class IVectorGeometryToolPoint(object):
     _locate_in_system_with_rate_method_offset = 2
     _locate_in_system_method_offset = 3
     _metadata = {
-        "iid_data" : (4624590286464293543, 3973676715389699987),
+        "iid_data" : (5355071565736502758, 15296062828084711100),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -1986,7 +1985,7 @@ class IVectorGeometryToolPoint(object):
     _property_names[type] = "type"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4624590286464293543, 3973676715389699987), IVectorGeometryToolPoint)
+agcls.AgClassCatalog.add_catalog_entry((5355071565736502758, 15296062828084711100), IVectorGeometryToolPoint)
 agcls.AgTypeNameMap["IVectorGeometryToolPoint"] = IVectorGeometryToolPoint
 
 class IVectorGeometryToolVector(object):
@@ -1998,7 +1997,7 @@ class IVectorGeometryToolVector(object):
     _find_in_axes_method_offset = 2
     _find_in_axes_with_rate_method_offset = 3
     _metadata = {
-        "iid_data" : (4994471793862230398, 8121306839707329686),
+        "iid_data" : (5502990425446955297, 13864020214841576346),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2041,7 +2040,7 @@ class IVectorGeometryToolVector(object):
     _property_names[type] = "type"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4994471793862230398, 8121306839707329686), IVectorGeometryToolVector)
+agcls.AgClassCatalog.add_catalog_entry((5502990425446955297, 13864020214841576346), IVectorGeometryToolVector)
 agcls.AgTypeNameMap["IVectorGeometryToolVector"] = IVectorGeometryToolVector
 
 class IVectorGeometryToolSystem(object):
@@ -2054,7 +2053,7 @@ class IVectorGeometryToolSystem(object):
     _transform_method_offset = 3
     _transform_with_rate_method_offset = 4
     _metadata = {
-        "iid_data" : (4788837751689081889, 7300266131152037277),
+        "iid_data" : (5408161463230328604, 3720072256969491328),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2104,7 +2103,7 @@ class IVectorGeometryToolSystem(object):
     _property_names[type] = "type"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4788837751689081889, 7300266131152037277), IVectorGeometryToolSystem)
+agcls.AgClassCatalog.add_catalog_entry((5408161463230328604, 3720072256969491328), IVectorGeometryToolSystem)
 agcls.AgTypeNameMap["IVectorGeometryToolSystem"] = IVectorGeometryToolSystem
 
 class IVectorGeometryToolAxes(object):
@@ -2122,7 +2121,7 @@ class IVectorGeometryToolAxes(object):
     _transform_method_offset = 8
     _transform_with_rate_method_offset = 9
     _metadata = {
-        "iid_data" : (4641684088358424472, 9856172197771500675),
+        "iid_data" : (5618512273593126773, 2671412956819641496),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2215,7 +2214,7 @@ class IVectorGeometryToolAxes(object):
     _property_names[z_axis] = "z_axis"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4641684088358424472, 9856172197771500675), IVectorGeometryToolAxes)
+agcls.AgClassCatalog.add_catalog_entry((5618512273593126773, 2671412956819641496), IVectorGeometryToolAxes)
 agcls.AgTypeNameMap["IVectorGeometryToolAxes"] = IVectorGeometryToolAxes
 
 class IVectorGeometryToolAngle(object):
@@ -2229,7 +2228,7 @@ class IVectorGeometryToolAngle(object):
     _find_coordinates_method_offset = 4
     _find_coordinates_with_rate_method_offset = 5
     _metadata = {
-        "iid_data" : (5576499434980039356, 3250766286789469325),
+        "iid_data" : (5284701290775199124, 12359045522329791679),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2286,7 +2285,7 @@ class IVectorGeometryToolAngle(object):
     _property_names[type] = "type"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5576499434980039356, 3250766286789469325), IVectorGeometryToolAngle)
+agcls.AgClassCatalog.add_catalog_entry((5284701290775199124, 12359045522329791679), IVectorGeometryToolAngle)
 agcls.AgTypeNameMap["IVectorGeometryToolAngle"] = IVectorGeometryToolAngle
 
 class IVectorGeometryToolPlane(object):
@@ -2301,7 +2300,7 @@ class IVectorGeometryToolPlane(object):
     _find_in_system_with_rate_method_offset = 5
     _get_labels_method_offset = 6
     _metadata = {
-        "iid_data" : (4649944266039171678, 14893747184173212307),
+        "iid_data" : (5006300185605050257, 6530253419304912012),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2367,7 +2366,7 @@ class IVectorGeometryToolPlane(object):
     _property_names[labels] = "labels"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4649944266039171678, 14893747184173212307), IVectorGeometryToolPlane)
+agcls.AgClassCatalog.add_catalog_entry((5006300185605050257, 6530253419304912012), IVectorGeometryToolPlane)
 agcls.AgTypeNameMap["IVectorGeometryToolPlane"] = IVectorGeometryToolPlane
 
 class IAnalysisWorkbenchComponentContext(object):
@@ -2377,7 +2376,7 @@ class IAnalysisWorkbenchComponentContext(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_is_template_method_offset = 1
     _metadata = {
-        "iid_data" : (4867448151487010560, 8329384048399829653),
+        "iid_data" : (5677295162222079093, 11824253186582613399),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2406,7 +2405,7 @@ class IAnalysisWorkbenchComponentContext(object):
     _property_names[is_template] = "is_template"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4867448151487010560, 8329384048399829653), IAnalysisWorkbenchComponentContext)
+agcls.AgClassCatalog.add_catalog_entry((5677295162222079093, 11824253186582613399), IAnalysisWorkbenchComponentContext)
 agcls.AgTypeNameMap["IAnalysisWorkbenchComponentContext"] = IAnalysisWorkbenchComponentContext
 
 class IAnalysisWorkbenchComponent(object):
@@ -2434,7 +2433,7 @@ class IAnalysisWorkbenchComponent(object):
     _export_method_offset = 18
     _rename_method_offset = 19
     _metadata = {
-        "iid_data" : (5666204506719628304, 9309708717126950559),
+        "iid_data" : (4897840664008231804, 2096504549000316600),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2613,7 +2612,7 @@ class IAnalysisWorkbenchComponent(object):
     _property_names[embedded_components] = "embedded_components"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5666204506719628304, 9309708717126950559), IAnalysisWorkbenchComponent)
+agcls.AgClassCatalog.add_catalog_entry((4897840664008231804, 2096504549000316600), IAnalysisWorkbenchComponent)
 agcls.AgTypeNameMap["IAnalysisWorkbenchComponent"] = IAnalysisWorkbenchComponent
 
 class ICalculationToolScalar(object):
@@ -2633,7 +2632,7 @@ class ICalculationToolScalar(object):
     _quick_evaluate_time_array_method_offset = 10
     _quick_evaluate_with_rate_event_array_method_offset = 11
     _metadata = {
-        "iid_data" : (4703695914540684039, 8102226453412927140),
+        "iid_data" : (4886714875371029633, 4343873128692369313),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2734,7 +2733,7 @@ class ICalculationToolScalar(object):
     _property_names[unit_of_measure] = "unit_of_measure"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4703695914540684039, 8102226453412927140), ICalculationToolScalar)
+agcls.AgClassCatalog.add_catalog_entry((4886714875371029633, 4343873128692369313), ICalculationToolScalar)
 agcls.AgTypeNameMap["ICalculationToolScalar"] = ICalculationToolScalar
 
 class ICalculationToolCondition(object):
@@ -2746,7 +2745,7 @@ class ICalculationToolCondition(object):
     _evaluate_method_offset = 2
     _evaluate_with_rate_method_offset = 3
     _metadata = {
-        "iid_data" : (5735161800843082622, 14427694074333278871),
+        "iid_data" : (4910314175603475535, 5963076621665565852),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2789,7 +2788,7 @@ class ICalculationToolCondition(object):
     _property_names[type] = "type"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5735161800843082622, 14427694074333278871), ICalculationToolCondition)
+agcls.AgClassCatalog.add_catalog_entry((4910314175603475535, 5963076621665565852), ICalculationToolCondition)
 agcls.AgTypeNameMap["ICalculationToolCondition"] = ICalculationToolCondition
 
 class ICalculationToolConditionSet(object):
@@ -2801,7 +2800,7 @@ class ICalculationToolConditionSet(object):
     _evaluate_method_offset = 2
     _evaluate_with_rate_method_offset = 3
     _metadata = {
-        "iid_data" : (4655106964357171455, 14573822137210863791),
+        "iid_data" : (5622471611776054447, 8138082428466040739),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2844,7 +2843,7 @@ class ICalculationToolConditionSet(object):
     _property_names[type] = "type"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4655106964357171455, 14573822137210863791), ICalculationToolConditionSet)
+agcls.AgClassCatalog.add_catalog_entry((5622471611776054447, 8138082428466040739), ICalculationToolConditionSet)
 agcls.AgTypeNameMap["ICalculationToolConditionSet"] = ICalculationToolConditionSet
 
 class IAnalysisWorkbenchConvergence(object):
@@ -2853,7 +2852,7 @@ class IAnalysisWorkbenchConvergence(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (4915568931125686564, 3473459645036490151),
+        "iid_data" : (5237105143551286354, 15327707526345671611),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2873,7 +2872,7 @@ class IAnalysisWorkbenchConvergence(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4915568931125686564, 3473459645036490151), IAnalysisWorkbenchConvergence)
+agcls.AgClassCatalog.add_catalog_entry((5237105143551286354, 15327707526345671611), IAnalysisWorkbenchConvergence)
 agcls.AgTypeNameMap["IAnalysisWorkbenchConvergence"] = IAnalysisWorkbenchConvergence
 
 class IAnalysisWorkbenchDerivative(object):
@@ -2882,7 +2881,7 @@ class IAnalysisWorkbenchDerivative(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5545857981522920125, 18254938137483007413),
+        "iid_data" : (4739114235410573670, 8925819383335781762),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2902,7 +2901,7 @@ class IAnalysisWorkbenchDerivative(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5545857981522920125, 18254938137483007413), IAnalysisWorkbenchDerivative)
+agcls.AgClassCatalog.add_catalog_entry((4739114235410573670, 8925819383335781762), IAnalysisWorkbenchDerivative)
 agcls.AgTypeNameMap["IAnalysisWorkbenchDerivative"] = IAnalysisWorkbenchDerivative
 
 class ITimeToolInstant(object):
@@ -2918,7 +2917,7 @@ class ITimeToolInstant(object):
     _find_occurrence_method_offset = 6
     _occurs_before_method_offset = 7
     _metadata = {
-        "iid_data" : (5052226534501425744, 2346000977674024115),
+        "iid_data" : (5617398963091744048, 4910408468510848687),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2997,7 +2996,7 @@ class ITimeToolInstant(object):
     _property_names[noon_tomorrow] = "noon_tomorrow"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5052226534501425744, 2346000977674024115), ITimeToolInstant)
+agcls.AgClassCatalog.add_catalog_entry((5617398963091744048, 4910408468510848687), ITimeToolInstant)
 agcls.AgTypeNameMap["ITimeToolInstant"] = ITimeToolInstant
 
 class ITimeToolTimeArray(object):
@@ -3008,7 +3007,7 @@ class ITimeToolTimeArray(object):
     _get_type_method_offset = 1
     _find_times_method_offset = 2
     _metadata = {
-        "iid_data" : (5676478022059654098, 10082373008458811814),
+        "iid_data" : (5747731071299258349, 11083213834265194412),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3044,7 +3043,7 @@ class ITimeToolTimeArray(object):
     _property_names[type] = "type"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5676478022059654098, 10082373008458811814), ITimeToolTimeArray)
+agcls.AgClassCatalog.add_catalog_entry((5747731071299258349, 11083213834265194412), ITimeToolTimeArray)
 agcls.AgTypeNameMap["ITimeToolTimeArray"] = ITimeToolTimeArray
 
 class ITimeToolTimeInterval(object):
@@ -3060,7 +3059,7 @@ class ITimeToolTimeInterval(object):
     _find_interval_method_offset = 6
     _occurred_method_offset = 7
     _metadata = {
-        "iid_data" : (5014335522660337085, 11558391138117110205),
+        "iid_data" : (4613015857677462154, 4474922668015646649),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3139,7 +3138,7 @@ class ITimeToolTimeInterval(object):
     _property_names[label_stop] = "label_stop"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5014335522660337085, 11558391138117110205), ITimeToolTimeInterval)
+agcls.AgClassCatalog.add_catalog_entry((4613015857677462154, 4474922668015646649), ITimeToolTimeInterval)
 agcls.AgTypeNameMap["ITimeToolTimeInterval"] = ITimeToolTimeInterval
 
 class ITimeToolTimeIntervalCollection(object):
@@ -3152,7 +3151,7 @@ class ITimeToolTimeIntervalCollection(object):
     _find_interval_collection_method_offset = 3
     _occurred_method_offset = 4
     _metadata = {
-        "iid_data" : (4802578054528125388, 3471729172666103957),
+        "iid_data" : (5591387468240932694, 14977424414018812299),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3204,7 +3203,7 @@ class ITimeToolTimeIntervalCollection(object):
     _property_names[labels] = "labels"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4802578054528125388, 3471729172666103957), ITimeToolTimeIntervalCollection)
+agcls.AgClassCatalog.add_catalog_entry((5591387468240932694, 14977424414018812299), ITimeToolTimeIntervalCollection)
 agcls.AgTypeNameMap["ITimeToolTimeIntervalCollection"] = ITimeToolTimeIntervalCollection
 
 class ITimeToolTimeIntervalList(object):
@@ -3218,7 +3217,7 @@ class ITimeToolTimeIntervalList(object):
     _find_intervals_method_offset = 4
     _occurred_method_offset = 5
     _metadata = {
-        "iid_data" : (4964372786095352688, 17150178243890460291),
+        "iid_data" : (5023536179117479673, 17753019379157368511),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3279,7 +3278,7 @@ class ITimeToolTimeIntervalList(object):
     _property_names[descriptions] = "descriptions"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4964372786095352688, 17150178243890460291), ITimeToolTimeIntervalList)
+agcls.AgClassCatalog.add_catalog_entry((5023536179117479673, 17753019379157368511), ITimeToolTimeIntervalList)
 agcls.AgTypeNameMap["ITimeToolTimeIntervalList"] = ITimeToolTimeIntervalList
 
 class IAnalysisWorkbenchIntegral(object):
@@ -3288,7 +3287,7 @@ class IAnalysisWorkbenchIntegral(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (4882407970628127095, 17356507896756110225),
+        "iid_data" : (5618525445447686039, 13639508821744693925),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3308,7 +3307,7 @@ class IAnalysisWorkbenchIntegral(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4882407970628127095, 17356507896756110225), IAnalysisWorkbenchIntegral)
+agcls.AgClassCatalog.add_catalog_entry((5618525445447686039, 13639508821744693925), IAnalysisWorkbenchIntegral)
 agcls.AgTypeNameMap["IAnalysisWorkbenchIntegral"] = IAnalysisWorkbenchIntegral
 
 class IAnalysisWorkbenchInterpolator(object):
@@ -3317,7 +3316,7 @@ class IAnalysisWorkbenchInterpolator(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5176727654361637888, 17197923576813057165),
+        "iid_data" : (5713754438296620651, 1277390303737419697),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3337,7 +3336,7 @@ class IAnalysisWorkbenchInterpolator(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5176727654361637888, 17197923576813057165), IAnalysisWorkbenchInterpolator)
+agcls.AgClassCatalog.add_catalog_entry((5713754438296620651, 1277390303737419697), IAnalysisWorkbenchInterpolator)
 agcls.AgTypeNameMap["IAnalysisWorkbenchInterpolator"] = IAnalysisWorkbenchInterpolator
 
 class ICalculationToolParameterSet(object):
@@ -3352,7 +3351,7 @@ class ICalculationToolParameterSet(object):
     _calculate_method_offset = 5
     _calculate_with_derivative_method_offset = 6
     _metadata = {
-        "iid_data" : (5479297772565193960, 11336582244767551646),
+        "iid_data" : (5120130985238747107, 3487620565263295619),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3422,7 +3421,7 @@ class ICalculationToolParameterSet(object):
     _property_names[scalar_names] = "scalar_names"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5479297772565193960, 11336582244767551646), ICalculationToolParameterSet)
+agcls.AgClassCatalog.add_catalog_entry((5120130985238747107, 3487620565263295619), ICalculationToolParameterSet)
 agcls.AgTypeNameMap["ICalculationToolParameterSet"] = ICalculationToolParameterSet
 
 class ITimeToolPruneFilter(object):
@@ -3432,7 +3431,7 @@ class ITimeToolPruneFilter(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_filter_type_method_offset = 1
     _metadata = {
-        "iid_data" : (5411019644010585303, 8356519221695235998),
+        "iid_data" : (5623339730187618848, 13253299472083944593),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3461,7 +3460,7 @@ class ITimeToolPruneFilter(object):
     _property_names[filter_type] = "filter_type"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5411019644010585303, 8356519221695235998), ITimeToolPruneFilter)
+agcls.AgClassCatalog.add_catalog_entry((5623339730187618848, 13253299472083944593), ITimeToolPruneFilter)
 agcls.AgTypeNameMap["ITimeToolPruneFilter"] = ITimeToolPruneFilter
 
 class IAnalysisWorkbenchSampling(object):
@@ -3470,7 +3469,7 @@ class IAnalysisWorkbenchSampling(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5454263766504862323, 6397342263310433470),
+        "iid_data" : (4801378926393958358, 14550188124173607094),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3490,7 +3489,7 @@ class IAnalysisWorkbenchSampling(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5454263766504862323, 6397342263310433470), IAnalysisWorkbenchSampling)
+agcls.AgClassCatalog.add_catalog_entry((4801378926393958358, 14550188124173607094), IAnalysisWorkbenchSampling)
 agcls.AgTypeNameMap["IAnalysisWorkbenchSampling"] = IAnalysisWorkbenchSampling
 
 class ICalculationToolSamplingMethod(object):
@@ -3500,7 +3499,7 @@ class ICalculationToolSamplingMethod(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_method_type_method_offset = 1
     _metadata = {
-        "iid_data" : (4827843609729710366, 8894356402950175411),
+        "iid_data" : (4974460889296139838, 16303925114358049197),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3529,7 +3528,7 @@ class ICalculationToolSamplingMethod(object):
     _property_names[method_type] = "method_type"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4827843609729710366, 8894356402950175411), ICalculationToolSamplingMethod)
+agcls.AgClassCatalog.add_catalog_entry((4974460889296139838, 16303925114358049197), ICalculationToolSamplingMethod)
 agcls.AgTypeNameMap["ICalculationToolSamplingMethod"] = ICalculationToolSamplingMethod
 
 class IAnalysisWorkbenchSignalDelay(object):
@@ -3538,7 +3537,7 @@ class IAnalysisWorkbenchSignalDelay(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (4836052727854610771, 2658301614566846344),
+        "iid_data" : (4767630053613800378, 6633840353030476987),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3558,7 +3557,7 @@ class IAnalysisWorkbenchSignalDelay(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4836052727854610771, 2658301614566846344), IAnalysisWorkbenchSignalDelay)
+agcls.AgClassCatalog.add_catalog_entry((4767630053613800378, 6633840353030476987), IAnalysisWorkbenchSignalDelay)
 agcls.AgTypeNameMap["IAnalysisWorkbenchSignalDelay"] = IAnalysisWorkbenchSignalDelay
 
 class ISpatialAnalysisToolGridValuesMethod(object):
@@ -3568,7 +3567,7 @@ class ISpatialAnalysisToolGridValuesMethod(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_method_type_method_offset = 1
     _metadata = {
-        "iid_data" : (4739060787290770026, 755991415117168800),
+        "iid_data" : (4888627288467457867, 2238837627404152479),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3597,7 +3596,7 @@ class ISpatialAnalysisToolGridValuesMethod(object):
     _property_names[method_type] = "method_type"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4739060787290770026, 755991415117168800), ISpatialAnalysisToolGridValuesMethod)
+agcls.AgClassCatalog.add_catalog_entry((4888627288467457867, 2238837627404152479), ISpatialAnalysisToolGridValuesMethod)
 agcls.AgTypeNameMap["ISpatialAnalysisToolGridValuesMethod"] = ISpatialAnalysisToolGridValuesMethod
 
 class ISpatialAnalysisToolVolume(object):
@@ -3606,7 +3605,7 @@ class ISpatialAnalysisToolVolume(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (4841356890486692076, 2175121878908514689),
+        "iid_data" : (5402618342404698477, 2535611340088526271),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3626,7 +3625,7 @@ class ISpatialAnalysisToolVolume(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4841356890486692076, 2175121878908514689), ISpatialAnalysisToolVolume)
+agcls.AgClassCatalog.add_catalog_entry((5402618342404698477, 2535611340088526271), ISpatialAnalysisToolVolume)
 agcls.AgTypeNameMap["ISpatialAnalysisToolVolume"] = ISpatialAnalysisToolVolume
 
 class ISpatialAnalysisToolSpatialCalculation(object):
@@ -3635,7 +3634,7 @@ class ISpatialAnalysisToolSpatialCalculation(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (4788088731026599523, 14975002087762860939),
+        "iid_data" : (4887022759424798922, 13766916204368315289),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3655,7 +3654,7 @@ class ISpatialAnalysisToolSpatialCalculation(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4788088731026599523, 14975002087762860939), ISpatialAnalysisToolSpatialCalculation)
+agcls.AgClassCatalog.add_catalog_entry((4887022759424798922, 13766916204368315289), ISpatialAnalysisToolSpatialCalculation)
 agcls.AgTypeNameMap["ISpatialAnalysisToolSpatialCalculation"] = ISpatialAnalysisToolSpatialCalculation
 
 class ISpatialAnalysisToolVolumeGrid(object):
@@ -3664,7 +3663,7 @@ class ISpatialAnalysisToolVolumeGrid(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (4872197438153942913, 17020680151074665636),
+        "iid_data" : (5067005337738934003, 3574674255100951940),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3684,7 +3683,7 @@ class ISpatialAnalysisToolVolumeGrid(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4872197438153942913, 17020680151074665636), ISpatialAnalysisToolVolumeGrid)
+agcls.AgClassCatalog.add_catalog_entry((5067005337738934003, 3574674255100951940), ISpatialAnalysisToolVolumeGrid)
 agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeGrid"] = ISpatialAnalysisToolVolumeGrid
 
 class IAnalysisWorkbenchComponentTimeProperties(object):
@@ -3694,7 +3693,7 @@ class IAnalysisWorkbenchComponentTimeProperties(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_availability_method_offset = 1
     _metadata = {
-        "iid_data" : (4693587397954990762, 1841444941110468780),
+        "iid_data" : (4940727673689590977, 12641547125347144123),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3721,7 +3720,7 @@ class IAnalysisWorkbenchComponentTimeProperties(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4693587397954990762, 1841444941110468780), IAnalysisWorkbenchComponentTimeProperties)
+agcls.AgClassCatalog.add_catalog_entry((4940727673689590977, 12641547125347144123), IAnalysisWorkbenchComponentTimeProperties)
 agcls.AgTypeNameMap["IAnalysisWorkbenchComponentTimeProperties"] = IAnalysisWorkbenchComponentTimeProperties
 
 class IAnalysisWorkbenchComponentReference(object):
@@ -3731,7 +3730,7 @@ class IAnalysisWorkbenchComponentReference(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_path_method_offset = 1
     _metadata = {
-        "iid_data" : (5000476646516070310, 1217044254048263356),
+        "iid_data" : (4680216944288844355, 7125641791252822161),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3760,7 +3759,7 @@ class IAnalysisWorkbenchComponentReference(object):
     _property_names[path] = "path"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5000476646516070310, 1217044254048263356), IAnalysisWorkbenchComponentReference)
+agcls.AgClassCatalog.add_catalog_entry((4680216944288844355, 7125641791252822161), IAnalysisWorkbenchComponentReference)
 agcls.AgTypeNameMap["IAnalysisWorkbenchComponentReference"] = IAnalysisWorkbenchComponentReference
 
 class IAnalysisWorkbenchMethodCallResult(object):
@@ -3770,7 +3769,7 @@ class IAnalysisWorkbenchMethodCallResult(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_is_valid_method_offset = 1
     _metadata = {
-        "iid_data" : (4645374652506169535, 9723345654066007957),
+        "iid_data" : (5509711378320211532, 12538741481157879951),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3799,7 +3798,7 @@ class IAnalysisWorkbenchMethodCallResult(object):
     _property_names[is_valid] = "is_valid"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4645374652506169535, 9723345654066007957), IAnalysisWorkbenchMethodCallResult)
+agcls.AgClassCatalog.add_catalog_entry((5509711378320211532, 12538741481157879951), IAnalysisWorkbenchMethodCallResult)
 agcls.AgTypeNameMap["IAnalysisWorkbenchMethodCallResult"] = IAnalysisWorkbenchMethodCallResult
 
 
@@ -3812,7 +3811,7 @@ class CalculationToolEvaluateResult(SupportsDeleteCallback):
     _get_is_valid_method_offset = 1
     _get_value_method_offset = 2
     _metadata = {
-        "iid_data" : (5614154425131203652, 5944516947886916776),
+        "iid_data" : (4949127249897964758, 16483549525149749893),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3851,7 +3850,7 @@ class CalculationToolEvaluateResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolEvaluateResult, [CalculationToolEvaluateResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5522853299729796607, 10609423862588038055), CalculationToolEvaluateResult)
+agcls.AgClassCatalog.add_catalog_entry((5045959100961456960, 5493462636806181806), CalculationToolEvaluateResult)
 agcls.AgTypeNameMap["CalculationToolEvaluateResult"] = CalculationToolEvaluateResult
 
 class CalculationToolEvaluateWithRateResult(SupportsDeleteCallback):
@@ -3863,7 +3862,7 @@ class CalculationToolEvaluateWithRateResult(SupportsDeleteCallback):
     _get_value_method_offset = 2
     _get_rate_method_offset = 3
     _metadata = {
-        "iid_data" : (4891493138703768112, 5257715458728871821),
+        "iid_data" : (5494576631256934494, 14119782834595854470),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3911,7 +3910,7 @@ class CalculationToolEvaluateWithRateResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolEvaluateWithRateResult, [CalculationToolEvaluateWithRateResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5662589128398381369, 18228667425859790763), CalculationToolEvaluateWithRateResult)
+agcls.AgClassCatalog.add_catalog_entry((5623686701760891880, 8507534346688387491), CalculationToolEvaluateWithRateResult)
 agcls.AgTypeNameMap["CalculationToolEvaluateWithRateResult"] = CalculationToolEvaluateWithRateResult
 
 class TimeToolTimeIntervalResult(SupportsDeleteCallback):
@@ -3922,7 +3921,7 @@ class TimeToolTimeIntervalResult(SupportsDeleteCallback):
     _get_is_valid_method_offset = 1
     _get_interval_method_offset = 2
     _metadata = {
-        "iid_data" : (4746291031874526350, 12635609897701193394),
+        "iid_data" : (5243669358209954185, 16438084674187404423),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3961,7 +3960,7 @@ class TimeToolTimeIntervalResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalResult, [TimeToolTimeIntervalResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5440144273098326668, 11989278598177568391), TimeToolTimeIntervalResult)
+agcls.AgClassCatalog.add_catalog_entry((5633199966897761936, 2795005126210266244), TimeToolTimeIntervalResult)
 agcls.AgTypeNameMap["TimeToolTimeIntervalResult"] = TimeToolTimeIntervalResult
 
 class TimeToolInstantOccurrenceResult(SupportsDeleteCallback):
@@ -3972,7 +3971,7 @@ class TimeToolInstantOccurrenceResult(SupportsDeleteCallback):
     _get_is_valid_method_offset = 1
     _get_epoch_method_offset = 2
     _metadata = {
-        "iid_data" : (4710347834450863344, 12752006829468697747),
+        "iid_data" : (5732314794311536973, 10250874507560102322),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4011,7 +4010,7 @@ class TimeToolInstantOccurrenceResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolInstantOccurrenceResult, [TimeToolInstantOccurrenceResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4920266892008173400, 17346109474033320069), TimeToolInstantOccurrenceResult)
+agcls.AgClassCatalog.add_catalog_entry((4657987534826779168, 13744997314505138865), TimeToolInstantOccurrenceResult)
 agcls.AgTypeNameMap["TimeToolInstantOccurrenceResult"] = TimeToolInstantOccurrenceResult
 
 class TimeToolTimeArrayFindTimesResult(SupportsDeleteCallback):
@@ -4025,7 +4024,7 @@ class TimeToolTimeArrayFindTimesResult(SupportsDeleteCallback):
     _get_stop_method_offset = 4
     _get_times_method_offset = 5
     _metadata = {
-        "iid_data" : (4849540246283896048, 6942407106662663820),
+        "iid_data" : (5664741289680711248, 7500941355905153157),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4091,7 +4090,7 @@ class TimeToolTimeArrayFindTimesResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeArrayFindTimesResult, [TimeToolTimeArrayFindTimesResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5536753132893401039, 8791447751690390407), TimeToolTimeArrayFindTimesResult)
+agcls.AgClassCatalog.add_catalog_entry((5421729592142284738, 3097396138610166176), TimeToolTimeArrayFindTimesResult)
 agcls.AgTypeNameMap["TimeToolTimeArrayFindTimesResult"] = TimeToolTimeArrayFindTimesResult
 
 class TimeToolIntervalsVectorResult(SupportsDeleteCallback):
@@ -4102,7 +4101,7 @@ class TimeToolIntervalsVectorResult(SupportsDeleteCallback):
     _get_is_valid_method_offset = 1
     _get_interval_collections_method_offset = 2
     _metadata = {
-        "iid_data" : (5620318592927493953, 3800513619111014055),
+        "iid_data" : (4936950767232486343, 3965096359482061186),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4141,7 +4140,7 @@ class TimeToolIntervalsVectorResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolIntervalsVectorResult, [TimeToolIntervalsVectorResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5214899444003868340, 2439419900054653882), TimeToolIntervalsVectorResult)
+agcls.AgClassCatalog.add_catalog_entry((4740852537667682705, 5214772512135027587), TimeToolIntervalsVectorResult)
 agcls.AgTypeNameMap["TimeToolIntervalsVectorResult"] = TimeToolIntervalsVectorResult
 
 class TimeToolTimeIntervalCollectionOccurredResult(SupportsDeleteCallback):
@@ -4152,7 +4151,7 @@ class TimeToolTimeIntervalCollectionOccurredResult(SupportsDeleteCallback):
     _get_is_valid_method_offset = 1
     _get_index_method_offset = 2
     _metadata = {
-        "iid_data" : (4984827063323662366, 10431628503200399788),
+        "iid_data" : (5188231404677311769, 9922569872173802660),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4191,7 +4190,7 @@ class TimeToolTimeIntervalCollectionOccurredResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalCollectionOccurredResult, [TimeToolTimeIntervalCollectionOccurredResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5449426388650809590, 4955022891265085365), TimeToolTimeIntervalCollectionOccurredResult)
+agcls.AgClassCatalog.add_catalog_entry((4894903784230428448, 3587244935782647201), TimeToolTimeIntervalCollectionOccurredResult)
 agcls.AgTypeNameMap["TimeToolTimeIntervalCollectionOccurredResult"] = TimeToolTimeIntervalCollectionOccurredResult
 
 class TimeToolIntervalListResult(SupportsDeleteCallback):
@@ -4202,7 +4201,7 @@ class TimeToolIntervalListResult(SupportsDeleteCallback):
     _get_is_valid_method_offset = 1
     _get_intervals_method_offset = 2
     _metadata = {
-        "iid_data" : (4634920377665823855, 14964140121783584654),
+        "iid_data" : (5467555899444029433, 6538644874393809577),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4241,7 +4240,7 @@ class TimeToolIntervalListResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolIntervalListResult, [TimeToolIntervalListResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4749115582065684196, 2274990611771605949), TimeToolIntervalListResult)
+agcls.AgClassCatalog.add_catalog_entry((5162735662394872010, 17093862513037113744), TimeToolIntervalListResult)
 agcls.AgTypeNameMap["TimeToolIntervalListResult"] = TimeToolIntervalListResult
 
 class TimeToolIntervalVectorCollection(SupportsDeleteCallback):
@@ -4253,7 +4252,7 @@ class TimeToolIntervalVectorCollection(SupportsDeleteCallback):
     _item_method_offset = 2
     _get__new_enum_method_offset = 3
     _metadata = {
-        "iid_data" : (5575174488488139361, 17888026257103832750),
+        "iid_data" : (4737619674288208090, 16300462661800606394),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -4315,7 +4314,7 @@ class TimeToolIntervalVectorCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolIntervalVectorCollection, [TimeToolIntervalVectorCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5203412792180924882, 14239251967220039073), TimeToolIntervalVectorCollection)
+agcls.AgClassCatalog.add_catalog_entry((5132146402442344321, 590220177630340775), TimeToolIntervalVectorCollection)
 agcls.AgTypeNameMap["TimeToolIntervalVectorCollection"] = TimeToolIntervalVectorCollection
 
 class TimeToolInstantGroup(SupportsDeleteCallback):
@@ -4333,7 +4332,7 @@ class TimeToolInstantGroup(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
-        "iid_data" : (5743339348524930415, 13668044487410794916),
+        "iid_data" : (4925297969383001832, 6557533529980019601),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -4441,7 +4440,7 @@ class TimeToolInstantGroup(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolInstantGroup, [TimeToolInstantGroup, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5740305381890470273, 8415316688318852744), TimeToolInstantGroup)
+agcls.AgClassCatalog.add_catalog_entry((4627956237060489384, 9601605627848784548), TimeToolInstantGroup)
 agcls.AgTypeNameMap["TimeToolInstantGroup"] = TimeToolInstantGroup
 
 class TimeToolTimeIntervalGroup(SupportsDeleteCallback):
@@ -4459,7 +4458,7 @@ class TimeToolTimeIntervalGroup(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
-        "iid_data" : (5142922729546224873, 11946726056227879853),
+        "iid_data" : (5590460327275273444, 6892917397413676181),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -4567,7 +4566,7 @@ class TimeToolTimeIntervalGroup(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalGroup, [TimeToolTimeIntervalGroup, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4639595004900791506, 2670686152777183627), TimeToolTimeIntervalGroup)
+agcls.AgClassCatalog.add_catalog_entry((5372406377764617516, 13476791903058696332), TimeToolTimeIntervalGroup)
 agcls.AgTypeNameMap["TimeToolTimeIntervalGroup"] = TimeToolTimeIntervalGroup
 
 class TimeToolTimeIntervalListGroup(SupportsDeleteCallback):
@@ -4585,7 +4584,7 @@ class TimeToolTimeIntervalListGroup(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
-        "iid_data" : (4938951633900015673, 7195780011008496024),
+        "iid_data" : (4767688514080852723, 15305466941201506978),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -4693,7 +4692,7 @@ class TimeToolTimeIntervalListGroup(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalListGroup, [TimeToolTimeIntervalListGroup, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5001426302640578234, 7402032539944503439), TimeToolTimeIntervalListGroup)
+agcls.AgClassCatalog.add_catalog_entry((5588873131345636493, 1594101508996467086), TimeToolTimeIntervalListGroup)
 agcls.AgTypeNameMap["TimeToolTimeIntervalListGroup"] = TimeToolTimeIntervalListGroup
 
 class TimeToolTimeArrayGroup(SupportsDeleteCallback):
@@ -4711,7 +4710,7 @@ class TimeToolTimeArrayGroup(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
-        "iid_data" : (5362443867455049139, 5221206169826244786),
+        "iid_data" : (5336279457606763331, 4891281697784955022),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -4819,13 +4818,13 @@ class TimeToolTimeArrayGroup(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeArrayGroup, [TimeToolTimeArrayGroup, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5225191702089452142, 4839624242436753046), TimeToolTimeArrayGroup)
+agcls.AgClassCatalog.add_catalog_entry((5554155779034466595, 17009032095626642848), TimeToolTimeArrayGroup)
 agcls.AgTypeNameMap["TimeToolTimeArrayGroup"] = TimeToolTimeArrayGroup
 
 class CalculationToolScalarGroup(SupportsDeleteCallback):
     """Access or create VGT calculation scalars associated with an object or a central body."""
 
-    _num_methods = 9
+    _num_methods = 10
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _remove_method_offset = 1
     _get_context_method_offset = 2
@@ -4836,8 +4835,9 @@ class CalculationToolScalarGroup(SupportsDeleteCallback):
     _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
+    _get_common_tasks_method_offset = 10
     _metadata = {
-        "iid_data" : (4659785540148584367, 12814880882912016044),
+        "iid_data" : (4791965666863546684, 13694108883325505215),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -4924,6 +4924,14 @@ class CalculationToolScalarGroup(SupportsDeleteCallback):
         """Retrieve an element from the collection by name."""
         return self._intf.invoke(CalculationToolScalarGroup._metadata, CalculationToolScalarGroup._get_item_by_name_metadata, name, OutArg())
 
+    _get_common_tasks_metadata = { "offset" : _get_common_tasks_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def common_tasks(self) -> "CalculationToolScalarCommonTasks":
+        """Calc Scalar common tasks."""
+        return self._intf.get_property(CalculationToolScalarGroup._metadata, CalculationToolScalarGroup._get_common_tasks_metadata)
+
     __getitem__ = item
 
 
@@ -4931,6 +4939,7 @@ class CalculationToolScalarGroup(SupportsDeleteCallback):
     _property_names[count] = "count"
     _property_names[factory] = "factory"
     _property_names[_new_enum] = "_new_enum"
+    _property_names[common_tasks] = "common_tasks"
 
     def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarGroup."""
@@ -4945,7 +4954,7 @@ class CalculationToolScalarGroup(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarGroup, [CalculationToolScalarGroup, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5048329027604808808, 12927501014310075801), CalculationToolScalarGroup)
+agcls.AgClassCatalog.add_catalog_entry((4885576205634269794, 17556932246337387179), CalculationToolScalarGroup)
 agcls.AgTypeNameMap["CalculationToolScalarGroup"] = CalculationToolScalarGroup
 
 class TimeToolTimeIntervalCollectionGroup(SupportsDeleteCallback):
@@ -4963,7 +4972,7 @@ class TimeToolTimeIntervalCollectionGroup(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
-        "iid_data" : (5628253959361021565, 6774093585548149417),
+        "iid_data" : (4797222762306467594, 14883391123145460616),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -5071,7 +5080,7 @@ class TimeToolTimeIntervalCollectionGroup(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalCollectionGroup, [TimeToolTimeIntervalCollectionGroup, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4676956353340798946, 4132032579773110454), TimeToolTimeIntervalCollectionGroup)
+agcls.AgClassCatalog.add_catalog_entry((5381571113617352533, 9398035419778614207), TimeToolTimeIntervalCollectionGroup)
 agcls.AgTypeNameMap["TimeToolTimeIntervalCollectionGroup"] = TimeToolTimeIntervalCollectionGroup
 
 class CalculationToolParameterSetGroup(SupportsDeleteCallback):
@@ -5089,7 +5098,7 @@ class CalculationToolParameterSetGroup(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
-        "iid_data" : (5625575995100372233, 5247817078545365909),
+        "iid_data" : (5271398533000195419, 1700984056252659584),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -5197,7 +5206,7 @@ class CalculationToolParameterSetGroup(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolParameterSetGroup, [CalculationToolParameterSetGroup, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4675360958547478665, 15542114842964845204), CalculationToolParameterSetGroup)
+agcls.AgClassCatalog.add_catalog_entry((5593413356420296421, 7679840612412611250), CalculationToolParameterSetGroup)
 agcls.AgTypeNameMap["CalculationToolParameterSetGroup"] = CalculationToolParameterSetGroup
 
 class CalculationToolConditionGroup(SupportsDeleteCallback):
@@ -5215,7 +5224,7 @@ class CalculationToolConditionGroup(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
-        "iid_data" : (5727353733426007755, 13885664073261871009),
+        "iid_data" : (5035545199037980470, 4612325551208005264),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -5323,7 +5332,7 @@ class CalculationToolConditionGroup(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionGroup, [CalculationToolConditionGroup, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5750765973699081321, 14571179364062773916), CalculationToolConditionGroup)
+agcls.AgClassCatalog.add_catalog_entry((5001166453570944588, 8680883653285041058), CalculationToolConditionGroup)
 agcls.AgTypeNameMap["CalculationToolConditionGroup"] = CalculationToolConditionGroup
 
 class CalculationToolConditionSetGroup(SupportsDeleteCallback):
@@ -5341,7 +5350,7 @@ class CalculationToolConditionSetGroup(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
-        "iid_data" : (5611826300224457159, 16584276783501574569),
+        "iid_data" : (4787150433768459551, 7539387893088162190),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -5449,7 +5458,7 @@ class CalculationToolConditionSetGroup(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionSetGroup, [CalculationToolConditionSetGroup, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4707405303890402417, 10690097794579297951), CalculationToolConditionSetGroup)
+agcls.AgClassCatalog.add_catalog_entry((4898733176570452704, 18057273296599493539), CalculationToolConditionSetGroup)
 agcls.AgTypeNameMap["CalculationToolConditionSetGroup"] = CalculationToolConditionSetGroup
 
 class CalculationToolConditionSetEvaluateResult(SupportsDeleteCallback):
@@ -5460,7 +5469,7 @@ class CalculationToolConditionSetEvaluateResult(SupportsDeleteCallback):
     _get_is_valid_method_offset = 1
     _get_values_method_offset = 2
     _metadata = {
-        "iid_data" : (5427191482923494608, 3628611338351778977),
+        "iid_data" : (5154035144885582691, 15442880035941326224),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -5499,7 +5508,7 @@ class CalculationToolConditionSetEvaluateResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionSetEvaluateResult, [CalculationToolConditionSetEvaluateResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5222756833012542291, 4920051115777198524), CalculationToolConditionSetEvaluateResult)
+agcls.AgClassCatalog.add_catalog_entry((5631369203932744018, 129366824169017223), CalculationToolConditionSetEvaluateResult)
 agcls.AgTypeNameMap["CalculationToolConditionSetEvaluateResult"] = CalculationToolConditionSetEvaluateResult
 
 class CalculationToolConditionSetEvaluateWithRateResult(SupportsDeleteCallback):
@@ -5511,7 +5520,7 @@ class CalculationToolConditionSetEvaluateWithRateResult(SupportsDeleteCallback):
     _get_values_method_offset = 2
     _get_rates_method_offset = 3
     _metadata = {
-        "iid_data" : (4805407826333748553, 13212141293468544164),
+        "iid_data" : (5126127384040833269, 8482047418119630223),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -5559,7 +5568,7 @@ class CalculationToolConditionSetEvaluateWithRateResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionSetEvaluateWithRateResult, [CalculationToolConditionSetEvaluateWithRateResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4840393028332232055, 13403874806573712528), CalculationToolConditionSetEvaluateWithRateResult)
+agcls.AgClassCatalog.add_catalog_entry((5644002578215549106, 2666842850571954563), CalculationToolConditionSetEvaluateWithRateResult)
 agcls.AgTypeNameMap["CalculationToolConditionSetEvaluateWithRateResult"] = CalculationToolConditionSetEvaluateWithRateResult
 
 class SpatialAnalysisToolVolumeGridGroup(SupportsDeleteCallback):
@@ -5577,7 +5586,7 @@ class SpatialAnalysisToolVolumeGridGroup(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
-        "iid_data" : (5652804191328005584, 15020715553548321674),
+        "iid_data" : (5367891350693608675, 16432762233148299948),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -5685,7 +5694,7 @@ class SpatialAnalysisToolVolumeGridGroup(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridGroup, [SpatialAnalysisToolVolumeGridGroup, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5434667114735017104, 247084353934700168), SpatialAnalysisToolVolumeGridGroup)
+agcls.AgClassCatalog.add_catalog_entry((5367170795743369130, 5800947119066293134), SpatialAnalysisToolVolumeGridGroup)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridGroup"] = SpatialAnalysisToolVolumeGridGroup
 
 class SpatialAnalysisToolConditionGroup(SupportsDeleteCallback):
@@ -5703,7 +5712,7 @@ class SpatialAnalysisToolConditionGroup(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
-        "iid_data" : (5105009531150323546, 886691369936677802),
+        "iid_data" : (4759728004334404625, 14304025484912151439),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -5811,7 +5820,7 @@ class SpatialAnalysisToolConditionGroup(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionGroup, [SpatialAnalysisToolConditionGroup, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4930145607069579046, 10312486085103245186), SpatialAnalysisToolConditionGroup)
+agcls.AgClassCatalog.add_catalog_entry((4974922547040147061, 17744108072553032888), SpatialAnalysisToolConditionGroup)
 agcls.AgTypeNameMap["SpatialAnalysisToolConditionGroup"] = SpatialAnalysisToolConditionGroup
 
 class SpatialAnalysisToolCalculationGroup(SupportsDeleteCallback):
@@ -5829,7 +5838,7 @@ class SpatialAnalysisToolCalculationGroup(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
-        "iid_data" : (5218042406034281573, 13159514031507062161),
+        "iid_data" : (4916216358133511723, 13542991294618647737),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -5937,7 +5946,7 @@ class SpatialAnalysisToolCalculationGroup(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationGroup, [SpatialAnalysisToolCalculationGroup, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5357586751106003383, 7462844834759351198), SpatialAnalysisToolCalculationGroup)
+agcls.AgClassCatalog.add_catalog_entry((5460165592468620572, 6333735062547521204), SpatialAnalysisToolCalculationGroup)
 agcls.AgTypeNameMap["SpatialAnalysisToolCalculationGroup"] = SpatialAnalysisToolCalculationGroup
 
 class CalculationToolScalar(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -5958,7 +5967,7 @@ class CalculationToolScalar(ICalculationToolScalar, IAnalysisWorkbenchComponent,
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalar, [ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5230397928531433355, 10269566397212942242), CalculationToolScalar)
+agcls.AgClassCatalog.add_catalog_entry((5540767642779656148, 11574976597471135678), CalculationToolScalar)
 agcls.AgTypeNameMap["CalculationToolScalar"] = CalculationToolScalar
 
 class CalculationToolScalarAngle(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -5969,7 +5978,7 @@ class CalculationToolScalarAngle(ICalculationToolScalar, IAnalysisWorkbenchCompo
     _get_input_angle_method_offset = 1
     _set_input_angle_method_offset = 2
     _metadata = {
-        "iid_data" : (4959187984038204723, 1310938748632609426),
+        "iid_data" : (5235913803957577469, 14248133417209309098),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -6010,7 +6019,7 @@ class CalculationToolScalarAngle(ICalculationToolScalar, IAnalysisWorkbenchCompo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarAngle, [CalculationToolScalarAngle, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4904462145790055437, 5156190887739896966), CalculationToolScalarAngle)
+agcls.AgClassCatalog.add_catalog_entry((5586031526589702862, 4786294777743615892), CalculationToolScalarAngle)
 agcls.AgTypeNameMap["CalculationToolScalarAngle"] = CalculationToolScalarAngle
 
 class CalculationToolScalarAverage(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -6044,7 +6053,7 @@ class CalculationToolScalarAverage(ICalculationToolScalar, IAnalysisWorkbenchCom
     _set_keep_constant_outside_time_limits_method_offset = 24
     _set_offsets_method_offset = 25
     _metadata = {
-        "iid_data" : (5376371496447394548, 11623923147254190485),
+        "iid_data" : (5529865164133076488, 6883317773328100996),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -6268,8 +6277,86 @@ class CalculationToolScalarAverage(ICalculationToolScalar, IAnalysisWorkbenchCom
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarAverage, [CalculationToolScalarAverage, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5436686424833363725, 875804097364919458), CalculationToolScalarAverage)
+agcls.AgClassCatalog.add_catalog_entry((4952689778581630283, 6188566819305716358), CalculationToolScalarAverage)
 agcls.AgTypeNameMap["CalculationToolScalarAverage"] = CalculationToolScalarAverage
+
+class CalculationToolScalarCommonTasks(SupportsDeleteCallback):
+    """Common tasks for Calc Scalars."""
+
+    _num_methods = 6
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _quick_evaluate_for_calculation_scalar_array_method_offset = 1
+    _quick_evaluate_with_rate_for_calculation_scalar_array_method_offset = 2
+    _quick_evaluate_array_for_calculation_scalar_array_method_offset = 3
+    _quick_evaluate_with_rate_array_for_calculation_scalar_array_method_offset = 4
+    _quick_evaluate_event_array_for_calculation_scalar_array_method_offset = 5
+    _quick_evaluate_with_rate_event_array_for_calculation_scalar_array_method_offset = 6
+    _metadata = {
+        "iid_data" : (4908168989878354802, 16826982669631162262),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, CalculationToolScalarCommonTasks)
+
+    _quick_evaluate_for_calculation_scalar_array_metadata = { "offset" : _quick_evaluate_for_calculation_scalar_array_method_offset,
+            "arg_types" : (agcom.Variant, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
+            "marshallers" : (agmarshall.VariantArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg,) }
+    def quick_evaluate_for_calculation_scalar_array(self, epoch:typing.Any, calc_array_vec:list) -> list:
+        """Each calc scalar in calcArrayVec is evaluated at epoch returning results as an array of elements, where each element is itself an array with two elements: 1. success (boolean) 2. value (double-precision)."""
+        return self._intf.invoke(CalculationToolScalarCommonTasks._metadata, CalculationToolScalarCommonTasks._quick_evaluate_for_calculation_scalar_array_metadata, epoch, calc_array_vec, OutArg())
+
+    _quick_evaluate_with_rate_for_calculation_scalar_array_metadata = { "offset" : _quick_evaluate_with_rate_for_calculation_scalar_array_method_offset,
+            "arg_types" : (agcom.Variant, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
+            "marshallers" : (agmarshall.VariantArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg,) }
+    def quick_evaluate_with_rate_for_calculation_scalar_array(self, epoch:typing.Any, calc_array_vec:list) -> list:
+        """Each calc scalar in calcArrayVec is evaluated at epoch returning results as an array of elements, where each element is itself an array with three elements: 1. success (boolean) 2. value (double-precision) 3. value rate (double-precision)."""
+        return self._intf.invoke(CalculationToolScalarCommonTasks._metadata, CalculationToolScalarCommonTasks._quick_evaluate_with_rate_for_calculation_scalar_array_metadata, epoch, calc_array_vec, OutArg())
+
+    _quick_evaluate_array_for_calculation_scalar_array_metadata = { "offset" : _quick_evaluate_array_for_calculation_scalar_array_method_offset,
+            "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg,) }
+    def quick_evaluate_array_for_calculation_scalar_array(self, times:list, calc_array_vec:list) -> list:
+        """Each calc scalar in calcArrayVec is evaluated over the array of input times returning the results as an array of elements for each time, each element being an array of results for each calc scalar, results being an array..."""
+        return self._intf.invoke(CalculationToolScalarCommonTasks._metadata, CalculationToolScalarCommonTasks._quick_evaluate_array_for_calculation_scalar_array_metadata, times, calc_array_vec, OutArg())
+
+    _quick_evaluate_with_rate_array_for_calculation_scalar_array_metadata = { "offset" : _quick_evaluate_with_rate_array_for_calculation_scalar_array_method_offset,
+            "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg,) }
+    def quick_evaluate_with_rate_array_for_calculation_scalar_array(self, times:list, calc_array_vec:list) -> list:
+        """Each calc scalar in calcArrayVec is evaluated over the array of input times returning the results as an array of elements for each time, each element being an array of results for each calc scalar, results being an array..."""
+        return self._intf.invoke(CalculationToolScalarCommonTasks._metadata, CalculationToolScalarCommonTasks._quick_evaluate_with_rate_array_for_calculation_scalar_array_metadata, times, calc_array_vec, OutArg())
+
+    _quick_evaluate_event_array_for_calculation_scalar_array_metadata = { "offset" : _quick_evaluate_event_array_for_calculation_scalar_array_method_offset,
+            "arg_types" : (agcom.PVOID, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
+            "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeArray"), agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg,) }
+    def quick_evaluate_event_array_for_calculation_scalar_array(self, ref_array:"ITimeToolTimeArray", calc_array_vec:list) -> list:
+        """Each calc scalar in calcArrayVec is evaluated over the array of times provided by refArray returning results as an array of elements for each time, each element being an array of results for each calc scalar, results being an array..."""
+        return self._intf.invoke(CalculationToolScalarCommonTasks._metadata, CalculationToolScalarCommonTasks._quick_evaluate_event_array_for_calculation_scalar_array_metadata, ref_array, calc_array_vec, OutArg())
+
+    _quick_evaluate_with_rate_event_array_for_calculation_scalar_array_metadata = { "offset" : _quick_evaluate_with_rate_event_array_for_calculation_scalar_array_method_offset,
+            "arg_types" : (agcom.PVOID, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
+            "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeArray"), agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg,) }
+    def quick_evaluate_with_rate_event_array_for_calculation_scalar_array(self, ref_array:"ITimeToolTimeArray", calc_array_vec:list) -> list:
+        """Each calc scalar in calcArrayVec is evaluated over the array of times provided by refArray returning results as an array of elements for each time, each element being an array of results for each calc scalar, results being an array..."""
+        return self._intf.invoke(CalculationToolScalarCommonTasks._metadata, CalculationToolScalarCommonTasks._quick_evaluate_with_rate_event_array_for_calculation_scalar_array_metadata, ref_array, calc_array_vec, OutArg())
+
+
+    def __init__(self, source_object=None):
+        """Construct an object of type CalculationToolScalarCommonTasks."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, CalculationToolScalarCommonTasks)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, CalculationToolScalarCommonTasks, [CalculationToolScalarCommonTasks, ])
+
+agcls.AgClassCatalog.add_catalog_entry((5555862726007388911, 17257917051487061693), CalculationToolScalarCommonTasks)
+agcls.AgTypeNameMap["CalculationToolScalarCommonTasks"] = CalculationToolScalarCommonTasks
 
 class CalculationToolScalarConstant(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Constant scalar value of specified dimension."""
@@ -6281,7 +6368,7 @@ class CalculationToolScalarConstant(ICalculationToolScalar, IAnalysisWorkbenchCo
     _get_dimension_method_offset = 3
     _set_dimension_method_offset = 4
     _metadata = {
-        "iid_data" : (5533910452542745513, 14034208071237068448),
+        "iid_data" : (5313211939493687464, 15165689029416686230),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -6338,7 +6425,7 @@ class CalculationToolScalarConstant(ICalculationToolScalar, IAnalysisWorkbenchCo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarConstant, [CalculationToolScalarConstant, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5761343657246828391, 12742771671638689976), CalculationToolScalarConstant)
+agcls.AgClassCatalog.add_catalog_entry((4957519789237973116, 4120735009310758273), CalculationToolScalarConstant)
 agcls.AgTypeNameMap["CalculationToolScalarConstant"] = CalculationToolScalarConstant
 
 class CalculationToolScalarCustom(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -6352,7 +6439,7 @@ class CalculationToolScalarCustom(ICalculationToolScalar, IAnalysisWorkbenchComp
     _get_invalidate_on_execution_error_method_offset = 4
     _set_invalidate_on_execution_error_method_offset = 5
     _metadata = {
-        "iid_data" : (5409179971415946885, 10112159419728251554),
+        "iid_data" : (4813905903867217858, 3808112666600406713),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -6416,7 +6503,7 @@ class CalculationToolScalarCustom(ICalculationToolScalar, IAnalysisWorkbenchComp
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarCustom, [CalculationToolScalarCustom, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5177995385747099113, 10709837510467460012), CalculationToolScalarCustom)
+agcls.AgClassCatalog.add_catalog_entry((4810158553026693603, 12907573009788574602), CalculationToolScalarCustom)
 agcls.AgTypeNameMap["CalculationToolScalarCustom"] = CalculationToolScalarCustom
 
 class CalculationToolScalarCustomInlineScript(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -6435,7 +6522,7 @@ class CalculationToolScalarCustomInlineScript(ICalculationToolScalar, IAnalysisW
     _get_all_arguments_method_offset = 9
     _set_all_arguments_method_offset = 10
     _metadata = {
-        "iid_data" : (4764386451504013000, 3625316982411733925),
+        "iid_data" : (5671737618680159817, 8839570314783199623),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -6538,7 +6625,7 @@ class CalculationToolScalarCustomInlineScript(ICalculationToolScalar, IAnalysisW
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarCustomInlineScript, [CalculationToolScalarCustomInlineScript, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5758632709114625099, 1419255989428412582), CalculationToolScalarCustomInlineScript)
+agcls.AgClassCatalog.add_catalog_entry((4895228315168748890, 8213551691758948009), CalculationToolScalarCustomInlineScript)
 agcls.AgTypeNameMap["CalculationToolScalarCustomInlineScript"] = CalculationToolScalarCustomInlineScript
 
 class CalculationToolScalarDataElement(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -6562,7 +6649,7 @@ class CalculationToolScalarDataElement(ICalculationToolScalar, IAnalysisWorkbenc
     _get_invalid_data_indicator_method_offset = 14
     _set_invalid_data_indicator_method_offset = 15
     _metadata = {
-        "iid_data" : (5684166753534512598, 14848638846349344702),
+        "iid_data" : (4839979329771160664, 4652740865182890372),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -6708,7 +6795,7 @@ class CalculationToolScalarDataElement(ICalculationToolScalar, IAnalysisWorkbenc
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarDataElement, [CalculationToolScalarDataElement, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5321856052550789231, 6123381429176273038), CalculationToolScalarDataElement)
+agcls.AgClassCatalog.add_catalog_entry((5319792948373872744, 9924389321923568020), CalculationToolScalarDataElement)
 agcls.AgTypeNameMap["CalculationToolScalarDataElement"] = CalculationToolScalarDataElement
 
 class CalculationToolScalarDerivative(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -6723,7 +6810,7 @@ class CalculationToolScalarDerivative(ICalculationToolScalar, IAnalysisWorkbench
     _get_force_use_of_numerical_differences_method_offset = 5
     _set_force_use_of_numerical_differences_method_offset = 6
     _metadata = {
-        "iid_data" : (5439408000144674159, 16540285713240218546),
+        "iid_data" : (5212359359330884019, 15904239287593911484),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -6796,7 +6883,7 @@ class CalculationToolScalarDerivative(ICalculationToolScalar, IAnalysisWorkbench
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarDerivative, [CalculationToolScalarDerivative, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5415006546127808424, 17328826830833065386), CalculationToolScalarDerivative)
+agcls.AgClassCatalog.add_catalog_entry((4665038725590063224, 10009953254243541690), CalculationToolScalarDerivative)
 agcls.AgTypeNameMap["CalculationToolScalarDerivative"] = CalculationToolScalarDerivative
 
 class CalculationToolScalarDotProduct(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -6815,7 +6902,7 @@ class CalculationToolScalarDotProduct(ICalculationToolScalar, IAnalysisWorkbench
     _get_dimension_method_offset = 9
     _set_dimension_method_offset = 10
     _metadata = {
-        "iid_data" : (4701425013565595554, 16894540468255929531),
+        "iid_data" : (4615790117776248347, 15329090828442148011),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -6920,7 +7007,7 @@ class CalculationToolScalarDotProduct(ICalculationToolScalar, IAnalysisWorkbench
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarDotProduct, [CalculationToolScalarDotProduct, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4792387092728447134, 3158224088086022029), CalculationToolScalarDotProduct)
+agcls.AgClassCatalog.add_catalog_entry((5420664117528925739, 12392321272748910761), CalculationToolScalarDotProduct)
 agcls.AgTypeNameMap["CalculationToolScalarDotProduct"] = CalculationToolScalarDotProduct
 
 class CalculationToolScalarElapsedTime(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -6931,7 +7018,7 @@ class CalculationToolScalarElapsedTime(ICalculationToolScalar, IAnalysisWorkbenc
     _get_reference_time_instant_method_offset = 1
     _set_reference_time_instant_method_offset = 2
     _metadata = {
-        "iid_data" : (5303668177545430544, 4808828999605306252),
+        "iid_data" : (5747360973250850741, 488994631540135563),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -6972,7 +7059,7 @@ class CalculationToolScalarElapsedTime(ICalculationToolScalar, IAnalysisWorkbenc
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarElapsedTime, [CalculationToolScalarElapsedTime, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4848170193154715426, 2061643609355890078), CalculationToolScalarElapsedTime)
+agcls.AgClassCatalog.add_catalog_entry((5552538497762617290, 1871783963258691991), CalculationToolScalarElapsedTime)
 agcls.AgTypeNameMap["CalculationToolScalarElapsedTime"] = CalculationToolScalarElapsedTime
 
 class CalculationToolScalarFactory(SupportsDeleteCallback):
@@ -7005,7 +7092,7 @@ class CalculationToolScalarFactory(SupportsDeleteCallback):
     _create_calculation_along_trajectory_method_offset = 23
     _create_custom_inline_script_method_offset = 24
     _metadata = {
-        "iid_data" : (5499352364829801528, 7117583500936800935),
+        "iid_data" : (5155531796505183030, 10424219296660190363),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -7196,7 +7283,7 @@ class CalculationToolScalarFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarFactory, [CalculationToolScalarFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5603183957251412242, 16723870511898521754), CalculationToolScalarFactory)
+agcls.AgClassCatalog.add_catalog_entry((5630239742054089724, 16969402690495504821), CalculationToolScalarFactory)
 agcls.AgTypeNameMap["CalculationToolScalarFactory"] = CalculationToolScalarFactory
 
 class CalculationToolScalarFile(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -7215,7 +7302,7 @@ class CalculationToolScalarFile(ICalculationToolScalar, IAnalysisWorkbenchCompon
     _get_use_native_file_interpolation_settings_method_offset = 9
     _set_use_native_file_interpolation_settings_method_offset = 10
     _metadata = {
-        "iid_data" : (5153202141983971278, 8810191830175553723),
+        "iid_data" : (4621158845275833904, 1256356877999217329),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -7318,7 +7405,7 @@ class CalculationToolScalarFile(ICalculationToolScalar, IAnalysisWorkbenchCompon
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarFile, [CalculationToolScalarFile, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5148097650078253983, 10233293468354629821), CalculationToolScalarFile)
+agcls.AgClassCatalog.add_catalog_entry((4621229274578376178, 8133358384679793597), CalculationToolScalarFile)
 agcls.AgTypeNameMap["CalculationToolScalarFile"] = CalculationToolScalarFile
 
 class CalculationToolScalarFixedAtTimeInstant(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -7331,7 +7418,7 @@ class CalculationToolScalarFixedAtTimeInstant(ICalculationToolScalar, IAnalysisW
     _get_reference_time_instant_method_offset = 3
     _set_reference_time_instant_method_offset = 4
     _metadata = {
-        "iid_data" : (5116980743969883807, 14308846120555093929),
+        "iid_data" : (4861191558876597331, 2508890608111505854),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -7388,7 +7475,7 @@ class CalculationToolScalarFixedAtTimeInstant(ICalculationToolScalar, IAnalysisW
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarFixedAtTimeInstant, [CalculationToolScalarFixedAtTimeInstant, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4932699577219865707, 13915785772631940010), CalculationToolScalarFixedAtTimeInstant)
+agcls.AgClassCatalog.add_catalog_entry((5655913089939550417, 14304826094924307873), CalculationToolScalarFixedAtTimeInstant)
 agcls.AgTypeNameMap["CalculationToolScalarFixedAtTimeInstant"] = CalculationToolScalarFixedAtTimeInstant
 
 class CalculationToolScalarFunction(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -7428,7 +7515,7 @@ class CalculationToolScalarFunction(ICalculationToolScalar, IAnalysisWorkbenchCo
     _get_convergence_method_offset = 30
     _set_convergence_method_offset = 31
     _metadata = {
-        "iid_data" : (5290175361666189224, 17475337594760058546),
+        "iid_data" : (4668044990392632008, 15251737481694005632),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -7702,7 +7789,7 @@ class CalculationToolScalarFunction(ICalculationToolScalar, IAnalysisWorkbenchCo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarFunction, [CalculationToolScalarFunction, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4712789712859139993, 16973698019291607179), CalculationToolScalarFunction)
+agcls.AgClassCatalog.add_catalog_entry((5013665526311765082, 9997664968546523062), CalculationToolScalarFunction)
 agcls.AgTypeNameMap["CalculationToolScalarFunction"] = CalculationToolScalarFunction
 
 class CalculationToolScalarFunctionOf2Variables(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -7734,7 +7821,7 @@ class CalculationToolScalarFunctionOf2Variables(ICalculationToolScalar, IAnalysi
     _get_output_units_method_offset = 22
     _set_output_units_method_offset = 23
     _metadata = {
-        "iid_data" : (5385933067987517982, 1513144451347807877),
+        "iid_data" : (5175109453804972430, 17552599037194520455),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -7944,7 +8031,7 @@ class CalculationToolScalarFunctionOf2Variables(ICalculationToolScalar, IAnalysi
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarFunctionOf2Variables, [CalculationToolScalarFunctionOf2Variables, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4967368611246770084, 41349991072973977), CalculationToolScalarFunctionOf2Variables)
+agcls.AgClassCatalog.add_catalog_entry((4845473539499445516, 869568923758016650), CalculationToolScalarFunctionOf2Variables)
 agcls.AgTypeNameMap["CalculationToolScalarFunctionOf2Variables"] = CalculationToolScalarFunctionOf2Variables
 
 class CalculationToolScalarIntegral(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -7978,7 +8065,7 @@ class CalculationToolScalarIntegral(ICalculationToolScalar, IAnalysisWorkbenchCo
     _set_keep_constant_outside_time_limits_method_offset = 24
     _set_offsets_method_offset = 25
     _metadata = {
-        "iid_data" : (5056256084423666488, 2219291357061330108),
+        "iid_data" : (5108697812293342771, 3504341690305917600),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -8202,7 +8289,7 @@ class CalculationToolScalarIntegral(ICalculationToolScalar, IAnalysisWorkbenchCo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarIntegral, [CalculationToolScalarIntegral, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5398899900186130554, 246171721776597151), CalculationToolScalarIntegral)
+agcls.AgClassCatalog.add_catalog_entry((5316877879622079310, 1426136435364459442), CalculationToolScalarIntegral)
 agcls.AgTypeNameMap["CalculationToolScalarIntegral"] = CalculationToolScalarIntegral
 
 class CalculationToolScalarPlugin(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -8217,7 +8304,7 @@ class CalculationToolScalarPlugin(ICalculationToolScalar, IAnalysisWorkbenchComp
     _set_property_method_offset = 5
     _get_property_method_offset = 6
     _metadata = {
-        "iid_data" : (4827675994189541692, 5493812121129913759),
+        "iid_data" : (5592434017542429998, 1282435916507157142),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -8290,7 +8377,7 @@ class CalculationToolScalarPlugin(ICalculationToolScalar, IAnalysisWorkbenchComp
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarPlugin, [CalculationToolScalarPlugin, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5691400509382320907, 9517433290752141957), CalculationToolScalarPlugin)
+agcls.AgClassCatalog.add_catalog_entry((4674689885454625797, 3742917080555672992), CalculationToolScalarPlugin)
 agcls.AgTypeNameMap["CalculationToolScalarPlugin"] = CalculationToolScalarPlugin
 
 class CalculationToolScalarAlongTrajectory(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -8303,7 +8390,7 @@ class CalculationToolScalarAlongTrajectory(ICalculationToolScalar, IAnalysisWork
     _get_spatial_calculation_method_offset = 3
     _set_spatial_calculation_method_offset = 4
     _metadata = {
-        "iid_data" : (5169596386408591497, 10944394653958111876),
+        "iid_data" : (4622897369226494762, 3591794596762008965),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -8360,7 +8447,7 @@ class CalculationToolScalarAlongTrajectory(ICalculationToolScalar, IAnalysisWork
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarAlongTrajectory, [CalculationToolScalarAlongTrajectory, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4648048658061411939, 12881727305934950065), CalculationToolScalarAlongTrajectory)
+agcls.AgClassCatalog.add_catalog_entry((5595346527836805189, 10097523383563828139), CalculationToolScalarAlongTrajectory)
 agcls.AgTypeNameMap["CalculationToolScalarAlongTrajectory"] = CalculationToolScalarAlongTrajectory
 
 class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -8394,7 +8481,7 @@ class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IAnalysisWo
     _set_keep_constant_outside_time_limits_method_offset = 24
     _set_offsets_method_offset = 25
     _metadata = {
-        "iid_data" : (4867937565024961078, 7959695188043257759),
+        "iid_data" : (5645528071270481682, 15287281461974876052),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -8618,7 +8705,7 @@ class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IAnalysisWo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarStandardDeviation, [CalculationToolScalarStandardDeviation, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4728970761222061821, 15128931790916762790), CalculationToolScalarStandardDeviation)
+agcls.AgClassCatalog.add_catalog_entry((5619772587707113276, 1322897706439599776), CalculationToolScalarStandardDeviation)
 agcls.AgTypeNameMap["CalculationToolScalarStandardDeviation"] = CalculationToolScalarStandardDeviation
 
 class CalculationToolScalarSurfaceDistanceBetweenPoints(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -8635,7 +8722,7 @@ class CalculationToolScalarSurfaceDistanceBetweenPoints(ICalculationToolScalar, 
     _get_differencing_time_step_method_offset = 7
     _set_differencing_time_step_method_offset = 8
     _metadata = {
-        "iid_data" : (5659354710283125094, 1259219978826109078),
+        "iid_data" : (5392126017954528322, 15911686692515508636),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -8724,7 +8811,7 @@ class CalculationToolScalarSurfaceDistanceBetweenPoints(ICalculationToolScalar, 
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarSurfaceDistanceBetweenPoints, [CalculationToolScalarSurfaceDistanceBetweenPoints, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5458481980404184200, 1068397851801295271), CalculationToolScalarSurfaceDistanceBetweenPoints)
+agcls.AgClassCatalog.add_catalog_entry((4719177091788425590, 1082298436340379042), CalculationToolScalarSurfaceDistanceBetweenPoints)
 agcls.AgTypeNameMap["CalculationToolScalarSurfaceDistanceBetweenPoints"] = CalculationToolScalarSurfaceDistanceBetweenPoints
 
 class CalculationToolScalarVectorComponent(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -8739,7 +8826,7 @@ class CalculationToolScalarVectorComponent(ICalculationToolScalar, IAnalysisWork
     _get_component_method_offset = 5
     _set_component_method_offset = 6
     _metadata = {
-        "iid_data" : (5021364283583990465, 9706837447278064055),
+        "iid_data" : (5064334731798678884, 11382815855236244374),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -8812,7 +8899,7 @@ class CalculationToolScalarVectorComponent(ICalculationToolScalar, IAnalysisWork
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarVectorComponent, [CalculationToolScalarVectorComponent, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5434681583091997855, 8195345628688496798), CalculationToolScalarVectorComponent)
+agcls.AgClassCatalog.add_catalog_entry((5542904085472075505, 6616159225962968231), CalculationToolScalarVectorComponent)
 agcls.AgTypeNameMap["CalculationToolScalarVectorComponent"] = CalculationToolScalarVectorComponent
 
 class CalculationToolScalarVectorMagnitude(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -8823,7 +8910,7 @@ class CalculationToolScalarVectorMagnitude(ICalculationToolScalar, IAnalysisWork
     _get_input_vector_method_offset = 1
     _set_input_vector_method_offset = 2
     _metadata = {
-        "iid_data" : (5342859323934275233, 16435141540105004707),
+        "iid_data" : (5062994138182608283, 1318487685979570109),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -8864,7 +8951,7 @@ class CalculationToolScalarVectorMagnitude(ICalculationToolScalar, IAnalysisWork
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarVectorMagnitude, [CalculationToolScalarVectorMagnitude, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5718680998699535592, 13838468874888393908), CalculationToolScalarVectorMagnitude)
+agcls.AgClassCatalog.add_catalog_entry((4649768010407615309, 17859763585483197588), CalculationToolScalarVectorMagnitude)
 agcls.AgTypeNameMap["CalculationToolScalarVectorMagnitude"] = CalculationToolScalarVectorMagnitude
 
 class CalculationToolCondition(ICalculationToolCondition, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -8885,7 +8972,7 @@ class CalculationToolCondition(ICalculationToolCondition, IAnalysisWorkbenchComp
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolCondition, [ICalculationToolCondition, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4627729760611390020, 5273234787457922734), CalculationToolCondition)
+agcls.AgClassCatalog.add_catalog_entry((5029268817961306730, 17316474386734378406), CalculationToolCondition)
 agcls.AgTypeNameMap["CalculationToolCondition"] = CalculationToolCondition
 
 class CalculationToolConditionCombined(ICalculationToolCondition, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -8903,7 +8990,7 @@ class CalculationToolConditionCombined(ICalculationToolCondition, IAnalysisWorkb
     _remove_condition_method_offset = 8
     _add_condition_method_offset = 9
     _metadata = {
-        "iid_data" : (5384348199380707650, 11046299175776141490),
+        "iid_data" : (5351959460995638643, 542292874007104386),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -8995,7 +9082,7 @@ class CalculationToolConditionCombined(ICalculationToolCondition, IAnalysisWorkb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionCombined, [CalculationToolConditionCombined, ICalculationToolCondition, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4767400244892944523, 13373757026237479857), CalculationToolConditionCombined)
+agcls.AgClassCatalog.add_catalog_entry((5650012781420636136, 13890482117865364105), CalculationToolConditionCombined)
 agcls.AgTypeNameMap["CalculationToolConditionCombined"] = CalculationToolConditionCombined
 
 class CalculationToolConditionFactory(SupportsDeleteCallback):
@@ -9009,7 +9096,7 @@ class CalculationToolConditionFactory(SupportsDeleteCallback):
     _create_combined_method_offset = 4
     _create_trajectory_within_volume_method_offset = 5
     _metadata = {
-        "iid_data" : (4908222899827327698, 13471708632999045260),
+        "iid_data" : (5325516516557211727, 7556332313594865035),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -9065,11 +9152,11 @@ class CalculationToolConditionFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionFactory, [CalculationToolConditionFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4995204375913048056, 16018337718719146118), CalculationToolConditionFactory)
+agcls.AgClassCatalog.add_catalog_entry((5481942064256008089, 12556178110699958174), CalculationToolConditionFactory)
 agcls.AgTypeNameMap["CalculationToolConditionFactory"] = CalculationToolConditionFactory
 
 class CalculationToolConditionTrajectoryWithinVolume(ICalculationToolCondition, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
-    """Defined by determining if input trajectory poiny is within extents of specified volume grid coordinate."""
+    """Defined by determining if input trajectory point is within extents of specified volume grid coordinate."""
 
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -9078,7 +9165,7 @@ class CalculationToolConditionTrajectoryWithinVolume(ICalculationToolCondition, 
     _get_constraint_method_offset = 3
     _set_constraint_method_offset = 4
     _metadata = {
-        "iid_data" : (4990807610198674937, 11839537235231187358),
+        "iid_data" : (5668870870420645400, 16378330535368477358),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -9135,7 +9222,7 @@ class CalculationToolConditionTrajectoryWithinVolume(ICalculationToolCondition, 
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionTrajectoryWithinVolume, [CalculationToolConditionTrajectoryWithinVolume, ICalculationToolCondition, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4949089905743702745, 12125459046762185093), CalculationToolConditionTrajectoryWithinVolume)
+agcls.AgClassCatalog.add_catalog_entry((4839846340670009975, 9210168756135027080), CalculationToolConditionTrajectoryWithinVolume)
 agcls.AgTypeNameMap["CalculationToolConditionTrajectoryWithinVolume"] = CalculationToolConditionTrajectoryWithinVolume
 
 class CalculationToolConditionScalarBounds(ICalculationToolCondition, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -9158,7 +9245,7 @@ class CalculationToolConditionScalarBounds(ICalculationToolCondition, IAnalysisW
     _set_maximum_unitless_method_offset = 13
     _set_unitless_method_offset = 14
     _metadata = {
-        "iid_data" : (5118226098986923307, 15094161467708565122),
+        "iid_data" : (4871891278562164424, 7998160357626273450),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -9285,7 +9372,7 @@ class CalculationToolConditionScalarBounds(ICalculationToolCondition, IAnalysisW
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionScalarBounds, [CalculationToolConditionScalarBounds, ICalculationToolCondition, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5647988579309068664, 11530525339333461889), CalculationToolConditionScalarBounds)
+agcls.AgClassCatalog.add_catalog_entry((5059248775160619846, 6449902814857831842), CalculationToolConditionScalarBounds)
 agcls.AgTypeNameMap["CalculationToolConditionScalarBounds"] = CalculationToolConditionScalarBounds
 
 class CalculationToolConditionSet(ICalculationToolConditionSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -9306,7 +9393,7 @@ class CalculationToolConditionSet(ICalculationToolConditionSet, IAnalysisWorkben
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionSet, [ICalculationToolConditionSet, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5331250789123914523, 14006917373386840708), CalculationToolConditionSet)
+agcls.AgClassCatalog.add_catalog_entry((4655166419598119699, 12344819512816649869), CalculationToolConditionSet)
 agcls.AgTypeNameMap["CalculationToolConditionSet"] = CalculationToolConditionSet
 
 class CalculationToolConditionSetFactory(SupportsDeleteCallback):
@@ -9318,7 +9405,7 @@ class CalculationToolConditionSetFactory(SupportsDeleteCallback):
     _create_scalar_thresholds_method_offset = 2
     _is_type_supported_method_offset = 3
     _metadata = {
-        "iid_data" : (4786678123302050092, 4967157609886676869),
+        "iid_data" : (5023947422032218500, 8320697903117704119),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -9360,7 +9447,7 @@ class CalculationToolConditionSetFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionSetFactory, [CalculationToolConditionSetFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5012399328141270168, 11113123877685848731), CalculationToolConditionSetFactory)
+agcls.AgClassCatalog.add_catalog_entry((5158235931271042431, 12118806069818127000), CalculationToolConditionSetFactory)
 agcls.AgTypeNameMap["CalculationToolConditionSetFactory"] = CalculationToolConditionSetFactory
 
 class CalculationToolConditionSetScalarThresholds(ICalculationToolConditionSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -9378,7 +9465,7 @@ class CalculationToolConditionSetScalarThresholds(ICalculationToolConditionSet, 
     _set_include_below_lowest_threshold_method_offset = 8
     _set_thresholds_and_labels_method_offset = 9
     _metadata = {
-        "iid_data" : (5264840048988725368, 15687740403874149559),
+        "iid_data" : (5037006811145178328, 14771879613861501597),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -9476,7 +9563,7 @@ class CalculationToolConditionSetScalarThresholds(ICalculationToolConditionSet, 
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionSetScalarThresholds, [CalculationToolConditionSetScalarThresholds, ICalculationToolConditionSet, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5572445424587947883, 5673353751277832377), CalculationToolConditionSetScalarThresholds)
+agcls.AgClassCatalog.add_catalog_entry((5649907278517078990, 17594512188937483175), CalculationToolConditionSetScalarThresholds)
 agcls.AgTypeNameMap["CalculationToolConditionSetScalarThresholds"] = CalculationToolConditionSetScalarThresholds
 
 class AnalysisWorkbenchConvergence(IAnalysisWorkbenchConvergence, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -9497,7 +9584,7 @@ class AnalysisWorkbenchConvergence(IAnalysisWorkbenchConvergence, IAnalysisWorkb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchConvergence, [IAnalysisWorkbenchConvergence, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4882492916629755513, 15853984640358895501), AnalysisWorkbenchConvergence)
+agcls.AgClassCatalog.add_catalog_entry((5385350058268438298, 425774861753352340), AnalysisWorkbenchConvergence)
 agcls.AgTypeNameMap["AnalysisWorkbenchConvergence"] = AnalysisWorkbenchConvergence
 
 class CalculationToolConvergeBasic(IAnalysisWorkbenchConvergence, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -9514,7 +9601,7 @@ class CalculationToolConvergeBasic(IAnalysisWorkbenchConvergence, IAnalysisWorkb
     _get_relative_tolerance_method_offset = 7
     _set_relative_tolerance_method_offset = 8
     _metadata = {
-        "iid_data" : (5085862782014627789, 13842813656478947762),
+        "iid_data" : (5026879390629233293, 9818092533613929603),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -9603,7 +9690,7 @@ class CalculationToolConvergeBasic(IAnalysisWorkbenchConvergence, IAnalysisWorkb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConvergeBasic, [CalculationToolConvergeBasic, IAnalysisWorkbenchConvergence, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5514954824464931267, 18409877581449644180), CalculationToolConvergeBasic)
+agcls.AgClassCatalog.add_catalog_entry((5275290063048435578, 11764212290103891354), CalculationToolConvergeBasic)
 agcls.AgTypeNameMap["CalculationToolConvergeBasic"] = CalculationToolConvergeBasic
 
 class AnalysisWorkbenchDerivative(IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -9624,7 +9711,7 @@ class AnalysisWorkbenchDerivative(IAnalysisWorkbenchDerivative, IAnalysisWorkben
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchDerivative, [IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5587768146652831139, 5043452618809804181), AnalysisWorkbenchDerivative)
+agcls.AgClassCatalog.add_catalog_entry((4804911149318529161, 12319280341921567884), AnalysisWorkbenchDerivative)
 agcls.AgTypeNameMap["AnalysisWorkbenchDerivative"] = AnalysisWorkbenchDerivative
 
 class CalculationToolDerivativeBasic(IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -9635,7 +9722,7 @@ class CalculationToolDerivativeBasic(IAnalysisWorkbenchDerivative, IAnalysisWork
     _get_time_step_method_offset = 1
     _set_time_step_method_offset = 2
     _metadata = {
-        "iid_data" : (5698636090077154234, 12182121597687392176),
+        "iid_data" : (5419836939306692336, 7368299028917931910),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -9676,7 +9763,7 @@ class CalculationToolDerivativeBasic(IAnalysisWorkbenchDerivative, IAnalysisWork
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolDerivativeBasic, [CalculationToolDerivativeBasic, IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4922997640042415299, 3689582741653722007), CalculationToolDerivativeBasic)
+agcls.AgClassCatalog.add_catalog_entry((4966673477464519057, 481809191788772279), CalculationToolDerivativeBasic)
 agcls.AgTypeNameMap["CalculationToolDerivativeBasic"] = CalculationToolDerivativeBasic
 
 class TimeToolInstant(ITimeToolInstant, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -9697,7 +9784,7 @@ class TimeToolInstant(ITimeToolInstant, IAnalysisWorkbenchComponent, SupportsDel
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolInstant, [ITimeToolInstant, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5398793057979554597, 7356352219388702598), TimeToolInstant)
+agcls.AgClassCatalog.add_catalog_entry((5424636012137439876, 13916795122619216303), TimeToolInstant)
 agcls.AgTypeNameMap["TimeToolInstant"] = TimeToolInstant
 
 class TimeToolTimeArray(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -9718,7 +9805,7 @@ class TimeToolTimeArray(ITimeToolTimeArray, IAnalysisWorkbenchComponent, Support
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeArray, [ITimeToolTimeArray, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5332777741257833242, 4202084266511321478), TimeToolTimeArray)
+agcls.AgClassCatalog.add_catalog_entry((4652027981534828788, 7895300153182181261), TimeToolTimeArray)
 agcls.AgTypeNameMap["TimeToolTimeArray"] = TimeToolTimeArray
 
 class TimeToolTimeArrayConditionCrossings(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -9741,7 +9828,7 @@ class TimeToolTimeArrayConditionCrossings(ITimeToolTimeArray, IAnalysisWorkbench
     _get_convergence_method_offset = 13
     _set_convergence_method_offset = 14
     _metadata = {
-        "iid_data" : (5613889423687348587, 15384622870918658997),
+        "iid_data" : (4643308719370222372, 1766303765973763493),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -9878,7 +9965,7 @@ class TimeToolTimeArrayConditionCrossings(ITimeToolTimeArray, IAnalysisWorkbench
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeArrayConditionCrossings, [TimeToolTimeArrayConditionCrossings, ITimeToolTimeArray, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5396215197440132353, 5751529864914655407), TimeToolTimeArrayConditionCrossings)
+agcls.AgClassCatalog.add_catalog_entry((5360052676967007921, 13368513233471891339), TimeToolTimeArrayConditionCrossings)
 agcls.AgTypeNameMap["TimeToolTimeArrayConditionCrossings"] = TimeToolTimeArrayConditionCrossings
 
 class TimeToolTimeArrayExtrema(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -9903,7 +9990,7 @@ class TimeToolTimeArrayExtrema(ITimeToolTimeArray, IAnalysisWorkbenchComponent, 
     _get_convergence_method_offset = 15
     _set_convergence_method_offset = 16
     _metadata = {
-        "iid_data" : (5206648834428252232, 967315087763540632),
+        "iid_data" : (4798791107663355042, 5245902710730273206),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10056,7 +10143,7 @@ class TimeToolTimeArrayExtrema(ITimeToolTimeArray, IAnalysisWorkbenchComponent, 
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeArrayExtrema, [TimeToolTimeArrayExtrema, ITimeToolTimeArray, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4895652447947847564, 10544338283664157372), TimeToolTimeArrayExtrema)
+agcls.AgClassCatalog.add_catalog_entry((5089078854322015116, 6254628532679253170), TimeToolTimeArrayExtrema)
 agcls.AgTypeNameMap["TimeToolTimeArrayExtrema"] = TimeToolTimeArrayExtrema
 
 class TimeToolTimeArrayFactory(SupportsDeleteCallback):
@@ -10075,7 +10162,7 @@ class TimeToolTimeArrayFactory(SupportsDeleteCallback):
     _is_type_supported_method_offset = 9
     _create_fixed_times_method_offset = 10
     _metadata = {
-        "iid_data" : (5542319423916064894, 16004686220202616230),
+        "iid_data" : (4818896401987118989, 12432181656031121795),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10166,13 +10253,13 @@ class TimeToolTimeArrayFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeArrayFactory, [TimeToolTimeArrayFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5458075538004504061, 2067516564496506015), TimeToolTimeArrayFactory)
+agcls.AgClassCatalog.add_catalog_entry((4726790592782420827, 5850847829802716855), TimeToolTimeArrayFactory)
 agcls.AgTypeNameMap["TimeToolTimeArrayFactory"] = TimeToolTimeArrayFactory
 
 class TimeToolTimeArrayFiltered(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Defined by filtering times from original time array according to specified filtering method."""
 
-    _num_methods = 12
+    _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_original_time_array_method_offset = 1
     _set_original_time_array_method_offset = 2
@@ -10184,10 +10271,11 @@ class TimeToolTimeArrayFiltered(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
     _set_step_method_offset = 8
     _get_include_interval_stop_times_method_offset = 9
     _set_include_interval_stop_times_method_offset = 10
-    _get_filter_interval_list_method_offset = 11
+    _get_filter_interval_list_or_interval_method_offset = 11
     _set_filter_interval_list_method_offset = 12
+    _set_filter_interval_method_offset = 13
     _metadata = {
-        "iid_data" : (4807678415758810560, 13966026461879800744),
+        "iid_data" : (5398257471603414741, 5241507517763546544),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10269,27 +10357,32 @@ class TimeToolTimeArrayFiltered(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
     def include_interval_stop_times(self, include_interval_stop_times:bool) -> None:
         return self._intf.set_property(TimeToolTimeArrayFiltered._metadata, TimeToolTimeArrayFiltered._set_include_interval_stop_times_metadata, include_interval_stop_times)
 
-    _get_filter_interval_list_metadata = { "offset" : _get_filter_interval_list_method_offset,
+    _get_filter_interval_list_or_interval_metadata = { "offset" : _get_filter_interval_list_or_interval_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def filter_interval_list(self) -> "ITimeToolTimeIntervalList":
-        """The interval list used to filter samples when FilterType is set to Skip Intervals."""
-        return self._intf.get_property(TimeToolTimeArrayFiltered._metadata, TimeToolTimeArrayFiltered._get_filter_interval_list_metadata)
+    def get_filter_interval_list_or_interval(self) -> "IAnalysisWorkbenchComponent":
+        """Get the interval(s) used to filter samples (being either an Interval or an IntervalList) when FilterType is set to Skip Intervals."""
+        return self._intf.invoke(TimeToolTimeArrayFiltered._metadata, TimeToolTimeArrayFiltered._get_filter_interval_list_or_interval_metadata, OutArg())
 
     _set_filter_interval_list_metadata = { "offset" : _set_filter_interval_list_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
-    @filter_interval_list.setter
-    def filter_interval_list(self, filter_interval_list:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(TimeToolTimeArrayFiltered._metadata, TimeToolTimeArrayFiltered._set_filter_interval_list_metadata, filter_interval_list)
+    def set_filter_interval_list(self, intvls:"ITimeToolTimeIntervalList") -> None:
+        """Set the interval list used to filter samples when FilterType is set to Skip Intervals when using a set of intervals."""
+        return self._intf.invoke(TimeToolTimeArrayFiltered._metadata, TimeToolTimeArrayFiltered._set_filter_interval_list_metadata, intvls)
+
+    _set_filter_interval_metadata = { "offset" : _set_filter_interval_method_offset,
+            "arg_types" : (agcom.PVOID,),
+            "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeInterval"),) }
+    def set_filter_interval(self, intvl:"ITimeToolTimeInterval") -> None:
+        """Set the interval used to filter samples when FilterType is set to Skip Intervals when using only one interval."""
+        return self._intf.invoke(TimeToolTimeArrayFiltered._metadata, TimeToolTimeArrayFiltered._set_filter_interval_metadata, intvl)
 
     _property_names[original_time_array] = "original_time_array"
     _property_names[filter_type] = "filter_type"
     _property_names[count] = "count"
     _property_names[step] = "step"
     _property_names[include_interval_stop_times] = "include_interval_stop_times"
-    _property_names[filter_interval_list] = "filter_interval_list"
 
     def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayFiltered."""
@@ -10308,7 +10401,7 @@ class TimeToolTimeArrayFiltered(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeArrayFiltered, [TimeToolTimeArrayFiltered, ITimeToolTimeArray, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4642904597198643175, 4377576397480008330), TimeToolTimeArrayFiltered)
+agcls.AgClassCatalog.add_catalog_entry((5707695000678378658, 17503171192705589428), TimeToolTimeArrayFiltered)
 agcls.AgTypeNameMap["TimeToolTimeArrayFiltered"] = TimeToolTimeArrayFiltered
 
 class TimeToolTimeArrayFixedStep(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -10327,7 +10420,7 @@ class TimeToolTimeArrayFixedStep(ITimeToolTimeArray, IAnalysisWorkbenchComponent
     _get_reference_time_instant_method_offset = 9
     _set_reference_time_instant_method_offset = 10
     _metadata = {
-        "iid_data" : (5206395693562101053, 5734909382665571514),
+        "iid_data" : (5549124122548701936, 13238325237452117889),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10432,7 +10525,7 @@ class TimeToolTimeArrayFixedStep(ITimeToolTimeArray, IAnalysisWorkbenchComponent
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeArrayFixedStep, [TimeToolTimeArrayFixedStep, ITimeToolTimeArray, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5291295331531848140, 1885669106906320519), TimeToolTimeArrayFixedStep)
+agcls.AgClassCatalog.add_catalog_entry((4633103571776111309, 17448405014198280077), TimeToolTimeArrayFixedStep)
 agcls.AgTypeNameMap["TimeToolTimeArrayFixedStep"] = TimeToolTimeArrayFixedStep
 
 class TimeToolTimeArrayFixedTimes(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -10443,7 +10536,7 @@ class TimeToolTimeArrayFixedTimes(ITimeToolTimeArray, IAnalysisWorkbenchComponen
     _get_array_times_method_offset = 1
     _set_array_times_method_offset = 2
     _metadata = {
-        "iid_data" : (5074323306179123922, 16054451061673617558),
+        "iid_data" : (5738873426963609291, 11590970144849724588),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10484,7 +10577,7 @@ class TimeToolTimeArrayFixedTimes(ITimeToolTimeArray, IAnalysisWorkbenchComponen
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeArrayFixedTimes, [TimeToolTimeArrayFixedTimes, ITimeToolTimeArray, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5593791433450696394, 1539321884068845490), TimeToolTimeArrayFixedTimes)
+agcls.AgClassCatalog.add_catalog_entry((5509748881611369018, 1682406772727425667), TimeToolTimeArrayFixedTimes)
 agcls.AgTypeNameMap["TimeToolTimeArrayFixedTimes"] = TimeToolTimeArrayFixedTimes
 
 class TimeToolTimeArrayMerged(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -10497,7 +10590,7 @@ class TimeToolTimeArrayMerged(ITimeToolTimeArray, IAnalysisWorkbenchComponent, S
     _get_time_array_b_method_offset = 3
     _set_time_array_b_method_offset = 4
     _metadata = {
-        "iid_data" : (4780019232320281739, 780076398979475114),
+        "iid_data" : (5362651462348166294, 13035440047764717700),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10554,7 +10647,7 @@ class TimeToolTimeArrayMerged(ITimeToolTimeArray, IAnalysisWorkbenchComponent, S
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeArrayMerged, [TimeToolTimeArrayMerged, ITimeToolTimeArray, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4782774864999860286, 3889233035658327469), TimeToolTimeArrayMerged)
+agcls.AgClassCatalog.add_catalog_entry((4678230162355043273, 2146249258507024318), TimeToolTimeArrayMerged)
 agcls.AgTypeNameMap["TimeToolTimeArrayMerged"] = TimeToolTimeArrayMerged
 
 class TimeToolTimeArraySignaled(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -10573,7 +10666,7 @@ class TimeToolTimeArraySignaled(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
     _get_signal_delay_method_offset = 9
     _set_signal_delay_method_offset = 10
     _metadata = {
-        "iid_data" : (5436916865848414632, 14446293692646829208),
+        "iid_data" : (5332663146797982633, 2700604279818028167),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10678,7 +10771,7 @@ class TimeToolTimeArraySignaled(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeArraySignaled, [TimeToolTimeArraySignaled, ITimeToolTimeArray, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5435814862915860050, 12317878345385448122), TimeToolTimeArraySignaled)
+agcls.AgClassCatalog.add_catalog_entry((4998174814015551883, 8489018318561095096), TimeToolTimeArraySignaled)
 agcls.AgTypeNameMap["TimeToolTimeArraySignaled"] = TimeToolTimeArraySignaled
 
 class TimeToolTimeArrayStartStopTimes(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -10691,7 +10784,7 @@ class TimeToolTimeArrayStartStopTimes(ITimeToolTimeArray, IAnalysisWorkbenchComp
     _get_reference_intervals_method_offset = 3
     _set_reference_intervals_method_offset = 4
     _metadata = {
-        "iid_data" : (4846567064350463042, 16499803777902134457),
+        "iid_data" : (5036674481898975320, 10924785088050696102),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10748,7 +10841,7 @@ class TimeToolTimeArrayStartStopTimes(ITimeToolTimeArray, IAnalysisWorkbenchComp
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeArrayStartStopTimes, [TimeToolTimeArrayStartStopTimes, ITimeToolTimeArray, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4860958271402795436, 3117480943035526832), TimeToolTimeArrayStartStopTimes)
+agcls.AgClassCatalog.add_catalog_entry((4966194209114186167, 13405322955931247529), TimeToolTimeArrayStartStopTimes)
 agcls.AgTypeNameMap["TimeToolTimeArrayStartStopTimes"] = TimeToolTimeArrayStartStopTimes
 
 class TimeToolInstantEpoch(ITimeToolInstant, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -10759,7 +10852,7 @@ class TimeToolInstantEpoch(ITimeToolInstant, IAnalysisWorkbenchComponent, Suppor
     _get_epoch_method_offset = 1
     _set_epoch_method_offset = 2
     _metadata = {
-        "iid_data" : (5361126161618754498, 11546813527429934240),
+        "iid_data" : (5098470481299219807, 9867669054569073062),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10800,7 +10893,7 @@ class TimeToolInstantEpoch(ITimeToolInstant, IAnalysisWorkbenchComponent, Suppor
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolInstantEpoch, [TimeToolInstantEpoch, ITimeToolInstant, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5435356060854789844, 4067587155681333929), TimeToolInstantEpoch)
+agcls.AgClassCatalog.add_catalog_entry((4886946793450235138, 11956588572347880616), TimeToolInstantEpoch)
 agcls.AgTypeNameMap["TimeToolInstantEpoch"] = TimeToolInstantEpoch
 
 class TimeToolInstantExtremum(ITimeToolInstant, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -10823,7 +10916,7 @@ class TimeToolInstantExtremum(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
     _get_convergence_method_offset = 13
     _set_convergence_method_offset = 14
     _metadata = {
-        "iid_data" : (5490767592740683220, 17574270972815238058),
+        "iid_data" : (5048303935035761031, 2395688290814725566),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10960,7 +11053,7 @@ class TimeToolInstantExtremum(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolInstantExtremum, [TimeToolInstantExtremum, ITimeToolInstant, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5389385592881205397, 339728145862133895), TimeToolInstantExtremum)
+agcls.AgClassCatalog.add_catalog_entry((5051716615633001961, 9222512210015562661), TimeToolInstantExtremum)
 agcls.AgTypeNameMap["TimeToolInstantExtremum"] = TimeToolInstantExtremum
 
 class TimeToolInstantFactory(SupportsDeleteCallback):
@@ -10980,7 +11073,7 @@ class TimeToolInstantFactory(SupportsDeleteCallback):
     _create_smart_epoch_from_event_method_offset = 10
     _is_type_supported_method_offset = 11
     _metadata = {
-        "iid_data" : (5177435815935857475, 9742177550060253581),
+        "iid_data" : (5426701352731482175, 10624672510469688239),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -11082,7 +11175,7 @@ class TimeToolInstantFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolInstantFactory, [TimeToolInstantFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5272300824979797026, 16498667286970460562), TimeToolInstantFactory)
+agcls.AgClassCatalog.add_catalog_entry((4979412278976228369, 6446361343585586317), TimeToolInstantFactory)
 agcls.AgTypeNameMap["TimeToolInstantFactory"] = TimeToolInstantFactory
 
 class TimeToolTimeInterval(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -11103,7 +11196,7 @@ class TimeToolTimeInterval(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, S
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeInterval, [ITimeToolTimeInterval, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4907362365384322524, 7697029984187487375), TimeToolTimeInterval)
+agcls.AgClassCatalog.add_catalog_entry((4844023280266709032, 17030707165979739791), TimeToolTimeInterval)
 agcls.AgTypeNameMap["TimeToolTimeInterval"] = TimeToolTimeInterval
 
 class TimeToolTimeIntervalBetweenTimeInstants(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -11116,7 +11209,7 @@ class TimeToolTimeIntervalBetweenTimeInstants(ITimeToolTimeInterval, IAnalysisWo
     _get_stop_time_instant_method_offset = 3
     _set_stop_time_instant_method_offset = 4
     _metadata = {
-        "iid_data" : (5763963832395591361, 8213926450025946009),
+        "iid_data" : (5207421720856906468, 16656241400226120599),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -11173,7 +11266,7 @@ class TimeToolTimeIntervalBetweenTimeInstants(ITimeToolTimeInterval, IAnalysisWo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalBetweenTimeInstants, [TimeToolTimeIntervalBetweenTimeInstants, ITimeToolTimeInterval, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5441730547251256494, 11273521191384897433), TimeToolTimeIntervalBetweenTimeInstants)
+agcls.AgClassCatalog.add_catalog_entry((5022218589550896682, 15588261057207418758), TimeToolTimeIntervalBetweenTimeInstants)
 agcls.AgTypeNameMap["TimeToolTimeIntervalBetweenTimeInstants"] = TimeToolTimeIntervalBetweenTimeInstants
 
 class TimeToolTimeIntervalCollection(ITimeToolTimeIntervalCollection, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -11194,7 +11287,7 @@ class TimeToolTimeIntervalCollection(ITimeToolTimeIntervalCollection, IAnalysisW
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalCollection, [ITimeToolTimeIntervalCollection, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5320390972149596139, 11612889387071709314), TimeToolTimeIntervalCollection)
+agcls.AgClassCatalog.add_catalog_entry((5724307195693012931, 12352431401743940786), TimeToolTimeIntervalCollection)
 agcls.AgTypeNameMap["TimeToolTimeIntervalCollection"] = TimeToolTimeIntervalCollection
 
 class TimeToolTimeIntervalCollectionCondition(ITimeToolTimeIntervalCollection, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -11215,7 +11308,7 @@ class TimeToolTimeIntervalCollectionCondition(ITimeToolTimeIntervalCollection, I
     _get_convergence_method_offset = 11
     _set_convergence_method_offset = 12
     _metadata = {
-        "iid_data" : (5695491852784106006, 14645292488236401817),
+        "iid_data" : (4893445672867604991, 11359383573914070673),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -11336,7 +11429,7 @@ class TimeToolTimeIntervalCollectionCondition(ITimeToolTimeIntervalCollection, I
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalCollectionCondition, [TimeToolTimeIntervalCollectionCondition, ITimeToolTimeIntervalCollection, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5096431107182997469, 15497237714408753540), TimeToolTimeIntervalCollectionCondition)
+agcls.AgClassCatalog.add_catalog_entry((5109703504840537415, 16952391544982873515), TimeToolTimeIntervalCollectionCondition)
 agcls.AgTypeNameMap["TimeToolTimeIntervalCollectionCondition"] = TimeToolTimeIntervalCollectionCondition
 
 class TimeToolTimeIntervalCollectionFactory(SupportsDeleteCallback):
@@ -11350,7 +11443,7 @@ class TimeToolTimeIntervalCollectionFactory(SupportsDeleteCallback):
     _is_type_supported_method_offset = 4
     _create_satisfaction_method_offset = 5
     _metadata = {
-        "iid_data" : (4929297514598945487, 10137873554628665765),
+        "iid_data" : (4778812960024765104, 4785513409534964131),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -11406,7 +11499,7 @@ class TimeToolTimeIntervalCollectionFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalCollectionFactory, [TimeToolTimeIntervalCollectionFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5176155607638442896, 7177596217140786077), TimeToolTimeIntervalCollectionFactory)
+agcls.AgClassCatalog.add_catalog_entry((5292294480534116590, 14117343687830442631), TimeToolTimeIntervalCollectionFactory)
 agcls.AgTypeNameMap["TimeToolTimeIntervalCollectionFactory"] = TimeToolTimeIntervalCollectionFactory
 
 class TimeToolTimeIntervalCollectionLighting(ITimeToolTimeIntervalCollection, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -11421,7 +11514,7 @@ class TimeToolTimeIntervalCollectionLighting(ITimeToolTimeIntervalCollection, IA
     _get_use_object_eclipsing_bodies_method_offset = 5
     _set_use_object_eclipsing_bodies_method_offset = 6
     _metadata = {
-        "iid_data" : (5361006311311084485, 10468446585511132859),
+        "iid_data" : (5583213317411194265, 1051460013412393399),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -11494,7 +11587,7 @@ class TimeToolTimeIntervalCollectionLighting(ITimeToolTimeIntervalCollection, IA
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalCollectionLighting, [TimeToolTimeIntervalCollectionLighting, ITimeToolTimeIntervalCollection, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4778372489419407290, 1841925492488396976), TimeToolTimeIntervalCollectionLighting)
+agcls.AgClassCatalog.add_catalog_entry((5219072751885902851, 1432159461973943473), TimeToolTimeIntervalCollectionLighting)
 agcls.AgTypeNameMap["TimeToolTimeIntervalCollectionLighting"] = TimeToolTimeIntervalCollectionLighting
 
 class TimeToolTimeIntervalCollectionSignaled(ITimeToolTimeIntervalCollection, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -11513,7 +11606,7 @@ class TimeToolTimeIntervalCollectionSignaled(ITimeToolTimeIntervalCollection, IA
     _get_signal_delay_method_offset = 9
     _set_signal_delay_method_offset = 10
     _metadata = {
-        "iid_data" : (5102559603137595011, 6446915665441949320),
+        "iid_data" : (4934160510753713318, 3633976017020042895),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -11618,7 +11711,7 @@ class TimeToolTimeIntervalCollectionSignaled(ITimeToolTimeIntervalCollection, IA
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalCollectionSignaled, [TimeToolTimeIntervalCollectionSignaled, ITimeToolTimeIntervalCollection, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4681123355224258665, 3519235201891138198), TimeToolTimeIntervalCollectionSignaled)
+agcls.AgClassCatalog.add_catalog_entry((5282564054018188461, 442753882246074040), TimeToolTimeIntervalCollectionSignaled)
 agcls.AgTypeNameMap["TimeToolTimeIntervalCollectionSignaled"] = TimeToolTimeIntervalCollectionSignaled
 
 class TimeToolTimeIntervalFactory(SupportsDeleteCallback):
@@ -11636,7 +11729,7 @@ class TimeToolTimeIntervalFactory(SupportsDeleteCallback):
     _create_time_offset_method_offset = 8
     _is_type_supported_method_offset = 9
     _metadata = {
-        "iid_data" : (4781822647992058058, 10338186051262684820),
+        "iid_data" : (5565755725201550649, 8211263465174071734),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -11720,7 +11813,7 @@ class TimeToolTimeIntervalFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalFactory, [TimeToolTimeIntervalFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5271144977203828184, 14422681085791257527), TimeToolTimeIntervalFactory)
+agcls.AgClassCatalog.add_catalog_entry((5337900083916080118, 5189456146072041105), TimeToolTimeIntervalFactory)
 agcls.AgTypeNameMap["TimeToolTimeIntervalFactory"] = TimeToolTimeIntervalFactory
 
 class TimeToolTimeIntervalFixed(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -11732,7 +11825,7 @@ class TimeToolTimeIntervalFixed(ITimeToolTimeInterval, IAnalysisWorkbenchCompone
     _get_stop_time_method_offset = 2
     _set_interval_method_offset = 3
     _metadata = {
-        "iid_data" : (4700629706653582627, 17112466619207988153),
+        "iid_data" : (5573640442082120318, 5588276869551146414),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -11782,7 +11875,7 @@ class TimeToolTimeIntervalFixed(ITimeToolTimeInterval, IAnalysisWorkbenchCompone
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalFixed, [TimeToolTimeIntervalFixed, ITimeToolTimeInterval, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5434382701560354571, 17399214976131420314), TimeToolTimeIntervalFixed)
+agcls.AgClassCatalog.add_catalog_entry((4690054752507962489, 13013226989383109306), TimeToolTimeIntervalFixed)
 agcls.AgTypeNameMap["TimeToolTimeIntervalFixed"] = TimeToolTimeIntervalFixed
 
 class TimeToolTimeIntervalFixedDuration(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -11797,7 +11890,7 @@ class TimeToolTimeIntervalFixedDuration(ITimeToolTimeInterval, IAnalysisWorkbenc
     _get_stop_offset_method_offset = 5
     _set_stop_offset_method_offset = 6
     _metadata = {
-        "iid_data" : (5616504913797350155, 4594426271094609308),
+        "iid_data" : (5421833020267538898, 10231386581535664041),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -11870,7 +11963,7 @@ class TimeToolTimeIntervalFixedDuration(ITimeToolTimeInterval, IAnalysisWorkbenc
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalFixedDuration, [TimeToolTimeIntervalFixedDuration, ITimeToolTimeInterval, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5617013323472138033, 5900512052836164536), TimeToolTimeIntervalFixedDuration)
+agcls.AgClassCatalog.add_catalog_entry((5289167483240085112, 16355939525359747997), TimeToolTimeIntervalFixedDuration)
 agcls.AgTypeNameMap["TimeToolTimeIntervalFixedDuration"] = TimeToolTimeIntervalFixedDuration
 
 class TimeToolTimeIntervalFromIntervalList(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -11885,7 +11978,7 @@ class TimeToolTimeIntervalFromIntervalList(ITimeToolTimeInterval, IAnalysisWorkb
     _get_interval_number_method_offset = 5
     _set_interval_number_method_offset = 6
     _metadata = {
-        "iid_data" : (5212467572212542000, 10268755993903263125),
+        "iid_data" : (5054070114328113573, 14313345257488624257),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -11958,7 +12051,7 @@ class TimeToolTimeIntervalFromIntervalList(ITimeToolTimeInterval, IAnalysisWorkb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalFromIntervalList, [TimeToolTimeIntervalFromIntervalList, ITimeToolTimeInterval, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5605488631452751831, 17424609706075019906), TimeToolTimeIntervalFromIntervalList)
+agcls.AgClassCatalog.add_catalog_entry((5273548206223373117, 3528197250836396713), TimeToolTimeIntervalFromIntervalList)
 agcls.AgTypeNameMap["TimeToolTimeIntervalFromIntervalList"] = TimeToolTimeIntervalFromIntervalList
 
 class TimeToolTimeIntervalList(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -11979,7 +12072,7 @@ class TimeToolTimeIntervalList(ITimeToolTimeIntervalList, IAnalysisWorkbenchComp
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalList, [ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4931610229651409517, 5176676340500202392), TimeToolTimeIntervalList)
+agcls.AgClassCatalog.add_catalog_entry((5503234664430220991, 11117045713390740404), TimeToolTimeIntervalList)
 agcls.AgTypeNameMap["TimeToolTimeIntervalList"] = TimeToolTimeIntervalList
 
 class TimeToolTimeIntervalListCondition(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -12000,7 +12093,7 @@ class TimeToolTimeIntervalListCondition(ITimeToolTimeIntervalList, IAnalysisWork
     _get_convergence_method_offset = 11
     _set_convergence_method_offset = 12
     _metadata = {
-        "iid_data" : (5026707234268337802, 16142642421116537497),
+        "iid_data" : (5697368338376155670, 4514456446585216665),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12121,7 +12214,7 @@ class TimeToolTimeIntervalListCondition(ITimeToolTimeIntervalList, IAnalysisWork
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalListCondition, [TimeToolTimeIntervalListCondition, ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5695291326310786302, 3161624783042523292), TimeToolTimeIntervalListCondition)
+agcls.AgClassCatalog.add_catalog_entry((5106306753523967344, 8075943315985626251), TimeToolTimeIntervalListCondition)
 agcls.AgTypeNameMap["TimeToolTimeIntervalListCondition"] = TimeToolTimeIntervalListCondition
 
 class TimeToolTimeIntervalListFactory(SupportsDeleteCallback):
@@ -12140,7 +12233,7 @@ class TimeToolTimeIntervalListFactory(SupportsDeleteCallback):
     _create_from_file_method_offset = 9
     _create_fixed_method_offset = 10
     _metadata = {
-        "iid_data" : (4817877923312545831, 15527202984233884858),
+        "iid_data" : (4673703236071119447, 7682549898958496897),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12231,7 +12324,7 @@ class TimeToolTimeIntervalListFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalListFactory, [TimeToolTimeIntervalListFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5520594195372287577, 9965002346799811229), TimeToolTimeIntervalListFactory)
+agcls.AgClassCatalog.add_catalog_entry((4748820078505278173, 8779514165329755778), TimeToolTimeIntervalListFactory)
 agcls.AgTypeNameMap["TimeToolTimeIntervalListFactory"] = TimeToolTimeIntervalListFactory
 
 class TimeToolTimeIntervalListFile(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -12244,7 +12337,7 @@ class TimeToolTimeIntervalListFile(ITimeToolTimeIntervalList, IAnalysisWorkbench
     _reload_method_offset = 3
     _get_file_span_method_offset = 4
     _metadata = {
-        "iid_data" : (4969943485407135988, 4215037281840912568),
+        "iid_data" : (5177188711184521306, 1632209443511274160),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12299,7 +12392,7 @@ class TimeToolTimeIntervalListFile(ITimeToolTimeIntervalList, IAnalysisWorkbench
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalListFile, [TimeToolTimeIntervalListFile, ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4939698509197330113, 12995431996803870356), TimeToolTimeIntervalListFile)
+agcls.AgClassCatalog.add_catalog_entry((5152558129399145085, 12522993427637396145), TimeToolTimeIntervalListFile)
 agcls.AgTypeNameMap["TimeToolTimeIntervalListFile"] = TimeToolTimeIntervalListFile
 
 class TimeToolTimeIntervalListFiltered(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -12313,7 +12406,7 @@ class TimeToolTimeIntervalListFiltered(ITimeToolTimeIntervalList, IAnalysisWorkb
     _get_filter_method_offset = 4
     _set_filter_method_offset = 5
     _metadata = {
-        "iid_data" : (5362704445766881861, 6912538458780151178),
+        "iid_data" : (4692227934258282000, 2144853697810471299),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12379,7 +12472,7 @@ class TimeToolTimeIntervalListFiltered(ITimeToolTimeIntervalList, IAnalysisWorkb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalListFiltered, [TimeToolTimeIntervalListFiltered, ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4625969561133636137, 1394880749826965914), TimeToolTimeIntervalListFiltered)
+agcls.AgClassCatalog.add_catalog_entry((5714337906891033009, 13893551710982012085), TimeToolTimeIntervalListFiltered)
 agcls.AgTypeNameMap["TimeToolTimeIntervalListFiltered"] = TimeToolTimeIntervalListFiltered
 
 class TimeToolTimeIntervalListFixed(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -12390,7 +12483,7 @@ class TimeToolTimeIntervalListFixed(ITimeToolTimeIntervalList, IAnalysisWorkbenc
     _get_intervals_method_offset = 1
     _set_intervals_method_offset = 2
     _metadata = {
-        "iid_data" : (5035651772834666939, 4266315594091686530),
+        "iid_data" : (4754048456388832290, 16457773808164441986),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12429,7 +12522,7 @@ class TimeToolTimeIntervalListFixed(ITimeToolTimeIntervalList, IAnalysisWorkbenc
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalListFixed, [TimeToolTimeIntervalListFixed, ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5035876072746351075, 10259654735031477925), TimeToolTimeIntervalListFixed)
+agcls.AgClassCatalog.add_catalog_entry((5676507052158646553, 10460530508107618192), TimeToolTimeIntervalListFixed)
 agcls.AgTypeNameMap["TimeToolTimeIntervalListFixed"] = TimeToolTimeIntervalListFixed
 
 class TimeToolTimeIntervalListMerged(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -12453,7 +12546,7 @@ class TimeToolTimeIntervalListMerged(ITimeToolTimeIntervalList, IAnalysisWorkben
     _get_time_component_size_method_offset = 14
     _remove_time_component_method_offset = 15
     _metadata = {
-        "iid_data" : (5336865813588725345, 16270761028594191753),
+        "iid_data" : (5026308995162394114, 5227369813748209824),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12589,7 +12682,7 @@ class TimeToolTimeIntervalListMerged(ITimeToolTimeIntervalList, IAnalysisWorkben
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalListMerged, [TimeToolTimeIntervalListMerged, ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5271487708003070052, 15898448361769664948), TimeToolTimeIntervalListMerged)
+agcls.AgClassCatalog.add_catalog_entry((5072440211894401166, 15992724192262234021), TimeToolTimeIntervalListMerged)
 agcls.AgTypeNameMap["TimeToolTimeIntervalListMerged"] = TimeToolTimeIntervalListMerged
 
 class TimeToolTimeIntervalListScaled(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -12606,7 +12699,7 @@ class TimeToolTimeIntervalListScaled(ITimeToolTimeIntervalList, IAnalysisWorkben
     _get_use_absolute_increment_method_offset = 7
     _set_use_absolute_increment_method_offset = 8
     _metadata = {
-        "iid_data" : (5066170491909867768, 15012607590605642908),
+        "iid_data" : (4960825876599769087, 8616828775732074919),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12695,7 +12788,7 @@ class TimeToolTimeIntervalListScaled(ITimeToolTimeIntervalList, IAnalysisWorkben
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalListScaled, [TimeToolTimeIntervalListScaled, ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5135112674452953850, 13376159879454619046), TimeToolTimeIntervalListScaled)
+agcls.AgClassCatalog.add_catalog_entry((4718307033797991395, 4971893381518705823), TimeToolTimeIntervalListScaled)
 agcls.AgTypeNameMap["TimeToolTimeIntervalListScaled"] = TimeToolTimeIntervalListScaled
 
 class TimeToolTimeIntervalListSignaled(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -12714,7 +12807,7 @@ class TimeToolTimeIntervalListSignaled(ITimeToolTimeIntervalList, IAnalysisWorkb
     _get_signal_delay_method_offset = 9
     _set_signal_delay_method_offset = 10
     _metadata = {
-        "iid_data" : (5408509073392837198, 4033135434938257290),
+        "iid_data" : (4928659683683024425, 4243480867538874771),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12819,7 +12912,7 @@ class TimeToolTimeIntervalListSignaled(ITimeToolTimeIntervalList, IAnalysisWorkb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalListSignaled, [TimeToolTimeIntervalListSignaled, ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5092160389376989615, 317323019564379040), TimeToolTimeIntervalListSignaled)
+agcls.AgClassCatalog.add_catalog_entry((5543695614052688139, 11456482754711853453), TimeToolTimeIntervalListSignaled)
 agcls.AgTypeNameMap["TimeToolTimeIntervalListSignaled"] = TimeToolTimeIntervalListSignaled
 
 class TimeToolTimeIntervalListTimeOffset(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -12832,7 +12925,7 @@ class TimeToolTimeIntervalListTimeOffset(ITimeToolTimeIntervalList, IAnalysisWor
     _get_time_offset_method_offset = 3
     _set_time_offset_method_offset = 4
     _metadata = {
-        "iid_data" : (4727529051409948883, 15038220645091515569),
+        "iid_data" : (5225613958141883777, 13912111742779473315),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12889,7 +12982,7 @@ class TimeToolTimeIntervalListTimeOffset(ITimeToolTimeIntervalList, IAnalysisWor
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalListTimeOffset, [TimeToolTimeIntervalListTimeOffset, ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5150624900174320789, 5541852546161415593), TimeToolTimeIntervalListTimeOffset)
+agcls.AgClassCatalog.add_catalog_entry((4766065592214953102, 10841488721243893408), TimeToolTimeIntervalListTimeOffset)
 agcls.AgTypeNameMap["TimeToolTimeIntervalListTimeOffset"] = TimeToolTimeIntervalListTimeOffset
 
 class TimeToolTimeIntervalScaled(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -12906,7 +12999,7 @@ class TimeToolTimeIntervalScaled(ITimeToolTimeInterval, IAnalysisWorkbenchCompon
     _get_use_absolute_increment_method_offset = 7
     _set_use_absolute_increment_method_offset = 8
     _metadata = {
-        "iid_data" : (5153652075809608699, 13548435864393192877),
+        "iid_data" : (4697896580561508889, 16611126846066934159),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12995,7 +13088,7 @@ class TimeToolTimeIntervalScaled(ITimeToolTimeInterval, IAnalysisWorkbenchCompon
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalScaled, [TimeToolTimeIntervalScaled, ITimeToolTimeInterval, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5407853737749222524, 4515930083547027092), TimeToolTimeIntervalScaled)
+agcls.AgClassCatalog.add_catalog_entry((5753680773547217027, 18360902085977022341), TimeToolTimeIntervalScaled)
 agcls.AgTypeNameMap["TimeToolTimeIntervalScaled"] = TimeToolTimeIntervalScaled
 
 class TimeToolTimeIntervalSignaled(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -13014,7 +13107,7 @@ class TimeToolTimeIntervalSignaled(ITimeToolTimeInterval, IAnalysisWorkbenchComp
     _get_signal_delay_method_offset = 9
     _set_signal_delay_method_offset = 10
     _metadata = {
-        "iid_data" : (4661949231789629063, 5033190062846728106),
+        "iid_data" : (4959271075563062612, 15861943769306320768),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13119,7 +13212,7 @@ class TimeToolTimeIntervalSignaled(ITimeToolTimeInterval, IAnalysisWorkbenchComp
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalSignaled, [TimeToolTimeIntervalSignaled, ITimeToolTimeInterval, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5146912718400089076, 7977322097241354916), TimeToolTimeIntervalSignaled)
+agcls.AgClassCatalog.add_catalog_entry((5668212959475770538, 11229813520430715777), TimeToolTimeIntervalSignaled)
 agcls.AgTypeNameMap["TimeToolTimeIntervalSignaled"] = TimeToolTimeIntervalSignaled
 
 class TimeToolTimeIntervalSmartInterval(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -13145,7 +13238,7 @@ class TimeToolTimeIntervalSmartInterval(ITimeToolTimeInterval, IAnalysisWorkbenc
     _set_start_epoch_and_duration_method_offset = 16
     _set_start_time_and_duration_method_offset = 17
     _metadata = {
-        "iid_data" : (4625607466421251572, 4331861431364410030),
+        "iid_data" : (4625135190780708678, 4691129527981315215),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13295,7 +13388,7 @@ class TimeToolTimeIntervalSmartInterval(ITimeToolTimeInterval, IAnalysisWorkbenc
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalSmartInterval, [TimeToolTimeIntervalSmartInterval, ITimeToolTimeInterval, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5123187924205363884, 5573303980465739693), TimeToolTimeIntervalSmartInterval)
+agcls.AgClassCatalog.add_catalog_entry((4971028364286504552, 17965508850821178516), TimeToolTimeIntervalSmartInterval)
 agcls.AgTypeNameMap["TimeToolTimeIntervalSmartInterval"] = TimeToolTimeIntervalSmartInterval
 
 class TimeToolTimeIntervalTimeOffset(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -13308,7 +13401,7 @@ class TimeToolTimeIntervalTimeOffset(ITimeToolTimeInterval, IAnalysisWorkbenchCo
     _get_time_offset_method_offset = 3
     _set_time_offset_method_offset = 4
     _metadata = {
-        "iid_data" : (4829788478522900189, 18194221658270060953),
+        "iid_data" : (5387397193500112415, 12811971028770820003),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13365,7 +13458,7 @@ class TimeToolTimeIntervalTimeOffset(ITimeToolTimeInterval, IAnalysisWorkbenchCo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalTimeOffset, [TimeToolTimeIntervalTimeOffset, ITimeToolTimeInterval, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5594696185291586304, 7469384033316253831), TimeToolTimeIntervalTimeOffset)
+agcls.AgClassCatalog.add_catalog_entry((5352606494664417427, 6830409301104625041), TimeToolTimeIntervalTimeOffset)
 agcls.AgTypeNameMap["TimeToolTimeIntervalTimeOffset"] = TimeToolTimeIntervalTimeOffset
 
 class TimeToolInstantSignaled(ITimeToolInstant, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -13384,7 +13477,7 @@ class TimeToolInstantSignaled(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
     _get_signal_delay_method_offset = 9
     _set_signal_delay_method_offset = 10
     _metadata = {
-        "iid_data" : (5072103158722034880, 4341972865712102555),
+        "iid_data" : (5724890775991810129, 14461067642292648586),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13489,7 +13582,7 @@ class TimeToolInstantSignaled(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolInstantSignaled, [TimeToolInstantSignaled, ITimeToolInstant, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5693916528422022973, 3263658904170695863), TimeToolInstantSignaled)
+agcls.AgClassCatalog.add_catalog_entry((5399425350543115185, 6947789510772208810), TimeToolInstantSignaled)
 agcls.AgTypeNameMap["TimeToolInstantSignaled"] = TimeToolInstantSignaled
 
 class TimeToolInstantSmartEpoch(ITimeToolInstant, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -13504,7 +13597,7 @@ class TimeToolInstantSmartEpoch(ITimeToolInstant, IAnalysisWorkbenchComponent, S
     _set_explicit_time_method_offset = 5
     _set_implicit_time_method_offset = 6
     _metadata = {
-        "iid_data" : (5299430079025464053, 2983292493577895056),
+        "iid_data" : (4817202398489297818, 173541182454994307),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13577,7 +13670,7 @@ class TimeToolInstantSmartEpoch(ITimeToolInstant, IAnalysisWorkbenchComponent, S
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolInstantSmartEpoch, [TimeToolInstantSmartEpoch, ITimeToolInstant, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5284572681912631891, 10588360420919622552), TimeToolInstantSmartEpoch)
+agcls.AgClassCatalog.add_catalog_entry((5042724423972572940, 1005911425136553151), TimeToolInstantSmartEpoch)
 agcls.AgTypeNameMap["TimeToolInstantSmartEpoch"] = TimeToolInstantSmartEpoch
 
 class TimeToolInstantStartStopTime(ITimeToolInstant, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -13590,7 +13683,7 @@ class TimeToolInstantStartStopTime(ITimeToolInstant, IAnalysisWorkbenchComponent
     _get_reference_interval_method_offset = 3
     _set_reference_interval_method_offset = 4
     _metadata = {
-        "iid_data" : (4785383463426884876, 6466418643845985677),
+        "iid_data" : (4808170472776269471, 6009539271408522423),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13647,7 +13740,7 @@ class TimeToolInstantStartStopTime(ITimeToolInstant, IAnalysisWorkbenchComponent
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolInstantStartStopTime, [TimeToolInstantStartStopTime, ITimeToolInstant, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5286281606334682631, 1156813953277887129), TimeToolInstantStartStopTime)
+agcls.AgClassCatalog.add_catalog_entry((5148526106991817190, 5845972759432636074), TimeToolInstantStartStopTime)
 agcls.AgTypeNameMap["TimeToolInstantStartStopTime"] = TimeToolInstantStartStopTime
 
 class TimeToolInstantTimeOffset(ITimeToolInstant, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -13660,7 +13753,7 @@ class TimeToolInstantTimeOffset(ITimeToolInstant, IAnalysisWorkbenchComponent, S
     _get_time_offset_method_offset = 3
     _set_time_offset_method_offset = 4
     _metadata = {
-        "iid_data" : (4849369508245529166, 13064483229774346402),
+        "iid_data" : (4647172599683723623, 18369155132546806656),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13717,7 +13810,7 @@ class TimeToolInstantTimeOffset(ITimeToolInstant, IAnalysisWorkbenchComponent, S
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolInstantTimeOffset, [TimeToolInstantTimeOffset, ITimeToolInstant, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4631038835821414856, 7748244684488556208), TimeToolInstantTimeOffset)
+agcls.AgClassCatalog.add_catalog_entry((5353629090271020254, 10113387875996124083), TimeToolInstantTimeOffset)
 agcls.AgTypeNameMap["TimeToolInstantTimeOffset"] = TimeToolInstantTimeOffset
 
 class TimeToolTimeIntervalFirstIntervalsFilter(ITimeToolPruneFilter, SupportsDeleteCallback):
@@ -13728,7 +13821,7 @@ class TimeToolTimeIntervalFirstIntervalsFilter(ITimeToolPruneFilter, SupportsDel
     _get_maximum_number_of_intervals_method_offset = 1
     _set_maximum_number_of_intervals_method_offset = 2
     _metadata = {
-        "iid_data" : (5238555741080133400, 9243782524213090747),
+        "iid_data" : (4973214731786665663, 2814600566864133769),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13767,7 +13860,7 @@ class TimeToolTimeIntervalFirstIntervalsFilter(ITimeToolPruneFilter, SupportsDel
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalFirstIntervalsFilter, [TimeToolTimeIntervalFirstIntervalsFilter, ITimeToolPruneFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((4841739463115949456, 12213426980424696479), TimeToolTimeIntervalFirstIntervalsFilter)
+agcls.AgClassCatalog.add_catalog_entry((5348986631575928225, 7008091409501443970), TimeToolTimeIntervalFirstIntervalsFilter)
 agcls.AgTypeNameMap["TimeToolTimeIntervalFirstIntervalsFilter"] = TimeToolTimeIntervalFirstIntervalsFilter
 
 class TimeToolTimeIntervalGapsFilter(ITimeToolPruneFilter, SupportsDeleteCallback):
@@ -13780,7 +13873,7 @@ class TimeToolTimeIntervalGapsFilter(ITimeToolPruneFilter, SupportsDeleteCallbac
     _get_gap_duration_method_offset = 3
     _set_gap_duration_method_offset = 4
     _metadata = {
-        "iid_data" : (5577530501196125174, 17516988796283437440),
+        "iid_data" : (4890539825807086922, 4442697019453784495),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13835,7 +13928,7 @@ class TimeToolTimeIntervalGapsFilter(ITimeToolPruneFilter, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalGapsFilter, [TimeToolTimeIntervalGapsFilter, ITimeToolPruneFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((4915234003613464599, 13847403613333364110), TimeToolTimeIntervalGapsFilter)
+agcls.AgClassCatalog.add_catalog_entry((4825555411194119037, 17143911307896143799), TimeToolTimeIntervalGapsFilter)
 agcls.AgTypeNameMap["TimeToolTimeIntervalGapsFilter"] = TimeToolTimeIntervalGapsFilter
 
 class AnalysisWorkbenchIntegral(IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -13856,7 +13949,7 @@ class AnalysisWorkbenchIntegral(IAnalysisWorkbenchIntegral, IAnalysisWorkbenchCo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchIntegral, [IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5141699313388952889, 439554261460355240), AnalysisWorkbenchIntegral)
+agcls.AgClassCatalog.add_catalog_entry((5496953523925146604, 16087555931909802671), AnalysisWorkbenchIntegral)
 agcls.AgTypeNameMap["AnalysisWorkbenchIntegral"] = AnalysisWorkbenchIntegral
 
 class CalculationToolIntegralBasic(IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -13871,7 +13964,7 @@ class CalculationToolIntegralBasic(IAnalysisWorkbenchIntegral, IAnalysisWorkbenc
     _get_maximum_iterations_method_offset = 5
     _set_maximum_iterations_method_offset = 6
     _metadata = {
-        "iid_data" : (5223039038232914469, 8592596877327925126),
+        "iid_data" : (5283168918164871887, 7051138774127636359),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13944,7 +14037,7 @@ class CalculationToolIntegralBasic(IAnalysisWorkbenchIntegral, IAnalysisWorkbenc
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolIntegralBasic, [CalculationToolIntegralBasic, IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4728253546109001966, 9993082615726594997), CalculationToolIntegralBasic)
+agcls.AgClassCatalog.add_catalog_entry((5068696149245592066, 1734664173846812046), CalculationToolIntegralBasic)
 agcls.AgTypeNameMap["CalculationToolIntegralBasic"] = CalculationToolIntegralBasic
 
 class AnalysisWorkbenchInterpolator(IAnalysisWorkbenchInterpolator, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -13965,7 +14058,7 @@ class AnalysisWorkbenchInterpolator(IAnalysisWorkbenchInterpolator, IAnalysisWor
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchInterpolator, [IAnalysisWorkbenchInterpolator, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4634326977035843189, 527318962673378965), AnalysisWorkbenchInterpolator)
+agcls.AgClassCatalog.add_catalog_entry((5357467693392395568, 2807140059460971687), AnalysisWorkbenchInterpolator)
 agcls.AgTypeNameMap["AnalysisWorkbenchInterpolator"] = AnalysisWorkbenchInterpolator
 
 class CalculationToolInterpolatorBasic(IAnalysisWorkbenchInterpolator, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -13978,7 +14071,7 @@ class CalculationToolInterpolatorBasic(IAnalysisWorkbenchInterpolator, IAnalysis
     _get_order_method_offset = 3
     _set_order_method_offset = 4
     _metadata = {
-        "iid_data" : (5619549411845612202, 16364875609665918339),
+        "iid_data" : (4991167024572560705, 11276617030956876693),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14035,7 +14128,7 @@ class CalculationToolInterpolatorBasic(IAnalysisWorkbenchInterpolator, IAnalysis
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolInterpolatorBasic, [CalculationToolInterpolatorBasic, IAnalysisWorkbenchInterpolator, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5710680427636003903, 2230165650911561406), CalculationToolInterpolatorBasic)
+agcls.AgClassCatalog.add_catalog_entry((5747342000730379557, 16568385648496655546), CalculationToolInterpolatorBasic)
 agcls.AgTypeNameMap["CalculationToolInterpolatorBasic"] = CalculationToolInterpolatorBasic
 
 class TimeToolIntervalsFilter(ITimeToolPruneFilter, SupportsDeleteCallback):
@@ -14048,7 +14141,7 @@ class TimeToolIntervalsFilter(ITimeToolPruneFilter, SupportsDeleteCallback):
     _get_interval_duration_method_offset = 3
     _set_interval_duration_method_offset = 4
     _metadata = {
-        "iid_data" : (5450995978684978217, 16753011116458334649),
+        "iid_data" : (5332903406986614099, 4855908568171229375),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14103,7 +14196,7 @@ class TimeToolIntervalsFilter(ITimeToolPruneFilter, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolIntervalsFilter, [TimeToolIntervalsFilter, ITimeToolPruneFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((5615056885707293863, 4921065534759074228), TimeToolIntervalsFilter)
+agcls.AgClassCatalog.add_catalog_entry((5559512733585552483, 16243322648310056846), TimeToolIntervalsFilter)
 agcls.AgTypeNameMap["TimeToolIntervalsFilter"] = TimeToolIntervalsFilter
 
 class TimeToolTimeIntervalLastIntervalsFilter(ITimeToolPruneFilter, SupportsDeleteCallback):
@@ -14114,7 +14207,7 @@ class TimeToolTimeIntervalLastIntervalsFilter(ITimeToolPruneFilter, SupportsDele
     _get_maximum_number_of_intervals_method_offset = 1
     _set_maximum_number_of_intervals_method_offset = 2
     _metadata = {
-        "iid_data" : (5298781469380646786, 4200496564274675643),
+        "iid_data" : (5475082846460163575, 10021836756067503774),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14153,7 +14246,7 @@ class TimeToolTimeIntervalLastIntervalsFilter(ITimeToolPruneFilter, SupportsDele
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalLastIntervalsFilter, [TimeToolTimeIntervalLastIntervalsFilter, ITimeToolPruneFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((5370173919127882269, 172199397625736352), TimeToolTimeIntervalLastIntervalsFilter)
+agcls.AgClassCatalog.add_catalog_entry((4854169933921029712, 10982646665878713482), TimeToolTimeIntervalLastIntervalsFilter)
 agcls.AgTypeNameMap["TimeToolTimeIntervalLastIntervalsFilter"] = TimeToolTimeIntervalLastIntervalsFilter
 
 class CalculationToolParameterSet(ICalculationToolParameterSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -14174,7 +14267,7 @@ class CalculationToolParameterSet(ICalculationToolParameterSet, IAnalysisWorkben
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolParameterSet, [ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5211800288647545596, 7543106923046475154), CalculationToolParameterSet)
+agcls.AgClassCatalog.add_catalog_entry((4800142123806545687, 13680769142128114106), CalculationToolParameterSet)
 agcls.AgTypeNameMap["CalculationToolParameterSet"] = CalculationToolParameterSet
 
 class CalculationToolParameterSetAttitude(ICalculationToolParameterSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -14187,7 +14280,7 @@ class CalculationToolParameterSetAttitude(ICalculationToolParameterSet, IAnalysi
     _get_reference_axes_method_offset = 3
     _set_reference_axes_method_offset = 4
     _metadata = {
-        "iid_data" : (5157814150658641714, 4846008862630832260),
+        "iid_data" : (5073573683284264118, 11387831054670041010),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14244,7 +14337,7 @@ class CalculationToolParameterSetAttitude(ICalculationToolParameterSet, IAnalysi
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolParameterSetAttitude, [CalculationToolParameterSetAttitude, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5089636213011434244, 12709160544851939744), CalculationToolParameterSetAttitude)
+agcls.AgClassCatalog.add_catalog_entry((5363399312873976596, 17603123164734527667), CalculationToolParameterSetAttitude)
 agcls.AgTypeNameMap["CalculationToolParameterSetAttitude"] = CalculationToolParameterSetAttitude
 
 class CalculationToolParameterSetFactory(SupportsDeleteCallback):
@@ -14260,7 +14353,7 @@ class CalculationToolParameterSetFactory(SupportsDeleteCallback):
     _create_vector_method_offset = 6
     _is_type_supported_method_offset = 7
     _metadata = {
-        "iid_data" : (5288103279616649311, 6790554156469523601),
+        "iid_data" : (5089238037471318089, 2770629135638357669),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14330,7 +14423,7 @@ class CalculationToolParameterSetFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolParameterSetFactory, [CalculationToolParameterSetFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5191271020123231030, 13615349136520883352), CalculationToolParameterSetFactory)
+agcls.AgClassCatalog.add_catalog_entry((4625831008725610374, 2683913673589873028), CalculationToolParameterSetFactory)
 agcls.AgTypeNameMap["CalculationToolParameterSetFactory"] = CalculationToolParameterSetFactory
 
 class CalculationToolParameterSetGroundTrajectory(ICalculationToolParameterSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -14343,7 +14436,7 @@ class CalculationToolParameterSetGroundTrajectory(ICalculationToolParameterSet, 
     _get_central_body_method_offset = 3
     _set_central_body_method_offset = 4
     _metadata = {
-        "iid_data" : (5004898066850638741, 11511760438073722810),
+        "iid_data" : (5213893706829179641, 10407748985150811304),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14400,7 +14493,7 @@ class CalculationToolParameterSetGroundTrajectory(ICalculationToolParameterSet, 
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolParameterSetGroundTrajectory, [CalculationToolParameterSetGroundTrajectory, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5476359557675953687, 12818036812419277696), CalculationToolParameterSetGroundTrajectory)
+agcls.AgClassCatalog.add_catalog_entry((4631896944750170910, 11456827742437688976), CalculationToolParameterSetGroundTrajectory)
 agcls.AgTypeNameMap["CalculationToolParameterSetGroundTrajectory"] = CalculationToolParameterSetGroundTrajectory
 
 class CalculationToolParameterSetOrbit(ICalculationToolParameterSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -14421,7 +14514,7 @@ class CalculationToolParameterSetOrbit(ICalculationToolParameterSet, IAnalysisWo
     _get_use_central_body_inertial_method_offset = 11
     _set_use_central_body_inertial_method_offset = 12
     _metadata = {
-        "iid_data" : (4631037522197801655, 2468098686994820286),
+        "iid_data" : (5325957182816645353, 7298356810421910402),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14542,7 +14635,7 @@ class CalculationToolParameterSetOrbit(ICalculationToolParameterSet, IAnalysisWo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolParameterSetOrbit, [CalculationToolParameterSetOrbit, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4611801354393510048, 12183196691739788168), CalculationToolParameterSetOrbit)
+agcls.AgClassCatalog.add_catalog_entry((4906704514409872269, 7173341933049580964), CalculationToolParameterSetOrbit)
 agcls.AgTypeNameMap["CalculationToolParameterSetOrbit"] = CalculationToolParameterSetOrbit
 
 class CalculationToolParameterSetTrajectory(ICalculationToolParameterSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -14555,7 +14648,7 @@ class CalculationToolParameterSetTrajectory(ICalculationToolParameterSet, IAnaly
     _get_reference_system_method_offset = 3
     _set_reference_system_method_offset = 4
     _metadata = {
-        "iid_data" : (5006139916852774401, 13019652784963788729),
+        "iid_data" : (4795316366323452406, 9448572154484716707),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14612,7 +14705,7 @@ class CalculationToolParameterSetTrajectory(ICalculationToolParameterSet, IAnaly
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolParameterSetTrajectory, [CalculationToolParameterSetTrajectory, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5733434664696181485, 15500898216521877646), CalculationToolParameterSetTrajectory)
+agcls.AgClassCatalog.add_catalog_entry((5760671025571747694, 12182337673202184840), CalculationToolParameterSetTrajectory)
 agcls.AgTypeNameMap["CalculationToolParameterSetTrajectory"] = CalculationToolParameterSetTrajectory
 
 class CalculationToolParameterSetVector(ICalculationToolParameterSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -14625,7 +14718,7 @@ class CalculationToolParameterSetVector(ICalculationToolParameterSet, IAnalysisW
     _get_reference_axes_method_offset = 3
     _set_reference_axes_method_offset = 4
     _metadata = {
-        "iid_data" : (5239130838684790465, 17380030367494480022),
+        "iid_data" : (5223385185028157832, 9803830653406432154),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14682,7 +14775,7 @@ class CalculationToolParameterSetVector(ICalculationToolParameterSet, IAnalysisW
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolParameterSetVector, [CalculationToolParameterSetVector, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5342518829739884757, 14433235443967563942), CalculationToolParameterSetVector)
+agcls.AgClassCatalog.add_catalog_entry((5671140570063521190, 2801701092145287052), CalculationToolParameterSetVector)
 agcls.AgTypeNameMap["CalculationToolParameterSetVector"] = CalculationToolParameterSetVector
 
 class TimeToolPruneFilter(ITimeToolPruneFilter, SupportsDeleteCallback):
@@ -14701,7 +14794,7 @@ class TimeToolPruneFilter(ITimeToolPruneFilter, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolPruneFilter, [ITimeToolPruneFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((4753774320714343401, 2720215011582395827), TimeToolPruneFilter)
+agcls.AgClassCatalog.add_catalog_entry((5348343317509498382, 9167067375344438713), TimeToolPruneFilter)
 agcls.AgTypeNameMap["TimeToolPruneFilter"] = TimeToolPruneFilter
 
 class TimeToolPruneFilterFactory(SupportsDeleteCallback):
@@ -14711,7 +14804,7 @@ class TimeToolPruneFilterFactory(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _create_method_offset = 1
     _metadata = {
-        "iid_data" : (5042513438281501086, 13689364354501709749),
+        "iid_data" : (5218125113530355785, 16429057495255506062),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14739,7 +14832,7 @@ class TimeToolPruneFilterFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolPruneFilterFactory, [TimeToolPruneFilterFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5226485936241673410, 17861777124087912090), TimeToolPruneFilterFactory)
+agcls.AgClassCatalog.add_catalog_entry((4648974694242878061, 11360156090254720669), TimeToolPruneFilterFactory)
 agcls.AgTypeNameMap["TimeToolPruneFilterFactory"] = TimeToolPruneFilterFactory
 
 class TimeToolTimeIntervalRelativeSatisfactionConditionFilter(ITimeToolPruneFilter, SupportsDeleteCallback):
@@ -14754,7 +14847,7 @@ class TimeToolTimeIntervalRelativeSatisfactionConditionFilter(ITimeToolPruneFilt
     _get_relative_interval_duration_method_offset = 5
     _set_relative_interval_duration_method_offset = 6
     _metadata = {
-        "iid_data" : (4708733116692114035, 8453241099873031043),
+        "iid_data" : (4732868801006389885, 12276562308192790421),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14825,7 +14918,7 @@ class TimeToolTimeIntervalRelativeSatisfactionConditionFilter(ITimeToolPruneFilt
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalRelativeSatisfactionConditionFilter, [TimeToolTimeIntervalRelativeSatisfactionConditionFilter, ITimeToolPruneFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((5599006480069411520, 196698249444219283), TimeToolTimeIntervalRelativeSatisfactionConditionFilter)
+agcls.AgClassCatalog.add_catalog_entry((4826324555429974779, 14149255784125390758), TimeToolTimeIntervalRelativeSatisfactionConditionFilter)
 agcls.AgTypeNameMap["TimeToolTimeIntervalRelativeSatisfactionConditionFilter"] = TimeToolTimeIntervalRelativeSatisfactionConditionFilter
 
 class AnalysisWorkbenchSampling(IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -14846,7 +14939,7 @@ class AnalysisWorkbenchSampling(IAnalysisWorkbenchSampling, IAnalysisWorkbenchCo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchSampling, [IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5764026328462147817, 7669428216318596746), AnalysisWorkbenchSampling)
+agcls.AgClassCatalog.add_catalog_entry((5494061133616336285, 10366708924799835039), AnalysisWorkbenchSampling)
 agcls.AgTypeNameMap["AnalysisWorkbenchSampling"] = AnalysisWorkbenchSampling
 
 class CalculationToolSamplingBasic(IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -14858,7 +14951,7 @@ class CalculationToolSamplingBasic(IAnalysisWorkbenchSampling, IAnalysisWorkbenc
     _set_sampling_method_method_offset = 2
     _get_method_factory_method_offset = 3
     _metadata = {
-        "iid_data" : (4878478022758053645, 16585190424563731886),
+        "iid_data" : (5758154136622792872, 9635127484691322250),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14908,7 +15001,7 @@ class CalculationToolSamplingBasic(IAnalysisWorkbenchSampling, IAnalysisWorkbenc
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolSamplingBasic, [CalculationToolSamplingBasic, IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4842369728921496656, 433140158192125353), CalculationToolSamplingBasic)
+agcls.AgClassCatalog.add_catalog_entry((5110203469965056519, 15308694042261033150), CalculationToolSamplingBasic)
 agcls.AgTypeNameMap["CalculationToolSamplingBasic"] = CalculationToolSamplingBasic
 
 class CalculationToolSamplingCurvatureTolerance(ICalculationToolSamplingMethod, SupportsDeleteCallback):
@@ -14929,7 +15022,7 @@ class CalculationToolSamplingCurvatureTolerance(ICalculationToolSamplingMethod, 
     _get_curvature_tolerance_method_offset = 11
     _set_curvature_tolerance_method_offset = 12
     _metadata = {
-        "iid_data" : (5542979227852921429, 14660439002322066049),
+        "iid_data" : (5505836083480051960, 13222420770698615453),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15048,7 +15141,7 @@ class CalculationToolSamplingCurvatureTolerance(ICalculationToolSamplingMethod, 
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolSamplingCurvatureTolerance, [CalculationToolSamplingCurvatureTolerance, ICalculationToolSamplingMethod])
 
-agcls.AgClassCatalog.add_catalog_entry((5387756316129866756, 2484055402072399547), CalculationToolSamplingCurvatureTolerance)
+agcls.AgClassCatalog.add_catalog_entry((4880067538200286089, 9208035177097067949), CalculationToolSamplingCurvatureTolerance)
 agcls.AgTypeNameMap["CalculationToolSamplingCurvatureTolerance"] = CalculationToolSamplingCurvatureTolerance
 
 class CalculationToolSamplingFixedStep(ICalculationToolSamplingMethod, SupportsDeleteCallback):
@@ -15059,7 +15152,7 @@ class CalculationToolSamplingFixedStep(ICalculationToolSamplingMethod, SupportsD
     _get_time_step_method_offset = 1
     _set_time_step_method_offset = 2
     _metadata = {
-        "iid_data" : (4760999063576923422, 2852563063428767411),
+        "iid_data" : (5436216345038564927, 12354384878335449529),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15098,7 +15191,7 @@ class CalculationToolSamplingFixedStep(ICalculationToolSamplingMethod, SupportsD
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolSamplingFixedStep, [CalculationToolSamplingFixedStep, ICalculationToolSamplingMethod])
 
-agcls.AgClassCatalog.add_catalog_entry((5657779203521466895, 699813618720941244), CalculationToolSamplingFixedStep)
+agcls.AgClassCatalog.add_catalog_entry((5367546955943804465, 14938531565810159501), CalculationToolSamplingFixedStep)
 agcls.AgTypeNameMap["CalculationToolSamplingFixedStep"] = CalculationToolSamplingFixedStep
 
 class CalculationToolSamplingMethod(ICalculationToolSamplingMethod, SupportsDeleteCallback):
@@ -15117,7 +15210,7 @@ class CalculationToolSamplingMethod(ICalculationToolSamplingMethod, SupportsDele
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolSamplingMethod, [ICalculationToolSamplingMethod])
 
-agcls.AgClassCatalog.add_catalog_entry((5520509056155849796, 13270445498439148177), CalculationToolSamplingMethod)
+agcls.AgClassCatalog.add_catalog_entry((5663403281673981320, 2107946174156964736), CalculationToolSamplingMethod)
 agcls.AgTypeNameMap["CalculationToolSamplingMethod"] = CalculationToolSamplingMethod
 
 class CalculationToolSamplingMethodFactory(SupportsDeleteCallback):
@@ -15129,7 +15222,7 @@ class CalculationToolSamplingMethodFactory(SupportsDeleteCallback):
     _create_curvature_tolerance_method_offset = 2
     _create_relative_tolerance_method_offset = 3
     _metadata = {
-        "iid_data" : (4621614585912529563, 1951602854656295068),
+        "iid_data" : (5637224957480511874, 15609488420385804446),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15171,7 +15264,7 @@ class CalculationToolSamplingMethodFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolSamplingMethodFactory, [CalculationToolSamplingMethodFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5108812290465688521, 9237146689306794658), CalculationToolSamplingMethodFactory)
+agcls.AgClassCatalog.add_catalog_entry((4805335110371025525, 1549061261571048347), CalculationToolSamplingMethodFactory)
 agcls.AgTypeNameMap["CalculationToolSamplingMethodFactory"] = CalculationToolSamplingMethodFactory
 
 class CalculationToolSamplingRelativeTolerance(ICalculationToolSamplingMethod, SupportsDeleteCallback):
@@ -15190,7 +15283,7 @@ class CalculationToolSamplingRelativeTolerance(ICalculationToolSamplingMethod, S
     _get_absolute_tolerance_method_offset = 9
     _set_absolute_tolerance_method_offset = 10
     _metadata = {
-        "iid_data" : (4753454007727116326, 13557865281292527789),
+        "iid_data" : (4702601140323320719, 15497422414278344605),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15293,7 +15386,7 @@ class CalculationToolSamplingRelativeTolerance(ICalculationToolSamplingMethod, S
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolSamplingRelativeTolerance, [CalculationToolSamplingRelativeTolerance, ICalculationToolSamplingMethod])
 
-agcls.AgClassCatalog.add_catalog_entry((4936649529186074219, 353883352016272033), CalculationToolSamplingRelativeTolerance)
+agcls.AgClassCatalog.add_catalog_entry((5051957692919198946, 14009593473902429624), CalculationToolSamplingRelativeTolerance)
 agcls.AgTypeNameMap["CalculationToolSamplingRelativeTolerance"] = CalculationToolSamplingRelativeTolerance
 
 class TimeToolTimeIntervalSatisfactionConditionFilter(ITimeToolPruneFilter, SupportsDeleteCallback):
@@ -15308,7 +15401,7 @@ class TimeToolTimeIntervalSatisfactionConditionFilter(ITimeToolPruneFilter, Supp
     _get_interval_duration_method_offset = 5
     _set_interval_duration_method_offset = 6
     _metadata = {
-        "iid_data" : (5756195466743196097, 11251701537728199608),
+        "iid_data" : (5416784876873967930, 16187854667333710008),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15379,7 +15472,7 @@ class TimeToolTimeIntervalSatisfactionConditionFilter(ITimeToolPruneFilter, Supp
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolTimeIntervalSatisfactionConditionFilter, [TimeToolTimeIntervalSatisfactionConditionFilter, ITimeToolPruneFilter])
 
-agcls.AgClassCatalog.add_catalog_entry((4851832596060338991, 14965342242796491937), TimeToolTimeIntervalSatisfactionConditionFilter)
+agcls.AgClassCatalog.add_catalog_entry((5746382677577916061, 17402535365607232445), TimeToolTimeIntervalSatisfactionConditionFilter)
 agcls.AgTypeNameMap["TimeToolTimeIntervalSatisfactionConditionFilter"] = TimeToolTimeIntervalSatisfactionConditionFilter
 
 class AnalysisWorkbenchSignalDelay(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -15400,7 +15493,7 @@ class AnalysisWorkbenchSignalDelay(IAnalysisWorkbenchSignalDelay, IAnalysisWorkb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchSignalDelay, [IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4953635476598966337, 4896658474318640771), AnalysisWorkbenchSignalDelay)
+agcls.AgClassCatalog.add_catalog_entry((4813077646495736256, 6307104723682631565), AnalysisWorkbenchSignalDelay)
 agcls.AgTypeNameMap["AnalysisWorkbenchSignalDelay"] = AnalysisWorkbenchSignalDelay
 
 class TimeToolSignalDelayBasic(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -15419,7 +15512,7 @@ class TimeToolSignalDelayBasic(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbench
     _get_time_delay_convergence_method_offset = 9
     _set_time_delay_convergence_method_offset = 10
     _metadata = {
-        "iid_data" : (5705418358163775767, 12397507959819827338),
+        "iid_data" : (5427373083890836463, 16680674423554142627),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15524,7 +15617,7 @@ class TimeToolSignalDelayBasic(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbench
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolSignalDelayBasic, [TimeToolSignalDelayBasic, IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5642525835138409264, 10528515051945010859), TimeToolSignalDelayBasic)
+agcls.AgClassCatalog.add_catalog_entry((5150412356013065035, 15061684672055954313), TimeToolSignalDelayBasic)
 agcls.AgTypeNameMap["TimeToolSignalDelayBasic"] = TimeToolSignalDelayBasic
 
 class SpatialAnalysisToolCalculationFactory(SupportsDeleteCallback):
@@ -15543,7 +15636,7 @@ class SpatialAnalysisToolCalculationFactory(SupportsDeleteCallback):
     _create_distance_to_location_method_offset = 9
     _create_propagation_delay_to_location_method_offset = 10
     _metadata = {
-        "iid_data" : (5124917152380054858, 1631627205173804441),
+        "iid_data" : (5722565871785726675, 16224715667481129364),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15634,7 +15727,7 @@ class SpatialAnalysisToolCalculationFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationFactory, [SpatialAnalysisToolCalculationFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5540830022443821797, 17040724212397248403), SpatialAnalysisToolCalculationFactory)
+agcls.AgClassCatalog.add_catalog_entry((5228822467649110946, 17125304967266013102), SpatialAnalysisToolCalculationFactory)
 agcls.AgTypeNameMap["SpatialAnalysisToolCalculationFactory"] = SpatialAnalysisToolCalculationFactory
 
 class SpatialAnalysisToolConditionFactory(SupportsDeleteCallback):
@@ -15653,7 +15746,7 @@ class SpatialAnalysisToolConditionFactory(SupportsDeleteCallback):
     _create_from_condition_method_offset = 9
     _create_from_access_method_offset = 10
     _metadata = {
-        "iid_data" : (4718823887408175374, 1421370750746771080),
+        "iid_data" : (4830984680889001999, 10060773186084429501),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15744,7 +15837,7 @@ class SpatialAnalysisToolConditionFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionFactory, [SpatialAnalysisToolConditionFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4635516309349170136, 6850651087969509002), SpatialAnalysisToolConditionFactory)
+agcls.AgClassCatalog.add_catalog_entry((5172965533420026564, 2902585012781053863), SpatialAnalysisToolConditionFactory)
 agcls.AgTypeNameMap["SpatialAnalysisToolConditionFactory"] = SpatialAnalysisToolConditionFactory
 
 class SpatialAnalysisToolVolumeGridFactory(SupportsDeleteCallback):
@@ -15761,7 +15854,7 @@ class SpatialAnalysisToolVolumeGridFactory(SupportsDeleteCallback):
     _create_latitude_longitude_altitude_method_offset = 7
     _create_bearing_altitude_method_offset = 8
     _metadata = {
-        "iid_data" : (5006269217737268897, 4165198783253421479),
+        "iid_data" : (5543805144763299273, 17956940386593921978),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15838,22 +15931,21 @@ class SpatialAnalysisToolVolumeGridFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridFactory, [SpatialAnalysisToolVolumeGridFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5404595843631519249, 16534451179732670352), SpatialAnalysisToolVolumeGridFactory)
+agcls.AgClassCatalog.add_catalog_entry((5409703660309039078, 4833518723049912709), SpatialAnalysisToolVolumeGridFactory)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridFactory"] = SpatialAnalysisToolVolumeGridFactory
 
 class SpatialAnalysisToolGridCoordinateDefinition(SupportsDeleteCallback):
     """Define a set of coordinate values."""
 
-    _num_methods = 6
+    _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_method_type_method_offset = 1
     _get_grid_values_method_method_offset = 2
     _set_fixed_step_method_offset = 3
-    _set_grid_values_fixed_number_of_steps_method_offset = 4
-    _set_custom_method_offset = 5
-    _set_fixed_number_of_steps_method_offset = 6
+    _set_custom_method_offset = 4
+    _set_grid_values_fixed_number_of_steps_method_offset = 5
     _metadata = {
-        "iid_data" : (5130335259321654556, 16843626956261718182),
+        "iid_data" : (5499032275631072389, 13021984369541336212),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15883,13 +15975,6 @@ class SpatialAnalysisToolGridCoordinateDefinition(SupportsDeleteCallback):
         """Set grid values type to fixed step."""
         return self._intf.invoke(SpatialAnalysisToolGridCoordinateDefinition._metadata, SpatialAnalysisToolGridCoordinateDefinition._set_fixed_step_metadata, min, max, include_min_max, ref_value, fixed_step, OutArg())
 
-    _set_grid_values_fixed_number_of_steps_metadata = { "offset" : _set_grid_values_fixed_number_of_steps_method_offset,
-            "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.INT, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
-    def set_grid_values_fixed_number_of_steps(self, min:float, max:float, num_steps:int) -> "SpatialAnalysisToolGridValuesFixedNumberOfSteps":
-        """Do not use this method, as it is deprecated. Use SetGridValuesFixedNumberOfStepsEx."""
-        return self._intf.invoke(SpatialAnalysisToolGridCoordinateDefinition._metadata, SpatialAnalysisToolGridCoordinateDefinition._set_grid_values_fixed_number_of_steps_metadata, min, max, num_steps, OutArg())
-
     _set_custom_metadata = { "offset" : _set_custom_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.InterfaceOutArg,) }
@@ -15897,12 +15982,12 @@ class SpatialAnalysisToolGridCoordinateDefinition(SupportsDeleteCallback):
         """Set grid values type to custom values."""
         return self._intf.invoke(SpatialAnalysisToolGridCoordinateDefinition._metadata, SpatialAnalysisToolGridCoordinateDefinition._set_custom_metadata, values, OutArg())
 
-    _set_fixed_number_of_steps_metadata = { "offset" : _set_fixed_number_of_steps_method_offset,
+    _set_grid_values_fixed_number_of_steps_metadata = { "offset" : _set_grid_values_fixed_number_of_steps_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID, agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("Quantity"), agmarshall.InterfaceInArg("Quantity"), agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
-    def set_fixed_number_of_steps(self, min:"Quantity", max:"Quantity", num_steps:int) -> "SpatialAnalysisToolGridValuesFixedNumberOfSteps":
+    def set_grid_values_fixed_number_of_steps(self, min:"Quantity", max:"Quantity", num_steps:int) -> "SpatialAnalysisToolGridValuesFixedNumberOfSteps":
         """Set grid values type to fixed number of steps with min and max as Quantity."""
-        return self._intf.invoke(SpatialAnalysisToolGridCoordinateDefinition._metadata, SpatialAnalysisToolGridCoordinateDefinition._set_fixed_number_of_steps_metadata, min, max, num_steps, OutArg())
+        return self._intf.invoke(SpatialAnalysisToolGridCoordinateDefinition._metadata, SpatialAnalysisToolGridCoordinateDefinition._set_grid_values_fixed_number_of_steps_metadata, min, max, num_steps, OutArg())
 
     _property_names[method_type] = "method_type"
     _property_names[grid_values_method] = "grid_values_method"
@@ -15920,7 +16005,7 @@ class SpatialAnalysisToolGridCoordinateDefinition(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolGridCoordinateDefinition, [SpatialAnalysisToolGridCoordinateDefinition, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4908749182944525328, 3082335439345659541), SpatialAnalysisToolGridCoordinateDefinition)
+agcls.AgClassCatalog.add_catalog_entry((4865586167248892235, 14316574026489252234), SpatialAnalysisToolGridCoordinateDefinition)
 agcls.AgTypeNameMap["SpatialAnalysisToolGridCoordinateDefinition"] = SpatialAnalysisToolGridCoordinateDefinition
 
 class SpatialAnalysisToolGridValuesCustom(ISpatialAnalysisToolGridValuesMethod, SupportsDeleteCallback):
@@ -15931,7 +16016,7 @@ class SpatialAnalysisToolGridValuesCustom(ISpatialAnalysisToolGridValuesMethod, 
     _get_values_method_offset = 1
     _set_values_method_offset = 2
     _metadata = {
-        "iid_data" : (5079967470133000247, 1440374130877273486),
+        "iid_data" : (5609560893807480692, 2985732294296044190),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15970,61 +16055,27 @@ class SpatialAnalysisToolGridValuesCustom(ISpatialAnalysisToolGridValuesMethod, 
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolGridValuesCustom, [SpatialAnalysisToolGridValuesCustom, ISpatialAnalysisToolGridValuesMethod])
 
-agcls.AgClassCatalog.add_catalog_entry((4675204159661460389, 16403186152470131590), SpatialAnalysisToolGridValuesCustom)
+agcls.AgClassCatalog.add_catalog_entry((5417434060825030186, 16640516554813569449), SpatialAnalysisToolGridValuesCustom)
 agcls.AgTypeNameMap["SpatialAnalysisToolGridValuesCustom"] = SpatialAnalysisToolGridValuesCustom
 
 class SpatialAnalysisToolGridValuesFixedNumberOfSteps(ISpatialAnalysisToolGridValuesMethod, SupportsDeleteCallback):
     """Fixed step grid values."""
 
-    _num_methods = 10
+    _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_min_method_offset = 1
-    _set_min_method_offset = 2
-    _get_max_method_offset = 3
-    _set_max_method_offset = 4
-    _get_number_of_steps_method_offset = 5
-    _set_number_of_steps_method_offset = 6
-    _get_minimum_method_offset = 7
-    _set_minimum_method_offset = 8
-    _get_maximum_method_offset = 9
-    _set_maximum_method_offset = 10
+    _get_number_of_steps_method_offset = 1
+    _set_number_of_steps_method_offset = 2
+    _get_minimum_method_offset = 3
+    _set_minimum_method_offset = 4
+    _get_maximum_method_offset = 5
+    _set_maximum_method_offset = 6
     _metadata = {
-        "iid_data" : (5139481416355729146, 10630847657046153914),
+        "iid_data" : (4936927212575929484, 10194024431844927674),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolGridValuesFixedNumberOfSteps)
-
-    _get_min_metadata = { "offset" : _get_min_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @property
-    def min(self) -> float:
-        """Do not use this property, as it is deprecated. Use MinEx."""
-        return self._intf.get_property(SpatialAnalysisToolGridValuesFixedNumberOfSteps._metadata, SpatialAnalysisToolGridValuesFixedNumberOfSteps._get_min_metadata)
-
-    _set_min_metadata = { "offset" : _set_min_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @min.setter
-    def min(self, min:float) -> None:
-        return self._intf.set_property(SpatialAnalysisToolGridValuesFixedNumberOfSteps._metadata, SpatialAnalysisToolGridValuesFixedNumberOfSteps._set_min_metadata, min)
-
-    _get_max_metadata = { "offset" : _get_max_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @property
-    def max(self) -> float:
-        """Do not use this property, as it is deprecated. Use MaxEx."""
-        return self._intf.get_property(SpatialAnalysisToolGridValuesFixedNumberOfSteps._metadata, SpatialAnalysisToolGridValuesFixedNumberOfSteps._get_max_metadata)
-
-    _set_max_metadata = { "offset" : _set_max_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @max.setter
-    def max(self, max:float) -> None:
-        return self._intf.set_property(SpatialAnalysisToolGridValuesFixedNumberOfSteps._metadata, SpatialAnalysisToolGridValuesFixedNumberOfSteps._set_max_metadata, max)
 
     _get_number_of_steps_metadata = { "offset" : _get_number_of_steps_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
@@ -16071,8 +16122,6 @@ class SpatialAnalysisToolGridValuesFixedNumberOfSteps(ISpatialAnalysisToolGridVa
     def maximum(self, max_ex:"Quantity") -> None:
         return self._intf.set_property(SpatialAnalysisToolGridValuesFixedNumberOfSteps._metadata, SpatialAnalysisToolGridValuesFixedNumberOfSteps._set_maximum_metadata, max_ex)
 
-    _property_names[min] = "min"
-    _property_names[max] = "max"
     _property_names[number_of_steps] = "number_of_steps"
     _property_names[minimum] = "minimum"
     _property_names[maximum] = "maximum"
@@ -16092,7 +16141,7 @@ class SpatialAnalysisToolGridValuesFixedNumberOfSteps(ISpatialAnalysisToolGridVa
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolGridValuesFixedNumberOfSteps, [SpatialAnalysisToolGridValuesFixedNumberOfSteps, ISpatialAnalysisToolGridValuesMethod])
 
-agcls.AgClassCatalog.add_catalog_entry((4906412158379095950, 18165921868605089162), SpatialAnalysisToolGridValuesFixedNumberOfSteps)
+agcls.AgClassCatalog.add_catalog_entry((4999170268933728118, 6833396870172994438), SpatialAnalysisToolGridValuesFixedNumberOfSteps)
 agcls.AgTypeNameMap["SpatialAnalysisToolGridValuesFixedNumberOfSteps"] = SpatialAnalysisToolGridValuesFixedNumberOfSteps
 
 class SpatialAnalysisToolGridValuesFixedStep(ISpatialAnalysisToolGridValuesMethod, SupportsDeleteCallback):
@@ -16111,7 +16160,7 @@ class SpatialAnalysisToolGridValuesFixedStep(ISpatialAnalysisToolGridValuesMetho
     _get_step_method_offset = 9
     _set_step_method_offset = 10
     _metadata = {
-        "iid_data" : (5343659644451078017, 5778378386165949108),
+        "iid_data" : (5562723411714831987, 5368203146430764958),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16214,7 +16263,7 @@ class SpatialAnalysisToolGridValuesFixedStep(ISpatialAnalysisToolGridValuesMetho
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolGridValuesFixedStep, [SpatialAnalysisToolGridValuesFixedStep, ISpatialAnalysisToolGridValuesMethod])
 
-agcls.AgClassCatalog.add_catalog_entry((4734747611981081133, 2146139380126170776), SpatialAnalysisToolGridValuesFixedStep)
+agcls.AgClassCatalog.add_catalog_entry((5730390472747727950, 5858164413605963957), SpatialAnalysisToolGridValuesFixedStep)
 agcls.AgTypeNameMap["SpatialAnalysisToolGridValuesFixedStep"] = SpatialAnalysisToolGridValuesFixedStep
 
 class SpatialAnalysisToolGridValuesMethod(ISpatialAnalysisToolGridValuesMethod, SupportsDeleteCallback):
@@ -16233,7 +16282,7 @@ class SpatialAnalysisToolGridValuesMethod(ISpatialAnalysisToolGridValuesMethod, 
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolGridValuesMethod, [ISpatialAnalysisToolGridValuesMethod])
 
-agcls.AgClassCatalog.add_catalog_entry((4916369434262782655, 3989956864512378539), SpatialAnalysisToolGridValuesMethod)
+agcls.AgClassCatalog.add_catalog_entry((4768398703517146897, 13547206830330769845), SpatialAnalysisToolGridValuesMethod)
 agcls.AgTypeNameMap["SpatialAnalysisToolGridValuesMethod"] = SpatialAnalysisToolGridValuesMethod
 
 class TimeToolLightTimeDelay(SupportsDeleteCallback):
@@ -16252,7 +16301,7 @@ class TimeToolLightTimeDelay(SupportsDeleteCallback):
     _get_time_sense_method_offset = 9
     _set_time_sense_method_offset = 10
     _metadata = {
-        "iid_data" : (5571719835290065762, 15016412572713881232),
+        "iid_data" : (5158913182433545241, 2277572157027770032),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16353,7 +16402,7 @@ class TimeToolLightTimeDelay(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolLightTimeDelay, [TimeToolLightTimeDelay, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5707542397246644802, 8133195754214030981), TimeToolLightTimeDelay)
+agcls.AgClassCatalog.add_catalog_entry((5671337991241087926, 18301991656455981443), TimeToolLightTimeDelay)
 agcls.AgTypeNameMap["TimeToolLightTimeDelay"] = TimeToolLightTimeDelay
 
 class SpatialAnalysisToolVolume(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -16374,7 +16423,7 @@ class SpatialAnalysisToolVolume(ISpatialAnalysisToolVolume, IAnalysisWorkbenchCo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolume, [ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5136212516512030015, 17210711229734835135), SpatialAnalysisToolVolume)
+agcls.AgClassCatalog.add_catalog_entry((4951072607192738160, 3444627937060258968), SpatialAnalysisToolVolume)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolume"] = SpatialAnalysisToolVolume
 
 class SpatialAnalysisToolSpatialCalculation(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -16395,7 +16444,7 @@ class SpatialAnalysisToolSpatialCalculation(ISpatialAnalysisToolSpatialCalculati
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolSpatialCalculation, [ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5603624786402262993, 11281447092007354792), SpatialAnalysisToolSpatialCalculation)
+agcls.AgClassCatalog.add_catalog_entry((4734476747189893898, 5102162218888852892), SpatialAnalysisToolSpatialCalculation)
 agcls.AgTypeNameMap["SpatialAnalysisToolSpatialCalculation"] = SpatialAnalysisToolSpatialCalculation
 
 class SpatialAnalysisToolCalculationAltitude(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -16412,7 +16461,7 @@ class SpatialAnalysisToolCalculationAltitude(ISpatialAnalysisToolSpatialCalculat
     _get_reference_point_method_offset = 7
     _set_reference_point_method_offset = 8
     _metadata = {
-        "iid_data" : (5267149886846502538, 15246089171375647638),
+        "iid_data" : (4866656751629235512, 7164283982587963537),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16501,7 +16550,7 @@ class SpatialAnalysisToolCalculationAltitude(ISpatialAnalysisToolSpatialCalculat
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationAltitude, [SpatialAnalysisToolCalculationAltitude, ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5246343411400455836, 13693915155416519566), SpatialAnalysisToolCalculationAltitude)
+agcls.AgClassCatalog.add_catalog_entry((4785535816626472546, 84738493864386184), SpatialAnalysisToolCalculationAltitude)
 agcls.AgTypeNameMap["SpatialAnalysisToolCalculationAltitude"] = SpatialAnalysisToolCalculationAltitude
 
 class SpatialAnalysisToolCalculationAngleToLocation(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -16520,7 +16569,7 @@ class SpatialAnalysisToolCalculationAngleToLocation(ISpatialAnalysisToolSpatialC
     _get_about_vector_method_offset = 9
     _set_about_vector_method_offset = 10
     _metadata = {
-        "iid_data" : (5168636768733921460, 8889143688558765241),
+        "iid_data" : (5310395172028687334, 4092167638479418029),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16625,7 +16674,7 @@ class SpatialAnalysisToolCalculationAngleToLocation(ISpatialAnalysisToolSpatialC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationAngleToLocation, [SpatialAnalysisToolCalculationAngleToLocation, ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5561615505447228747, 2307594500702910097), SpatialAnalysisToolCalculationAngleToLocation)
+agcls.AgClassCatalog.add_catalog_entry((5244043971462712622, 6244497400174306695), SpatialAnalysisToolCalculationAngleToLocation)
 agcls.AgTypeNameMap["SpatialAnalysisToolCalculationAngleToLocation"] = SpatialAnalysisToolCalculationAngleToLocation
 
 class SpatialAnalysisToolCalculationConditionSatisfactionMetric(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -16654,7 +16703,7 @@ class SpatialAnalysisToolCalculationConditionSatisfactionMetric(ISpatialAnalysis
     _get_maximum_duration_time_method_offset = 19
     _set_maximum_duration_time_method_offset = 20
     _metadata = {
-        "iid_data" : (4773877820582895346, 18047239333924917439),
+        "iid_data" : (4661469458978614862, 15183553836995855788),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16839,7 +16888,7 @@ class SpatialAnalysisToolCalculationConditionSatisfactionMetric(ISpatialAnalysis
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationConditionSatisfactionMetric, [SpatialAnalysisToolCalculationConditionSatisfactionMetric, ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5757987867521137107, 16897264315178726031), SpatialAnalysisToolCalculationConditionSatisfactionMetric)
+agcls.AgClassCatalog.add_catalog_entry((4715507005562588875, 15438414389879636384), SpatialAnalysisToolCalculationConditionSatisfactionMetric)
 agcls.AgTypeNameMap["SpatialAnalysisToolCalculationConditionSatisfactionMetric"] = SpatialAnalysisToolCalculationConditionSatisfactionMetric
 
 class SpatialAnalysisToolCalculationPropagationDelayToLocation(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -16860,7 +16909,7 @@ class SpatialAnalysisToolCalculationPropagationDelayToLocation(ISpatialAnalysisT
     _get_speed_method_offset = 11
     _set_speed_method_offset = 12
     _metadata = {
-        "iid_data" : (5218582178275522249, 11135030506945546897),
+        "iid_data" : (4887522858468518386, 13846905428255977864),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16981,7 +17030,7 @@ class SpatialAnalysisToolCalculationPropagationDelayToLocation(ISpatialAnalysisT
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationPropagationDelayToLocation, [SpatialAnalysisToolCalculationPropagationDelayToLocation, ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5452141680403908840, 4382880934208172435), SpatialAnalysisToolCalculationPropagationDelayToLocation)
+agcls.AgClassCatalog.add_catalog_entry((4967413122855469043, 5445037870539199918), SpatialAnalysisToolCalculationPropagationDelayToLocation)
 agcls.AgTypeNameMap["SpatialAnalysisToolCalculationPropagationDelayToLocation"] = SpatialAnalysisToolCalculationPropagationDelayToLocation
 
 class SpatialAnalysisToolCalculationFile(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -16993,7 +17042,7 @@ class SpatialAnalysisToolCalculationFile(ISpatialAnalysisToolSpatialCalculation,
     _set_filename_method_offset = 2
     _reload_method_offset = 3
     _metadata = {
-        "iid_data" : (5218807709942117381, 22719842710704015),
+        "iid_data" : (5691650378330717277, 3785449268791726266),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17041,7 +17090,7 @@ class SpatialAnalysisToolCalculationFile(ISpatialAnalysisToolSpatialCalculation,
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationFile, [SpatialAnalysisToolCalculationFile, ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5046729131766552262, 14215457174500361369), SpatialAnalysisToolCalculationFile)
+agcls.AgClassCatalog.add_catalog_entry((5173654343794250947, 4914615437620571834), SpatialAnalysisToolCalculationFile)
 agcls.AgTypeNameMap["SpatialAnalysisToolCalculationFile"] = SpatialAnalysisToolCalculationFile
 
 class SpatialAnalysisToolCalculationFromCalculationScalar(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -17052,7 +17101,7 @@ class SpatialAnalysisToolCalculationFromCalculationScalar(ISpatialAnalysisToolSp
     _get_scalar_method_offset = 1
     _set_scalar_method_offset = 2
     _metadata = {
-        "iid_data" : (4955629015681694503, 13135773078564024969),
+        "iid_data" : (5464784796791609854, 16161820066940852875),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17093,7 +17142,7 @@ class SpatialAnalysisToolCalculationFromCalculationScalar(ISpatialAnalysisToolSp
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationFromCalculationScalar, [SpatialAnalysisToolCalculationFromCalculationScalar, ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5507501849095280163, 3788369914884987542), SpatialAnalysisToolCalculationFromCalculationScalar)
+agcls.AgClassCatalog.add_catalog_entry((5563720390086915781, 16762750803496184974), SpatialAnalysisToolCalculationFromCalculationScalar)
 agcls.AgTypeNameMap["SpatialAnalysisToolCalculationFromCalculationScalar"] = SpatialAnalysisToolCalculationFromCalculationScalar
 
 class SpatialAnalysisToolCalculationDistanceToLocation(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -17110,7 +17159,7 @@ class SpatialAnalysisToolCalculationDistanceToLocation(ISpatialAnalysisToolSpati
     _get_along_vector_method_offset = 7
     _set_along_vector_method_offset = 8
     _metadata = {
-        "iid_data" : (4785811411061355726, 9627460967860643760),
+        "iid_data" : (5110194104457504264, 4567877513768067751),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17199,7 +17248,7 @@ class SpatialAnalysisToolCalculationDistanceToLocation(ISpatialAnalysisToolSpati
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationDistanceToLocation, [SpatialAnalysisToolCalculationDistanceToLocation, ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5742064057873770847, 7474360553064389522), SpatialAnalysisToolCalculationDistanceToLocation)
+agcls.AgClassCatalog.add_catalog_entry((5041568343354064342, 4905260057451235466), SpatialAnalysisToolCalculationDistanceToLocation)
 agcls.AgTypeNameMap["SpatialAnalysisToolCalculationDistanceToLocation"] = SpatialAnalysisToolCalculationDistanceToLocation
 
 class SpatialAnalysisToolCalculationSolarIntensity(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -17212,7 +17261,7 @@ class SpatialAnalysisToolCalculationSolarIntensity(ISpatialAnalysisToolSpatialCa
     _get_use_object_eclipsing_bodies_method_offset = 3
     _set_use_object_eclipsing_bodies_method_offset = 4
     _metadata = {
-        "iid_data" : (4943433429512576811, 6998738882333593242),
+        "iid_data" : (4683156797817182547, 13435608825689790378),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17269,7 +17318,7 @@ class SpatialAnalysisToolCalculationSolarIntensity(ISpatialAnalysisToolSpatialCa
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationSolarIntensity, [SpatialAnalysisToolCalculationSolarIntensity, ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5721214495491549297, 15401307401531350179), SpatialAnalysisToolCalculationSolarIntensity)
+agcls.AgClassCatalog.add_catalog_entry((5510845947318255745, 13929331259184001710), SpatialAnalysisToolCalculationSolarIntensity)
 agcls.AgTypeNameMap["SpatialAnalysisToolCalculationSolarIntensity"] = SpatialAnalysisToolCalculationSolarIntensity
 
 class SpatialAnalysisToolConditionCombined(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -17286,7 +17335,7 @@ class SpatialAnalysisToolConditionCombined(ISpatialAnalysisToolVolume, IAnalysis
     _get_condition_method_offset = 7
     _remove_condition_method_offset = 8
     _metadata = {
-        "iid_data" : (4961621234466443188, 11142847482331365549),
+        "iid_data" : (5757672352008841678, 15513199781919442079),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17371,7 +17420,7 @@ class SpatialAnalysisToolConditionCombined(ISpatialAnalysisToolVolume, IAnalysis
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionCombined, [SpatialAnalysisToolConditionCombined, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5171174926120201865, 5073276570713395112), SpatialAnalysisToolConditionCombined)
+agcls.AgClassCatalog.add_catalog_entry((5211927445147179085, 6250508484361498037), SpatialAnalysisToolConditionCombined)
 agcls.AgTypeNameMap["SpatialAnalysisToolConditionCombined"] = SpatialAnalysisToolConditionCombined
 
 class SpatialAnalysisToolConditionSpatialCalculationBounds(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -17389,7 +17438,7 @@ class SpatialAnalysisToolConditionSpatialCalculationBounds(ISpatialAnalysisToolV
     _set_maximum_method_offset = 8
     _set_method_offset = 9
     _metadata = {
-        "iid_data" : (5113486521026373345, 17542713240087790246),
+        "iid_data" : (5252094439148060510, 240804917744658064),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17481,7 +17530,7 @@ class SpatialAnalysisToolConditionSpatialCalculationBounds(ISpatialAnalysisToolV
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionSpatialCalculationBounds, [SpatialAnalysisToolConditionSpatialCalculationBounds, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5512201731345924287, 6484453261337714838), SpatialAnalysisToolConditionSpatialCalculationBounds)
+agcls.AgClassCatalog.add_catalog_entry((5568546123261269252, 7835999959289935759), SpatialAnalysisToolConditionSpatialCalculationBounds)
 agcls.AgTypeNameMap["SpatialAnalysisToolConditionSpatialCalculationBounds"] = SpatialAnalysisToolConditionSpatialCalculationBounds
 
 class SpatialAnalysisToolConditionConditionAtLocation(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -17500,7 +17549,7 @@ class SpatialAnalysisToolConditionConditionAtLocation(ISpatialAnalysisToolVolume
     _get_convergence_method_offset = 9
     _set_convergence_method_offset = 10
     _metadata = {
-        "iid_data" : (5736056999764241897, 7584263815208061614),
+        "iid_data" : (4918732774436808347, 17653089503592163746),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17605,7 +17654,7 @@ class SpatialAnalysisToolConditionConditionAtLocation(ISpatialAnalysisToolVolume
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionConditionAtLocation, [SpatialAnalysisToolConditionConditionAtLocation, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5732933615123458834, 6568177297179918983), SpatialAnalysisToolConditionConditionAtLocation)
+agcls.AgClassCatalog.add_catalog_entry((5432568871629781962, 15610647973481615038), SpatialAnalysisToolConditionConditionAtLocation)
 agcls.AgTypeNameMap["SpatialAnalysisToolConditionConditionAtLocation"] = SpatialAnalysisToolConditionConditionAtLocation
 
 class SpatialAnalysisToolConditionGridBoundingVolume(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -17618,7 +17667,7 @@ class SpatialAnalysisToolConditionGridBoundingVolume(ISpatialAnalysisToolVolume,
     _get_volume_grid_method_offset = 3
     _set_volume_grid_method_offset = 4
     _metadata = {
-        "iid_data" : (5627691767138338627, 10213818062973684896),
+        "iid_data" : (5514666612867629708, 449025529256108686),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17675,7 +17724,7 @@ class SpatialAnalysisToolConditionGridBoundingVolume(ISpatialAnalysisToolVolume,
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionGridBoundingVolume, [SpatialAnalysisToolConditionGridBoundingVolume, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4654272327836492418, 16823323511191899287), SpatialAnalysisToolConditionGridBoundingVolume)
+agcls.AgClassCatalog.add_catalog_entry((5400098895604607552, 11415915200185581745), SpatialAnalysisToolConditionGridBoundingVolume)
 agcls.AgTypeNameMap["SpatialAnalysisToolConditionGridBoundingVolume"] = SpatialAnalysisToolConditionGridBoundingVolume
 
 class SpatialAnalysisToolConditionValidTimeAtLocation(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -17686,7 +17735,7 @@ class SpatialAnalysisToolConditionValidTimeAtLocation(ISpatialAnalysisToolVolume
     _get_time_satisfaction_method_offset = 1
     _set_time_satisfaction_method_offset = 2
     _metadata = {
-        "iid_data" : (4640101470789229080, 5461984207440300163),
+        "iid_data" : (5408622389806362982, 17061866827138122943),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17727,7 +17776,7 @@ class SpatialAnalysisToolConditionValidTimeAtLocation(ISpatialAnalysisToolVolume
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionValidTimeAtLocation, [SpatialAnalysisToolConditionValidTimeAtLocation, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5627140386690235637, 13821308809228561049), SpatialAnalysisToolConditionValidTimeAtLocation)
+agcls.AgClassCatalog.add_catalog_entry((5657043011202642686, 14973909782382644353), SpatialAnalysisToolConditionValidTimeAtLocation)
 agcls.AgTypeNameMap["SpatialAnalysisToolConditionValidTimeAtLocation"] = SpatialAnalysisToolConditionValidTimeAtLocation
 
 class SpatialAnalysisToolVolumeGrid(ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -17748,7 +17797,7 @@ class SpatialAnalysisToolVolumeGrid(ISpatialAnalysisToolVolumeGrid, IAnalysisWor
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGrid, [ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5702248548041919544, 8355142271349343408), SpatialAnalysisToolVolumeGrid)
+agcls.AgClassCatalog.add_catalog_entry((4977896632860775066, 16198191664901721523), SpatialAnalysisToolVolumeGrid)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGrid"] = SpatialAnalysisToolVolumeGrid
 
 class SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude(ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -17768,7 +17817,7 @@ class SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude(ISpatialAnalysisT
     _get_reference_location_method_offset = 10
     _set_reference_location_method_offset = 11
     _metadata = {
-        "iid_data" : (4730723923926493328, 14653163782190743734),
+        "iid_data" : (5692346056760215866, 6751692822899113906),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17884,7 +17933,7 @@ class SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude(ISpatialAnalysisT
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude, [SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5623451090371518830, 6528069848114595743), SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude)
+agcls.AgClassCatalog.add_catalog_entry((4974544888523431959, 4275970362938191760), SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude)
 agcls.AgTypeNameMap["SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude"] = SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude
 
 class SpatialAnalysisToolVolumeGridCartesian(ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -17898,7 +17947,7 @@ class SpatialAnalysisToolVolumeGridCartesian(ISpatialAnalysisToolVolumeGrid, IAn
     _get_y_grid_parameters_method_offset = 4
     _get_z_grid_parameters_method_offset = 5
     _metadata = {
-        "iid_data" : (4756107278377678929, 3260092988906345356),
+        "iid_data" : (5019942511540651812, 14759108144682155707),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17966,7 +18015,7 @@ class SpatialAnalysisToolVolumeGridCartesian(ISpatialAnalysisToolVolumeGrid, IAn
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridCartesian, [SpatialAnalysisToolVolumeGridCartesian, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5143879619490205860, 15008466888120033703), SpatialAnalysisToolVolumeGridCartesian)
+agcls.AgClassCatalog.add_catalog_entry((5275162932985192256, 7351052978796310149), SpatialAnalysisToolVolumeGridCartesian)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridCartesian"] = SpatialAnalysisToolVolumeGridCartesian
 
 class SpatialAnalysisToolVolumeGridConstrained(ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -17979,7 +18028,7 @@ class SpatialAnalysisToolVolumeGridConstrained(ISpatialAnalysisToolVolumeGrid, I
     _get_constraint_method_offset = 3
     _set_constraint_method_offset = 4
     _metadata = {
-        "iid_data" : (4880089629496303142, 4809807965271431055),
+        "iid_data" : (5569615919196733941, 220388166504544400),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18036,7 +18085,7 @@ class SpatialAnalysisToolVolumeGridConstrained(ISpatialAnalysisToolVolumeGrid, I
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridConstrained, [SpatialAnalysisToolVolumeGridConstrained, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5355718201764201772, 18302606991020932526), SpatialAnalysisToolVolumeGridConstrained)
+agcls.AgClassCatalog.add_catalog_entry((5363233581045625580, 15181956981314707081), SpatialAnalysisToolVolumeGridConstrained)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridConstrained"] = SpatialAnalysisToolVolumeGridConstrained
 
 class SpatialAnalysisToolVolumeGridCylindrical(ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -18050,7 +18099,7 @@ class SpatialAnalysisToolVolumeGridCylindrical(ISpatialAnalysisToolVolumeGrid, I
     _get_radius_coordinates_method_offset = 4
     _get_height_coordinates_method_offset = 5
     _metadata = {
-        "iid_data" : (4792617438748898343, 15301605932388729243),
+        "iid_data" : (5717188461201276497, 6705956317467650224),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18118,7 +18167,7 @@ class SpatialAnalysisToolVolumeGridCylindrical(ISpatialAnalysisToolVolumeGrid, I
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridCylindrical, [SpatialAnalysisToolVolumeGridCylindrical, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5616361831989159850, 14417449230462750362), SpatialAnalysisToolVolumeGridCylindrical)
+agcls.AgClassCatalog.add_catalog_entry((4676233987798331172, 14280907617863027338), SpatialAnalysisToolVolumeGridCylindrical)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridCylindrical"] = SpatialAnalysisToolVolumeGridCylindrical
 
 class SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude(ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -18134,7 +18183,7 @@ class SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude(ISpatialAnalysisToo
     _get_auto_fit_bounds_method_offset = 6
     _set_auto_fit_bounds_method_offset = 7
     _metadata = {
-        "iid_data" : (5337570201496317993, 16204349902611395774),
+        "iid_data" : (5317252942490733176, 9525710653206919555),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18169,7 +18218,7 @@ class SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude(ISpatialAnalysisToo
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def longitude_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
-        """Return longtitude Coordinates parameters for the Radius system."""
+        """Return longitude Coordinates parameters for the Radius system."""
         return self._intf.get_property(SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude._metadata, SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude._get_longitude_coordinates_metadata)
 
     _get_altitude_grid_parameters_metadata = { "offset" : _get_altitude_grid_parameters_method_offset,
@@ -18218,7 +18267,7 @@ class SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude(ISpatialAnalysisToo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude, [SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5432256157047656388, 11350183618881279388), SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude)
+agcls.AgClassCatalog.add_catalog_entry((5029963569288086421, 7154393023167959987), SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude"] = SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude
 
 class SpatialAnalysisToolVolumeGridResult(SupportsDeleteCallback):
@@ -18235,7 +18284,7 @@ class SpatialAnalysisToolVolumeGridResult(SupportsDeleteCallback):
     _get_native_position_vector_method_offset = 7
     _get_gradient_vector_method_offset = 8
     _metadata = {
-        "iid_data" : (5499177848830365804, 8552211019007533491),
+        "iid_data" : (5582248948363063208, 12935405309985576117),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18328,7 +18377,7 @@ class SpatialAnalysisToolVolumeGridResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridResult, [SpatialAnalysisToolVolumeGridResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4933513940597038247, 13537496590627059615), SpatialAnalysisToolVolumeGridResult)
+agcls.AgClassCatalog.add_catalog_entry((5527833928777572027, 7312539892207516301), SpatialAnalysisToolVolumeGridResult)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridResult"] = SpatialAnalysisToolVolumeGridResult
 
 class SpatialAnalysisToolVolumeGridSpherical(ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -18342,7 +18391,7 @@ class SpatialAnalysisToolVolumeGridSpherical(ISpatialAnalysisToolVolumeGrid, IAn
     _get_elevation_grid_parameters_method_offset = 4
     _get_range_coordinates_method_offset = 5
     _metadata = {
-        "iid_data" : (5645490772616604478, 17133888365359264426),
+        "iid_data" : (5062276947489887892, 17014669546593330356),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18410,7 +18459,7 @@ class SpatialAnalysisToolVolumeGridSpherical(ISpatialAnalysisToolVolumeGrid, IAn
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridSpherical, [SpatialAnalysisToolVolumeGridSpherical, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5230140972615936311, 7226435708672804267), SpatialAnalysisToolVolumeGridSpherical)
+agcls.AgClassCatalog.add_catalog_entry((5581989396026189816, 10891388320205936040), SpatialAnalysisToolVolumeGridSpherical)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridSpherical"] = SpatialAnalysisToolVolumeGridSpherical
 
 class SpatialAnalysisToolConditionAccessToLocation(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -18422,7 +18471,7 @@ class SpatialAnalysisToolConditionAccessToLocation(ISpatialAnalysisToolVolume, I
     _set_constraint_object_method_offset = 2
     _get_light_time_delay_method_offset = 3
     _metadata = {
-        "iid_data" : (5195129455268480560, 3592106623834241957),
+        "iid_data" : (5275442117684952440, 3308329220262757786),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18472,7 +18521,7 @@ class SpatialAnalysisToolConditionAccessToLocation(ISpatialAnalysisToolVolume, I
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionAccessToLocation, [SpatialAnalysisToolConditionAccessToLocation, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5724962521871071047, 12322705441895077515), SpatialAnalysisToolConditionAccessToLocation)
+agcls.AgClassCatalog.add_catalog_entry((4835199609221874519, 5657631616848730032), SpatialAnalysisToolConditionAccessToLocation)
 agcls.AgTypeNameMap["SpatialAnalysisToolConditionAccessToLocation"] = SpatialAnalysisToolConditionAccessToLocation
 
 class SpatialAnalysisToolConditionLighting(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -18487,7 +18536,7 @@ class SpatialAnalysisToolConditionLighting(ISpatialAnalysisToolVolume, IAnalysis
     _get_lighting_conditions_method_offset = 5
     _set_lighting_conditions_method_offset = 6
     _metadata = {
-        "iid_data" : (5632076028421819400, 17989693341813651347),
+        "iid_data" : (4702836326378247003, 11504946464480010425),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18560,7 +18609,7 @@ class SpatialAnalysisToolConditionLighting(ISpatialAnalysisToolVolume, IAnalysis
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionLighting, [SpatialAnalysisToolConditionLighting, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4846621819260420121, 12614405677517105581), SpatialAnalysisToolConditionLighting)
+agcls.AgClassCatalog.add_catalog_entry((5705585495806050201, 5550686946688327041), SpatialAnalysisToolConditionLighting)
 agcls.AgTypeNameMap["SpatialAnalysisToolConditionLighting"] = SpatialAnalysisToolConditionLighting
 
 class SpatialAnalysisToolConditionOverTime(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -18579,7 +18628,7 @@ class SpatialAnalysisToolConditionOverTime(ISpatialAnalysisToolVolume, IAnalysis
     _get_stop_offset_method_offset = 9
     _set_stop_offset_method_offset = 10
     _metadata = {
-        "iid_data" : (4876582964905500215, 15592635579053740465),
+        "iid_data" : (5486948011829623407, 1575425411294590616),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18684,7 +18733,7 @@ class SpatialAnalysisToolConditionOverTime(ISpatialAnalysisToolVolume, IAnalysis
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionOverTime, [SpatialAnalysisToolConditionOverTime, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4854841648937134318, 3250948660834583456), SpatialAnalysisToolConditionOverTime)
+agcls.AgClassCatalog.add_catalog_entry((4849451011770767829, 15197566736497773697), SpatialAnalysisToolConditionOverTime)
 agcls.AgTypeNameMap["SpatialAnalysisToolConditionOverTime"] = SpatialAnalysisToolConditionOverTime
 
 class AnalysisWorkbenchComponent(IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -18703,7 +18752,7 @@ class AnalysisWorkbenchComponent(IAnalysisWorkbenchComponent, SupportsDeleteCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchComponent, [IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5463600693607263739, 3992744111484991654), AnalysisWorkbenchComponent)
+agcls.AgClassCatalog.add_catalog_entry((4713024261253182797, 1639329759986207130), AnalysisWorkbenchComponent)
 agcls.AgTypeNameMap["AnalysisWorkbenchComponent"] = AnalysisWorkbenchComponent
 
 class AnalysisWorkbenchComponentTypeInformation(SupportsDeleteCallback):
@@ -18715,7 +18764,7 @@ class AnalysisWorkbenchComponentTypeInformation(SupportsDeleteCallback):
     _get_type_name_method_offset = 2
     _get_short_type_description_method_offset = 3
     _metadata = {
-        "iid_data" : (5361699528957364806, 4224976545408186002),
+        "iid_data" : (4694878586135159190, 3541807981250823563),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18763,7 +18812,7 @@ class AnalysisWorkbenchComponentTypeInformation(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchComponentTypeInformation, [AnalysisWorkbenchComponentTypeInformation, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5699426269249570940, 15161479374799558806), AnalysisWorkbenchComponentTypeInformation)
+agcls.AgClassCatalog.add_catalog_entry((5573188020234358061, 10988795699330995897), AnalysisWorkbenchComponentTypeInformation)
 agcls.AgTypeNameMap["AnalysisWorkbenchComponentTypeInformation"] = AnalysisWorkbenchComponentTypeInformation
 
 class AnalysisWorkbenchComponentInstance(IAnalysisWorkbenchComponentContext, SupportsDeleteCallback):
@@ -18774,7 +18823,7 @@ class AnalysisWorkbenchComponentInstance(IAnalysisWorkbenchComponentContext, Sup
     _get_instance_path_method_offset = 1
     _get_template_method_offset = 2
     _metadata = {
-        "iid_data" : (5764490979489035877, 498398658112071554),
+        "iid_data" : (5494367705122185561, 12403362132486283189),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18815,7 +18864,7 @@ class AnalysisWorkbenchComponentInstance(IAnalysisWorkbenchComponentContext, Sup
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchComponentInstance, [AnalysisWorkbenchComponentInstance, IAnalysisWorkbenchComponentContext])
 
-agcls.AgClassCatalog.add_catalog_entry((5391125706042513269, 1545934538743815612), AnalysisWorkbenchComponentInstance)
+agcls.AgClassCatalog.add_catalog_entry((5661816911074173998, 3037525948838545596), AnalysisWorkbenchComponentInstance)
 agcls.AgTypeNameMap["AnalysisWorkbenchComponentInstance"] = AnalysisWorkbenchComponentInstance
 
 class AnalysisWorkbenchComponentTemplate(IAnalysisWorkbenchComponentContext, SupportsDeleteCallback):
@@ -18825,7 +18874,7 @@ class AnalysisWorkbenchComponentTemplate(IAnalysisWorkbenchComponentContext, Sup
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_class_name_method_offset = 1
     _metadata = {
-        "iid_data" : (5523493391658530282, 9506007543621797),
+        "iid_data" : (5271213629777611702, 16310676805215322796),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18857,7 +18906,7 @@ class AnalysisWorkbenchComponentTemplate(IAnalysisWorkbenchComponentContext, Sup
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchComponentTemplate, [AnalysisWorkbenchComponentTemplate, IAnalysisWorkbenchComponentContext])
 
-agcls.AgClassCatalog.add_catalog_entry((4884527547614411789, 16415357707545642411), AnalysisWorkbenchComponentTemplate)
+agcls.AgClassCatalog.add_catalog_entry((4643776742883405564, 6841722753384733835), AnalysisWorkbenchComponentTemplate)
 agcls.AgTypeNameMap["AnalysisWorkbenchComponentTemplate"] = AnalysisWorkbenchComponentTemplate
 
 class VectorGeometryToolPointReference(IAnalysisWorkbenchComponentReference, SupportsDeleteCallback):
@@ -18870,7 +18919,7 @@ class VectorGeometryToolPointReference(IAnalysisWorkbenchComponentReference, Sup
     _get_point_method_offset = 3
     _has_cyclic_dependency_method_offset = 4
     _metadata = {
-        "iid_data" : (5279351027073801778, 13735137936088795793),
+        "iid_data" : (5081351236922299349, 11009283458543037365),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18921,7 +18970,7 @@ class VectorGeometryToolPointReference(IAnalysisWorkbenchComponentReference, Sup
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointReference, [VectorGeometryToolPointReference, IAnalysisWorkbenchComponentReference])
 
-agcls.AgClassCatalog.add_catalog_entry((4704692840303707085, 8020029865205775543), VectorGeometryToolPointReference)
+agcls.AgClassCatalog.add_catalog_entry((5416088441961458198, 4822993793572797116), VectorGeometryToolPointReference)
 agcls.AgTypeNameMap["VectorGeometryToolPointReference"] = VectorGeometryToolPointReference
 
 class VectorGeometryToolVectorReference(IAnalysisWorkbenchComponentReference, SupportsDeleteCallback):
@@ -18934,7 +18983,7 @@ class VectorGeometryToolVectorReference(IAnalysisWorkbenchComponentReference, Su
     _get_vector_method_offset = 3
     _has_cyclic_dependency_method_offset = 4
     _metadata = {
-        "iid_data" : (5002430524828082288, 2947395518214351037),
+        "iid_data" : (5503773911374922011, 14354405127323126658),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18985,7 +19034,7 @@ class VectorGeometryToolVectorReference(IAnalysisWorkbenchComponentReference, Su
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorReference, [VectorGeometryToolVectorReference, IAnalysisWorkbenchComponentReference])
 
-agcls.AgClassCatalog.add_catalog_entry((5440566115286381237, 11986298819353492100), VectorGeometryToolVectorReference)
+agcls.AgClassCatalog.add_catalog_entry((5392917067051548394, 15559113874436622478), VectorGeometryToolVectorReference)
 agcls.AgTypeNameMap["VectorGeometryToolVectorReference"] = VectorGeometryToolVectorReference
 
 class VectorGeometryToolAxesReference(IAnalysisWorkbenchComponentReference, SupportsDeleteCallback):
@@ -18998,7 +19047,7 @@ class VectorGeometryToolAxesReference(IAnalysisWorkbenchComponentReference, Supp
     _get_axes_method_offset = 3
     _has_cyclic_dependency_method_offset = 4
     _metadata = {
-        "iid_data" : (5682882817452678510, 4017082628123244947),
+        "iid_data" : (5625105472405781010, 10328816407513972133),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19049,7 +19098,7 @@ class VectorGeometryToolAxesReference(IAnalysisWorkbenchComponentReference, Supp
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesReference, [VectorGeometryToolAxesReference, IAnalysisWorkbenchComponentReference])
 
-agcls.AgClassCatalog.add_catalog_entry((5051443874454375573, 2367503670708117661), VectorGeometryToolAxesReference)
+agcls.AgClassCatalog.add_catalog_entry((5009221795614971657, 12327375314371828151), VectorGeometryToolAxesReference)
 agcls.AgTypeNameMap["VectorGeometryToolAxesReference"] = VectorGeometryToolAxesReference
 
 class VectorGeometryToolAngleReference(IAnalysisWorkbenchComponentReference, SupportsDeleteCallback):
@@ -19062,7 +19111,7 @@ class VectorGeometryToolAngleReference(IAnalysisWorkbenchComponentReference, Sup
     _get_angle_method_offset = 3
     _has_cyclic_dependency_method_offset = 4
     _metadata = {
-        "iid_data" : (4924923796472561823, 6300112913133557144),
+        "iid_data" : (4872107702027737057, 7163877670124354436),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19113,7 +19162,7 @@ class VectorGeometryToolAngleReference(IAnalysisWorkbenchComponentReference, Sup
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleReference, [VectorGeometryToolAngleReference, IAnalysisWorkbenchComponentReference])
 
-agcls.AgClassCatalog.add_catalog_entry((5362491565921591286, 3697870622063550641), VectorGeometryToolAngleReference)
+agcls.AgClassCatalog.add_catalog_entry((5549825622824191874, 1123654400316577942), VectorGeometryToolAngleReference)
 agcls.AgTypeNameMap["VectorGeometryToolAngleReference"] = VectorGeometryToolAngleReference
 
 class VectorGeometryToolSystemReference(IAnalysisWorkbenchComponentReference, SupportsDeleteCallback):
@@ -19126,7 +19175,7 @@ class VectorGeometryToolSystemReference(IAnalysisWorkbenchComponentReference, Su
     _get_system_method_offset = 3
     _has_cyclic_dependency_method_offset = 4
     _metadata = {
-        "iid_data" : (4683122848438464453, 6113846374536717983),
+        "iid_data" : (4887834651984944339, 3646182325133971855),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19177,7 +19226,7 @@ class VectorGeometryToolSystemReference(IAnalysisWorkbenchComponentReference, Su
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolSystemReference, [VectorGeometryToolSystemReference, IAnalysisWorkbenchComponentReference])
 
-agcls.AgClassCatalog.add_catalog_entry((4872681286682929827, 12142992341420117925), VectorGeometryToolSystemReference)
+agcls.AgClassCatalog.add_catalog_entry((5334709943169248209, 15714517419840744089), VectorGeometryToolSystemReference)
 agcls.AgTypeNameMap["VectorGeometryToolSystemReference"] = VectorGeometryToolSystemReference
 
 class VectorGeometryToolPlaneReference(IAnalysisWorkbenchComponentReference, SupportsDeleteCallback):
@@ -19190,7 +19239,7 @@ class VectorGeometryToolPlaneReference(IAnalysisWorkbenchComponentReference, Sup
     _get_plane_method_offset = 3
     _has_cyclic_dependency_method_offset = 4
     _metadata = {
-        "iid_data" : (5342221201152241906, 7909267626057482112),
+        "iid_data" : (4731330413012419768, 14296384267403924641),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19241,7 +19290,7 @@ class VectorGeometryToolPlaneReference(IAnalysisWorkbenchComponentReference, Sup
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneReference, [VectorGeometryToolPlaneReference, IAnalysisWorkbenchComponentReference])
 
-agcls.AgClassCatalog.add_catalog_entry((4889764551144905757, 6174863000760270723), VectorGeometryToolPlaneReference)
+agcls.AgClassCatalog.add_catalog_entry((5758273800237264414, 18218991976488843680), VectorGeometryToolPlaneReference)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneReference"] = VectorGeometryToolPlaneReference
 
 class VectorGeometryToolVector(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -19264,7 +19313,7 @@ class VectorGeometryToolVector(IVectorGeometryToolVector, IAnalysisWorkbenchComp
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVector, [IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4788543380264657974, 4021920445499540372), VectorGeometryToolVector)
+agcls.AgClassCatalog.add_catalog_entry((4695199572022026216, 3116577025443803776), VectorGeometryToolVector)
 agcls.AgTypeNameMap["VectorGeometryToolVector"] = VectorGeometryToolVector
 
 class VectorGeometryToolAxesLabels(SupportsDeleteCallback):
@@ -19279,7 +19328,7 @@ class VectorGeometryToolAxesLabels(SupportsDeleteCallback):
     _get_label_z_method_offset = 5
     _set_label_z_method_offset = 6
     _metadata = {
-        "iid_data" : (4932524825887872296, 14818591864936711324),
+        "iid_data" : (4635020699278910070, 6963036795644581783),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19348,7 +19397,7 @@ class VectorGeometryToolAxesLabels(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesLabels, [VectorGeometryToolAxesLabels, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5086004625897624493, 5710003380506752172), VectorGeometryToolAxesLabels)
+agcls.AgClassCatalog.add_catalog_entry((5070228449546279435, 1793249947447148451), VectorGeometryToolAxesLabels)
 agcls.AgTypeNameMap["VectorGeometryToolAxesLabels"] = VectorGeometryToolAxesLabels
 
 class VectorGeometryToolAxes(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -19371,7 +19420,7 @@ class VectorGeometryToolAxes(IVectorGeometryToolAxes, IAnalysisWorkbenchComponen
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxes, [IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5044961233979432208, 9395285165778922900), VectorGeometryToolAxes)
+agcls.AgClassCatalog.add_catalog_entry((5699544418609826721, 5609448174326001307), VectorGeometryToolAxes)
 agcls.AgTypeNameMap["VectorGeometryToolAxes"] = VectorGeometryToolAxes
 
 class VectorGeometryToolPoint(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -19394,7 +19443,7 @@ class VectorGeometryToolPoint(IVectorGeometryToolPoint, IAnalysisWorkbenchCompon
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPoint, [IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5419596708576411945, 12185975766433231289), VectorGeometryToolPoint)
+agcls.AgClassCatalog.add_catalog_entry((5760542999487276652, 3064054992267402129), VectorGeometryToolPoint)
 agcls.AgTypeNameMap["VectorGeometryToolPoint"] = VectorGeometryToolPoint
 
 class VectorGeometryToolSystem(IVectorGeometryToolSystem, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -19417,7 +19466,7 @@ class VectorGeometryToolSystem(IVectorGeometryToolSystem, IAnalysisWorkbenchComp
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolSystem, [IVectorGeometryToolSystem, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5448501409524915739, 12010762595595467697), VectorGeometryToolSystem)
+agcls.AgClassCatalog.add_catalog_entry((5153014420146023519, 4576465633255139771), VectorGeometryToolSystem)
 agcls.AgTypeNameMap["VectorGeometryToolSystem"] = VectorGeometryToolSystem
 
 class VectorGeometryToolAngle(IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -19440,7 +19489,7 @@ class VectorGeometryToolAngle(IVectorGeometryToolAngle, IAnalysisWorkbenchCompon
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAngle, [IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5629500551113305507, 7730710653323930790), VectorGeometryToolAngle)
+agcls.AgClassCatalog.add_catalog_entry((4845293094500391726, 2408944437111299978), VectorGeometryToolAngle)
 agcls.AgTypeNameMap["VectorGeometryToolAngle"] = VectorGeometryToolAngle
 
 class VectorGeometryToolPlaneLabels(SupportsDeleteCallback):
@@ -19453,7 +19502,7 @@ class VectorGeometryToolPlaneLabels(SupportsDeleteCallback):
     _get_y_axis_label_method_offset = 3
     _set_y_axis_label_method_offset = 4
     _metadata = {
-        "iid_data" : (5440014174761149743, 15219345938915071877),
+        "iid_data" : (4797410936748302317, 1693325543640494993),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19506,7 +19555,7 @@ class VectorGeometryToolPlaneLabels(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneLabels, [VectorGeometryToolPlaneLabels, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5708362026720629481, 8749304800057505166), VectorGeometryToolPlaneLabels)
+agcls.AgClassCatalog.add_catalog_entry((5520385924862286763, 10836805015016876682), VectorGeometryToolPlaneLabels)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneLabels"] = VectorGeometryToolPlaneLabels
 
 class VectorGeometryToolPlane(IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -19529,7 +19578,7 @@ class VectorGeometryToolPlane(IVectorGeometryToolPlane, IAnalysisWorkbenchCompon
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlane, [IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5498477606257732229, 9946486879664144023), VectorGeometryToolPlane)
+agcls.AgClassCatalog.add_catalog_entry((4793016099566104218, 709446547042762384), VectorGeometryToolPlane)
 agcls.AgTypeNameMap["VectorGeometryToolPlane"] = VectorGeometryToolPlane
 
 class VectorGeometryToolAxesAlignedAndConstrained(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -19542,7 +19591,7 @@ class VectorGeometryToolAxesAlignedAndConstrained(IVectorGeometryToolAxes, IAnal
     _get_alignment_direction_method_offset = 3
     _get_constraint_direction_method_offset = 4
     _metadata = {
-        "iid_data" : (4741713611122613839, 4582109232137381806),
+        "iid_data" : (4784541647853340646, 10673551555687608488),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19605,7 +19654,7 @@ class VectorGeometryToolAxesAlignedAndConstrained(IVectorGeometryToolAxes, IAnal
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesAlignedAndConstrained, [VectorGeometryToolAxesAlignedAndConstrained, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4850207006922603867, 3173509712834431154), VectorGeometryToolAxesAlignedAndConstrained)
+agcls.AgClassCatalog.add_catalog_entry((4691845521094581330, 12463419110883553417), VectorGeometryToolAxesAlignedAndConstrained)
 agcls.AgTypeNameMap["VectorGeometryToolAxesAlignedAndConstrained"] = VectorGeometryToolAxesAlignedAndConstrained
 
 class VectorGeometryToolAxesAngularOffset(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -19619,7 +19668,7 @@ class VectorGeometryToolAxesAngularOffset(IVectorGeometryToolAxes, IAnalysisWork
     _get_fixed_offset_angle_method_offset = 4
     _set_fixed_offset_angle_method_offset = 5
     _metadata = {
-        "iid_data" : (5677112897421375797, 6984851836854641810),
+        "iid_data" : (5264765648385900558, 9252516110364966077),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19689,7 +19738,7 @@ class VectorGeometryToolAxesAngularOffset(IVectorGeometryToolAxes, IAnalysisWork
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesAngularOffset, [VectorGeometryToolAxesAngularOffset, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4997754132062289803, 5413856362237364661), VectorGeometryToolAxesAngularOffset)
+agcls.AgClassCatalog.add_catalog_entry((5257583834726412078, 14844646862465452205), VectorGeometryToolAxesAngularOffset)
 agcls.AgTypeNameMap["VectorGeometryToolAxesAngularOffset"] = VectorGeometryToolAxesAngularOffset
 
 class VectorGeometryToolAxesFixedAtEpoch(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -19702,7 +19751,7 @@ class VectorGeometryToolAxesFixedAtEpoch(IVectorGeometryToolAxes, IAnalysisWorkb
     _get_epoch_method_offset = 3
     _set_epoch_method_offset = 4
     _metadata = {
-        "iid_data" : (5437157536228302950, 4834721672965880495),
+        "iid_data" : (4897958629920576225, 5973784215580657584),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19763,7 +19812,7 @@ class VectorGeometryToolAxesFixedAtEpoch(IVectorGeometryToolAxes, IAnalysisWorkb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesFixedAtEpoch, [VectorGeometryToolAxesFixedAtEpoch, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5521125035658318449, 12431711413893056934), VectorGeometryToolAxesFixedAtEpoch)
+agcls.AgClassCatalog.add_catalog_entry((4944203328454928248, 13226666613460687038), VectorGeometryToolAxesFixedAtEpoch)
 agcls.AgTypeNameMap["VectorGeometryToolAxesFixedAtEpoch"] = VectorGeometryToolAxesFixedAtEpoch
 
 class VectorGeometryToolAxesBPlane(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -19777,7 +19826,7 @@ class VectorGeometryToolAxesBPlane(IVectorGeometryToolAxes, IAnalysisWorkbenchCo
     _get_direction_method_offset = 4
     _set_direction_method_offset = 5
     _metadata = {
-        "iid_data" : (5031275480175450065, 12426755810793897623),
+        "iid_data" : (5149283915725535611, 1373877336844392629),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19847,7 +19896,7 @@ class VectorGeometryToolAxesBPlane(IVectorGeometryToolAxes, IAnalysisWorkbenchCo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesBPlane, [VectorGeometryToolAxesBPlane, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5733700134692656362, 13054031072239382407), VectorGeometryToolAxesBPlane)
+agcls.AgClassCatalog.add_catalog_entry((5558051602662049531, 4100792768358764734), VectorGeometryToolAxesBPlane)
 agcls.AgTypeNameMap["VectorGeometryToolAxesBPlane"] = VectorGeometryToolAxesBPlane
 
 class VectorGeometryToolAxesCustomScript(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -19859,7 +19908,7 @@ class VectorGeometryToolAxesCustomScript(IVectorGeometryToolAxes, IAnalysisWorkb
     _get_filename_method_offset = 2
     _set_filename_method_offset = 3
     _metadata = {
-        "iid_data" : (5323258079388012774, 73336895666566586),
+        "iid_data" : (5463696144995315790, 5887262834496825506),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19911,7 +19960,7 @@ class VectorGeometryToolAxesCustomScript(IVectorGeometryToolAxes, IAnalysisWorkb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesCustomScript, [VectorGeometryToolAxesCustomScript, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5110760456880555996, 122080162762217350), VectorGeometryToolAxesCustomScript)
+agcls.AgClassCatalog.add_catalog_entry((4946946426427016272, 10557952099106820541), VectorGeometryToolAxesCustomScript)
 agcls.AgTypeNameMap["VectorGeometryToolAxesCustomScript"] = VectorGeometryToolAxesCustomScript
 
 class VectorGeometryToolAxesAttitudeFile(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -19922,7 +19971,7 @@ class VectorGeometryToolAxesAttitudeFile(IVectorGeometryToolAxes, IAnalysisWorkb
     _get_filename_method_offset = 1
     _set_filename_method_offset = 2
     _metadata = {
-        "iid_data" : (5300531074972095677, 16740618416462344876),
+        "iid_data" : (5478037615644094938, 15567487501911157646),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19965,7 +20014,7 @@ class VectorGeometryToolAxesAttitudeFile(IVectorGeometryToolAxes, IAnalysisWorkb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesAttitudeFile, [VectorGeometryToolAxesAttitudeFile, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5288525702130684003, 14972327049341920664), VectorGeometryToolAxesAttitudeFile)
+agcls.AgClassCatalog.add_catalog_entry((4675091619965874874, 5115702529504596656), VectorGeometryToolAxesAttitudeFile)
 agcls.AgTypeNameMap["VectorGeometryToolAxesAttitudeFile"] = VectorGeometryToolAxesAttitudeFile
 
 class VectorGeometryToolAxesFixed(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -19976,7 +20025,7 @@ class VectorGeometryToolAxesFixed(IVectorGeometryToolAxes, IAnalysisWorkbenchCom
     _get_reference_axes_method_offset = 1
     _get_fixed_orientation_method_offset = 2
     _metadata = {
-        "iid_data" : (5423714790564105553, 2470081558751579307),
+        "iid_data" : (4842512792137917687, 12143952534487164838),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20021,7 +20070,7 @@ class VectorGeometryToolAxesFixed(IVectorGeometryToolAxes, IAnalysisWorkbenchCom
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesFixed, [VectorGeometryToolAxesFixed, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4637366771607936115, 17213460083789714103), VectorGeometryToolAxesFixed)
+agcls.AgClassCatalog.add_catalog_entry((4643082368812336367, 1476118700815981188), VectorGeometryToolAxesFixed)
 agcls.AgTypeNameMap["VectorGeometryToolAxesFixed"] = VectorGeometryToolAxesFixed
 
 class VectorGeometryToolAxesModelAttachment(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -20032,7 +20081,7 @@ class VectorGeometryToolAxesModelAttachment(IVectorGeometryToolAxes, IAnalysisWo
     _get_pointable_element_name_method_offset = 1
     _set_pointable_element_name_method_offset = 2
     _metadata = {
-        "iid_data" : (4714192977359068868, 12710169172715718539),
+        "iid_data" : (5614743220395560231, 5115827951254901170),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20075,7 +20124,7 @@ class VectorGeometryToolAxesModelAttachment(IVectorGeometryToolAxes, IAnalysisWo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesModelAttachment, [VectorGeometryToolAxesModelAttachment, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5193235162391666986, 18246769432303230655), VectorGeometryToolAxesModelAttachment)
+agcls.AgClassCatalog.add_catalog_entry((5723205793605581119, 10166969953748955548), VectorGeometryToolAxesModelAttachment)
 agcls.AgTypeNameMap["VectorGeometryToolAxesModelAttachment"] = VectorGeometryToolAxesModelAttachment
 
 class VectorGeometryToolAxesSpinning(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -20092,7 +20141,7 @@ class VectorGeometryToolAxesSpinning(IVectorGeometryToolAxes, IAnalysisWorkbench
     _get_spin_rate_method_offset = 7
     _set_spin_rate_method_offset = 8
     _metadata = {
-        "iid_data" : (4667617302730203157, 4061177140042338229),
+        "iid_data" : (4768964874857580423, 18212606483313704858),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20185,7 +20234,7 @@ class VectorGeometryToolAxesSpinning(IVectorGeometryToolAxes, IAnalysisWorkbench
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesSpinning, [VectorGeometryToolAxesSpinning, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4995482426629917549, 13130993006376102317), VectorGeometryToolAxesSpinning)
+agcls.AgClassCatalog.add_catalog_entry((5368034561368062318, 13440906992809501572), VectorGeometryToolAxesSpinning)
 agcls.AgTypeNameMap["VectorGeometryToolAxesSpinning"] = VectorGeometryToolAxesSpinning
 
 class VectorGeometryToolAxesOnSurface(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -20198,7 +20247,7 @@ class VectorGeometryToolAxesOnSurface(IVectorGeometryToolAxes, IAnalysisWorkbenc
     _get_use_mean_sea_level_method_offset = 3
     _set_use_mean_sea_level_method_offset = 4
     _metadata = {
-        "iid_data" : (5185933021301684471, 12275505551023435660),
+        "iid_data" : (4879756120820249906, 15537210885512956838),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20259,7 +20308,7 @@ class VectorGeometryToolAxesOnSurface(IVectorGeometryToolAxes, IAnalysisWorkbenc
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesOnSurface, [VectorGeometryToolAxesOnSurface, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4971314585753366554, 1292441604687819144), VectorGeometryToolAxesOnSurface)
+agcls.AgClassCatalog.add_catalog_entry((5196044205836965853, 3690901493934426293), VectorGeometryToolAxesOnSurface)
 agcls.AgTypeNameMap["VectorGeometryToolAxesOnSurface"] = VectorGeometryToolAxesOnSurface
 
 class VectorGeometryToolAxesTrajectory(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -20272,7 +20321,7 @@ class VectorGeometryToolAxesTrajectory(IVectorGeometryToolAxes, IAnalysisWorkben
     _get_trajectory_axes_type_method_offset = 3
     _set_trajectory_axes_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5651358147515433935, 4289649635532755076),
+        "iid_data" : (5679556154426662024, 5475776825961080722),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20333,7 +20382,7 @@ class VectorGeometryToolAxesTrajectory(IVectorGeometryToolAxes, IAnalysisWorkben
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesTrajectory, [VectorGeometryToolAxesTrajectory, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5298893710421423902, 14770159094158175145), VectorGeometryToolAxesTrajectory)
+agcls.AgClassCatalog.add_catalog_entry((5180861135545909901, 3815907926064646806), VectorGeometryToolAxesTrajectory)
 agcls.AgTypeNameMap["VectorGeometryToolAxesTrajectory"] = VectorGeometryToolAxesTrajectory
 
 class VectorGeometryToolAxesLagrangeLibration(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -20346,7 +20395,7 @@ class VectorGeometryToolAxesLagrangeLibration(IVectorGeometryToolAxes, IAnalysis
     _set_point_type_method_offset = 3
     _get_secondary_central_bodies_method_offset = 4
     _metadata = {
-        "iid_data" : (5009774174844947093, 15791835418586956929),
+        "iid_data" : (5321851101550702650, 14054119170838416033),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20407,7 +20456,7 @@ class VectorGeometryToolAxesLagrangeLibration(IVectorGeometryToolAxes, IAnalysis
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesLagrangeLibration, [VectorGeometryToolAxesLagrangeLibration, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5341406077696168069, 3448170282291780742), VectorGeometryToolAxesLagrangeLibration)
+agcls.AgClassCatalog.add_catalog_entry((5362816229504818138, 3033146219433182893), VectorGeometryToolAxesLagrangeLibration)
 agcls.AgTypeNameMap["VectorGeometryToolAxesLagrangeLibration"] = VectorGeometryToolAxesLagrangeLibration
 
 class VectorGeometryToolAxesCommonTasks(SupportsDeleteCallback):
@@ -20420,7 +20469,7 @@ class VectorGeometryToolAxesCommonTasks(SupportsDeleteCallback):
     _create_fixed_method_offset = 3
     _sample_method_offset = 4
     _metadata = {
-        "iid_data" : (5573973030027962339, 11350862514454620079),
+        "iid_data" : (4677261364711182982, 3855065926113245606),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20469,7 +20518,7 @@ class VectorGeometryToolAxesCommonTasks(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesCommonTasks, [VectorGeometryToolAxesCommonTasks, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5420778078107633244, 5349538928625407639), VectorGeometryToolAxesCommonTasks)
+agcls.AgClassCatalog.add_catalog_entry((5035253805089386375, 15406598422865851012), VectorGeometryToolAxesCommonTasks)
 agcls.AgTypeNameMap["VectorGeometryToolAxesCommonTasks"] = VectorGeometryToolAxesCommonTasks
 
 class VectorGeometryToolAxesAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolAxes, SupportsDeleteCallback):
@@ -20484,7 +20533,7 @@ class VectorGeometryToolAxesAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysis
     _get_reference_axes_method_offset = 5
     _set_reference_axes_method_offset = 6
     _metadata = {
-        "iid_data" : (4873280145999219285, 11891884691591801994),
+        "iid_data" : (4875872102614127156, 2488153021798631584),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20559,7 +20608,7 @@ class VectorGeometryToolAxesAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysis
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesAtTimeInstant, [VectorGeometryToolAxesAtTimeInstant, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolAxes])
 
-agcls.AgClassCatalog.add_catalog_entry((5017193475427648010, 10215401686756772007), VectorGeometryToolAxesAtTimeInstant)
+agcls.AgClassCatalog.add_catalog_entry((5108323624876443657, 15036561554238174907), VectorGeometryToolAxesAtTimeInstant)
 agcls.AgTypeNameMap["VectorGeometryToolAxesAtTimeInstant"] = VectorGeometryToolAxesAtTimeInstant
 
 class VectorGeometryToolAxesPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolAxes, SupportsDeleteCallback):
@@ -20574,7 +20623,7 @@ class VectorGeometryToolAxesPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkben
     _set_property_method_offset = 5
     _get_property_method_offset = 6
     _metadata = {
-        "iid_data" : (5229726198367507937, 5541409003390586014),
+        "iid_data" : (4876938025761825004, 5723154458519258752),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20649,7 +20698,7 @@ class VectorGeometryToolAxesPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkben
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesPlugin, [VectorGeometryToolAxesPlugin, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolAxes])
 
-agcls.AgClassCatalog.add_catalog_entry((5024306098242634861, 9027031691428489138), VectorGeometryToolAxesPlugin)
+agcls.AgClassCatalog.add_catalog_entry((5585790100922835337, 4079205187604890782), VectorGeometryToolAxesPlugin)
 agcls.AgTypeNameMap["VectorGeometryToolAxesPlugin"] = VectorGeometryToolAxesPlugin
 
 class VectorGeometryToolAngleBetweenVectors(IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -20660,7 +20709,7 @@ class VectorGeometryToolAngleBetweenVectors(IVectorGeometryToolAngle, IAnalysisW
     _get_from_vector_method_offset = 1
     _get_to_vector_method_offset = 2
     _metadata = {
-        "iid_data" : (4706165728470396558, 4613885311283434626),
+        "iid_data" : (4868334018315145044, 9990464576912108442),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20705,7 +20754,7 @@ class VectorGeometryToolAngleBetweenVectors(IVectorGeometryToolAngle, IAnalysisW
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleBetweenVectors, [VectorGeometryToolAngleBetweenVectors, IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4934121995950007344, 3509908635259060373), VectorGeometryToolAngleBetweenVectors)
+agcls.AgClassCatalog.add_catalog_entry((5553322377006856865, 13128099779533529504), VectorGeometryToolAngleBetweenVectors)
 agcls.AgTypeNameMap["VectorGeometryToolAngleBetweenVectors"] = VectorGeometryToolAngleBetweenVectors
 
 class VectorGeometryToolAngleBetweenPlanes(IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -20716,7 +20765,7 @@ class VectorGeometryToolAngleBetweenPlanes(IVectorGeometryToolAngle, IAnalysisWo
     _get_from_plane_method_offset = 1
     _get_to_plane_method_offset = 2
     _metadata = {
-        "iid_data" : (4818502341743229941, 4954302282592202382),
+        "iid_data" : (5468552497299814505, 13004414454994908350),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20761,7 +20810,7 @@ class VectorGeometryToolAngleBetweenPlanes(IVectorGeometryToolAngle, IAnalysisWo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleBetweenPlanes, [VectorGeometryToolAngleBetweenPlanes, IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5142415411480004719, 5672759854970127006), VectorGeometryToolAngleBetweenPlanes)
+agcls.AgClassCatalog.add_catalog_entry((4807292432978522201, 3325639663020631708), VectorGeometryToolAngleBetweenPlanes)
 agcls.AgTypeNameMap["VectorGeometryToolAngleBetweenPlanes"] = VectorGeometryToolAngleBetweenPlanes
 
 class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -20777,7 +20826,7 @@ class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngle, IAnalysisWorkben
     _get_signed_angle_method_offset = 6
     _set_signed_angle_method_offset = 7
     _metadata = {
-        "iid_data" : (5679713389409677088, 15515088218937651083),
+        "iid_data" : (4693642550279176970, 4697909274078375065),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20863,7 +20912,7 @@ class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngle, IAnalysisWorkben
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleDihedral, [VectorGeometryToolAngleDihedral, IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4903268742534288827, 1669198075433999546), VectorGeometryToolAngleDihedral)
+agcls.AgClassCatalog.add_catalog_entry((4997507972724213459, 14058159534557624705), VectorGeometryToolAngleDihedral)
 agcls.AgTypeNameMap["VectorGeometryToolAngleDihedral"] = VectorGeometryToolAngleDihedral
 
 class VectorGeometryToolAngleRotation(IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -20876,7 +20925,7 @@ class VectorGeometryToolAngleRotation(IVectorGeometryToolAngle, IAnalysisWorkben
     _get_reference_direction_method_offset = 3
     _set_reference_direction_method_offset = 4
     _metadata = {
-        "iid_data" : (5142182411345604471, 400361542239300246),
+        "iid_data" : (5328804306940635831, 4292361837518823063),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20937,7 +20986,7 @@ class VectorGeometryToolAngleRotation(IVectorGeometryToolAngle, IAnalysisWorkben
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleRotation, [VectorGeometryToolAngleRotation, IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4804078596032006051, 13921202890855074486), VectorGeometryToolAngleRotation)
+agcls.AgClassCatalog.add_catalog_entry((4800553705281401254, 16042481489925484716), VectorGeometryToolAngleRotation)
 agcls.AgTypeNameMap["VectorGeometryToolAngleRotation"] = VectorGeometryToolAngleRotation
 
 class VectorGeometryToolAngleToPlane(IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -20950,7 +20999,7 @@ class VectorGeometryToolAngleToPlane(IVectorGeometryToolAngle, IAnalysisWorkbenc
     _get_signed_method_offset = 3
     _set_signed_method_offset = 4
     _metadata = {
-        "iid_data" : (4646333063766877613, 14553174656509283513),
+        "iid_data" : (4826661760571223149, 990723477320694435),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21011,7 +21060,7 @@ class VectorGeometryToolAngleToPlane(IVectorGeometryToolAngle, IAnalysisWorkbenc
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleToPlane, [VectorGeometryToolAngleToPlane, IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4741464092637169531, 108701953784669870), VectorGeometryToolAngleToPlane)
+agcls.AgClassCatalog.add_catalog_entry((4781274788952067095, 10208392732489852324), VectorGeometryToolAngleToPlane)
 agcls.AgTypeNameMap["VectorGeometryToolAngleToPlane"] = VectorGeometryToolAngleToPlane
 
 class VectorGeometryToolPlaneNormal(IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -21023,7 +21072,7 @@ class VectorGeometryToolPlaneNormal(IVectorGeometryToolPlane, IAnalysisWorkbench
     _get_reference_vector_method_offset = 2
     _get_reference_point_method_offset = 3
     _metadata = {
-        "iid_data" : (4866054806566235740, 13557789966285975229),
+        "iid_data" : (5541107954412848439, 7139520804205423761),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21077,7 +21126,7 @@ class VectorGeometryToolPlaneNormal(IVectorGeometryToolPlane, IAnalysisWorkbench
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneNormal, [VectorGeometryToolPlaneNormal, IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5056270710623515037, 7829687135599012744), VectorGeometryToolPlaneNormal)
+agcls.AgClassCatalog.add_catalog_entry((4656975151573471786, 12732105356388805014), VectorGeometryToolPlaneNormal)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneNormal"] = VectorGeometryToolPlaneNormal
 
 class VectorGeometryToolPlaneQuadrant(IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -21089,7 +21138,7 @@ class VectorGeometryToolPlaneQuadrant(IVectorGeometryToolPlane, IAnalysisWorkben
     _get_quadrant_method_offset = 2
     _set_quadrant_method_offset = 3
     _metadata = {
-        "iid_data" : (4933086119360190640, 8795220663760332954),
+        "iid_data" : (4740221303135448678, 10950847901049985155),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21141,7 +21190,7 @@ class VectorGeometryToolPlaneQuadrant(IVectorGeometryToolPlane, IAnalysisWorkben
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneQuadrant, [VectorGeometryToolPlaneQuadrant, IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5733687016289259105, 17528777649977896622), VectorGeometryToolPlaneQuadrant)
+agcls.AgClassCatalog.add_catalog_entry((4768071436398449422, 7597113290854060176), VectorGeometryToolPlaneQuadrant)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneQuadrant"] = VectorGeometryToolPlaneQuadrant
 
 class VectorGeometryToolPlaneTrajectory(IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -21154,7 +21203,7 @@ class VectorGeometryToolPlaneTrajectory(IVectorGeometryToolPlane, IAnalysisWorkb
     _get_rotation_offset_method_offset = 3
     _set_rotation_offset_method_offset = 4
     _metadata = {
-        "iid_data" : (5529355900142766113, 13753958645856205187),
+        "iid_data" : (4673137289379558875, 15848092958031284097),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21215,7 +21264,7 @@ class VectorGeometryToolPlaneTrajectory(IVectorGeometryToolPlane, IAnalysisWorkb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneTrajectory, [VectorGeometryToolPlaneTrajectory, IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5238081677499142009, 8579850293282649519), VectorGeometryToolPlaneTrajectory)
+agcls.AgClassCatalog.add_catalog_entry((5390000301528583817, 2731989563950530974), VectorGeometryToolPlaneTrajectory)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneTrajectory"] = VectorGeometryToolPlaneTrajectory
 
 class VectorGeometryToolPlaneTriad(IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -21229,7 +21278,7 @@ class VectorGeometryToolPlaneTriad(IVectorGeometryToolPlane, IAnalysisWorkbenchC
     _get_rotation_offset_method_offset = 4
     _set_rotation_offset_method_offset = 5
     _metadata = {
-        "iid_data" : (5649803850081976515, 15920961542924307585),
+        "iid_data" : (4737368399492239157, 5053970661615464626),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21299,7 +21348,7 @@ class VectorGeometryToolPlaneTriad(IVectorGeometryToolPlane, IAnalysisWorkbenchC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneTriad, [VectorGeometryToolPlaneTriad, IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5574538283155536192, 17633244628996092321), VectorGeometryToolPlaneTriad)
+agcls.AgClassCatalog.add_catalog_entry((5607147797416370859, 16820047382935689397), VectorGeometryToolPlaneTriad)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneTriad"] = VectorGeometryToolPlaneTriad
 
 class VectorGeometryToolPlaneTwoVector(IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -21311,7 +21360,7 @@ class VectorGeometryToolPlaneTwoVector(IVectorGeometryToolPlane, IAnalysisWorkbe
     _get_vector_2_method_offset = 2
     _get_reference_point_method_offset = 3
     _metadata = {
-        "iid_data" : (5281608343756431856, 15763435674294787213),
+        "iid_data" : (5492112935490113353, 3997803027793411509),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21365,7 +21414,7 @@ class VectorGeometryToolPlaneTwoVector(IVectorGeometryToolPlane, IAnalysisWorkbe
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneTwoVector, [VectorGeometryToolPlaneTwoVector, IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5259565249100914298, 10449004369849458077), VectorGeometryToolPlaneTwoVector)
+agcls.AgClassCatalog.add_catalog_entry((5230125733049388346, 9820888494954810502), VectorGeometryToolPlaneTwoVector)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneTwoVector"] = VectorGeometryToolPlaneTwoVector
 
 class VectorGeometryToolPointBPlane(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -21380,7 +21429,7 @@ class VectorGeometryToolPointBPlane(IVectorGeometryToolPoint, IAnalysisWorkbench
     _get_direction_method_offset = 5
     _set_direction_method_offset = 6
     _metadata = {
-        "iid_data" : (5549652071222573439, 12634532755935206801),
+        "iid_data" : (5448643168941201006, 10959455646186013614),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21457,7 +21506,7 @@ class VectorGeometryToolPointBPlane(IVectorGeometryToolPoint, IAnalysisWorkbench
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointBPlane, [VectorGeometryToolPointBPlane, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5174217959427746283, 8080120297144408971), VectorGeometryToolPointBPlane)
+agcls.AgClassCatalog.add_catalog_entry((5612197557271228951, 3429492576531035823), VectorGeometryToolPointBPlane)
 agcls.AgTypeNameMap["VectorGeometryToolPointBPlane"] = VectorGeometryToolPointBPlane
 
 class VectorGeometryToolPointFile(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -21468,7 +21517,7 @@ class VectorGeometryToolPointFile(IVectorGeometryToolPoint, IAnalysisWorkbenchCo
     _get_filename_method_offset = 1
     _set_filename_method_offset = 2
     _metadata = {
-        "iid_data" : (4809037603532842876, 17498737964067706761),
+        "iid_data" : (4746694376318978848, 246156905829005998),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21511,7 +21560,7 @@ class VectorGeometryToolPointFile(IVectorGeometryToolPoint, IAnalysisWorkbenchCo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointFile, [VectorGeometryToolPointFile, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5372805118883383591, 8272625305257767061), VectorGeometryToolPointFile)
+agcls.AgClassCatalog.add_catalog_entry((5640315133662371555, 2004972078170916480), VectorGeometryToolPointFile)
 agcls.AgTypeNameMap["VectorGeometryToolPointFile"] = VectorGeometryToolPointFile
 
 class VectorGeometryToolPointFixedInSystem(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -21522,7 +21571,7 @@ class VectorGeometryToolPointFixedInSystem(IVectorGeometryToolPoint, IAnalysisWo
     _get_reference_method_offset = 1
     _get_fixed_point_method_offset = 2
     _metadata = {
-        "iid_data" : (5663910966529630382, 8421606499748928414),
+        "iid_data" : (5217236913830967318, 16535867048267594151),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21567,7 +21616,7 @@ class VectorGeometryToolPointFixedInSystem(IVectorGeometryToolPoint, IAnalysisWo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointFixedInSystem, [VectorGeometryToolPointFixedInSystem, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4930325908174212614, 8676034700317006526), VectorGeometryToolPointFixedInSystem)
+agcls.AgClassCatalog.add_catalog_entry((4949427818178354474, 7580700024366539908), VectorGeometryToolPointFixedInSystem)
 agcls.AgTypeNameMap["VectorGeometryToolPointFixedInSystem"] = VectorGeometryToolPointFixedInSystem
 
 class VectorGeometryToolPointGrazing(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -21581,7 +21630,7 @@ class VectorGeometryToolPointGrazing(IVectorGeometryToolPoint, IAnalysisWorkbenc
     _get_altitude_method_offset = 4
     _set_altitude_method_offset = 5
     _metadata = {
-        "iid_data" : (5012527720511243134, 16225700843195084963),
+        "iid_data" : (5572393744364532655, 4807776708854277274),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21651,7 +21700,7 @@ class VectorGeometryToolPointGrazing(IVectorGeometryToolPoint, IAnalysisWorkbenc
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointGrazing, [VectorGeometryToolPointGrazing, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4873095929191246164, 17861236567847545995), VectorGeometryToolPointGrazing)
+agcls.AgClassCatalog.add_catalog_entry((5082008461001787157, 7781599474404962212), VectorGeometryToolPointGrazing)
 agcls.AgTypeNameMap["VectorGeometryToolPointGrazing"] = VectorGeometryToolPointGrazing
 
 class VectorGeometryToolPointGlint(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -21663,7 +21712,7 @@ class VectorGeometryToolPointGlint(IVectorGeometryToolPoint, IAnalysisWorkbenchC
     _get_source_point_method_offset = 2
     _get_observer_point_method_offset = 3
     _metadata = {
-        "iid_data" : (4807494688843401545, 7891160833855003008),
+        "iid_data" : (5519945110409766983, 11917580568384892334),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21717,7 +21766,7 @@ class VectorGeometryToolPointGlint(IVectorGeometryToolPoint, IAnalysisWorkbenchC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointGlint, [VectorGeometryToolPointGlint, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5016182750180824403, 8007295032329350291), VectorGeometryToolPointGlint)
+agcls.AgClassCatalog.add_catalog_entry((4613099006907520213, 13369053541030396839), VectorGeometryToolPointGlint)
 agcls.AgTypeNameMap["VectorGeometryToolPointGlint"] = VectorGeometryToolPointGlint
 
 class VectorGeometryToolPointCovarianceGrazing(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -21738,7 +21787,7 @@ class VectorGeometryToolPointCovarianceGrazing(IVectorGeometryToolPoint, IAnalys
     _get_use_probability_method_offset = 11
     _set_use_probability_method_offset = 12
     _metadata = {
-        "iid_data" : (5091732626748640146, 4436454314855977661),
+        "iid_data" : (4998470149567440764, 10703677940143334320),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21863,7 +21912,7 @@ class VectorGeometryToolPointCovarianceGrazing(IVectorGeometryToolPoint, IAnalys
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointCovarianceGrazing, [VectorGeometryToolPointCovarianceGrazing, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5112836196461516807, 2313902703372365995), VectorGeometryToolPointCovarianceGrazing)
+agcls.AgClassCatalog.add_catalog_entry((5332368912024748516, 4096174480472302002), VectorGeometryToolPointCovarianceGrazing)
 agcls.AgTypeNameMap["VectorGeometryToolPointCovarianceGrazing"] = VectorGeometryToolPointCovarianceGrazing
 
 class VectorGeometryToolPointPlaneIntersection(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -21875,7 +21924,7 @@ class VectorGeometryToolPointPlaneIntersection(IVectorGeometryToolPoint, IAnalys
     _get_reference_plane_method_offset = 2
     _get_origin_point_method_offset = 3
     _metadata = {
-        "iid_data" : (4894427207736479321, 12949805093403104665),
+        "iid_data" : (5420305832900809264, 459306530003569070),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21929,7 +21978,7 @@ class VectorGeometryToolPointPlaneIntersection(IVectorGeometryToolPoint, IAnalys
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointPlaneIntersection, [VectorGeometryToolPointPlaneIntersection, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5461437594446824900, 7840863517079307695), VectorGeometryToolPointPlaneIntersection)
+agcls.AgClassCatalog.add_catalog_entry((5220717244805371090, 6331963837647736248), VectorGeometryToolPointPlaneIntersection)
 agcls.AgTypeNameMap["VectorGeometryToolPointPlaneIntersection"] = VectorGeometryToolPointPlaneIntersection
 
 class VectorGeometryToolPointOnSurface(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -21944,7 +21993,7 @@ class VectorGeometryToolPointOnSurface(IVectorGeometryToolPoint, IAnalysisWorkbe
     _get_surface_type_method_offset = 5
     _set_surface_type_method_offset = 6
     _metadata = {
-        "iid_data" : (5076325792578851871, 4433532405534888869),
+        "iid_data" : (4655542828509273535, 1882028122257362103),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22021,7 +22070,7 @@ class VectorGeometryToolPointOnSurface(IVectorGeometryToolPoint, IAnalysisWorkbe
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointOnSurface, [VectorGeometryToolPointOnSurface, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5194814587264618449, 6271131256489865090), VectorGeometryToolPointOnSurface)
+agcls.AgClassCatalog.add_catalog_entry((4666992499292531866, 14139628870500489104), VectorGeometryToolPointOnSurface)
 agcls.AgTypeNameMap["VectorGeometryToolPointOnSurface"] = VectorGeometryToolPointOnSurface
 
 class VectorGeometryToolPointModelAttachment(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -22034,7 +22083,7 @@ class VectorGeometryToolPointModelAttachment(IVectorGeometryToolPoint, IAnalysis
     _get_use_scale_method_offset = 3
     _set_use_scale_method_offset = 4
     _metadata = {
-        "iid_data" : (4969317928494912584, 2239240105920673212),
+        "iid_data" : (4824590555677766429, 8313392162001019034),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22093,7 +22142,7 @@ class VectorGeometryToolPointModelAttachment(IVectorGeometryToolPoint, IAnalysis
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointModelAttachment, [VectorGeometryToolPointModelAttachment, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5148449423463122454, 9925486399943562398), VectorGeometryToolPointModelAttachment)
+agcls.AgClassCatalog.add_catalog_entry((4994532141621021742, 3609240043877144740), VectorGeometryToolPointModelAttachment)
 agcls.AgTypeNameMap["VectorGeometryToolPointModelAttachment"] = VectorGeometryToolPointModelAttachment
 
 class VectorGeometryToolPointSatelliteCollectionEntry(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -22104,7 +22153,7 @@ class VectorGeometryToolPointSatelliteCollectionEntry(IVectorGeometryToolPoint, 
     _get_entry_name_method_offset = 1
     _set_entry_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5654158336124113307, 752486724811347121),
+        "iid_data" : (5491354466086691677, 5423652285484055216),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22147,7 +22196,7 @@ class VectorGeometryToolPointSatelliteCollectionEntry(IVectorGeometryToolPoint, 
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointSatelliteCollectionEntry, [VectorGeometryToolPointSatelliteCollectionEntry, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5612905802720005101, 1472722314735659699), VectorGeometryToolPointSatelliteCollectionEntry)
+agcls.AgClassCatalog.add_catalog_entry((5699800858842717926, 8433451251712026522), VectorGeometryToolPointSatelliteCollectionEntry)
 agcls.AgTypeNameMap["VectorGeometryToolPointSatelliteCollectionEntry"] = VectorGeometryToolPointSatelliteCollectionEntry
 
 class VectorGeometryToolPointPlaneProjection(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -22158,7 +22207,7 @@ class VectorGeometryToolPointPlaneProjection(IVectorGeometryToolPoint, IAnalysis
     _get_source_point_method_offset = 1
     _get_reference_plane_method_offset = 2
     _metadata = {
-        "iid_data" : (4927441133230225106, 13722760528613846674),
+        "iid_data" : (5049584136899768165, 13391468172447071930),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22203,7 +22252,7 @@ class VectorGeometryToolPointPlaneProjection(IVectorGeometryToolPoint, IAnalysis
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointPlaneProjection, [VectorGeometryToolPointPlaneProjection, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4825084289371647385, 4219695295586287035), VectorGeometryToolPointPlaneProjection)
+agcls.AgClassCatalog.add_catalog_entry((5335468114817297425, 3685069713242270092), VectorGeometryToolPointPlaneProjection)
 agcls.AgTypeNameMap["VectorGeometryToolPointPlaneProjection"] = VectorGeometryToolPointPlaneProjection
 
 class VectorGeometryToolPointLagrangeLibration(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -22216,7 +22265,7 @@ class VectorGeometryToolPointLagrangeLibration(IVectorGeometryToolPoint, IAnalys
     _set_point_type_method_offset = 3
     _get_secondary_central_bodies_method_offset = 4
     _metadata = {
-        "iid_data" : (5711160304298990704, 2510698324538832526),
+        "iid_data" : (5680261066272893153, 14797591330014816164),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22277,7 +22326,7 @@ class VectorGeometryToolPointLagrangeLibration(IVectorGeometryToolPoint, IAnalys
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointLagrangeLibration, [VectorGeometryToolPointLagrangeLibration, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4926224797655292278, 9084591209309612973), VectorGeometryToolPointLagrangeLibration)
+agcls.AgClassCatalog.add_catalog_entry((4640629034057452249, 95330422502385052), VectorGeometryToolPointLagrangeLibration)
 agcls.AgTypeNameMap["VectorGeometryToolPointLagrangeLibration"] = VectorGeometryToolPointLagrangeLibration
 
 class VectorGeometryToolPointCommonTasks(SupportsDeleteCallback):
@@ -22289,7 +22338,7 @@ class VectorGeometryToolPointCommonTasks(SupportsDeleteCallback):
     _create_fixed_in_system_cartesian_method_offset = 2
     _sample_method_offset = 3
     _metadata = {
-        "iid_data" : (5304183914034086053, 11427369840103977859),
+        "iid_data" : (5109700254014318762, 2529027292972005544),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22331,7 +22380,7 @@ class VectorGeometryToolPointCommonTasks(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointCommonTasks, [VectorGeometryToolPointCommonTasks, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5070744430662018124, 11417400654641998503), VectorGeometryToolPointCommonTasks)
+agcls.AgClassCatalog.add_catalog_entry((4837587285992167947, 1930118269841328797), VectorGeometryToolPointCommonTasks)
 agcls.AgTypeNameMap["VectorGeometryToolPointCommonTasks"] = VectorGeometryToolPointCommonTasks
 
 class VectorGeometryToolPointCentralBodyIntersect(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolPoint, SupportsDeleteCallback):
@@ -22363,7 +22412,7 @@ class VectorGeometryToolPointCentralBodyIntersect(IAnalysisWorkbenchComponent, I
     _get_allow_intersection_from_below_method_offset = 22
     _set_allow_intersection_from_below_method_offset = 23
     _metadata = {
-        "iid_data" : (4948493263913194603, 4729147732375268017),
+        "iid_data" : (4663725485821591859, 11879885980809125812),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22573,7 +22622,7 @@ class VectorGeometryToolPointCentralBodyIntersect(IAnalysisWorkbenchComponent, I
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointCentralBodyIntersect, [VectorGeometryToolPointCentralBodyIntersect, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolPoint])
 
-agcls.AgClassCatalog.add_catalog_entry((5231912502645770216, 9486194056870701488), VectorGeometryToolPointCentralBodyIntersect)
+agcls.AgClassCatalog.add_catalog_entry((4803826139597622013, 2765629782904609207), VectorGeometryToolPointCentralBodyIntersect)
 agcls.AgTypeNameMap["VectorGeometryToolPointCentralBodyIntersect"] = VectorGeometryToolPointCentralBodyIntersect
 
 class VectorGeometryToolPointAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolPoint, SupportsDeleteCallback):
@@ -22588,7 +22637,7 @@ class VectorGeometryToolPointAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysi
     _get_reference_system_method_offset = 5
     _set_reference_system_method_offset = 6
     _metadata = {
-        "iid_data" : (4692963829731128305, 15665731167175750805),
+        "iid_data" : (4866552413424408816, 11312764974885017005),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22663,7 +22712,7 @@ class VectorGeometryToolPointAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysi
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointAtTimeInstant, [VectorGeometryToolPointAtTimeInstant, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolPoint])
 
-agcls.AgClassCatalog.add_catalog_entry((5033554046644602591, 15766838857592252346), VectorGeometryToolPointAtTimeInstant)
+agcls.AgClassCatalog.add_catalog_entry((4623286829104376273, 12900592386724263059), VectorGeometryToolPointAtTimeInstant)
 agcls.AgTypeNameMap["VectorGeometryToolPointAtTimeInstant"] = VectorGeometryToolPointAtTimeInstant
 
 class VectorGeometryToolPointPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolPoint, SupportsDeleteCallback):
@@ -22678,7 +22727,7 @@ class VectorGeometryToolPointPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkbe
     _set_property_method_offset = 5
     _get_property_method_offset = 6
     _metadata = {
-        "iid_data" : (4736322476288056248, 3154611226967789489),
+        "iid_data" : (5712886476008296794, 7753038947643474840),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22753,7 +22802,7 @@ class VectorGeometryToolPointPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkbe
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointPlugin, [VectorGeometryToolPointPlugin, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolPoint])
 
-agcls.AgClassCatalog.add_catalog_entry((5757596304647117876, 17401426131146318778), VectorGeometryToolPointPlugin)
+agcls.AgClassCatalog.add_catalog_entry((5087030823487853730, 11186207662100586936), VectorGeometryToolPointPlugin)
 agcls.AgTypeNameMap["VectorGeometryToolPointPlugin"] = VectorGeometryToolPointPlugin
 
 class VectorGeometryToolPointCentralBodyFixedOffset(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolPoint, SupportsDeleteCallback):
@@ -22767,7 +22816,7 @@ class VectorGeometryToolPointCentralBodyFixedOffset(IAnalysisWorkbenchComponent,
     _set_reference_shape_method_offset = 4
     _get_position_method_offset = 5
     _metadata = {
-        "iid_data" : (4611805182153342992, 11947442291432870303),
+        "iid_data" : (4710307382286032390, 6653264354125639356),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22835,7 +22884,7 @@ class VectorGeometryToolPointCentralBodyFixedOffset(IAnalysisWorkbenchComponent,
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointCentralBodyFixedOffset, [VectorGeometryToolPointCentralBodyFixedOffset, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolPoint])
 
-agcls.AgClassCatalog.add_catalog_entry((5575906236718038446, 6573727919483783565), VectorGeometryToolPointCentralBodyFixedOffset)
+agcls.AgClassCatalog.add_catalog_entry((5579671680104780163, 15770828090822022551), VectorGeometryToolPointCentralBodyFixedOffset)
 agcls.AgTypeNameMap["VectorGeometryToolPointCentralBodyFixedOffset"] = VectorGeometryToolPointCentralBodyFixedOffset
 
 class VectorGeometryToolSystemAssembled(IVectorGeometryToolSystem, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -22846,7 +22895,7 @@ class VectorGeometryToolSystemAssembled(IVectorGeometryToolSystem, IAnalysisWork
     _get_origin_point_method_offset = 1
     _get_reference_axes_method_offset = 2
     _metadata = {
-        "iid_data" : (5029707979930027416, 8598486438770545800),
+        "iid_data" : (5758122175331170692, 10787727607856139163),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22891,7 +22940,7 @@ class VectorGeometryToolSystemAssembled(IVectorGeometryToolSystem, IAnalysisWork
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolSystemAssembled, [VectorGeometryToolSystemAssembled, IVectorGeometryToolSystem, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5078526353961026737, 9169402548554558883), VectorGeometryToolSystemAssembled)
+agcls.AgClassCatalog.add_catalog_entry((5108996074410782134, 6962709031885738675), VectorGeometryToolSystemAssembled)
 agcls.AgTypeNameMap["VectorGeometryToolSystemAssembled"] = VectorGeometryToolSystemAssembled
 
 class VectorGeometryToolSystemOnSurface(IVectorGeometryToolSystem, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -22906,7 +22955,7 @@ class VectorGeometryToolSystemOnSurface(IVectorGeometryToolSystem, IAnalysisWork
     _set_use_mean_sea_level_method_offset = 5
     _get_position_method_offset = 6
     _metadata = {
-        "iid_data" : (5364665391471234614, 9385572869045227689),
+        "iid_data" : (4955089496550977087, 2238085245426502823),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22983,7 +23032,7 @@ class VectorGeometryToolSystemOnSurface(IVectorGeometryToolSystem, IAnalysisWork
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolSystemOnSurface, [VectorGeometryToolSystemOnSurface, IVectorGeometryToolSystem, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4833388918947980281, 1384230461932870068), VectorGeometryToolSystemOnSurface)
+agcls.AgClassCatalog.add_catalog_entry((4854746257798720049, 6532266793988065170), VectorGeometryToolSystemOnSurface)
 agcls.AgTypeNameMap["VectorGeometryToolSystemOnSurface"] = VectorGeometryToolSystemOnSurface
 
 class AnalysisWorkbenchPositionLLA(SupportsDeleteCallback):
@@ -22998,7 +23047,7 @@ class AnalysisWorkbenchPositionLLA(SupportsDeleteCallback):
     _get_altitude_method_offset = 5
     _set_altitude_method_offset = 6
     _metadata = {
-        "iid_data" : (5728291300314624810, 14010987516788309178),
+        "iid_data" : (5748801323843319085, 1439656398943508630),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23067,7 +23116,7 @@ class AnalysisWorkbenchPositionLLA(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchPositionLLA, [AnalysisWorkbenchPositionLLA, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4898112692119023441, 4393568345042619304), AnalysisWorkbenchPositionLLA)
+agcls.AgClassCatalog.add_catalog_entry((4787706864985308105, 8236207572985846434), AnalysisWorkbenchPositionLLA)
 agcls.AgTypeNameMap["AnalysisWorkbenchPositionLLA"] = AnalysisWorkbenchPositionLLA
 
 class VectorGeometryToolSystemCommonTasks(SupportsDeleteCallback):
@@ -23078,7 +23127,7 @@ class VectorGeometryToolSystemCommonTasks(SupportsDeleteCallback):
     _create_east_north_up_cartographic_method_offset = 1
     _create_assembled_method_offset = 2
     _metadata = {
-        "iid_data" : (5508899997142077058, 9407051909521800110),
+        "iid_data" : (5076235731341951787, 2267896650895668097),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23113,7 +23162,7 @@ class VectorGeometryToolSystemCommonTasks(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolSystemCommonTasks, [VectorGeometryToolSystemCommonTasks, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5585304109946744641, 4691437628496683701), VectorGeometryToolSystemCommonTasks)
+agcls.AgClassCatalog.add_catalog_entry((5611615641569756422, 2427588169168077500), VectorGeometryToolSystemCommonTasks)
 agcls.AgTypeNameMap["VectorGeometryToolSystemCommonTasks"] = VectorGeometryToolSystemCommonTasks
 
 class VectorGeometryToolVectorAngleRate(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -23125,7 +23174,7 @@ class VectorGeometryToolVectorAngleRate(IVectorGeometryToolVector, IAnalysisWork
     _get_differencing_time_step_method_offset = 2
     _set_differencing_time_step_method_offset = 3
     _metadata = {
-        "iid_data" : (5597316415742021355, 2905315476766484131),
+        "iid_data" : (5437282523667590178, 16554048941186374829),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23177,7 +23226,7 @@ class VectorGeometryToolVectorAngleRate(IVectorGeometryToolVector, IAnalysisWork
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorAngleRate, [VectorGeometryToolVectorAngleRate, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4661945362119516281, 7374273867052019634), VectorGeometryToolVectorAngleRate)
+agcls.AgClassCatalog.add_catalog_entry((5366778366893606092, 10422768353563636655), VectorGeometryToolVectorAngleRate)
 agcls.AgTypeNameMap["VectorGeometryToolVectorAngleRate"] = VectorGeometryToolVectorAngleRate
 
 class VectorGeometryToolVectorApoapsis(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -23190,7 +23239,7 @@ class VectorGeometryToolVectorApoapsis(IVectorGeometryToolVector, IAnalysisWorkb
     _get_mean_element_type_method_offset = 3
     _set_mean_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5576331771676654674, 4033187042520018608),
+        "iid_data" : (5140088281197350773, 10418602219448364717),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23251,7 +23300,7 @@ class VectorGeometryToolVectorApoapsis(IVectorGeometryToolVector, IAnalysisWorkb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorApoapsis, [VectorGeometryToolVectorApoapsis, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4900243800521446284, 154039380244160657), VectorGeometryToolVectorApoapsis)
+agcls.AgClassCatalog.add_catalog_entry((5073965477533609728, 631430647684262545), VectorGeometryToolVectorApoapsis)
 agcls.AgTypeNameMap["VectorGeometryToolVectorApoapsis"] = VectorGeometryToolVectorApoapsis
 
 class VectorGeometryToolVectorFixedAtEpoch(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -23264,7 +23313,7 @@ class VectorGeometryToolVectorFixedAtEpoch(IVectorGeometryToolVector, IAnalysisW
     _get_source_vector_method_offset = 3
     _get_reference_axes_method_offset = 4
     _metadata = {
-        "iid_data" : (4848916224173762568, 6757523323665043074),
+        "iid_data" : (5760689363879151360, 2771864152396395679),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23325,7 +23374,7 @@ class VectorGeometryToolVectorFixedAtEpoch(IVectorGeometryToolVector, IAnalysisW
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorFixedAtEpoch, [VectorGeometryToolVectorFixedAtEpoch, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4676459523933582837, 2528162089752102555), VectorGeometryToolVectorFixedAtEpoch)
+agcls.AgClassCatalog.add_catalog_entry((4662387411869107286, 5129705819741118132), VectorGeometryToolVectorFixedAtEpoch)
 agcls.AgTypeNameMap["VectorGeometryToolVectorFixedAtEpoch"] = VectorGeometryToolVectorFixedAtEpoch
 
 class VectorGeometryToolVectorAngularVelocity(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -23338,7 +23387,7 @@ class VectorGeometryToolVectorAngularVelocity(IVectorGeometryToolVector, IAnalys
     _get_differencing_time_step_method_offset = 3
     _set_differencing_time_step_method_offset = 4
     _metadata = {
-        "iid_data" : (5760985025826459721, 14553782751100665529),
+        "iid_data" : (4637592624290767809, 8495244544203654784),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23399,7 +23448,7 @@ class VectorGeometryToolVectorAngularVelocity(IVectorGeometryToolVector, IAnalys
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorAngularVelocity, [VectorGeometryToolVectorAngularVelocity, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5373198340793861083, 1284675054128437125), VectorGeometryToolVectorAngularVelocity)
+agcls.AgClassCatalog.add_catalog_entry((4752902576110686535, 14214202906854292372), VectorGeometryToolVectorAngularVelocity)
 agcls.AgTypeNameMap["VectorGeometryToolVectorAngularVelocity"] = VectorGeometryToolVectorAngularVelocity
 
 class VectorGeometryToolVectorConing(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -23420,7 +23469,7 @@ class VectorGeometryToolVectorConing(IVectorGeometryToolVector, IAnalysisWorkben
     _get_mode_method_offset = 11
     _set_mode_method_offset = 12
     _metadata = {
-        "iid_data" : (5709421970301581804, 11872479787623141790),
+        "iid_data" : (4691965902676240540, 7996163589744307352),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23545,7 +23594,7 @@ class VectorGeometryToolVectorConing(IVectorGeometryToolVector, IAnalysisWorkben
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorConing, [VectorGeometryToolVectorConing, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4689903705630636422, 13286675890476868740), VectorGeometryToolVectorConing)
+agcls.AgClassCatalog.add_catalog_entry((5353670659322710955, 12430614539763063680), VectorGeometryToolVectorConing)
 agcls.AgTypeNameMap["VectorGeometryToolVectorConing"] = VectorGeometryToolVectorConing
 
 class VectorGeometryToolVectorCross(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -23560,7 +23609,7 @@ class VectorGeometryToolVectorCross(IVectorGeometryToolVector, IAnalysisWorkbenc
     _get_dimension_method_offset = 5
     _set_dimension_method_offset = 6
     _metadata = {
-        "iid_data" : (5275257649457659428, 11860577519903670147),
+        "iid_data" : (5286489013204861124, 7398962614168421766),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23637,7 +23686,7 @@ class VectorGeometryToolVectorCross(IVectorGeometryToolVector, IAnalysisWorkbenc
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorCross, [VectorGeometryToolVectorCross, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5034551376650625975, 1225344703421792407), VectorGeometryToolVectorCross)
+agcls.AgClassCatalog.add_catalog_entry((5029854857939502529, 12558807387171315612), VectorGeometryToolVectorCross)
 agcls.AgTypeNameMap["VectorGeometryToolVectorCross"] = VectorGeometryToolVectorCross
 
 class VectorGeometryToolVectorCustomScript(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -23651,7 +23700,7 @@ class VectorGeometryToolVectorCustomScript(IVectorGeometryToolVector, IAnalysisW
     _get_initialization_script_file_method_offset = 4
     _set_initialization_script_file_method_offset = 5
     _metadata = {
-        "iid_data" : (5630758871882886244, 16194130094764419741),
+        "iid_data" : (5053550140012278137, 9955539937986022820),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23719,7 +23768,7 @@ class VectorGeometryToolVectorCustomScript(IVectorGeometryToolVector, IAnalysisW
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorCustomScript, [VectorGeometryToolVectorCustomScript, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4728535357545307590, 16737740404794421951), VectorGeometryToolVectorCustomScript)
+agcls.AgClassCatalog.add_catalog_entry((4638605955861651870, 7930518094804067245), VectorGeometryToolVectorCustomScript)
 agcls.AgTypeNameMap["VectorGeometryToolVectorCustomScript"] = VectorGeometryToolVectorCustomScript
 
 class VectorGeometryToolVectorDerivative(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -23734,7 +23783,7 @@ class VectorGeometryToolVectorDerivative(IVectorGeometryToolVector, IAnalysisWor
     _get_force_use_of_numerical_differences_method_offset = 5
     _set_force_use_of_numerical_differences_method_offset = 6
     _metadata = {
-        "iid_data" : (5530402949093608972, 14398790889031353009),
+        "iid_data" : (5431522439515443946, 2305804027062997400),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23811,7 +23860,7 @@ class VectorGeometryToolVectorDerivative(IVectorGeometryToolVector, IAnalysisWor
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorDerivative, [VectorGeometryToolVectorDerivative, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5309408879000341305, 12873274334918222470), VectorGeometryToolVectorDerivative)
+agcls.AgClassCatalog.add_catalog_entry((5262600068982622699, 18197442361566086300), VectorGeometryToolVectorDerivative)
 agcls.AgTypeNameMap["VectorGeometryToolVectorDerivative"] = VectorGeometryToolVectorDerivative
 
 class VectorGeometryToolVectorDisplacement(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -23829,7 +23878,7 @@ class VectorGeometryToolVectorDisplacement(IVectorGeometryToolVector, IAnalysisW
     _set_signal_sense_method_offset = 8
     _get_reference_system_method_offset = 9
     _metadata = {
-        "iid_data" : (5476956723820268905, 5996813961645053609),
+        "iid_data" : (4926108715740911781, 2642726973487605168),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23931,7 +23980,7 @@ class VectorGeometryToolVectorDisplacement(IVectorGeometryToolVector, IAnalysisW
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorDisplacement, [VectorGeometryToolVectorDisplacement, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5117622138243308135, 15050542198214194335), VectorGeometryToolVectorDisplacement)
+agcls.AgClassCatalog.add_catalog_entry((5683971141851523146, 4272974848220816517), VectorGeometryToolVectorDisplacement)
 agcls.AgTypeNameMap["VectorGeometryToolVectorDisplacement"] = VectorGeometryToolVectorDisplacement
 
 class VectorGeometryToolVectorTwoPlanesIntersection(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -23942,7 +23991,7 @@ class VectorGeometryToolVectorTwoPlanesIntersection(IVectorGeometryToolVector, I
     _get_plane_a_method_offset = 1
     _get_plane_b_method_offset = 2
     _metadata = {
-        "iid_data" : (5154489590938645061, 17953582977026772639),
+        "iid_data" : (5723058367507425793, 10304088668246446241),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23987,7 +24036,7 @@ class VectorGeometryToolVectorTwoPlanesIntersection(IVectorGeometryToolVector, I
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorTwoPlanesIntersection, [VectorGeometryToolVectorTwoPlanesIntersection, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5484952021995115859, 5066214406894258350), VectorGeometryToolVectorTwoPlanesIntersection)
+agcls.AgClassCatalog.add_catalog_entry((4673793727500964653, 9510085397354120124), VectorGeometryToolVectorTwoPlanesIntersection)
 agcls.AgTypeNameMap["VectorGeometryToolVectorTwoPlanesIntersection"] = VectorGeometryToolVectorTwoPlanesIntersection
 
 class VectorGeometryToolVectorModelAttachment(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -23998,7 +24047,7 @@ class VectorGeometryToolVectorModelAttachment(IVectorGeometryToolVector, IAnalys
     _get_pointable_element_name_method_offset = 1
     _set_pointable_element_name_method_offset = 2
     _metadata = {
-        "iid_data" : (4701670409828626012, 1500555686229726852),
+        "iid_data" : (5306246846535816990, 2205041854208943783),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24041,7 +24090,7 @@ class VectorGeometryToolVectorModelAttachment(IVectorGeometryToolVector, IAnalys
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorModelAttachment, [VectorGeometryToolVectorModelAttachment, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5211444618584649400, 9648191457011466908), VectorGeometryToolVectorModelAttachment)
+agcls.AgClassCatalog.add_catalog_entry((5608622822548032511, 12326609615255330954), VectorGeometryToolVectorModelAttachment)
 agcls.AgTypeNameMap["VectorGeometryToolVectorModelAttachment"] = VectorGeometryToolVectorModelAttachment
 
 class VectorGeometryToolVectorProjection(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -24052,7 +24101,7 @@ class VectorGeometryToolVectorProjection(IVectorGeometryToolVector, IAnalysisWor
     _get_source_method_offset = 1
     _get_reference_plane_method_offset = 2
     _metadata = {
-        "iid_data" : (4651278934469564705, 16548193310250725505),
+        "iid_data" : (5537173334438406201, 17657825745223350945),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24097,7 +24146,7 @@ class VectorGeometryToolVectorProjection(IVectorGeometryToolVector, IAnalysisWor
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorProjection, [VectorGeometryToolVectorProjection, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5150896074625799242, 60409490020408760), VectorGeometryToolVectorProjection)
+agcls.AgClassCatalog.add_catalog_entry((4854458329898299938, 8518905741634860194), VectorGeometryToolVectorProjection)
 agcls.AgTypeNameMap["VectorGeometryToolVectorProjection"] = VectorGeometryToolVectorProjection
 
 class VectorGeometryToolVectorScaled(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -24111,7 +24160,7 @@ class VectorGeometryToolVectorScaled(IVectorGeometryToolVector, IAnalysisWorkben
     _get_is_normalized_method_offset = 4
     _set_is_normalized_method_offset = 5
     _metadata = {
-        "iid_data" : (4886994558078501166, 17758379833803953041),
+        "iid_data" : (5221554659823978677, 9901007937188500865),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24179,7 +24228,7 @@ class VectorGeometryToolVectorScaled(IVectorGeometryToolVector, IAnalysisWorkben
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorScaled, [VectorGeometryToolVectorScaled, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4858017423407189033, 9592990787974832285), VectorGeometryToolVectorScaled)
+agcls.AgClassCatalog.add_catalog_entry((4732590562092701816, 10688152650181525163), VectorGeometryToolVectorScaled)
 agcls.AgTypeNameMap["VectorGeometryToolVectorScaled"] = VectorGeometryToolVectorScaled
 
 class VectorGeometryToolVectorEccentricity(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -24192,7 +24241,7 @@ class VectorGeometryToolVectorEccentricity(IVectorGeometryToolVector, IAnalysisW
     _get_mean_element_type_method_offset = 3
     _set_mean_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5025708763849433005, 12709075287380647325),
+        "iid_data" : (4894867792762180132, 17913583020811708327),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24253,7 +24302,7 @@ class VectorGeometryToolVectorEccentricity(IVectorGeometryToolVector, IAnalysisW
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorEccentricity, [VectorGeometryToolVectorEccentricity, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5150167353244342231, 587328373879496597), VectorGeometryToolVectorEccentricity)
+agcls.AgClassCatalog.add_catalog_entry((4676961051043048497, 6654975727802048948), VectorGeometryToolVectorEccentricity)
 agcls.AgTypeNameMap["VectorGeometryToolVectorEccentricity"] = VectorGeometryToolVectorEccentricity
 
 class VectorGeometryToolVectorFixedInAxes(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -24264,7 +24313,7 @@ class VectorGeometryToolVectorFixedInAxes(IVectorGeometryToolVector, IAnalysisWo
     _get_reference_axes_method_offset = 1
     _get_direction_method_offset = 2
     _metadata = {
-        "iid_data" : (5438855473206840795, 4873753614762144673),
+        "iid_data" : (4978271369726637245, 3124327327634309525),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24309,7 +24358,7 @@ class VectorGeometryToolVectorFixedInAxes(IVectorGeometryToolVector, IAnalysisWo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorFixedInAxes, [VectorGeometryToolVectorFixedInAxes, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5414607667608549731, 5541039856994583477), VectorGeometryToolVectorFixedInAxes)
+agcls.AgClassCatalog.add_catalog_entry((5671720771090658797, 6124992787477376901), VectorGeometryToolVectorFixedInAxes)
 agcls.AgTypeNameMap["VectorGeometryToolVectorFixedInAxes"] = VectorGeometryToolVectorFixedInAxes
 
 class VectorGeometryToolVectorLineOfNodes(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -24320,7 +24369,7 @@ class VectorGeometryToolVectorLineOfNodes(IVectorGeometryToolVector, IAnalysisWo
     _get_central_body_method_offset = 1
     _get_reference_point_method_offset = 2
     _metadata = {
-        "iid_data" : (5620801902714546977, 17415199759640402072),
+        "iid_data" : (5289428203304374603, 6484401210182608556),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24365,7 +24414,7 @@ class VectorGeometryToolVectorLineOfNodes(IVectorGeometryToolVector, IAnalysisWo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorLineOfNodes, [VectorGeometryToolVectorLineOfNodes, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5697497466063765457, 2971359664823275691), VectorGeometryToolVectorLineOfNodes)
+agcls.AgClassCatalog.add_catalog_entry((5537058680065813236, 4261498214633455776), VectorGeometryToolVectorLineOfNodes)
 agcls.AgTypeNameMap["VectorGeometryToolVectorLineOfNodes"] = VectorGeometryToolVectorLineOfNodes
 
 class VectorGeometryToolVectorOrbitAngularMomentum(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -24378,7 +24427,7 @@ class VectorGeometryToolVectorOrbitAngularMomentum(IVectorGeometryToolVector, IA
     _get_mean_element_type_method_offset = 3
     _set_mean_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (4672338610862171914, 4748446384217441694),
+        "iid_data" : (5602357007669235179, 701643188272470413),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24439,7 +24488,7 @@ class VectorGeometryToolVectorOrbitAngularMomentum(IVectorGeometryToolVector, IA
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorOrbitAngularMomentum, [VectorGeometryToolVectorOrbitAngularMomentum, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((4891611620770882179, 10483757950771463324), VectorGeometryToolVectorOrbitAngularMomentum)
+agcls.AgClassCatalog.add_catalog_entry((5474747240877453561, 16263566109963479954), VectorGeometryToolVectorOrbitAngularMomentum)
 agcls.AgTypeNameMap["VectorGeometryToolVectorOrbitAngularMomentum"] = VectorGeometryToolVectorOrbitAngularMomentum
 
 class VectorGeometryToolVectorOrbitNormal(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -24452,7 +24501,7 @@ class VectorGeometryToolVectorOrbitNormal(IVectorGeometryToolVector, IAnalysisWo
     _get_mean_element_type_method_offset = 3
     _set_mean_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (4663288290247263893, 6881582421855256250),
+        "iid_data" : (5461601429965862025, 9538704204905943476),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24513,7 +24562,7 @@ class VectorGeometryToolVectorOrbitNormal(IVectorGeometryToolVector, IAnalysisWo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorOrbitNormal, [VectorGeometryToolVectorOrbitNormal, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5690167406211296648, 16267055690317479320), VectorGeometryToolVectorOrbitNormal)
+agcls.AgClassCatalog.add_catalog_entry((5481384998656902516, 13005026574821804196), VectorGeometryToolVectorOrbitNormal)
 agcls.AgTypeNameMap["VectorGeometryToolVectorOrbitNormal"] = VectorGeometryToolVectorOrbitNormal
 
 class VectorGeometryToolVectorPeriapsis(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -24526,7 +24575,7 @@ class VectorGeometryToolVectorPeriapsis(IVectorGeometryToolVector, IAnalysisWork
     _get_mean_element_type_method_offset = 3
     _set_mean_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5437835362413743277, 15452296298104812190),
+        "iid_data" : (5072230805001222125, 1487481389156163992),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24587,7 +24636,7 @@ class VectorGeometryToolVectorPeriapsis(IVectorGeometryToolVector, IAnalysisWork
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorPeriapsis, [VectorGeometryToolVectorPeriapsis, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5256947048057516928, 4939205471749242766), VectorGeometryToolVectorPeriapsis)
+agcls.AgClassCatalog.add_catalog_entry((5675083358880597717, 2149034506973253000), VectorGeometryToolVectorPeriapsis)
 agcls.AgTypeNameMap["VectorGeometryToolVectorPeriapsis"] = VectorGeometryToolVectorPeriapsis
 
 class VectorGeometryToolVectorReflection(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -24604,7 +24653,7 @@ class VectorGeometryToolVectorReflection(IVectorGeometryToolVector, IAnalysisWor
     _get_scale_factor_method_offset = 7
     _set_scale_factor_method_offset = 8
     _metadata = {
-        "iid_data" : (4748526333704094068, 13594143576183274168),
+        "iid_data" : (5183102056925296992, 1873503207846232494),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24697,7 +24746,7 @@ class VectorGeometryToolVectorReflection(IVectorGeometryToolVector, IAnalysisWor
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorReflection, [VectorGeometryToolVectorReflection, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5242169156125559792, 12802032634593964167), VectorGeometryToolVectorReflection)
+agcls.AgClassCatalog.add_catalog_entry((5714319081892406059, 4765660503442893442), VectorGeometryToolVectorReflection)
 agcls.AgTypeNameMap["VectorGeometryToolVectorReflection"] = VectorGeometryToolVectorReflection
 
 class VectorGeometryToolVectorRotationVector(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -24710,7 +24759,7 @@ class VectorGeometryToolVectorRotationVector(IVectorGeometryToolVector, IAnalysi
     _get_force_minimum_rotation_method_offset = 3
     _set_force_minimum_rotation_method_offset = 4
     _metadata = {
-        "iid_data" : (5460315657885274874, 3646263761371809724),
+        "iid_data" : (4721240403561225487, 1965786735483212204),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24771,7 +24820,7 @@ class VectorGeometryToolVectorRotationVector(IVectorGeometryToolVector, IAnalysi
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorRotationVector, [VectorGeometryToolVectorRotationVector, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5286863955939671726, 10289535475779917705), VectorGeometryToolVectorRotationVector)
+agcls.AgClassCatalog.add_catalog_entry((4726248077128919478, 11562201390248441016), VectorGeometryToolVectorRotationVector)
 agcls.AgTypeNameMap["VectorGeometryToolVectorRotationVector"] = VectorGeometryToolVectorRotationVector
 
 class VectorGeometryToolVectorDirectionToStar(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -24782,7 +24831,7 @@ class VectorGeometryToolVectorDirectionToStar(IVectorGeometryToolVector, IAnalys
     _get_selected_star_method_offset = 1
     _set_selected_star_method_offset = 2
     _metadata = {
-        "iid_data" : (4820370741406600788, 12462817074117337733),
+        "iid_data" : (5484240923971745477, 3132457791812225725),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24825,7 +24874,7 @@ class VectorGeometryToolVectorDirectionToStar(IVectorGeometryToolVector, IAnalys
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorDirectionToStar, [VectorGeometryToolVectorDirectionToStar, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5047539549077495756, 11298035590861304728), VectorGeometryToolVectorDirectionToStar)
+agcls.AgClassCatalog.add_catalog_entry((5506596127750806115, 10603875663551464085), VectorGeometryToolVectorDirectionToStar)
 agcls.AgTypeNameMap["VectorGeometryToolVectorDirectionToStar"] = VectorGeometryToolVectorDirectionToStar
 
 class VectorGeometryToolVectorFixedAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
@@ -24840,7 +24889,7 @@ class VectorGeometryToolVectorFixedAtTimeInstant(IAnalysisWorkbenchComponent, IA
     _get_reference_axes_method_offset = 5
     _set_reference_axes_method_offset = 6
     _metadata = {
-        "iid_data" : (4794500466872215055, 9081519325933884048),
+        "iid_data" : (5055559222450103592, 15626489175484055484),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24915,7 +24964,7 @@ class VectorGeometryToolVectorFixedAtTimeInstant(IAnalysisWorkbenchComponent, IA
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorFixedAtTimeInstant, [VectorGeometryToolVectorFixedAtTimeInstant, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector])
 
-agcls.AgClassCatalog.add_catalog_entry((5433779106058024883, 18263442844859596677), VectorGeometryToolVectorFixedAtTimeInstant)
+agcls.AgClassCatalog.add_catalog_entry((4744032471419873889, 3424010578465446528), VectorGeometryToolVectorFixedAtTimeInstant)
 agcls.AgTypeNameMap["VectorGeometryToolVectorFixedAtTimeInstant"] = VectorGeometryToolVectorFixedAtTimeInstant
 
 class VectorGeometryToolVectorLinearCombination(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
@@ -24940,7 +24989,7 @@ class VectorGeometryToolVectorLinearCombination(IAnalysisWorkbenchComponent, IAn
     _get_output_dimension_method_offset = 15
     _set_output_dimension_method_offset = 16
     _metadata = {
-        "iid_data" : (4740055483795291320, 15900085786830737054),
+        "iid_data" : (5377354713398370429, 12998956232777090235),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25095,7 +25144,7 @@ class VectorGeometryToolVectorLinearCombination(IAnalysisWorkbenchComponent, IAn
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorLinearCombination, [VectorGeometryToolVectorLinearCombination, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector])
 
-agcls.AgClassCatalog.add_catalog_entry((5538434821612795468, 13698347071120474037), VectorGeometryToolVectorLinearCombination)
+agcls.AgClassCatalog.add_catalog_entry((4753454264775627678, 806760495073274045), VectorGeometryToolVectorLinearCombination)
 agcls.AgTypeNameMap["VectorGeometryToolVectorLinearCombination"] = VectorGeometryToolVectorLinearCombination
 
 class VectorGeometryToolVectorProjectionAlongVector(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
@@ -25108,7 +25157,7 @@ class VectorGeometryToolVectorProjectionAlongVector(IAnalysisWorkbenchComponent,
     _get_along_vector_method_offset = 3
     _set_along_vector_method_offset = 4
     _metadata = {
-        "iid_data" : (5755066096907232965, 3388857209259158146),
+        "iid_data" : (5468666963819038085, 10192235115237301632),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25167,7 +25216,7 @@ class VectorGeometryToolVectorProjectionAlongVector(IAnalysisWorkbenchComponent,
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorProjectionAlongVector, [VectorGeometryToolVectorProjectionAlongVector, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector])
 
-agcls.AgClassCatalog.add_catalog_entry((5381541363365362073, 9025593909509941933), VectorGeometryToolVectorProjectionAlongVector)
+agcls.AgClassCatalog.add_catalog_entry((4791011737884046769, 3754686070461059215), VectorGeometryToolVectorProjectionAlongVector)
 agcls.AgTypeNameMap["VectorGeometryToolVectorProjectionAlongVector"] = VectorGeometryToolVectorProjectionAlongVector
 
 class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
@@ -25200,7 +25249,7 @@ class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponen
     _get_output_dimension_method_offset = 23
     _set_output_dimension_method_offset = 24
     _metadata = {
-        "iid_data" : (5516212796897271910, 8672269917452776626),
+        "iid_data" : (5679518964419032165, 3569317427346031522),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25419,7 +25468,7 @@ class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponen
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorScalarLinearCombination, [VectorGeometryToolVectorScalarLinearCombination, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector])
 
-agcls.AgClassCatalog.add_catalog_entry((5336658214580096933, 17880387423263486893), VectorGeometryToolVectorScalarLinearCombination)
+agcls.AgClassCatalog.add_catalog_entry((5375734426522587561, 1749952715268519553), VectorGeometryToolVectorScalarLinearCombination)
 agcls.AgTypeNameMap["VectorGeometryToolVectorScalarLinearCombination"] = VectorGeometryToolVectorScalarLinearCombination
 
 class VectorGeometryToolVectorScalarScaled(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
@@ -25440,7 +25489,7 @@ class VectorGeometryToolVectorScalarScaled(IAnalysisWorkbenchComponent, IAnalysi
     _get_dimension_method_offset = 11
     _set_dimension_method_offset = 12
     _metadata = {
-        "iid_data" : (4894220826375370834, 10889903187965997459),
+        "iid_data" : (4960358814124068078, 5912488089489145998),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25563,8 +25612,82 @@ class VectorGeometryToolVectorScalarScaled(IAnalysisWorkbenchComponent, IAnalysi
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorScalarScaled, [VectorGeometryToolVectorScalarScaled, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector])
 
-agcls.AgClassCatalog.add_catalog_entry((4832758772442315154, 12540700473237060019), VectorGeometryToolVectorScalarScaled)
+agcls.AgClassCatalog.add_catalog_entry((5115970952625430054, 17775951564579216783), VectorGeometryToolVectorScalarScaled)
 agcls.AgTypeNameMap["VectorGeometryToolVectorScalarScaled"] = VectorGeometryToolVectorScalarScaled
+
+class VectorGeometryToolVectorSurfaceNormal(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
+    """The normal vector for the surface of a central body at a sub-point obtained using the geodetic projection of the selected point onto the central body."""
+
+    _num_methods = 4
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_central_body_method_offset = 1
+    _get_reference_point_method_offset = 2
+    _get_use_terrain_method_offset = 3
+    _set_use_terrain_method_offset = 4
+    _metadata = {
+        "iid_data" : (4972964301960432228, 7249057416567487911),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, VectorGeometryToolVectorSurfaceNormal)
+
+    _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def central_body(self) -> "AnalysisWorkbenchCentralBodyReference":
+        """Specify the central body."""
+        return self._intf.get_property(VectorGeometryToolVectorSurfaceNormal._metadata, VectorGeometryToolVectorSurfaceNormal._get_central_body_metadata)
+
+    _get_reference_point_metadata = { "offset" : _get_reference_point_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def reference_point(self) -> "VectorGeometryToolPointReference":
+        """Specify a reference point."""
+        return self._intf.get_property(VectorGeometryToolVectorSurfaceNormal._metadata, VectorGeometryToolVectorSurfaceNormal._get_reference_point_metadata)
+
+    _get_use_terrain_metadata = { "offset" : _get_use_terrain_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_terrain(self) -> bool:
+        """Whether or not to compute the normal using local terrain sources."""
+        return self._intf.get_property(VectorGeometryToolVectorSurfaceNormal._metadata, VectorGeometryToolVectorSurfaceNormal._get_use_terrain_metadata)
+
+    _set_use_terrain_metadata = { "offset" : _set_use_terrain_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_terrain.setter
+    def use_terrain(self, use_terrain:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorSurfaceNormal._metadata, VectorGeometryToolVectorSurfaceNormal._set_use_terrain_metadata, use_terrain)
+
+    _property_names[central_body] = "central_body"
+    _property_names[reference_point] = "reference_point"
+    _property_names[use_terrain] = "use_terrain"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type VectorGeometryToolVectorSurfaceNormal."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorSurfaceNormal)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IVectorGeometryToolVector._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorSurfaceNormal, [VectorGeometryToolVectorSurfaceNormal, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
+
+agcls.AgClassCatalog.add_catalog_entry((5055124222729713986, 12930582000737091234), VectorGeometryToolVectorSurfaceNormal)
+agcls.AgTypeNameMap["VectorGeometryToolVectorSurfaceNormal"] = VectorGeometryToolVectorSurfaceNormal
 
 class VectorGeometryToolVectorVelocityAcceleration(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
     """Velocity vector of a point in a coordinate system."""
@@ -25578,7 +25701,7 @@ class VectorGeometryToolVectorVelocityAcceleration(IAnalysisWorkbenchComponent, 
     _get_differencing_time_step_method_offset = 5
     _set_differencing_time_step_method_offset = 6
     _metadata = {
-        "iid_data" : (5375860155292160993, 17499030931590071207),
+        "iid_data" : (4709848992776440921, 15734764676309751731),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25653,7 +25776,7 @@ class VectorGeometryToolVectorVelocityAcceleration(IAnalysisWorkbenchComponent, 
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorVelocityAcceleration, [VectorGeometryToolVectorVelocityAcceleration, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector])
 
-agcls.AgClassCatalog.add_catalog_entry((5695013519916147237, 17504416085998501559), VectorGeometryToolVectorVelocityAcceleration)
+agcls.AgClassCatalog.add_catalog_entry((5624064755786575932, 18406361004010414977), VectorGeometryToolVectorVelocityAcceleration)
 agcls.AgTypeNameMap["VectorGeometryToolVectorVelocityAcceleration"] = VectorGeometryToolVectorVelocityAcceleration
 
 class VectorGeometryToolVectorPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
@@ -25668,7 +25791,7 @@ class VectorGeometryToolVectorPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkb
     _set_property_method_offset = 5
     _get_property_method_offset = 6
     _metadata = {
-        "iid_data" : (5460902203496199703, 16978439278174404752),
+        "iid_data" : (5538372143699263645, 18047398718890827454),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25743,7 +25866,7 @@ class VectorGeometryToolVectorPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorPlugin, [VectorGeometryToolVectorPlugin, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector])
 
-agcls.AgClassCatalog.add_catalog_entry((5185411868180955802, 1723185518236018616), VectorGeometryToolVectorPlugin)
+agcls.AgClassCatalog.add_catalog_entry((5745467033847994692, 9696156839197058703), VectorGeometryToolVectorPlugin)
 agcls.AgTypeNameMap["VectorGeometryToolVectorPlugin"] = VectorGeometryToolVectorPlugin
 
 class VectorGeometryToolVectorSurfaceDisplacement(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
@@ -25760,7 +25883,7 @@ class VectorGeometryToolVectorSurfaceDisplacement(IAnalysisWorkbenchComponent, I
     _get_differencing_time_step_method_offset = 7
     _set_differencing_time_step_method_offset = 8
     _metadata = {
-        "iid_data" : (4749322752609177542, 3138784402351446404),
+        "iid_data" : (5647951945214483811, 6308660209443907991),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25851,7 +25974,7 @@ class VectorGeometryToolVectorSurfaceDisplacement(IAnalysisWorkbenchComponent, I
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorSurfaceDisplacement, [VectorGeometryToolVectorSurfaceDisplacement, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector])
 
-agcls.AgClassCatalog.add_catalog_entry((4763064220756248717, 8260778239053244854), VectorGeometryToolVectorSurfaceDisplacement)
+agcls.AgClassCatalog.add_catalog_entry((5309753991877768713, 17208876816464731291), VectorGeometryToolVectorSurfaceDisplacement)
 agcls.AgTypeNameMap["VectorGeometryToolVectorSurfaceDisplacement"] = VectorGeometryToolVectorSurfaceDisplacement
 
 class VectorGeometryToolVectorFile(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
@@ -25863,7 +25986,7 @@ class VectorGeometryToolVectorFile(IVectorGeometryToolVector, IAnalysisWorkbench
     _set_filename_method_offset = 2
     _reload_method_offset = 3
     _metadata = {
-        "iid_data" : (5543542084215610396, 17802732676296453806),
+        "iid_data" : (5543542084215610396, 17802732676296060590),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25875,7 +25998,7 @@ class VectorGeometryToolVectorFile(IVectorGeometryToolVector, IAnalysisWorkbench
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def filename(self) -> str:
-        """>A path to vector data file."""
+        """A path to vector data file."""
         return self._intf.get_property(VectorGeometryToolVectorFile._metadata, VectorGeometryToolVectorFile._get_filename_metadata)
 
     _set_filename_metadata = { "offset" : _set_filename_method_offset,
@@ -25913,7 +26036,7 @@ class VectorGeometryToolVectorFile(IVectorGeometryToolVector, IAnalysisWorkbench
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorFile, [VectorGeometryToolVectorFile, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5754310198593178934, 4508541946230252443), VectorGeometryToolVectorFile)
+agcls.AgClassCatalog.add_catalog_entry((5754310198593178934, 4508541948660655003), VectorGeometryToolVectorFile)
 agcls.AgTypeNameMap["VectorGeometryToolVectorFile"] = VectorGeometryToolVectorFile
 
 class VectorGeometryToolVectorFactory(SupportsDeleteCallback):
@@ -25929,7 +26052,7 @@ class VectorGeometryToolVectorFactory(SupportsDeleteCallback):
     _create_cross_product_method_offset = 6
     _create_file_vector_method_offset = 7
     _metadata = {
-        "iid_data" : (4961059317243966035, 3728998091371643287),
+        "iid_data" : (5180586260207610080, 12273536466493674888),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26001,7 +26124,7 @@ class VectorGeometryToolVectorFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorFactory, [VectorGeometryToolVectorFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5711359673983832545, 2530719800053651075), VectorGeometryToolVectorFactory)
+agcls.AgClassCatalog.add_catalog_entry((5301221690041538082, 7200680508520772229), VectorGeometryToolVectorFactory)
 agcls.AgTypeNameMap["VectorGeometryToolVectorFactory"] = VectorGeometryToolVectorFactory
 
 class VectorGeometryToolAxesFactory(SupportsDeleteCallback):
@@ -26014,7 +26137,7 @@ class VectorGeometryToolAxesFactory(SupportsDeleteCallback):
     _get_available_plugin_display_names_method_offset = 3
     _create_plugin_from_display_name_method_offset = 4
     _metadata = {
-        "iid_data" : (5464957119791377790, 10054543613096150957),
+        "iid_data" : (5509163963180590277, 13459254747827015298),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26065,7 +26188,7 @@ class VectorGeometryToolAxesFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesFactory, [VectorGeometryToolAxesFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4889816373028332546, 554355979822450875), VectorGeometryToolAxesFactory)
+agcls.AgClassCatalog.add_catalog_entry((4722074640308913139, 2816930791387213977), VectorGeometryToolAxesFactory)
 agcls.AgTypeNameMap["VectorGeometryToolAxesFactory"] = VectorGeometryToolAxesFactory
 
 class VectorGeometryToolSystemFactory(SupportsDeleteCallback):
@@ -26076,7 +26199,7 @@ class VectorGeometryToolSystemFactory(SupportsDeleteCallback):
     _create_method_offset = 1
     _is_type_supported_method_offset = 2
     _metadata = {
-        "iid_data" : (5404213079612697769, 6467374831321791143),
+        "iid_data" : (4856489117168480133, 8199614315677558947),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26111,7 +26234,7 @@ class VectorGeometryToolSystemFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolSystemFactory, [VectorGeometryToolSystemFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5617038167667602452, 6460634208601245600), VectorGeometryToolSystemFactory)
+agcls.AgClassCatalog.add_catalog_entry((5414481007574080872, 8722582692671587494), VectorGeometryToolSystemFactory)
 agcls.AgTypeNameMap["VectorGeometryToolSystemFactory"] = VectorGeometryToolSystemFactory
 
 class VectorGeometryToolPointFactory(SupportsDeleteCallback):
@@ -26125,7 +26248,7 @@ class VectorGeometryToolPointFactory(SupportsDeleteCallback):
     _create_plugin_from_display_name_method_offset = 4
     _create_fixed_on_central_body_method_offset = 5
     _metadata = {
-        "iid_data" : (4929115657145553370, 11800338428049833909),
+        "iid_data" : (5687279940796971351, 2808251293195583365),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26183,7 +26306,7 @@ class VectorGeometryToolPointFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointFactory, [VectorGeometryToolPointFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5083027847413101490, 698993109512490900), VectorGeometryToolPointFactory)
+agcls.AgClassCatalog.add_catalog_entry((4623198192648381419, 16367005873944923800), VectorGeometryToolPointFactory)
 agcls.AgTypeNameMap["VectorGeometryToolPointFactory"] = VectorGeometryToolPointFactory
 
 class VectorGeometryToolPlaneFactory(SupportsDeleteCallback):
@@ -26194,7 +26317,7 @@ class VectorGeometryToolPlaneFactory(SupportsDeleteCallback):
     _create_method_offset = 1
     _is_type_supported_method_offset = 2
     _metadata = {
-        "iid_data" : (5511640648637398578, 16974349964803353223),
+        "iid_data" : (4914538817539262406, 16156146188112848305),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26229,7 +26352,7 @@ class VectorGeometryToolPlaneFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneFactory, [VectorGeometryToolPlaneFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5201951119613614860, 18153886057905770686), VectorGeometryToolPlaneFactory)
+agcls.AgClassCatalog.add_catalog_entry((4874090687252705585, 2748107703047051445), VectorGeometryToolPlaneFactory)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneFactory"] = VectorGeometryToolPlaneFactory
 
 class VectorGeometryToolAngleFactory(SupportsDeleteCallback):
@@ -26240,7 +26363,7 @@ class VectorGeometryToolAngleFactory(SupportsDeleteCallback):
     _create_method_offset = 1
     _is_type_supported_method_offset = 2
     _metadata = {
-        "iid_data" : (5564081987267363827, 6995461227666747529),
+        "iid_data" : (5036613034060946999, 1646964293542007734),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26275,7 +26398,7 @@ class VectorGeometryToolAngleFactory(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleFactory, [VectorGeometryToolAngleFactory, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5750706908768565407, 9728205924445128858), VectorGeometryToolAngleFactory)
+agcls.AgClassCatalog.add_catalog_entry((4983532018102600378, 16919249288736858502), VectorGeometryToolAngleFactory)
 agcls.AgTypeNameMap["VectorGeometryToolAngleFactory"] = VectorGeometryToolAngleFactory
 
 class VectorGeometryToolVectorGroup(SupportsDeleteCallback):
@@ -26293,7 +26416,7 @@ class VectorGeometryToolVectorGroup(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
-        "iid_data" : (5067430531265917149, 15298908306875818125),
+        "iid_data" : (5232981540780766722, 4069313646885498814),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -26401,7 +26524,7 @@ class VectorGeometryToolVectorGroup(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorGroup, [VectorGeometryToolVectorGroup, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4658897554848344558, 15380089491910203264), VectorGeometryToolVectorGroup)
+agcls.AgClassCatalog.add_catalog_entry((5337875839564937815, 14125213300633708466), VectorGeometryToolVectorGroup)
 agcls.AgTypeNameMap["VectorGeometryToolVectorGroup"] = VectorGeometryToolVectorGroup
 
 class VectorGeometryToolPointGroup(SupportsDeleteCallback):
@@ -26420,7 +26543,7 @@ class VectorGeometryToolPointGroup(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 9
     _get_item_by_name_method_offset = 10
     _metadata = {
-        "iid_data" : (5147592896826917210, 897551216325447862),
+        "iid_data" : (4943331358344745478, 13436280185974066338),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -26537,7 +26660,7 @@ class VectorGeometryToolPointGroup(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointGroup, [VectorGeometryToolPointGroup, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5402006816162037363, 18282015196025052095), VectorGeometryToolPointGroup)
+agcls.AgClassCatalog.add_catalog_entry((5594590779242953532, 8091535817531745430), VectorGeometryToolPointGroup)
 agcls.AgTypeNameMap["VectorGeometryToolPointGroup"] = VectorGeometryToolPointGroup
 
 class VectorGeometryToolAngleGroup(SupportsDeleteCallback):
@@ -26555,7 +26678,7 @@ class VectorGeometryToolAngleGroup(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
-        "iid_data" : (5415288653434167738, 5002473860490802321),
+        "iid_data" : (4778710022666689081, 18174242539596446604),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -26663,7 +26786,7 @@ class VectorGeometryToolAngleGroup(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleGroup, [VectorGeometryToolAngleGroup, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4777369427642171852, 17580629102303739534), VectorGeometryToolAngleGroup)
+agcls.AgClassCatalog.add_catalog_entry((4989380472709268865, 17741501906515328130), VectorGeometryToolAngleGroup)
 agcls.AgTypeNameMap["VectorGeometryToolAngleGroup"] = VectorGeometryToolAngleGroup
 
 class VectorGeometryToolAxesGroup(SupportsDeleteCallback):
@@ -26682,7 +26805,7 @@ class VectorGeometryToolAxesGroup(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 9
     _get_item_by_name_method_offset = 10
     _metadata = {
-        "iid_data" : (5197040922718010994, 411996095013289911),
+        "iid_data" : (4996945027023460980, 5340030212222441897),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -26799,7 +26922,7 @@ class VectorGeometryToolAxesGroup(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesGroup, [VectorGeometryToolAxesGroup, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5412936898680792663, 10695939728172755886), VectorGeometryToolAxesGroup)
+agcls.AgClassCatalog.add_catalog_entry((4636532462418924231, 7328278767111310516), VectorGeometryToolAxesGroup)
 agcls.AgTypeNameMap["VectorGeometryToolAxesGroup"] = VectorGeometryToolAxesGroup
 
 class VectorGeometryToolPlaneGroup(SupportsDeleteCallback):
@@ -26817,7 +26940,7 @@ class VectorGeometryToolPlaneGroup(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
-        "iid_data" : (5066623695270279789, 16340809960769038493),
+        "iid_data" : (5521046762100069068, 12613565076047013299),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -26925,7 +27048,7 @@ class VectorGeometryToolPlaneGroup(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneGroup, [VectorGeometryToolPlaneGroup, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5205667377203739266, 6175294865411825318), VectorGeometryToolPlaneGroup)
+agcls.AgClassCatalog.add_catalog_entry((5205246056248478879, 14541159037371063202), VectorGeometryToolPlaneGroup)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneGroup"] = VectorGeometryToolPlaneGroup
 
 class VectorGeometryToolSystemGroup(SupportsDeleteCallback):
@@ -26944,7 +27067,7 @@ class VectorGeometryToolSystemGroup(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 9
     _get_item_by_name_method_offset = 10
     _metadata = {
-        "iid_data" : (5433051316492395298, 2555101289839279763),
+        "iid_data" : (5301412975314901504, 7687095741359956361),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -27061,7 +27184,7 @@ class VectorGeometryToolSystemGroup(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolSystemGroup, [VectorGeometryToolSystemGroup, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5689988669908775372, 16308973306298787994), VectorGeometryToolSystemGroup)
+agcls.AgClassCatalog.add_catalog_entry((5753655240112126420, 9089307375015452827), VectorGeometryToolSystemGroup)
 agcls.AgTypeNameMap["VectorGeometryToolSystemGroup"] = VectorGeometryToolSystemGroup
 
 class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
@@ -27219,14 +27342,14 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     >>> customScript = VectFactory.create("Script", "Description", VectorType.CUSTOM_SCRIPT)
     >>> # Initialization script if needed
     >>> # customScript.InitializationScriptFile = ''
-    >>> trainingSamplesDir = r"C:\Program Files\AGI\STK 12\Data\Resources\stktraining\samples"
+    >>> trainingSamplesDir = r"C:\Program Files\AGI\STK_ODTK 13\Data\Resources\stktraining\samples"
     >>> scriptFilePath = r"\Heliograph\Scripting\VectorTool\Vector\vector.vbs"
     >>> customScript.script_file = trainingSamplesDir + scriptFilePath
     >>> if customScript.is_valid is False:
     >>>     print("Script component not valid!")
     >>>     from os import getenv
     >>>
-    >>>     customScriptingDir = r"C:\Users\%s\Documents\STK 12\Config\Scripting\VectorTool" % getenv("USERNAME")
+    >>>     customScriptingDir = r"C:\Users\%s\Documents\STK_ODTK 13\Config\Scripting\VectorTool" % getenv("USERNAME")
     >>>     print(r"Copy vbs file from " + trainingSamplesDir + scriptFilePath + r" to " + customScriptingDir)
 
     Create a new Cross Product Vector:
@@ -27293,7 +27416,7 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     _get_volumes_method_offset = 21
     _get_spatial_calculations_method_offset = 22
     _metadata = {
-        "iid_data" : (5369099696956109005, 7381995924612526267),
+        "iid_data" : (5154940452702584915, 6549542514038860700),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27508,7 +27631,7 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchComponentProvider, [AnalysisWorkbenchComponentProvider, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5195044977180352481, 9063844977118760340), AnalysisWorkbenchComponentProvider)
+agcls.AgClassCatalog.add_catalog_entry((5312713848181794528, 16518842106970280839), AnalysisWorkbenchComponentProvider)
 agcls.AgTypeNameMap["AnalysisWorkbenchComponentProvider"] = AnalysisWorkbenchComponentProvider
 
 class AnalysisWorkbenchRoot(SupportsDeleteCallback):
@@ -27521,7 +27644,7 @@ class AnalysisWorkbenchRoot(SupportsDeleteCallback):
     _get_well_known_systems_method_offset = 3
     _get_well_known_axes_method_offset = 4
     _metadata = {
-        "iid_data" : (4798971245628011021, 838525928077489543),
+        "iid_data" : (5612778753549166699, 9680089454496380576),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27574,7 +27697,7 @@ class AnalysisWorkbenchRoot(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchRoot, [AnalysisWorkbenchRoot, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4987483468362517359, 13532663607263998902), AnalysisWorkbenchRoot)
+agcls.AgClassCatalog.add_catalog_entry((5064582099024549183, 378445458864645278), AnalysisWorkbenchRoot)
 agcls.AgTypeNameMap["AnalysisWorkbenchRoot"] = AnalysisWorkbenchRoot
 
 class VectorGeometryToolWellKnownEarthSystems(SupportsDeleteCallback):
@@ -27586,7 +27709,7 @@ class VectorGeometryToolWellKnownEarthSystems(SupportsDeleteCallback):
     _get_icrf_method_offset = 2
     _get_inertial_method_offset = 3
     _metadata = {
-        "iid_data" : (4710478852462905673, 1995567772504852135),
+        "iid_data" : (5318579641373127604, 6995422877463268494),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27634,7 +27757,7 @@ class VectorGeometryToolWellKnownEarthSystems(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownEarthSystems, [VectorGeometryToolWellKnownEarthSystems, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5520983060648290956, 1872839778996467101), VectorGeometryToolWellKnownEarthSystems)
+agcls.AgClassCatalog.add_catalog_entry((5430895765977919031, 17798151750064465578), VectorGeometryToolWellKnownEarthSystems)
 agcls.AgTypeNameMap["VectorGeometryToolWellKnownEarthSystems"] = VectorGeometryToolWellKnownEarthSystems
 
 class VectorGeometryToolWellKnownEarthAxes(SupportsDeleteCallback):
@@ -27647,7 +27770,7 @@ class VectorGeometryToolWellKnownEarthAxes(SupportsDeleteCallback):
     _get_inertial_method_offset = 3
     _get_j2000_method_offset = 4
     _metadata = {
-        "iid_data" : (5483010606787155483, 17339470825221630117),
+        "iid_data" : (4739658976995574082, 7003316317036901292),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27704,7 +27827,7 @@ class VectorGeometryToolWellKnownEarthAxes(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownEarthAxes, [VectorGeometryToolWellKnownEarthAxes, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5725997874657667260, 6446994798152480914), VectorGeometryToolWellKnownEarthAxes)
+agcls.AgClassCatalog.add_catalog_entry((4635059526646838868, 13013130492307602349), VectorGeometryToolWellKnownEarthAxes)
 agcls.AgTypeNameMap["VectorGeometryToolWellKnownEarthAxes"] = VectorGeometryToolWellKnownEarthAxes
 
 class VectorGeometryToolWellKnownSunSystems(SupportsDeleteCallback):
@@ -27718,7 +27841,7 @@ class VectorGeometryToolWellKnownSunSystems(SupportsDeleteCallback):
     _get_j2000_method_offset = 4
     _get_barycenter_method_offset = 5
     _metadata = {
-        "iid_data" : (4865958749773106719, 13197055767931333526),
+        "iid_data" : (5231331332479693546, 9938197699223370140),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27784,7 +27907,7 @@ class VectorGeometryToolWellKnownSunSystems(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownSunSystems, [VectorGeometryToolWellKnownSunSystems, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5186430568461414454, 3037754309494668210), VectorGeometryToolWellKnownSunSystems)
+agcls.AgClassCatalog.add_catalog_entry((5289163476775745724, 17133346423444031654), VectorGeometryToolWellKnownSunSystems)
 agcls.AgTypeNameMap["VectorGeometryToolWellKnownSunSystems"] = VectorGeometryToolWellKnownSunSystems
 
 class VectorGeometryToolWellKnownSunAxes(SupportsDeleteCallback):
@@ -27797,7 +27920,7 @@ class VectorGeometryToolWellKnownSunAxes(SupportsDeleteCallback):
     _get_inertial_method_offset = 3
     _get_j2000_method_offset = 4
     _metadata = {
-        "iid_data" : (4663702446183210292, 13434367744902099591),
+        "iid_data" : (4782685301294403719, 3343247535518868905),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27854,7 +27977,7 @@ class VectorGeometryToolWellKnownSunAxes(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownSunAxes, [VectorGeometryToolWellKnownSunAxes, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5738861708789180979, 4473323686545115808), VectorGeometryToolWellKnownSunAxes)
+agcls.AgClassCatalog.add_catalog_entry((4885374947030290750, 17161545793082779039), VectorGeometryToolWellKnownSunAxes)
 agcls.AgTypeNameMap["VectorGeometryToolWellKnownSunAxes"] = VectorGeometryToolWellKnownSunAxes
 
 class VectorGeometryToolWellKnownSystems(SupportsDeleteCallback):
@@ -27865,7 +27988,7 @@ class VectorGeometryToolWellKnownSystems(SupportsDeleteCallback):
     _get_earth_method_offset = 1
     _get_sun_method_offset = 2
     _metadata = {
-        "iid_data" : (5557675413947050863, 3127155599466724282),
+        "iid_data" : (4940498336761997628, 16576859784344158368),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27904,7 +28027,7 @@ class VectorGeometryToolWellKnownSystems(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownSystems, [VectorGeometryToolWellKnownSystems, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4917156588932891059, 738175831204011941), VectorGeometryToolWellKnownSystems)
+agcls.AgClassCatalog.add_catalog_entry((5044067684995917715, 492888798847676806), VectorGeometryToolWellKnownSystems)
 agcls.AgTypeNameMap["VectorGeometryToolWellKnownSystems"] = VectorGeometryToolWellKnownSystems
 
 class VectorGeometryToolWellKnownAxes(SupportsDeleteCallback):
@@ -27915,7 +28038,7 @@ class VectorGeometryToolWellKnownAxes(SupportsDeleteCallback):
     _get_earth_method_offset = 1
     _get_sun_method_offset = 2
     _metadata = {
-        "iid_data" : (5699529717700651363, 14210241021739064977),
+        "iid_data" : (5224880104022659565, 3061814338195607177),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27954,7 +28077,7 @@ class VectorGeometryToolWellKnownAxes(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownAxes, [VectorGeometryToolWellKnownAxes, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5448146556058645578, 7798730398512524450), VectorGeometryToolWellKnownAxes)
+agcls.AgClassCatalog.add_catalog_entry((4661611085137065359, 15094712491494874043), VectorGeometryToolWellKnownAxes)
 agcls.AgTypeNameMap["VectorGeometryToolWellKnownAxes"] = VectorGeometryToolWellKnownAxes
 
 class AnalysisWorkbenchAngleFindResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
@@ -27968,7 +28091,7 @@ class AnalysisWorkbenchAngleFindResult(IAnalysisWorkbenchMethodCallResult, Suppo
     _get_vector_to_method_offset = 4
     _get_vector_about_method_offset = 5
     _metadata = {
-        "iid_data" : (5298240106436331533, 9541969718117272231),
+        "iid_data" : (5709357161712269138, 7357878130237172372),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28036,7 +28159,7 @@ class AnalysisWorkbenchAngleFindResult(IAnalysisWorkbenchMethodCallResult, Suppo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchAngleFindResult, [AnalysisWorkbenchAngleFindResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((5338744576563927160, 2966521297346615686), AnalysisWorkbenchAngleFindResult)
+agcls.AgClassCatalog.add_catalog_entry((5633885232077580755, 8330911948416681130), AnalysisWorkbenchAngleFindResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchAngleFindResult"] = AnalysisWorkbenchAngleFindResult
 
 class AnalysisWorkbenchAngleFindWithRateResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
@@ -28051,7 +28174,7 @@ class AnalysisWorkbenchAngleFindWithRateResult(IAnalysisWorkbenchMethodCallResul
     _get_vector_to_method_offset = 5
     _get_vector_about_method_offset = 6
     _metadata = {
-        "iid_data" : (4856057119568825575, 2109696612937815446),
+        "iid_data" : (4871007481610965327, 13276447502039504545),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28128,7 +28251,7 @@ class AnalysisWorkbenchAngleFindWithRateResult(IAnalysisWorkbenchMethodCallResul
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchAngleFindWithRateResult, [AnalysisWorkbenchAngleFindWithRateResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((5683985578297816291, 14320833342729481856), AnalysisWorkbenchAngleFindWithRateResult)
+agcls.AgClassCatalog.add_catalog_entry((5361947254729131343, 3621975579564375445), AnalysisWorkbenchAngleFindWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchAngleFindWithRateResult"] = AnalysisWorkbenchAngleFindWithRateResult
 
 class AnalysisWorkbenchAxesTransformResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
@@ -28139,7 +28262,7 @@ class AnalysisWorkbenchAxesTransformResult(IAnalysisWorkbenchMethodCallResult, S
     _get_is_valid_method_offset = 1
     _get_vector_method_offset = 2
     _metadata = {
-        "iid_data" : (4792970338091440318, 435178607338115222),
+        "iid_data" : (4683104634648738868, 14408467889457428629),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28180,7 +28303,7 @@ class AnalysisWorkbenchAxesTransformResult(IAnalysisWorkbenchMethodCallResult, S
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchAxesTransformResult, [AnalysisWorkbenchAxesTransformResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((4776430414755889351, 925017437207209092), AnalysisWorkbenchAxesTransformResult)
+agcls.AgClassCatalog.add_catalog_entry((5434520397870190804, 9256648345118322859), AnalysisWorkbenchAxesTransformResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchAxesTransformResult"] = AnalysisWorkbenchAxesTransformResult
 
 class AnalysisWorkbenchAxesTransformWithRateResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
@@ -28192,7 +28315,7 @@ class AnalysisWorkbenchAxesTransformWithRateResult(IAnalysisWorkbenchMethodCallR
     _get_vector_method_offset = 2
     _get_velocity_method_offset = 3
     _metadata = {
-        "iid_data" : (5332039326563042843, 17391837893968577945),
+        "iid_data" : (5604584321564357255, 15408792193500393126),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28242,7 +28365,7 @@ class AnalysisWorkbenchAxesTransformWithRateResult(IAnalysisWorkbenchMethodCallR
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchAxesTransformWithRateResult, [AnalysisWorkbenchAxesTransformWithRateResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((5551248800008965786, 9162399115088396946), AnalysisWorkbenchAxesTransformWithRateResult)
+agcls.AgClassCatalog.add_catalog_entry((5361165046973908174, 4850611601360333457), AnalysisWorkbenchAxesTransformWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchAxesTransformWithRateResult"] = AnalysisWorkbenchAxesTransformWithRateResult
 
 class AnalysisWorkbenchAxesFindInAxesResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
@@ -28253,7 +28376,7 @@ class AnalysisWorkbenchAxesFindInAxesResult(IAnalysisWorkbenchMethodCallResult, 
     _get_is_valid_method_offset = 1
     _get_orientation_method_offset = 2
     _metadata = {
-        "iid_data" : (5526443865819486130, 6485450650085686414),
+        "iid_data" : (5182922029954805898, 1302520053088944517),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28294,7 +28417,7 @@ class AnalysisWorkbenchAxesFindInAxesResult(IAnalysisWorkbenchMethodCallResult, 
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchAxesFindInAxesResult, [AnalysisWorkbenchAxesFindInAxesResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((5174479259770279351, 3364511849778566074), AnalysisWorkbenchAxesFindInAxesResult)
+agcls.AgClassCatalog.add_catalog_entry((4675964723000536636, 10341598390011492258), AnalysisWorkbenchAxesFindInAxesResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchAxesFindInAxesResult"] = AnalysisWorkbenchAxesFindInAxesResult
 
 class AnalysisWorkbenchAxesFindInAxesWithRateResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
@@ -28306,7 +28429,7 @@ class AnalysisWorkbenchAxesFindInAxesWithRateResult(IAnalysisWorkbenchMethodCall
     _get_angular_velocity_method_offset = 2
     _get_orientation_method_offset = 3
     _metadata = {
-        "iid_data" : (5583004664022191568, 13635182811892187530),
+        "iid_data" : (5081117672330132373, 92602869766027669),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28356,7 +28479,7 @@ class AnalysisWorkbenchAxesFindInAxesWithRateResult(IAnalysisWorkbenchMethodCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchAxesFindInAxesWithRateResult, [AnalysisWorkbenchAxesFindInAxesWithRateResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((5737719566038969118, 88673256768790167), AnalysisWorkbenchAxesFindInAxesWithRateResult)
+agcls.AgClassCatalog.add_catalog_entry((4875598215740202110, 16636485620216122763), AnalysisWorkbenchAxesFindInAxesWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchAxesFindInAxesWithRateResult"] = AnalysisWorkbenchAxesFindInAxesWithRateResult
 
 class AnalysisWorkbenchPlaneFindInAxesResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
@@ -28368,7 +28491,7 @@ class AnalysisWorkbenchPlaneFindInAxesResult(IAnalysisWorkbenchMethodCallResult,
     _get_x_axis_method_offset = 2
     _get_y_axis_method_offset = 3
     _metadata = {
-        "iid_data" : (5411394135561936255, 5770799577348852129),
+        "iid_data" : (5433758522835825184, 17210445850604090265),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28418,7 +28541,7 @@ class AnalysisWorkbenchPlaneFindInAxesResult(IAnalysisWorkbenchMethodCallResult,
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchPlaneFindInAxesResult, [AnalysisWorkbenchPlaneFindInAxesResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((5573313095156225739, 2162996710023035835), AnalysisWorkbenchPlaneFindInAxesResult)
+agcls.AgClassCatalog.add_catalog_entry((4990486387430382183, 524355674982442664), AnalysisWorkbenchPlaneFindInAxesResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchPlaneFindInAxesResult"] = AnalysisWorkbenchPlaneFindInAxesResult
 
 class AnalysisWorkbenchPlaneFindInAxesWithRateResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
@@ -28432,7 +28555,7 @@ class AnalysisWorkbenchPlaneFindInAxesWithRateResult(IAnalysisWorkbenchMethodCal
     _get_y_axis_method_offset = 4
     _get_y_axis_rate_method_offset = 5
     _metadata = {
-        "iid_data" : (5396764601440543912, 17001129713529799298),
+        "iid_data" : (5289117164627266465, 11199109855197081484),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28500,7 +28623,7 @@ class AnalysisWorkbenchPlaneFindInAxesWithRateResult(IAnalysisWorkbenchMethodCal
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchPlaneFindInAxesWithRateResult, [AnalysisWorkbenchPlaneFindInAxesWithRateResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((5753478954477836794, 2404139334665332140), AnalysisWorkbenchPlaneFindInAxesWithRateResult)
+agcls.AgClassCatalog.add_catalog_entry((4828511724190794492, 8917293347268699838), AnalysisWorkbenchPlaneFindInAxesWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchPlaneFindInAxesWithRateResult"] = AnalysisWorkbenchPlaneFindInAxesWithRateResult
 
 class AnalysisWorkbenchPlaneFindInSystemResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
@@ -28513,7 +28636,7 @@ class AnalysisWorkbenchPlaneFindInSystemResult(IAnalysisWorkbenchMethodCallResul
     _get_x_axis_method_offset = 3
     _get_y_axis_method_offset = 4
     _metadata = {
-        "iid_data" : (5012572268011808901, 10907720006031719318),
+        "iid_data" : (4831685168853507917, 18380787906221906866),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28572,7 +28695,7 @@ class AnalysisWorkbenchPlaneFindInSystemResult(IAnalysisWorkbenchMethodCallResul
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchPlaneFindInSystemResult, [AnalysisWorkbenchPlaneFindInSystemResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((4975921903591042021, 6262793899525063358), AnalysisWorkbenchPlaneFindInSystemResult)
+agcls.AgClassCatalog.add_catalog_entry((5711729875580754526, 6021063405599101629), AnalysisWorkbenchPlaneFindInSystemResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchPlaneFindInSystemResult"] = AnalysisWorkbenchPlaneFindInSystemResult
 
 class AnalysisWorkbenchPlaneFindInSystemWithRateResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
@@ -28588,7 +28711,7 @@ class AnalysisWorkbenchPlaneFindInSystemWithRateResult(IAnalysisWorkbenchMethodC
     _get_y_axis_method_offset = 6
     _get_y_axis_rate_method_offset = 7
     _metadata = {
-        "iid_data" : (5090839955308321227, 317761085157350305),
+        "iid_data" : (4671964765295294134, 15864273130066062010),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28674,7 +28797,7 @@ class AnalysisWorkbenchPlaneFindInSystemWithRateResult(IAnalysisWorkbenchMethodC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchPlaneFindInSystemWithRateResult, [AnalysisWorkbenchPlaneFindInSystemWithRateResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((5341422434034558608, 8015115794607794853), AnalysisWorkbenchPlaneFindInSystemWithRateResult)
+agcls.AgClassCatalog.add_catalog_entry((4788647382976431790, 5683828788576351393), AnalysisWorkbenchPlaneFindInSystemWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchPlaneFindInSystemWithRateResult"] = AnalysisWorkbenchPlaneFindInSystemWithRateResult
 
 class AnalysisWorkbenchPointLocateInSystemResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
@@ -28685,7 +28808,7 @@ class AnalysisWorkbenchPointLocateInSystemResult(IAnalysisWorkbenchMethodCallRes
     _get_is_valid_method_offset = 1
     _get_position_method_offset = 2
     _metadata = {
-        "iid_data" : (5568521725362388460, 7875089545265969057),
+        "iid_data" : (4857388054477998799, 1505696658541059767),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28726,7 +28849,7 @@ class AnalysisWorkbenchPointLocateInSystemResult(IAnalysisWorkbenchMethodCallRes
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchPointLocateInSystemResult, [AnalysisWorkbenchPointLocateInSystemResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((4675192971753711238, 4056422737239134394), AnalysisWorkbenchPointLocateInSystemResult)
+agcls.AgClassCatalog.add_catalog_entry((5486973915877384255, 7798821680243981962), AnalysisWorkbenchPointLocateInSystemResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchPointLocateInSystemResult"] = AnalysisWorkbenchPointLocateInSystemResult
 
 class AnalysisWorkbenchPointLocateInSystemWithRateResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
@@ -28738,7 +28861,7 @@ class AnalysisWorkbenchPointLocateInSystemWithRateResult(IAnalysisWorkbenchMetho
     _get_position_method_offset = 2
     _get_velocity_method_offset = 3
     _metadata = {
-        "iid_data" : (4718438476070115548, 11456293296871538843),
+        "iid_data" : (4912357817606029353, 6844865346746898075),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28788,18 +28911,18 @@ class AnalysisWorkbenchPointLocateInSystemWithRateResult(IAnalysisWorkbenchMetho
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchPointLocateInSystemWithRateResult, [AnalysisWorkbenchPointLocateInSystemWithRateResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((4771085085991853208, 16712650806298139816), AnalysisWorkbenchPointLocateInSystemWithRateResult)
+agcls.AgClassCatalog.add_catalog_entry((5761098629475697076, 13652034696502375338), AnalysisWorkbenchPointLocateInSystemWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchPointLocateInSystemWithRateResult"] = AnalysisWorkbenchPointLocateInSystemWithRateResult
 
 class AnalysisWorkbenchSystemTransformResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
-    """Contains the results returned with IVectorGeometryToolSystem.TransformFrom and IVectorGeometryToolSystem.TransformTo methods."""
+    """Contains the results returned with IVectorGeometryToolSystem.TransformFrom and IAnalysisWorkbenchComponentSystem.TransformTo methods."""
 
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_is_valid_method_offset = 1
     _get_vector_method_offset = 2
     _metadata = {
-        "iid_data" : (5602727224913179539, 3056221723684415935),
+        "iid_data" : (5107446722782186568, 5017022602003083930),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28840,11 +28963,11 @@ class AnalysisWorkbenchSystemTransformResult(IAnalysisWorkbenchMethodCallResult,
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchSystemTransformResult, [AnalysisWorkbenchSystemTransformResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((4732248531040369310, 11519390737172858259), AnalysisWorkbenchSystemTransformResult)
+agcls.AgClassCatalog.add_catalog_entry((4817842955153372763, 11927372169824119453), AnalysisWorkbenchSystemTransformResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchSystemTransformResult"] = AnalysisWorkbenchSystemTransformResult
 
 class AnalysisWorkbenchSystemTransformWithRateResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
-    """Contains the results returned with IVectorGeometryToolSystem.TransformFromWithRate and IVectorGeometryToolSystem.TransformToWithRate methods."""
+    """Contains the results returned with IVectorGeometryToolSystem.TransformFromWithRate and IAnalysisWorkbenchComponentSystem.TransformToWithRate methods."""
 
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -28852,7 +28975,7 @@ class AnalysisWorkbenchSystemTransformWithRateResult(IAnalysisWorkbenchMethodCal
     _get_vector_method_offset = 2
     _get_velocity_method_offset = 3
     _metadata = {
-        "iid_data" : (5028026059164558160, 8691094400863508390),
+        "iid_data" : (4846269420178273287, 7913934849174009487),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28902,7 +29025,7 @@ class AnalysisWorkbenchSystemTransformWithRateResult(IAnalysisWorkbenchMethodCal
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchSystemTransformWithRateResult, [AnalysisWorkbenchSystemTransformWithRateResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((4773661828698350098, 14241460882684623754), AnalysisWorkbenchSystemTransformWithRateResult)
+agcls.AgClassCatalog.add_catalog_entry((5752289318224984981, 8498050896156139432), AnalysisWorkbenchSystemTransformWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchSystemTransformWithRateResult"] = AnalysisWorkbenchSystemTransformWithRateResult
 
 class AnalysisWorkbenchSystemFindInSystemResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
@@ -28916,7 +29039,7 @@ class AnalysisWorkbenchSystemFindInSystemResult(IAnalysisWorkbenchMethodCallResu
     _get_rate_method_offset = 4
     _get_orientation_method_offset = 5
     _metadata = {
-        "iid_data" : (4961058888294584522, 6819225686450287036),
+        "iid_data" : (5138147080295498839, 8313807008695185024),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28984,7 +29107,7 @@ class AnalysisWorkbenchSystemFindInSystemResult(IAnalysisWorkbenchMethodCallResu
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchSystemFindInSystemResult, [AnalysisWorkbenchSystemFindInSystemResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((4901836917752659950, 3314518124226065597), AnalysisWorkbenchSystemFindInSystemResult)
+agcls.AgClassCatalog.add_catalog_entry((4811392081130412691, 6723671847188507815), AnalysisWorkbenchSystemFindInSystemResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchSystemFindInSystemResult"] = AnalysisWorkbenchSystemFindInSystemResult
 
 class AnalysisWorkbenchVectorFindInAxesResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
@@ -28995,7 +29118,7 @@ class AnalysisWorkbenchVectorFindInAxesResult(IAnalysisWorkbenchMethodCallResult
     _get_is_valid_method_offset = 1
     _get_vector_method_offset = 2
     _metadata = {
-        "iid_data" : (5163850874032675488, 11046602307391063209),
+        "iid_data" : (5027470594257516417, 8558917536325852841),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29036,7 +29159,7 @@ class AnalysisWorkbenchVectorFindInAxesResult(IAnalysisWorkbenchMethodCallResult
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchVectorFindInAxesResult, [AnalysisWorkbenchVectorFindInAxesResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((5305219641346644613, 3358734389861877669), AnalysisWorkbenchVectorFindInAxesResult)
+agcls.AgClassCatalog.add_catalog_entry((4759773685645879774, 2408451407677286560), AnalysisWorkbenchVectorFindInAxesResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchVectorFindInAxesResult"] = AnalysisWorkbenchVectorFindInAxesResult
 
 class AnalysisWorkbenchVectorFindInAxesWithRateResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
@@ -29048,7 +29171,7 @@ class AnalysisWorkbenchVectorFindInAxesWithRateResult(IAnalysisWorkbenchMethodCa
     _get_vector_method_offset = 2
     _get_rate_method_offset = 3
     _metadata = {
-        "iid_data" : (5384991910738500476, 5081428842426900099),
+        "iid_data" : (4668009592271616142, 558523252296780220),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29098,7 +29221,7 @@ class AnalysisWorkbenchVectorFindInAxesWithRateResult(IAnalysisWorkbenchMethodCa
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchVectorFindInAxesWithRateResult, [AnalysisWorkbenchVectorFindInAxesWithRateResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((5526758868339235638, 15327334100431991214), AnalysisWorkbenchVectorFindInAxesWithRateResult)
+agcls.AgClassCatalog.add_catalog_entry((5537722668296635289, 17760729243880432011), AnalysisWorkbenchVectorFindInAxesWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchVectorFindInAxesWithRateResult"] = AnalysisWorkbenchVectorFindInAxesWithRateResult
 
 class AnalysisWorkbenchAngleFindAngleWithRateResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
@@ -29110,7 +29233,7 @@ class AnalysisWorkbenchAngleFindAngleWithRateResult(IAnalysisWorkbenchMethodCall
     _get_angle_method_offset = 2
     _get_angle_rate_method_offset = 3
     _metadata = {
-        "iid_data" : (5292967736344146106, 3501262746512687271),
+        "iid_data" : (5670280888374016366, 15273216321914029474),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29160,7 +29283,7 @@ class AnalysisWorkbenchAngleFindAngleWithRateResult(IAnalysisWorkbenchMethodCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchAngleFindAngleWithRateResult, [AnalysisWorkbenchAngleFindAngleWithRateResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((4649475226236495161, 15745033739960350352), AnalysisWorkbenchAngleFindAngleWithRateResult)
+agcls.AgClassCatalog.add_catalog_entry((5580301756934007267, 12208634637881992855), AnalysisWorkbenchAngleFindAngleWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchAngleFindAngleWithRateResult"] = AnalysisWorkbenchAngleFindAngleWithRateResult
 
 class AnalysisWorkbenchAngleFindAngleResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
@@ -29171,7 +29294,7 @@ class AnalysisWorkbenchAngleFindAngleResult(IAnalysisWorkbenchMethodCallResult, 
     _get_is_valid_method_offset = 1
     _get_angle_method_offset = 2
     _metadata = {
-        "iid_data" : (5484695193085506764, 12995272954624926875),
+        "iid_data" : (5414254574431596871, 14364383053200900791),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29212,7 +29335,7 @@ class AnalysisWorkbenchAngleFindAngleResult(IAnalysisWorkbenchMethodCallResult, 
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchAngleFindAngleResult, [AnalysisWorkbenchAngleFindAngleResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((5703953535685278056, 1024662027560619958), AnalysisWorkbenchAngleFindAngleResult)
+agcls.AgClassCatalog.add_catalog_entry((4869334608865006498, 6436343618327361926), AnalysisWorkbenchAngleFindAngleResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchAngleFindAngleResult"] = AnalysisWorkbenchAngleFindAngleResult
 
 class TimeToolInterval(SupportsDeleteCallback):
@@ -29223,7 +29346,7 @@ class TimeToolInterval(SupportsDeleteCallback):
     _get_start_method_offset = 1
     _get_stop_method_offset = 2
     _metadata = {
-        "iid_data" : (5653501599416332732, 4402036093091942545),
+        "iid_data" : (5597250630539950364, 9906405795739402645),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29262,7 +29385,7 @@ class TimeToolInterval(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolInterval, [TimeToolInterval, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5110544547728130172, 9746137490123278240), TimeToolInterval)
+agcls.AgClassCatalog.add_catalog_entry((4947000471923925372, 1055035549194941078), TimeToolInterval)
 agcls.AgTypeNameMap["TimeToolInterval"] = TimeToolInterval
 
 class TimeToolIntervalCollection(SupportsDeleteCallback):
@@ -29274,7 +29397,7 @@ class TimeToolIntervalCollection(SupportsDeleteCallback):
     _item_method_offset = 2
     _get__new_enum_method_offset = 3
     _metadata = {
-        "iid_data" : (4991188993072027394, 12329114457855179136),
+        "iid_data" : (4677580814989255473, 13551833747476303036),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -29336,7 +29459,7 @@ class TimeToolIntervalCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolIntervalCollection, [TimeToolIntervalCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5721855665807758542, 12102008155485723271), TimeToolIntervalCollection)
+agcls.AgClassCatalog.add_catalog_entry((5245975106867993938, 16276996937451738288), TimeToolIntervalCollection)
 agcls.AgTypeNameMap["TimeToolIntervalCollection"] = TimeToolIntervalCollection
 
 class AnalysisWorkbenchCentralBody(SupportsDeleteCallback):
@@ -29346,7 +29469,7 @@ class AnalysisWorkbenchCentralBody(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_name_method_offset = 1
     _metadata = {
-        "iid_data" : (5605880252896253198, 15894328407293903524),
+        "iid_data" : (4794112393224831674, 12221532499851249540),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29376,7 +29499,7 @@ class AnalysisWorkbenchCentralBody(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchCentralBody, [AnalysisWorkbenchCentralBody, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4920377372252981471, 2995698768068563878), AnalysisWorkbenchCentralBody)
+agcls.AgClassCatalog.add_catalog_entry((4913392822529390598, 14229893077134288828), AnalysisWorkbenchCentralBody)
 agcls.AgTypeNameMap["AnalysisWorkbenchCentralBody"] = AnalysisWorkbenchCentralBody
 
 class AnalysisWorkbenchCentralBodyReference(IAnalysisWorkbenchComponentReference, SupportsDeleteCallback):
@@ -29388,7 +29511,7 @@ class AnalysisWorkbenchCentralBodyReference(IAnalysisWorkbenchComponentReference
     _set_central_body_method_offset = 2
     _get_central_body_method_offset = 3
     _metadata = {
-        "iid_data" : (4901691415447825012, 18175271878169526149),
+        "iid_data" : (4773590080497207731, 18051404093093391806),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29432,7 +29555,7 @@ class AnalysisWorkbenchCentralBodyReference(IAnalysisWorkbenchComponentReference
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchCentralBodyReference, [AnalysisWorkbenchCentralBodyReference, IAnalysisWorkbenchComponentReference])
 
-agcls.AgClassCatalog.add_catalog_entry((5340102991488887384, 6469328972034659504), AnalysisWorkbenchCentralBodyReference)
+agcls.AgClassCatalog.add_catalog_entry((5476156557829169451, 4388694525084020371), AnalysisWorkbenchCentralBodyReference)
 agcls.AgTypeNameMap["AnalysisWorkbenchCentralBodyReference"] = AnalysisWorkbenchCentralBodyReference
 
 class AnalysisWorkbenchCentralBodyCollection(SupportsDeleteCallback):
@@ -29446,7 +29569,7 @@ class AnalysisWorkbenchCentralBodyCollection(SupportsDeleteCallback):
     _add_method_offset = 4
     _remove_method_offset = 5
     _metadata = {
-        "iid_data" : (5402404744674331130, 9115936032301068435),
+        "iid_data" : (5735958100656128830, 16959563826733832593),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -29522,7 +29645,7 @@ class AnalysisWorkbenchCentralBodyCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchCentralBodyCollection, [AnalysisWorkbenchCentralBodyCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4794614344527977359, 14146463188074571153), AnalysisWorkbenchCentralBodyCollection)
+agcls.AgClassCatalog.add_catalog_entry((5033867662583620675, 10800869165188929680), AnalysisWorkbenchCentralBodyCollection)
 agcls.AgTypeNameMap["AnalysisWorkbenchCentralBodyCollection"] = AnalysisWorkbenchCentralBodyCollection
 
 class AnalysisWorkbenchComponentCollection(SupportsDeleteCallback):
@@ -29537,7 +29660,7 @@ class AnalysisWorkbenchComponentCollection(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 5
     _get_item_by_name_method_offset = 6
     _metadata = {
-        "iid_data" : (5267645902216178612, 12942001774476864927),
+        "iid_data" : (4954754008013020578, 11352329890945656451),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -29620,7 +29743,7 @@ class AnalysisWorkbenchComponentCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchComponentCollection, [AnalysisWorkbenchComponentCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5079329608783990074, 10222245566471765161), AnalysisWorkbenchComponentCollection)
+agcls.AgClassCatalog.add_catalog_entry((5422471497706861171, 7695248570130547100), AnalysisWorkbenchComponentCollection)
 agcls.AgTypeNameMap["AnalysisWorkbenchComponentCollection"] = AnalysisWorkbenchComponentCollection
 
 class TimeToolPointSamplingResult(SupportsDeleteCallback):
@@ -29631,7 +29754,7 @@ class TimeToolPointSamplingResult(SupportsDeleteCallback):
     _get_is_valid_method_offset = 1
     _get_intervals_method_offset = 2
     _metadata = {
-        "iid_data" : (4621238482322447175, 1700458122111206846),
+        "iid_data" : (5531686163279891793, 16600243548827179944),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29670,7 +29793,7 @@ class TimeToolPointSamplingResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolPointSamplingResult, [TimeToolPointSamplingResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5583924698373366089, 2165026541174367877), TimeToolPointSamplingResult)
+agcls.AgClassCatalog.add_catalog_entry((5049658854264873752, 16621632729201038520), TimeToolPointSamplingResult)
 agcls.AgTypeNameMap["TimeToolPointSamplingResult"] = TimeToolPointSamplingResult
 
 class TimeToolPointSamplingInterval(SupportsDeleteCallback):
@@ -29684,7 +29807,7 @@ class TimeToolPointSamplingInterval(SupportsDeleteCallback):
     _get_start_method_offset = 4
     _get_stop_method_offset = 5
     _metadata = {
-        "iid_data" : (5591284094447967730, 3613680757386286218),
+        "iid_data" : (5048572111297360522, 9789939765296536764),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29750,7 +29873,7 @@ class TimeToolPointSamplingInterval(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolPointSamplingInterval, [TimeToolPointSamplingInterval, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4785358452219528936, 17228713367816098194), TimeToolPointSamplingInterval)
+agcls.AgClassCatalog.add_catalog_entry((5643446677098158882, 10515364004355560866), TimeToolPointSamplingInterval)
 agcls.AgTypeNameMap["TimeToolPointSamplingInterval"] = TimeToolPointSamplingInterval
 
 class TimeToolPointSamplingIntervalCollection(SupportsDeleteCallback):
@@ -29762,7 +29885,7 @@ class TimeToolPointSamplingIntervalCollection(SupportsDeleteCallback):
     _item_method_offset = 2
     _get__new_enum_method_offset = 3
     _metadata = {
-        "iid_data" : (5530358145792459749, 592623579709177530),
+        "iid_data" : (5593467567825867810, 5421309323946378651),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29824,7 +29947,7 @@ class TimeToolPointSamplingIntervalCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolPointSamplingIntervalCollection, [TimeToolPointSamplingIntervalCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5287350835476231857, 6426093684585889170), TimeToolPointSamplingIntervalCollection)
+agcls.AgClassCatalog.add_catalog_entry((5035241349238554997, 9521843624262757050), TimeToolPointSamplingIntervalCollection)
 agcls.AgTypeNameMap["TimeToolPointSamplingIntervalCollection"] = TimeToolPointSamplingIntervalCollection
 
 class TimeToolAxesSamplingResult(SupportsDeleteCallback):
@@ -29835,7 +29958,7 @@ class TimeToolAxesSamplingResult(SupportsDeleteCallback):
     _get_is_valid_method_offset = 1
     _get_intervals_method_offset = 2
     _metadata = {
-        "iid_data" : (4642131052752284166, 17374449711146834072),
+        "iid_data" : (5551516305174697944, 9830423687187173295),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29874,7 +29997,7 @@ class TimeToolAxesSamplingResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolAxesSamplingResult, [TimeToolAxesSamplingResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5514187429032108392, 5428366094586886549), TimeToolAxesSamplingResult)
+agcls.AgClassCatalog.add_catalog_entry((4984749013318078731, 1584359801916495290), TimeToolAxesSamplingResult)
 agcls.AgTypeNameMap["TimeToolAxesSamplingResult"] = TimeToolAxesSamplingResult
 
 class TimeToolAxesSamplingInterval(SupportsDeleteCallback):
@@ -29888,7 +30011,7 @@ class TimeToolAxesSamplingInterval(SupportsDeleteCallback):
     _get_start_method_offset = 4
     _get_stop_method_offset = 5
     _metadata = {
-        "iid_data" : (5256164116345950850, 14989044375958505861),
+        "iid_data" : (4638750141660558245, 13817354509686196900),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29954,7 +30077,7 @@ class TimeToolAxesSamplingInterval(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolAxesSamplingInterval, [TimeToolAxesSamplingInterval, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5352164953331321351, 3394555340664015013), TimeToolAxesSamplingInterval)
+agcls.AgClassCatalog.add_catalog_entry((5535180304429730664, 8132204608904291729), TimeToolAxesSamplingInterval)
 agcls.AgTypeNameMap["TimeToolAxesSamplingInterval"] = TimeToolAxesSamplingInterval
 
 class TimeToolAxesSamplingIntervalCollection(SupportsDeleteCallback):
@@ -29966,7 +30089,7 @@ class TimeToolAxesSamplingIntervalCollection(SupportsDeleteCallback):
     _item_method_offset = 2
     _get__new_enum_method_offset = 3
     _metadata = {
-        "iid_data" : (5710623310116775291, 12435953586864494518),
+        "iid_data" : (5556548624847788258, 9149202397365232821),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -30028,5 +30151,5 @@ class TimeToolAxesSamplingIntervalCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolAxesSamplingIntervalCollection, [TimeToolAxesSamplingIntervalCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5527858769336517270, 17257249824002230947), TimeToolAxesSamplingIntervalCollection)
+agcls.AgClassCatalog.add_catalog_entry((5425209413113748600, 9461923000796715699), TimeToolAxesSamplingIntervalCollection)
 agcls.AgTypeNameMap["TimeToolAxesSamplingIntervalCollection"] = TimeToolAxesSamplingIntervalCollection

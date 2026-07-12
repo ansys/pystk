@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -72,6 +72,7 @@ class ConversionsSnippets(CodeSnippetsTestBase):
             PositionType.CARTESIAN, cartesianPositions, PositionType.CYLINDRICAL
         )
 
+        # Print results
         i: int = 0
         while i < len(cylindricalPositions):
             Console.WriteLine(
@@ -111,6 +112,7 @@ class ConversionsSnippets(CodeSnippetsTestBase):
         self.QueryIAgDirectionAsAnotherRespresentation(direction)
 
     def QueryIAgDirectionAsAnotherRespresentation(self, direction: "IDirection"):
+        # Method 1
         b: typing.Any = None
         c: typing.Any = None
 

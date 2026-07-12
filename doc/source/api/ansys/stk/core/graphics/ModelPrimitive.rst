@@ -5,7 +5,7 @@ ModelPrimitive
 
    Bases: :py:class:`~ansys.stk.core.graphics.IPrimitive`
 
-   The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models.
+   The model primitive loads and renders `glTF 2.0 <https://www.khronos.org/gltf/>`_ (.gltf, .glb), `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models/>`_ (MDL) models.
 
 .. py:currentmodule:: ModelPrimitive
 
@@ -20,10 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.graphics.ModelPrimitive.allow_collada_models`
+              - Do not use this method, as it is deprecated. support for COLLADA 3D models has been removed Support for loading COLLADA 3D model format has been officially removed. This method will allow users to continue loading COLLADA models for a short period of time.
             * - :py:attr:`~ansys.stk.core.graphics.ModelPrimitive.load_with_string_uri`
-              - For convenience. Loads a `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) model using a file path.
+              - For convenience. Loads a `glTF 2.0 <https://www.khronos.org/gltf/>`_ (.gltf, .glb), `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models/>`_ (MDL) model using a file path.
             * - :py:attr:`~ansys.stk.core.graphics.ModelPrimitive.load_with_string_uri_and_up_axis`
-              - For convenience. Loads a `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) model using a file path.
+              - For convenience. Loads a `glTF 2.0 <https://www.khronos.org/gltf/>`_ (.gltf, .glb), `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models/>`_ (MDL) model using a file path.
             * - :py:attr:`~ansys.stk.core.graphics.ModelPrimitive.set_position_cartographic`
               - For convenience. Sets the cartographic position of the model. This also sets position.
 
@@ -91,11 +93,25 @@ Property detail
 Method detail
 -------------
 
+.. py:method:: allow_collada_models(self, allow: bool) -> None
+    :canonical: ansys.stk.core.graphics.ModelPrimitive.allow_collada_models
+
+    Do not use this method, as it is deprecated. support for COLLADA 3D models has been removed Support for loading COLLADA 3D model format has been officially removed. This method will allow users to continue loading COLLADA models for a short period of time.
+
+    :Parameters:
+
+        **allow** : :obj:`~bool`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 
 .. py:method:: load_with_string_uri(self, uri: str) -> None
     :canonical: ansys.stk.core.graphics.ModelPrimitive.load_with_string_uri
 
-    For convenience. Loads a `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) model using a file path.
+    For convenience. Loads a `glTF 2.0 <https://www.khronos.org/gltf/>`_ (.gltf, .glb), `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models/>`_ (MDL) model using a file path.
 
     :Parameters:
 
@@ -109,7 +125,7 @@ Method detail
 .. py:method:: load_with_string_uri_and_up_axis(self, uri: str, up_axis: ModelUpAxis) -> None
     :canonical: ansys.stk.core.graphics.ModelPrimitive.load_with_string_uri_and_up_axis
 
-    For convenience. Loads a `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) model using a file path.
+    For convenience. Loads a `glTF 2.0 <https://www.khronos.org/gltf/>`_ (.gltf, .glb), `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models/>`_ (MDL) model using a file path.
 
     :Parameters:
 

@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -21,10 +21,9 @@
 # SOFTWARE.
 
 import typing, math
-from agi.stk12.plugins.stkradarplugin import IAgStkRadarClutterMapComputeParams
-from agi.stk12.plugins.utplugin import AgEUtLogMsgType
-from agi.stk12.plugins.attrautomation import AgEAttrAddFlags
-from agi.stk12.plugins.stkplugin import AgStkPluginSite
+from agi.stk13.plugins.utplugin import AgEUtLogMsgType
+from agi.stk13.plugins.attrautomation import AgEAttrAddFlags
+from agi.stk13.plugins.stkplugin import AgStkPluginSite
 
 
 class CAgStkRadarClutterMapPlugin(object):
@@ -43,7 +42,7 @@ class CAgStkRadarClutterMapPlugin(object):
         self.ConstantCoefficient = 1
         self.ApplyGrazingMask = False
 
-    def Initialize(self, site: "IAgUtPluginSite") -> bool:
+    def Initialize(self, site: "IUtPluginSite") -> bool:
         self.site = AgStkPluginSite(site)
         self.root = self.site.StkRootObject
         if site:
@@ -60,7 +59,7 @@ class CAgStkRadarClutterMapPlugin(object):
         )
         return True
 
-    def Compute(self, result: "IAgStkRadarClutterMapComputeParams") -> bool:
+    def Compute(self, result: "ISTKRadarClutterMapComputeParameters") -> bool:
         signal = result.Signal
         clutterPatch = result.ClutterPatch
 
@@ -112,7 +111,7 @@ class CAgStkRadarClutterMapPlugin(object):
         self.ApplyGrazingMask = None
         self.site.Message(AgEUtLogMsgType.eUtLogMsgInfo, f"{self.display_name} has been freed by {self.site.SiteName}.")
 
-    def GetPluginConfig(self, pAttrBuilder: "IAgAttrBuilder") -> typing.Any:
+    def GetPluginConfig(self, pAttrBuilder: "IAttrBuilder") -> typing.Any:
         if self.scope is None:
             self.scope = pAttrBuilder.NewScope()
             pAttrBuilder.AddDoubleDispatchProperty(
@@ -127,7 +126,7 @@ class CAgStkRadarClutterMapPlugin(object):
             )
         return self.scope
 
-    def VerifyPluginConfig(self, pPluginCfgResult: "IAgUtPluginConfigVerifyResult") -> None:
+    def VerifyPluginConfig(self, pPluginCfgResult: "IUtPluginConfigVerifyResult") -> None:
         pass
 
 

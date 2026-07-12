@@ -30,10 +30,14 @@ Overview
               - Return an Access object associated with this STK object and another STK object.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObject.is_access_supported`
               - Determine whether or not the object supports Access.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObject.is_color_supported`
+              - Determine whether or not the object supports setting color.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObject.is_object_coverage_supported`
               - Determine whether or not the object supports ObjectCoverage.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObject.supports_analysis_workbench`
               - Return whether the object supports Vector Geometry.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObject.is_visibility_supported`
+              - Determine whether or not the object supports setting graphics visibility.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObject.unload`
               - Remove the object from the scenario.
 
@@ -55,6 +59,8 @@ Overview
               - Return a class name of the object (i.e. Aircraft, Facility.).
             * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObject.class_type`
               - Return a class type of the object (i.e. eAircraft, eFacility etc.).
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObject.color`
+              - The object's color.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObject.data_providers`
               - Return the object representing a list of available data providers for the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObject.has_children`
@@ -77,6 +83,8 @@ Overview
               - Return the Root object or null.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObject.short_description`
               - The short description of the object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObject.show_object`
+              - Whether the object is visible.
 
 
 Examples
@@ -136,6 +144,12 @@ Property detail
     :type: STKObjectType
 
     Return a class type of the object (i.e. eAircraft, eFacility etc.).
+
+.. py:property:: color
+    :canonical: ansys.stk.core.stkobjects.ISTKObject.color
+    :type: Color
+
+    The object's color.
 
 .. py:property:: data_providers
     :canonical: ansys.stk.core.stkobjects.ISTKObject.data_providers
@@ -203,9 +217,17 @@ Property detail
 
     The short description of the object.
 
+.. py:property:: show_object
+    :canonical: ansys.stk.core.stkobjects.ISTKObject.show_object
+    :type: bool
+
+    Whether the object is visible.
+
 
 Method detail
 -------------
+
+
 
 
 
@@ -295,6 +317,15 @@ Method detail
 
         :obj:`~bool`
 
+.. py:method:: is_color_supported(self) -> bool
+    :canonical: ansys.stk.core.stkobjects.ISTKObject.is_color_supported
+
+    Determine whether or not the object supports setting color.
+
+    :Returns:
+
+        :obj:`~bool`
+
 .. py:method:: is_object_coverage_supported(self) -> bool
     :canonical: ansys.stk.core.stkobjects.ISTKObject.is_object_coverage_supported
 
@@ -304,10 +335,21 @@ Method detail
 
         :obj:`~bool`
 
+
+
 .. py:method:: supports_analysis_workbench(self) -> bool
     :canonical: ansys.stk.core.stkobjects.ISTKObject.supports_analysis_workbench
 
     Return whether the object supports Vector Geometry.
+
+    :Returns:
+
+        :obj:`~bool`
+
+.. py:method:: is_visibility_supported(self) -> bool
+    :canonical: ansys.stk.core.stkobjects.ISTKObject.is_visibility_supported
+
+    Determine whether or not the object supports setting graphics visibility.
 
     :Returns:
 

@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -45,7 +45,6 @@ class DisplayTimesHelper(object):
         # DisplayStatusSupportedTypes
         arTypes = oDisplay.display_status_supported_types
         self.m_logger.WriteLine3("\tDisplayTimes supports {0} types:", len(arTypes))
-
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
@@ -63,7 +62,6 @@ class DisplayTimesHelper(object):
             oDisplay.set_display_status_type(DisplayTimesType.UNKNOWN)
         # DisplayStatusType
         self.m_logger.WriteLine6("\tThe current DisplayStatusType is: {0}", oDisplay.display_status_type)
-
         iIndex: int = 0
         while iIndex < len(arTypes):
             eType: "DisplayTimesType" = DisplayTimesType(int(arTypes[iIndex][0]))
@@ -231,7 +229,6 @@ class IntervalCollectionHelper(object):
         self.m_logger.WriteLine3("\tThe current IntervalCollection contains: {0} elements", oCollection.count)
         if oCollection.count > 0:
             arIntervals = oCollection.to_array(0, -1)
-
             iIndex: int = 0
             while iIndex < len(arIntervals):
                 self.m_logger.WriteLine8(
@@ -264,7 +261,7 @@ class IntervalCollectionHelper(object):
         # RemoveAll
         with pytest.raises(Exception):
             oCollection.remove_all()
-
+        # Add
         oStart: typing.Any = None
         oStop: typing.Any = None
 
@@ -278,7 +275,6 @@ class IntervalCollectionHelper(object):
             self.m_logger.WriteLine3(
                 "\tAfter ToArray() the IntervalCollection contains: {0} elements", len(arIntervals)
             )
-
             iIndex: int = 0
             while iIndex < len(arIntervals):
                 self.m_logger.WriteLine8(
@@ -323,7 +319,7 @@ class IntervalCollectionHelper(object):
             # RemoveAll
             with pytest.raises(Exception):
                 oCollection.remove_all()
-
+            # Add
             oStart: typing.Any = None
             oStop: typing.Any = None
 
@@ -336,7 +332,6 @@ class IntervalCollectionHelper(object):
             self.m_logger.WriteLine3(
                 "\tAfter ToArray() the IntervalCollection contains: {0} elements", len(arIntervals)
             )
-
             iIndex: int = 0
             while iIndex < len(arIntervals):
                 self.m_logger.WriteLine8(
@@ -374,7 +369,6 @@ class IntervalCollectionHelper(object):
             self.m_logger.WriteLine3(
                 "\tAfter ToArray() the IntervalCollection contains: {0} elements", len(arIntervals)
             )
-
             iIndex: int = 0
             while iIndex < len(arIntervals):
                 self.m_logger.WriteLine8(
@@ -395,7 +389,7 @@ class IntervalCollectionHelper(object):
             self.m_logger.WriteLine3("\tBefore RemoveAll() collection contains: {0} elements", oCollection.count)
             oCollection.remove_all()
             self.m_logger.WriteLine3("\tAfter RemoveAll() collection contains: {0} elements", oCollection.count)
-
+            # Add 1
             oStart: typing.Any = None
             oStop: typing.Any = None
 
@@ -562,7 +556,7 @@ class IntervalCollectionHelper(object):
         oCollection.remove_all()
         self.m_logger.WriteLine3("\tAfter RemoveAll() collection contains: {0} elements", oCollection.count)
         Assert.assertEqual(0, oCollection.count)
-
+        # Add 1
         oStart: typing.Any = None
         oStop: typing.Any = None
 
@@ -762,7 +756,7 @@ class IntervalCollectionHelper(object):
         oCollection.remove_all()
         self.m_logger.WriteLine3("\tAfter RemoveAll() collection contains: {0} elements", oCollection.count)
         Assert.assertEqual(0, oCollection.count)
-
+        # Add 1
         oStart: typing.Any = None
         oStop: typing.Any = None
 
@@ -925,7 +919,6 @@ class ObjectLinkCollectionHelper(object):
         # AvailableObjects
         arAvailable = oCollection.available_objects
         self.m_logger.WriteLine3("\tAvailable {0} objects:", Array.Length(arAvailable))
-
         iIndex: int = 0
         while iIndex < Array.Length(arAvailable):
             self.m_logger.WriteLine7("\t\tObject {0}: {1}", iIndex, arAvailable[iIndex])

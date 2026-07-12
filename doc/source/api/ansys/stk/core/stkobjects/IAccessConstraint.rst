@@ -22,6 +22,8 @@ Overview
               - Property used to access the constraint name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.constraint_type`
               - Property used to access the constraint type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.enabled`
+              - Indicate whether the constraint should be considered (true) or ignored (false) in access computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.exclusion_interval`
               - Exclude Time Intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.is_plugin`
@@ -242,6 +244,12 @@ Property detail
     :type: AccessConstraintType
 
     Property used to access the constraint type.
+
+.. py:property:: enabled
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraint.enabled
+    :type: bool
+
+    Indicate whether the constraint should be considered (true) or ignored (false) in access computations.
 
 .. py:property:: exclusion_interval
     :canonical: ansys.stk.core.stkobjects.IAccessConstraint.exclusion_interval

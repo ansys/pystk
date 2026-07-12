@@ -19,60 +19,71 @@ on:
     # From Monday to Friday (both included) at 00:00 UTC. Used for running only
     # the 'MAIN_PYTHON_VERSION'.
     - cron: '0 0 * * 1-5'
-    # From Saturday to Sunday (both included) at 00:00 UTC. Used for running the
-    # complete list of Python versions.
     - cron: '0 0 * * 6,0'
-
+      # From Saturday to Sunday (both included) at 00:00 UTC. Used for running the
 env:
-  MINIMUM_PYTHON_VERSION: '3.10'
-  MAIN_PYTHON_VERSION: '3.12'
   ANSYS_STK: 'ansys-stk'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
-  STK_DOCKER_IMAGE: 'ansys/stk-12.10:dev-ubuntu22.04'
-  PYSTK_DIR: '/home/stk/pystk'
   LICENSE_SERVER_PORT: '1055'
+  MAIN_PYTHON_VERSION: '3.12'
+  MINIMUM_PYTHON_VERSION: '3.10'
+  PYSTK_DIR: '/home/stk/pystk'
   QUARTO_VERSION: '1.5.55'
+  STK_DOCKER_IMAGE: 'ansys/stk-13.1:dev-ubuntu22.04'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+# Apply the principle of least privilege to state at job level the right
+# permissions. More information about workflow permissions in the page
+# https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#permissions
+permissions: {}
+
 jobs:
 
   build-wheelhouse:
-    name: "Wheelhouse ansys-stk[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version }}"
+    name: "Wheelhouse ansys-stk[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version
+      }}"
     runs-on: ${{ matrix.os }}
-    if: (github.event_name == 'workflow_dispatch' && inputs.run-doc == true) || github.event_name == 'schedule'
+    if: (github.event_name == 'workflow_dispatch' && inputs.run-doc == true) || github.event_name
+      == 'schedule'
     permissions:
-      attestations: write
-      contents: read
-      id-token: write
+      attestations: write # Write attestation for uploaded distribution artifacts
+      contents: read # Read the source code of the project
+      id-token: write # Write access to a temporary token for signing attestations
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
         python-version: ['3.10', '3.11', '3.12', '3.13']
-        target: ['core', 'extensions', 'grpc', 'jupyter', 'migration', 'all']
+        target: ['all']
     steps:
-      - uses: ansys/actions/build-wheelhouse@v10
+      - uses: ansys/actions/build-wheelhouse@a5b0351dc277d68c2dc1beca2d2674c7dfa4fc55 # v10.3.3
         with:
           library-name: ${{ env.ANSYS_STK }}
           operating-system: ${{ matrix.os }}
           python-version: ${{ matrix.python-version }}
           target: ${{ matrix.target }}
           attest-provenance: true
+          whitelist-license-check: 'jupyter-rfb'
+          # jupyter-rfb has unrecognized MIT license (https://github.com/vispy/jupyter_rfb/blob/main/LICENSE)
 
   doc-build:
     name: "Doc build"
     runs-on: [self-hosted, pystk]
-    timeout-minutes: 90
+    timeout-minutes: 360
     needs: build-wheelhouse
+    permissions:
+      contents: read # Read access to modified files in pull-request
     steps:
 
       - name: "Checkout the project"
-        uses: actions/checkout@v5
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
 
       - name: "Download wheelhouse into static path"
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           path: "doc/source/_static/wheelhouse"
           pattern: "*-wheelhouse-*"
@@ -82,82 +93,98 @@ jobs:
           tree doc/source/_static/wheelhouse
 
       - name: "Generate the name of the Docker image and the container"
+        id: docker
+        env:
+          RUNNER: ${{ runner.name }}
         run: |
-          python_image_name=${{ env.STK_DOCKER_IMAGE }}-python${{ env.MAIN_PYTHON_VERSION }}
-          container_name=stk-python${{ env.MAIN_PYTHON_VERSION }}
-          echo "STK_PYTHON_IMAGE=$python_image_name" >> $GITHUB_ENV
-          echo "STK_CONTAINER=$container_name" >> $GITHUB_ENV
+          image_name="${STK_DOCKER_IMAGE}-python${MAIN_PYTHON_VERSION}"
+          container_name="stk-python${MAIN_PYTHON_VERSION}-${RUNNER}"
+          echo "image=${image_name}" >> "${GITHUB_OUTPUT}"
+          echo "container=${container_name}" >> "${GITHUB_OUTPUT}"
 
       - name: "Start the container from the desired image"
+        env:
+          STK_IMAGE: ${{ steps.docker.outputs.image }}
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          LICENSE_SERVER: ${{ secrets.LICENSE_SERVER }}
         run: |
           docker run \
             --detach -it \
-            --network="host" \
-            --name ${{ env.STK_CONTAINER }} \
-            --env ANSYSLMD_LICENSE_FILE=${{ env.LICENSE_SERVER_PORT }}@${{ secrets.LICENSE_SERVER }} \
+            --name="${STK_CONTAINER}" \
+            --env ANSYSLMD_LICENSE_FILE="${LICENSE_SERVER_PORT}@${LICENSE_SERVER}" \
             --volume ${PWD}:/home/stk/pystk \
-            ${{ env.STK_PYTHON_IMAGE }}
+            "${STK_IMAGE}"
 
       - name: "Install system dependencies required for building examples"
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
             --user root \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            --workdir ${PYSTK_DIR} \
+            "${STK_CONTAINER}" /bin/bash -c \
             "apt update && apt install -y wget pandoc"
 
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "wget --no-check-certificate https://github.com/quarto-dev/quarto-cli/releases/download/v${{ env.QUARTO_VERSION }}/quarto-${{ env.QUARTO_VERSION }}-linux-amd64.deb"
+            --workdir ${PYSTK_DIR} \
+            "${STK_CONTAINER}" /bin/bash -c \
+            "wget --no-check-certificate https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb"
 
           docker exec \
             --user root \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "dpkg -i quarto-${{ env.QUARTO_VERSION }}-linux-amd64.deb"
+            --workdir ${PYSTK_DIR} \
+            "${STK_CONTAINER}" /bin/bash -c \
+            "dpkg -i quarto-${QUARTO_VERSION}-linux-amd64.deb"
 
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            --workdir ${PYSTK_DIR} \
+            "${STK_CONTAINER}" /bin/bash -c \
             "quarto install tinytex"
 
       - name: "Install Tox"
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "python -m pip install --upgrade pip tox && rm -rf .tox"
+            --workdir ${PYSTK_DIR} \
+            "${STK_CONTAINER}" /bin/bash -c \
+            "python -m pip install --upgrade pip tox==4.38.0 && rm -rf .tox"
 
       - name: "Build the full documentation"
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            --workdir ${PYSTK_DIR} \
+            "${STK_CONTAINER}" /bin/bash -c \
             "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc-links,doc-html"
 
       - name: "Upload combined artifacts"
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           path: doc/_build/html
           name: documentation-html
 
       - name: "Stop the container"
         if: always()
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
-          docker stop ${{ env.STK_CONTAINER }}
-          docker logs ${{ env.STK_CONTAINER }}
-          docker rm ${{ env.STK_CONTAINER }}
+          docker stop "${STK_CONTAINER}"
+          docker logs "${STK_CONTAINER}"
+          docker rm "${STK_CONTAINER}"
 
   tests:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
-    if: (github.event_name == 'workflow_dispatch' && inputs.run-tests == true) || github.event_name == 'schedule'
+    if: (github.event_name == 'workflow_dispatch' && inputs.run-tests == true) ||
+      github.event_name == 'schedule'
     strategy:
       matrix:
         python: ['3.10', '3.11', '3.12', '3.13']
         is-weekly-run:
-          - ${{ github.event_name == 'schedule' && github.event.schedule == '0 0 * * 1-5' }}
+          - ${{ github.event_name == 'schedule' && github.event.schedule == '0 0 *
+            * 1-5' }}
         exclude:
           - is-weekly-run: true
             python: "3.10"
@@ -166,142 +193,181 @@ jobs:
           - is-weekly-run: true
             python: "3.12"
       fail-fast: false
+    permissions:
+      contents: read # Read the source code of the project
     steps:
 
       - name: "Checkout the project"
-        uses: actions/checkout@v5
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
 
-      - name: "Generate the name of the docker image and the container"
+      - name: "Generate the name of the Docker image and the container"
+        id: docker
+        env:
+          RUNNER: ${{ runner.name }}
         run: |
-          python_image_name=${{ env.STK_DOCKER_IMAGE }}-python${{ matrix.python }}
-          container_name=stk-python${{ matrix.python }}
-          echo "STK_PYTHON_IMAGE=$python_image_name" >> $GITHUB_ENV
-          echo "STK_CONTAINER=$container_name" >> $GITHUB_ENV
+          image_name="${STK_DOCKER_IMAGE}-python${MAIN_PYTHON_VERSION}"
+          container_name="stk-python${MAIN_PYTHON_VERSION}-${RUNNER}"
+          echo "image=${image_name}" >> "${GITHUB_OUTPUT}"
+          echo "container=${container_name}" >> "${GITHUB_OUTPUT}"
 
       - name: "Start the container from the desired image"
+        env:
+          STK_IMAGE: ${{ steps.docker.outputs.image }}
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          LICENSE_SERVER: ${{ secrets.LICENSE_SERVER }}
         run: |
           docker run \
             --detach -it \
-            --network="host" \
-            --name ${{ env.STK_CONTAINER }} \
-            --env ANSYSLMD_LICENSE_FILE=${{ env.LICENSE_SERVER_PORT }}@${{ secrets.LICENSE_SERVER }} \
+            --name "${STK_CONTAINER}" \
+            --env ANSYSLMD_LICENSE_FILE="${LICENSE_SERVER_PORT}@${LICENSE_SERVER}" \
             --volume ${PWD}:/home/stk/pystk \
-            ${{ env.STK_PYTHON_IMAGE }}
+            "${STK_IMAGE}"
+
+          container_name=$(docker ps --latest --format "{{.Names}}")
+          echo "name=${container_name}" >> "${GITHUB_OUTPUT}"
 
       - name: "Install the project with the testing dependencies"
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "python -m pip install --upgrade pip tox && rm -rf .tox"
+            --workdir ${PYSTK_DIR} \
+            "${STK_CONTAINER}" /bin/bash -c \
+            "python -m pip install --upgrade pip tox==4.38.0 && rm -rf .tox"
 
       - name: "Install coverage dependencies"
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            --workdir ${PYSTK_DIR} \
+            "${STK_CONTAINER}" /bin/bash -c \
             "python -m pip install --group tests ."
 
-      # -- Tests
-
       - name: "Run the extensions tests"
+        # -- Tests
+
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            --workdir ${PYSTK_DIR} \
+            "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=.cov/extensions && tox -e tests-extensions-cov"
 
       - name: "Run the API migration assistant tests"
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            --workdir ${PYSTK_DIR} \
+            "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=.cov/migration && tox -e tests-core-migration-cov"
 
       - name: "Run the aviator tests"
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            --workdir ${PYSTK_DIR} \
+            "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=.cov/aviator && tox -e tests-core-aviator-graphics-cov-linux"
 
       - name: "Run the non graphics stk tests"
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            --workdir ${PYSTK_DIR} \
+            "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=.cov/stknogfx && tox -e tests-core-stk-nographics-cov-linux"
 
       - name: "Run the graphics only stk tests"
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            --workdir ${PYSTK_DIR} \
+            "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=.cov/stkgfx && tox -e tests-core-stk-graphicsonly-cov-linux"
 
       - name: "Run the vgt tests"
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            --workdir ${PYSTK_DIR} \
+            "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=.cov/vgt && tox -e tests-core-vgt-graphics-cov-linux"
 
       - name: "Run the doc snippet tests"
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            --workdir ${PYSTK_DIR} \
+            "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=.cov/snippets && tox -e tests-core-snippets-graphics-cov-linux"
 
-      # -- Coverage
-
       - name: "Combine all coverage results"
+        # -- Coverage
+
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }}/.cov \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            --workdir ${PYSTK_DIR}/.cov \
+            "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=coverage && coverage combine aviator stknogfx stkgfx vgt snippets migration extensions"
 
       - name: "Generate coverage report in XML and HTML"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage html --rcfile pyproject.toml --data-file=.cov/coverage --directory=.cov/${{ env.ANSYS_STK }}-coverage --fail-under=89"
+            --workdir ${PYSTK_DIR} \
+            "${STK_CONTAINER}" /bin/bash -c \
+            "coverage html --rcfile pyproject.toml --data-file=.cov/coverage --directory=.cov/${ANSYS_STK}-coverage --fail-under=89"
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            --workdir ${PYSTK_DIR} \
+            "${STK_CONTAINER}" /bin/bash -c \
             "coverage xml --rcfile pyproject.toml --data-file=.cov/coverage -o .cov/coverage.xml"
 
       - name: "Upload ${{ env.ANSYS_STK }} coverage results"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          path: .cov/${{ env.ANSYS_STK }}-coverage
-          name: ${{ env.ANSYS_STK }}-coverage
+          path: .cov/${ANSYS_STK}-coverage
+          name: ${ANSYS_STK}-coverage
 
       - name: "Upload coverage reports to Codecov"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@fb8b3582c8e4def4969c97caa2f19720cb33a72f # v7.0.0
         with:
           files: .cov/coverage.xml
           token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: "Stop the container"
         if: always()
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
-          docker stop ${{ env.STK_CONTAINER }}
-          docker logs ${{ env.STK_CONTAINER }}
-          docker rm ${{ env.STK_CONTAINER }}
+          docker stop "${STK_CONTAINER}"
+          docker logs "${STK_CONTAINER}"
+          docker rm "${STK_CONTAINER}"
 
   doc-deploy-dev:
     name: "Deploy dev docs"
     runs-on: ubuntu-latest
     needs: doc-build
+    permissions:
+      contents: write # Write new content to the gh-pages branch of the repository
     steps:
-      - uses: ansys/actions/doc-deploy-dev@v10
+      - uses: ansys/actions/doc-deploy-dev@a5b0351dc277d68c2dc1beca2d2674c7dfa4fc55 # v10.3.3
         with:
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}

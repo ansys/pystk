@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -24,7 +24,6 @@ import pytest
 from test_util import *
 from assert_extension import *
 from assertion_harness import *
-from display_times_helper import *
 from interfaces.stk_objects import *
 from logger import *
 from vehicle.vehicle_basic import *
@@ -90,15 +89,22 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
-    # region Definition
-    @category("Basic Tests")
-    def test_Definition(self):
-        TestBase.logger.WriteLine("----- THE CHAIN DEFINITION TEST ----- BEGIN -----")
-        oHelper = ObjectLinkCollectionHelper(True)
-        oHelper.Run(EarlyBoundTests.AG_CH.objects, TestBase.Application)
-        TestBase.logger.WriteLine("----- THE CHAIN DEFINITION TEST ----- END -----")
+    ##region Definition
+    # [Test]
+    # [Category("Basic Tests")]
+    # public void Definition()
+    # {
+    #    logger.WriteLine("----- THE CHAIN DEFINITION TEST ----- BEGIN -----");
 
-    # endregion
+    #    //ObjectLinkCollectionHelper oHelper = new ObjectLinkCollectionHelper(true);
+    #    //oHelper.Run(AG_CH.Objects, Application);
+
+    #    // The "Objects" property was removed, and replaced by the StartObject, EndObject, and Connections properties.
+    #    // These properties are fully tested in these tests:  AdvancedRoutingIndividualObjs and AdvancedRoutingSatCollection
+
+    #    logger.WriteLine("----- THE CHAIN DEFINITION TEST ----- END -----");
+    # }
+    ##endregion
 
     # region Advanced
     @category("Basic Tests")
@@ -264,17 +270,28 @@ class EarlyBoundTests(TestBase):
 
         newChain.max_strand_depth = 2
         Assert.assertEqual(2, newChain.max_strand_depth)
-        newChain.max_strand_depth = 20
-        Assert.assertEqual(20, newChain.max_strand_depth)
+        newChain.max_strand_depth = 50
+        Assert.assertEqual(50, newChain.max_strand_depth)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             newChain.max_strand_depth = 1
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            newChain.max_strand_depth = 21
+            newChain.max_strand_depth = 51
 
         self.Test_IAgChConnectionCollection(newChain.connections)
 
-        self.Test_IAgChOptimalStrandOpts(newChain.optimal_strand_opts)
+        # Test optimal strands using OptimalStrandOpts interface (deprecated for StrandAnalysisOpts)
+        newChain.strand_analysis_opts.compute = True
+        newChain.strand_analysis_opts.compute_type = ChainStrandAnalysisComputeType.OPT_STRANDS
+        newChain.strand_analysis_opts.compute = False
+        self.Test_IAgChOptimalStrandOptsBWC(newChain.optimal_strand_opts)
 
+        # Test optimal strands using strand analysis interface
+        self.Test_IAgChStrandAnalyticsOpts(newChain.strand_analysis_opts, True)
+
+        # Test network throughput using new strand analysis interface
+        self.Test_IAgChStrandAnalyticsOpts(newChain.strand_analysis_opts, False)
+
+        # Setup chain
         place1: "ISTKObject" = TestBase.Application.current_scenario.children["Place1"]
         place1Xmtr1: "ISTKObject" = place1.children["Transmitter1"]
 
@@ -320,138 +337,147 @@ class EarlyBoundTests(TestBase):
         newChainObj: "ISTKObject" = clr.CastAs(newChain, ISTKObject)
         dpInfo: "DataProviderFixed" = clr.CastAs(newChainObj.data_providers["Strand Names"], DataProviderFixed)
         resInfo: "DataProviderResult" = dpInfo.execute()
-        Assert.assertEqual(resInfo.data_sets.count, 2)
-        Assert.assertEqual(Array.Length(resInfo.data_sets[0].get_values()), 1)
-        Assert.assertEqual(Array.Length(resInfo.data_sets[1].get_values()), 3)
+        Assert.assertEqual(2, resInfo.data_sets.count)
+        Assert.assertEqual(1, Array.Length(resInfo.data_sets[0].get_values()))
+        Assert.assertEqual(3, Array.Length(resInfo.data_sets[1].get_values()))
+
+        newChain.clear_access()
+        resInfo = dpInfo.execute()
+        Assert.assertEqual(2, resInfo.data_sets.count)
+        Assert.assertAlmostEqual(1, Array.Length(resInfo.data_sets[0].get_values()), delta=1)
+        Assert.assertEqual(1, Array.Length(resInfo.data_sets[1].get_values()))
 
         # Optimal Strands
 
         # Optimal Strands Compute
         TestBase.logger.WriteLine4(
-            "\tThe current value of OptimalStrandOpts.Compute is: {0}", newChain.optimal_strand_opts.compute
+            "\tThe current value of OptimalStrandOpts.Compute is: {0}", newChain.strand_analysis_opts.compute
         )
-        newChain.optimal_strand_opts.compute = not newChain.optimal_strand_opts.compute
+        newChain.strand_analysis_opts.compute = not newChain.strand_analysis_opts.compute
         TestBase.logger.WriteLine4(
-            "\tThe new value of OptimalStrandOpts.Compute is: {0}", newChain.optimal_strand_opts.compute
+            "\tThe new value of StrandAnalysisOpts.Compute is: {0}", newChain.strand_analysis_opts.compute
         )
-        newChain.optimal_strand_opts.compute = True
-        Assert.assertTrue(newChain.optimal_strand_opts.compute)
+        newChain.strand_analysis_opts.compute = True
+        newChain.strand_analysis_opts.compute_type = ChainStrandAnalysisComputeType.OPT_STRANDS
+        Assert.assertTrue(newChain.strand_analysis_opts.compute)
 
         # Optimal Strands IncludeAccessEdgeTimesInSamples
         TestBase.logger.WriteLine4(
-            "\tThe current value of OptimalStrandOpts.IncludeAccessEdgeTimesInSamples is: {0}",
-            newChain.optimal_strand_opts.include_access_edge_times_in_samples,
+            "\tThe current value of StrandAnalysisOpts.IncludeAccessEdgeTimesInSamples is: {0}",
+            newChain.strand_analysis_opts.include_access_edge_times_in_samples,
         )
-        newChain.optimal_strand_opts.include_access_edge_times_in_samples = (
-            not newChain.optimal_strand_opts.include_access_edge_times_in_samples
+        newChain.strand_analysis_opts.include_access_edge_times_in_samples = (
+            not newChain.strand_analysis_opts.include_access_edge_times_in_samples
         )
         TestBase.logger.WriteLine4(
-            "\tThe new value of OptimalStrandOpts.IncludeAccessEdgeTimesInSamples is: {0}",
-            newChain.optimal_strand_opts.include_access_edge_times_in_samples,
+            "\tThe new value of StrandAnalysisOpts.IncludeAccessEdgeTimesInSamples is: {0}",
+            newChain.strand_analysis_opts.include_access_edge_times_in_samples,
         )
-        newChain.optimal_strand_opts.include_access_edge_times_in_samples = True
-        Assert.assertTrue(newChain.optimal_strand_opts.include_access_edge_times_in_samples)
+        newChain.strand_analysis_opts.include_access_edge_times_in_samples = True
+        Assert.assertTrue(newChain.strand_analysis_opts.include_access_edge_times_in_samples)
 
         # Optimal Strands SamplingTimeStep
         TestBase.logger.WriteLine6(
-            "\tThe current value of OptimalStrandOpts.SamplingTimeStep is: {0}",
-            newChain.optimal_strand_opts.sampling_time_step,
+            "\tThe current value of StrandAnalysisOpts.SamplingTimeStep is: {0}",
+            newChain.strand_analysis_opts.sampling_time_step,
         )
-        newChain.optimal_strand_opts.sampling_time_step = 60.0
-        Assert.assertAlmostEqual(newChain.optimal_strand_opts.sampling_time_step, 60.0, delta=0.001)
+        newChain.strand_analysis_opts.sampling_time_step = 60.0
+        Assert.assertAlmostEqual(newChain.strand_analysis_opts.sampling_time_step, 60.0, delta=0.001)
         TestBase.logger.WriteLine6(
-            "\tThe new value of OptimalStrandOpts.SamplingTimeStep is: {0}",
-            newChain.optimal_strand_opts.sampling_time_step,
+            "\tThe new value of StrandAnalysisOpts.SamplingTimeStep is: {0}",
+            newChain.strand_analysis_opts.sampling_time_step,
         )
 
         # Optimal Strands NumStrandsToStore
         TestBase.logger.WriteLine3(
-            "\tThe current value of OptimalStrandOpts.NumStrandsToStore is: {0}",
-            newChain.optimal_strand_opts.num_strands_to_store,
+            "\tThe current value of StrandAnalysisOpts.NumStrandsToStore is: {0}",
+            newChain.strand_analysis_opts.num_strands_to_store,
         )
-        newChain.optimal_strand_opts.num_strands_to_store = 2
-        Assert.assertEqual(newChain.optimal_strand_opts.num_strands_to_store, 2)
+        newChain.strand_analysis_opts.num_strands_to_store = 2
+        Assert.assertEqual(newChain.strand_analysis_opts.num_strands_to_store, 2)
         TestBase.logger.WriteLine3(
-            "\tThe new value of OptimalStrandOpts.NumStrandsToStore is: {0}",
-            newChain.optimal_strand_opts.num_strands_to_store,
+            "\tThe new value of StrandAnalysisOpts.NumStrandsToStore is: {0}",
+            newChain.strand_analysis_opts.num_strands_to_store,
         )
 
         # Optimal Strands StrandComparisonType
-        newChain.optimal_strand_opts.strand_comparison_type = (
+        newChain.strand_analysis_opts.strand_comparison_type = (
             ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MAX
         )
         Assert.assertEqual(
             ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MAX,
-            newChain.optimal_strand_opts.strand_comparison_type,
+            newChain.strand_analysis_opts.strand_comparison_type,
         )
-        newChain.optimal_strand_opts.strand_comparison_type = (
+        newChain.strand_analysis_opts.strand_comparison_type = (
             ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MIN
         )
         Assert.assertEqual(
             ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MIN,
-            newChain.optimal_strand_opts.strand_comparison_type,
+            newChain.strand_analysis_opts.strand_comparison_type,
         )
 
         # Optimal Strands Type
-        newChain.optimal_strand_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_DISTANCE
-        Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_DISTANCE, newChain.optimal_strand_opts.type)
-        newChain.optimal_strand_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_DURATION
-        Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_DURATION, newChain.optimal_strand_opts.type)
-        newChain.optimal_strand_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_PROCESSING_DELAY
+        newChain.strand_analysis_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_DISTANCE
+        Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_DISTANCE, newChain.strand_analysis_opts.type)
+        newChain.strand_analysis_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_DURATION
+        Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_DURATION, newChain.strand_analysis_opts.type)
+        newChain.strand_analysis_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_PROCESSING_DELAY
         Assert.assertEqual(
-            ChainOptimalStrandMetricType.STRAND_METRIC_PROCESSING_DELAY, newChain.optimal_strand_opts.type
+            ChainOptimalStrandMetricType.STRAND_METRIC_PROCESSING_DELAY, newChain.strand_analysis_opts.type
         )
-        newChain.optimal_strand_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR
+        newChain.strand_analysis_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR
         Assert.assertEqual(
-            ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR, newChain.optimal_strand_opts.type
+            ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR, newChain.strand_analysis_opts.type
         )
+        newChain.strand_analysis_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_DATA_RATE
+        Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_DATA_RATE, newChain.strand_analysis_opts.type)
 
         # Optimal Strands Calculation Scalar Name Type
-        newChain.optimal_strand_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR
+        newChain.strand_analysis_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR
         Assert.assertEqual(
-            ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR, newChain.optimal_strand_opts.type
+            ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR, newChain.strand_analysis_opts.type
         )
-        newChain.optimal_strand_opts.calc_scalar_type = (
+        newChain.strand_analysis_opts.calc_scalar_type = (
             ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
         )
         Assert.assertEqual(
             ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME,
-            newChain.optimal_strand_opts.calc_scalar_type,
+            newChain.strand_analysis_opts.calc_scalar_type,
         )
-        newChain.optimal_strand_opts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
-        Assert.assertEqual("From-To-AER(Body).Cartesian.Magnitude", newChain.optimal_strand_opts.calc_scalar_name)
+        newChain.strand_analysis_opts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
+        Assert.assertEqual("From-To-AER(Body).Cartesian.Magnitude", newChain.strand_analysis_opts.calc_scalar_name)
 
         # Optimal Strands LinkComparisonType, testing against distance Calculation Scalar Name
-        # (only settable for OptimalStrandOpts.Type = ChainOptimalStrandMetricType.eChOptStrandMetricCalcuationScalar
-        newChain.optimal_strand_opts.link_comparison_type = (
+        # (only settable for StrandAnalysisOpts.Type = ChainOptimalStrandMetricType.eChOptStrandMetricCalcuationScalar
+        newChain.strand_analysis_opts.link_comparison_type = (
             ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MAX
         )
         Assert.assertEqual(
             ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MAX,
-            newChain.optimal_strand_opts.link_comparison_type,
+            newChain.strand_analysis_opts.link_comparison_type,
         )
-        newChain.optimal_strand_opts.link_comparison_type = (
+        newChain.strand_analysis_opts.link_comparison_type = (
             ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MIN
         )
         Assert.assertEqual(
             ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MIN,
-            newChain.optimal_strand_opts.link_comparison_type,
+            newChain.strand_analysis_opts.link_comparison_type,
         )
 
         # Optimal Strands Calculation Scalar Name Type
-        newChain.optimal_strand_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR
+        newChain.strand_analysis_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR
         Assert.assertEqual(
-            ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR, newChain.optimal_strand_opts.type
+            ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR, newChain.strand_analysis_opts.type
         )
-        newChain.optimal_strand_opts.calc_scalar_type = (
+        newChain.strand_analysis_opts.calc_scalar_type = (
             ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_FILE
         )
         Assert.assertEqual(
             ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_FILE,
-            newChain.optimal_strand_opts.calc_scalar_type,
+            newChain.strand_analysis_opts.calc_scalar_type,
         )
-        newChain.optimal_strand_opts.calc_scalar_file_name = "My_CS.awb"
-        Assert.assertEqual("My_CS.awb", newChain.optimal_strand_opts.calc_scalar_file_name)
+        newChain.strand_analysis_opts.calc_scalar_file_name = "My_CS.awb"
+        Assert.assertEqual("My_CS.awb", newChain.strand_analysis_opts.calc_scalar_file_name)
 
         TestBase.Application.current_scenario.children.unload(STKObjectType.CHAIN, "TestChain")
 
@@ -567,12 +593,12 @@ class EarlyBoundTests(TestBase):
             newChain.connections.item_by_from_to_objects(allXmtrsSubset, place2Rcvr2).parent_platform_restriction,
         )
 
-        newChain.connections.item_by_from_to_objects(
-            allRcvrsSubset, allXmtrsSubset
-        ).parent_platform_restriction = ChainParentPlatformRestriction.NONE
-        newChain.connections.item_by_from_to_objects(
-            allXmtrsSubset, allRcvrsSubset
-        ).parent_platform_restriction = ChainParentPlatformRestriction.NONE
+        newChain.connections.item_by_from_to_objects(allRcvrsSubset, allXmtrsSubset).parent_platform_restriction = (
+            ChainParentPlatformRestriction.NONE
+        )
+        newChain.connections.item_by_from_to_objects(allXmtrsSubset, allRcvrsSubset).parent_platform_restriction = (
+            ChainParentPlatformRestriction.NONE
+        )
         newChain.compute_access()
 
         resInfo = dpInfo.execute()
@@ -580,12 +606,12 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(Array.Length(resInfo.data_sets[0].get_values()), 1)
         Assert.assertEqual(Array.Length(resInfo.data_sets[1].get_values()), 2077)
 
-        newChain.connections.item_by_from_to_objects(
-            allRcvrsSubset, allXmtrsSubset
-        ).parent_platform_restriction = ChainParentPlatformRestriction.SAME
-        newChain.connections.item_by_from_to_objects(
-            allXmtrsSubset, allRcvrsSubset
-        ).parent_platform_restriction = ChainParentPlatformRestriction.DIFFERENT
+        newChain.connections.item_by_from_to_objects(allRcvrsSubset, allXmtrsSubset).parent_platform_restriction = (
+            ChainParentPlatformRestriction.SAME
+        )
+        newChain.connections.item_by_from_to_objects(allXmtrsSubset, allRcvrsSubset).parent_platform_restriction = (
+            ChainParentPlatformRestriction.DIFFERENT
+        )
         newChain.compute_access()
 
         resInfo = dpInfo.execute()
@@ -738,11 +764,10 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
-    # region Test_IAgChOptimalStrandOpts
-    def Test_IAgChOptimalStrandOpts(self, optStrandOpts: "ChainOptimalStrandOpts"):
+    # region Test_IAgChOptimalStrandOptsBWC
+    def Test_IAgChOptimalStrandOptsBWC(self, optStrandOpts: "ChainOptimalStrandOpts"):
         optStrandOpts.compute = False
         Assert.assertFalse(optStrandOpts.compute)
-
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             optStrandOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_PROCESSING_DELAY
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
@@ -766,13 +791,11 @@ class EarlyBoundTests(TestBase):
 
         optStrandOpts.compute = True
         Assert.assertTrue(optStrandOpts.compute)
-
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
             optStrandOpts.type = ChainOptimalStrandMetricType.UNKNOWN
 
         optStrandOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_DISTANCE
         Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_DISTANCE, optStrandOpts.type)
-
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             optStrandOpts.calc_scalar_type = (
                 ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
@@ -786,7 +809,6 @@ class EarlyBoundTests(TestBase):
 
         optStrandOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_DURATION
         Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_DURATION, optStrandOpts.type)
-
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             optStrandOpts.calc_scalar_type = (
                 ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
@@ -800,7 +822,19 @@ class EarlyBoundTests(TestBase):
 
         optStrandOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_PROCESSING_DELAY
         Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_PROCESSING_DELAY, optStrandOpts.type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_type = (
+                ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
+            )
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_file_name = "My_CS.awb"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.link_comparison_type = ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MIN
 
+        optStrandOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_DATA_RATE
+        Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_DATA_RATE, optStrandOpts.type)
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             optStrandOpts.calc_scalar_type = (
                 ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
@@ -814,10 +848,8 @@ class EarlyBoundTests(TestBase):
 
         optStrandOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR
         Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR, optStrandOpts.type)
-
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
             optStrandOpts.calc_scalar_type = ChainOptimalStrandCalculationScalarMetricType.UNKNOWN
-
         optStrandOpts.calc_scalar_type = (
             ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
         )
@@ -894,7 +926,185 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             optStrandOpts.num_strands_to_store = 0
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            optStrandOpts.num_strands_to_store = 101
+            optStrandOpts.num_strands_to_store = 10001
+
+    # endregion
+
+    # region Test_IAgChStrandAnalyticsOpts
+    def Test_IAgChStrandAnalyticsOpts(self, strandAnalyticsOpts: "ChainStrandAnalysisOpts", testOptStrands: bool):
+        # Test optimal strands option of strand analysis
+        strandAnalyticsOpts.compute = True
+        if testOptStrands:
+            strandAnalyticsOpts.compute_type = ChainStrandAnalysisComputeType.OPT_STRANDS
+
+        else:
+            strandAnalyticsOpts.compute_type = ChainStrandAnalysisComputeType.NETWORK_THROUGHPUT
+
+        strandAnalyticsOpts.compute = False
+        Assert.assertFalse(strandAnalyticsOpts.compute)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_PROCESSING_DELAY
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.calc_scalar_type = (
+                ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
+            )
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.calc_scalar_file_name = "My_CS.awb"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.link_comparison_type = ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_SUM
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.strand_comparison_type = ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MIN
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            strandAnalyticsOpts.sampling_time_step = 0.001
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.include_access_edge_times_in_samples = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.num_strands_to_store = 1
+
+        strandAnalyticsOpts.compute = True
+        Assert.assertTrue(strandAnalyticsOpts.compute)
+        with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
+            strandAnalyticsOpts.type = ChainOptimalStrandMetricType.UNKNOWN
+
+        strandAnalyticsOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_DISTANCE
+        Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_DISTANCE, strandAnalyticsOpts.type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.calc_scalar_type = (
+                ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
+            )
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.calc_scalar_file_name = "My_CS.awb"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.link_comparison_type = ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MIN
+
+        strandAnalyticsOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_DURATION
+        Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_DURATION, strandAnalyticsOpts.type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.calc_scalar_type = (
+                ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
+            )
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.calc_scalar_file_name = "My_CS.awb"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.link_comparison_type = ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MIN
+
+        strandAnalyticsOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_PROCESSING_DELAY
+        Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_PROCESSING_DELAY, strandAnalyticsOpts.type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.calc_scalar_type = (
+                ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
+            )
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.calc_scalar_file_name = "My_CS.awb"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.link_comparison_type = ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MIN
+
+        strandAnalyticsOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_DATA_RATE
+        Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_DATA_RATE, strandAnalyticsOpts.type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.calc_scalar_type = (
+                ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
+            )
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.calc_scalar_file_name = "My_CS.awb"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.link_comparison_type = ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MIN
+
+        strandAnalyticsOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR
+        Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR, strandAnalyticsOpts.type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
+            strandAnalyticsOpts.calc_scalar_type = ChainOptimalStrandCalculationScalarMetricType.UNKNOWN
+        strandAnalyticsOpts.calc_scalar_type = (
+            ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
+        )
+        Assert.assertEqual(
+            ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME,
+            strandAnalyticsOpts.calc_scalar_type,
+        )
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.calc_scalar_file_name = "My_CS.awb"
+
+        strandAnalyticsOpts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
+        Assert.assertEqual("From-To-AER(Body).Cartesian.Magnitude", strandAnalyticsOpts.calc_scalar_name)
+
+        strandAnalyticsOpts.calc_scalar_type = (
+            ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_FILE
+        )
+        Assert.assertEqual(
+            ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_FILE,
+            strandAnalyticsOpts.calc_scalar_type,
+        )
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            strandAnalyticsOpts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
+            strandAnalyticsOpts.calc_scalar_file_name = "Bogus"
+        strandAnalyticsOpts.calc_scalar_file_name = "My_CS.awb"
+        Assert.assertEqual("My_CS.awb", strandAnalyticsOpts.calc_scalar_file_name)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
+            strandAnalyticsOpts.link_comparison_type = ChainOptimalStrandLinkCompareType.UNKNOWN
+
+        strandAnalyticsOpts.link_comparison_type = ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MIN
+        Assert.assertEqual(
+            ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MIN, strandAnalyticsOpts.link_comparison_type
+        )
+        strandAnalyticsOpts.link_comparison_type = ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MAX
+        Assert.assertEqual(
+            ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MAX, strandAnalyticsOpts.link_comparison_type
+        )
+        strandAnalyticsOpts.link_comparison_type = ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_SUM
+        Assert.assertEqual(
+            ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_SUM, strandAnalyticsOpts.link_comparison_type
+        )
+
+        strandAnalyticsOpts.strand_comparison_type = ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MIN
+        Assert.assertEqual(
+            ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MIN, strandAnalyticsOpts.strand_comparison_type
+        )
+        strandAnalyticsOpts.strand_comparison_type = ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MAX
+        Assert.assertEqual(
+            ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MAX, strandAnalyticsOpts.strand_comparison_type
+        )
+
+        strandAnalyticsOpts.sampling_time_step = 0.001
+        Assert.assertEqual(0.001, strandAnalyticsOpts.sampling_time_step)
+        strandAnalyticsOpts.sampling_time_step = 10000000000
+        Assert.assertEqual(10000000000, strandAnalyticsOpts.sampling_time_step)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            strandAnalyticsOpts.sampling_time_step = 0
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            strandAnalyticsOpts.sampling_time_step = 100000000000
+
+        strandAnalyticsOpts.include_access_edge_times_in_samples = False
+        Assert.assertFalse(strandAnalyticsOpts.include_access_edge_times_in_samples)
+        strandAnalyticsOpts.include_access_edge_times_in_samples = True
+        Assert.assertTrue(strandAnalyticsOpts.include_access_edge_times_in_samples)
+        if testOptStrands:
+            strandAnalyticsOpts.num_strands_to_store = 1
+            Assert.assertEqual(1, strandAnalyticsOpts.num_strands_to_store)
+            strandAnalyticsOpts.num_strands_to_store = 100
+            Assert.assertEqual(100, strandAnalyticsOpts.num_strands_to_store)
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+                strandAnalyticsOpts.num_strands_to_store = 0
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+                strandAnalyticsOpts.num_strands_to_store = 10001
+
+        else:
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                strandAnalyticsOpts.num_strands_to_store = 1
 
     # endregion
 
@@ -947,6 +1157,9 @@ class EarlyBoundTests(TestBase):
         oAnimation: "ChainGraphics2DAnimation" = EarlyBoundTests.AG_CH.graphics.animation_settings
         Assert.assertIsNotNone(oAnimation)
 
+        EarlyBoundTests.AG_CH.strand_analysis_opts.compute = True
+        EarlyBoundTests.AG_CH.strand_analysis_opts.compute_type = ChainStrandAnalysisComputeType.OPT_STRANDS
+
         # IsHighlightVisible
         TestBase.logger.WriteLine4("\tThe current IsHighlightVisible is: {0}", oAnimation.show_highlight)
         oAnimation.show_highlight = False
@@ -961,11 +1174,6 @@ class EarlyBoundTests(TestBase):
         oAnimation.color = Colors.from_argb(14544639)
         TestBase.logger.WriteLine6("\tThe new Color is: 0x{0:X}", oAnimation.color)
         AssertEx.AreEqual(Colors.from_argb(14544639), oAnimation.color)
-
-        TestBase.logger.WriteLine6("\tThe current OptimalPathColor is: 0x{0:X}", oAnimation.optimal_path_color)
-        oAnimation.optimal_path_color = Colors.from_argb(16772829)
-        TestBase.logger.WriteLine6("\tThe new OptimalPathColor is: 0x{0:X}", oAnimation.optimal_path_color)
-        AssertEx.AreEqual(Colors.from_argb(16772829), oAnimation.optimal_path_color)
 
         TestBase.logger.WriteLine6(
             "\tThe current OptimalPathColorRampStartColor is: 0x{0:X}", oAnimation.optimal_path_color_ramp_start_color
@@ -1077,6 +1285,211 @@ class EarlyBoundTests(TestBase):
             origHideAnimationGfxIfMoreThanNStrandsNum,
         )
 
+        # Network graphics
+        EarlyBoundTests.AG_CH.strand_analysis_opts.compute_type = ChainStrandAnalysisComputeType.NETWORK_THROUGHPUT
+
+        # Test read-only cases based on overall network graphics being off
+        oAnimation.show_network_throughput_graphics_2d = False
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.show_network_throughput_node_graphics_2d = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.show_network_throughput_node_labels_graphics_2d = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_node_point_size = 10.0
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_node_data_mode = ChainGraphics2DNetworkDataMode.PCT
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_end_nodes_color = Colors.from_argb(16768494)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.show_network_throughput_link_graphics_2d = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.show_network_throughput_link_labels_graphics_2d = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_link_combine_strands = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_link_labels_include_num_strands = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_link_line_width = LineWidth.WIDTH4
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_link_data_mode = ChainGraphics2DNetworkDataMode.PCT
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_zero_pct_contour_color = Colors.from_argb(16768494)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_one_hundred_pct_contour_color = Colors.from_argb(16768494)
+
+        # Test read-only cases based on various combinations of node and link graphics being off but network graphics being on
+        oAnimation.show_network_throughput_graphics_2d = True
+        oAnimation.show_network_throughput_node_graphics_2d = False
+        oAnimation.show_network_throughput_link_graphics_2d = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.show_network_throughput_node_labels_graphics_2d = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_node_point_size = 10.0
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_node_data_mode = ChainGraphics2DNetworkDataMode.PCT
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_end_nodes_color = Colors.from_argb(16768494)
+        oAnimation.show_network_throughput_node_graphics_2d = True
+        oAnimation.show_network_throughput_link_graphics_2d = False
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.show_network_throughput_link_labels_graphics_2d = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_link_combine_strands = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_link_labels_include_num_strands = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_link_line_width = LineWidth.WIDTH4
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_link_data_mode = ChainGraphics2DNetworkDataMode.PCT
+        oAnimation.show_network_throughput_node_graphics_2d = False
+        oAnimation.show_network_throughput_link_graphics_2d = False
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.show_network_throughput_link_labels_graphics_2d = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_link_combine_strands = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_link_labels_include_num_strands = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_link_line_width = LineWidth.WIDTH4
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_link_data_mode = ChainGraphics2DNetworkDataMode.PCT
+
+        # NetworkThroughputZeroPctContourColor and NetworkThroughputOneHundredPctContourColor are read only if both
+        # ShowNetworkThroughputNodeGfx and ShowNetworkThroughputLinkGfx are false
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_zero_pct_contour_color = Colors.from_argb(16768494)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_one_hundred_pct_contour_color = Colors.from_argb(16768494)
+
+        # Both ShowNetworkThroughputLinkLabelsGfx and NetworkThroughputLinkCombineStrands must be true for NetworkThroughputLinkLabelsIncludeNumStrands to be set
+        oAnimation.show_network_throughput_link_graphics_2d = True
+        oAnimation.show_network_throughput_link_labels_graphics_2d = False
+        oAnimation.network_throughput_link_combine_strands = False
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_link_labels_include_num_strands = True
+        oAnimation.show_network_throughput_link_labels_graphics_2d = True
+        oAnimation.network_throughput_link_combine_strands = False
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_link_labels_include_num_strands = True
+        oAnimation.show_network_throughput_link_labels_graphics_2d = False
+        oAnimation.show_network_throughput_link_labels_graphics_2d = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_link_labels_include_num_strands = True
+
+        # Test setting of values when not read-only
+        oAnimation.show_network_throughput_graphics_2d = False
+        Assert.assertFalse(oAnimation.show_network_throughput_graphics_2d)
+        oAnimation.show_network_throughput_graphics_2d = True
+        Assert.assertTrue(oAnimation.show_network_throughput_graphics_2d)
+
+        oAnimation.show_network_throughput_node_graphics_2d = False
+        Assert.assertFalse(oAnimation.show_network_throughput_node_graphics_2d)
+        oAnimation.show_network_throughput_node_graphics_2d = True
+        Assert.assertTrue(oAnimation.show_network_throughput_node_graphics_2d)
+
+        oAnimation.show_network_throughput_node_labels_graphics_2d = False
+        Assert.assertFalse(oAnimation.show_network_throughput_node_labels_graphics_2d)
+        oAnimation.show_network_throughput_node_labels_graphics_2d = True
+        Assert.assertTrue(oAnimation.show_network_throughput_node_labels_graphics_2d)
+
+        oAnimation.network_throughput_node_point_size = 7.0
+        Assert.assertEqual(oAnimation.network_throughput_node_point_size, 7.0)
+        oAnimation.network_throughput_node_point_size = 10.0
+        Assert.assertEqual(oAnimation.network_throughput_node_point_size, 10.0)
+
+        # Setting the NetworkThroughputNodeDataMode to DATA_RATE requires
+        # some levels in the data rate list, but we don't have OM for this yet
+        TestBase.Application.execute_command(
+            "Graphics */Chain/Chain1 NetworkGfxDataRateContoursCustomLevels Add ContourValue 1 Color Red"
+        )
+        TestBase.Application.execute_command(
+            "Graphics */Chain/Chain1 NetworkGfxDataRateContoursCustomLevels Add ContourValue 10000 Color Blue"
+        )
+        TestBase.Application.execute_command(
+            "Graphics */Chain/Chain1 NetworkGfxDataRateContoursCustomLevels Add ContourValue 1000000 Color Green"
+        )
+        oAnimation.network_throughput_node_data_mode = ChainGraphics2DNetworkDataMode.PCT
+        Assert.assertEqual(ChainGraphics2DNetworkDataMode.PCT, oAnimation.network_throughput_node_data_mode)
+        oAnimation.network_throughput_node_data_mode = ChainGraphics2DNetworkDataMode.DATA_RATE
+        Assert.assertEqual(ChainGraphics2DNetworkDataMode.DATA_RATE, oAnimation.network_throughput_node_data_mode)
+
+        oAnimation.network_throughput_end_nodes_color = Colors.from_argb(11189196)
+        AssertEx.AreEqual(Colors.from_argb(11189196), oAnimation.network_throughput_end_nodes_color)
+        oAnimation.network_throughput_end_nodes_color = Colors.from_argb(11189197)
+        AssertEx.AreEqual(Colors.from_argb(11189197), oAnimation.network_throughput_end_nodes_color)
+
+        oAnimation.show_network_throughput_link_graphics_2d = False
+        Assert.assertFalse(oAnimation.show_network_throughput_link_graphics_2d)
+        oAnimation.show_network_throughput_link_graphics_2d = True
+        Assert.assertTrue(oAnimation.show_network_throughput_link_graphics_2d)
+
+        oAnimation.show_network_throughput_link_labels_graphics_2d = False
+        Assert.assertFalse(oAnimation.show_network_throughput_link_labels_graphics_2d)
+        oAnimation.show_network_throughput_link_labels_graphics_2d = True
+        Assert.assertTrue(oAnimation.show_network_throughput_link_labels_graphics_2d)
+
+        oAnimation.network_throughput_link_combine_strands = False
+        Assert.assertFalse(oAnimation.network_throughput_link_combine_strands)
+        oAnimation.network_throughput_link_combine_strands = True
+        Assert.assertTrue(oAnimation.network_throughput_link_combine_strands)
+
+        oAnimation.network_throughput_link_labels_include_num_strands = False
+        Assert.assertFalse(oAnimation.network_throughput_link_labels_include_num_strands)
+        oAnimation.network_throughput_link_labels_include_num_strands = True
+        Assert.assertTrue(oAnimation.network_throughput_link_labels_include_num_strands)
+
+        # This relies on the levels added above
+        oAnimation.network_throughput_link_data_mode = ChainGraphics2DNetworkDataMode.PCT
+        Assert.assertEqual(ChainGraphics2DNetworkDataMode.PCT, oAnimation.network_throughput_link_data_mode)
+        oAnimation.network_throughput_link_data_mode = ChainGraphics2DNetworkDataMode.DATA_RATE
+        Assert.assertEqual(ChainGraphics2DNetworkDataMode.DATA_RATE, oAnimation.network_throughput_link_data_mode)
+
+        oAnimation.network_throughput_link_line_width = LineWidth.WIDTH3
+        Assert.assertEqual(LineWidth.WIDTH3, oAnimation.network_throughput_link_line_width)
+        oAnimation.network_throughput_link_line_width = LineWidth.WIDTH5
+        Assert.assertEqual(LineWidth.WIDTH5, oAnimation.network_throughput_link_line_width)
+
+        # Test contour levels
+        oAnimation.network_throughput_node_data_mode = ChainGraphics2DNetworkDataMode.DATA_RATE
+        oAnimation.network_throughput_link_data_mode = ChainGraphics2DNetworkDataMode.DATA_RATE
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_zero_pct_contour_color = Colors.from_argb(16768494)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oAnimation.network_throughput_one_hundred_pct_contour_color = Colors.from_argb(16768494)
+
+        oAnimation.network_throughput_node_data_mode = ChainGraphics2DNetworkDataMode.PCT
+        oAnimation.network_throughput_link_data_mode = ChainGraphics2DNetworkDataMode.DATA_RATE
+        oAnimation.network_throughput_zero_pct_contour_color = Colors.from_argb(11189197)
+        AssertEx.AreEqual(Colors.from_argb(11189197), oAnimation.network_throughput_zero_pct_contour_color)
+        oAnimation.network_throughput_zero_pct_contour_color = Colors.from_argb(11189196)
+        AssertEx.AreEqual(Colors.from_argb(11189196), oAnimation.network_throughput_zero_pct_contour_color)
+        oAnimation.network_throughput_one_hundred_pct_contour_color = Colors.from_argb(11189194)
+        AssertEx.AreEqual(Colors.from_argb(11189194), oAnimation.network_throughput_one_hundred_pct_contour_color)
+        oAnimation.network_throughput_one_hundred_pct_contour_color = Colors.from_argb(11189195)
+        AssertEx.AreEqual(Colors.from_argb(11189195), oAnimation.network_throughput_one_hundred_pct_contour_color)
+
+        oAnimation.network_throughput_node_data_mode = ChainGraphics2DNetworkDataMode.DATA_RATE
+        oAnimation.network_throughput_link_data_mode = ChainGraphics2DNetworkDataMode.PCT
+        oAnimation.network_throughput_zero_pct_contour_color = Colors.from_argb(11189197)
+        AssertEx.AreEqual(Colors.from_argb(11189197), oAnimation.network_throughput_zero_pct_contour_color)
+        oAnimation.network_throughput_zero_pct_contour_color = Colors.from_argb(11189196)
+        AssertEx.AreEqual(Colors.from_argb(11189196), oAnimation.network_throughput_zero_pct_contour_color)
+        oAnimation.network_throughput_one_hundred_pct_contour_color = Colors.from_argb(11189194)
+        AssertEx.AreEqual(Colors.from_argb(11189194), oAnimation.network_throughput_one_hundred_pct_contour_color)
+        oAnimation.network_throughput_one_hundred_pct_contour_color = Colors.from_argb(11189195)
+        AssertEx.AreEqual(Colors.from_argb(11189195), oAnimation.network_throughput_one_hundred_pct_contour_color)
+
+        oAnimation.network_throughput_node_data_mode = ChainGraphics2DNetworkDataMode.PCT
+        oAnimation.network_throughput_link_data_mode = ChainGraphics2DNetworkDataMode.PCT
+        oAnimation.network_throughput_zero_pct_contour_color = Colors.from_argb(11189197)
+        AssertEx.AreEqual(Colors.from_argb(11189197), oAnimation.network_throughput_zero_pct_contour_color)
+        oAnimation.network_throughput_zero_pct_contour_color = Colors.from_argb(11189196)
+        AssertEx.AreEqual(Colors.from_argb(11189196), oAnimation.network_throughput_zero_pct_contour_color)
+        oAnimation.network_throughput_one_hundred_pct_contour_color = Colors.from_argb(11189194)
+        AssertEx.AreEqual(Colors.from_argb(11189194), oAnimation.network_throughput_one_hundred_pct_contour_color)
+        oAnimation.network_throughput_one_hundred_pct_contour_color = Colors.from_argb(11189195)
+        AssertEx.AreEqual(Colors.from_argb(11189195), oAnimation.network_throughput_one_hundred_pct_contour_color)
+
         TestBase.logger.WriteLine("----- THE CHAIN GRAPHICS TEST ----- END -----")
 
     # endregion
@@ -1187,32 +1600,5 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             oConstraints.load_interval_file = ""
         TestBase.logger.WriteLine("----- THE CHAIN CONSTRAINTS TEST ----- END -----")
-
-    # endregion
-
-    # region ComputeAccess
-    def test_ComputeAccess(self):
-        EarlyBoundTests.AG_CH.objects.remove_all()
-        EarlyBoundTests.AG_CH.objects.add("Facility/Facility1")
-        EarlyBoundTests.AG_CH.objects.add("Satellite/Satellite1")
-        EarlyBoundTests.AG_CH.objects.add("AreaTarget/AreaTarget1")
-        Assert.assertEqual(3, EarlyBoundTests.AG_CH.objects.count)
-
-        EarlyBoundTests.AG_CH.compute_access()
-
-    # endregion
-
-    # region ClearAccess
-    def test_ClearAccess(self):
-        EarlyBoundTests.AG_CH.objects.remove_all()
-        EarlyBoundTests.AG_CH.objects.add("Facility/Facility1")
-        EarlyBoundTests.AG_CH.objects.add("Satellite/Satellite1")
-        EarlyBoundTests.AG_CH.objects.add("AreaTarget/AreaTarget1")
-        Assert.assertEqual(3, EarlyBoundTests.AG_CH.objects.count)
-
-        EarlyBoundTests.AG_CH.compute_access()
-
-        # Make sure the access lines are cleared
-        EarlyBoundTests.AG_CH.clear_access()
 
     # endregion

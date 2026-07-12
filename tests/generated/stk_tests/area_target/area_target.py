@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -25,6 +25,7 @@ from test_util import *
 from access_constraints.access_constraint_helper import *
 from assert_extension import *
 from assertion_harness import *
+from chain_analysis_options_helper import *
 from display_times_helper import *
 from interfaces.stk_objects import *
 from logger import *
@@ -135,7 +136,6 @@ class EarlyBoundTests(TestBase):
         patterns.add(4, 5)
         patterns.add(5, 6)
         TestBase.logger.WriteLine3("The new Area Type Pattern collection contains: {0} elements", patterns.count)
-
         iIndex: int = 0
         while iIndex < patterns.count:
             TestBase.logger.WriteLine8(
@@ -154,7 +154,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(pattern4.longitude, 4)
 
         TestBase.logger.WriteLine3("The new Area Type Pattern collection contains: {0} elements", patterns.count)
-
         iIndex: int = 0
         while iIndex < patterns.count:
             TestBase.logger.WriteLine8(
@@ -164,7 +163,6 @@ class EarlyBoundTests(TestBase):
             iIndex += 1
 
         latlons = patterns.to_array()
-
         i: int = 0
         while i <= (len(latlons) - 1):
             TestBase.logger.WriteLine6("Latitude = {0}", latlons[i][0])
@@ -203,7 +201,6 @@ class EarlyBoundTests(TestBase):
 
             dpc: "DataProviderCollection" = areaTargetObject.get_access(pl.path).data_providers
             TestBase.logger.WriteLine3("The Data Provider collection contains: {0} elements", dpc.count)
-
             i: int = 0
             while i < dpc.count:
                 TestBase.logger.WriteLine8("Element {0}:\tType = {1},\tName = {2}", i, dpc[i].type, dpc[i].name)
@@ -402,6 +399,14 @@ class EarlyBoundTests(TestBase):
         oHelper.DoTest(
             EarlyBoundTests.AG_AT.access_constraints, ISTKObject(EarlyBoundTests.AG_AT), TestBase.TemporaryDirectory
         )
+
+    # endregion
+
+    # region ChainAnalysisOptions
+    @category("ChainAnalysisOptions Tests")
+    def test_ChainAnalysisOptions(self):
+        helper = ChainAnalysisOptionsHelper()
+        helper.Run(EarlyBoundTests.AG_AT.chain_analysis_options, False)
 
     # endregion
 

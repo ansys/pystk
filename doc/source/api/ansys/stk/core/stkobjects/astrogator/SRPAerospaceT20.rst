@@ -26,12 +26,18 @@ Overview
               - Other eclipsing bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPAerospaceT20.include_boundary_mitigation`
               - True if shadow boundary mitigation should be performed; the state of the satellite after crossing a shadow boundary will be corrected for errors possibly caused by the sudden change in SRP which occurred during the integration step.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPAerospaceT20.k1_stochastic_srp_coefficient`
+              - K1 Stochastic SRP Coefficient.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPAerospaceT20.k2_stochastic_srp_coefficient`
+              - K2 Stochastic SRP Coefficient.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPAerospaceT20.shadow_model`
               - Get or set the shadow model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPAerospaceT20.solar_radius`
               - Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPAerospaceT20.sun_position`
               - Get or set the sun position computation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPAerospaceT20.use_stochastic_srp_coefficient`
+              - True if using a stochastic SRP for propagation or estimation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPAerospaceT20.use_sun_central_body_file_values`
               - True if solar radius should come from the Sun.cb file.
 
@@ -66,6 +72,18 @@ Property detail
 
     True if shadow boundary mitigation should be performed; the state of the satellite after crossing a shadow boundary will be corrected for errors possibly caused by the sudden change in SRP which occurred during the integration step.
 
+.. py:property:: k1_stochastic_srp_coefficient
+    :canonical: ansys.stk.core.stkobjects.astrogator.SRPAerospaceT20.k1_stochastic_srp_coefficient
+    :type: StochasticModelParameters
+
+    K1 Stochastic SRP Coefficient.
+
+.. py:property:: k2_stochastic_srp_coefficient
+    :canonical: ansys.stk.core.stkobjects.astrogator.SRPAerospaceT20.k2_stochastic_srp_coefficient
+    :type: StochasticModelParameters
+
+    K2 Stochastic SRP Coefficient.
+
 .. py:property:: shadow_model
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPAerospaceT20.shadow_model
     :type: ShadowModel
@@ -83,6 +101,12 @@ Property detail
     :type: SunPosition
 
     Get or set the sun position computation.
+
+.. py:property:: use_stochastic_srp_coefficient
+    :canonical: ansys.stk.core.stkobjects.astrogator.SRPAerospaceT20.use_stochastic_srp_coefficient
+    :type: bool
+
+    True if using a stochastic SRP for propagation or estimation.
 
 .. py:property:: use_sun_central_body_file_values
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPAerospaceT20.use_sun_central_body_file_values

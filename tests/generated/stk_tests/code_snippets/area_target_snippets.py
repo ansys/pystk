@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -157,7 +157,6 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
             areaTargetPoints = patternPoints.to_array()
 
             Console.WriteLine("All points in Area Target")
-
             i: int = 0
             while i < len(areaTargetPoints):
                 Console.WriteLine(

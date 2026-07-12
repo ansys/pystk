@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -21,19 +21,17 @@
 # SOFTWARE.
 
 """
-Used to communicate color information between Python and STK.
+Used to communicate color information.
 
 Color is the color object type and Colors is the factory for creating Color objects.
 """
 
 import typing
 
-from .exceptions import STKColorError
-
 
 class Color(object):
     """
-    An opaque color representation that can be used with the STK Object Model.
+    An opaque color representation that can be used with the Object Model.
 
     Examples
     --------
@@ -67,7 +65,7 @@ class Color(object):
         self._b = 0
 
     def __eq__(self, other):
-        """Check equality of the underlying STK references."""
+        """Check equality of the underlying references."""
         return self._r == other._r and self._g == other._g and self._b == other._b
 
     def _to_ole_color(self) -> int:
@@ -81,7 +79,7 @@ class Color(object):
     @staticmethod
     def _validate_rgb(val):
         if val > 255 or val < 0:
-            raise STKColorError("RGB values should be between 0 and 255, inclusive.")
+            raise RuntimeError("RGB values should be between 0 and 255, inclusive.")
         return val
 
     def _to_argb(self) -> int:
@@ -103,7 +101,7 @@ class Color(object):
 
 class ColorRGBA(object):
     """
-    A variably translucent color representation that can be used with certain methods in the STK Object Model.
+    A variably translucent color representation that can be used with certain methods in the Object Model.
 
     Examples
     --------
@@ -126,7 +124,7 @@ class ColorRGBA(object):
         self._alpha = alpha
 
     def __eq__(self, other):
-        """Check equality of the underlying STK references."""
+        """Check equality of the underlying references."""
         return self._color == other._color and self._alpha == other._alpha
 
     def _to_argb(self) -> int:
@@ -142,7 +140,7 @@ class ColorRGBA(object):
         if value >= 0 and value <= 255:
             self._alpha = value
         else:
-            raise STKColorError("Alpha value should be between 0 (fully translucent) and 255 (fully opaque), inclusive.")
+            raise RuntimeError("Alpha value should be between 0 (fully translucent) and 255 (fully opaque), inclusive.")
 
     @property
     def color(self) -> Color:
@@ -156,7 +154,7 @@ class _ColorsImpl(object):
 
 class Colors(object):
     """
-    A factory for creating Color objects that may be used with the STK object model.
+    A factory for creating Color objects that may be used with the Object Model.
 
     Contains factory methods and named colors.
 
@@ -206,7 +204,7 @@ class Colors(object):
         elif len(args) == 4: # a, r, g, b
             return _ColorsImpl.from_rgb(args[1], args[2], args[3])
         else:
-            raise STKColorError('unsupported color conversion')
+            raise RuntimeError('unsupported color conversion')
 
     AliceBlue            = _ColorsImpl.from_rgb(240,  248,  255)
     AntiqueWhite         = _ColorsImpl.from_rgb(250,  235,  215)

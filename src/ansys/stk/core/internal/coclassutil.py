@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -23,14 +23,13 @@
 
 import os
 import typing
-import copy
 
 from ctypes import byref, cast, pointer, POINTER, Structure
 
-from .comutil import BSTR, DWORD, GUID, HRESULT, INT, LONG, LPOLESTR, PVOID, ULONG, S_OK
-from .comutil import OLE32Lib, OLEAut32Lib, IFuncType, IUnknown, Succeeded
+from .comutil import BSTR, DWORD, GUID, HRESULT, INT, LONG, LPOLESTR, LPVOID, PVOID, ULONG, S_OK
+from .comutil import OLE32Lib, OLEAut32Lib, IFuncType, IUnknown, Succeeded, WINFUNCTYPE, _guid_union
 from ..utilities.comobject  import COMObject
-from ..utilities.exceptions import STKRuntimeError
+from .apiutil import error_msg_from_hresult
 
 ###############################################################################
 #   Backwards Compatibility Mapping
@@ -57,7 +56,7 @@ AgBackwardsCompatabilityMapping = _CreateBackwardsCompatibilityMapping()
 ###############################################################################
 
 class _CreateAgClassCatalog(object):
-    """Singleton class for registering STK Object Model classes"""
+    """Singleton class for registering Object Model classes"""
     def __init__(self):
         self.catalog = dict()
 
@@ -102,20 +101,17 @@ class _IErrorInfo(object):
 def evaluate_hresult(hr:HRESULT) -> None:
     """Get error info and raise an exception if an HRESULT value is failing."""
     if not Succeeded(hr):
-        punk = IUnknown()
+        pUnk = IUnknown()
         msg = None
-        if OLEAut32Lib.GetErrorInfo(DWORD(), byref(punk.p)) == S_OK:
-            punk.take_ownership()
-            ierrorinfo = _IErrorInfo(punk)
+        if OLEAut32Lib.GetErrorInfo(DWORD(), byref(pUnk.p)) == S_OK:
+            pUnk.take_ownership()
+            ierrorinfo = _IErrorInfo(pUnk)
             msg = ierrorinfo.get_description()
             del(ierrorinfo)
-            del(punk)
-        elif (hr & 0xFFFFFFFF) == 0x80070057: # E_INVALIDARG
-            msg = "One or more arguments are invalid."
-        elif (hr & 0xFFFFFFFF) == 0x8007000E: # E_OUTOFMEMORY
-            msg = "Data size exceeds memory limit. Try chunking the data request."
-        hresult_val = "(HRESULT = 0x%x)" % (hr & 0xFFFFFFFF)
-        raise STKRuntimeError(msg if msg is not None else hresult_val)
+            del(pUnk)
+        else:
+            msg = error_msg_from_hresult(hr)
+        raise RuntimeError(msg)
 
 
 ###############################################################################
@@ -123,27 +119,30 @@ def evaluate_hresult(hr:HRESULT) -> None:
 ###############################################################################
 
 class _IProvideClassId(object):
-    guid = "{C86B17CD-D670-46D8-AC90-CEFAEAE867DC}"
+    iid = GUID.from_registry_format("{C86B17CD-D670-46D8-AC90-CEFAEAE867DC}")
+    _metadata = {
+        "iid_data" : iid.as_data_pair(),
+    }
+    GetClsidFuncType = WINFUNCTYPE(HRESULT, LPVOID, POINTER(GUID))
     def __init__(self, pUnk):
-        IID__IAgProvideClassId = GUID.from_registry_format(_IProvideClassId.guid)
-        pIntf = pUnk.query_interface(IID__IAgProvideClassId)
-        self.valid = False
-        if pIntf is not None:
-            self.valid = True
-            del(pIntf)
         vtable_offset = IUnknown._num_methods - 1
         GetClsidIndex = 1
-        self._GetClsid = IFuncType(pUnk, IID__IAgProvideClassId, vtable_offset + GetClsidIndex, POINTER(GUID))
+        self.pIntf: IUnknown = pUnk.query_interface(_IProvideClassId._metadata, iid=_IProvideClassId.iid)
+        self.valid = False
+        if self.pIntf is not None:
+            self.valid = True
+            self._GetClsid = _IProvideClassId.GetClsidFuncType(self.pIntf._get_vtbl_entry(vtable_offset + GetClsidIndex))
     def __enter__(self):
         return self
     def __exit__(self, type, value, tb):
-        del(self._GetClsid)
-        return False
-    def get_clsid(self):
-        coclass_clsid = GUID()
         if self.valid:
-            if Succeeded(self._GetClsid(byref(coclass_clsid))):
-                return coclass_clsid
+            del(self.pIntf)
+        return False
+    def get_clsid(self) -> tuple:
+        if self.valid:
+            coclass_clsid = _guid_union((0,0))
+            if Succeeded(self._GetClsid(self.pIntf.p, byref(coclass_clsid.guid))):
+                return (coclass_clsid.data[0], coclass_clsid.data[1])
         return None
 
 class _TypeAttr(Structure):
@@ -200,29 +199,30 @@ class _IProvideClassInfo(object):
     guid = "{B196B283-BAB4-101A-B69C-00AA00341D07}"
     def __init__(self, pUnk):
         IID__IProvideClassInfo = GUID.from_registry_format(_IProvideClassInfo.guid)
-        pIntf = pUnk.query_interface(IID__IProvideClassInfo)
+        self.pIntf: IUnknown = pUnk.query_interface(iid=IID__IProvideClassInfo)
         self.valid = False
-        if pIntf is not None:
-            self.valid = True
-            del(pIntf)
         vtable_offset = IUnknown._num_methods - 1
         GetClassInfoIndex = 1
-        self._GetClassInfo = IFuncType(pUnk, IID__IProvideClassInfo, vtable_offset + GetClassInfoIndex, POINTER(PVOID))
+        if self.pIntf is not None:
+            self.valid = True
+            self._GetClassInfo = WINFUNCTYPE(HRESULT, LPVOID, POINTER(PVOID))(self.pIntf._get_vtbl_entry(vtable_offset + GetClassInfoIndex))
     def __enter__(self):
         return self
     def __exit__(self, type, value, tb):
-        del(self._GetClassInfo)
+        if self.valid:
+            del(self._GetClassInfo)
+            del(self.pIntf)
         return False
     def get_class_info(self):
         if self.valid:
             pUnk = IUnknown()
-            hr = self._GetClassInfo(byref(pUnk.p))
+            hr = self._GetClassInfo(self.pIntf.p, byref(pUnk.p))
             if Succeeded(hr):
                 pUnk.take_ownership()
                 type_info = _ITypeInfo(pUnk)
                 type_attr = type_info.get_type_attr()
                 if type_attr is not None:
-                    guid = copy.deepcopy(type_attr.guid)
+                    guid = type_attr.guid
                     type_info.release_type_attr(type_attr)
                 else:
                     guid = None
@@ -231,22 +231,23 @@ class _IProvideClassInfo(object):
                 return guid
         return None
 
-def get_concrete_class(punk:IUnknown) -> typing.Any:
+def get_concrete_class(pUnk:IUnknown) -> typing.Any:
     """Convert an interface pointer to the concrete class it belongs to."""
     coclass = COMObject()
-    if punk:
-        coclass._pUnk = punk
-        my_clsid = None
-        with _IProvideClassId(punk) as provideClassInfo:
-            my_clsid = provideClassInfo.get_clsid()
-        if my_clsid is None and os.name=="nt":
-            with _IProvideClassInfo(punk) as provideClassInfo:
-                my_clsid = provideClassInfo.get_class_info()
-        if my_clsid is not None:
-            guid_data = my_clsid.as_data_pair()
-            if AgClassCatalog.check_clsid_available(guid_data):
-                coclass = AgClassCatalog.get_class(guid_data)()
-                coclass._private_init(punk)
+    if pUnk:
+        coclass._intf = pUnk
+        clsid_data = None
+        with _IProvideClassId(pUnk) as provideClassInfo:
+            clsid_data = provideClassInfo.get_clsid()
+        if clsid_data is None and os.name=="nt":
+            with _IProvideClassInfo(pUnk) as provideClassInfo:
+                clsid = provideClassInfo.get_class_info()
+            if clsid is not None:
+                clsid_data = clsid.as_data_pair()
+        if clsid_data is not None:
+            if AgClassCatalog.check_clsid_available(clsid_data):
+                coclass = AgClassCatalog.get_class(clsid_data)()
+                coclass._private_init(pUnk)
     return coclass
 
 def compare_com_objects(first, second) -> bool:
@@ -321,7 +322,6 @@ class _IRunningObjectTable(object):
     def __init__(self, pUnk: "IUnknown"):
         if os.name != "nt":
             raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
-        self.gettingAnApplication = True
         IID__IRunningObjectTable = GUID.from_registry_format(_IRunningObjectTable.guid)
         vtable_offset = IUnknown._num_methods - 1
         #RegisterIndex              = 1 (skipping Register as it is not needed)
@@ -334,16 +334,16 @@ class _IRunningObjectTable(object):
         self._GetObject   = IFuncType(pUnk, IID__IRunningObjectTable, vtable_offset + GetObjectIndex, PVOID, POINTER(PVOID))
         self._EnumRunning = IFuncType(pUnk, IID__IRunningObjectTable, vtable_offset + EnumRunningIndex, POINTER(PVOID))
     def get_object(self, pmkObjectName: "_IMoniker") -> "IUnknown":
-        ppunkObject = IUnknown()
-        self._GetObject(pmkObjectName.pUnk.p, byref(ppunkObject.p))
-        ppunkObject.take_ownership(isApplication=self.gettingAnApplication)
-        return ppunkObject
+        ppUnkObject = IUnknown()
+        self._GetObject(pmkObjectName.pUnk.p, byref(ppUnkObject.p))
+        ppUnkObject.take_ownership(is_application=True)
+        return ppUnkObject
     def enum_running(self) -> "_IEnumMoniker":
-        ppenumMoniker = IUnknown()
-        self._EnumRunning(byref(ppenumMoniker.p))
-        ppenumMoniker.take_ownership()
-        iEnumMon = _IEnumMoniker(ppenumMoniker)
-        del(ppenumMoniker)
+        ppEnumMoniker = IUnknown()
+        self._EnumRunning(byref(ppEnumMoniker.p))
+        ppEnumMoniker.take_ownership()
+        iEnumMon = _IEnumMoniker(ppEnumMoniker)
+        del(ppEnumMoniker)
         return iEnumMon
 
 class _IEnumMoniker(object):
@@ -364,7 +364,7 @@ class _IEnumMoniker(object):
         num_fetched = ULONG(0)
         pUnk = IUnknown()
         CLSID_AgUiApplication = GUID()
-        OLE32Lib.CLSIDFromString("STK12.Application", CLSID_AgUiApplication)
+        OLE32Lib.CLSIDFromString("STK13.Application", CLSID_AgUiApplication)
         OLE32Lib.CreateClassMoniker(CLSID_AgUiApplication, byref(pUnk.p))
         pUnk.take_ownership()
         self._Next(one_obj, byref(pUnk.p), byref(num_fetched))

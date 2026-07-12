@@ -56,7 +56,7 @@ Set satellite propagator to SPICE and propagate
     satellite.set_propagator_type(PropagatorType.SPICE)
     propagator = satellite.propagator
     if os.name == "nt":
-        installPath = r"C:\Program Files\AGI\STK 12"
+        installPath = r"C:\Program Files\AGI\STK_ODTK 13"
     else:
         installPath = os.environ["STK_INSTALL_DIR"]
     bspPath = ["STKData", "Spice", "planets.bsp"]

@@ -1,0 +1,38 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.stkx",
+        "NewRootScope": "ansys.stk.core.stkx"
+    },
+    "MemberMappings": [
+        {
+            "ParentScope": "IAgSTKXInitialize",
+            "OldName": "InitializeActivationContext",
+            "NewName": "initialize_activation_context"
+        },
+        {
+            "ParentScope": "IAgSTKXInitialize",
+            "OldName": "InitializeData",
+            "NewName": "initialize_data"
+        },
+        {
+            "ParentScope": "IAgSTKXInitialize",
+            "OldName": "InitializeDataEx",
+            "NewName": "initialize_data_ex"
+        }
+    ],
+    "InterfaceMappings": [
+        {
+            "OldName": "IAgSTKXInitialize",
+            "NewName": "STKXInitialize"
+        }
+    ],
+    "ClassMappings": [
+        {
+            "OldName": "AgSTKXInitialize",
+            "NewName": "STKXInitialize"
+        }
+    ],
+    "EnumTypeMappings": [],
+    "EnumValueMappings": [],
+    "NamedArgumentMappings": []
+}

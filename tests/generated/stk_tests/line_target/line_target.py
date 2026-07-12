@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -25,6 +25,7 @@ from test_util import *
 from access_constraints.access_constraint_helper import *
 from assert_extension import *
 from assertion_harness import *
+from chain_analysis_options_helper import *
 from display_times_helper import *
 from interfaces.stk_objects import *
 from logger import *
@@ -72,7 +73,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oPoints)
         # Count
         TestBase.logger.WriteLine3("\tThe current Line Target points collection contains: {0} elements", oPoints.count)
-
         iIndex: int = 0
         while iIndex < oPoints.count:
             TestBase.logger.WriteLine8(
@@ -92,7 +92,6 @@ class EarlyBoundTests(TestBase):
             oPoints.add(1234, 5678)
         Assert.assertEqual((size + 1), oPoints.count)
         TestBase.logger.WriteLine3("\tThe new Line Target points collection contains: {0} elements", oPoints.count)
-
         iIndex: int = 0
         while iIndex < oPoints.count:
             TestBase.logger.WriteLine8(
@@ -118,7 +117,6 @@ class EarlyBoundTests(TestBase):
         oPoint: "LineTargetPoint" = oPoints.add(0.02, 0.02)
         Assert.assertEqual((size + 1), oPoints.count)
         TestBase.logger.WriteLine3("\tThe new Line Target points collection contains: {0} elements", oPoints.count)
-
         iIndex: int = 0
         while iIndex < oPoints.count:
             TestBase.logger.WriteLine8(
@@ -332,6 +330,14 @@ class EarlyBoundTests(TestBase):
         oHelper.DoTest(
             EarlyBoundTests.AG_LT.access_constraints, ISTKObject(EarlyBoundTests.AG_LT), TestBase.TemporaryDirectory
         )
+
+    # endregion
+
+    # region ChainAnalysisOptions
+    @category("ChainAnalysisOptions Tests")
+    def test_ChainAnalysisOptions(self):
+        helper = ChainAnalysisOptionsHelper()
+        helper.Run(EarlyBoundTests.AG_LT.chain_analysis_options, False)
 
     # endregion
 

@@ -1,0 +1,88 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.internal.grpcutil",
+        "NewRootScope": "ansys.stk.core.internal.grpcutil"
+    },
+    "MemberMappings": [
+        {
+            "ParentScope": "GrpcClient",
+            "OldName": "TerminateConnection",
+            "NewName": "terminate_connection"
+        },
+        {
+            "ParentScope": "GrpcClient",
+            "OldName": "AddRef",
+            "NewName": "add_ref"
+        },
+        {
+            "ParentScope": "GrpcClient",
+            "OldName": "Release",
+            "NewName": "release"
+        },
+        {
+            "ParentScope": "GrpcClient",
+            "OldName": "SupportsInterface",
+            "NewName": "supports_interface"
+        },
+        {
+            "ParentScope": "GrpcClient",
+            "OldName": "GetStkApplicationInterface",
+            "NewName": "get_stk_application_interface"
+        },
+        {
+            "ParentScope": "GrpcClient",
+            "OldName": "NewObjectRoot",
+            "NewName": "new_object_root"
+        },
+        {
+            "ParentScope": "GrpcClient",
+            "OldName": "NewObjectModelContext",
+            "NewName": "new_object_model_context"
+        },
+        {
+            "ParentScope": "GrpcClient",
+            "OldName": "Invoke",
+            "NewName": "invoke"
+        },
+        {
+            "ParentScope": "GrpcClient",
+            "OldName": "GetProperty",
+            "NewName": "get_property"
+        },
+        {
+            "ParentScope": "GrpcClient",
+            "OldName": "SetProperty",
+            "NewName": "set_property"
+        },
+        {
+            "ParentScope": "GrpcClient",
+            "OldName": "AcknowledgeEvent",
+            "NewName": "acknowledge_event"
+        },
+        {
+            "ParentScope": "GrpcClient",
+            "OldName": "StartEventLoop",
+            "NewName": "start_event_loop"
+        },
+        {
+            "ParentScope": "GrpcClient",
+            "OldName": "StopEventLoop",
+            "NewName": "stop_event_loop"
+        },
+        {
+            "ParentScope": "GrpcClient",
+            "OldName": "Subscribe",
+            "NewName": "subscribe"
+        },
+        {
+            "ParentScope": "GrpcClient",
+            "OldName": "Unsubscribe",
+            "NewName": "unsubscribe"
+        }
+    ],
+    "InterfaceMappings": [],
+    "ClassMappings": [],
+    "EnumTypeMappings": [],
+    "EnumValueMappings": [],
+    "NamedArgumentMappings": []
+}

@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -27,6 +27,7 @@ from app_provider import *
 from antenna.antenna_helper import *
 from assert_extension import *
 from assertion_harness import *
+from chain_analysis_options_helper import *
 from events.log_message_monitor import *
 from events.object_changed_monitor import *
 from interfaces.stk_objects import *
@@ -196,6 +197,14 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
+    # region ChainAnalysisOptions
+    @category("ChainAnalysisOptions Tests")
+    def test_ChainAnalysisOptions(self):
+        helper = ChainAnalysisOptionsHelper()
+        helper.Run(EarlyBoundTests.AG_SAT.chain_analysis_options, False)
+
+    # endregion
+
     # region BasicAttitudeDifference
     @category("Basic Tests")
     def test_BasicAttitudeDifference(self):
@@ -223,7 +232,6 @@ class EarlyBoundTests(TestBase):
         # AttitudeSupportedTypes
         arTypes = EarlyBoundTests.AG_SAT.attitude_supported_types
         TestBase.logger.WriteLine3("\tThe LaunchVehicle supports: {0} Attitude types", len(arTypes))
-
         iIndex: int = 0
         while iIndex < len(arTypes):
             eType: "VehicleAttitude" = VehicleAttitude(int(arTypes[iIndex][0]))
@@ -585,7 +593,6 @@ class EarlyBoundTests(TestBase):
                 TestBase.DoEvents()
                 if DateTime.Now > dt:
                     break
-
                 import time
 
                 time.sleep((100 / 1000.0))
@@ -616,13 +623,6 @@ class EarlyBoundTests(TestBase):
         oDrag.atmospheric_density_model = AtmosphericDensityModel.CIRA72
         TestBase.logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
         Assert.assertEqual(AtmosphericDensityModel.CIRA72, oDrag.atmospheric_density_model)
-
-        # LowAltAtmosphericDensityModel (MSIS00)
-        oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.MSIS00
-        TestBase.logger.WriteLine6(
-            "\tThe new LowAltAtmosphericDensityModel is: {0}", oDrag.low_altitude_atmospheric_density_model
-        )
-        Assert.assertEqual(AtmosphericDensityModel.MSIS00, oDrag.low_altitude_atmospheric_density_model)
 
         # LowAltAtmosDensityModel (MSIS00)
         oDrag.low_altitude_atmosphere_density_model = LowAltitudeAtmosphericDensityModel.MSISE1990
@@ -673,7 +673,6 @@ class EarlyBoundTests(TestBase):
 
         geo = OrbitStateDetic(hpop.initial_state.representation.convert_to(OrbitStateType.GEODETIC))
         supportedCSTypes = geo.supported_coordinate_system_types
-
         i: int = 0
         while i < len(supportedCSTypes):
             coordType: "CoordinateSystem" = CoordinateSystem(int(supportedCSTypes[i][0]))
@@ -710,7 +709,6 @@ class EarlyBoundTests(TestBase):
         cart = OrbitStateCartesian(hpop.initial_state.representation.convert_to(OrbitStateType.CARTESIAN))
 
         supportedCSTypes = cart.supported_coordinate_system_types
-
         i: int = 0
         while i < len(supportedCSTypes):
             coordType: "CoordinateSystem" = CoordinateSystem(int(supportedCSTypes[i][0]))
@@ -747,7 +745,6 @@ class EarlyBoundTests(TestBase):
         sph = OrbitStateSpherical(hpop.initial_state.representation.convert_to(OrbitStateType.SPHERICAL))
 
         supportedCSTypes = sph.supported_coordinate_system_types
-
         i: int = 0
         while i < len(supportedCSTypes):
             coordType: "CoordinateSystem" = CoordinateSystem(int(supportedCSTypes[i][0]))
@@ -791,7 +788,6 @@ class EarlyBoundTests(TestBase):
             hpop.initial_state.representation.convert_to(OrbitStateType.CARTESIAN)
         )
         supportedCoordTypes = cart.supported_coordinate_system_types
-
         i: int = 0
         while i < len(supportedCoordTypes):
             TestBase.logger.WriteLine7(
@@ -864,7 +860,6 @@ class EarlyBoundTests(TestBase):
         # Print the coordinate systems for the moon satellite
         TestBase.logger.WriteLine("Coordinate systems for the Moon satellite")
         moonCoordTypes = cart.supported_coordinate_system_types
-
         i: int = 0
         while i < len(moonCoordTypes):
             TestBase.logger.WriteLine7(
@@ -879,7 +874,6 @@ class EarlyBoundTests(TestBase):
         # Print the coordinate systems for the moon satellite
         TestBase.logger.WriteLine("Coordinate systems for the Moon satellite")
         earthCoordTypes = cart.supported_coordinate_system_types
-
         i: int = 0
         while i < len(earthCoordTypes):
             TestBase.logger.WriteLine7(
@@ -979,17 +973,17 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(EarlyBoundTests.AG_SAT.propagator_type, PropagatorType.TWO_BODY)
         twobody = PropagatorTwoBody(EarlyBoundTests.AG_SAT.propagator)
 
-        twobody.initial_state.propagation_frame = VehiclePropagationFrame.INERTIAL
-        twobody.propagate()
-        Assert.assertEqual(twobody.initial_state.propagation_frame, VehiclePropagationFrame.INERTIAL)
+        # twobody.InitialState.PropagationFrame = VehiclePropagationFrame.INERTIAL;
+        # twobody.Propagate();
+        # Assert.AreEqual(twobody.InitialState.PropagationFrame, VehiclePropagationFrame.INERTIAL);
 
-        twobody.initial_state.propagation_frame = VehiclePropagationFrame.TRUE_OF_DATE
-        twobody.propagate()
-        Assert.assertEqual(twobody.initial_state.propagation_frame, VehiclePropagationFrame.TRUE_OF_DATE)
+        # twobody.InitialState.PropagationFrame = VehiclePropagationFrame.TRUE_OF_DATE;
+        # twobody.Propagate();
+        # Assert.AreEqual(twobody.InitialState.PropagationFrame, VehiclePropagationFrame.TRUE_OF_DATE);
 
-        twobody.initial_state.propagation_frame = VehiclePropagationFrame.TRUE_OF_EPOCH
-        twobody.propagate()
-        Assert.assertEqual(twobody.initial_state.propagation_frame, VehiclePropagationFrame.TRUE_OF_EPOCH)
+        # twobody.InitialState.PropagationFrame = VehiclePropagationFrame.TRUE_OF_EPOCH;
+        # twobody.Propagate();
+        # Assert.AreEqual(twobody.InitialState.PropagationFrame, VehiclePropagationFrame.TRUE_OF_EPOCH);
 
         # Epoch was deprecated
         # epoch = twobody.InitialState.Epoch;
@@ -1001,17 +995,12 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(epoch, cart.epoch)
         twobody.initial_state.representation.assign(cart)
 
-        propagationFrames = twobody.initial_state.supported_propagation_frames
-
         # ------------------------------------------------------------------------------------------
         # Verify propagation frame with HPOP propagator (See 76432: read-only, and value = Unknown)
         # ------------------------------------------------------------------------------------------
         EarlyBoundTests.AG_SAT.set_propagator_type(PropagatorType.HPOP)
         Assert.assertEqual(EarlyBoundTests.AG_SAT.propagator_type, PropagatorType.HPOP)
         hpop: "PropagatorHPOP" = PropagatorHPOP(EarlyBoundTests.AG_SAT.propagator)
-        Assert.assertEqual(hpop.initial_state.propagation_frame, VehiclePropagationFrame.UNKNOWN)
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            hpop.initial_state.propagation_frame = VehiclePropagationFrame.INERTIAL
 
         # ------------------------------------------------------------------------------------------
         # Verify propagation frame with LOP propagator (See 76432: read-only, and value = Unknown)
@@ -1019,9 +1008,6 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_SAT.set_propagator_type(PropagatorType.LOP)
         Assert.assertEqual(EarlyBoundTests.AG_SAT.propagator_type, PropagatorType.LOP)
         lop: "PropagatorLOP" = PropagatorLOP(EarlyBoundTests.AG_SAT.propagator)
-        Assert.assertEqual(lop.initial_state.propagation_frame, VehiclePropagationFrame.UNKNOWN)
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            lop.initial_state.propagation_frame = VehiclePropagationFrame.INERTIAL
 
     # endregion
 
@@ -1030,21 +1016,8 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_SAT.use_terrain_in_lighting_computations = False
         Assert.assertFalse(EarlyBoundTests.AG_SAT.use_terrain_in_lighting_computations)
 
-        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            EarlyBoundTests.AG_SAT.lighting_maximum_step = 0
-
         EarlyBoundTests.AG_SAT.use_terrain_in_lighting_computations = True
         Assert.assertTrue(EarlyBoundTests.AG_SAT.use_terrain_in_lighting_computations)
-
-        # deprecated
-        EarlyBoundTests.AG_SAT.lighting_maximum_step = 0
-        Assert.assertEqual(0, EarlyBoundTests.AG_SAT.lighting_maximum_step)
-        EarlyBoundTests.AG_SAT.lighting_maximum_step = 31557600
-        Assert.assertEqual(31557600, EarlyBoundTests.AG_SAT.lighting_maximum_step)
-        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            EarlyBoundTests.AG_SAT.lighting_maximum_step = -1
-        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            EarlyBoundTests.AG_SAT.lighting_maximum_step = 31557601
 
         EarlyBoundTests.AG_SAT.lighting_maximum_step_terrain = 10
         Assert.assertEqual(10, EarlyBoundTests.AG_SAT.lighting_maximum_step_terrain)
@@ -1195,7 +1168,6 @@ class EarlyBoundTests(TestBase):
 
         arSupportedTypes = oGfx.attributes_supported_types
         TestBase.logger.WriteLine3("Supported Types array contains: {0} elements", len(arSupportedTypes))
-
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
             TestBase.logger.WriteLine8(
@@ -1443,7 +1415,6 @@ class EarlyBoundTests(TestBase):
         # PassSupportedTypes
         arSupportedTypes = oPasses.pass_supported_types
         TestBase.logger.WriteLine3("The Pass supported {0} types.", len(arSupportedTypes))
-
         i: int = 0
         while i < len(arSupportedTypes):
             TestBase.logger.WriteLine8(
@@ -1554,7 +1525,6 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine3(
             "\tThe Available CentralBodies array contains: {0} elements", Array.Length(arAvailableBodies)
         )
-
         iIndex: int = 0
         while iIndex < Array.Length(arAvailableBodies):
             strBody: str = str(arAvailableBodies[iIndex])
@@ -1583,7 +1553,6 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine3(
             "\tThe Assigned CentralBodies array contains: {0} elements", Array.Length(arAssignedBodies)
         )
-
         iIndex: int = 0
         while iIndex < Array.Length(arAssignedBodies):
             strBody: str = str(arAssignedBodies[iIndex])
@@ -1676,7 +1645,6 @@ class EarlyBoundTests(TestBase):
 
     # region GfxSAAContours
     @category("Graphics Tests")
-    @category("Excluded From RegFree")
     @category("SEET")
     def test_GfxSAAContours(self):
         oHelper = GfxSAAContoursHelper(self.Units)
@@ -1744,7 +1712,6 @@ class EarlyBoundTests(TestBase):
     # region VOSAAContours
     @category("SEET")
     @category("VO Tests")
-    @category("Excluded From RegFree")
     def test_VOSAAContours(self):
         oHelper = VOSAAContoursHelper()
         oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.saa)
@@ -2065,7 +2032,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oCollection)
         # Count
         TestBase.logger.WriteLine3("The current BPlaneTemplates collection contain: {0} elements.", oCollection.count)
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             # Item
@@ -2092,7 +2058,6 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine3(
             "After adding first Template the BPlaneTemplates collection contain: {0} elements.", oCollection.count
         )
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             # Item
@@ -2178,7 +2143,6 @@ class EarlyBoundTests(TestBase):
         # AvailableCentralBodies
         arBodies = oTemplate.available_central_bodies
         TestBase.logger.WriteLine3("\tAvailable CentralBodies array contains: {0} elements", Array.Length(arBodies))
-
         iIndex: int = 0
         while iIndex < Array.Length(arBodies):
             strBody: str = str(arBodies[iIndex])
@@ -2205,7 +2169,6 @@ class EarlyBoundTests(TestBase):
         # AvailableVectors
         arVectors = oTemplate.available_vectors
         TestBase.logger.WriteLine3("\tAvailable ReferenceVector array contains: {0} elements", Array.Length(arVectors))
-
         iIndex: int = 0
         while iIndex < Array.Length(arVectors):
             strVector: str = str(arVectors[iIndex])
@@ -2260,7 +2223,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oCollection)
         # Count
         TestBase.logger.WriteLine3("\tThe BPlaneTemplateDisplay collection contain: {0} elements.", oCollection.count)
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             # Item
@@ -2347,7 +2309,6 @@ class EarlyBoundTests(TestBase):
         )
         # Count
         TestBase.logger.WriteLine3("\tThe current BPlaneInstances collection contain: {0} elements.", oCollection.count)
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             # Item
@@ -2375,7 +2336,6 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine3(
             "\tAfter adding first Instance the BPlaneInstances collection contain: {0} elements.", oCollection.count
         )
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             # Item
@@ -2571,7 +2531,6 @@ class EarlyBoundTests(TestBase):
         # AvailableVOWindows
         arWindows = oInstance.available_graphics_3d_windows
         TestBase.logger.WriteLine3("\t\tAvailable: {0} VO windows.", Array.Length(arWindows))
-
         iIndex: int = 0
         while iIndex < Array.Length(arWindows):
             TestBase.logger.WriteLine7("\t\t\tWindow {0}: {1}", iIndex, arWindows[iIndex])
@@ -2741,7 +2700,6 @@ class EarlyBoundTests(TestBase):
             # PositionSupportedTypes
             arTypes = oPoint.position_supported_types
             TestBase.logger.WriteLine3("\t\tSupported: {0} types.", len(arTypes))
-
             iIndex: int = 0
             while iIndex < len(arTypes):
                 ePosition: "VehicleGraphics3DBPlaneTargetPointPosition" = VehicleGraphics3DBPlaneTargetPointPosition(
@@ -2876,7 +2834,6 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine4("VehicleGraphics3DBPlanePointCollection test: ReadOnly = {0}", bReadOnly)
         # Count
         TestBase.logger.WriteLine3("\tThe current BPlanePoint collection contain: {0} elements.", oCollection.count)
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             # Item
@@ -2925,7 +2882,6 @@ class EarlyBoundTests(TestBase):
             TestBase.logger.WriteLine3(
                 "\tAfter adding first Point the BPlanePoint collection contain: {0} elements.", oCollection.count
             )
-
             iIndex: int = 0
             while iIndex < oCollection.count:
                 # Item
@@ -3257,6 +3213,7 @@ class EarlyBoundTests(TestBase):
         exportHelper.AttitudeExportTool(sat2.export_tools.get_attitude_export_tool())
         exportHelper.EphemerisCCSDSExportTool(sat2.export_tools.get_ephemeris_ccsds_export_tool())
         exportHelper.EphemerisCCSDSv2ExportTool(sat2.export_tools.get_ephemeris_ccsds_v2_export_tool())
+        exportHelper.EphemerisCCSDSv3ExportTool(sat2.export_tools.get_ephemeris_ccsds_v3_export_tool())
         exportHelper.EphemerisCode500ExportTool(sat2.export_tools.get_ephemeris_code500_export_tool())
         exportHelper.EphemerisSpiceExportTool(sat2.export_tools.get_ephemeris_spice_export_tool())
         exportHelper.EphemerisSTKExportTool(sat2.export_tools.get_ephemeris_stk_export_tool(), True)
@@ -3486,7 +3443,6 @@ class EarlyBoundTests(TestBase):
         rtp.duration.look_behind = 1800
         rtp.look_ahead_propagator = LookAheadPropagator.HOLD_CENTRAL_BODY_FIXED_POSITION
         rtp.propagate()
-
         t1 = DateTime.Now
 
         # Temporary test code for 45590
@@ -3504,7 +3460,6 @@ class EarlyBoundTests(TestBase):
         (Satellite(newsat)).set_propagator_type(PropagatorType.REAL_TIME)
         Assert.assertEqual((Satellite(newsat)).propagator_type, PropagatorType.REAL_TIME)
         (PropagatorRealtime((Satellite(newsat)).propagator)).propagate()
-
         t1 = DateTime.Now
         helper = ConnectRealtimePointBuilderHelper()
         helper.Run(newsat)
@@ -3516,7 +3471,6 @@ class EarlyBoundTests(TestBase):
         (Satellite(newsat)).set_propagator_type(PropagatorType.REAL_TIME)
         Assert.assertEqual((Satellite(newsat)).propagator_type, PropagatorType.REAL_TIME)
         (PropagatorRealtime((Satellite(newsat)).propagator)).propagate()
-
         t1 = None
         helper = None
         helper = BoostedOMRealtimePointBuilderHelper(TestBase.Application, True)
@@ -3565,7 +3519,6 @@ class EarlyBoundTests(TestBase):
         (Satellite(newsat)).set_propagator_type(PropagatorType.REAL_TIME)
         Assert.assertEqual((Satellite(newsat)).propagator_type, PropagatorType.REAL_TIME)
         (PropagatorRealtime((Satellite(newsat)).propagator)).propagate()
-
         t1 = None
         helper = None
 
@@ -3918,7 +3871,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(sat)
         sat.set_propagator_type(PropagatorType.REAL_TIME)
         Assert.assertEqual(sat.propagator_type, PropagatorType.REAL_TIME)
-
         rtp: "PropagatorRealtime" = clr.CastAs(sat.propagator, PropagatorRealtime)
         Assert.assertIsNotNone(rtp)
 
@@ -4137,18 +4089,9 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
-    # region RF_Radar_Clutter
-    def test_RF_Radar_Clutter(self):
-        helper = RadarClutterMapInheritableHelper()
-        with pytest.raises(Exception, match=RegexSubstringMatch("obsolete")):
-            helper.Run(EarlyBoundTests.AG_SAT.radar_clutter_map)
-
-    # endregion
-
     # region RF_RadarCrossSection
     def test_RF_RadarCrossSection(self):
         helper = RadarCrossSectionInheritableHelper()
         helper.Run(EarlyBoundTests.AG_SAT.radar_cross_section)
-        helper.Run_DeprecatedModelInterface(EarlyBoundTests.AG_SAT.radar_cross_section)
 
     # endregion

@@ -33,8 +33,6 @@ Overview
               - Get the antenna beams collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMultifunction.clutter`
               - Get the radar clutter settings.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMultifunction.clutter_geometry`
-              - Do not use this property, as it is deprecated.Use the Clutter property instead.Gets the radar clutter geometry.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMultifunction.detection_processing`
               - Get the radar detection processing object.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMultifunction.jamming`
@@ -74,12 +72,6 @@ Property detail
     :type: RadarClutter
 
     Get the radar clutter settings.
-
-.. py:property:: clutter_geometry
-    :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.clutter_geometry
-    :type: RadarClutterGeometry
-
-    Do not use this property, as it is deprecated.Use the Clutter property instead.Gets the radar clutter geometry.
 
 .. py:property:: detection_processing
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.detection_processing
@@ -126,7 +118,6 @@ Property detail
 
 Method detail
 -------------
-
 
 
 
