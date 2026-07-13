@@ -425,6 +425,13 @@ autodoc_mock_imports = ["tkinter"]
 # -- MyST Sphinx configuration -----------------------------------------------
 myst_heading_anchors = 3
 
+# -- Mermaid configuration ---------------------------------------------------
+# Load mermaid's d3 dependency before nbsphinx's RequireJS (priority 500) so
+# d3's UMD bundle exports a global instead of registering an anonymous AMD
+# module. Otherwise d3's anonymous define() corrupts RequireJS and breaks the
+# theme's Fuse.js static search (search.html).
+mermaid_js_priority = 100
+
 # -- LaTeX configuration
 latex_elements = {
     "extraclassoptions": "openany,oneside",
