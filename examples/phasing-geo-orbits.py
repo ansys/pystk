@@ -18,9 +18,9 @@
 #
 # $$ \theta_{gap}=\frac{\theta}{n_{orbits}}$$
 #
-# , where $\theta$ is the phase angle, and $\theta_{gap}$ is the angular dispacement to recover after each phasing orbit.
+# where $\theta$ is the phase angle, and $\theta_{gap}$ is the angular displacement to recover after each phasing orbit.
 #
-# In the code below the **Kepler's equation** is used to calculate the period and semimajor axis of the phasing orbit, given the number of revolution around the phasing orbit itself. As first, the **eccentric anomaly E** is calculated from $\theta_{gap}$ :
+# In the code below, **Kepler's equation** is used to calculate the period and semimajor axis of the phasing orbit, given the number of revolutions around the phasing orbit itself. As first, the **eccentric anomaly E** is calculated from $\theta_{gap}$ :
 #
 # $$\tan\left(\frac{E}{2}\right)=\sqrt{\frac{1 - e}{1 + e}}\tan\left(\frac{\theta_{gap}}{2}\right)$$
 #
@@ -60,7 +60,7 @@ phasing_orbits = 5
 
 # ## Launch a new STK instance
 #
-# Start by launching a new STK instance. In this example, ``STKEngine`` is used with graphics (``no_graphics`` mode set to ``False``). This means that the graphic user interface (GUI) of the product is not launched but 2D and 3D visualization is still available through the STK Engine controls:
+# Start by launching a new STK instance. In this example, ``STKEngine`` is used with graphics (``no_graphics`` mode set to ``False``). This means that the STK graphic user interface (GUI) of the product is not launched but 2D and 3D visualization is still available through the STK Engine controls:
 
 # +
 from ansys.stk.core.stkengine import STKEngine
@@ -75,7 +75,7 @@ print(f"Using {stk.version}")
 # Start by creating a new scenario in STK:
 
 root = stk.new_object_root()
-root.new_scenario("Phasing_orbit")
+root.new_scenario("PhasingOrbit")
 scenario = root.current_scenario
 
 # Configure the scenario time to cover a 16 day period starting July 1, 2026:
@@ -165,7 +165,7 @@ phase_angle_calc.input_angle = phase_angle_awb
 
 # ## Set up the target satellite
 
-# Then, declare the type of orbit propagator used for the satellite. Set the propagator to an Astrogator type:
+# Declare the type of orbit propagator used for the chaser satellite. Set the propagator to an Astrogator type:
 
 # +
 from ansys.stk.core.stkobjects import PropagatorType
@@ -249,7 +249,7 @@ plotter.show()
 
 # ## Set up the chaser satellite
 
-# Then, declare the type of orbit propagator used for the satellite to an Astrogator type and ensure a clean main sequence:
+# Declare the type of orbit propagator used for the target satellite to an Astrogator type and ensure a clean main sequence:
 
 chaser_satellite.set_propagator_type(PropagatorType.ASTROGATOR)
 chaser_satellite.propagator.main_sequence.remove_all()
@@ -334,17 +334,16 @@ if phase_angle < 0:
     phase_angle = 2 * math.pi + phase_angle
 
 print(f"The initial phase angle is {math.degrees(phase_angle):.1f} deg.")
-print("")
 # -
 
 # Then, calculate the phase angle per phasing orbit:
 
-phase_angle = phase_angle / phasing_orbits
+phase_angle_per_orbit = phase_angle / phasing_orbits
 
 # Calculate the eccentric anomaly from the phase angle:
 
 eccentric_anomaly = 2 * math.atan(
-    math.sqrt((1 - eccentricity) / (1 + eccentricity)) * math.tan(phase_angle / 2)
+    math.sqrt((1 - eccentricity) / (1 + eccentricity)) * math.tan(phase_angle_per_orbit / 2)
 )
 
 # Use Kepler's equation to calculate the time needed to cover the phase angle in the original orbit:
@@ -469,7 +468,7 @@ phasing_orbit_propagate.stopping_conditions.item(
     0
 ).properties.repeat_count = phasing_orbits
 
-# Finally, designate that the stopping condition should be calculated for the angles between the satellite and the chaser and the satellite and target:
+# Finally, designate that the stopping condition should be calculated for the angle between the chaser's position vector and the target's position vector:
 
 phasing_orbit_propagate.results.add("Vector/Angle Between Vectors")
 phasing_orbit_propagate.results[0].vector1_name = "Satellite/Chaser Position"
