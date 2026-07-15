@@ -357,7 +357,7 @@ time_to_cover_phase_angle = (mean_orbital_period / (2 * math.pi)) * (
 
 phasing_orbit_period = mean_orbital_period - time_to_cover_phase_angle
 
-# Then, calculate the SMA of the phasing orbit using the Earth's gravitational parameter, which is approximately 398600.44 $km^3s^{-2} $:
+# Then, calculate the SMA of the phasing orbit using the Earth's gravitational parameter, which is approximately 398600.44 $km^3 s^{-2} $:
 
 earth_gravitational_parameter = 398600.44
 transfer_semi_major_axis = math.pow(
