@@ -249,7 +249,7 @@ plotter.show()
 
 # ## Set up the chaser satellite
 
-# Declare the type of orbit propagator used for the target satellite to an Astrogator type and ensure a clean main sequence:
+# Declare the type of orbit propagator used for the target satellite as the Astrogator type and ensure a clean main sequence:
 
 chaser_satellite.set_propagator_type(PropagatorType.ASTROGATOR)
 chaser_satellite.propagator.main_sequence.remove_all()
@@ -343,7 +343,8 @@ phase_angle_per_orbit = phase_angle / phasing_orbits
 # Calculate the eccentric anomaly from the phase angle:
 
 eccentric_anomaly = 2 * math.atan(
-    math.sqrt((1 - eccentricity) / (1 + eccentricity)) * math.tan(phase_angle_per_orbit / 2)
+    math.sqrt((1 - eccentricity) / (1 + eccentricity))
+    * math.tan(phase_angle_per_orbit / 2)
 )
 
 # Use Kepler's equation to calculate the time needed to cover the phase angle in the original orbit:
