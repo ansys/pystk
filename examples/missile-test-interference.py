@@ -533,10 +533,17 @@ external_model.design_frequency = 2.8  # GHz
 # Selecting the external pattern file
 
 # +
+import pathlib
+
+
+install_dir = root.execute_command("GetDirectory / STKHome")[0]
 external_model.filename = str(
-    Path(
-        r"C:\Program Files\AGI\STK_ODTK 13\Data\Resources\stktraining\samples\ASR9Low.pattern"
-    )
+    pathlib.Path(install_dir)
+    / "Data"
+    / "Resources"
+    / "stktraining"
+    / "samples"
+    / "ASR9Low.pattern"
 )
 # -
 
@@ -597,11 +604,13 @@ rcs_band.set_compute_strategy("External File")
 external_file_compute_strategy: RadarCrossSectionComputeStrategyExternalFile = (
     rcs_band.compute_strategy
 )
-
 external_file_compute_strategy.filename = str(
-    Path(
-        r"C:\Program Files\AGI\STK_ODTK 13\Data\Resources\stktraining\samples\Basic_Missile_mono.rcs"
-    )
+    pathlib.Path(install_dir)
+    / "Data"
+    / "Resources"
+    / "stktraining"
+    / "samples"
+    / "Basic_Missile_mono.rcs"
 )
 root.save_scenario()
 # -
