@@ -69,7 +69,7 @@ Examples
         examples/communication-link-calculator
         examples/multifunction-radar-parametric-study
         examples/multifunction-radar-design
-        examples/missile-test-interference
+        examples/missile-interference-test
         examples/radio-frequency-spectrum-filters
 
     Aviator mission planning
