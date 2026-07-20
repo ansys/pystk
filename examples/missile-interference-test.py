@@ -20,7 +20,7 @@ from ansys.stk.core.stkengine import STKEngine
 
 stk = STKEngine.start_application(no_graphics=False)
 print(f"Using {stk.version}")
-# # -
+# -
 
 # ## Create a new scenario
 
@@ -58,7 +58,7 @@ scenario.set_time_period("10 June 2026 16:00:00.000", "10 June 2026 16:35:00.000
 root.rewind()
 # -
 
-# ## Modele the test missile
+# ## Model the test missile
 
 # Insert a new Missile object
 
@@ -123,15 +123,27 @@ trajectory.propagate()
 # We can now view the test missile at its launch site:
 
 # +
-globe_widget.camera.position = [34.7556, -120.662, 1]  # <----------
+globe_widget.camera.position = [34.7556, -120.662, 1]
 globe_widget.show()
 # -
 
 # ## Generate an Altitude vs Ground Range report
 
+# Use a data provider to generate the report:
+
 # +
 provider = Test_Missile.data_providers.item("Ground Range").group.item("Fixed")
+# -
+
+# Then, set the time step. This is set in seconds.
+
+# +
 time_step = 60
+# -
+
+# Now, generate the report
+
+# +
 ground_range_report = provider.execute(
     scenario.start_time, scenario.stop_time, time_step
 ).data_sets.to_pandas_dataframe()
@@ -156,7 +168,7 @@ missile_transmitter.model_component_linking.set_component("Medium Transmitter Mo
 transmitter_model = missile_transmitter.model_component_linking.component
 # -
 
-# Set the transmitter properties.abs
+# Set the transmitter properties
 
 # +
 transmitter_model.frequency = 2.31
@@ -185,7 +197,7 @@ ship = scenario.children.new(STKObjectType.SHIP, "Ship")
 
 ## Define the ship's route options
 
-# In the tutorial, the ship is defined to be stationary.
+# In the tutorial, the ship is defined to be stationary. First, set the propogator type to great arc:
 
 # +
 from ansys.stk.core.stkobjects import (
@@ -197,12 +209,20 @@ from ansys.stk.core.stkobjects import (
 
 
 IGreatArcVehicle(ship).set_route_type(PropagatorType.GREAT_ARC)
+# -
 
+# Second, set the altitude reference:
+
+# +
 from ansys.stk.core.stkobjects import VehicleAltitudeReference
 
 
 ship.route.set_altitude_reference_type(VehicleAltitudeReference.WGS84)
+# -
 
+# Now, we can propagate. Set the latitude, longitude, and the timing.
+
+# +
 PropagatorGreatArc(IGreatArcVehicle(ship).route).set_points_specify_time_and_propagate(
     [
         [scenario.start_time, 34.196, -120, 0, 0],
@@ -227,19 +247,23 @@ antenna_motor.set_pattern_type(SensorPattern.SIMPLE_CONIC)
 SensorSimpleConicPattern(antenna_motor.pattern).cone_angle = 5
 # -
 
-# Set the antenna motor's location
+# Set the antenna motor's location type to fixed.
 
 # +
 from ansys.stk.core.stkobjects import SensorLocation
 
 
 antenna_motor.set_location_type(SensorLocation.FIXED)
+# -
 
+# After the location type is set to fixed, the location is editable using cartesian coordinates.
+
+# +
 root.units_preferences.item("Distance").set_current_unit("ft")
 antenna_motor.location_data.assign_cartesian(75, 0, 75)
 # -
 
-# Target the test missile
+# Target the test missile.
 
 # +
 from ansys.stk.core.stkobjects import BoresightType, TrackMode
@@ -259,7 +283,7 @@ globe_widget.show()
 
 # ## Model the test ship's receiver
 
-# Insert a Receiver object
+# Insert a Receiver object that is attached to the "antenna motor" sensor.
 
 # +
 from ansys.stk.core.stkobjects import Receiver
@@ -268,15 +292,20 @@ from ansys.stk.core.stkobjects import Receiver
 ship_receiver = antenna_motor.children.new(STKObjectType.RECEIVER, "Ship_Rx")
 # -
 
-# Use a Complex Receiver model
+# Use a Complex Receiver model. Once this is set we can edit its properties.
 
 # +
 ship_receiver.model_component_linking.set_component("Complex Receiver Model")
 receiver_model = ship_receiver.model_component_linking.component
+# -
+
+# Now we can set the receiver to automatically track frequency.
+
+# +
 receiver_model.track_frequency_automatically = True
 # -
 
-# Define the receiver's antenna specifications
+# Define the receiver's antenna specifications. First, set the antenna model to helix.
 
 # +
 from ansys.stk.core.stkobjects import AntennaModelHelix, IAntennaModel
@@ -286,10 +315,10 @@ receiver_model.antenna_control.embedded_model_component_linking.set_component("H
 helixModel = receiver_model.antenna_control.embedded_model_component_linking.component
 # -
 
-# Set the antenna's properties:
+# Once the antenna model is set to "helix," we can edit these properties:
 
 # +
-IAntennaModel(helixModel).design_frequency = 2.5  # GHz
+IAntennaModel(helixModel).design_frequency = 2.5
 helixModel.diameter = 0.9
 helixModel.efficiency = 55
 helixModel.turn_spacing = 0.001
@@ -297,16 +326,25 @@ helixModel.number_of_turns = 3
 helixModel.backlobe_gain = -30
 # -
 
-# Visualize the receiver's antenna pattern
+# Let's now visualize the receiver's antenna pattern. First define a volume variable.
 
 # +
 from ansys.stk.core.stkobjects import AntennaVolumeGraphics
 
 
 volume = ship_receiver.graphics_3d.volume
+# -
+
+# Before anything else, we must set show volume to "true." Once this is set, we can edit the rest of the properties.
+
+# +
 volume.show = True
 volume.gain_scale = 0.5
+# -
 
+# We are now able to edit the pattern properties. These can be set all together at once:
+
+# +
 volume.set_resolution(
     azimuth_start=-180,
     azimuth_stop=180,
@@ -325,7 +363,11 @@ from ansys.stk.core.stkobjects import FigureOfMeritGraphics2DColorMethod
 
 volume.color_method = FigureOfMeritGraphics2DColorMethod.EXPLICIT
 volume.relative_to_maximum = True
+# -
 
+# Next, add levels to the shading:
+
+# +
 levels = volume.levels
 levels.clear()
 
@@ -342,12 +384,9 @@ globe_widget.show()
 
 # ## Analyze the telemetry downlink's link budget
 
-# The missile will transmit telemetry data to the ship during its flight. Create a simple link budget to calculate the
-# bit error rate (BER), which reflects of how often errors occur in the transmission of digital data. You can compute a
-# simple link budget using the Access tool. The Access tool's preinstalled Link Budget report includes all the basic link
-# parameters associated with the selected receiver or transmitter. It gives you the signal strength and quality of the
-# link received at the ship from the missile. Obviously, you want a low BER value, because that means you have fewer
-# errors over time. For the purposes of this analysis, a Bit Error Rate of 1.000000e-09 or lower is acceptable.
+# Create a simple link budget to calculate the bit error rate (BER), which reflects of how often errors occur in the transmission of digital data. You can compute a simple link budget using the Access tool. For the purposes of this analysis, a Bit Error Rate of 1.000000e-09 or lower is acceptable.
+
+# First, create and compute an access between the receiver and transmitter:
 
 # +
 from pandas import DataFrame
@@ -357,11 +396,25 @@ from ansys.stk.core.stkobjects import Access, ISTKObject
 
 access = ISTKObject(ship_receiver).get_access_to_object(missile_transmitter)
 access.compute_access()
+# -
 
+# After computing the access, we can use data providers to retrieve the link information data.
+
+# +
 provider = access.data_providers.item("Link Information")
+# -
+
+# Finally, create and generate the link budget report.
+
+# +
 link_budget_report = provider.execute(
     scenario.start_time, scenario.stop_time, time_step
 ).data_sets.to_pandas_dataframe()
+# -
+
+# Focus on the ber column:
+
+# +
 link_budget_report[["ber"]]
 # -
 
@@ -394,7 +447,7 @@ command = f"ImportFromDB * Satellite {file_location} Propagate On CommonName SXM
 root.execute_command(command)
 # -
 
-# Assign the satellites:
+# Assign the satellites to variables:
 
 # +
 from ansys.stk.core.stkobjects import Satellite
@@ -435,7 +488,7 @@ for satellite in [sxm_8, sxm_9, sxm_10]:
     transmitters.append(transmitter)
 # -
 
-# Assign the satellite transmitters:
+# Assign the satellite transmitters to the existing satellite variables:
 
 # +
 sxm_8_transmitter = transmitters[0]
@@ -445,12 +498,9 @@ sxm_10_transmitter = transmitters[2]
 
 # ## Check for interference
 
-# There are several methods through which you can determine the impact of interference on a system.
-# For more complex systems, you can use a Comm System to model dynamically configured communications
-# links between constellations of transmitters and receivers. However, for less complex systems, like
-# the one in this scenario, you can compute interference effects directly in a Receiver object.
+# There are several methods through which you can determine the impact of interference on a system. or less complex systems, like the one in this scenario, you can compute interference effects directly in a Receiver object.
 
-# Add interference sources to the receiver
+# Create an interference variable. Use this to modify the interference on the receiver.
 
 # +
 from ansys.stk.core.stkobjects import ISTKObject, RFInterference
@@ -459,36 +509,65 @@ from ansys.stk.core.stkobjects import ISTKObject, RFInterference
 interference = RFInterference(
     ship_receiver.model_component_linking.component.interference
 )
+# -
+
+# We have to enable interfernece before we are able to edit the interference sources:
+
+# +
 interference.enabled = True
+# -
+
+# Only now are we able to add the interference sources.
+
+# +
 interference.emitters.add(sxm_8_transmitter.path)
 interference.emitters.add(sxm_9_transmitter.path)
 interference.emitters.add(sxm_10_transmitter.path)
 # -
 
-# Determine the impact of interference with a Link Budget - Interference report
+# Determine the impact of interference with a Link Budget - Interference report. First, compute the access.
 
 # +
 access = ISTKObject(ship_receiver).get_access_to_object(missile_transmitter)
 access.compute_access()
+# -
 
+# Next, use data providers to retrieve the link information data.
+
+# +
 provider = access.data_providers.item("Link Information")
+# -
+
+# Finally, generate the link budget report.
+
+# +
 link_budget_report = provider.execute(
     scenario.start_time, scenario.stop_time, time_step
 ).data_sets.to_pandas_dataframe()
+# -
+
+# Focus on the ber and ber+i columns:
+
+# +
 link_budget_report[["ber", "ber+i"]]
 # -
 
 # ## Mitigate interference with a spectrum filter
 
-# Use a butterworth filter
+# To use a filter, we have to enable it:
 
 # +
 receiver_model.enable_filter = True
+# -
+
+# We are now able to set the filter type. Set it to Butterworth for this scenario.
+
+# +
 receiver_model.filter_component_linking.set_component("Butterworth")
 ship_receiver_filter = receiver_model.filter_component_linking.component
 # -
 
-# Then, set the filter properties:
+# Then, set the Butterworth filter properties:
 
 # +
 ship_receiver_filter.upper_bandwidth_limit = 20
@@ -497,16 +576,29 @@ ship_receiver_filter.cut_off_frequency = 5
 ship_receiver_filter.order = 4
 # -
 
-# Recompute the Link Budget - Interference report
+# Recompute the Link Budget - Interference report. The access must be refreshed first.
 
 # +
 access = ISTKObject(ship_receiver).get_access_to_object(missile_transmitter)
 access.compute_access()
+# -
 
+# Then retrieve the link information data:
+
+# +
 provider = access.data_providers.item("Link Information")
+# -
+
+# Generate the link information report.
+
 link_budget_report = provider.execute(
     scenario.start_time, scenario.stop_time, time_step
 ).data_sets.to_pandas_dataframe()
+# -
+
+# Focus on the ber and ber+i columns:
+
+# +
 link_budget_report[["ber", "ber+i"]]
 # -
 
@@ -521,23 +613,33 @@ from ansys.stk.core.stkobjects import Radar
 ship_radar = ship.children.new(STKObjectType.RADAR, "Ship_Radar")
 # -
 
-# Next, set the radar's mode
+# Next, set the radar system to monostatic.
 
 # +
 ship_radar.model_component_linking.set_component("Monostatic")
 monostatic_radar = ship_radar.model_component_linking.component
+# -
+
+# Once the radar system is set to monostatic, we can specify the mode. Select search track.
+
+# +
 monostatic_radar.mode_component_linking.set_component("Search Track")
 monostatic_search_track_radar = monostatic_radar.mode_component_linking.component
+# -
+
+# Only after setting the mode to search track can we modify the pulse width. This property is located in the pulse definition sub-tab of the waveform sub-tab.
+
+# +
 monostatic_search_track_radar.waveform.pulse_definition.pulse_width = 8.8e-7
 # -
 
-# Then, set the goal signal-to-noise ratio
+# Then, set the goal signal-to-noise ratio. This is also located in the pulse definition sub-tab of the waveform sub-tab.
 
 # +
 monostatic_search_track_radar.waveform.pulse_integration.snr = 20
 # -
 
-# Configure the radar's antenna
+# Configure the radar's antenna model to use an external pattern.
 
 # +
 from ansys.stk.core.stkobjects import AntennaControl, AntennaModelExternal
@@ -551,10 +653,15 @@ antenna_control.embedded_model_component_linking.set_component(
 external_model = AntennaModelExternal(
     antenna_control.embedded_model_component_linking.component
 )
+# -
+
+# Once an external pattern is selected, set the design frequency:
+
+# +
 external_model.design_frequency = 2.8
 # -
 
-# Select the external pattern file
+# Then, specify the file from which the pattern will be provided.
 
 # +
 import pathlib
@@ -571,7 +678,7 @@ external_model.filename = str(
 )
 # -
 
-# Set the radar antenna's location
+# Set the radar antenna's orientation. These properties are located in the orientation sub-tab of the antenna tab.
 
 # +
 root.units_preferences.item("SmallDistance").set_current_unit("ft")
@@ -579,41 +686,54 @@ root.units_preferences.item("SmallDistance").set_current_unit("ft")
 antenna_control.embedded_model_orientation.position_offset.set(37, 0, 120)
 # -
 
-# Set the radar transmitter specifications
+# Create a radar transmitter:
 
 # +
 from ansys.stk.core.stkobjects import RadarFrequencySpecificationType, RadarReceiver
 
 
 radar_transmitter = ship_radar.model_component_linking.component.transmitter
+# -
+
+# Set the radar transmitter specifications. First, select frequency as the independent property. Wavelength will be dependent on frequency.
+
+# +
 radar_transmitter.frequency_specification = RadarFrequencySpecificationType.FREQUENCY
 
 radar_transmitter.frequency = 2.8
+# -
+
+# Set the power of the radar transmitter. This is does not depend on frequency or wavelength.
+
+# +
 radar_transmitter.power = 100.414
 # -
 
-# Change the radar receiver LNA gain
+# Create a radar receiver:
 
 # +
 radar_receiver = ship_radar.model_component_linking.component.receiver
+# -
+
+# Adjust the radar receiver LNA gain
+
+# +
 radar_receiver.lna_gain = 25
 # -
 
 # ## Define the missile's radar cross section
 
-# The Radar capability enables you to specify an important property of a potential radar target: its radar cross
-# section (RCS). To design a radar system, it is essential to be able to describe the target's echo, which is a
-# function of its size, shape, and orientation. RCS is the projected area of a metal sphere that would return the
-# same echo signal as the target if it were substituted for the target. The signal return from a point target is
-# inversely proportional to the fourth power of target range and directly proportional to the target's radar cross
-# section. Real targets have widely differing radar cross sections from different aspect angles.
+# The Radar capability enables you to specify an important property of a potential radar target: its radar cross section (RCS). You can define the missile's RCS using an external RCS file. External RCS files can contain real-valued pattern data or complex-valued pattern data.
 
-# You can define the missile's RCS using an external RCS file. External RCS files can contain real-valued pattern
-# data or complex-valued pattern data.
+# First, the missile must not inherit its cross section. We will specify it ourselves. It is now editable.
 
 # +
 Test_Missile.radar_cross_section.inherit = False
+# -
 
+# Create a rcs band variable to manage the cross section properties:
+
+# +
 from ansys.stk.core.stkobjects import (
     RadarCrossSectionComputeStrategyExternalFile,
     RadarCrossSectionFrequencyBand,
@@ -625,7 +745,7 @@ rcs_band = Test_Missile.radar_cross_section.model_component_linking.component.fr
 )
 # -
 
-# Use an external file for the radar cross section.
+# Select an external file for the radar cross section.
 
 # +
 rcs_band.set_compute_strategy("External File")
@@ -637,13 +757,13 @@ external_file_compute_strategy.filename = str(
     / "Resources"
     / "stktraining"
     / "samples"
-    / "Basic_Missile_mono.rcs"
+    / "Basic_missile_mono.rcs"
 )
 # -
 
 # ## Compute access
 
-# Determine if the ship's radar can track the test missile.
+# Determine if the ship's radar can track the test missile. Refresh the access variable:
 
 # +
 access = ISTKObject(ship_radar).get_access_to_object(Test_Missile)
@@ -652,9 +772,7 @@ access.compute_access()
 
 # ## Create a custom report
 
-# Create a custom report style that shows azimuth-elevation-range (AER) and Radar Search/Track data.
-
-# First, we will generate the AER Data portion of the report.
+# Create a custom report style that shows azimuth-elevation-range (AER) and Radar Search/Track data. First, we will generate the AER Data portion of the report.
 
 # +
 provider = access.data_providers.item("AER Data").group.item("BodyFixed")
