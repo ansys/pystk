@@ -10,7 +10,7 @@
 # the test missile telemetry data. Phase two of your test will determine for how long a shipborne radar system can detect and track the missile
 # during its flight. A custom radar cross section and a radar antenna pattern file are required for your analysis.
 
-# This example is based on [this](https://help.agi.com/stk/index.htm#training/Missile_Test_XM_Interference.htm) tutorial.
+# This example is based on [this](https://help.agi.com/stk/index.htm/training/Missile_Test_XM_Interference.htm) tutorial.
 
 # ## Launch a new STK instance
 
@@ -66,7 +66,7 @@ root.rewind()
 from ansys.stk.core.stkobjects import Missile, STKObjectType
 
 
-Test_Missile = scenario.children.new(STKObjectType.MISSILE, "Test_Missile")
+test_missile = scenario.children.new(STKObjectType.MISSILE, "test_missile")
 # -
 
 # First, set the units properly. Setting units proactively is a great practice!
@@ -88,8 +88,8 @@ from ansys.stk.core.stkobjects import (
 )
 
 
-Test_Missile.set_trajectory_type(PropagatorType.BALLISTIC)
-trajectory = Test_Missile.trajectory
+test_missile.set_trajectory_type(PropagatorType.BALLISTIC)
+trajectory = test_missile.trajectory
 root.units_preferences.set_current_unit("DateFormat", "EpSec")
 trajectory.ephemeris_interval.set_explicit_interval(0, 0)
 # -
@@ -120,10 +120,14 @@ impact_location.impact.altitude = 0.0024385
 trajectory.propagate()
 # -
 
-# We can now view the test missile at its launch site:
+# We can now view the test missile's trajectory:
 
-# +
-globe_widget.camera.position = [34.7556, -120.662, 1]
+# + tags=["nbsphinx-thumbnail"]
+globe_widget.camera.position = [
+    19252.274451116944,
+    4639.005171788969,
+    5592.340350242526,
+]
 globe_widget.show()
 # -
 
@@ -132,7 +136,7 @@ globe_widget.show()
 # Use a data provider to generate the report:
 
 # +
-provider = Test_Missile.data_providers.item("Ground Range").group.item("Fixed")
+provider = test_missile.data_providers.item("Ground Range").group.item("Fixed")
 # -
 
 # Then, set the time step. This is set in seconds.
@@ -158,7 +162,7 @@ ground_range_report[["time", "ground range", "alt"]]
 from ansys.stk.core.stkobjects import Transmitter
 
 
-missile_transmitter = Test_Missile.children.new(STKObjectType.TRANSMITTER, "Missile_Tx")
+missile_transmitter = test_missile.children.new(STKObjectType.TRANSMITTER, "Missile_Tx")
 # -
 
 # Use a Medium Transmitter model
@@ -270,14 +274,18 @@ from ansys.stk.core.stkobjects import BoresightType, TrackMode
 
 
 antenna_motor.common_tasks.set_pointing_targeted_tracking(
-    TrackMode.RECEIVE, BoresightType.ROTATE, "Missile/Test_Missile"
+    TrackMode.RECEIVE, BoresightType.ROTATE, "Missile/test_missile"
 )
 # -
 
 # View the targeted antenna is the 3D graphics window
 
-# + tags=["nbsphinx-thumbnail"]
-globe_widget.camera.position = [34.196, -120, 1]
+# +
+globe_widget.camera.position = [
+    16443720.539118323,
+    5550468.64120438,
+    11651969.751643106,
+]
 globe_widget.show()
 # -
 
@@ -373,13 +381,6 @@ levels.clear()
 
 for gain in range(-70, 1, 10):
     level = levels.add(gain)
-# -
-
-# View the antenna pattern in the 3D Graphics window
-
-# +
-globe_widget.camera.position = [34.196, -120, 3]
-globe_widget.show()
 # -
 
 # ## Analyze the telemetry downlink's link budget
@@ -728,7 +729,7 @@ radar_receiver.lna_gain = 25
 # First, the missile must not inherit its cross section. We will specify it ourselves. It is now editable.
 
 # +
-Test_Missile.radar_cross_section.inherit = False
+test_missile.radar_cross_section.inherit = False
 # -
 
 # Create a rcs band variable to manage the cross section properties:
@@ -740,7 +741,7 @@ from ansys.stk.core.stkobjects import (
 )
 
 
-rcs_band = Test_Missile.radar_cross_section.model_component_linking.component.frequency_bands.item(
+rcs_band = test_missile.radar_cross_section.model_component_linking.component.frequency_bands.item(
     0
 )
 # -
@@ -766,7 +767,7 @@ external_file_compute_strategy.filename = str(
 # Determine if the ship's radar can track the test missile. Refresh the access variable:
 
 # +
-access = ISTKObject(ship_radar).get_access_to_object(Test_Missile)
+access = ISTKObject(ship_radar).get_access_to_object(test_missile)
 access.compute_access()
 # -
 
