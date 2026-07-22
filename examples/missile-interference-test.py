@@ -10,7 +10,7 @@
 # the test missile telemetry data. Phase two of your test will determine for how long a shipborne radar system can detect and track the missile
 # during its flight. A custom radar cross section and a radar antenna pattern file are required for your analysis.
 
-# This example is based on [this](https://help.agi.com/stk/index.htm/training/Missile_Test_XM_Interference.htm) tutorial.
+# This example is based on [this](https://help.agi.com/stk/Content/training/Missile_Test_XM_Interference.htm) tutorial.
 
 # ## Launch a new STK instance
 
