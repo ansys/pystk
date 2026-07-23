@@ -499,7 +499,7 @@ sxm_10_transmitter = transmitters[2]
 
 # ## Check for interference
 
-# There are several methods through which you can determine the impact of interference on a system. or less complex systems, like the one in this scenario, you can compute interference effects directly in a Receiver object.
+# There are several methods through which you can determine the impact of interference on a system. For less complex systems, like the one in this scenario, you can compute interference effects directly in a Receiver object.
 
 # Create an interference variable. Use this to modify the interference on the receiver.
 
@@ -512,7 +512,7 @@ interference = RFInterference(
 )
 # -
 
-# We have to enable interfernece before we are able to edit the interference sources:
+# We have to enable interference before we are able to edit the interference sources:
 
 # +
 interference.enabled = True
@@ -592,6 +592,7 @@ provider = access.data_providers.item("Link Information")
 
 # Generate the link information report.
 
+# +
 link_budget_report = provider.execute(
     scenario.start_time, scenario.stop_time, time_step
 ).data_sets.to_pandas_dataframe()
@@ -704,7 +705,7 @@ radar_transmitter.frequency_specification = RadarFrequencySpecificationType.FREQ
 radar_transmitter.frequency = 2.8
 # -
 
-# Set the power of the radar transmitter. This is does not depend on frequency or wavelength.
+# Set the power of the radar transmitter. This does not depend on frequency or wavelength.
 
 # +
 radar_transmitter.power = 100.414
