@@ -320,18 +320,18 @@ from ansys.stk.core.stkobjects import AntennaModelHelix, IAntennaModel
 
 
 receiver_model.antenna_control.embedded_model_component_linking.set_component("Helix")
-helixModel = receiver_model.antenna_control.embedded_model_component_linking.component
+helix_model = receiver_model.antenna_control.embedded_model_component_linking.component
 # -
 
 # Once the antenna model is set to "helix," we can edit these properties:
 
 # +
-IAntennaModel(helixModel).design_frequency = 2.5
-helixModel.diameter = 0.9
-helixModel.efficiency = 55
-helixModel.turn_spacing = 0.001
-helixModel.number_of_turns = 3
-helixModel.backlobe_gain = -30
+IAntennaModel(helix_model).design_frequency = 2.5
+helix_model.diameter = 0.9
+helix_model.efficiency = 55
+helix_model.turn_spacing = 0.001
+helix_model.number_of_turns = 3
+helix_model.backlobe_gain = -30
 # -
 
 # Let's now visualize the receiver's antenna pattern. First define a volume variable.
