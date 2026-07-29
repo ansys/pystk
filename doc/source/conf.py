@@ -83,7 +83,7 @@ html_css_files = [
     "css/search.css",
     "css/datatable.css",
 ]
-html_js_files = []
+html_js_files = ["js/download.js"]
 
 # disable including and linking the reST sources in HTML builds
 html_copy_source = False
