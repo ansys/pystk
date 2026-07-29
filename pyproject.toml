@@ -90,7 +90,7 @@ scripts.pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistan
 vulnerabilities = [
   "bandit[toml]==1.9.4",
   "safety==3.8.1",
-  "typer==0.26.8",
+  "typer==0.27.0",
 ]
 tests = [
   "numpy==2.2.6",
@@ -106,7 +106,7 @@ doc = [
   "build==1.5.0",
   "ipykernel==6.31.0",
   "jupyter-server==2.20.0",
-  "jupyterlab==4.6.1",
+  "jupyterlab==4.6.2",
   "jupytext==1.19.4",
   "libcst==1.8.6",
   "matplotlib==3.10.9",
@@ -122,7 +122,7 @@ doc = [
   "sphinx-design==0.6.1",
   "sphinx-jinja==2.0.2",
   "sphinxcontrib-jquery==4.1",
-  "sphinxcontrib-mermaid==2.0.3",
+  "sphinxcontrib-mermaid==2.1.0",
   "toml==0.10.2",
 ]
 docstyle = [
