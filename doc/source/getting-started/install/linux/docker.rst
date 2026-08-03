@@ -110,7 +110,7 @@ the Internet Protocol (IP) of the machine hosting the license server.
 Start a container
 =================
 
-With the artifacts and the license in place, start a Docker container and share
+With the artifacts and the license in place, start a Docker container, and share
 the working directory as a volume. This enables you to write scripts using the tools
 in the host machine while isolating their execution inside the container.
 

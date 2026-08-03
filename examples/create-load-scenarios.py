@@ -15,7 +15,8 @@ stk = STKEngine.start_application(no_graphics=False)
 print(f"Using {stk.version}")
 # -
 
-# This creates an instance of the STK application. Setting `no_graphics` to `False` opens the STK window.
+# This creates an instance of STK Engine. Setting `no_graphics` to `False` enables graphics support, but it does not open an STK Desktop window.
+# For details on `no_graphics`, see the `STK programming help <https://help.agi.com/stkdevkit/index.htm#stkEngine/NoGraphics.htm>`_.
 
 # Next, it's time to create a scenario.
 
