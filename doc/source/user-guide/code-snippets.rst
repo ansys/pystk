@@ -1355,7 +1355,7 @@ Compute an access between two STK objects (using object path)
 
 .. _ComputeAccess:
 
-Compute an access between two STK objects (using istkobject interface)
+Compute an access between two STK objects (using ISTKObject interface)
 ======================================================================
 
 .. code-block:: python
