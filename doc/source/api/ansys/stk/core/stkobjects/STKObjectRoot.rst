@@ -660,6 +660,24 @@ Method detail
 
         :obj:`~None`
 
+    Examples
+    --------
+
+    Save the current scenario
+
+    .. code-block:: python
+
+        from pathlib import Path
+
+        # Create a directory for scenario files
+        scenario_directory = Path.cwd() / "MyScenario"
+        scenario_directory.mkdir(parents=True, exist_ok=True)
+
+        # Save the scenario
+        scenario_path = scenario_directory / "MyScenario.sc"
+        root.save_as(str(scenario_path))
+
+
 .. py:method:: save_scenario(self) -> None
     :canonical: ansys.stk.core.stkobjects.STKObjectRoot.save_scenario
 
