@@ -20544,7 +20544,22 @@ class STKObjectRoot(ISTKObject, ILifetimeInformation, IAnimation, SupportsDelete
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def save_as(self, file_name:str) -> None:
-        """Save the changes made to the scenario/vdf to a specified path and file name."""
+        """
+        Save the changes made to the scenario/vdf to a specified path and file name.
+
+        Examples
+        --------
+        Save the current scenario:
+        >>> from pathlib import Path
+        >>>
+        >>> # Create a directory for scenario files
+        >>> scenario_directory = Path.cwd() / "MyScenario"
+        >>> scenario_directory.mkdir(parents=True, exist_ok=True)
+        >>>
+        >>> # Save the scenario
+        >>> scenario_path = scenario_directory / "MyScenario.sc"
+        >>> root.save_as(str(scenario_path))
+        """
         return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._save_as_metadata, file_name)
 
     _get_rf_channel_modeler_metadata = { "offset" : _get_rf_channel_modeler_method_offset,
@@ -26293,6 +26308,22 @@ class Scenario(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
 
     Examples
     --------
+    Save the current scenario:
+    >>> from pathlib import Path
+    >>>
+    >>> # Create a directory for scenario files
+    >>> scenario_directory = Path.cwd() / "MyScenario"
+    >>> scenario_directory.mkdir(parents=True, exist_ok=True)
+    >>>
+    >>> # Save the scenario
+    >>> scenario_path = scenario_directory / "MyScenario.sc"
+    >>> root.save_as(str(scenario_path))
+
+    Save the current scenario as a VDF:
+    >>> # STKObjectRoot root: STK Object Model Root
+    >>> scenario = root.current_scenario
+    >>> root.preferences.vdf_preferences.save_scenario_as_vdf = True
+
     Set the current scenario's time period:
     >>> # STKObjectRoot root: STK Object Model Root
     >>> scenario = root.current_scenario
