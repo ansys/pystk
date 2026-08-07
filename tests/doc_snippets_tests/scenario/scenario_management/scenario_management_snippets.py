@@ -288,7 +288,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
 
     def test_SaveScenarioAsVdfSnippet(self):
         root = self.get_root()
-        self.SaveScenarioAsVDF(root)    
+        self.SaveScenarioAsVDF(root)
 
     @code_snippet(
         name="SaveScenarioAsVdf",

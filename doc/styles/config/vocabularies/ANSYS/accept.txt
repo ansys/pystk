@@ -49,5 +49,6 @@ Subpackages
 Tkinter
 Tox
 triangulator
+VDF
 waypoint
 waypoints
