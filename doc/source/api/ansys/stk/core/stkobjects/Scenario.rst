@@ -97,6 +97,30 @@ Overview
 Examples
 --------
 
+Save the current scenario
+
+.. code-block:: python
+
+    from pathlib import Path
+
+    # Create a directory for scenario files
+    scenario_directory = Path.cwd() / "MyScenario"
+    scenario_directory.mkdir(parents=True, exist_ok=True)
+
+    # Save the scenario
+    scenario_path = scenario_directory / "MyScenario.sc"
+    root.save_as(str(scenario_path))
+
+
+Save the current scenario as a VDF
+
+.. code-block:: python
+
+    # STKObjectRoot root: STK Object Model Root
+    scenario = root.current_scenario
+    root.preferences.vdf_preferences.save_scenario_as_vdf = True
+
+
 Set the current scenario's time period
 
 .. code-block:: python

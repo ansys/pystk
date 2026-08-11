@@ -20,12 +20,14 @@ Hohmann
 IIF
 intervisibility
 IPython
+ISTKObject
 Keplerian
 LOD
 lod
 MCS
 MTO
 namespace
+namespaces
 Nemo
 [Nn]um[Pp]y
 Pandas
@@ -42,8 +44,11 @@ STK
 STK Desktop
 STKEngine
 STK Engine
+STKRuntime
 Subpackages
 Tkinter
 Tox
 triangulator
+VDF
 waypoint
+waypoints
