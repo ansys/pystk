@@ -254,6 +254,8 @@ STK Objects
       - :ref:`Create a new transmitter object <CreateTransmitter>`
 Scenario
   Scenario Management
+    - :ref:`Save the current scenario <SaveAnOpenScenario>`
+    - :ref:`Save the current scenario as a vdf <SaveScenarioAsVdf>`
     - :ref:`Change the scenario font <ScenarioFont>`
     - :ref:`Reset the scenario time <ScenarioReset>`
     - :ref:`Change animation mode <ScenarioAnimationMode>`
@@ -1355,7 +1357,7 @@ Compute an access between two STK objects (using object path)
 
 .. _ComputeAccess:
 
-Compute an access between two STK objects (using istkobject interface)
+Compute an access between two STK objects (using ISTKObject interface)
 ======================================================================
 
 .. code-block:: python
@@ -3857,6 +3859,34 @@ Create a new transmitter object
 
     # ISTKObject satellite: STK object
     transmitter = satellite.children.new(STKObjectType.TRANSMITTER, "MyTransmitter")
+
+.. _SaveAnOpenScenario:
+
+Save the current scenario
+=========================
+
+.. code-block:: python
+
+    from pathlib import Path
+
+    # Create a directory for scenario files
+    scenario_directory = Path.cwd() / "MyScenario"
+    scenario_directory.mkdir(parents=True, exist_ok=True)
+
+    # Save the scenario
+    scenario_path = scenario_directory / "MyScenario.sc"
+    root.save_as(str(scenario_path))
+
+.. _SaveScenarioAsVdf:
+
+Save the current scenario as a vdf
+==================================
+
+.. code-block:: python
+
+    # STKObjectRoot root: STK Object Model Root
+    scenario = root.current_scenario
+    root.preferences.vdf_preferences.save_scenario_as_vdf = True
 
 .. _ScenarioFont:
 
