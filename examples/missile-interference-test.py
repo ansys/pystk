@@ -427,6 +427,8 @@ from pathlib import Path
 from ansys.stk.core.stkobjects import ExecuteCommandResult
 
 
+# -
+
 # Get STK database location using Connect
 
 # +
