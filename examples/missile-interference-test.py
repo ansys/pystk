@@ -421,17 +421,14 @@ link_budget_report[["ber"]]
 
 # ## Insert the interfering satellites
 
+# Get the STK database location using Connect
+
 # +
 from pathlib import Path
 
 from ansys.stk.core.stkobjects import ExecuteCommandResult
 
 
-# -
-
-# Get STK database location using Connect
-
-# +
 result = root.execute_command("GetDirectory / Database Satellite")
 satellite_data_dir = result[0]
 file_location = '"' + str(Path(satellite_data_dir) / Path(r"stkAllTLE.sd")) + '"'
