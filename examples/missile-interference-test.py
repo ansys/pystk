@@ -431,8 +431,8 @@ from ansys.stk.core.stkobjects import ExecuteCommandResult
 
 # +
 result = root.execute_command("GetDirectory / Database Satellite")
-satDataDir = result[0]
-file_location = '"' + str(Path(satDataDir) / Path(r"stkAllTLE.sd")) + '"'
+satellite_data_dir = result[0]
+file_location = '"' + str(Path(satellite_data_dir) / Path(r"stkAllTLE.sd")) + '"'
 # -
 
 # Import object from database using Connect
