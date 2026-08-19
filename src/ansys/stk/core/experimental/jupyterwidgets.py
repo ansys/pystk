@@ -29,6 +29,7 @@ __all__ = ['GlobeWidget', 'MapWidget', 'GfxAnalysisWidget']
 import asyncio
 from ctypes import CFUNCTYPE, Structure, addressof, byref, c_int, c_size_t, c_void_p, cast, cdll, pointer
 import os
+import threading
 import time
 
 from IPython.display import display
@@ -266,12 +267,14 @@ class WidgetBase(RemoteFrameBuffer):
         if "Engine" not in stk_version:
             raise RuntimeError("Jupyter Widgets are not available with STK Desktop.")
 
+        self.loop = asyncio.get_running_loop()
+        self.stk_main_thread = threading.get_native_id()
+
         self._runtime = False
         if hasattr(self.root._intf, "client"):
             self._runtime = True
 
         if self._runtime:
-            self.loop = asyncio.get_event_loop()
             self._unk : GrpcInterface = root._intf.client.NewGraphicsControl(self._class_type)
             self._unk.client.subscribe(self._unk.obj, AgGrpcServices_pb2.EventHandler.eIAgRemoteFrameBufferHost, "Refresh", self._refresh_threadsafe)
         else:
@@ -377,46 +380,55 @@ class WidgetBase(RemoteFrameBuffer):
         return (x, y)
 
     def handle_event(self, event):
-        event_type = event.get("event_type", None)
-        if event_type == "resize":
-            pixel_ratio = event["pixel_ratio"]
-            w = int(event["width"]*pixel_ratio)
-            h = int(event["height"]*pixel_ratio)
-            self.pixel_ratio = pixel_ratio
-            self.__create_frame_buffer(w, h)
-            self._rfb.notify_resize(0, 0, w, h)
-        elif event_type == "pointer_down":
-            (x, y) = self.__get_position(event)
-            self.mouse_callbacks[0][event["button"]-1](
-                x, y, self.__get_modifiers(event))
-        elif event_type == "pointer_up" and event["button"] == 1:
-            (x, y) = self.__get_position(event)
-            self.mouse_callbacks[1][event["button"]-1](
-                x, y, self.__get_modifiers(event))
-        elif event_type == "pointer_move":
-            (x, y) = self.__get_position(event)
-            buttons = event["buttons"]
-            if len(buttons) > 0 and buttons[0] == 1:
-                self._rfb.notify_mouse_move(x, y, ButtonValues.LEFT_PRESSED,
-                                          self.__get_modifiers(event))
-            elif len(buttons) > 0 and buttons[0] == 2:
-                self._rfb.notify_mouse_move(x, y, ButtonValues.RIGHT_PRESSED,
-                                          self.__get_modifiers(event))
-            elif len(buttons) > 0 and buttons[0] == 3:
-                self._rfb.notify_mouse_move(x, y, ButtonValues.MIDDLE_PRESSED,
-                                          self.__get_modifiers(event))
-            else:
-                self._rfb.notify_mouse_move(x, y, 0, 0)
-        elif event_type == "wheel":
-            (x, y) = self.__get_position(event)
-            dy = int(event["dy"] * self.pixel_ratio/100)
-            self._rfb.notify_mouse_wheel(x, y, -dy, self.__get_modifiers(event))
+        if threading.get_native_id() != self.stk_main_thread:
+            asyncio.run_coroutine_threadsafe(self.handle_event_coroutine(event), self.loop)
+        else:
+            event_type = event.get("event_type", None)
+            if event_type == "resize":
+                pixel_ratio = event["pixel_ratio"]
+                w = int(event["width"]*pixel_ratio)
+                h = int(event["height"]*pixel_ratio)
+                self.pixel_ratio = pixel_ratio
+                self.__create_frame_buffer(w, h)
+                self._rfb.notify_resize(0, 0, w, h)
+            elif event_type == "pointer_down":
+                (x, y) = self.__get_position(event)
+                self.mouse_callbacks[0][event["button"]-1](
+                    x, y, self.__get_modifiers(event))
+            elif event_type == "pointer_up" and event["button"] == 1:
+                (x, y) = self.__get_position(event)
+                self.mouse_callbacks[1][event["button"]-1](
+                    x, y, self.__get_modifiers(event))
+            elif event_type == "pointer_move":
+                (x, y) = self.__get_position(event)
+                buttons = event["buttons"]
+                if len(buttons) > 0 and buttons[0] == 1:
+                    self._rfb.notify_mouse_move(x, y, ButtonValues.LEFT_PRESSED,
+                                            self.__get_modifiers(event))
+                elif len(buttons) > 0 and buttons[0] == 2:
+                    self._rfb.notify_mouse_move(x, y, ButtonValues.RIGHT_PRESSED,
+                                            self.__get_modifiers(event))
+                elif len(buttons) > 0 and buttons[0] == 3:
+                    self._rfb.notify_mouse_move(x, y, ButtonValues.MIDDLE_PRESSED,
+                                            self.__get_modifiers(event))
+                else:
+                    self._rfb.notify_mouse_move(x, y, 0, 0)
+            elif event_type == "wheel":
+                (x, y) = self.__get_position(event)
+                dy = int(event["dy"] * self.pixel_ratio/100)
+                self._rfb.notify_mouse_wheel(x, y, -dy, self.__get_modifiers(event))
+
+
+    async def handle_event_coroutine(self, event):
+        self.handle_event(event)
 
     def set_title(self, title):
         self.title = title
 
     def get_frame(self):
-        if self._runtime:
+        if threading.get_native_id() != self.stk_main_thread:
+            asyncio.run_coroutine_threadsafe(self.get_frame_coroutine(), self.loop)
+        elif self._runtime:
             buffer = self._rfb.get_rbg_raster_grpc()
             if len(buffer) == self.h * self.w * 3:
                 self.frame = np.reshape(np.frombuffer(buffer, dtype=np.uint8), (self.h, self.w, 3))
@@ -424,12 +436,21 @@ class WidgetBase(RemoteFrameBuffer):
             self._rfb.snap_to_rbg_raster(self.pointer)
         return self.frame
 
+    async def get_frame_coroutine(self):
+        self.get_frame()
+
     def animate(self, time_step):
-        scenario: Scenario = Scenario(self.root.current_scenario)
-        scenario.animation_settings.animation_step_value = time_step
-        animation_control: IAnimation = IAnimation(self.root)
-        animation_control.play_forward()
-        self.show()
+        if threading.get_native_id() != self.stk_main_thread:
+            asyncio.run_coroutine_threadsafe(self.animate_coroutine(time_step), self.loop)
+        else:
+            scenario: Scenario = Scenario(self.root.current_scenario)
+            scenario.animation_settings.animation_step_value = time_step
+            animation_control: IAnimation = IAnimation(self.root)
+            animation_control.play_forward()
+            self.show()
+
+    async def animate_coroutine(self, time_step):
+        self.animate(time_step)
 
     def _repr_mimebundle_(self, **kwargs):
         """Return the desired MIME type representation.
