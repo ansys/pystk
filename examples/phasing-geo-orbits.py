@@ -165,7 +165,7 @@ phase_angle_calc.input_angle = phase_angle_awb
 
 # ## Set up the target satellite
 
-# Declare the type of orbit propagator used for the chaser satellite. Set the propagator to an Astrogator type:
+# Declare the type of orbit propagator used for the target satellite. Set the propagator to an Astrogator type:
 
 # +
 from ansys.stk.core.stkobjects import PropagatorType
@@ -249,7 +249,7 @@ plotter.show()
 
 # ## Set up the chaser satellite
 
-# Declare the type of orbit propagator used for the target satellite as the Astrogator type and ensure a clean main sequence:
+# Declare the type of orbit propagator used for the chaser satellite as the Astrogator type and ensure a clean main sequence:
 
 chaser_satellite.set_propagator_type(PropagatorType.ASTROGATOR)
 chaser_satellite.propagator.main_sequence.remove_all()
@@ -281,7 +281,7 @@ chaser_keplerian_elements.true_anomaly = true_anomaly_chaser
 chaser_keplerian_elements.arg_of_periapsis = arg_of_periapsis
 # -
 
-# Configure the propagation segment to propagate the orbit of the chaser for 16 days:
+# Configure the propagation segment to propagate the orbit of the chaser until it reaches periapsis. This provides a well-defined, repeatable starting point in the orbit from which the phasing maneuver is applied:
 
 chaser_propagate_segment = chaser_satellite.propagator.main_sequence.insert(
     SegmentType.PROPAGATE, "Propagate", "-"
@@ -596,9 +596,11 @@ maneuver_result = maneuver_data_provider.execute(
 )
 maneuver_dataframe = maneuver_result.data_sets.to_pandas_dataframe()
 
-# Retrieve the actual Delta-V:
+# Retrieve the actual Delta-V of each maneuver (the phasing burn and the circularization burn) and sum them to obtain the total Delta-V required for the whole transfer:
 
-delta_v_actual = maneuver_dataframe.at[0, "delta v"]
+phasing_delta_v = float(maneuver_dataframe.at[0, "delta v"])
+circularization_delta_v = float(maneuver_dataframe.at[1, "delta v"])
+total_delta_v = phasing_delta_v + circularization_delta_v
 
 # Display the transfer orbit data:
 
@@ -609,13 +611,17 @@ print(f"Period           = {phasing_orbit_period:.2f} sec")
 print(f"SMA              = {transfer_semi_major_axis:.2f} km")
 print(f"Perigee radius   = {periapsis_radius:.2f} km")
 print(f"Apogee radius    = {apoapsis_radius:.2f} km")
-print(f"Delta-V          = {delta_v_actual} m/sec")
+print(f"Phasing Delta-V         = {phasing_delta_v:.5f} m/sec")
+print(f"Circularization Delta-V = {circularization_delta_v:.5f} m/sec")
+print(f"Total Delta-V           = {total_delta_v:.5f} m/sec")
 print(f"Transfer time    = {phasing_orbit_period * phasing_orbits / 86400:.4f} days")
 print("")
 
 # Finally, show the complete orbit trajectory:
 
+# + tags=["nbsphinx-thumbnail"]
 plotter.show()
+# -
 
 # ## Plot the phase angle history
 #
