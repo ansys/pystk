@@ -191,9 +191,6 @@ linkcheck_ignore = [
     # Spurious failures
     r"https://www.khronos.org/collada/",
     r"https://www.khronos.org/gltf/",
-    # TODO: Determine a way to link to examples without breaking the linkcheck
-    # https://github.com/ansys/pystk/issues/657
-    r"../examples/",
     # Ignore links to the examples pdf/ipynb/py files as they are not
     # available until documentation is not published
     rf"https://{cname}/version/{release}/examples/.*\.pdf",
