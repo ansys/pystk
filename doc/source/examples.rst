@@ -52,6 +52,7 @@ Examples
         examples/hohmann-transfer
         examples/bielliptic-transfer
         examples/lambert-transfer
+        examples/phasing-geo-orbits
 
     .. nbgallery::
         :caption: Mission analysis
