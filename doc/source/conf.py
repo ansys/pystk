@@ -186,6 +186,7 @@ linkcheck_exclude_documents = ["artifacts", "changelog"]
 linkcheck_ignore = [
     r"https://www.ansys.com/*",
     # Requires sign-in
+    r"https://register.agi.com/training/*",
     r"https://support.agi.com/3d-models",
     r"https://support.agi.com/downloads",
     # Spurious failures
