@@ -226,14 +226,36 @@ import os
 from pathlib import Path
 
 
-stk_install_dir = Path(
-    r"C:\Program Files\AGI\STK_ODTK 13"
-    if os.name == "nt"
-    else os.environ["STK_INSTALL_DIR"]
-)
-spain_shapefile = (
-    stk_install_dir / "Data" / "Shapefiles" / "Countries" / "Spain" / "Spain.shp"
-)
+TOTALITY_THRESHOLD_SECONDS = 10
+
+
+def resolve_spain_shapefile() -> Path:
+    """Return the Spain shapefile path from the local STK installation."""
+    if os.name == "nt":
+        stk_install_dir = Path(r"C:\Program Files\AGI\STK_ODTK 13")
+    else:
+        stk_install_dir_env = os.environ.get("STK_INSTALL_DIR")
+        if not stk_install_dir_env:
+            raise RuntimeError(
+                "STK_INSTALL_DIR is not set. Set it to your STK installation directory."
+            )
+        stk_install_dir = Path(stk_install_dir_env)
+
+    if not stk_install_dir.exists():
+        raise FileNotFoundError(
+            f"STK installation directory not found: {stk_install_dir}"
+        )
+
+    shapefile = (
+        stk_install_dir / "Data" / "Shapefiles" / "Countries" / "Spain" / "Spain.shp"
+    )
+    if not shapefile.exists():
+        raise FileNotFoundError(f"Spain shapefile not found: {shapefile}")
+
+    return shapefile
+
+
+spain_shapefile = resolve_spain_shapefile()
 # -
 
 # Add the shapefile to the region files of the grid:
@@ -328,7 +350,7 @@ from ansys.stk.core.stkobjects import FigureOfMeritSatisfactionType
 
 definition.satisfaction.enable_satisfaction = True
 definition.satisfaction.satisfaction_type = FigureOfMeritSatisfactionType.GREATER_THAN
-definition.satisfaction.satisfaction_threshold = 10
+definition.satisfaction.satisfaction_threshold = TOTALITY_THRESHOLD_SECONDS
 # -
 
 # ## Draw the contour map of the duration time
@@ -418,12 +440,17 @@ value_by_point_df.head()
 
 # Only a fraction of the grid points lies inside the path of totality. Keep the points experiencing a totality longer than the satisfaction threshold:
 
-totality_df = value_by_point_df[value_by_point_df["fom value"] > 10]
+totality_df = value_by_point_df[
+    value_by_point_df["fom value"] > TOTALITY_THRESHOLD_SECONDS
+]
 
 print(f"Grid points analyzed: {len(value_by_point_df)}")
 print(f"Grid points inside the path of totality: {len(totality_df)}")
 
 # The longest totality of the eclipse over Spain takes place at:
+
+if totality_df.empty:
+    raise RuntimeError("No grid points satisfy the totality duration threshold.")
 
 longest_totality = totality_df.loc[totality_df["fom value"].idxmax()]
 
