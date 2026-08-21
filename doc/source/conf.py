@@ -266,6 +266,9 @@ if not PYPROJECT_FILE.exists():
 
 PYPROJECT_CONTENT = toml.loads(PYPROJECT_FILE.read_text(encoding="utf-8"))
 OPTIONAL_DEPENDENCIES = PYPROJECT_CONTENT["project"]["optional-dependencies"]
+PROJECT_ROOT = pathlib.Path(__file__).resolve().parents[2]
+EXAMPLES_ROOT_DIRECTORY = PROJECT_ROOT / "examples"
+
 
 def zip_directory(directory_path: pathlib.Path, zip_filename: pathlib.Path, ignore_patterns=None):
     """Compress a directory using ZIP.
@@ -494,8 +497,6 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
         Exception encountered during the building of the documentation.
 
     """
-    # TODO: investigate issues when using OUTPUT_EXAMPLES instead of SOURCE_EXAMPLES
-    # https://github.com/ansys/pystk/issues/415
     OUTPUT_EXAMPLES = pathlib.Path(app.outdir) / "examples"
     OUTPUT_DATA = OUTPUT_EXAMPLES / "data"
     OUTPUT_IMAGES = OUTPUT_EXAMPLES / "img"
@@ -503,8 +504,7 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
         if not directory.exists():
             directory.mkdir(parents=True, exist_ok=True)
 
-    SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
-    EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
+    EXAMPLES_DIRECTORY = EXAMPLES_ROOT_DIRECTORY
     EXAMPLES_DATA_DIRECTORY = EXAMPLES_DIRECTORY / "data"
     IMAGES_DIRECTORY = EXAMPLES_DIRECTORY / "img"
 
@@ -567,7 +567,7 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
         if not directory.exists():
             directory.mkdir(parents=True, exist_ok=True)
 
-    EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
+    EXAMPLES_DIRECTORY = EXAMPLES_ROOT_DIRECTORY
     EXAMPLES_DATA_DIRECTORY = EXAMPLES_DIRECTORY / "data"
     IMAGES_DIRECTORY = EXAMPLES_DIRECTORY / "img"
 
@@ -648,8 +648,7 @@ def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception)
 
     """
     try:
-        SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
-        RENDERED_EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent / "_build" / "html" / "examples"
+        RENDERED_EXAMPLES_DIRECTORY = pathlib.Path(app.outdir) / "examples"
         notebooks = list(RENDERED_EXAMPLES_DIRECTORY.glob("*.ipynb"))
 
         for notebook in status_iterator(
