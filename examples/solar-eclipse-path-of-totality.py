@@ -407,9 +407,7 @@ eclipse_constraints.graphics.show_graphics = False
 # Finally, look at the contour map from above. Point the camera to the Iberian Peninsula by expressing its position in the Earth fixed axes:
 
 # + tags=["nbsphinx-thumbnail"]
-earth_fixed_axes = root.central_bodies.earth.analysis_workbench_components.axes.item(
-    "Fixed"
-)
+earth_fixed_axes = root.analysis_workbench_components_root.well_known_axes.earth.fixed
 
 globe_plotter.camera.view_central_body("Earth", earth_fixed_axes)
 globe_plotter.camera.position = [7150, -440, 6010]
