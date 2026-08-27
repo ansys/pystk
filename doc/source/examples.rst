@@ -39,6 +39,7 @@ Examples
 
         examples/satellite-coverage-calculator
         examples/satellite-coverage-analysis
+        examples/solar-eclipse-path-of-totality
 
     Space mission
     =============
