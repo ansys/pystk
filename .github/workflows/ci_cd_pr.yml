@@ -288,7 +288,7 @@ jobs:
 
       - name: "Install Tox in the GitHub runner or the self-hosted runner"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
           NEEDS_SELF_HOSTED_RUNNER: ${{ contains(github.event.pull_request.labels.*.name,
             'docs:examples') }}
         run: |
@@ -311,7 +311,7 @@ jobs:
           contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
           !contains(github.event.pull_request.labels.*.name, 'docs:api')
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
             --workdir ${PYSTK_DIR} \
@@ -345,7 +345,7 @@ jobs:
           contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
           contains(github.event.pull_request.labels.*.name, 'docs:api')
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
             --workdir ${PYSTK_DIR} \
