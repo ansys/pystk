@@ -75,6 +75,27 @@ html_theme_options = {
     "static_search": {
         "limit": 10,
         "minMatchCharLength": 2,
+    "search_filters": {
+            "Getting started": [
+                "getting-started",
+                "getting-started/",
+            ],
+            "User guide": [
+                "user-guide",
+                "user-guide/",
+            ],
+            "API reference": [
+                "api/",
+            ],
+            "Examples": [
+                "examples"
+                "examples/"
+            ],
+            "Contributing": [
+                "contributing",
+                "contributing/",
+            ],
+        }
     },
 }
 html_static_path = ["_static"]
