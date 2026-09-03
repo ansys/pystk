@@ -61,7 +61,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'docs:changelog:skip')
     steps:
-      - uses: ansys/actions/doc-changelog@7e89e00c5619374a1da8c2e876309d8b15ff0559 # v11.0.3
+      - uses: ansys/actions/doc-changelog@21c78f8b27683ae8c93557345392abe39ab21d2f # v11.0.4
         with:
           token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
           use-pull-request-title: true
@@ -76,7 +76,7 @@ jobs:
     permissions:
       contents: read # Read the dependencies and source code of the library
     steps:
-      - uses: ansys/actions/check-vulnerabilities@7e89e00c5619374a1da8c2e876309d8b15ff0559 # v11.0.3
+      - uses: ansys/actions/check-vulnerabilities@21c78f8b27683ae8c93557345392abe39ab21d2f # v11.0.4
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
           python-package-name: ${{ env.ANSYS_STK }}
@@ -93,7 +93,7 @@ jobs:
     permissions:
       contents: read # Read the workflow files in the project
     steps:
-      - uses: ansys/actions/check-actions-security@7e89e00c5619374a1da8c2e876309d8b15ff0559 # v11.0.3
+      - uses: ansys/actions/check-actions-security@21c78f8b27683ae8c93557345392abe39ab21d2f # v11.0.4
         with:
           generate-summary: true
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -110,7 +110,7 @@ jobs:
     permissions:
       contents: read # Read the source code of the project
     steps:
-      - uses: ansys/actions/code-style@7e89e00c5619374a1da8c2e876309d8b15ff0559 # v11.0.3
+      - uses: ansys/actions/code-style@21c78f8b27683ae8c93557345392abe39ab21d2f # v11.0.4
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
@@ -149,7 +149,7 @@ jobs:
           vale_files=$(echo -e "${rst_files}\n${python_files}" | jq -R . | jq -s .)
           echo "files=$(jq -c <<< "${vale_files}")" >> "${GITHUB_OUTPUT}"
 
-      - uses: ansys/actions/doc-style@7e89e00c5619374a1da8c2e876309d8b15ff0559 # v11.0.3
+      - uses: ansys/actions/doc-style@21c78f8b27683ae8c93557345392abe39ab21d2f # v11.0.4
         with:
           checkout: false
           files: '${{ steps.vale.outputs.files }}'
@@ -172,7 +172,7 @@ jobs:
         python-version: ['3.10', '3.11', '3.12', '3.13']
         target: ['all']
     steps:
-      - uses: ansys/actions/build-wheelhouse@7e89e00c5619374a1da8c2e876309d8b15ff0559 # v11.0.3
+      - uses: ansys/actions/build-wheelhouse@21c78f8b27683ae8c93557345392abe39ab21d2f # v11.0.4
         with:
           library-name: ${{ env.ANSYS_STK }}
           operating-system: ${{ matrix.os }}
@@ -596,7 +596,7 @@ jobs:
       contents: read # Read the source code of the project
       id-token: write # Write access to a temporary token for signing attestations
     steps:
-      - uses: ansys/actions/build-library@7e89e00c5619374a1da8c2e876309d8b15ff0559 # v11.0.3
+      - uses: ansys/actions/build-library@21c78f8b27683ae8c93557345392abe39ab21d2f # v11.0.4
         with:
           library-name: ${{ env.ANSYS_STK }}
           attest-provenance: true
