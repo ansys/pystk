@@ -1,0 +1,2559 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Radio Frequency (RF) Spectrum Filters &#8212; PySTK</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=5ffe81b6" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=5ffe81b6" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=789c53a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/highlight.css?v=e507d2d0" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/search.css?v=6f836f60" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/datatable.css?v=cb1cc588" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  
+  
+  
+
+  
+    <link href="../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=5e9438ed"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/radio-frequency-spectrum-filters';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://stk.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../_static/js/download.js?v=ef68161c"></script>
+    <link rel="icon" href="../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Commercial aircraft fuel calculator with Aviator" href="aviator-fuel-calculator.html" />
+    <link rel="prev" title="Missile Interference Test" href="missile-interference-test.html" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="main" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  <link rel="canonical" href="https://stk.docs.pyansys.com/version/stable/examples/radio-frequency-spectrum-filters.html" />
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PySTK - Home"/>
+    <img src="../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PySTK - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../index.html" title="PySTK home">Home</a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav>
+</div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+  
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    
+<!--
+  Announcement Version Loader
+  Dynamically loads the announcement.html content into the announcement_msg div.
+-->
+<div id="announcement_msg" aria-live="polite"></div>
+<script>
+  // Fetch and inject the announcement HTML content
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status} Announcement.html file not found, Please ignore this, if you are in dev/stable documentation`);
+      }
+      return response.text();
+    })
+    .then((text) => {
+      var msgDiv = document.getElementById("announcement_msg");
+      if (msgDiv) {
+        msgDiv.innerHTML = text;
+      }
+    })
+    .catch((error) => {
+      // Log only unexpected fetch errors
+      if (!(error.message && error.message.startsWith("HTTP error: 404"))) {
+        console.error(`Fetch problem: ${error.message} Announcement.html could not be loaded.`);
+      }
+    });
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../index.html" title="PySTK home">Home</a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav>
+</div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+  
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamental concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="facility-to-satellite-access.html">Access between facility and satellite calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensor-access.html">Sensors and access</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Coverage examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-calculator.html">Satellite coverage area calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-analysis.html">Satellite coverage analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solar-eclipse-path-of-totality.html">Solar eclipse coverage: path of totality over Spain</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Orbital maneuvers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hohmann-transfer.html">Hohmann transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bielliptic-transfer.html">Bi-elliptic transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lambert-transfer.html">Lambert transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phasing-geo-orbits.html">GEO Orbit Phasing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mission analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="porkchop-plots.html">Porkchop plots</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Communications and radar</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="radar-cross-section-detection.html">Radar cross section detection calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication-link-calculator.html">Communication link budget calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-parametric-study.html">Multifunction radar parametric study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-design.html">Multifunction radar design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missile-interference-test.html">Missile Interference Test</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Radio Frequency (RF) Spectrum Filters</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aviator mission planning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="aviator-fuel-calculator.html">Commercial aircraft fuel calculator with Aviator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aircraft-carrier-landing.html">Multi-aircraft carrier landing with Aviator</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../examples.html" class="nav-link">Examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Radio Frequency (RF) Spectrum Filters</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/radio-frequency-spectrum-filters.py"><span> Download as Python script <span class="fab fa-python"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/radio-frequency-spectrum-filters.ipynb"><span> Download as Jupyter notebook <span class="fas fa-book"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/radio-frequency-spectrum-filters.pdf"><span> Download as PDF document <span class="fas fa-file-pdf"></span></span></a></p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<section id="Radio-Frequency-(RF)-Spectrum-Filters">
+<h1>Radio Frequency (RF) Spectrum Filters<a class="headerlink" href="#Radio-Frequency-(RF)-Spectrum-Filters" title="Link to this heading">#</a></h1>
+<p>This tutorial demonstrates how to use STK’s Communications capability and RF spectrum filters to enable transmission reception using PySTK. It is inspired by <a class="reference external" href="https://help.agi.com/stk/Content/training/DetailedInterferenceAnalysis.htm">this tutorial</a>.</p>
+<section id="Problem-Statement">
+<h2>Problem Statement<a class="headerlink" href="#Problem-Statement" title="Link to this heading">#</a></h2>
+<p>A situation has arisen where two customers are utilizing a satellite communication downlink facility located in the Southwestern United States. One transmission is routine, but important. The other transmission is urgent.</p>
+<p>There are only two satellite reception parabolic antenna dishes available and they sit next to each other. Although the communications are coming from different locations, they are being routed through the same satellite to the ground facility.</p>
+<p>Here is some information that may be helpful:</p>
+<ul class="simple">
+<li><p>The communication satellite is geostationary.</p></li>
+<li><p>The satellite is transmitting two streams of data to the same ground site.</p></li>
+<li><p>The urgent communication link is transmitting on a frequency of <span class="math notranslate nohighlight">\(25\)</span> GHz.</p></li>
+<li><p>The routine communication link is transmitting on a frequency of <span class="math notranslate nohighlight">\(25.2\)</span> GHz.</p></li>
+<li><p>Both transmissions are using a data rate of <span class="math notranslate nohighlight">\(300\)</span> Mb/Sec.</p></li>
+<li><p>The close proximity of the frequencies, separated by <span class="math notranslate nohighlight">\(200\)</span> MHz, is causing interference with the data streams.</p></li>
+</ul>
+</section>
+<section id="Launch-a-new-STK-instance">
+<h2>Launch a new STK instance<a class="headerlink" href="#Launch-a-new-STK-instance" title="Link to this heading">#</a></h2>
+<p>Start by launching a new STK instance. In this example, <code class="docutils literal notranslate"><span class="pre">STKEngine</span></code> is used.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKEngine</span>
+
+
+<span class="n">stk</span> <span class="o">=</span> <span class="n">STKEngine</span><span class="o">.</span><span class="n">start_application</span><span class="p">(</span><span class="n">no_graphics</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Load-the-starter-scenario">
+<h2>Load the starter scenario<a class="headerlink" href="#Load-the-starter-scenario" title="Link to this heading">#</a></h2>
+<p>The STK scenario used in this tutorial is included with the STK installation as a VDF file. To open the scenario, first access the STK Root object:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKObjectRoot</span>
+
+
+<span class="n">root</span><span class="p">:</span> <span class="n">STKObjectRoot</span> <span class="o">=</span> <span class="n">stk</span><span class="o">.</span><span class="n">new_object_root</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Then, load the VDF from the path:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
+
+
+<span class="n">install_dir</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">execute_command</span><span class="p">(</span><span class="s2">"GetDirectory / STKHome"</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">scenario_filepath</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span>
+    <span class="n">install_dir</span>
+    <span class="o">/</span> <span class="s2">"Data"</span>
+    <span class="o">/</span> <span class="s2">"Resources"</span>
+    <span class="o">/</span> <span class="s2">"stktraining"</span>
+    <span class="o">/</span> <span class="s2">"VDFs"</span>
+    <span class="o">/</span> <span class="s2">"Comm_RF_Spectrum_Filters.vdf"</span>
+<span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">load_vdf</span><span class="p">(</span><span class="n">scenario_filepath</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Next, get the current scenario using the root object:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scenario</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Acquaint-Yourself-With-the-Scenario">
+<h2>Acquaint Yourself With the Scenario<a class="headerlink" href="#Acquaint-Yourself-With-the-Scenario" title="Link to this heading">#</a></h2>
+<p>View the communications site.</p>
+<img alt="https://help.agi.com/stk/Content/training/images/CommGndSite.png" src="https://help.agi.com/stk/Content/training/images/CommGndSite.png" />
+<p>Position the camera so that the satellite is viewable along with the communications site in the background. Notice how the satellite is targeting the communications site.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.experimental.jupyterwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">GlobeWidget</span>
+
+
+<span class="n">globe_widget</span> <span class="o">=</span> <span class="n">GlobeWidget</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
+<span class="n">globe_widget</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">-</span><span class="mf">5487.455182656891</span><span class="p">,</span>
+    <span class="mf">42686.16671890387</span><span class="p">,</span>
+    <span class="mf">11571.702360892219</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">globe_widget</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "323883449847450283bd73cec686e292"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_radio-frequency-spectrum-filters_18_1.png" src="../_images/examples_radio-frequency-spectrum-filters_18_1.png" />
+</div>
+</div>
+</section>
+<section id="Build-the-Constellations">
+<h2>Build the Constellations<a class="headerlink" href="#Build-the-Constellations" title="Link to this heading">#</a></h2>
+<p>Prior to analyzing filters, you need to double check if Urgent_Comms is being interfered with by Routine_Comms. You need to set up the three constellations (Receiver, Transmitter, Interference) to calculate interference.</p>
+<p>Begin with the receiver constellation. Create the Receiver Constellation and assign the receiver to it</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKObjectType</span>
+
+
+<span class="n">receiver_constellation</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">CONSTELLATION</span><span class="p">,</span> <span class="s2">"Receiver"</span><span class="p">)</span>
+<span class="n">urgent_receiver</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">get_object_from_path</span><span class="p">(</span>
+    <span class="s2">"Facility/Urgent_Comms/Sensor/Tgt_Tdrs/Receiver/Urgent_Rcv"</span>
+<span class="p">)</span>
+<span class="n">receiver_constellation</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">add_object</span><span class="p">(</span><span class="n">urgent_receiver</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Create the Transmitter Constellation and assign the routine transmitter to it</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transmitter_constellation</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+    <span class="n">STKObjectType</span><span class="o">.</span><span class="n">CONSTELLATION</span><span class="p">,</span> <span class="s2">"Transmitter"</span>
+<span class="p">)</span>
+<span class="n">tdrs_satellite</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">get_object_from_path</span><span class="p">(</span><span class="s2">"Satellite/Tdrs3_19548"</span><span class="p">)</span>
+<span class="n">urgent_transmitter</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">get_object_from_path</span><span class="p">(</span>
+    <span class="s2">"Satellite/Tdrs3_19548/Sensor/Tgt_Uc/Transmitter/Urgent_Xmt"</span>
+<span class="p">)</span>
+<span class="n">transmitter_constellation</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">add_object</span><span class="p">(</span><span class="n">urgent_transmitter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Create the Interference Constellation and assign the urgent transmitter to it</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interference_constellation</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+    <span class="n">STKObjectType</span><span class="o">.</span><span class="n">CONSTELLATION</span><span class="p">,</span> <span class="s2">"Interference"</span>
+<span class="p">)</span>
+<span class="n">routine_transmitter</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">get_object_from_path</span><span class="p">(</span>
+    <span class="s2">"Satellite/Tdrs3_19548/Sensor/Tgt_Rc/Transmitter/Routine_Xmt"</span>
+<span class="p">)</span>
+<span class="n">interference_constellation</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">add_object</span><span class="p">(</span><span class="n">routine_transmitter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Build-the-Comm-System">
+<h2>Build the Comm System<a class="headerlink" href="#Build-the-Comm-System" title="Link to this heading">#</a></h2>
+<p>The CommSystem object models dynamically-configured communications links between constellations of transmitters and receivers. Create a new CommSystem object:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comm_system</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">COMM_SYSTEM</span><span class="p">,</span> <span class="s2">"CommSystem"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Add the constellations to the Comm System:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comm_system</span><span class="o">.</span><span class="n">transmitters</span><span class="o">.</span><span class="n">add_object</span><span class="p">(</span><span class="n">transmitter_constellation</span><span class="p">)</span>
+<span class="n">comm_system</span><span class="o">.</span><span class="n">receivers</span><span class="o">.</span><span class="n">add_object</span><span class="p">(</span><span class="n">receiver_constellation</span><span class="p">)</span>
+<span class="n">comm_system</span><span class="o">.</span><span class="n">interference_sources</span><span class="o">.</span><span class="n">add_object</span><span class="p">(</span><span class="n">interference_constellation</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The default Start and Stop times for the CommSystem interval correspond to the scenario’s time period. The default step size is one (1) second. Update the step size so the communication link will be calculated every 60 seconds:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comm_system</span><span class="o">.</span><span class="n">step_size</span> <span class="o">=</span> <span class="mi">60</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Calculate-Interference">
+<h2>Calculate Interference<a class="headerlink" href="#Calculate-Interference" title="Link to this heading">#</a></h2>
+<p>Create a custom graph that represents the carrier to noise and carrier to noise with interference on the same axis:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.extensions.data_analysis.graphs.graph_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">line_chart</span>
+
+
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span>
+<span class="n">stop_time</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span>
+<span class="n">df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">comm_system</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">"Link Information"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute_elements</span><span class="p">(</span><span class="n">start_time</span><span class="p">,</span> <span class="n">stop_time</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="p">[</span><span class="s2">"C/N"</span><span class="p">,</span> <span class="s2">"Time"</span><span class="p">,</span> <span class="s2">"C/(N+I)"</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">"use_unit"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">"unit_squared"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"ylog10"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">"y2log10"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">"label"</span><span class="p">:</span> <span class="s2">"Ratio"</span><span class="p">,</span>
+        <span class="s2">"lines"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">"y_name"</span><span class="p">:</span> <span class="s2">"c/n"</span><span class="p">,</span>
+                <span class="s2">"label"</span><span class="p">:</span> <span class="s2">"C/N"</span><span class="p">,</span>
+                <span class="s2">"use_unit"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">"unit_squared"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s2">"dimension"</span><span class="p">:</span> <span class="s2">"Ratio"</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">"y_name"</span><span class="p">:</span> <span class="s2">"c/(n+i)"</span><span class="p">,</span>
+                <span class="s2">"label"</span><span class="p">:</span> <span class="s2">"C/(N+I)"</span><span class="p">,</span>
+                <span class="s2">"use_unit"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">"unit_squared"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s2">"dimension"</span><span class="p">:</span> <span class="s2">"Ratio"</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">],</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+<span class="n">line_chart</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">df</span><span class="p">],</span>
+    <span class="n">root</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">"c/n"</span><span class="p">,</span> <span class="s2">"c/(n+i)"</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">"time"</span><span class="p">],</span>
+    <span class="n">axes</span><span class="p">,</span>
+    <span class="s2">"time"</span><span class="p">,</span>
+    <span class="s2">"Time"</span><span class="p">,</span>
+    <span class="s2">"Carrier to Noise vs Time"</span><span class="p">,</span>
+    <span class="n">colormap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">time_unit_abbreviation</span><span class="o">=</span><span class="s2">"UTCG"</span><span class="p">,</span>
+    <span class="n">formatter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_radio-frequency-spectrum-filters_36_0.png" src="../_images/examples_radio-frequency-spectrum-filters_36_0.png" />
+</div>
+</div>
+<p>As you can see the line representing the clean carrier wave (C/N (dB)) and the line representing the wave that is receiving interference (C/N + I (dB)) are different. There is interference against the carrier wave.</p>
+</section>
+<section id="Set-Correct-Units">
+<h2>Set Correct Units<a class="headerlink" href="#Set-Correct-Units" title="Link to this heading">#</a></h2>
+<p>Before generating any data tables, the units for the “Ratio” dimension need to be set correctly. The UI defaults to a linear scale while the STK Object Model defaults to a logarithmic scale. Setting the units of “Ratio” below will make units consistent across platforms.</p>
+<p>If you would like to use a logarithmic scale, simply change “units” to “dB” in <code class="docutils literal notranslate"><span class="pre">set_current_unit()</span></code>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="o">.</span><span class="n">units_preferences</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">"Ratio"</span><span class="p">)</span><span class="o">.</span><span class="n">set_current_unit</span><span class="p">(</span><span class="s2">"units"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Calculate-Link-Budget">
+<h2>Calculate Link Budget<a class="headerlink" href="#Calculate-Link-Budget" title="Link to this heading">#</a></h2>
+<p>Determine how good the quality of the communication is by calculating a link budget report and looking at the Bit Error Rate (BER):</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">provider</span> <span class="o">=</span> <span class="n">comm_system</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">"Link Information"</span><span class="p">)</span>
+<span class="n">provider</span><span class="o">.</span><span class="n">pre_data</span> <span class="o">=</span> <span class="s2">"Facility/Urgent_Comms/Sensor/Tgt_Tdrs/Receiver/Urgent_Rcv"</span>
+
+<span class="n">link_budget_report</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+    <span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">60</span>
+<span class="p">)</span><span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+
+<span class="c1"># Focus on the BER and BER+I columns</span>
+<span class="n">link_budget_report</span><span class="p">[[</span><span class="s2">"ber"</span><span class="p">,</span> <span class="s2">"ber+i"</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ber</th>
+      <th>ber+i</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1e-30</td>
+      <td>0.006917962780142994</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1e-30</td>
+      <td>0.006917970086206964</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1e-30</td>
+      <td>0.006917960245440189</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1e-30</td>
+      <td>0.0069179498555238</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1e-30</td>
+      <td>0.006917939149355964</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1436</th>
+      <td>1e-30</td>
+      <td>0.006917931413933708</td>
+    </tr>
+    <tr>
+      <th>1437</th>
+      <td>1e-30</td>
+      <td>0.006917921791256923</td>
+    </tr>
+    <tr>
+      <th>1438</th>
+      <td>1e-30</td>
+      <td>0.006917911786431534</td>
+    </tr>
+    <tr>
+      <th>1439</th>
+      <td>1e-30</td>
+      <td>0.006917901533917336</td>
+    </tr>
+    <tr>
+      <th>1440</th>
+      <td>1e-30</td>
+      <td>0.006917890698238807</td>
+    </tr>
+  </tbody>
+</table>
+<p>1441 rows × 2 columns</p>
+</div></div>
+</div>
+<p>The BER column shows the link performance without interference while the BER + I shows the link performance with interference. The difference between the BER values with and without interference shows that interference has a major impact on the communications.</p>
+</section>
+<section id="Bandwidth-Analysis">
+<h2>Bandwidth Analysis<a class="headerlink" href="#Bandwidth-Analysis" title="Link to this heading">#</a></h2>
+<p>The transmitted spectrum is modeled as a flat spectrum with unity magnitude across the transmitter’s bandwidth. The receiver’s frequency response is also modeled as a flat response across the receiver’s bandwidth. Therefore, the bandwidth ratio is computed as just a simple ratio of the receiver’s bandwidth to the transmitter’s bandwidth.</p>
+<p>If the transmitter’s bandwidth is totally contained within the receiver’s bandwidth, the ratio will be one (1.0). For a receiver that has an auto scaled bandwidth and an auto tracked frequency, this value will be one (1). Otherwise, the value may be less than one (1.0) if the receiver center frequency and the transmitter frequency are not the same or the receiver’s bandwidth is totally contained within the transmitter’s bandwidth.</p>
+<p>View the Bandwidth (MHz) and Bandwidth Overlap (units) columns on the link budget report. Note that the Bandwidth Overlap is one (1.0). This shows that all of the energy from the transmitted signal is being captured at the receiver. The bandwidth is 300 MHz, which is what it should be.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">link_budget_report</span><span class="p">[[</span><span class="s2">"bandwidth"</span><span class="p">,</span> <span class="s2">"bandwidth overlap"</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bandwidth</th>
+      <th>bandwidth overlap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>300.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>300.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>300.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>300.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>300.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1436</th>
+      <td>300.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1437</th>
+      <td>300.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1438</th>
+      <td>300.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1439</th>
+      <td>300.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1440</th>
+      <td>300.0</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>1441 rows × 2 columns</p>
+</div></div>
+</div>
+<p>Before using filters, experiment and change the receiver’s bandwidth to determine the effect that change might have on signal quality. The smaller the bandwidth, the less information that can be sent or received. The Bandwidth Auto Scale option allows the receiver to adjust its bandwidth to that of the current transmitter. To manually configure the receiver’s bandwidth, disable the bandwidth autoscale option.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">ReceiverModelComplex</span>
+
+
+<span class="n">urgent_receiver_model</span> <span class="o">=</span> <span class="n">ReceiverModelComplex</span><span class="p">(</span>
+    <span class="n">urgent_receiver</span><span class="o">.</span><span class="n">model_component_linking</span><span class="o">.</span><span class="n">component</span>
+<span class="p">)</span>
+<span class="n">urgent_receiver_model</span><span class="o">.</span><span class="n">scale_bandwidth_automatically</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<p>Now, set the bandwidth to 150 MHz:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">urgent_receiver_model</span><span class="o">.</span><span class="n">bandwidth</span> <span class="o">=</span> <span class="mi">150</span>
+</pre></div>
+</div>
+</div>
+<p>Refresh the link budget report to see how this change affected the Bandwidth Overlap:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comm_system</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+<span class="n">link_budget_report</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">comm_system</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">get_item_by_name</span><span class="p">(</span><span class="s2">"Link Information"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">link_budget_report</span><span class="p">[[</span><span class="s2">"bandwidth"</span><span class="p">,</span> <span class="s2">"bandwidth overlap"</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bandwidth</th>
+      <th>bandwidth overlap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>150.0</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>150.0</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>150.0</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>150.0</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>150.0</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1436</th>
+      <td>150.0</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>1437</th>
+      <td>150.0</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>1438</th>
+      <td>150.0</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>1439</th>
+      <td>150.0</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>1440</th>
+      <td>150.0</td>
+      <td>0.5</td>
+    </tr>
+  </tbody>
+</table>
+<p>1441 rows × 2 columns</p>
+</div></div>
+</div>
+</section>
+<section id="Signal-PSD">
+<h2>Signal PSD<a class="headerlink" href="#Signal-PSD" title="Link to this heading">#</a></h2>
+<p>The Power Spectral Density (PSD), which describes how the power of a signal or time series is distributed with frequency. Here power can be the actual physical power, or more often, for convenience with abstract signals, can be defined as the squared value of the signal. This assumes the actual power of a signal is a 1-ohm voltage load.</p>
+<p>The units of power spectral density are commonly expressed in watts per hertz (W/Hz). A spectral filter allows only a specific bandwidth of the electromagnetic spectrum to pass.</p>
+<p>Up until now, the power has been spread equally across frequency bands. In reality, the power is concentrated around the band center. Power Spectral Density allows you to model the reality case. The PSD option allows the scenario to model the actual spectral shape of the transmitted signal based on the modulation, data rate, etc. When using Signal PSD is enabled, the modulation’s power spectral density is used to determine the Bandwidth Overlap Factor. If this option is not selected, the PSD
+will be modeled as a flat spectrum with unity magnitude across the transmitter’s bandwidth.</p>
+<p>Filters can be applied to enhance the magnitude over certain frequencies content while suppressing the magnitudes over other frequencies. The use of Spectral Filters on transmitters modifies the spectral shape. The use of Spectral Filters on receivers helps reduce the impact of out of band signals from jammers and other sources. Enable Signal PSD to be used for both transmitters:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="o">.</span><span class="n">units_preferences</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">"Ratio"</span><span class="p">)</span><span class="o">.</span><span class="n">set_current_unit</span><span class="p">(</span>
+    <span class="s2">"dB"</span>
+<span class="p">)</span>  <span class="c1"># Change "Ratio" units back to a logarithmic scale to match tutorial graphs for the remainder of the tutorial.</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">TransmitterModelComplex</span>
+
+
+<span class="n">routine_transmitter_model</span> <span class="o">=</span> <span class="n">TransmitterModelComplex</span><span class="p">(</span>
+    <span class="n">routine_transmitter</span><span class="o">.</span><span class="n">model_component_linking</span><span class="o">.</span><span class="n">component</span>
+<span class="p">)</span>
+<span class="n">routine_transmitter_model</span><span class="o">.</span><span class="n">modulator</span><span class="o">.</span><span class="n">enable_signal_psd</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">urgent_transmitter_model</span> <span class="o">=</span> <span class="n">TransmitterModelComplex</span><span class="p">(</span>
+    <span class="n">urgent_transmitter</span><span class="o">.</span><span class="n">model_component_linking</span><span class="o">.</span><span class="n">component</span>
+<span class="p">)</span>
+<span class="n">urgent_transmitter_model</span><span class="o">.</span><span class="n">modulator</span><span class="o">.</span><span class="n">enable_signal_psd</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>Refresh the Carrier to Noise vs Time graph and examine how the interference has changd:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comm_system</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+<span class="n">df2</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">comm_system</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">"Link Information"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute_elements</span><span class="p">(</span><span class="n">start_time</span><span class="p">,</span> <span class="n">stop_time</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="p">[</span><span class="s2">"C/N"</span><span class="p">,</span> <span class="s2">"Time"</span><span class="p">,</span> <span class="s2">"C/(N+I)"</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">axes2</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">"use_unit"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">"unit_squared"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"ylog10"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">"y2log10"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">"label"</span><span class="p">:</span> <span class="s2">"Ratio"</span><span class="p">,</span>
+        <span class="s2">"lines"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">"y_name"</span><span class="p">:</span> <span class="s2">"c/n"</span><span class="p">,</span>
+                <span class="s2">"label"</span><span class="p">:</span> <span class="s2">"C/N"</span><span class="p">,</span>
+                <span class="s2">"use_unit"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">"unit_squared"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s2">"dimension"</span><span class="p">:</span> <span class="s2">"Ratio"</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">"y_name"</span><span class="p">:</span> <span class="s2">"c/(n+i)"</span><span class="p">,</span>
+                <span class="s2">"label"</span><span class="p">:</span> <span class="s2">"C/(N+I)"</span><span class="p">,</span>
+                <span class="s2">"use_unit"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">"unit_squared"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s2">"dimension"</span><span class="p">:</span> <span class="s2">"Ratio"</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">],</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+<span class="n">line_chart</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">df2</span><span class="p">],</span>
+    <span class="n">root</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">"c/n"</span><span class="p">,</span> <span class="s2">"c/(n+i)"</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">"time"</span><span class="p">],</span>
+    <span class="n">axes2</span><span class="p">,</span>
+    <span class="s2">"time"</span><span class="p">,</span>
+    <span class="s2">"Time"</span><span class="p">,</span>
+    <span class="s2">"Carrier to Noise vs Time"</span><span class="p">,</span>
+    <span class="n">colormap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">time_unit_abbreviation</span><span class="o">=</span><span class="s2">"UTCG"</span><span class="p">,</span>
+    <span class="n">formatter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_radio-frequency-spectrum-filters_64_0.png" src="../_images/examples_radio-frequency-spectrum-filters_64_0.png" />
+</div>
+</div>
+<p>Refresh the Link Budget Report and see the changes in bandwidth overlap:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comm_system</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+<span class="n">link_budget_report</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">comm_system</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">get_item_by_name</span><span class="p">(</span><span class="s2">"Link Information"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">link_budget_report</span><span class="p">[[</span><span class="s2">"bandwidth"</span><span class="p">,</span> <span class="s2">"bandwidth overlap"</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bandwidth</th>
+      <th>bandwidth overlap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>150.0</td>
+      <td>-1.0833579655867</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>150.0</td>
+      <td>-1.0833579655867</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>150.0</td>
+      <td>-1.0833579655867</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>150.0</td>
+      <td>-1.0833579655867</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>150.0</td>
+      <td>-1.0833579655867</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1436</th>
+      <td>150.0</td>
+      <td>-1.0833579655867</td>
+    </tr>
+    <tr>
+      <th>1437</th>
+      <td>150.0</td>
+      <td>-1.0833579655867</td>
+    </tr>
+    <tr>
+      <th>1438</th>
+      <td>150.0</td>
+      <td>-1.0833579655867</td>
+    </tr>
+    <tr>
+      <th>1439</th>
+      <td>150.0</td>
+      <td>-1.0833579655867</td>
+    </tr>
+    <tr>
+      <th>1440</th>
+      <td>150.0</td>
+      <td>-1.0833579655867</td>
+    </tr>
+  </tbody>
+</table>
+<p>1441 rows × 2 columns</p>
+</div></div>
+</div>
+</section>
+<section id="Changing-the-Modulation-Type">
+<h2>Changing the Modulation Type<a class="headerlink" href="#Changing-the-Modulation-Type" title="Link to this heading">#</a></h2>
+<p>One way to minimize bandwidth costs is to change the modulation to Phase Shift Keying with 16 Constellation Points (16PSK). Change the modulation to 16PSK and see if this has an effect on your signal quality:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">urgent_transmitter_model</span><span class="o">.</span><span class="n">set_modulator</span><span class="p">(</span><span class="s2">"16PSK"</span><span class="p">)</span>
+<span class="n">urgent_transmitter_model</span><span class="o">.</span><span class="n">modulator</span><span class="o">.</span><span class="n">enable_signal_psd</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>Refresh the Link Budget Report and see the changes in bandwidth overlap:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comm_system</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+<span class="n">link_budget_report</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">comm_system</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">get_item_by_name</span><span class="p">(</span><span class="s2">"Link Information"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">link_budget_report</span><span class="p">[[</span><span class="s2">"bandwidth"</span><span class="p">,</span> <span class="s2">"bandwidth overlap"</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bandwidth</th>
+      <th>bandwidth overlap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>150.0</td>
+      <td>-0.4145438790212007</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>150.0</td>
+      <td>-0.4145438790212007</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>150.0</td>
+      <td>-0.4145438790212007</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>150.0</td>
+      <td>-0.4145438790212007</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>150.0</td>
+      <td>-0.4145438790212007</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1436</th>
+      <td>150.0</td>
+      <td>-0.4145438790212007</td>
+    </tr>
+    <tr>
+      <th>1437</th>
+      <td>150.0</td>
+      <td>-0.4145438790212007</td>
+    </tr>
+    <tr>
+      <th>1438</th>
+      <td>150.0</td>
+      <td>-0.4145438790212007</td>
+    </tr>
+    <tr>
+      <th>1439</th>
+      <td>150.0</td>
+      <td>-0.4145438790212007</td>
+    </tr>
+    <tr>
+      <th>1440</th>
+      <td>150.0</td>
+      <td>-0.4145438790212007</td>
+    </tr>
+  </tbody>
+</table>
+<p>1441 rows × 2 columns</p>
+</div></div>
+</div>
+<p>Revert back to the previous modulator and reset the receiver bandwidth to use auto scaling:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">urgent_transmitter_model</span><span class="o">.</span><span class="n">set_modulator</span><span class="p">(</span><span class="s2">"QPSK"</span><span class="p">)</span>
+<span class="n">urgent_transmitter_model</span><span class="o">.</span><span class="n">modulator</span><span class="o">.</span><span class="n">enable_signal_psd</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">urgent_receiver_model</span><span class="o">.</span><span class="n">scale_bandwidth_automatically</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Spectrum-and-Filter-Graphs">
+<h2>Spectrum and Filter Graphs<a class="headerlink" href="#Spectrum-and-Filter-Graphs" title="Link to this heading">#</a></h2>
+<p>Run a spectrum and filter graph to determine the cutoff frequency of the interference transmitter (Noise_Xmt):</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.extensions.data_analysis.graphs.transmitter_graphs</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">transmitter_spectrum_and_filter_line_chart</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="n">transmitter_spectrum_and_filter_line_chart</span><span class="p">(</span><span class="n">urgent_transmitter</span><span class="p">)</span>
+
+<span class="c1"># Format legend so it does not overlap with the graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"center left"</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_radio-frequency-spectrum-filters_76_0.png" src="../_images/examples_radio-frequency-spectrum-filters_76_0.png" />
+</div>
+</div>
+<p>The graph shows that the bandwidth encompasses 4500 MHz. The main beam is 300 MHz.</p>
+</section>
+<section id="Butterworth-Filter">
+<h2>Butterworth Filter<a class="headerlink" href="#Butterworth-Filter" title="Link to this heading">#</a></h2>
+<p>The filter cutoff frequency controls where the signal will start being suppressed and the filter order (rolloff) controls how steep the filter magnitude is to drop or how fast the signal is to get suppressed.</p>
+<p>The Butterworth filter is less complex and maintains a flat profile over the filter bandwidth, but doesn’t have as steep a rolloff as Chebyshev. However, the Chebyshev is more complex and uses recursive equations (not a closed formula) and there is a ripple in the passband. This means there is not a flat profile over the filter bandwidth. The Butterworth filter has a frequency response with flat pass and stop bands. Regenerate a Butterworth Filter:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">urgent_transmitter_model</span><span class="o">.</span><span class="n">enable_filter</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">urgent_transmitter_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">lower_bandwidth_limit</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="o">-</span><span class="mi">2000</span>
+<span class="p">)</span>
+<span class="n">urgent_transmitter_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">upper_bandwidth_limit</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">transmitter_spectrum_and_filter_line_chart</span><span class="p">(</span><span class="n">urgent_transmitter</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"center left"</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_radio-frequency-spectrum-filters_81_0.png" src="../_images/examples_radio-frequency-spectrum-filters_81_0.png" />
+</div>
+</div>
+<p>This has removed 500 MHz of bandwidth. Using the default frequency cutoff, the cutoff has been narrowed to ten (10) MHz on both sides of the carrier wave. See on the graph that the bandwidth has been suppressed on both sides of the carrier wave.</p>
+<p>Refresh the Link Budget Report to see how this affects the BER:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comm_system</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">link_budget_report</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">comm_system</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">get_item_by_name</span><span class="p">(</span><span class="s2">"Link Information"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">link_budget_report</span><span class="p">[[</span><span class="s2">"ber"</span><span class="p">,</span> <span class="s2">"ber+i"</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ber</th>
+      <th>ber+i</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1e-30</td>
+      <td>0.027371745971626938</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1e-30</td>
+      <td>0.027371765735932287</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1e-30</td>
+      <td>0.02737174179772181</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1e-30</td>
+      <td>0.027371716500498147</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1e-30</td>
+      <td>0.027371690437327338</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1436</th>
+      <td>1e-30</td>
+      <td>0.027371671312116763</td>
+    </tr>
+    <tr>
+      <th>1437</th>
+      <td>1e-30</td>
+      <td>0.027371647892651004</td>
+    </tr>
+    <tr>
+      <th>1438</th>
+      <td>1e-30</td>
+      <td>0.027371623539385322</td>
+    </tr>
+    <tr>
+      <th>1439</th>
+      <td>1e-30</td>
+      <td>0.027371598594259323</td>
+    </tr>
+    <tr>
+      <th>1440</th>
+      <td>1e-30</td>
+      <td>0.027371572203276677</td>
+    </tr>
+  </tbody>
+</table>
+<p>1441 rows × 2 columns</p>
+</div></div>
+</div>
+<p>Although the filter is working, the BER to dropped below acceptable levels during periods of the analysis. The BER with interference has increased as well. This indicates that the communication link is still poor.</p>
+<p>To ensure the filter has a steeper roll off at the cutoff frequency, increase the filter order and refresh the Transmitter Spectrum and Filter graph:</p>
+</section>
+<section id="Change-the-Filter-Order">
+<h2>Change the Filter Order<a class="headerlink" href="#Change-the-Filter-Order" title="Link to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">urgent_transmitter_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">order</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">transmitter_spectrum_and_filter_line_chart</span><span class="p">(</span><span class="n">urgent_transmitter</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"center left"</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_radio-frequency-spectrum-filters_88_0.png" src="../_images/examples_radio-frequency-spectrum-filters_88_0.png" />
+</div>
+</div>
+<p>There was a steep roll off in the filter profile. The steeper the roll off the better, but there are tradeoffs. One tradeoff is the steeper the roll off, the more complex the filter function. The more complex the filter function, the harder it is to implement, due to the complexity.</p>
+<p>Refresh the Link Budget Report to see how this affects the BER+I:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comm_system</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">link_budget_report</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">comm_system</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">get_item_by_name</span><span class="p">(</span><span class="s2">"Link Information"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">link_budget_report</span><span class="p">[[</span><span class="s2">"ber"</span><span class="p">,</span> <span class="s2">"ber+i"</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ber</th>
+      <th>ber+i</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1e-30</td>
+      <td>0.028505281154327988</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1e-30</td>
+      <td>0.02850530140993462</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1e-30</td>
+      <td>0.028505276876667835</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1e-30</td>
+      <td>0.02850525095060517</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1e-30</td>
+      <td>0.028505224239555028</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1436</th>
+      <td>1e-30</td>
+      <td>0.028505204638928965</td>
+    </tr>
+    <tr>
+      <th>1437</th>
+      <td>1e-30</td>
+      <td>0.028505180637300627</td>
+    </tr>
+    <tr>
+      <th>1438</th>
+      <td>1e-30</td>
+      <td>0.028505155678659484</td>
+    </tr>
+    <tr>
+      <th>1439</th>
+      <td>1e-30</td>
+      <td>0.028505130113445295</td>
+    </tr>
+    <tr>
+      <th>1440</th>
+      <td>1e-30</td>
+      <td>0.028505103066432738</td>
+    </tr>
+  </tbody>
+</table>
+<p>1441 rows × 2 columns</p>
+</div></div>
+</div>
+<p>The change is minimal but the BER+I is still too high.</p>
+<p>The center beam is 300 MHz wide but the frequency cutoff is only ten (10) MHz. Widen the cutoff to -100 MHz to 100 MHz (200 MHz) and refresh the Transmitter Spectrum and Filter graph:</p>
+</section>
+<section id="Change-the-Cutoff-Frequency">
+<h2>Change the Cutoff Frequency<a class="headerlink" href="#Change-the-Cutoff-Frequency" title="Link to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">urgent_transmitter_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">cut_off_frequency</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">transmitter_spectrum_and_filter_line_chart</span><span class="p">(</span><span class="n">urgent_transmitter</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"center left"</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_radio-frequency-spectrum-filters_95_0.png" src="../_images/examples_radio-frequency-spectrum-filters_95_0.png" />
+</div>
+</div>
+<p>Notice how the filter is now allowing more bandwidth through.</p>
+<p>Refresh the Link Budget Report to see how this affects the BER+I:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comm_system</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">link_budget_report</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">comm_system</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">get_item_by_name</span><span class="p">(</span><span class="s2">"Link Information"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">link_budget_report</span><span class="p">[[</span><span class="s2">"ber"</span><span class="p">,</span> <span class="s2">"ber+i"</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ber</th>
+      <th>ber+i</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1e-30</td>
+      <td>6.556988136920271e-07</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1e-30</td>
+      <td>6.557014177509208e-07</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1e-30</td>
+      <td>6.556982637575129e-07</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1e-30</td>
+      <td>6.556949307198647e-07</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1e-30</td>
+      <td>6.556914967791454e-07</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1436</th>
+      <td>1e-30</td>
+      <td>6.556889769553584e-07</td>
+    </tr>
+    <tr>
+      <th>1437</th>
+      <td>1e-30</td>
+      <td>6.556858913567802e-07</td>
+    </tr>
+    <tr>
+      <th>1438</th>
+      <td>1e-30</td>
+      <td>6.556826827391874e-07</td>
+    </tr>
+    <tr>
+      <th>1439</th>
+      <td>1e-30</td>
+      <td>6.556793961553791e-07</td>
+    </tr>
+    <tr>
+      <th>1440</th>
+      <td>1e-30</td>
+      <td>6.556759190908029e-07</td>
+    </tr>
+  </tbody>
+</table>
+<p>1441 rows × 2 columns</p>
+</div></div>
+</div>
+</section>
+<section id="Chebyshev-Filter">
+<h2>Chebyshev Filter<a class="headerlink" href="#Chebyshev-Filter" title="Link to this heading">#</a></h2>
+<p>The Chebyshev filter has a frequency response with equal ripple in the pass band. Regenerate the graph with a Chebyshev Filter:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">urgent_transmitter_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">set_component</span><span class="p">(</span><span class="s2">"Chebyshev"</span><span class="p">)</span>
+<span class="n">urgent_transmitter_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">lower_bandwidth_limit</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="o">-</span><span class="mi">2000</span>
+<span class="p">)</span>
+<span class="n">urgent_transmitter_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">upper_bandwidth_limit</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">transmitter_spectrum_and_filter_line_chart</span><span class="p">(</span><span class="n">urgent_transmitter</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"center left"</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_radio-frequency-spectrum-filters_101_0.png" src="../_images/examples_radio-frequency-spectrum-filters_101_0.png" />
+</div>
+</div>
+<p>Refresh the Link Budget Report to see how this affects the BER+I:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comm_system</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">link_budget_report</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">comm_system</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">get_item_by_name</span><span class="p">(</span><span class="s2">"Link Information"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">link_budget_report</span><span class="p">[[</span><span class="s2">"ber"</span><span class="p">,</span> <span class="s2">"ber+i"</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ber</th>
+      <th>ber+i</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1e-30</td>
+      <td>0.07070311366881327</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1e-30</td>
+      <td>0.07070314614086998</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1e-30</td>
+      <td>0.07070310681123332</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1e-30</td>
+      <td>0.07070306524877318</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1e-30</td>
+      <td>0.0707030224278743</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1436</th>
+      <td>1e-30</td>
+      <td>0.07070299100579819</td>
+    </tr>
+    <tr>
+      <th>1437</th>
+      <td>1e-30</td>
+      <td>0.07070295252839504</td>
+    </tr>
+    <tr>
+      <th>1438</th>
+      <td>1e-30</td>
+      <td>0.0707029125167778</td>
+    </tr>
+    <tr>
+      <th>1439</th>
+      <td>1e-30</td>
+      <td>0.07070287153274046</td>
+    </tr>
+    <tr>
+      <th>1440</th>
+      <td>1e-30</td>
+      <td>0.07070282817319345</td>
+    </tr>
+  </tbody>
+</table>
+<p>1441 rows × 2 columns</p>
+</div></div>
+</div>
+<p>Notice the five (5) dB ripple in the filter and filtered spectrum.</p>
+</section>
+<section id="Graph-the-Receiver-Filter">
+<h2>Graph the Receiver Filter<a class="headerlink" href="#Graph-the-Receiver-Filter" title="Link to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.extensions.data_analysis.graphs.receiver_graphs</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">receiver_filter_line_chart</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="n">receiver_filter_line_chart</span><span class="p">(</span><span class="n">urgent_receiver</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_radio-frequency-spectrum-filters_106_0.png" src="../_images/examples_radio-frequency-spectrum-filters_106_0.png" />
+</div>
+</div>
+<p>Currently, no filter is being used, so there is no effect against the receiver.</p>
+<p>Add the Chebyshev filter on the receiver to see what effect the filter might have on the communication link:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">urgent_receiver_model</span><span class="o">.</span><span class="n">enable_filter</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">urgent_receiver_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">set_component</span><span class="p">(</span><span class="s2">"Chebyshev"</span><span class="p">)</span>
+<span class="n">urgent_receiver_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">lower_bandwidth_limit</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2000</span>
+<span class="n">urgent_receiver_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">upper_bandwidth_limit</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">urgent_receiver_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">cut_off_frequency</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">urgent_receiver_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">ripple</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">receiver_filter_line_chart</span><span class="p">(</span><span class="n">urgent_receiver</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_radio-frequency-spectrum-filters_109_0.png" src="../_images/examples_radio-frequency-spectrum-filters_109_0.png" />
+</div>
+</div>
+<p>Notice the five (5) dB ripple in the filter and filtered spectrum and how the filter is suppressing noise on both sides of the carrier wave.</p>
+</section>
+<section id="Change-the-Receiver-Filter-to-a-Butterworth:">
+<h2>Change the Receiver Filter to a Butterworth:<a class="headerlink" href="#Change-the-Receiver-Filter-to-a-Butterworth:" title="Link to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">urgent_receiver_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">set_component</span><span class="p">(</span><span class="s2">"Butterworth"</span><span class="p">)</span>
+<span class="n">urgent_receiver_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">lower_bandwidth_limit</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2000</span>
+<span class="n">urgent_receiver_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">upper_bandwidth_limit</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">urgent_receiver_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">cut_off_frequency</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">receiver_filter_line_chart</span><span class="p">(</span><span class="n">urgent_receiver</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_radio-frequency-spectrum-filters_112_0.png" src="../_images/examples_radio-frequency-spectrum-filters_112_0.png" />
+</div>
+</div>
+<p>The ripple disappeared and the frequency cutoff isn’t so steep.</p>
+<p>Apply the Butterworth filter to Urgent_Xmt.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">urgent_transmitter_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">set_component</span><span class="p">(</span><span class="s2">"Butterworth"</span><span class="p">)</span>
+<span class="n">urgent_transmitter_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">cut_off_frequency</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">urgent_transmitter_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">lower_bandwidth_limit</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="o">-</span><span class="mi">2000</span>
+<span class="p">)</span>
+<span class="n">urgent_transmitter_model</span><span class="o">.</span><span class="n">filter_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">upper_bandwidth_limit</span> <span class="o">=</span> <span class="mi">2000</span>
+</pre></div>
+</div>
+</div>
+<p>Refresh the Link Budget Report to see how this affects the BER+I and Bandwidth Overlap:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comm_system</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">link_budget_report</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">comm_system</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">get_item_by_name</span><span class="p">(</span><span class="s2">"Link Information"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">link_budget_report</span><span class="p">[[</span><span class="s2">"ber"</span><span class="p">,</span> <span class="s2">"ber+i"</span><span class="p">,</span> <span class="s2">"bandwidth"</span><span class="p">,</span> <span class="s2">"bandwidth overlap"</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ber</th>
+      <th>ber+i</th>
+      <th>bandwidth</th>
+      <th>bandwidth overlap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1e-30</td>
+      <td>1e-30</td>
+      <td>4000.0</td>
+      <td>-7.963570199208902</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1e-30</td>
+      <td>1e-30</td>
+      <td>4000.0</td>
+      <td>-7.963570199208902</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1e-30</td>
+      <td>1e-30</td>
+      <td>4000.0</td>
+      <td>-7.963570199208902</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1e-30</td>
+      <td>1e-30</td>
+      <td>4000.0</td>
+      <td>-7.963570199208902</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1e-30</td>
+      <td>1e-30</td>
+      <td>4000.0</td>
+      <td>-7.963570199208902</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1436</th>
+      <td>1e-30</td>
+      <td>1e-30</td>
+      <td>4000.0</td>
+      <td>-7.963570199208902</td>
+    </tr>
+    <tr>
+      <th>1437</th>
+      <td>1e-30</td>
+      <td>1e-30</td>
+      <td>4000.0</td>
+      <td>-7.963570199208902</td>
+    </tr>
+    <tr>
+      <th>1438</th>
+      <td>1e-30</td>
+      <td>1e-30</td>
+      <td>4000.0</td>
+      <td>-7.963570199208902</td>
+    </tr>
+    <tr>
+      <th>1439</th>
+      <td>1e-30</td>
+      <td>1e-30</td>
+      <td>4000.0</td>
+      <td>-7.963570199208902</td>
+    </tr>
+    <tr>
+      <th>1440</th>
+      <td>1e-30</td>
+      <td>1e-30</td>
+      <td>4000.0</td>
+      <td>-7.963570199208902</td>
+    </tr>
+  </tbody>
+</table>
+<p>1441 rows × 4 columns</p>
+</div></div>
+</div>
+<p>Filtering both the transmitter and the receiver minimizes interference on the communication link. The Chebyshev filter removes the greatest amount of interference, but it increases the BER values.</p>
+<p>The Butterworth filter decreases the BER values, but there’s a bit more interference in the communication link. Both filters require the bandwidth and the amount of information that can be transmitted over the communication link to be decreased.</p>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"659e738b29fa43e6a8927effecf0d291": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "c8db58d53ccd4d3aa73a4fa305e31fc7": {"model_name": "AnyModel", "model_module": "anywidget", "model_module_version": "~0.11.*", "state": {"_anywidget_id": "ansys.stk.core.experimental.jupyterwidgets.GlobeWidget", "_css": "/*************************************************************************************************\n  renderview.css\n\n  This file is dedicated to the public domain under CC0 1.0.\n  This file is developed at https://github.com/pygfx/renderview, please contribute changes there.\n\n *************************************************************************************************/\n\ndiv.renderview-wrapper {\n    display: inline-block;\n    position: relative;\n    box-sizing: border-box;\n    overflow: visible;\n    min-width: 32px;\n    min-height: 32px;\n}\n\ndiv.renderview-wrapper .renderview-view {\n    display: block;\n    box-sizing: border-box;\n    width: 100%;\n    height: 100%;\n    background: none;\n    border-radius: 6px;\n    border: 1px solid rgba(127, 127, 127, 0.2);\n}\n\ndiv.renderview-wrapper .renderview-hidden {\n    display: none;\n}\n\ndiv.renderview-wrapper .renderview-top {\n    display: none;\n    position: absolute;\n    box-sizing: border-box;\n    z-index: 2;\n    top: -1.5em;\n    height: 1.5em;\n    width: 100%;\n    border-radius: 6px 6px 0 0;\n    border: 1px solid rgba(127, 127, 127, 0.2);\n    border-bottom: 0;\n}\n\ndiv.renderview-wrapper .renderview-top span {\n    display: inline-block;\n    box-sizing: border-box;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    padding: 0.1em 0.5em;\n    width: 100%;\n}\n\ndiv.renderview-wrapper .renderview-resizer {\n    display: none;\n    position: absolute;\n    box-sizing: border-box;\n    z-index: 3;\n    bottom: 0;\n    right: 0;\n    width: 14px;\n    height: 14px;\n    cursor: nwse-resize;\n}\n\ndiv.renderview-wrapper.has-titlebar {\n    margin-top: 2em !important;\n}\n\ndiv.renderview-wrapper.has-titlebar .renderview-top {\n    display: block;\n}\n\ndiv.renderview-wrapper.has-titlebar .renderview-view {\n    border-top-left-radius: 0 !important;\n    border-top-right-radius: 0 !important;\n}\n\ndiv.renderview-wrapper.is-resizable .renderview-resizer {\n    display: block;\n}", "_dom_classes": [], "_esm": "/*************************************************************************************************\n  renderview.js\n\n  This file is dedicated to the public domain under CC0 1.0.\n  This file is developed at https://github.com/pygfx/renderview, please contribute changes there.\n\n  This module implements a common event spec for render targets in a browser.\n  The code is written with little assumptions about the application, so that it\n  can be shared between different use-cases, such as rendercanvas backends\n  (pyodide, anywidget, remote-browser), jupyter_rfb, and other projects.\n\n  Code that loads this script should avoid loading it in the global scope.\n  Either by putting it in a ``<script type='module>``, or wrapping it in an IIFE\n  with ``(() => {\\n{JS}\\n})();``\n\n  This code is formatted and linted with standardjs (quite similar to Ruff in\n  Python). It adheres to common JS practices, but also has some Python habits,\n  like underscore prefix for private attributes.\n\n *************************************************************************************************/\n\n'use strict'\n\nconst Element = window.Element\nconst IntersectionObserver = window.IntersectionObserver\nconst ResizeObserver = window.ResizeObserver\n\nconst LOOKS_LIKE_MOBILE = /mobi|android|iphone|ipad|ipod|tablet/.test(\n  navigator.userAgent.toLowerCase()\n)\n\nconst KEY_MAP = {\n  Ctrl: 'Control',\n  Del: 'Delete',\n  Esc: 'Escape'\n}\n\nconst KEY_MOD_MAP = {\n  altKey: 'Alt',\n  ctrlKey: 'Control',\n  metaKey: 'Meta',\n  shiftKey: 'Shift'\n}\n\nconst MOUSE_BUTTON_MAP = {\n  0: 1, // left\n  1: 3, // middle/wheel\n  2: 2, // right\n  3: 4, // backwards\n  4: 5 // forwards\n}\n\nfunction getButtons (ev) {\n  // Note that ev.button has a historic awkward mapping, but ev.buttons is in the order that we want\n  const button = MOUSE_BUTTON_MAP[ev.button] || 0\n  const buttons = []\n  for (const b of [0, 1, 2, 3, 4, 5]) {\n    if ((1 << b) & ev.buttons) {\n      buttons.push(b + 1)\n    }\n  }\n  return [button, buttons]\n}\n\nfunction getModifiers (ev) {\n  return Object.entries(KEY_MOD_MAP)\n    .filter(([k]) => ev[k])\n    .map(([, v]) => v)\n}\n\nfunction getTimestamp () {\n  return performance.now() / 1000\n}\n\nfunction arraysEqual (a, b) {\n  return a.length === b.length && a.every((val, i) => val === b[i])\n}\n\n/**\n * The BaseRenderView handles the client-side logic for a render target (typically a <canvas> or <img>).\n *\n * It observes events and calls `this.OnEvent()`.\n * It provides convenience methods for setting the size, cursor, and more.\n *\n * When used with a wrapper element, more features are enabled:\n *\n * - It can be manually resized if the wrapper element has the 'is-resizable' class.\n * - A title bar is shown if the wrapper has the 'has-titlebar' class.\n * - The above mentioned classes can also be programmatically set via `setResizable()` and `showTitlebar()`.\n * - The title can be set using `setTitle()`.\n *\n */\nclass BaseRenderView {\n  /**\n   * Create a new RenderView.\n   *\n   * If a single element is given, the view directly manages that element, nice and simple.\n   * No styling is applied except for `width` and `height`.\n   *\n   * If a wrapper element is also given, the view supports features like manual resizing and a title-bar.\n   * In this case, any user styling that effects positioning should be applied to the wrapper.\n   * The wrapper may contain placeholder content; on initialization, it's innerHTML and padding are reset.\n   *\n   * @param {HTMLElement} viewElement - The element (e.g. canvas or img) used for rendering.\n   * @param {HTMLElement} wrapperElement - The wrapper element (optional; can be null).\n   */\n  constructor (viewElement, wrapperElement) {\n    // Check given element\n    if (viewElement === undefined || !(viewElement instanceof Element)) {\n      throw new Error('BaseRenderView: viewElement must be an Element.')\n    }\n    if (wrapperElement !== null) {\n      if (wrapperElement === undefined || !(wrapperElement instanceof Element)) {\n        throw new Error('BaseRenderView: wrapperElement must be null or an Element.')\n      }\n      wrapperElement.innerHTML = ''\n      wrapperElement.style.padding = '0'\n      wrapperElement.style.background = ''\n    }\n\n    // Tweak viewElement\n    viewElement.tabIndex = -1\n    // Prevent context menu on RMB. Firefox still shows it when shift is pressed. It seems\n    // impossible to override this (tips welcome!), so let's make this the actual behavior.\n    viewElement.oncontextmenu = (e) => {\n      if (!e.shiftKey) {\n        e.preventDefault()\n        e.stopPropagation()\n        return false\n      }\n    }\n\n    this.viewElement = viewElement\n    this.wrapperElement = wrapperElement\n    this.sizeElement = (wrapperElement === null) ? viewElement : wrapperElement\n    this.titleElement = null // is set in _initElements() if wrapperElement is given\n\n    this._lsize = null // cached logical size\n    this._wheelThrottle = 20 // to avoid flooding wheel events\n    this._moveThrottle = 20 // to avoid flooding move events\n    this._isVisible = false // set by intersection observer\n\n    this._focusElement = null\n    this._abortController = new AbortController()\n    this._resizeObserver = null\n    this._intersectionObserver = null\n\n    this._initElements()\n    this._registerEvents()\n  }\n\n  /**\n   * Close the view, disconnecting observers and clearing callbacks.\n   * This does not remove the the element from the DOM; that's up to the caller.\n   */\n  close () {\n    if (this._focusElement) {\n      this._focusElement.remove()\n      this._focusElement = null\n    }\n    if (this._abortController) {\n      this._abortController.abort()\n      this._abortController = null\n    }\n    if (this._resizeObserver) {\n      this._resizeObserver.disconnect()\n      this._resizeObserver = null\n    }\n    if (this._intersectionObserver) {\n      this._intersectionObserver.disconnect()\n      this._intersectionObserver = null\n    }\n    this.viewElement = null\n    this.sizeElement = null\n    this.titleElement = null\n    if (this.wrapperElement) {\n      this.wrapperElement.innerHTML = ''\n      this.wrapperElement = null\n    }\n    const event = {\n      type: 'close',\n      timestamp: getTimestamp()\n    }\n    this.onEvent(event)\n  }\n\n  /**\n   * Set the view's size in logical pixels.\n   *\n   * @param {string} width - The requested width.\n   * @param {string} height - The requested height.\n   */\n  setLogicalSize (width, height) {\n    this.sizeElement.style.maxWidth = ''\n    this.sizeElement.style.maxHeight = ''\n    this.sizeElement.style.width = width + 'px'\n    this.sizeElement.style.height = height + 'px'\n  }\n\n  /**\n   * Set the width of the view as a CSS string.\n   *\n   * @param {string} cssWidth - The requested width as a css string, e.g. '640px' or '90%' or 'calc(100% - 10px)'.\n   */\n  setCssWidth (cssWidth) {\n    this.sizeElement.style.maxWidth = ''\n    this.sizeElement.style.width = cssWidth\n  }\n\n  /**\n   * Set the height of the view as a CSS string.\n   *\n   * @param {string} cssHeight - The requested height as a css string, e.g. '480px' or '40vh'.\n   */\n  setCssHeight (cssHeight) {\n    this.sizeElement.style.maxHeight = ''\n    this.sizeElement.style.height = cssHeight\n  }\n\n  /**\n   * Set whether the view is manually resizable.\n   * Note that the view can only be made resizable if it was instantiated with a wrapper.\n   *\n   * @param {boolean} resizable - Whether to make it resizable or not.\n   */\n  setResizable (resizable) {\n    if (this.wrapperElement) {\n      if (resizable) {\n        this.wrapperElement.classList.add('is-resizable')\n      } else {\n        this.wrapperElement.classList.remove('is-resizable')\n      }\n    }\n  }\n\n  /**\n   * Set whether the view has a titlebar.\n   * Note that the view can only have a titlebar if it was instantiated with a wrapper.\n   *\n   * @param {boolean} titlebar - Whether to show the titlebar or not.\n   */\n  showTitlebar (titlebar) {\n    if (this.wrapperElement) {\n      if (titlebar) {\n        this.wrapperElement.classList.add('has-titlebar')\n      } else {\n        this.wrapperElement.classList.remove('has-titlebar')\n      }\n    }\n  }\n\n  /**\n   * Set the view's title in the titlebar.\n   *\n   * Note that the title is only visible if the view was instantiated with a wrapper,\n   * and the titlebar is shown.\n   *\n   * @param {string} title - The title to set.\n   */\n  setTitle (title) {\n    if (this.titleElement) {\n      this.titleElement.innerText = title\n    }\n  }\n\n  /**\n   * Set the `style.cursor`.\n   *\n   * @param {string} cursor - A valid string for CSS cursor.\n   */\n  setCursor (cursor) {\n    this.viewElement.style.cursor = cursor\n  }\n\n  /**\n   * Set the throttle setting. Set to zero to disable throttling.\n   *\n   * @param {number} throttle - The timeout (in ms) to wait before sending a move/wheel event.\n   */\n  setThrottle (throttle) {\n    this._wheelThrottle = throttle\n    this._moveThrottle = throttle\n  }\n\n  /**\n   * The subclass should implement this to handle events.\n   *\n   * @param {object} event - The event object as a 'dictionary', following the spec.\n   */\n  onEvent (event) { }\n\n  /**\n   * Internal method to initialize the view's helper elements.\n   */\n  _initElements () {\n    const signal = this._abortController.signal\n\n    // Obtain container to put our hidden focus element.\n    // Putting the focusElement as a child of the canvas prevents chrome from emitting input events.\n    const focusElementContainerId = 'rendercanvas-focus-element-container'\n    let focusElementContainer = document.getElementById(focusElementContainerId)\n\n    if (!focusElementContainer) {\n      focusElementContainer = document.createElement('div')\n      focusElementContainer.setAttribute('id', focusElementContainerId)\n      focusElementContainer.style.position = 'absolute'\n      focusElementContainer.style.top = '0'\n      focusElementContainer.style.left = '-9999px'\n      document.body.appendChild(focusElementContainer)\n    }\n\n    // Create an element to which we transfer focus, so we can capture key events and prevent global shortcuts\n    const focusElement = document.createElement('input')\n    this._focusElement = focusElement\n    focusElement.type = 'text'\n    focusElement.tabIndex = -1\n    focusElement.autocomplete = 'off'\n    focusElement.autocorrect = 'off'\n    focusElement.autocapitalize = 'off'\n    focusElement.spellcheck = false\n    focusElement.style.width = '1px'\n    focusElement.style.height = '1px'\n    focusElement.style.padding = '0'\n    focusElement.style.opacity = 0\n    focusElement.style.pointerEvents = 'none'\n    focusElementContainer.appendChild(focusElement)\n\n    const wrapperElement = this.wrapperElement\n\n    if (wrapperElement !== null) {\n      this.viewElement.classList.add('renderview-view')\n\n      // Wrap it\n      wrapperElement.classList.add('renderview-wrapper')\n      wrapperElement.appendChild(this.viewElement)\n\n      // Debug element\n      const debugElement = document.createElement('div')\n      debugElement.innerHTML = '<b>If you can read this, the rendercanvas.css is likely not applied.</b>'\n      debugElement.classList.add('renderview-hidden')\n      wrapperElement.appendChild(debugElement)\n\n      // Create title bar\n      const topElement = document.createElement('div')\n      topElement.classList.add('renderview-top')\n      const titleElement = document.createElement('span')\n      this.titleElement = titleElement\n      titleElement.innerText = 'RenderView'\n      topElement.appendChild(titleElement)\n      wrapperElement.appendChild(topElement)\n\n      // Enable resizing\n      const resizeElement = document.createElement('div')\n      resizeElement.classList.add('renderview-resizer')\n      wrapperElement.appendChild(resizeElement)\n      let resizeInfo = null\n      resizeElement.addEventListener('pointerdown', (ev) => {\n        if (this._lsize) {\n          resizeInfo = { w: this._lsize[0], h: this._lsize[1], x: ev.clientX, y: ev.clientY }\n          resizeElement.setPointerCapture(ev.pointerId)\n        }\n      },\n      { signal }\n      )\n      resizeElement.addEventListener('pointermove', (ev) => {\n        if (resizeInfo !== null) {\n          this.sizeElement.style.maxWidth = ''\n          this.sizeElement.style.maxHeight = ''\n          this.sizeElement.style.width = resizeInfo.w + (ev.clientX - resizeInfo.x) + 'px'\n          this.sizeElement.style.height = resizeInfo.h + (ev.clientY - resizeInfo.y) + 'px'\n        }\n      },\n      { signal }\n      )\n      resizeElement.addEventListener('lostpointercapture', (ev) => {\n        resizeInfo = null\n      },\n      { signal }\n      )\n    } // wrapperElement !== null\n  }\n\n  /**\n   * Internal method to setup listeners and register callbacks.\n   */\n  _registerEvents () {\n    // Register events\n\n    const viewElement = this.viewElement\n    const signal = this._abortController.signal // to unregister/abort stuff\n\n    // ----- visibility ---------------\n\n    this._intersectionObserver = new IntersectionObserver((entries, observer) => {\n      // This gets called when one of the observed elements becomes visible/invisible.\n      // Note that entries only contains the *changed* elements, so we keep track ourselves.\n      let isVisible = false\n      for (const entry of entries) {\n        isVisible = isVisible || entry.isIntersecting\n      }\n      if (isVisible !== this._isVisible) {\n        this._isVisible = isVisible\n        const event = {\n          type: isVisible ? 'show' : 'hide',\n          timestamp: getTimestamp()\n        }\n        this.onEvent(event)\n      }\n    })\n    this._intersectionObserver.observe(viewElement)\n\n    // ----- resize ---------------\n\n    this._resizeObserver = new ResizeObserver((entries) => {\n      // The physical size is easy. The logical size can be much more tricky\n      // to obtain due to all the CSS stuff. But the base class will just calculate that\n      // from the physical size and the pixel ratio.\n\n      // Select entry matching our element\n      const ourEntries = entries.filter((entry) => entry.target.id === viewElement.id)\n      if (!ourEntries.length) {\n        return\n      }\n\n      const entry = ourEntries[0]\n      const ratio = window.devicePixelRatio\n      let physicalWidth\n      let physicalHeight\n\n      if (entry.devicePixelContentBoxSize) {\n        physicalWidth = entry.devicePixelContentBoxSize[0].inlineSize\n        physicalHeight = entry.devicePixelContentBoxSize[0].blockSize\n      } else {\n        // Some browsers don't support devicePixelContentBoxSize\n        let lsize\n        if (entry.contentBoxSize) {\n          lsize = [\n            entry.contentBoxSize[0].inlineSize,\n            entry.contentBoxSize[0].blockSize\n          ]\n        } else {\n          lsize = [entry.contentRect.width, entry.contentRect.height]\n        }\n        physicalWidth = Math.floor(lsize[0] * ratio)\n        physicalHeight = Math.floor(lsize[1] * ratio)\n      }\n\n      // If the container element does not have its size set via its style, we set it to the logical size.\n      const logicalWidth = physicalWidth / ratio\n      const logicalHeight = physicalHeight / ratio\n\n      // prevent massive size due to auto-scroll (https://github.com/vispy/jupyter_rfb/issues/62)\n      if (!this.sizeElement.style.width) {\n        this.sizeElement.style.width = `${logicalWidth}px`\n        this.sizeElement.style.maxWidth = '90vmin'\n      }\n      if (!this.sizeElement.style.height) {\n        this.sizeElement.style.height = `${logicalHeight}px`\n        this.sizeElement.style.maxHeight = '90vmin'\n      }\n\n      // Store logical size\n      this._lsize = [logicalWidth, logicalHeight]\n\n      const event = {\n        type: 'resize',\n        width: logicalWidth,\n        height: logicalHeight,\n        pwidth: physicalWidth,\n        pheight: physicalHeight,\n        ratio,\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    })\n\n    this._resizeObserver.observe(this.viewElement)\n\n    // ----- pointer ---------------\n\n    // Current pointer ids, mapping to initial button\n    const pointerToButton = {}\n\n    // The last used buttons, so we can pass to wheel event\n    let lastButtons = []\n\n    viewElement.addEventListener('pointerdown', (ev) => {\n      // When pointer is down, set focus to the focus-element.\n      if (!LOOKS_LIKE_MOBILE) {\n        this._focusElement.focus({ preventScroll: true, focusVisble: false })\n      }\n      // capture the pointing device.\n      // Because we capture the event, there will be no other events when buttons are pressed down,\n      // although they will end up in the 'buttons'. The lost/release will only get fired when all buttons\n      // are released/lost. Which is why we look up the original button in our `pointers` list.\n      viewElement.setPointerCapture(ev.pointerId)\n      // Prevent default unless alt is pressed\n      if (!ev.altKey) {\n        ev.preventDefault()\n      }\n\n      // Collect info\n      const [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n\n      // Manage\n      pointerToButton[ev.pointerId] = button\n      lastButtons = buttons\n\n      const event = {\n        type: 'pointer_down',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        ntouches: 0, // TODO later: maybe via https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent\n        touches: {},\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    let pendingMoveEvent = null\n\n    const sendMoveEvent = () => {\n      if (pendingMoveEvent !== null) {\n        const event = pendingMoveEvent\n        pendingMoveEvent = null\n        this.onEvent(event)\n      }\n    }\n\n    viewElement.addEventListener('pointermove', (ev) => {\n      // If this pointer is not down, but other pointers are, don't emit an event.\n      if (pointerToButton[ev.pointerId] === undefined) {\n        if (Object.keys(pointerToButton).length > 0) {\n          return\n        }\n      }\n\n      // Collect info, use button that started this drag-action\n      let [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n      button = pointerToButton[ev.pointerId] || 0\n\n      // Manage\n      lastButtons = buttons\n\n      // This event is throttled. We either update the pending event or create a new one\n      if (\n        pendingMoveEvent !== null &&\n        arraysEqual(pendingMoveEvent.buttons, buttons) &&\n        arraysEqual(pendingMoveEvent.modifiers, modifiers)\n      ) {\n        pendingMoveEvent.x = ev.offsetX\n        pendingMoveEvent.y = ev.offsetY\n      } else {\n        const event = {\n          type: 'pointer_move',\n          x: ev.offsetX,\n          y: ev.offsetY,\n          button,\n          buttons,\n          modifiers,\n          ntouches: 0,\n          touches: {},\n          timestamp: getTimestamp()\n        }\n        if (this._moveThrottle > 0) {\n          sendMoveEvent() // Send previous (if any)\n          pendingMoveEvent = event\n          window.setTimeout(sendMoveEvent, this._moveThrottle)\n        } else {\n          this.onEvent(event)\n        }\n      }\n    },\n    { signal }\n    )\n\n    viewElement.addEventListener('lostpointercapture', (ev) => {\n      // This happens on pointer-up or pointer-cancel. We threat them the same.\n\n      // Get info, use the button stat started the drag-action\n      const modifiers = getModifiers(ev)\n      const button = pointerToButton[ev.pointerId] || 0\n      const buttons = []\n\n      // Manage\n      delete pointerToButton[ev.pointerId]\n      lastButtons = buttons\n\n      const event = {\n        type: 'pointer_up',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        ntouches: 0,\n        touches: {},\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    viewElement.addEventListener('pointerenter', (ev) => {\n      // If this pointer is not down, but other pointers are, don't emit an event.\n      if (pointerToButton[ev.pointerId] === undefined) {\n        if (Object.keys(pointerToButton).length > 0) {\n          return\n        }\n      }\n\n      // Collect info, but use button 0. It usually is, and should be.\n      let [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n      button = 0\n\n      const event = {\n        type: 'pointer_enter',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        ntouches: 0,\n        touches: {},\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    viewElement.addEventListener('pointerleave', (ev) => {\n      // If this pointer is not down, but other pointers are, don't emit an event.\n      if (pointerToButton[ev.pointerId] === undefined) {\n        if (Object.keys(pointerToButton).length > 0) {\n          return\n        }\n      }\n\n      // Collect info, but use button 0. It usually is, and should be.\n      let [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n      button = 0\n\n      const event = {\n        type: 'pointer_leave',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        ntouches: 0,\n        touches: {},\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    // ----- click ---------------\n\n    // Click events are not pointer events. In most apps that this targets, click events\n    // don't add much over pointer events. But double-click can be useful.\n    viewElement.addEventListener('dblclick', (ev) => {\n      // Prevent default unless alt is pressed\n      if (!ev.altKey) {\n        ev.preventDefault()\n      }\n\n      // Collect info\n      const [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n\n      const event = {\n        type: 'double_click',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        // no touches here\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    // ----- wheel ---------------\n\n    let pendingWheelEvent = null\n\n    const sendWheelEvent = () => {\n      if (pendingWheelEvent !== null) {\n        const event = pendingWheelEvent\n        pendingWheelEvent = null\n        this.onEvent(event)\n      }\n    }\n\n    viewElement.addEventListener('wheel', (ev) => {\n      // Only scroll if we have focus\n      if (window.document.activeElement !== this._focusElement) {\n        return\n      }\n      // Prevent default unless alt is pressed\n      if (!ev.altKey) {\n        ev.preventDefault()\n      }\n\n      // Collect info\n      const scales = [1 / window.devicePixelRatio, 16, 600] // pixel, line, page\n      const scale = scales[ev.deltaMode]\n      const modifiers = getModifiers(ev)\n      const buttons = [...lastButtons]\n\n      // This event is throttled. We either update the pending event or create a new one\n      if (\n        pendingWheelEvent !== null &&\n        arraysEqual(pendingWheelEvent.buttons, buttons) &&\n        arraysEqual(pendingWheelEvent.modifiers, modifiers)\n      ) {\n        pendingWheelEvent.x = ev.offsetX\n        pendingWheelEvent.y = ev.offsetY\n        pendingWheelEvent.dx += ev.deltaX * scale\n        pendingWheelEvent.dy += ev.deltaY * scale\n      } else {\n        const event = {\n          type: 'wheel',\n          x: ev.offsetX,\n          y: ev.offsetY,\n          dx: ev.deltaX * scale,\n          dy: ev.deltaY * scale,\n          buttons,\n          modifiers,\n          timestamp: getTimestamp()\n        }\n        if (this._wheelThrottle > 0) {\n          sendWheelEvent() // Send previous (if any)\n          pendingWheelEvent = event\n          window.setTimeout(sendWheelEvent, this._wheelThrottle)\n        } else {\n          this.onEvent(event)\n        }\n      }\n    },\n    { signal }\n    )\n\n    // ----- key ---------------\n\n    this._focusElement.addEventListener('keydown', (ev) => {\n      // Failsafe in case the element is deleted or detached.\n      if (this.sizeElement.offsetParent === null) {\n        return\n      }\n      // Ignore repeated events (key being held down)\n      if (ev.repeat) {\n        return\n      }\n      // No need for stopPropagation or preventDefault because we are in a text-input.\n\n      const modifiers = getModifiers(ev)\n\n      const event = {\n        type: 'key_down',\n        key: KEY_MAP[ev.key] || ev.key,\n        modifiers,\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    this._focusElement.addEventListener('keyup', (ev) => {\n      if (this.sizeElement.offsetParent === null) {\n        return\n      }\n\n      const modifiers = getModifiers(ev)\n\n      const event = {\n        type: 'key_up',\n        key: KEY_MAP[ev.key] || ev.key,\n        modifiers,\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    this._focusElement.addEventListener('input', (ev) => {\n      // Failsafe in case the element is deleted or detached.\n      if (this.sizeElement.offsetParent === null) {\n        return\n      }\n      // Prevent the text box from growing\n      if (!ev.isComposing) {\n        this.focus_el.value = ''\n      }\n\n      const event = {\n        type: 'char',\n        data: ev.data,\n        is_composing: ev.isComposing,\n        input_type: ev.inputType,\n        // repeat: ev.repeat,  // n.a.\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n  }\n}\n\n// Export\nwindow.BaseRenderView = BaseRenderView\n\n\n/* global BaseRenderView getTimestamp */\n\n/**\n * An object that represents the model (wrapping the anywidget model object), that can have multiple views.\n */\nclass RendercanvasAnywidgetModel {\n  constructor (anymodel) {\n    this.anymodel = anymodel\n    this.views = []\n    this._hasVisibleViews = false\n\n    // Variables to store frames and the last frame\n    this._frames = []\n    this._lastSrc = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR42mOor68HAAL+AX6E2KOJAAAAAElFTkSuQmCC'\n    this._lastFrame = {\n      src: this._lastSrc,\n      index: 0,\n      timestamp: 0\n    }\n\n    // Register callbacks\n    anymodel.on('msg:custom', (msg, buffers) => {\n      if (msg.type === 'framebufferdata') {\n        this._frames.push({ ...msg, buffers })\n        this._request_animation_frame()\n      }\n    })\n    // For traits we allow the public and private version, this means we can use the\n    // same JS code for multiple anywidget implementations (specifically rendercanvas.anywidget vs jupyter_rfb)\n    for (const prefix of ['', '_']) {\n      anymodel.on(`change:${prefix}css_width`, () => {\n        const cssWidth = anymodel.get(`${prefix}css_width`)\n        for (const view of this.views) {\n          view.setCssWidth(cssWidth)\n        }\n      })\n      anymodel.on(`change:${prefix}css_height`, () => {\n        const cssHeight = anymodel.get(`${prefix}css_height`)\n        for (const view of this.views) {\n          view.setCssHeight(cssHeight)\n        }\n      })\n      anymodel.on(`change:${prefix}resizable`, () => {\n        const resizable = anymodel.get(`${prefix}resizable`)\n        for (const view of this.views) {\n          view.setResizable(resizable)\n        }\n      })\n      anymodel.on(`change:${prefix}has_titlebar`, () => {\n        const titlebar = anymodel.get(`${prefix}has_titlebar`)\n        for (const view of this.views) {\n          view.showTitlebar(titlebar)\n        }\n      })\n      anymodel.on(`change:${prefix}title`, () => {\n        const title = anymodel.get(`${prefix}title`)\n        for (const view of this.views) {\n          view.setTitle(title)\n        }\n      })\n      anymodel.on(`change:${prefix}cursor`, () => {\n        const cursor = anymodel.get(`${prefix}cursor`)\n        for (const view of this.views) {\n          view.setCursor(cursor)\n        }\n      })\n    }\n\n    // Start the animation loop\n    this._img_update_pending = false\n    this._request_animation_frame()\n  }\n\n  close () {\n    URL.revokeObjectURL(this._lastSrc)\n    this._lastSrc = null\n    this._lastFrame = null\n    this._frames = []\n    for (const view of this.views) {\n      view.close()\n    }\n    // This gets called when the model is closed and the comm is removed. Notify Py just in time!\n    const t = getTimestamp()\n    const event = {\n      type: 'close',\n      timestamp: t\n    }\n    this.onEvent(event)\n  }\n\n  addView (view) {\n    this.views.push(view)\n    this.updateVisibility()\n    // Init attrs\n    const anymodel = this.anymodel\n    view.setCssWidth(anymodel.get('_css_width') ?? anymodel.get('css_width'))\n    view.setCssHeight(anymodel.get('_css_height') ?? anymodel.get('css_height'))\n    view.setResizable(anymodel.get('_resizable') ?? anymodel.get('resizable'))\n    view.showTitlebar(anymodel.get('_has_titlebar') ?? anymodel.get('has_titlebar'))\n    view.setTitle(anymodel.get('_title') ?? anymodel.get('title'))\n    view.setCursor(anymodel.get('_cursor') ?? anymodel.get('cursor'))\n    // Init view\n    if (this._lastSrc) {\n      view.viewElement.src = this._lastSrc\n    }\n  }\n\n  removeView (view) {\n    this.views = this.views.filter(v => v !== view)\n    this.updateVisibility()\n  }\n\n  updateVisibility () {\n    let visibleViewsCount = 0\n    for (const view of this.views) {\n      if (view.isVisible) { visibleViewsCount += 1 }\n    }\n    const hasVisibleViews = visibleViewsCount > 0\n    this.anymodel.set('_has_visible_views', hasVisibleViews)\n    this.anymodel.save_changes()\n    if (hasVisibleViews) {\n      this._request_animation_frame()\n    }\n  }\n\n  _send_response () {\n    // Let Python know what we have at the frame. This prop is a dict, making it \"atomic\".\n    const frame = this._lastFrame\n    const frameFeedback = { index: frame.index, timestamp: frame.timestamp, localtime: Date.now() / 1000 }\n    this.anymodel.set('_frame_feedback', frameFeedback)\n    this.anymodel.save_changes()\n  }\n\n  _request_animation_frame () {\n    // Request an animation frame.\n    // Before the anywidget refactor, we did this via a tiny delay, which supposedly made things more smooth,\n    // but it also increases the delay for a frame to hit the screen, and limits the max fps, so let's not do that.\n    if (!this._img_update_pending) {\n      this._img_update_pending = true\n      window.requestAnimationFrame(this._animate.bind(this))\n      // window.setTimeout(window.requestAnimationFrame, 5, this._animate.bind(this)) // via a delay\n    }\n  }\n\n  _animate () {\n    this._img_update_pending = false\n    if (this._frames.length === 0) { return };\n\n    // Pick the oldest frame from the stack, and get its source\n    const frame = this._frames.shift()\n    let newSrc\n    if (frame.buffers.length > 0) {\n      const blob = new Blob([frame.buffers[0].buffer], { type: frame.mimetype })\n      newSrc = URL.createObjectURL(blob)\n    } else {\n      newSrc = frame.data_b64\n    }\n\n    // Revoke last objectURL\n    URL.revokeObjectURL(this._lastSrc)\n    this._lastSrc = newSrc\n\n    // Update the image sources\n    for (const view of this.views) {\n      view.viewElement.src = newSrc\n      view.viewElement.onload = this._request_animation_frame.bind(this)\n    }\n\n    // Let the server know we processed the image (even if it's not shown yet)\n    this._lastFrame = frame\n    this._send_response()\n  }\n\n  onEvent (event) {\n    try {\n      this.anymodel.send(event)\n    } catch { } // probably attempt to send when widget is closed\n  }\n}\n\n/**\n * View to show the anywidget output and observe events, based on renderview.js.\n */\nclass AnywidgetRenderView extends BaseRenderView {\n  constructor (model, containerElement) {\n    // Create the wrapper element\n    const wrapperElement = document.createElement('div')\n    wrapperElement.classList.add('renderview-wrapper')\n    wrapperElement.classList.add('is-resizable')\n    // wrapperElement.classList.add('has-titlebar') -> not by default\n    containerElement.appendChild(wrapperElement)\n\n    // Create img element\n    const viewElement = document.createElement('img')\n    viewElement.decoding = 'sync'\n    viewElement.loading = 'eager'\n    viewElement.style.touchAction = 'none' // prevent default pan/zoom behavior\n    viewElement.ondragstart = () => false // prevent browser's built-in image drag\n\n    // Call super\n    super(viewElement, wrapperElement)\n    this.setThrottle(20) // 20ms -> max 50 move/wheel events per second\n\n    // Connect to the model, it will initialize it with the current size and frame-data\n    this.model = model\n    this.model.addView(this)\n  }\n\n  close () {\n    super.close()\n    this.model.removeView(this)\n  }\n\n  onEvent (event) {\n    if (event.type === 'resize') {\n      // Note that there can be multiple views that can possibly be individually resized.\n      // TODO: keep logical size in check between different views?\n      if (event.width * event.height <= 0) {\n        return // The element of a new view is temporarily zero-sized at initialization\n      }\n    } else if (event.type === 'close') {\n      return // we don't close when one view closes, only when the widget closes\n    } else if (event.type === 'show') {\n      this.isVisible = true\n      this.model.updateVisibility()\n    } else if (event.type === 'hide') {\n      this.isVisible = false\n      this.model.updateVisibility()\n    }\n\n    this.model.onEvent(event)\n  }\n}\n\n// anywidget lifecycle export\nexport default () => {\n  let model\n  return {\n    initialize (ctx) {\n      model = new RendercanvasAnywidgetModel(ctx.model)\n      // window.model = model // debug\n      return () => { model.close() }\n    },\n    render (ctx) {\n      const view = new AnywidgetRenderView(model, ctx.el)\n      return () => { view.close() }\n    }\n  }\n}\n\n\n", "_frame_feedback": {}, "_has_visible_views": false, "_model_module": "anywidget", "_model_module_version": "~0.11.*", "_model_name": "AnyModel", "_view_count": null, "_view_module": "anywidget", "_view_module_version": "~0.11.*", "_view_name": "AnyView", "css_height": "480px", "css_width": "640px", "cursor": "default", "has_titlebar": false, "layout": "IPY_MODEL_659e738b29fa43e6a8927effecf0d291", "resizable": true, "tabbable": null, "title": "Comm_RF_Spectrum_Filters", "tooltip": null}}, "c56f33b3824646e9a751e81c2febf833": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "323883449847450283bd73cec686e292": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_c56f33b3824646e9a751e81c2febf833", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}
+</script></section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="missile-interference-test.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Missile Interference Test</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="aviator-fuel-calculator.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Commercial aircraft fuel calculator with Aviator</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Problem-Statement">Problem Statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-a-new-STK-instance">Launch a new STK instance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Load-the-starter-scenario">Load the starter scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Acquaint-Yourself-With-the-Scenario">Acquaint Yourself With the Scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Build-the-Constellations">Build the Constellations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Build-the-Comm-System">Build the Comm System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Calculate-Interference">Calculate Interference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Set-Correct-Units">Set Correct Units</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Calculate-Link-Budget">Calculate Link Budget</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Bandwidth-Analysis">Bandwidth Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Signal-PSD">Signal PSD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Changing-the-Modulation-Type">Changing the Modulation Type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Spectrum-and-Filter-Graphs">Spectrum and Filter Graphs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Butterworth-Filter">Butterworth Filter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Change-the-Filter-Order">Change the Filter Order</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Change-the-Cutoff-Frequency">Change the Cutoff Frequency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Chebyshev-Filter">Chebyshev Filter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Graph-the-Receiver-Filter">Graph the Receiver Filter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Change-the-Receiver-Filter-to-a-Butterworth:">Change the Receiver Filter to a Butterworth:</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+
+  
+  <nav class="tocsection editthispage" aria-label="Edit this page">
+    <a href="https://github.com/ansys/pystk/blob/main/examples/radio-frequency-spectrum-filters.py" rel="noopener noreferrer">
+      <i class="fa-solid fa-pencil" aria-hidden="true"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </nav>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+
+
+  <!-- Include desired assets -->
+  
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "minMatchCharLength": 2, "threshold": 0.2}');
+const SEARCH_FILE = "../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<!--
+  Theme Version Footer
+  Displays the Sphinx theme version and the last updated date.
+  Accessibility and semantic improvements included.
+-->
+<footer class="theme-version" aria-label="Theme version and last update">
+  <span>
+    
+      Built with the
+      <a href="https://sphinxdocs.ansys.com/version/stable/index.html" target="_blank" rel="noopener noreferrer">
+        Ansys Sphinx Theme
+      </a>
+      1.9.0.
+    
+  </span>
+  <br />
+  <span>Last updated on <time id="ast_build_date"></time></span>
+</footer>
+<script>
+  // Set the last updated date in a readable format
+  (function() {
+    var options = { day: "numeric", month: "long", year: "numeric" };
+    var ast_lastModifiedDate = new Date(document.lastModified);
+    var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+    var dateElem = document.getElementById("ast_build_date");
+    if (dateElem) {
+      dateElem.textContent = ast_build_date;
+    }
+  })();
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

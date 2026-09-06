@@ -1,0 +1,1484 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lambert transfer &#8212; PySTK</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=a23b20f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=a23b20f3" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=789c53a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/highlight.css?v=e507d2d0" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/search.css?v=6f836f60" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/datatable.css?v=cb1cc588" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  
+  
+  
+
+  
+    <link href="../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=d6fcc132"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/lambert-transfer';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://stk.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.3';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Porkchop plots" href="porkchop-plots.html" />
+    <link rel="prev" title="Bi-elliptic transfer" href="bielliptic-transfer.html" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="release/0.3" />
+  <link rel="canonical" href="https://stk.docs.pyansys.com/version/stable/examples/lambert-transfer.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PySTK - Home"/>
+    <img src="../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PySTK - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../index.html" title="PySTK home">Home</a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav>
+</div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+  
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    
+<!--
+  Announcement Version Loader
+  Dynamically loads the announcement.html content into the announcement_msg div.
+-->
+<div id="announcement_msg" aria-live="polite"></div>
+<script>
+  // Fetch and inject the announcement HTML content
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status} Announcement.html file not found, Please ignore this, if you are in dev/stable documentation`);
+      }
+      return response.text();
+    })
+    .then((text) => {
+      var msgDiv = document.getElementById("announcement_msg");
+      if (msgDiv) {
+        msgDiv.innerHTML = text;
+      }
+    })
+    .catch((error) => {
+      // Log only unexpected fetch errors
+      if (!(error.message && error.message.startsWith("HTTP error: 404"))) {
+        console.error(`Fetch problem: ${error.message} Announcement.html could not be loaded.`);
+      }
+    });
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../index.html" title="PySTK home">Home</a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav>
+</div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+  
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamental concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="facility-to-satellite-access.html">Access between facility and satellite calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensor-access.html">Sensors and access</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Coverage examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-calculator.html">Satellite coverage area calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-analysis.html">Satellite coverage analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Orbital maneuvers</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hohmann-transfer.html">Hohmann transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bielliptic-transfer.html">Bi-elliptic transfer</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lambert transfer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mission analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="porkchop-plots.html">Porkchop plots</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Communications and radar</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="radar-cross-section-detection.html">Radar cross section detection calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication-link-calculator.html">Communication link budget calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-parametric-study.html">Multifunction radar parametric study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-design.html">Multifunction radar design</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aviator mission planning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="aviator-fuel-calculator.html">Commercial aircraft fuel calculator with Aviator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aircraft-carrier-landing.html">Multi-aircraft carrier landing with Aviator</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../examples.html" class="nav-link">Examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Lambert transfer</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/0.3/examples/lambert-transfer.py"><span> Download as Python script <span class="fab fa-python"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/0.3/examples/lambert-transfer.ipynb"><span> Download as Jupyter notebook <span class="fas fa-book"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/0.3/examples/lambert-transfer.pdf"><span> Download as PDF document <span class="fas fa-file-pdf"></span></span></a></p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<section id="Lambert-transfer">
+<h1>Lambert transfer<a class="headerlink" href="#Lambert-transfer" title="Link to this heading">#</a></h1>
+<p>This tutorial provides a practical example on how to solve an interplanetary Lambert transfer using Python. A direct and prograde interplanetary transfer arc between the Earth and Mars is solved by using the <code class="docutils literal notranslate"><span class="pre">Lambert</span> <span class="pre">Profile</span></code> included in Astrogator.</p>
+<section id="What-is-a-Lambert-transfer?">
+<h2>What is a Lambert transfer?<a class="headerlink" href="#What-is-a-Lambert-transfer?" title="Link to this heading">#</a></h2>
+<p>A Lambert transfer, named after Johann Heinrich Lambert, is a type of orbit transfer used in orbital mechanics. It allows to calculate the trajectory between two orbits under the influence of gravity from a central body, such as a planet or a star.</p>
+<p>From the mathematical point of view, a Lambert transfer is the solution of the two-body boundary value problem in the framework of orbital mechanics. This problem is also known as the Lambert’s problem.</p>
+<p>Therefore, Lambert’s problem states to find for the Keplerian orbit which connects two known position vectors, <span class="math notranslate nohighlight">\(\vec{r_{1}}\)</span> 1 and <span class="math notranslate nohighlight">\(\vec{r_{2}}\)</span>, over a finite amount of time, <span class="math notranslate nohighlight">\(\Delta t\)</span>, under a gravity field of gravitational parameter <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+<p>The first impulse <span class="math notranslate nohighlight">\(\Delta v_1\)</span> is performed at <span class="math notranslate nohighlight">\(\vec{r_1}\)</span> to inject a spacecraft into a transfer orbit until it reaches <span class="math notranslate nohighlight">\(\vec{r_2}\)</span>, where a last impulse is performed to achieve the desired final orbit.</p>
+<p>It is important to say that perturbations are not considered in this notebook. Only the Keplerian Lambert’s problem is studied. Despite this, STK is capable of using different force models during the propagation of the orbit, allowing for solving the so-called perturbed Lambert’s problem.</p>
+</section>
+<section id="Problem-statement">
+<h2>Problem statement<a class="headerlink" href="#Problem-statement" title="Link to this heading">#</a></h2>
+<p>Find the Lambert transfer between Earth and Mars starting on August 1, 2005, and ending on March 1, 2006. Assume that the only force acting on the spacecraft is the gravitational force of the Sun. Assume both Earth and Mars are virtual points. Positions of the planets can be obtained using the default ephemerides files provided in STK. Compute the required <span class="math notranslate nohighlight">\(\Delta v\)</span> for each impulse of the maneuver.</p>
+</section>
+<section id="Launch-a-new-STK-instance">
+<h2>Launch a new STK instance<a class="headerlink" href="#Launch-a-new-STK-instance" title="Link to this heading">#</a></h2>
+<p>Start by launching a new STK instance. In this example, <code class="docutils literal notranslate"><span class="pre">STKEngine</span></code> is used with graphics (<code class="docutils literal notranslate"><span class="pre">no_graphics</span></code> mode set to <code class="docutils literal notranslate"><span class="pre">False</span></code>). This means that the graphic user interface (GUI) of the product is not launched but 2D and 3D visualization is still available through the STK Engine controls &amp; Jupyter widgets:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKEngine</span>
+
+
+<span class="n">stk</span> <span class="o">=</span> <span class="n">STKEngine</span><span class="o">.</span><span class="n">start_application</span><span class="p">(</span><span class="n">no_graphics</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using </span><span class="si">{</span><span class="n">stk</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Using STK Engine v13.1.0
+</pre></div></div>
+</div>
+</section>
+<section id="Create-a-new-scenario">
+<h2>Create a new scenario<a class="headerlink" href="#Create-a-new-scenario" title="Link to this heading">#</a></h2>
+<p>Next, create a new scenario. The central body for this scenario must be the Sun.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKObjectType</span>
+
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">stk</span><span class="o">.</span><span class="n">new_object_root</span><span class="p">()</span>
+<span class="n">scenario</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new_on_central_body</span><span class="p">(</span>
+    <span class="n">STKObjectType</span><span class="o">.</span><span class="n">SCENARIO</span><span class="p">,</span> <span class="s2">&quot;LambertTransfer&quot;</span><span class="p">,</span> <span class="s2">&quot;Sun&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Set the time period for the scenario:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">START_TIME</span><span class="p">,</span> <span class="n">STOP_TIME</span> <span class="o">=</span> <span class="s2">&quot;1 Aug 2005&quot;</span><span class="p">,</span> <span class="s2">&quot;1 Mar 2006&quot;</span>
+<span class="n">scenario</span><span class="o">.</span><span class="n">set_time_period</span><span class="p">(</span><span class="n">START_TIME</span><span class="p">,</span> <span class="n">STOP_TIME</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Rewind the scenario to the start time:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="o">.</span><span class="n">rewind</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Once created, you can visualize the scenario in a 3D graphics window. Update the value of the far plane of the camera to ensure that distant objects are represented in the scene.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.experimental.jupyterwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">GlobeWidget</span>
+
+
+<span class="n">plotter</span> <span class="o">=</span> <span class="n">GlobeWidget</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
+<span class="n">plotter</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">far_plane</span> <span class="o">=</span> <span class="mf">1e12</span>
+<span class="n">plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "298baabc80b741a0a1b096a90562abfe"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_lambert-transfer_11_1.png" src="../_images/examples_lambert-transfer_11_1.png" />
+</div>
+</div>
+</section>
+<section id="Add-the-planets-to-the-scenario">
+<h2>Add the planets to the scenario<a class="headerlink" href="#Add-the-planets-to-the-scenario" title="Link to this heading">#</a></h2>
+<p>Once the scenario is created, planets can be added. The default ephemerides are used for modeling the orbit of the Earth and Mars. However, it is possible to use other sources for the ephemerides, as provided by the <code class="docutils literal notranslate"><span class="pre">EphemSourceType</span></code> enumeration. Finally, a royal blue color is used for representing the Earth while a salmon color is used for Mars.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">EphemSourceType</span><span class="p">,</span>
+    <span class="n">PlanetPositionSourceType</span><span class="p">,</span>
+    <span class="n">STKObjectType</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.utilities.colors</span><span class="w"> </span><span class="kn">import</span> <span class="n">Colors</span>
+
+
+<span class="n">planet_names_and_colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Earth&quot;</span><span class="p">:</span> <span class="n">Colors</span><span class="o">.</span><span class="n">RoyalBlue</span><span class="p">,</span>
+    <span class="s2">&quot;Mars&quot;</span><span class="p">:</span> <span class="n">Colors</span><span class="o">.</span><span class="n">Salmon</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">planet_name</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">planet_names_and_colors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">planet</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new_on_central_body</span><span class="p">(</span>
+        <span class="n">STKObjectType</span><span class="o">.</span><span class="n">PLANET</span><span class="p">,</span> <span class="n">planet_name</span><span class="p">,</span> <span class="s2">&quot;Sun&quot;</span>
+    <span class="p">)</span>
+    <span class="n">planet</span><span class="o">.</span><span class="n">common_tasks</span><span class="o">.</span><span class="n">set_position_source_central_body</span><span class="p">(</span>
+        <span class="n">planet_name</span><span class="p">,</span> <span class="n">EphemSourceType</span><span class="o">.</span><span class="n">DEFAULT</span>
+    <span class="p">)</span>
+    <span class="n">planet</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+</pre></div>
+</div>
+</div>
+<p>Retrieve the instances created for each planet. These are used later for finding the start and final state vectors at the desired epoch:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">earth</span><span class="p">,</span> <span class="n">mars</span> <span class="o">=</span> <span class="p">[</span><span class="n">scenario</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">planet</span><span class="p">]</span> <span class="k">for</span> <span class="n">planet</span> <span class="ow">in</span> <span class="n">planet_names_and_colors</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>Next, the scenario graphics are updated to ensure a nice visualization of the planets:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># General graphics configuration</span>
+<span class="n">scenario</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">show_label</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># Vehicle specific graphics</span>
+<span class="n">scenario</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">show_orbits</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># Planet specific graphics</span>
+<span class="n">scenario</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">show_planet_orbits</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">scenario</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">show_inertial_position_labels</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">scenario</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">show_inertial_position</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">scenario</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">show_sub_planet_points</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">scenario</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">show_sub_planet_labels</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, the camera position is updated to provide a better overview of the scene with the planets orbiting the Sun.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plotter</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="mf">402322147.89965045</span><span class="p">,</span> <span class="o">-</span><span class="mf">554001077.0502352</span><span class="p">,</span> <span class="mf">31332205.857333962</span><span class="p">]</span>
+<span class="n">plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_lambert-transfer_19_0.png" src="../_images/examples_lambert-transfer_19_0.png" />
+</div>
+</div>
+</section>
+<section id="Solve-the-initial-and-final-state-vectors">
+<h2>Solve the initial and final state vectors<a class="headerlink" href="#Solve-the-initial-and-final-state-vectors" title="Link to this heading">#</a></h2>
+<p>The initial and final state vectors are required to solve for the transfer orbit. These vectors can be computed knowing the positions of the planets involved in the transfer.</p>
+<p>The data providers can be used to find the state vector of an object at a given epoch and with respect to a reference frame.</p>
+<p>First, an utility function for converting a <code class="docutils literal notranslate"><span class="pre">DataProviderResult</span></code> instance into a Python dictionary is implemented. This allows to easily structure and manipulate the computed values.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">from_data_result_to_dict</span><span class="p">(</span><span class="n">data_result</span><span class="p">:</span> <span class="s2">&quot;DataProviderResult&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a data provider result to a dictionary.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_result : DataProviderResult</span>
+<span class="sd">        Data result instance to be converted.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        Dictionary representing the elements and values of the data provider.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="n">key</span><span class="p">:</span> <span class="n">data_result</span><span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">key_id</span><span class="p">)</span><span class="o">.</span><span class="n">get_values</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key_id</span><span class="p">,</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_result</span><span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">element_names</span><span class="p">)</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Next, a second utility function is declared. Its goal is to ease the retrieval of the state vector (position and velocity) for an object in the scenario at a given epoch and in the desired reference frame.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_object_pos_vel_at_epoch</span><span class="p">(</span>
+    <span class="n">stk_object</span><span class="p">:</span> <span class="s2">&quot;STKObject&quot;</span><span class="p">,</span> <span class="n">epoch</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">frame_name</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the position and velocity vectors of an object in the desired reference frame.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    stk_object : STKObject</span>
+<span class="sd">        Name of the object.</span>
+<span class="sd">    epoch : str</span>
+<span class="sd">        Epoch in the form of a string.</span>
+<span class="sd">    frame_name : str</span>
+<span class="sd">        Reference frame name.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple(list[float, float, float], list[float, float, float])</span>
+<span class="sd">        Tuple containing the position and velocity vectors as a list.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Position&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Velocity&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+    <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">state</span><span class="p">:</span>
+        <span class="n">data_provider</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">stk_object</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">get_data_provider_time_varying_from_path</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Cartesian </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">frame_name</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">from_data_result_to_dict</span><span class="p">(</span>
+            <span class="n">data_provider</span><span class="o">.</span><span class="n">execute_single_elements</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">])</span>
+        <span class="p">)</span>
+        <span class="n">state</span><span class="p">[</span><span class="n">path</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">coord</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<p>Now, it is possible to solve for the initial state:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initial_position</span><span class="p">,</span> <span class="n">initial_velocity</span> <span class="o">=</span> <span class="n">get_object_pos_vel_at_epoch</span><span class="p">(</span>
+    <span class="n">earth</span><span class="p">,</span> <span class="n">START_TIME</span><span class="p">,</span> <span class="s2">&quot;ICRF&quot;</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Earth position at launch: </span><span class="si">{</span><span class="n">initial_position</span><span class="si">}</span><span class="s2"> km&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Earth position at launch: </span><span class="si">{</span><span class="n">initial_velocity</span><span class="si">}</span><span class="s2"> km/s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Earth position at launch: [95104258.7629382, -108600894.17110012, -47083096.083576575] km
+Earth position at launch: [22.74785629320743, 17.01595600778551, 7.376576017993339] km/s
+
+</pre></div></div>
+</div>
+<p>And the final state:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_position</span><span class="p">,</span> <span class="n">final_velocity</span> <span class="o">=</span> <span class="n">get_object_pos_vel_at_epoch</span><span class="p">(</span><span class="n">mars</span><span class="p">,</span> <span class="n">STOP_TIME</span><span class="p">,</span> <span class="s2">&quot;ICRF&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mars position at arrival: </span><span class="si">{</span><span class="n">initial_position</span><span class="si">}</span><span class="s2"> km&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mars velocity at arrival: </span><span class="si">{</span><span class="n">initial_velocity</span><span class="si">}</span><span class="s2"> km/s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Mars position at arrival: [95104258.7629382, -108600894.17110012, -47083096.083576575] km
+Mars velocity at arrival: [22.74785629320743, 17.01595600778551, 7.376576017993339] km/s
+</pre></div></div>
+</div>
+</section>
+<section id="Add-a-satellite-to-the-scenario">
+<h2>Add a satellite to the scenario<a class="headerlink" href="#Add-a-satellite-to-the-scenario" title="Link to this heading">#</a></h2>
+<p>Once the initial and final states are known, it is time to add a new satellite to the scenario. This object is used to simulate the transfer orbit between Earth and Mars at the desired launch and arrival dates.</p>
+<p>The central body for the satellite must be the Sun to be compliant with the Keplerian assumption of the Lambert transfer. Remember that the gravity for Earth and Mars are ignored in this example.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">satellite</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new_on_central_body</span><span class="p">(</span>
+    <span class="n">STKObjectType</span><span class="o">.</span><span class="n">SATELLITE</span><span class="p">,</span> <span class="s2">&quot;Satellite&quot;</span><span class="p">,</span> <span class="s2">&quot;Sun&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, indicate the type of propagator used for the satellite. In this case, the propagator must be astrogator.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">PropagatorType</span>
+
+
+<span class="n">satellite</span><span class="o">.</span><span class="n">set_propagator_type</span><span class="p">(</span><span class="n">PropagatorType</span><span class="o">.</span><span class="n">ASTROGATOR</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Remove all the main sequence to ensure no prior segments lead to wrong results during the simulation.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span><span class="o">.</span><span class="n">main_sequence</span><span class="o">.</span><span class="n">remove_all</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Declare-the-initial-state-of-the-satellite">
+<h2>Declare the initial state of the satellite<a class="headerlink" href="#Declare-the-initial-state-of-the-satellite" title="Link to this heading">#</a></h2>
+<p>Now, declare the initial state of the satellite by using an initial state segment.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.astrogator</span><span class="w"> </span><span class="kn">import</span> <span class="n">ElementSetType</span><span class="p">,</span> <span class="n">SegmentType</span>
+
+
+<span class="n">initial_state</span> <span class="o">=</span> <span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span><span class="o">.</span><span class="n">main_sequence</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
+    <span class="n">SegmentType</span><span class="o">.</span><span class="n">INITIAL_STATE</span><span class="p">,</span> <span class="s2">&quot;Initial State&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Use an inertial reference frame when declaring the initial state. Also, ensure that the epoch matches the launch date.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initial_state</span><span class="o">.</span><span class="n">coord_system_name</span> <span class="o">=</span> <span class="s2">&quot;CentralBody/Sun Inertial&quot;</span>
+<span class="n">initial_state</span><span class="o">.</span><span class="n">orbit_epoch</span> <span class="o">=</span> <span class="n">START_TIME</span>
+</pre></div>
+</div>
+</div>
+<p>The value of the initial state must match the initial state of the Earth. Cartesian elements are used in this case.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initial_state</span><span class="o">.</span><span class="n">set_element_type</span><span class="p">(</span><span class="n">ElementSetType</span><span class="o">.</span><span class="n">CARTESIAN</span><span class="p">)</span>
+
+<span class="n">initial_state</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">initial_position</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">initial_state</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">initial_position</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">initial_state</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">initial_position</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">initial_state</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="n">initial_velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">initial_state</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="n">initial_velocity</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">initial_state</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">vz</span> <span class="o">=</span> <span class="n">initial_velocity</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Construct-the-transfer-sequence">
+<h2>Construct the transfer sequence<a class="headerlink" href="#Construct-the-transfer-sequence" title="Link to this heading">#</a></h2>
+<p>The transfer sequence can be modeled as a target sequence containing three segments: a first impulsive maneuver, a propagation, and a last impulsive maneuver.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.astrogator</span><span class="w"> </span><span class="kn">import</span> <span class="n">ManeuverType</span>
+
+
+<span class="n">lambert_transfer</span> <span class="o">=</span> <span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span><span class="o">.</span><span class="n">main_sequence</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
+    <span class="n">SegmentType</span><span class="o">.</span><span class="n">TARGET_SEQUENCE</span><span class="p">,</span> <span class="s2">&quot;Lambert Transfer&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span>
+<span class="p">)</span>
+
+<span class="n">first_impulse</span> <span class="o">=</span> <span class="n">lambert_transfer</span><span class="o">.</span><span class="n">segments</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
+    <span class="n">SegmentType</span><span class="o">.</span><span class="n">MANEUVER</span><span class="p">,</span> <span class="s2">&quot;First Impulse&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span>
+<span class="p">)</span>
+<span class="n">propagate</span> <span class="o">=</span> <span class="n">lambert_transfer</span><span class="o">.</span><span class="n">segments</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">SegmentType</span><span class="o">.</span><span class="n">PROPAGATE</span><span class="p">,</span> <span class="s2">&quot;Propagate&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>
+<span class="n">last_impulse</span> <span class="o">=</span> <span class="n">lambert_transfer</span><span class="o">.</span><span class="n">segments</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
+    <span class="n">SegmentType</span><span class="o">.</span><span class="n">MANEUVER</span><span class="p">,</span> <span class="s2">&quot;Last Impulse&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Next, configure the maneuvers to be impulsive and ensure the propagation models the Sun as a point mass.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_impulse</span><span class="o">.</span><span class="n">set_maneuver_type</span><span class="p">(</span><span class="n">ManeuverType</span><span class="o">.</span><span class="n">IMPULSIVE</span><span class="p">)</span>
+<span class="n">propagate</span><span class="o">.</span><span class="n">propagator_name</span> <span class="o">=</span> <span class="s2">&quot;Sun Point Mass&quot;</span>
+<span class="n">last_impulse</span><span class="o">.</span><span class="n">set_maneuver_type</span><span class="p">(</span><span class="n">ManeuverType</span><span class="o">.</span><span class="n">IMPULSIVE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, remove any previous profiles that could be present in the target sequence:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lambert_transfer</span><span class="o">.</span><span class="n">profiles</span><span class="o">.</span><span class="n">remove_all</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, it is possible to visualize the layout for the main sequence by running:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">control_sequence</span> <span class="ow">in</span> <span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span><span class="o">.</span><span class="n">main_sequence</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">control_sequence</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">segment</span> <span class="ow">in</span> <span class="n">control_sequence</span><span class="o">.</span><span class="n">segments</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    </span><span class="si">{</span><span class="n">segment</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">continue</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Initial State
+Lambert Transfer
+    First Impulse
+    Propagate
+    Last Impulse
+    -
+-
+</pre></div></div>
+</div>
+</section>
+<section id="Configure-the-Lambert-profile">
+<h2>Configure the Lambert profile<a class="headerlink" href="#Configure-the-Lambert-profile" title="Link to this heading">#</a></h2>
+<p>To ease the creation of a Lambert’s transfer, STK provides a profile named <code class="docutils literal notranslate"><span class="pre">IProfileLambertProfile</span></code>. This profile can be added to a target sequence. Later, it can be configured to solve for the desired transfer requirements such as the time of flight and the final state vector.</p>
+<p>Additional configuration parameters exist, such as the number of revolutions or the direction of motion. However, since this example covers a direct transfer arc, these options are not explored.</p>
+<p>Start by adding a Lambert profile to the target sequence:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lambert</span> <span class="o">=</span> <span class="n">lambert_transfer</span><span class="o">.</span><span class="n">profiles</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Lambert Profile&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Next, declare the target state vector. In this case, the target state vector is the final state vector. This vector is defined in an inertial reference frame centered at the Sun. Cartesian coordinates are used for the components of the position and velocity.</p>
+<p>It is also important to enable the second maneuver property. This allows to specify the target velocity.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.astrogator</span><span class="w"> </span><span class="kn">import</span> <span class="n">LambertTargetCoordinateType</span>
+
+
+<span class="n">lambert</span><span class="o">.</span><span class="n">coord_system_name</span> <span class="o">=</span> <span class="s2">&quot;CentralBody/Sun Inertial&quot;</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">set_target_coord_type</span><span class="p">(</span><span class="n">LambertTargetCoordinateType</span><span class="o">.</span><span class="n">CARTESIAN</span><span class="p">)</span>
+
+<span class="n">lambert</span><span class="o">.</span><span class="n">enable_second_maneuver</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># TODO: the Lambert Profile does not respect user defined units.</span>
+<span class="c1"># https://github.com/ansys/pystk/issues/439</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">target_position_x</span> <span class="o">=</span> <span class="n">final_position</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">target_position_y</span> <span class="o">=</span> <span class="n">final_position</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">target_position_z</span> <span class="o">=</span> <span class="n">final_position</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
+
+<span class="n">lambert</span><span class="o">.</span><span class="n">target_velocity_x</span> <span class="o">=</span> <span class="n">final_velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">target_velocity_y</span> <span class="o">=</span> <span class="n">final_velocity</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">target_velocity_z</span> <span class="o">=</span> <span class="n">final_velocity</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
+</pre></div>
+</div>
+</div>
+<p>Next, the time of flight can be computed. Using the <code class="docutils literal notranslate"><span class="pre">datetime</span></code> module allows for the computation of the time of flight, which is assigned later to the Lambert profile.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">launch_date</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">conversion_utility</span><span class="o">.</span><span class="n">new_date</span><span class="p">(</span><span class="s2">&quot;UTCG&quot;</span><span class="p">,</span> <span class="n">START_TIME</span><span class="p">)</span>
+<span class="n">arrival_date</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">conversion_utility</span><span class="o">.</span><span class="n">new_date</span><span class="p">(</span><span class="s2">&quot;UTCG&quot;</span><span class="p">,</span> <span class="n">STOP_TIME</span><span class="p">)</span>
+<span class="n">tof</span> <span class="o">=</span> <span class="n">arrival_date</span><span class="o">.</span><span class="n">span</span><span class="p">(</span><span class="n">launch_date</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+
+<span class="n">lambert</span><span class="o">.</span><span class="n">time_of_flight</span> <span class="o">=</span> <span class="n">tof</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time of flight: </span><span class="si">{</span><span class="n">tof</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Time of flight: 18316801.0 seconds
+</pre></div></div>
+</div>
+<p>Then, other parameters for the transfer can be configured. These include the type of solution, the direction of motion, and the padding altitude for the collision with the central body.</p>
+<p><strong>Since planets are modeled as points, see the problem statement, the value for the altitude padding for the central body collision is 0 km.</strong></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.astrogator</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LambertDirectionOfMotionType</span><span class="p">,</span>
+    <span class="n">LambertSolutionOptionType</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="n">lambert</span><span class="o">.</span><span class="n">solution_option</span> <span class="o">=</span> <span class="n">LambertSolutionOptionType</span><span class="o">.</span><span class="n">FIXED_TIME</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">revolutions</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">direction_of_motion</span> <span class="o">=</span> <span class="n">LambertDirectionOfMotionType</span><span class="o">.</span><span class="n">SHORT</span>
+
+<span class="c1"># TODO: the Lambert Profile does not respect user defined units.</span>
+<span class="c1"># https://github.com/ansys/pystk/issues/439</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">central_body_collision_altitude_padding</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<p>It is required to enable writing access to the lambert profile to the segments of the target sequence. This ensures that the control parameter values are modified to match the target values.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lambert</span><span class="o">.</span><span class="n">enable_write_to_first_maneuver</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">first_maneuver_segment</span> <span class="o">=</span> <span class="n">first_impulse</span><span class="o">.</span><span class="n">name</span>
+
+<span class="n">lambert</span><span class="o">.</span><span class="n">enable_write_duration_to_propagate</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">disable_non_lambert_propagate_stop_conditions</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">propagate_segment</span> <span class="o">=</span> <span class="n">propagate</span><span class="o">.</span><span class="n">name</span>
+
+<span class="n">lambert</span><span class="o">.</span><span class="n">enable_write_to_second_maneuver</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">second_maneuver_segment</span> <span class="o">=</span> <span class="n">last_impulse</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Run-the-main-control-sequence">
+<h2>Run the main control sequence<a class="headerlink" href="#Run-the-main-control-sequence" title="Link to this heading">#</a></h2>
+<p>Once the whole control sequence is declared and the Lambert profile active, the simulation can be performed. Ensure that the Lambert profile is active and that the mission control sequence runs all active profiles. In addition, any profile must run to return and continue once finished. Do not continue on failure or reset inner targeters.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.astrogator</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ProfileMode</span><span class="p">,</span>
+    <span class="n">ProfilesFinish</span><span class="p">,</span>
+    <span class="n">TargetSequenceAction</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="n">lambert</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">ProfileMode</span><span class="o">.</span><span class="n">ACTIVE</span>
+
+<span class="n">lambert_transfer</span><span class="o">.</span><span class="n">action</span> <span class="o">=</span> <span class="n">TargetSequenceAction</span><span class="o">.</span><span class="n">RUN_ACTIVE_PROFILES</span>
+<span class="n">lambert_transfer</span><span class="o">.</span><span class="n">when_profiles_finish</span> <span class="o">=</span> <span class="n">ProfilesFinish</span><span class="o">.</span><span class="n">RUN_TO_RETURN_AND_CONTINUE</span>
+
+<span class="n">lambert_transfer</span><span class="o">.</span><span class="n">continue_on_failure</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">lambert_transfer</span><span class="o">.</span><span class="n">reset_inner_targeters</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, run the mission control sequence and apply the results to all profiles. Note that in this case, the only existing profile is the <code class="docutils literal notranslate"><span class="pre">Lambert</span> <span class="pre">Profile</span></code>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span><span class="o">.</span><span class="n">run_mcs</span><span class="p">()</span>
+<span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span><span class="o">.</span><span class="n">apply_all_profile_changes</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Retrieve-the-results">
+<h2>Retrieve the results<a class="headerlink" href="#Retrieve-the-results" title="Link to this heading">#</a></h2>
+<p>Now, the results can be retrieved. The value of the increment in velocity magnitude for the first and last impulse are computed. Also, the <span class="math notranslate nohighlight">\(C_{3}\)</span> values for the characteristic departure and arrival energy are solved.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: the Lambert Profile does not respect user defined units.</span>
+<span class="c1"># https://github.com/ansys/pystk/issues/439</span>
+<span class="n">delta_v1</span> <span class="o">=</span> <span class="n">first_impulse</span><span class="o">.</span><span class="n">maneuver</span><span class="o">.</span><span class="n">attitude_control</span><span class="o">.</span><span class="n">magnitude</span> <span class="o">/</span> <span class="mi">1000</span>
+<span class="n">c3_launch</span> <span class="o">=</span> <span class="n">delta_v1</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;First impulse: </span><span class="si">{</span><span class="n">delta_v1</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> km/s&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;C3 at launch: </span><span class="si">{</span><span class="n">c3_launch</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> km2/s2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+First impulse: 4.19 km/s
+C3 at launch: 17.60 km2/s2
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: the Lambert Profile does not respect user defined units.</span>
+<span class="c1"># https://github.com/ansys/pystk/issues/439</span>
+<span class="n">delta_v2</span> <span class="o">=</span> <span class="n">last_impulse</span><span class="o">.</span><span class="n">maneuver</span><span class="o">.</span><span class="n">attitude_control</span><span class="o">.</span><span class="n">magnitude</span> <span class="o">/</span> <span class="mi">1000</span>
+<span class="n">c3_arrival</span> <span class="o">=</span> <span class="n">delta_v2</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Last impulse:  </span><span class="si">{</span><span class="n">delta_v2</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> km/s&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;C3 at arrival: </span><span class="si">{</span><span class="n">c3_arrival</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> km2/s2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Last impulse:  3.10 km/s
+C3 at arrival: 9.62 km2/s2
+</pre></div></div>
+</div>
+</section>
+<section id="Visualize-the-transfer">
+<h2>Visualize the transfer<a class="headerlink" href="#Visualize-the-transfer" title="Link to this heading">#</a></h2>
+<p>Finally, animate the scene to visualize the transfer orbit. Ensure the satellite is visible by updating the detail threshold of its three-dimensional model and forcing STK to draw its trajectory:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">draw_trajectory_in_3d</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">satellite</span><span class="o">.</span><span class="n">graphics_3d</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">detail_threshold</span><span class="o">.</span><span class="n">all</span> <span class="o">=</span> <span class="mf">1e12</span>
+
+<span class="n">plotter</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="n">time_step</span><span class="o">=</span><span class="mi">14000</span><span class="p">)</span>
+<span class="n">plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_lambert-transfer_69_0.png" src="../_images/examples_lambert-transfer_69_0.png" />
+</div>
+</div>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"18aa31dc27f24c6495d1d7776e44fd1f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "25e2310814b34abab0caa573dff5c027": {"model_name": "AnyModel", "model_module": "anywidget", "model_module_version": "~0.10.*", "state": {"_anywidget_id": "ansys.stk.core.experimental.jupyterwidgets.GlobeWidget", "_css": "/*************************************************************************************************\n  renderview.css\n\n  This file is dedicated to the public domain under CC0 1.0.\n  This file is developed at https://github.com/pygfx/renderview, please contribute changes there.\n\n *************************************************************************************************/\n\ndiv.renderview-wrapper {\n    display: inline-block;\n    position: relative;\n    box-sizing: border-box;\n    overflow: visible;\n    min-width: 32px;\n    min-height: 32px;\n}\n\ndiv.renderview-wrapper .renderview-view {\n    display: block;\n    box-sizing: border-box;\n    width: 100%;\n    height: 100%;\n    background: none;\n    border-radius: 6px;\n    border: 1px solid rgba(127, 127, 127, 0.2);\n}\n\ndiv.renderview-wrapper .renderview-hidden {\n    display: none;\n}\n\ndiv.renderview-wrapper .renderview-top {\n    display: none;\n    position: absolute;\n    box-sizing: border-box;\n    z-index: 2;\n    top: -1.5em;\n    height: 1.5em;\n    width: 100%;\n    border-radius: 6px 6px 0 0;\n    border: 1px solid rgba(127, 127, 127, 0.2);\n    border-bottom: 0;\n}\n\ndiv.renderview-wrapper .renderview-top span {\n    display: inline-block;\n    box-sizing: border-box;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    padding: 0.1em 0.5em;\n    width: 100%;\n}\n\ndiv.renderview-wrapper .renderview-resizer {\n    display: none;\n    position: absolute;\n    box-sizing: border-box;\n    z-index: 3;\n    bottom: 0;\n    right: 0;\n    width: 14px;\n    height: 14px;\n    cursor: nwse-resize;\n}\n\ndiv.renderview-wrapper.has-titlebar {\n    margin-top: 2em !important;\n}\n\ndiv.renderview-wrapper.has-titlebar .renderview-top {\n    display: block;\n}\n\ndiv.renderview-wrapper.has-titlebar .renderview-view {\n    border-top-left-radius: 0 !important;\n    border-top-right-radius: 0 !important;\n}\n\ndiv.renderview-wrapper.is-resizable .renderview-resizer {\n    display: block;\n}", "_dom_classes": [], "_esm": "/*************************************************************************************************\n  renderview.js\n\n  This file is dedicated to the public domain under CC0 1.0.\n  This file is developed at https://github.com/pygfx/renderview, please contribute changes there.\n\n  This module implements a common event spec for render targets in a browser.\n  The code is written with little assumptions about the application, so that it\n  can be shared between different use-cases, such as rendercanvas backends\n  (pyodide, anywidget, remote-browser), jupyter_rfb, and other projects.\n\n  Code that loads this script should avoid loading it in the global scope.\n  Either by putting it in a ``<script type='module>``, or wrapping it in an IIFE\n  with ``(() => {\\n{JS}\\n})();``\n\n  This code is formatted and linted with standardjs (quite similar to Ruff in\n  Python). It adheres to common JS practices, but also has some Python habits,\n  like underscore prefix for private attributes.\n\n *************************************************************************************************/\n\n'use strict'\n\nconst Element = window.Element\nconst IntersectionObserver = window.IntersectionObserver\nconst ResizeObserver = window.ResizeObserver\n\nconst LOOKS_LIKE_MOBILE = /mobi|android|iphone|ipad|ipod|tablet/.test(\n  navigator.userAgent.toLowerCase()\n)\n\nconst KEY_MAP = {\n  Ctrl: 'Control',\n  Del: 'Delete',\n  Esc: 'Escape'\n}\n\nconst KEY_MOD_MAP = {\n  altKey: 'Alt',\n  ctrlKey: 'Control',\n  metaKey: 'Meta',\n  shiftKey: 'Shift'\n}\n\nconst MOUSE_BUTTON_MAP = {\n  0: 1, // left\n  1: 3, // middle/wheel\n  2: 2, // right\n  3: 4, // backwards\n  4: 5 // forwards\n}\n\nfunction getButtons (ev) {\n  // Note that ev.button has a historic awkward mapping, but ev.buttons is in the order that we want\n  const button = MOUSE_BUTTON_MAP[ev.button] || 0\n  const buttons = []\n  for (const b of [0, 1, 2, 3, 4, 5]) {\n    if ((1 << b) & ev.buttons) {\n      buttons.push(b + 1)\n    }\n  }\n  return [button, buttons]\n}\n\nfunction getModifiers (ev) {\n  return Object.entries(KEY_MOD_MAP)\n    .filter(([k]) => ev[k])\n    .map(([, v]) => v)\n}\n\nfunction getTimestamp () {\n  return performance.now() / 1000\n}\n\nfunction arraysEqual (a, b) {\n  return a.length === b.length && a.every((val, i) => val === b[i])\n}\n\n/**\n * The BaseRenderView handles the client-side logic for a render target (typically a <canvas> or <img>).\n *\n * It observes events and calls `this.OnEvent()`.\n * It provides convenience methods for setting the size, cursor, and more.\n *\n * When used with a wrapper element, more features are enabled:\n *\n * - It can be manually resized if the wrapper element has the 'is-resizable' class.\n * - A title bar is shown if the wrapper has the 'has-titlebar' class.\n * - The above mentioned classes can also be programmatically set via `setResizable()` and `showTitlebar()`.\n * - The title can be set using `setTitle()`.\n *\n */\nclass BaseRenderView {\n  /**\n   * Create a new RenderView.\n   *\n   * If a single element is given, the view directly manages that element, nice and simple.\n   * No styling is applied except for `width` and `height`.\n   *\n   * If a wrapper element is also given, the view supports features like manual resizing and a title-bar.\n   * In this case, any user styling that effects positioning should be applied to the wrapper.\n   * The wrapper may contain placeholder content; on initialization, it's innerHTML and padding are reset.\n   *\n   * @param {HTMLElement} viewElement - The element (e.g. canvas or img) used for rendering.\n   * @param {HTMLElement} wrapperElement - The wrapper element (optional; can be null).\n   */\n  constructor (viewElement, wrapperElement) {\n    // Check given element\n    if (viewElement === undefined || !(viewElement instanceof Element)) {\n      throw new Error('BaseRenderView: viewElement must be an Element.')\n    }\n    if (wrapperElement !== null) {\n      if (wrapperElement === undefined || !(wrapperElement instanceof Element)) {\n        throw new Error('BaseRenderView: wrapperElement must be null or an Element.')\n      }\n      wrapperElement.innerHTML = ''\n      wrapperElement.style.padding = '0'\n      wrapperElement.style.background = ''\n    }\n\n    // Tweak viewElement\n    viewElement.tabIndex = -1\n    // Prevent context menu on RMB. Firefox still shows it when shift is pressed. It seems\n    // impossible to override this (tips welcome!), so let's make this the actual behavior.\n    viewElement.oncontextmenu = (e) => {\n      if (!e.shiftKey) {\n        e.preventDefault()\n        e.stopPropagation()\n        return false\n      }\n    }\n\n    this.viewElement = viewElement\n    this.wrapperElement = wrapperElement\n    this.sizeElement = (wrapperElement === null) ? viewElement : wrapperElement\n    this.titleElement = null // is set in _initElements() if wrapperElement is given\n\n    this._lsize = null // cached logical size\n    this._wheelThrottle = 20 // to avoid flooding wheel events\n    this._moveThrottle = 20 // to avoid flooding move events\n    this._isVisible = false // set by intersection observer\n\n    this._focusElement = null\n    this._abortController = new AbortController()\n    this._resizeObserver = null\n    this._intersectionObserver = null\n\n    this._initElements()\n    this._registerEvents()\n  }\n\n  /**\n   * Close the view, disconnecting observers and clearing callbacks.\n   * This does not remove the the element from the DOM; that's up to the caller.\n   */\n  close () {\n    if (this._focusElement) {\n      this._focusElement.remove()\n      this._focusElement = null\n    }\n    if (this._abortController) {\n      this._abortController.abort()\n      this._abortController = null\n    }\n    if (this._resizeObserver) {\n      this._resizeObserver.disconnect()\n      this._resizeObserver = null\n    }\n    if (this._intersectionObserver) {\n      this._intersectionObserver.disconnect()\n      this._intersectionObserver = null\n    }\n    this.viewElement = null\n    this.sizeElement = null\n    this.titleElement = null\n    if (this.wrapperElement) {\n      this.wrapperElement.innerHTML = ''\n      this.wrapperElement = null\n    }\n    const event = {\n      type: 'close',\n      timestamp: getTimestamp()\n    }\n    this.onEvent(event)\n  }\n\n  /**\n   * Set the view's size in logical pixels.\n   *\n   * @param {string} width - The requested width.\n   * @param {string} height - The requested height.\n   */\n  setLogicalSize (width, height) {\n    this.sizeElement.style.maxWidth = ''\n    this.sizeElement.style.maxHeight = ''\n    this.sizeElement.style.width = width + 'px'\n    this.sizeElement.style.height = height + 'px'\n  }\n\n  /**\n   * Set the width of the view as a CSS string.\n   *\n   * @param {string} cssWidth - The requested width as a css string, e.g. '640px' or '90%' or 'calc(100% - 10px)'.\n   */\n  setCssWidth (cssWidth) {\n    this.sizeElement.style.maxWidth = ''\n    this.sizeElement.style.width = cssWidth\n  }\n\n  /**\n   * Set the height of the view as a CSS string.\n   *\n   * @param {string} cssHeight - The requested height as a css string, e.g. '480px' or '40vh'.\n   */\n  setCssHeight (cssHeight) {\n    this.sizeElement.style.maxHeight = ''\n    this.sizeElement.style.height = cssHeight\n  }\n\n  /**\n   * Set whether the view is manually resizable.\n   * Note that the view can only be made resizable if it was instantiated with a wrapper.\n   *\n   * @param {boolean} resizable - Whether to make it resizable or not.\n   */\n  setResizable (resizable) {\n    if (this.wrapperElement) {\n      if (resizable) {\n        this.wrapperElement.classList.add('is-resizable')\n      } else {\n        this.wrapperElement.classList.remove('is-resizable')\n      }\n    }\n  }\n\n  /**\n   * Set whether the view has a titlebar.\n   * Note that the view can only have a titlebar if it was instantiated with a wrapper.\n   *\n   * @param {boolean} titlebar - Whether to show the titlebar or not.\n   */\n  showTitlebar (titlebar) {\n    if (this.wrapperElement) {\n      if (titlebar) {\n        this.wrapperElement.classList.add('has-titlebar')\n      } else {\n        this.wrapperElement.classList.remove('has-titlebar')\n      }\n    }\n  }\n\n  /**\n   * Set the view's title in the titlebar.\n   *\n   * Note that the title is only visible if the view was instantiated with a wrapper,\n   * and the titlebar is shown.\n   *\n   * @param {string} title - The title to set.\n   */\n  setTitle (title) {\n    if (this.titleElement) {\n      this.titleElement.innerText = title\n    }\n  }\n\n  /**\n   * Set the `style.cursor`.\n   *\n   * @param {string} cursor - A valid string for CSS cursor.\n   */\n  setCursor (cursor) {\n    this.viewElement.style.cursor = cursor\n  }\n\n  /**\n   * Set the throttle setting. Set to zero to disable throttling.\n   *\n   * @param {number} throttle - The timeout (in ms) to wait before sending a move/wheel event.\n   */\n  setThrottle (throttle) {\n    this._wheelThrottle = throttle\n    this._moveThrottle = throttle\n  }\n\n  /**\n   * The subclass should implement this to handle events.\n   *\n   * @param {object} event - The event object as a 'dictionary', following the spec.\n   */\n  onEvent (event) { }\n\n  /**\n   * Internal method to initialize the view's helper elements.\n   */\n  _initElements () {\n    const signal = this._abortController.signal\n\n    // Obtain container to put our hidden focus element.\n    // Putting the focusElement as a child of the canvas prevents chrome from emitting input events.\n    const focusElementContainerId = 'rendercanvas-focus-element-container'\n    let focusElementContainer = document.getElementById(focusElementContainerId)\n\n    if (!focusElementContainer) {\n      focusElementContainer = document.createElement('div')\n      focusElementContainer.setAttribute('id', focusElementContainerId)\n      focusElementContainer.style.position = 'absolute'\n      focusElementContainer.style.top = '0'\n      focusElementContainer.style.left = '-9999px'\n      document.body.appendChild(focusElementContainer)\n    }\n\n    // Create an element to which we transfer focus, so we can capture key events and prevent global shortcuts\n    const focusElement = document.createElement('input')\n    this._focusElement = focusElement\n    focusElement.type = 'text'\n    focusElement.tabIndex = -1\n    focusElement.autocomplete = 'off'\n    focusElement.autocorrect = 'off'\n    focusElement.autocapitalize = 'off'\n    focusElement.spellcheck = false\n    focusElement.style.width = '1px'\n    focusElement.style.height = '1px'\n    focusElement.style.padding = '0'\n    focusElement.style.opacity = 0\n    focusElement.style.pointerEvents = 'none'\n    focusElementContainer.appendChild(focusElement)\n\n    const wrapperElement = this.wrapperElement\n\n    if (wrapperElement !== null) {\n      this.viewElement.classList.add('renderview-view')\n\n      // Wrap it\n      wrapperElement.classList.add('renderview-wrapper')\n      wrapperElement.appendChild(this.viewElement)\n\n      // Debug element\n      const debugElement = document.createElement('div')\n      debugElement.innerHTML = '<b>If you can read this, the rendercanvas.css is likely not applied.</b>'\n      debugElement.classList.add('renderview-hidden')\n      wrapperElement.appendChild(debugElement)\n\n      // Create title bar\n      const topElement = document.createElement('div')\n      topElement.classList.add('renderview-top')\n      const titleElement = document.createElement('span')\n      this.titleElement = titleElement\n      titleElement.innerText = 'RenderView'\n      topElement.appendChild(titleElement)\n      wrapperElement.appendChild(topElement)\n\n      // Enable resizing\n      const resizeElement = document.createElement('div')\n      resizeElement.classList.add('renderview-resizer')\n      wrapperElement.appendChild(resizeElement)\n      let resizeInfo = null\n      resizeElement.addEventListener('pointerdown', (ev) => {\n        if (this._lsize) {\n          resizeInfo = { w: this._lsize[0], h: this._lsize[1], x: ev.clientX, y: ev.clientY }\n          resizeElement.setPointerCapture(ev.pointerId)\n        }\n      },\n      { signal }\n      )\n      resizeElement.addEventListener('pointermove', (ev) => {\n        if (resizeInfo !== null) {\n          this.sizeElement.style.maxWidth = ''\n          this.sizeElement.style.maxHeight = ''\n          this.sizeElement.style.width = resizeInfo.w + (ev.clientX - resizeInfo.x) + 'px'\n          this.sizeElement.style.height = resizeInfo.h + (ev.clientY - resizeInfo.y) + 'px'\n        }\n      },\n      { signal }\n      )\n      resizeElement.addEventListener('lostpointercapture', (ev) => {\n        resizeInfo = null\n      },\n      { signal }\n      )\n    } // wrapperElement !== null\n  }\n\n  /**\n   * Internal method to setup listeners and register callbacks.\n   */\n  _registerEvents () {\n    // Register events\n\n    const viewElement = this.viewElement\n    const signal = this._abortController.signal // to unregister/abort stuff\n\n    // ----- visibility ---------------\n\n    this._intersectionObserver = new IntersectionObserver((entries, observer) => {\n      // This gets called when one of the observed elements becomes visible/invisible.\n      // Note that entries only contains the *changed* elements, so we keep track ourselves.\n      let isVisible = false\n      for (const entry of entries) {\n        isVisible = isVisible || entry.isIntersecting\n      }\n      if (isVisible !== this._isVisible) {\n        this._isVisible = isVisible\n        const event = {\n          type: isVisible ? 'show' : 'hide',\n          timestamp: getTimestamp()\n        }\n        this.onEvent(event)\n      }\n    })\n    this._intersectionObserver.observe(viewElement)\n\n    // ----- resize ---------------\n\n    this._resizeObserver = new ResizeObserver((entries) => {\n      // The physical size is easy. The logical size can be much more tricky\n      // to obtain due to all the CSS stuff. But the base class will just calculate that\n      // from the physical size and the pixel ratio.\n\n      // Select entry matching our element\n      const ourEntries = entries.filter((entry) => entry.target.id === viewElement.id)\n      if (!ourEntries.length) {\n        return\n      }\n\n      const entry = ourEntries[0]\n      const ratio = window.devicePixelRatio\n      let physicalWidth\n      let physicalHeight\n\n      if (entry.devicePixelContentBoxSize) {\n        physicalWidth = entry.devicePixelContentBoxSize[0].inlineSize\n        physicalHeight = entry.devicePixelContentBoxSize[0].blockSize\n      } else {\n        // Some browsers don't support devicePixelContentBoxSize\n        let lsize\n        if (entry.contentBoxSize) {\n          lsize = [\n            entry.contentBoxSize[0].inlineSize,\n            entry.contentBoxSize[0].blockSize\n          ]\n        } else {\n          lsize = [entry.contentRect.width, entry.contentRect.height]\n        }\n        physicalWidth = Math.floor(lsize[0] * ratio)\n        physicalHeight = Math.floor(lsize[1] * ratio)\n      }\n\n      // If the container element does not have its size set via its style, we set it to the logical size.\n      const logicalWidth = physicalWidth / ratio\n      const logicalHeight = physicalHeight / ratio\n\n      // prevent massive size due to auto-scroll (https://github.com/vispy/jupyter_rfb/issues/62)\n      if (!this.sizeElement.style.width) {\n        this.sizeElement.style.width = `${logicalWidth}px`\n        this.sizeElement.style.maxWidth = '90vmin'\n      }\n      if (!this.sizeElement.style.height) {\n        this.sizeElement.style.height = `${logicalHeight}px`\n        this.sizeElement.style.maxHeight = '90vmin'\n      }\n\n      // Store logical size\n      this._lsize = [logicalWidth, logicalHeight]\n\n      const event = {\n        type: 'resize',\n        width: logicalWidth,\n        height: logicalHeight,\n        pwidth: physicalWidth,\n        pheight: physicalHeight,\n        ratio,\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    })\n\n    this._resizeObserver.observe(this.viewElement)\n\n    // ----- pointer ---------------\n\n    // Current pointer ids, mapping to initial button\n    const pointerToButton = {}\n\n    // The last used buttons, so we can pass to wheel event\n    let lastButtons = []\n\n    viewElement.addEventListener('pointerdown', (ev) => {\n      // When pointer is down, set focus to the focus-element.\n      if (!LOOKS_LIKE_MOBILE) {\n        this._focusElement.focus({ preventScroll: true, focusVisble: false })\n      }\n      // capture the pointing device.\n      // Because we capture the event, there will be no other events when buttons are pressed down,\n      // although they will end up in the 'buttons'. The lost/release will only get fired when all buttons\n      // are released/lost. Which is why we look up the original button in our `pointers` list.\n      viewElement.setPointerCapture(ev.pointerId)\n      // Prevent default unless alt is pressed\n      if (!ev.altKey) {\n        ev.preventDefault()\n      }\n\n      // Collect info\n      const [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n\n      // Manage\n      pointerToButton[ev.pointerId] = button\n      lastButtons = buttons\n\n      const event = {\n        type: 'pointer_down',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        ntouches: 0, // TODO later: maybe via https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent\n        touches: {},\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    let pendingMoveEvent = null\n\n    const sendMoveEvent = () => {\n      if (pendingMoveEvent !== null) {\n        const event = pendingMoveEvent\n        pendingMoveEvent = null\n        this.onEvent(event)\n      }\n    }\n\n    viewElement.addEventListener('pointermove', (ev) => {\n      // If this pointer is not down, but other pointers are, don't emit an event.\n      if (pointerToButton[ev.pointerId] === undefined) {\n        if (Object.keys(pointerToButton).length > 0) {\n          return\n        }\n      }\n\n      // Collect info, use button that started this drag-action\n      let [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n      button = pointerToButton[ev.pointerId] || 0\n\n      // Manage\n      lastButtons = buttons\n\n      // This event is throttled. We either update the pending event or create a new one\n      if (\n        pendingMoveEvent !== null &&\n        arraysEqual(pendingMoveEvent.buttons, buttons) &&\n        arraysEqual(pendingMoveEvent.modifiers, modifiers)\n      ) {\n        pendingMoveEvent.x = ev.offsetX\n        pendingMoveEvent.y = ev.offsetY\n      } else {\n        const event = {\n          type: 'pointer_move',\n          x: ev.offsetX,\n          y: ev.offsetY,\n          button,\n          buttons,\n          modifiers,\n          ntouches: 0,\n          touches: {},\n          timestamp: getTimestamp()\n        }\n        if (this._moveThrottle > 0) {\n          sendMoveEvent() // Send previous (if any)\n          pendingMoveEvent = event\n          window.setTimeout(sendMoveEvent, this._moveThrottle)\n        } else {\n          this.onEvent(event)\n        }\n      }\n    },\n    { signal }\n    )\n\n    viewElement.addEventListener('lostpointercapture', (ev) => {\n      // This happens on pointer-up or pointer-cancel. We threat them the same.\n\n      // Get info, use the button stat started the drag-action\n      const modifiers = getModifiers(ev)\n      const button = pointerToButton[ev.pointerId] || 0\n      const buttons = []\n\n      // Manage\n      delete pointerToButton[ev.pointerId]\n      lastButtons = buttons\n\n      const event = {\n        type: 'pointer_up',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        ntouches: 0,\n        touches: {},\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    viewElement.addEventListener('pointerenter', (ev) => {\n      // If this pointer is not down, but other pointers are, don't emit an event.\n      if (pointerToButton[ev.pointerId] === undefined) {\n        if (Object.keys(pointerToButton).length > 0) {\n          return\n        }\n      }\n\n      // Collect info, but use button 0. It usually is, and should be.\n      let [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n      button = 0\n\n      const event = {\n        type: 'pointer_enter',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        ntouches: 0,\n        touches: {},\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    viewElement.addEventListener('pointerleave', (ev) => {\n      // If this pointer is not down, but other pointers are, don't emit an event.\n      if (pointerToButton[ev.pointerId] === undefined) {\n        if (Object.keys(pointerToButton).length > 0) {\n          return\n        }\n      }\n\n      // Collect info, but use button 0. It usually is, and should be.\n      let [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n      button = 0\n\n      const event = {\n        type: 'pointer_leave',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        ntouches: 0,\n        touches: {},\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    // ----- click ---------------\n\n    // Click events are not pointer events. In most apps that this targets, click events\n    // don't add much over pointer events. But double-click can be useful.\n    viewElement.addEventListener('dblclick', (ev) => {\n      // Prevent default unless alt is pressed\n      if (!ev.altKey) {\n        ev.preventDefault()\n      }\n\n      // Collect info\n      const [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n\n      const event = {\n        type: 'double_click',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        // no touches here\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    // ----- wheel ---------------\n\n    let pendingWheelEvent = null\n\n    const sendWheelEvent = () => {\n      if (pendingWheelEvent !== null) {\n        const event = pendingWheelEvent\n        pendingWheelEvent = null\n        this.onEvent(event)\n      }\n    }\n\n    viewElement.addEventListener('wheel', (ev) => {\n      // Only scroll if we have focus\n      if (window.document.activeElement !== this._focusElement) {\n        return\n      }\n      // Prevent default unless alt is pressed\n      if (!ev.altKey) {\n        ev.preventDefault()\n      }\n\n      // Collect info\n      const scales = [1 / window.devicePixelRatio, 16, 600] // pixel, line, page\n      const scale = scales[ev.deltaMode]\n      const modifiers = getModifiers(ev)\n      const buttons = [...lastButtons]\n\n      // This event is throttled. We either update the pending event or create a new one\n      if (\n        pendingWheelEvent !== null &&\n        arraysEqual(pendingWheelEvent.buttons, buttons) &&\n        arraysEqual(pendingWheelEvent.modifiers, modifiers)\n      ) {\n        pendingWheelEvent.x = ev.offsetX\n        pendingWheelEvent.y = ev.offsetY\n        pendingWheelEvent.dx += ev.deltaX * scale\n        pendingWheelEvent.dy += ev.deltaY * scale\n      } else {\n        const event = {\n          type: 'wheel',\n          x: ev.offsetX,\n          y: ev.offsetY,\n          dx: ev.deltaX * scale,\n          dy: ev.deltaY * scale,\n          buttons,\n          modifiers,\n          timestamp: getTimestamp()\n        }\n        if (this._wheelThrottle > 0) {\n          sendWheelEvent() // Send previous (if any)\n          pendingWheelEvent = event\n          window.setTimeout(sendWheelEvent, this._wheelThrottle)\n        } else {\n          this.onEvent(event)\n        }\n      }\n    },\n    { signal }\n    )\n\n    // ----- key ---------------\n\n    this._focusElement.addEventListener('keydown', (ev) => {\n      // Failsafe in case the element is deleted or detached.\n      if (this.sizeElement.offsetParent === null) {\n        return\n      }\n      // Ignore repeated events (key being held down)\n      if (ev.repeat) {\n        return\n      }\n      // No need for stopPropagation or preventDefault because we are in a text-input.\n\n      const modifiers = getModifiers(ev)\n\n      const event = {\n        type: 'key_down',\n        key: KEY_MAP[ev.key] || ev.key,\n        modifiers,\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    this._focusElement.addEventListener('keyup', (ev) => {\n      if (this.sizeElement.offsetParent === null) {\n        return\n      }\n\n      const modifiers = getModifiers(ev)\n\n      const event = {\n        type: 'key_up',\n        key: KEY_MAP[ev.key] || ev.key,\n        modifiers,\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    this._focusElement.addEventListener('input', (ev) => {\n      // Failsafe in case the element is deleted or detached.\n      if (this.sizeElement.offsetParent === null) {\n        return\n      }\n      // Prevent the text box from growing\n      if (!ev.isComposing) {\n        this.focus_el.value = ''\n      }\n\n      const event = {\n        type: 'char',\n        data: ev.data,\n        is_composing: ev.isComposing,\n        input_type: ev.inputType,\n        // repeat: ev.repeat,  // n.a.\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n  }\n}\n\n// Export\nwindow.BaseRenderView = BaseRenderView\n\n\n/* global BaseRenderView getTimestamp */\n\n/**\n * An object that represents the model (wrapping the anywidget model object), that can have multiple views.\n */\nclass RendercanvasAnywidgetModel {\n  constructor (anymodel) {\n    this.anymodel = anymodel\n    this.views = []\n    this._hasVisibleViews = false\n\n    // Variables to store frames and the last frame\n    this._frames = []\n    this._lastSrc = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR42mOor68HAAL+AX6E2KOJAAAAAElFTkSuQmCC'\n    this._lastFrame = {\n      src: this._lastSrc,\n      index: 0,\n      timestamp: 0\n    }\n\n    // Register callbacks\n    anymodel.on('msg:custom', (msg, buffers) => {\n      if (msg.type === 'framebufferdata') {\n        this._frames.push({ ...msg, buffers })\n        this._request_animation_frame()\n      }\n    })\n    // For traits we allow the public and private version, this means we can use the\n    // same JS code for multiple anywidget implementations (specifically rendercanvas.anywidget vs jupyter_rfb)\n    for (const prefix of ['', '_']) {\n      anymodel.on(`change:${prefix}css_width`, () => {\n        const cssWidth = anymodel.get(`${prefix}css_width`)\n        for (const view of this.views) {\n          view.setCssWidth(cssWidth)\n        }\n      })\n      anymodel.on(`change:${prefix}css_height`, () => {\n        const cssHeight = anymodel.get(`${prefix}css_height`)\n        for (const view of this.views) {\n          view.setCssHeight(cssHeight)\n        }\n      })\n      anymodel.on(`change:${prefix}resizable`, () => {\n        const resizable = anymodel.get(`${prefix}resizable`)\n        for (const view of this.views) {\n          view.setResizable(resizable)\n        }\n      })\n      anymodel.on(`change:${prefix}has_titlebar`, () => {\n        const titlebar = anymodel.get(`${prefix}has_titlebar`)\n        for (const view of this.views) {\n          view.showTitlebar(titlebar)\n        }\n      })\n      anymodel.on(`change:${prefix}title`, () => {\n        const title = anymodel.get(`${prefix}title`)\n        for (const view of this.views) {\n          view.setTitle(title)\n        }\n      })\n      anymodel.on(`change:${prefix}cursor`, () => {\n        const cursor = anymodel.get(`${prefix}cursor`)\n        for (const view of this.views) {\n          view.setCursor(cursor)\n        }\n      })\n    }\n\n    // Start the animation loop\n    this._img_update_pending = false\n    this._request_animation_frame()\n  }\n\n  close () {\n    URL.revokeObjectURL(this._lastSrc)\n    this._lastSrc = null\n    this._lastFrame = null\n    this._frames = []\n    for (const view of this.views) {\n      view.close()\n    }\n    // This gets called when the model is closed and the comm is removed. Notify Py just in time!\n    const t = getTimestamp()\n    const event = {\n      type: 'close',\n      timestamp: t\n    }\n    this.onEvent(event)\n  }\n\n  addView (view) {\n    this.views.push(view)\n    this.updateVisibility()\n    // Init attrs\n    const anymodel = this.anymodel\n    view.setCssWidth(anymodel.get('_css_width') ?? anymodel.get('css_width'))\n    view.setCssHeight(anymodel.get('_css_height') ?? anymodel.get('css_height'))\n    view.setResizable(anymodel.get('_resizable') ?? anymodel.get('resizable'))\n    view.showTitlebar(anymodel.get('_has_titlebar') ?? anymodel.get('has_titlebar'))\n    view.setTitle(anymodel.get('_title') ?? anymodel.get('title'))\n    view.setCursor(anymodel.get('_cursor') ?? anymodel.get('cursor'))\n    // Init view\n    if (this._lastSrc) {\n      view.viewElement.src = this._lastSrc\n    }\n  }\n\n  removeView (view) {\n    this.views = this.views.filter(v => v !== view)\n    this.updateVisibility()\n  }\n\n  updateVisibility () {\n    let visibleViewsCount = 0\n    for (const view of this.views) {\n      if (view.isVisible) { visibleViewsCount += 1 }\n    }\n    const hasVisibleViews = visibleViewsCount > 0\n    this.anymodel.set('_has_visible_views', hasVisibleViews)\n    this.anymodel.save_changes()\n    if (hasVisibleViews) {\n      this._request_animation_frame()\n    }\n  }\n\n  _send_response () {\n    // Let Python know what we have at the frame. This prop is a dict, making it \"atomic\".\n    const frame = this._lastFrame\n    const frameFeedback = { index: frame.index, timestamp: frame.timestamp, localtime: Date.now() / 1000 }\n    this.anymodel.set('_frame_feedback', frameFeedback)\n    this.anymodel.save_changes()\n  }\n\n  _request_animation_frame () {\n    // Request an animation frame.\n    // Before the anywidget refactor, we did this via a tiny delay, which supposedly made things more smooth,\n    // but it also increases the delay for a frame to hit the screen, and limits the max fps, so let's not do that.\n    if (!this._img_update_pending) {\n      this._img_update_pending = true\n      window.requestAnimationFrame(this._animate.bind(this))\n      // window.setTimeout(window.requestAnimationFrame, 5, this._animate.bind(this)) // via a delay\n    }\n  }\n\n  _animate () {\n    this._img_update_pending = false\n    if (this._frames.length === 0) { return };\n\n    // Pick the oldest frame from the stack, and get its source\n    const frame = this._frames.shift()\n    let newSrc\n    if (frame.buffers.length > 0) {\n      const blob = new Blob([frame.buffers[0].buffer], { type: frame.mimetype })\n      newSrc = URL.createObjectURL(blob)\n    } else {\n      newSrc = frame.data_b64\n    }\n\n    // Revoke last objectURL\n    URL.revokeObjectURL(this._lastSrc)\n    this._lastSrc = newSrc\n\n    // Update the image sources\n    for (const view of this.views) {\n      view.viewElement.src = newSrc\n      view.viewElement.onload = this._request_animation_frame.bind(this)\n    }\n\n    // Let the server know we processed the image (even if it's not shown yet)\n    this._lastFrame = frame\n    this._send_response()\n  }\n\n  onEvent (event) {\n    try {\n      this.anymodel.send(event)\n    } catch { } // probably attempt to send when widget is closed\n  }\n}\n\n/**\n * View to show the anywidget output and observe events, based on renderview.js.\n */\nclass AnywidgetRenderView extends BaseRenderView {\n  constructor (model, containerElement) {\n    // Create the wrapper element\n    const wrapperElement = document.createElement('div')\n    wrapperElement.classList.add('renderview-wrapper')\n    wrapperElement.classList.add('is-resizable')\n    // wrapperElement.classList.add('has-titlebar') -> not by default\n    containerElement.appendChild(wrapperElement)\n\n    // Create img element\n    const viewElement = document.createElement('img')\n    viewElement.decoding = 'sync'\n    viewElement.loading = 'eager'\n    viewElement.style.touchAction = 'none' // prevent default pan/zoom behavior\n    viewElement.ondragstart = () => false // prevent browser's built-in image drag\n\n    // Call super\n    super(viewElement, wrapperElement)\n    this.setThrottle(20) // 20ms -> max 50 move/wheel events per second\n\n    // Connect to the model, it will initialize it with the current size and frame-data\n    this.model = model\n    this.model.addView(this)\n  }\n\n  close () {\n    super.close()\n    this.model.removeView(this)\n  }\n\n  onEvent (event) {\n    if (event.type === 'resize') {\n      // Note that there can be multiple views that can possibly be individually resized.\n      // TODO: keep logical size in check between different views?\n      if (event.width * event.height <= 0) {\n        return // The element of a new view is temporarily zero-sized at initialization\n      }\n    } else if (event.type === 'close') {\n      return // we don't close when one view closes, only when the widget closes\n    } else if (event.type === 'show') {\n      this.isVisible = true\n      this.model.updateVisibility()\n    } else if (event.type === 'hide') {\n      this.isVisible = false\n      this.model.updateVisibility()\n    }\n\n    this.model.onEvent(event)\n  }\n}\n\n// anywidget lifecycle export\nexport default () => {\n  let model\n  return {\n    initialize (ctx) {\n      model = new RendercanvasAnywidgetModel(ctx.model)\n      // window.model = model // debug\n      return () => { model.close() }\n    },\n    render (ctx) {\n      const view = new AnywidgetRenderView(model, ctx.el)\n      return () => { view.close() }\n    }\n  }\n}\n\n\n", "_frame_feedback": {}, "_has_visible_views": false, "_model_module": "anywidget", "_model_module_version": "~0.10.*", "_model_name": "AnyModel", "_view_count": null, "_view_module": "anywidget", "_view_module_version": "~0.10.*", "_view_name": "AnyView", "css_height": "480px", "css_width": "640px", "cursor": "default", "has_titlebar": false, "layout": "IPY_MODEL_18aa31dc27f24c6495d1d7776e44fd1f", "resizable": true, "tabbable": null, "title": "LambertTransfer", "tooltip": null}}, "a44051ab32ce44a5bf42e9c9aa9527d6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "298baabc80b741a0a1b096a90562abfe": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_a44051ab32ce44a5bf42e9c9aa9527d6", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}
+</script></section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="bielliptic-transfer.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Bi-elliptic transfer</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="porkchop-plots.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Porkchop plots</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#What-is-a-Lambert-transfer?">What is a Lambert transfer?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Problem-statement">Problem statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-a-new-STK-instance">Launch a new STK instance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-a-new-scenario">Create a new scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-the-planets-to-the-scenario">Add the planets to the scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Solve-the-initial-and-final-state-vectors">Solve the initial and final state vectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-a-satellite-to-the-scenario">Add a satellite to the scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Declare-the-initial-state-of-the-satellite">Declare the initial state of the satellite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Construct-the-transfer-sequence">Construct the transfer sequence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Configure-the-Lambert-profile">Configure the Lambert profile</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Run-the-main-control-sequence">Run the main control sequence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Retrieve-the-results">Retrieve the results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Visualize-the-transfer">Visualize the transfer</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+
+  
+  <nav class="tocsection editthispage" aria-label="Edit this page">
+    <a href="https://github.com/ansys/pystk/blob/main/examples/lambert-transfer.py" rel="noopener noreferrer">
+      <i class="fa-solid fa-pencil" aria-hidden="true"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </nav>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "minMatchCharLength": 2, "threshold": 0.2}');
+const SEARCH_FILE = "../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2026 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<!--
+  Theme Version Footer
+  Displays the Sphinx theme version and the last updated date.
+  Accessibility and semantic improvements included.
+-->
+<footer class="theme-version" aria-label="Theme version and last update">
+  <span>
+    
+      Built with the
+      <a href="https://sphinxdocs.ansys.com/version/stable/index.html" target="_blank" rel="noopener noreferrer">
+        Ansys Sphinx Theme
+      </a>
+      1.7.2.
+    
+  </span>
+  <br />
+  <span>Last updated on <time id="ast_build_date"></time></span>
+</footer>
+<script>
+  // Set the last updated date in a readable format
+  (function() {
+    var options = { day: "numeric", month: "long", year: "numeric" };
+    var ast_lastModifiedDate = new Date(document.lastModified);
+    var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+    var dateElem = document.getElementById("ast_build_date");
+    if (dateElem) {
+      dateElem.textContent = ast_build_date;
+    }
+  })();
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

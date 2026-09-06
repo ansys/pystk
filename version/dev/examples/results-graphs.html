@@ -1,0 +1,1485 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Results and graphs &#8212; PySTK</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=5ffe81b6" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=5ffe81b6" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=789c53a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/highlight.css?v=e507d2d0" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/search.css?v=6f836f60" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/datatable.css?v=cb1cc588" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  
+  
+  
+
+  
+    <link href="../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=5e9438ed"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/results-graphs';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://stk.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../_static/js/download.js?v=ef68161c"></script>
+    <link rel="icon" href="../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Access between facility and satellite calculator" href="facility-to-satellite-access.html" />
+    <link rel="prev" title="Create and load scenarios" href="create-load-scenarios.html" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="main" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  <link rel="canonical" href="https://stk.docs.pyansys.com/version/stable/examples/results-graphs.html" />
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PySTK - Home"/>
+    <img src="../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PySTK - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../index.html" title="PySTK home">Home</a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav>
+</div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+  
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    
+<!--
+  Announcement Version Loader
+  Dynamically loads the announcement.html content into the announcement_msg div.
+-->
+<div id="announcement_msg" aria-live="polite"></div>
+<script>
+  // Fetch and inject the announcement HTML content
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status} Announcement.html file not found, Please ignore this, if you are in dev/stable documentation`);
+      }
+      return response.text();
+    })
+    .then((text) => {
+      var msgDiv = document.getElementById("announcement_msg");
+      if (msgDiv) {
+        msgDiv.innerHTML = text;
+      }
+    })
+    .catch((error) => {
+      // Log only unexpected fetch errors
+      if (!(error.message && error.message.startsWith("HTTP error: 404"))) {
+        console.error(`Fetch problem: ${error.message} Announcement.html could not be loaded.`);
+      }
+    });
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../index.html" title="PySTK home">Home</a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav>
+</div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+  
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamental concepts</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Results and graphs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic examples</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="facility-to-satellite-access.html">Access between facility and satellite calculator</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Results and graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensor-access.html">Sensors and access</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Coverage examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-calculator.html">Satellite coverage area calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-analysis.html">Satellite coverage analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solar-eclipse-path-of-totality.html">Solar eclipse coverage: path of totality over Spain</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Orbital maneuvers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hohmann-transfer.html">Hohmann transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bielliptic-transfer.html">Bi-elliptic transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lambert-transfer.html">Lambert transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phasing-geo-orbits.html">GEO Orbit Phasing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mission analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="porkchop-plots.html">Porkchop plots</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Communications and radar</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="radar-cross-section-detection.html">Radar cross section detection calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication-link-calculator.html">Communication link budget calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-parametric-study.html">Multifunction radar parametric study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-design.html">Multifunction radar design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missile-interference-test.html">Missile Interference Test</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="radio-frequency-spectrum-filters.html">Radio Frequency (RF) Spectrum Filters</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aviator mission planning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="aviator-fuel-calculator.html">Commercial aircraft fuel calculator with Aviator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aircraft-carrier-landing.html">Multi-aircraft carrier landing with Aviator</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../examples.html" class="nav-link">Examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Results and graphs</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/results-graphs.py"><span> Download as Python script <span class="fab fa-python"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/results-graphs.ipynb"><span> Download as Jupyter notebook <span class="fas fa-book"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/results-graphs.pdf"><span> Download as PDF document <span class="fas fa-file-pdf"></span></span></a></p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<section id="Results-and-graphs">
+<h1>Results and graphs<a class="headerlink" href="#Results-and-graphs" title="Link to this heading">#</a></h1>
+<p>This tutorial demonstrates how the STK object model provides direct access to the data provider tools exposed by each object in STK that form the foundation of the report styles in the GUI.</p>
+<p>The following example uses the <code class="docutils literal notranslate"><span class="pre">J2000</span> <span class="pre">Position</span> <span class="pre">Velocity</span></code> report to demonstrate the retrieval of data through the object model. This report consists of specific J2000 data provider elements from two groups: <code class="docutils literal notranslate"><span class="pre">Cartesian</span> <span class="pre">Velocity</span></code> and <code class="docutils literal notranslate"><span class="pre">Cartesian</span> <span class="pre">Position</span></code>.</p>
+<p><img alt="The J2000 Position Velocity report contents" src="../_images/object-model-report-contents.png" /></p>
+<section id="Launch-a-new-STK-instance">
+<h2>Launch a new STK instance<a class="headerlink" href="#Launch-a-new-STK-instance" title="Link to this heading">#</a></h2>
+<p>Start by launching a new STK instance. In this example, STKEngine is used.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKEngine</span>
+
+
+<span class="n">stk</span> <span class="o">=</span> <span class="n">STKEngine</span><span class="o">.</span><span class="n">start_application</span><span class="p">(</span><span class="n">no_graphics</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Using </span><span class="si">{</span><span class="n">stk</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Using STK Engine v13.1.0
+</pre></div></div>
+</div>
+<p>Create an STK scenario using the STK Root object:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="n">stk</span><span class="o">.</span><span class="n">new_object_root</span><span class="p">()</span>
+<span class="n">root</span><span class="o">.</span><span class="n">new_scenario</span><span class="p">(</span><span class="s2">"GraphsAndResults"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Once the scenario is created, it is possible to show a 3D graphics window by running:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.experimental.jupyterwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">GlobeWidget</span>
+
+
+<span class="n">globe_widget</span> <span class="o">=</span> <span class="n">GlobeWidget</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
+<span class="n">globe_widget</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "08841ebb2a2d4a47a2a077855be3981b"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_results-graphs_10_1.png" src="../_images/examples_results-graphs_10_1.png" />
+</div>
+</div>
+<p>Show a 2D graphics window by running:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.experimental.jupyterwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">MapWidget</span>
+
+
+<span class="n">map_widget</span> <span class="o">=</span> <span class="n">MapWidget</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
+<span class="n">map_widget</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "20349ca7362d48cca8e5f6ce56db3e27"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_results-graphs_12_1.png" src="../_images/examples_results-graphs_12_1.png" />
+</div>
+</div>
+</section>
+<section id="Set-the-scenario-time-period">
+<h2>Set the scenario time period<a class="headerlink" href="#Set-the-scenario-time-period" title="Link to this heading">#</a></h2>
+<p>Using the newly created scenario, set the start and stop times. Rewind the scenario so that the graphics match the start and stop times of the scenario:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scenario</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span>
+<span class="n">scenario</span><span class="o">.</span><span class="n">set_time_period</span><span class="p">(</span><span class="s2">"1 Jul 2020 17:14:00.00"</span><span class="p">,</span> <span class="s2">"1 Jul 2020 17:29:00.00"</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">rewind</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Adding-a-satellite-to-the-scenario">
+<h2>Adding a satellite to the scenario<a class="headerlink" href="#Adding-a-satellite-to-the-scenario" title="Link to this heading">#</a></h2>
+<p>Now that a new scenario is available, add a new satellite:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKObjectType</span>
+
+
+<span class="n">satellite</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+    <span class="n">STKObjectType</span><span class="o">.</span><span class="n">SATELLITE</span><span class="p">,</span> <span class="s2">"SatelliteTwoBody"</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Ensure that the satellite’s associated times use the scenario’s times as well.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">PropagatorTwoBody</span><span class="p">,</span> <span class="n">PropagatorType</span>
+
+
+<span class="n">satellite</span><span class="o">.</span><span class="n">set_propagator_type</span><span class="p">(</span><span class="n">PropagatorType</span><span class="o">.</span><span class="n">TWO_BODY</span><span class="p">)</span>
+
+<span class="n">propagator</span> <span class="o">=</span> <span class="n">PropagatorTwoBody</span><span class="p">(</span><span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span><span class="p">)</span>
+<span class="n">propagator</span><span class="o">.</span><span class="n">ephemeris_interval</span><span class="o">.</span><span class="n">set_start_and_stop_times</span><span class="p">(</span>
+    <span class="s2">"1 Jul 2020 17:14:00.00"</span><span class="p">,</span> <span class="s2">"1 Jul 2020 17:29:00.00"</span>
+<span class="p">)</span>
+
+<span class="n">propagator</span><span class="o">.</span><span class="n">propagate</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Setup-data-providers-for-use-in-the-object-model">
+<h2>Setup data providers for use in the object model<a class="headerlink" href="#Setup-data-providers-for-use-in-the-object-model" title="Link to this heading">#</a></h2>
+<p>To retrieve the data for the <code class="docutils literal notranslate"><span class="pre">J2000</span> <span class="pre">Position</span> <span class="pre">Velocity</span></code> report, setup its specific data providers for use in the Object Model. Use the various <code class="docutils literal notranslate"><span class="pre">DataProvider</span></code> interfaces to do this:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataProviderGroup</span>
+
+
+<span class="n">cart_vel</span> <span class="o">=</span> <span class="n">DataProviderGroup</span><span class="p">(</span><span class="n">satellite</span><span class="o">.</span><span class="n">data_providers</span><span class="p">[</span><span class="s2">"Cartesian Velocity"</span><span class="p">])</span>
+<span class="n">cart_pos</span> <span class="o">=</span> <span class="n">DataProviderGroup</span><span class="p">(</span><span class="n">satellite</span><span class="o">.</span><span class="n">data_providers</span><span class="p">[</span><span class="s2">"Cartesian Position"</span><span class="p">])</span>
+
+<span class="n">cart_vel_j2000</span> <span class="o">=</span> <span class="n">cart_vel</span><span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">"J2000"</span><span class="p">)</span>
+<span class="n">cart_pos_j2000</span> <span class="o">=</span> <span class="n">cart_pos</span><span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">"J2000"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">DataProviderCollection</span></code> and <code class="docutils literal notranslate"><span class="pre">DataProviderGroup</span></code> variables can be used to access information about the <code class="docutils literal notranslate"><span class="pre">J2000</span> <span class="pre">Position</span> <span class="pre">Velocity</span></code> report.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'Some data providers available for the the "SatelliteTwoBody" satellite:'</span><span class="p">)</span>
+
+<span class="n">data_providers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">satellite</span><span class="o">.</span><span class="n">data_providers</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data_providers</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="mi">9</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\t</span><span class="s2">...and </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data_providers</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">10</span><span class="si">}</span><span class="s2"> more "</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">data_providers</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Some data providers within the Cartesian Velocity group:"</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">cart_vel</span><span class="o">.</span><span class="n">group</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Some data providers within the Cartesian Position group:"</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">cart_pos</span><span class="o">.</span><span class="n">group</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Some data providers available for the the &#34;SatelliteTwoBody&#34; satellite:
+        Access Listing
+        Active Constraints
+        All Constraints
+        Angles
+        Articulation
+        Astrogator Accel Hist
+        Astrogator Log
+        Astrogator MCS Ephemeris Segments
+        Astrogator Maneuver Ephemeris Block Final
+        Astrogator Maneuver Ephemeris Block History
+        ...and 151 more
+Some data providers within the Cartesian Velocity group:
+        TrueOfDateRotating
+        Fixed
+        ICRF
+        MeanOfDate
+        MeanOfEpoch
+        TrueOfDate
+        TrueOfEpoch
+        B1950
+        TEMEOfEpoch
+        TEMEOfDate
+        AlignmentAtEpoch
+        J2000
+Some data providers within the Cartesian Position group:
+        TrueOfDateRotating
+        Fixed
+        ICRF
+        MeanOfDate
+        MeanOfEpoch
+        TrueOfDate
+        TrueOfEpoch
+        B1950
+        TEMEOfEpoch
+        TEMEOfDate
+        AlignmentAtEpoch
+        J2000
+</pre></div></div>
+</div>
+<p>The basic interfaces are now setup to compute information from the data providers that the report is using. Next, cast these objects to provide the <code class="docutils literal notranslate"><span class="pre">IDataProvider</span></code> interface with inputs so it can compute the proper data.</p>
+</section>
+<section id="Data-provider-%22PreData%22-inputs">
+<h2>Data provider “PreData” inputs<a class="headerlink" href="#Data-provider-%22PreData%22-inputs" title="Link to this heading">#</a></h2>
+<p>Some data providers require input data before the calculation can provide data results. This data is known as PreData. There are two ways to ascertain if PreData is required for a particular data provider:</p>
+<ul class="simple">
+<li><p>Refer to the data provider documentation which provides the format of the PreData if any is required.</p></li>
+<li><p>Retrieve the data provider schema and parse it for PreData tags.</p></li>
+</ul>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">DataProviderCollection.get_schema()</span></code> method to get the schema for all STK data providers.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">satellite</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">get_schema</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<p>Once the format of the PreData is known, set the <code class="docutils literal notranslate"><span class="pre">IDataProvider.pre_data</span></code> property. This property must be set before issuing the data provider’s calculation method.</p>
+</section>
+<section id="Set-the-pre_data-property-on-the-IDataProvider-interface">
+<h2>Set the <code class="docutils literal notranslate"><span class="pre">pre_data</span></code> property on the <code class="docutils literal notranslate"><span class="pre">IDataProvider</span></code> interface<a class="headerlink" href="#Set-the-pre_data-property-on-the-IDataProvider-interface" title="Link to this heading">#</a></h2>
+<p>The following example demonstrates setting the satellite’s object path as the PreData for the <code class="docutils literal notranslate"><span class="pre">RIC</span> <span class="pre">Coordinates</span></code> data provider and then calls the data provider’s computation execution method.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataProviderResult</span><span class="p">,</span> <span class="n">DataProviderTimeVarying</span>
+
+
+<span class="n">provider</span> <span class="o">=</span> <span class="n">DataProviderTimeVarying</span><span class="p">(</span><span class="n">satellite</span><span class="o">.</span><span class="n">data_providers</span><span class="p">[</span><span class="s2">"RIC Coordinates"</span><span class="p">])</span>
+
+<span class="n">provider</span><span class="o">.</span><span class="n">pre_data</span> <span class="o">=</span> <span class="s2">"Satellite/SatelliteTwoBody"</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"1 Jul 2020 17:14:00.00"</span><span class="p">,</span> <span class="s2">"1 Jul 2020 17:29:00.00"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Data-provider-time-inputs">
+<h2>Data provider time inputs<a class="headerlink" href="#Data-provider-time-inputs" title="Link to this heading">#</a></h2>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Time</span> <span class="pre">Period</span></code> section of the <code class="docutils literal notranslate"><span class="pre">Report</span></code> window in STK, highlight <code class="docutils literal notranslate"><span class="pre">J2000</span> <span class="pre">Position</span> <span class="pre">Velocity</span></code> and click the <code class="docutils literal notranslate"><span class="pre">Specify</span> <span class="pre">Time</span> <span class="pre">Properties</span></code> radio button. The <code class="docutils literal notranslate"><span class="pre">J2000</span> <span class="pre">Position</span> <span class="pre">Velocity</span></code> report uses a time period to provide the underlying data provider’s information about what data to compute. Provide the same information to the object model data providers.</p>
+<p><img alt="Report time properties" src="../_images/specify-time-properties.png" /></p>
+</section>
+<section id="Retrieve-the-data">
+<h2>Retrieve the data<a class="headerlink" href="#Retrieve-the-data" title="Link to this heading">#</a></h2>
+<p>There are three ways to compute the data, depending on the data provider type. The first method requires a time interval and step size, the second requires only a time interval, and the third is independent of time.</p>
+<p>Provide input information to the data providers by casting the data provider interfaces to the proper execution interface. In the case of the <code class="docutils literal notranslate"><span class="pre">Cartesian</span> <span class="pre">Velocity</span></code> and <code class="docutils literal notranslate"><span class="pre">Cartesian</span> <span class="pre">Position</span></code> data providers, cast to <code class="docutils literal notranslate"><span class="pre">DataProviderTimeVarying</span></code>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vel_time_var</span> <span class="o">=</span> <span class="n">DataProviderTimeVarying</span><span class="p">(</span><span class="n">cart_vel_j2000</span><span class="p">)</span>
+<span class="n">pos_time_var</span> <span class="o">=</span> <span class="n">DataProviderTimeVarying</span><span class="p">(</span><span class="n">cart_pos_j2000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Retrieve the information from the data providers. The data is always returned as a <code class="docutils literal notranslate"><span class="pre">DataProviderResult</span></code> object. Provide the <code class="docutils literal notranslate"><span class="pre">DataProviderTimeVarying.execute()</span></code> method of the <code class="docutils literal notranslate"><span class="pre">DataProviderTimeVarying</span></code> interfaces with the data provider inputs (start time, stop time, and step size):</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vel_result</span> <span class="o">=</span> <span class="n">vel_time_var</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"1 Jul 2020 17:14:00.00"</span><span class="p">,</span> <span class="s2">"1 Jul 2020 17:29:00.00"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">pos_result</span> <span class="o">=</span> <span class="n">pos_time_var</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"1 Jul 2020 17:14:00.00"</span><span class="p">,</span> <span class="s2">"1 Jul 2020 17:29:00.00"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">vel_result</span></code> and <code class="docutils literal notranslate"><span class="pre">pos_result</span></code> now contain the data from the <code class="docutils literal notranslate"><span class="pre">J2000</span> <span class="pre">Cartesian</span> <span class="pre">Velocity</span></code> and <code class="docutils literal notranslate"><span class="pre">Cartesian</span> <span class="pre">Position</span></code> data providers, more data than the original report contained.</p>
+</section>
+<section id="Retrieve-specific-elements">
+<h2>Retrieve specific elements<a class="headerlink" href="#Retrieve-specific-elements" title="Link to this heading">#</a></h2>
+<p>Recall that the original <code class="docutils literal notranslate"><span class="pre">Cartesian</span> <span class="pre">Position</span> <span class="pre">Velocity</span></code> report contained only four elements of the <code class="docutils literal notranslate"><span class="pre">Cartesian</span> <span class="pre">Velocity</span> <span class="pre">J2000</span></code> group: <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code>, and <code class="docutils literal notranslate"><span class="pre">speed</span></code>. Similarly, the <code class="docutils literal notranslate"><span class="pre">Cartesian</span> <span class="pre">Position</span> <span class="pre">J2000</span></code> data provider contained within your report style only contains three elements: <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, and <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
+<p>When the J2000 data provider of <code class="docutils literal notranslate"><span class="pre">Cartesian</span> <span class="pre">Velocity</span></code> was executed, seven elements were retrieved instead of the four specifically contained in the report, adding the <code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">radial</span></code>, and <code class="docutils literal notranslate"><span class="pre">intrack</span></code> elements to the <code class="docutils literal notranslate"><span class="pre">DataProviderResult</span></code>. To be precise as possible, DataProviderResult<code class="docutils literal notranslate"><span class="pre">should</span> <span class="pre">contain</span> <span class="pre">only</span> <span class="pre">the</span> <span class="pre">elements</span> <span class="pre">which</span> <span class="pre">were</span> <span class="pre">contained</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">original</span> <span class="pre">report.</span> <span class="pre">To</span> <span class="pre">do</span> <span class="pre">this,</span> <span class="pre">use</span> <span class="pre">the</span></code>DataProviderTimeVarying.execute_elements()` method.</p>
+<p>First, specify in an array the elements to retrieve from the data provider. Next, pass the array into <code class="docutils literal notranslate"><span class="pre">DataProviderTimeVarying.execute_elements()</span></code>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vel_elems</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"x"</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">,</span> <span class="s2">"z"</span><span class="p">,</span> <span class="s2">"speed"</span><span class="p">]</span>
+<span class="n">pos_elems</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"x"</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">,</span> <span class="s2">"z"</span><span class="p">]</span>
+
+<span class="n">vel_result</span> <span class="o">=</span> <span class="n">vel_time_var</span><span class="o">.</span><span class="n">execute_elements</span><span class="p">(</span>
+    <span class="s2">"1 Jul 2020 17:14:00.00"</span><span class="p">,</span> <span class="s2">"1 Jul 2020 17:29:00.00"</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">vel_elems</span>
+<span class="p">)</span>
+<span class="n">pos_result</span> <span class="o">=</span> <span class="n">pos_time_var</span><span class="o">.</span><span class="n">execute_elements</span><span class="p">(</span>
+    <span class="s2">"1 Jul 2020 17:14:00.00"</span><span class="p">,</span> <span class="s2">"1 Jul 2020 17:29:00.00"</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">pos_elems</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The original data from the <code class="docutils literal notranslate"><span class="pre">J2000</span> <span class="pre">Position</span> <span class="pre">Velocity</span></code> report is now stored in <code class="docutils literal notranslate"><span class="pre">DataProviderResult</span></code> objects and ready to traverse.</p>
+</section>
+<section id="Traverse-the-result-data">
+<h2>Traverse the result data<a class="headerlink" href="#Traverse-the-result-data" title="Link to this heading">#</a></h2>
+<p>Review the original report. The data in the report consisted of time intervals with various elements.</p>
+<p><img alt="Original report" src="../_images/original-report-data.png" /></p>
+<p>Similarly, the result needs to be cast to the appropriate interface to make use of the data. In the case of the <code class="docutils literal notranslate"><span class="pre">J2000</span> <span class="pre">Cartesian</span> <span class="pre">Velocity</span></code> and <code class="docutils literal notranslate"><span class="pre">Position</span></code> data providers, that interface is the <code class="docutils literal notranslate"><span class="pre">DataProviderResultIntervalCollection</span></code>. Since each data provider result shares the same result type, consolidate the data traversal into one method, which takes a <code class="docutils literal notranslate"><span class="pre">DataProviderResult</span></code>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">write_interval_data</span><span class="p">(</span><span class="n">result</span><span class="p">:</span> <span class="n">DataProviderResult</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Traverse and write the data stored in a DataProviderResult."""</span>
+    <span class="n">intervals</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">intervals</span>
+
+    <span class="c1"># iterate through the intervals</span>
+    <span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="n">intervals</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Interval from </span><span class="si">{</span><span class="n">interval</span><span class="o">.</span><span class="n">start_time</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">interval</span><span class="o">.</span><span class="n">stop_time</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
+
+        <span class="c1"># iterate through the datasets stored in the interval</span>
+        <span class="k">for</span> <span class="n">data_set</span> <span class="ow">in</span> <span class="n">interval</span><span class="o">.</span><span class="n">data_sets</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="se">\t</span><span class="s2">Found </span><span class="si">{</span><span class="n">data_set</span><span class="o">.</span><span class="n">count</span><span class="si">}</span><span class="s2"> values for </span><span class="si">{</span><span class="n">data_set</span><span class="o">.</span><span class="n">element_name</span><span class="si">}</span><span class="s2"> (element type </span><span class="si">{</span><span class="n">data_set</span><span class="o">.</span><span class="n">element_type</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">data_set</span><span class="o">.</span><span class="n">dimension_name</span><span class="si">}</span><span class="s2"> dimension):"</span>
+            <span class="p">)</span>
+
+            <span class="c1"># get the values stored in the datasets</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="n">data_set</span><span class="o">.</span><span class="n">get_values</span><span class="p">()</span>
+
+            <span class="c1"># iterate through the array of values</span>
+            <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\t\t</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Note:</strong> the type of data returned by the DataProvider can be determined using the <code class="docutils literal notranslate"><span class="pre">DataProviderResult.category</span></code> property, which returns an enumeration describing the interface. The <code class="docutils literal notranslate"><span class="pre">DataProviderResult.value</span></code> property is then cast to one of three interfaces, depending on the category enumeration: <code class="docutils literal notranslate"><span class="pre">DataProviderResultIntervalCollection</span></code>, <code class="docutils literal notranslate"><span class="pre">DataProviderResultSubSectionCollection</span></code>, or <code class="docutils literal notranslate"><span class="pre">DataProviderResultTextMessage</span></code>.</p>
+</section>
+<section id="Complete-the-output">
+<h2>Complete the output<a class="headerlink" href="#Complete-the-output" title="Link to this heading">#</a></h2>
+<p>Finally, call the method with <code class="docutils literal notranslate"><span class="pre">DataProviderResult</span></code> arguments. The data from the <code class="docutils literal notranslate"><span class="pre">J2000</span> <span class="pre">Position</span> <span class="pre">Velocity</span></code> report is traversed and output:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Position Results:"</span><span class="p">)</span>
+<span class="n">write_interval_data</span><span class="p">(</span><span class="n">pos_result</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Velocity Results:"</span><span class="p">)</span>
+<span class="n">write_interval_data</span><span class="p">(</span><span class="n">vel_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Position Results:
+Interval from 1 Jul 2020 17:14:00.000 to 1 Jul 2020 17:29:00.000:
+        Found 16 values for x (element type 0, Distance dimension):
+                6678.136999999843
+                6662.0555962110375
+                6613.888739305161
+                6533.8684080471585
+                6422.379992283994
+                6279.96043684986
+                6107.295655559587
+                5905.2172277455775
+                5674.698393247611
+                5416.849365144897
+                5132.911982804197
+                4824.253730996136
+                4492.361153884821
+                4138.832695609372
+                3765.3710019389473
+                3373.774720076172
+        Found 16 values for y (element type 0, Distance dimension):
+                1.1889069058033974e-07
+                407.04478176122734
+                812.129175041251
+                1213.3022331192808
+                1608.6318467297879
+                1996.2140495065125
+                2374.1821877694038
+                2740.7159106064864
+                3094.049936955603
+                3432.4825574607376
+                3754.3838301584196
+                4058.203430521383
+                4342.478118052342
+                4605.8387834685645
+                4847.017042536039
+                5064.851344797643
+        Found 16 values for z (element type 0, Distance dimension):
+                -0.0014502934943832727
+                221.00581305277632
+                440.94867944942007
+                658.7678712566681
+                873.4143387682304
+                1083.854312591107
+                1289.0742824331235
+                1488.0858783196206
+                1679.9306307306301
+                1863.6845867329937
+                2038.4627598754578
+                2203.423392415386
+                2357.7720093495554
+                2500.7652447242353
+                2631.7144217964624
+                2749.9888698039244
+Velocity Results:
+Interval from 1 Jul 2020 17:14:00.000 to 1 Jul 2020 17:29:00.000:
+        Found 16 values for x (element type 0, Rate dimension):
+                8.004589941580925e-07
+                -0.5358323496286873
+                -1.0690848512238271
+                -1.5971884807662238
+                -2.11759981243184
+                -2.627812467649594
+                -3.125369186195321
+                -3.607873660722812
+                -4.073002077737629
+                -4.518514309428885
+                -4.942264702459237
+                -5.342212411751398
+                -5.716431229502031
+                -6.063118862085906
+                -6.380605610170424
+                -6.667362410237169
+        Found 16 values for y (element type 0, Rate dimension):
+                6.789530467981203
+                6.773180772419215
+                6.724210428321562
+                6.64285528416731
+                6.529507158461344
+                6.384711952678248
+                6.209167022119151
+                6.003717817344789
+                5.769353812359358
+                5.5072037391565125
+                5.2185301515775535
+                4.904723344663729
+                4.567294658788225
+                4.207869200815429
+                3.8281780173443996
+                3.430049757729453
+        Found 16 values for z (element type 0, Rate dimension):
+                3.6864138594270974
+                3.6775368163818443
+                3.6509482076793662
+                3.6067760880237647
+                3.5452331969297295
+                3.46661593413732
+                3.3713029321066124
+                3.2597532324673226
+                3.1325040752058664
+                2.990168311237481
+                2.8334314508248304
+                2.663048362058375
+                2.4798396352990832
+                2.284687631092899
+                2.0785322305907865
+                1.862366308940962
+        Found 16 values for speed (element type 0, Rate dimension):
+                7.725760229169806
+                7.725760229169804
+                7.725760229169806
+                7.725760229169805
+                7.725760229169806
+                7.725760229169807
+                7.725760229169802
+                7.725760229169804
+                7.725760229169804
+                7.725760229169806
+                7.725760229169802
+                7.725760229169803
+                7.725760229169802
+                7.725760229169803
+                7.725760229169806
+                7.725760229169804
+</pre></div></div>
+</div>
+<p>As previously noted, it is up to you to decide in what unit the data is returned. Issuing the following command before calling <code class="docutils literal notranslate"><span class="pre">write_interval_data()</span></code> changes the data that is output to be displayed in meters per second, rather then kilometers per second.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="o">.</span><span class="n">units_preferences</span><span class="o">.</span><span class="n">set_current_unit</span><span class="p">(</span><span class="s2">"DistanceUnit"</span><span class="p">,</span> <span class="s2">"m"</span><span class="p">)</span>
+
+<span class="n">write_interval_data</span><span class="p">(</span><span class="n">pos_result</span><span class="p">)</span>
+<span class="n">write_interval_data</span><span class="p">(</span><span class="n">vel_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Interval from 1 Jul 2020 17:14:00.000 to 1 Jul 2020 17:29:00.000:
+        Found 16 values for x (element type 0, Distance dimension):
+                6678136.999999844
+                6662055.596211038
+                6613888.739305161
+                6533868.408047158
+                6422379.992283994
+                6279960.4368498605
+                6107295.655559587
+                5905217.227745578
+                5674698.393247612
+                5416849.365144897
+                5132911.982804197
+                4824253.730996137
+                4492361.153884821
+                4138832.6956093726
+                3765371.0019389475
+                3373774.7200761717
+        Found 16 values for y (element type 0, Distance dimension):
+                0.00011889069058033975
+                407044.78176122735
+                812129.175041251
+                1213302.2331192808
+                1608631.8467297878
+                1996214.0495065125
+                2374182.1877694037
+                2740715.9106064863
+                3094049.936955603
+                3432482.5574607374
+                3754383.8301584194
+                4058203.430521383
+                4342478.118052342
+                4605838.783468565
+                4847017.042536039
+                5064851.344797643
+        Found 16 values for z (element type 0, Distance dimension):
+                -1.4502934943832726
+                221005.81305277633
+                440948.6794494201
+                658767.871256668
+                873414.3387682304
+                1083854.3125911069
+                1289074.2824331236
+                1488085.8783196206
+                1679930.6307306301
+                1863684.5867329936
+                2038462.7598754577
+                2203423.392415386
+                2357772.0093495552
+                2500765.2447242355
+                2631714.4217964625
+                2749988.8698039246
+Interval from 1 Jul 2020 17:14:00.000 to 1 Jul 2020 17:29:00.000:
+        Found 16 values for x (element type 0, Rate dimension):
+                0.0008004589941580924
+                -535.8323496286873
+                -1069.0848512238272
+                -1597.1884807662238
+                -2117.59981243184
+                -2627.812467649594
+                -3125.369186195321
+                -3607.873660722812
+                -4073.002077737629
+                -4518.514309428885
+                -4942.264702459237
+                -5342.212411751399
+                -5716.431229502031
+                -6063.118862085906
+                -6380.6056101704235
+                -6667.36241023717
+        Found 16 values for y (element type 0, Rate dimension):
+                6789.530467981203
+                6773.180772419215
+                6724.210428321561
+                6642.85528416731
+                6529.507158461344
+                6384.711952678248
+                6209.167022119151
+                6003.717817344789
+                5769.353812359358
+                5507.203739156513
+                5218.530151577554
+                4904.723344663729
+                4567.294658788225
+                4207.8692008154285
+                3828.1780173443994
+                3430.0497577294527
+        Found 16 values for z (element type 0, Rate dimension):
+                3686.4138594270976
+                3677.5368163818443
+                3650.948207679366
+                3606.7760880237647
+                3545.2331969297293
+                3466.61593413732
+                3371.3029321066124
+                3259.7532324673225
+                3132.5040752058662
+                2990.168311237481
+                2833.4314508248303
+                2663.048362058375
+                2479.839635299083
+                2284.687631092899
+                2078.5322305907866
+                1862.366308940962
+        Found 16 values for speed (element type 0, Rate dimension):
+                7725.760229169806
+                7725.760229169804
+                7725.760229169806
+                7725.760229169805
+                7725.760229169806
+                7725.760229169807
+                7725.760229169802
+                7725.760229169804
+                7725.760229169804
+                7725.760229169806
+                7725.760229169802
+                7725.760229169803
+                7725.760229169802
+                7725.760229169803
+                7725.760229169806
+                7725.760229169804
+</pre></div></div>
+</div>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"22114d5ed2e4469494fa2acf1d68e829": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "1afa899bef6247b1920534aea95ad44f": {"model_name": "AnyModel", "model_module": "anywidget", "model_module_version": "~0.11.*", "state": {"_anywidget_id": "ansys.stk.core.experimental.jupyterwidgets.GlobeWidget", "_css": "/*************************************************************************************************\n  renderview.css\n\n  This file is dedicated to the public domain under CC0 1.0.\n  This file is developed at https://github.com/pygfx/renderview, please contribute changes there.\n\n *************************************************************************************************/\n\ndiv.renderview-wrapper {\n    display: inline-block;\n    position: relative;\n    box-sizing: border-box;\n    overflow: visible;\n    min-width: 32px;\n    min-height: 32px;\n}\n\ndiv.renderview-wrapper .renderview-view {\n    display: block;\n    box-sizing: border-box;\n    width: 100%;\n    height: 100%;\n    background: none;\n    border-radius: 6px;\n    border: 1px solid rgba(127, 127, 127, 0.2);\n}\n\ndiv.renderview-wrapper .renderview-hidden {\n    display: none;\n}\n\ndiv.renderview-wrapper .renderview-top {\n    display: none;\n    position: absolute;\n    box-sizing: border-box;\n    z-index: 2;\n    top: -1.5em;\n    height: 1.5em;\n    width: 100%;\n    border-radius: 6px 6px 0 0;\n    border: 1px solid rgba(127, 127, 127, 0.2);\n    border-bottom: 0;\n}\n\ndiv.renderview-wrapper .renderview-top span {\n    display: inline-block;\n    box-sizing: border-box;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    padding: 0.1em 0.5em;\n    width: 100%;\n}\n\ndiv.renderview-wrapper .renderview-resizer {\n    display: none;\n    position: absolute;\n    box-sizing: border-box;\n    z-index: 3;\n    bottom: 0;\n    right: 0;\n    width: 14px;\n    height: 14px;\n    cursor: nwse-resize;\n}\n\ndiv.renderview-wrapper.has-titlebar {\n    margin-top: 2em !important;\n}\n\ndiv.renderview-wrapper.has-titlebar .renderview-top {\n    display: block;\n}\n\ndiv.renderview-wrapper.has-titlebar .renderview-view {\n    border-top-left-radius: 0 !important;\n    border-top-right-radius: 0 !important;\n}\n\ndiv.renderview-wrapper.is-resizable .renderview-resizer {\n    display: block;\n}", "_dom_classes": [], "_esm": "/*************************************************************************************************\n  renderview.js\n\n  This file is dedicated to the public domain under CC0 1.0.\n  This file is developed at https://github.com/pygfx/renderview, please contribute changes there.\n\n  This module implements a common event spec for render targets in a browser.\n  The code is written with little assumptions about the application, so that it\n  can be shared between different use-cases, such as rendercanvas backends\n  (pyodide, anywidget, remote-browser), jupyter_rfb, and other projects.\n\n  Code that loads this script should avoid loading it in the global scope.\n  Either by putting it in a ``<script type='module>``, or wrapping it in an IIFE\n  with ``(() => {\\n{JS}\\n})();``\n\n  This code is formatted and linted with standardjs (quite similar to Ruff in\n  Python). It adheres to common JS practices, but also has some Python habits,\n  like underscore prefix for private attributes.\n\n *************************************************************************************************/\n\n'use strict'\n\nconst Element = window.Element\nconst IntersectionObserver = window.IntersectionObserver\nconst ResizeObserver = window.ResizeObserver\n\nconst LOOKS_LIKE_MOBILE = /mobi|android|iphone|ipad|ipod|tablet/.test(\n  navigator.userAgent.toLowerCase()\n)\n\nconst KEY_MAP = {\n  Ctrl: 'Control',\n  Del: 'Delete',\n  Esc: 'Escape'\n}\n\nconst KEY_MOD_MAP = {\n  altKey: 'Alt',\n  ctrlKey: 'Control',\n  metaKey: 'Meta',\n  shiftKey: 'Shift'\n}\n\nconst MOUSE_BUTTON_MAP = {\n  0: 1, // left\n  1: 3, // middle/wheel\n  2: 2, // right\n  3: 4, // backwards\n  4: 5 // forwards\n}\n\nfunction getButtons (ev) {\n  // Note that ev.button has a historic awkward mapping, but ev.buttons is in the order that we want\n  const button = MOUSE_BUTTON_MAP[ev.button] || 0\n  const buttons = []\n  for (const b of [0, 1, 2, 3, 4, 5]) {\n    if ((1 << b) & ev.buttons) {\n      buttons.push(b + 1)\n    }\n  }\n  return [button, buttons]\n}\n\nfunction getModifiers (ev) {\n  return Object.entries(KEY_MOD_MAP)\n    .filter(([k]) => ev[k])\n    .map(([, v]) => v)\n}\n\nfunction getTimestamp () {\n  return performance.now() / 1000\n}\n\nfunction arraysEqual (a, b) {\n  return a.length === b.length && a.every((val, i) => val === b[i])\n}\n\n/**\n * The BaseRenderView handles the client-side logic for a render target (typically a <canvas> or <img>).\n *\n * It observes events and calls `this.OnEvent()`.\n * It provides convenience methods for setting the size, cursor, and more.\n *\n * When used with a wrapper element, more features are enabled:\n *\n * - It can be manually resized if the wrapper element has the 'is-resizable' class.\n * - A title bar is shown if the wrapper has the 'has-titlebar' class.\n * - The above mentioned classes can also be programmatically set via `setResizable()` and `showTitlebar()`.\n * - The title can be set using `setTitle()`.\n *\n */\nclass BaseRenderView {\n  /**\n   * Create a new RenderView.\n   *\n   * If a single element is given, the view directly manages that element, nice and simple.\n   * No styling is applied except for `width` and `height`.\n   *\n   * If a wrapper element is also given, the view supports features like manual resizing and a title-bar.\n   * In this case, any user styling that effects positioning should be applied to the wrapper.\n   * The wrapper may contain placeholder content; on initialization, it's innerHTML and padding are reset.\n   *\n   * @param {HTMLElement} viewElement - The element (e.g. canvas or img) used for rendering.\n   * @param {HTMLElement} wrapperElement - The wrapper element (optional; can be null).\n   */\n  constructor (viewElement, wrapperElement) {\n    // Check given element\n    if (viewElement === undefined || !(viewElement instanceof Element)) {\n      throw new Error('BaseRenderView: viewElement must be an Element.')\n    }\n    if (wrapperElement !== null) {\n      if (wrapperElement === undefined || !(wrapperElement instanceof Element)) {\n        throw new Error('BaseRenderView: wrapperElement must be null or an Element.')\n      }\n      wrapperElement.innerHTML = ''\n      wrapperElement.style.padding = '0'\n      wrapperElement.style.background = ''\n    }\n\n    // Tweak viewElement\n    viewElement.tabIndex = -1\n    // Prevent context menu on RMB. Firefox still shows it when shift is pressed. It seems\n    // impossible to override this (tips welcome!), so let's make this the actual behavior.\n    viewElement.oncontextmenu = (e) => {\n      if (!e.shiftKey) {\n        e.preventDefault()\n        e.stopPropagation()\n        return false\n      }\n    }\n\n    this.viewElement = viewElement\n    this.wrapperElement = wrapperElement\n    this.sizeElement = (wrapperElement === null) ? viewElement : wrapperElement\n    this.titleElement = null // is set in _initElements() if wrapperElement is given\n\n    this._lsize = null // cached logical size\n    this._wheelThrottle = 20 // to avoid flooding wheel events\n    this._moveThrottle = 20 // to avoid flooding move events\n    this._isVisible = false // set by intersection observer\n\n    this._focusElement = null\n    this._abortController = new AbortController()\n    this._resizeObserver = null\n    this._intersectionObserver = null\n\n    this._initElements()\n    this._registerEvents()\n  }\n\n  /**\n   * Close the view, disconnecting observers and clearing callbacks.\n   * This does not remove the the element from the DOM; that's up to the caller.\n   */\n  close () {\n    if (this._focusElement) {\n      this._focusElement.remove()\n      this._focusElement = null\n    }\n    if (this._abortController) {\n      this._abortController.abort()\n      this._abortController = null\n    }\n    if (this._resizeObserver) {\n      this._resizeObserver.disconnect()\n      this._resizeObserver = null\n    }\n    if (this._intersectionObserver) {\n      this._intersectionObserver.disconnect()\n      this._intersectionObserver = null\n    }\n    this.viewElement = null\n    this.sizeElement = null\n    this.titleElement = null\n    if (this.wrapperElement) {\n      this.wrapperElement.innerHTML = ''\n      this.wrapperElement = null\n    }\n    const event = {\n      type: 'close',\n      timestamp: getTimestamp()\n    }\n    this.onEvent(event)\n  }\n\n  /**\n   * Set the view's size in logical pixels.\n   *\n   * @param {string} width - The requested width.\n   * @param {string} height - The requested height.\n   */\n  setLogicalSize (width, height) {\n    this.sizeElement.style.maxWidth = ''\n    this.sizeElement.style.maxHeight = ''\n    this.sizeElement.style.width = width + 'px'\n    this.sizeElement.style.height = height + 'px'\n  }\n\n  /**\n   * Set the width of the view as a CSS string.\n   *\n   * @param {string} cssWidth - The requested width as a css string, e.g. '640px' or '90%' or 'calc(100% - 10px)'.\n   */\n  setCssWidth (cssWidth) {\n    this.sizeElement.style.maxWidth = ''\n    this.sizeElement.style.width = cssWidth\n  }\n\n  /**\n   * Set the height of the view as a CSS string.\n   *\n   * @param {string} cssHeight - The requested height as a css string, e.g. '480px' or '40vh'.\n   */\n  setCssHeight (cssHeight) {\n    this.sizeElement.style.maxHeight = ''\n    this.sizeElement.style.height = cssHeight\n  }\n\n  /**\n   * Set whether the view is manually resizable.\n   * Note that the view can only be made resizable if it was instantiated with a wrapper.\n   *\n   * @param {boolean} resizable - Whether to make it resizable or not.\n   */\n  setResizable (resizable) {\n    if (this.wrapperElement) {\n      if (resizable) {\n        this.wrapperElement.classList.add('is-resizable')\n      } else {\n        this.wrapperElement.classList.remove('is-resizable')\n      }\n    }\n  }\n\n  /**\n   * Set whether the view has a titlebar.\n   * Note that the view can only have a titlebar if it was instantiated with a wrapper.\n   *\n   * @param {boolean} titlebar - Whether to show the titlebar or not.\n   */\n  showTitlebar (titlebar) {\n    if (this.wrapperElement) {\n      if (titlebar) {\n        this.wrapperElement.classList.add('has-titlebar')\n      } else {\n        this.wrapperElement.classList.remove('has-titlebar')\n      }\n    }\n  }\n\n  /**\n   * Set the view's title in the titlebar.\n   *\n   * Note that the title is only visible if the view was instantiated with a wrapper,\n   * and the titlebar is shown.\n   *\n   * @param {string} title - The title to set.\n   */\n  setTitle (title) {\n    if (this.titleElement) {\n      this.titleElement.innerText = title\n    }\n  }\n\n  /**\n   * Set the `style.cursor`.\n   *\n   * @param {string} cursor - A valid string for CSS cursor.\n   */\n  setCursor (cursor) {\n    this.viewElement.style.cursor = cursor\n  }\n\n  /**\n   * Set the throttle setting. Set to zero to disable throttling.\n   *\n   * @param {number} throttle - The timeout (in ms) to wait before sending a move/wheel event.\n   */\n  setThrottle (throttle) {\n    this._wheelThrottle = throttle\n    this._moveThrottle = throttle\n  }\n\n  /**\n   * The subclass should implement this to handle events.\n   *\n   * @param {object} event - The event object as a 'dictionary', following the spec.\n   */\n  onEvent (event) { }\n\n  /**\n   * Internal method to initialize the view's helper elements.\n   */\n  _initElements () {\n    const signal = this._abortController.signal\n\n    // Obtain container to put our hidden focus element.\n    // Putting the focusElement as a child of the canvas prevents chrome from emitting input events.\n    const focusElementContainerId = 'rendercanvas-focus-element-container'\n    let focusElementContainer = document.getElementById(focusElementContainerId)\n\n    if (!focusElementContainer) {\n      focusElementContainer = document.createElement('div')\n      focusElementContainer.setAttribute('id', focusElementContainerId)\n      focusElementContainer.style.position = 'absolute'\n      focusElementContainer.style.top = '0'\n      focusElementContainer.style.left = '-9999px'\n      document.body.appendChild(focusElementContainer)\n    }\n\n    // Create an element to which we transfer focus, so we can capture key events and prevent global shortcuts\n    const focusElement = document.createElement('input')\n    this._focusElement = focusElement\n    focusElement.type = 'text'\n    focusElement.tabIndex = -1\n    focusElement.autocomplete = 'off'\n    focusElement.autocorrect = 'off'\n    focusElement.autocapitalize = 'off'\n    focusElement.spellcheck = false\n    focusElement.style.width = '1px'\n    focusElement.style.height = '1px'\n    focusElement.style.padding = '0'\n    focusElement.style.opacity = 0\n    focusElement.style.pointerEvents = 'none'\n    focusElementContainer.appendChild(focusElement)\n\n    const wrapperElement = this.wrapperElement\n\n    if (wrapperElement !== null) {\n      this.viewElement.classList.add('renderview-view')\n\n      // Wrap it\n      wrapperElement.classList.add('renderview-wrapper')\n      wrapperElement.appendChild(this.viewElement)\n\n      // Debug element\n      const debugElement = document.createElement('div')\n      debugElement.innerHTML = '<b>If you can read this, the rendercanvas.css is likely not applied.</b>'\n      debugElement.classList.add('renderview-hidden')\n      wrapperElement.appendChild(debugElement)\n\n      // Create title bar\n      const topElement = document.createElement('div')\n      topElement.classList.add('renderview-top')\n      const titleElement = document.createElement('span')\n      this.titleElement = titleElement\n      titleElement.innerText = 'RenderView'\n      topElement.appendChild(titleElement)\n      wrapperElement.appendChild(topElement)\n\n      // Enable resizing\n      const resizeElement = document.createElement('div')\n      resizeElement.classList.add('renderview-resizer')\n      wrapperElement.appendChild(resizeElement)\n      let resizeInfo = null\n      resizeElement.addEventListener('pointerdown', (ev) => {\n        if (this._lsize) {\n          resizeInfo = { w: this._lsize[0], h: this._lsize[1], x: ev.clientX, y: ev.clientY }\n          resizeElement.setPointerCapture(ev.pointerId)\n        }\n      },\n      { signal }\n      )\n      resizeElement.addEventListener('pointermove', (ev) => {\n        if (resizeInfo !== null) {\n          this.sizeElement.style.maxWidth = ''\n          this.sizeElement.style.maxHeight = ''\n          this.sizeElement.style.width = resizeInfo.w + (ev.clientX - resizeInfo.x) + 'px'\n          this.sizeElement.style.height = resizeInfo.h + (ev.clientY - resizeInfo.y) + 'px'\n        }\n      },\n      { signal }\n      )\n      resizeElement.addEventListener('lostpointercapture', (ev) => {\n        resizeInfo = null\n      },\n      { signal }\n      )\n    } // wrapperElement !== null\n  }\n\n  /**\n   * Internal method to setup listeners and register callbacks.\n   */\n  _registerEvents () {\n    // Register events\n\n    const viewElement = this.viewElement\n    const signal = this._abortController.signal // to unregister/abort stuff\n\n    // ----- visibility ---------------\n\n    this._intersectionObserver = new IntersectionObserver((entries, observer) => {\n      // This gets called when one of the observed elements becomes visible/invisible.\n      // Note that entries only contains the *changed* elements, so we keep track ourselves.\n      let isVisible = false\n      for (const entry of entries) {\n        isVisible = isVisible || entry.isIntersecting\n      }\n      if (isVisible !== this._isVisible) {\n        this._isVisible = isVisible\n        const event = {\n          type: isVisible ? 'show' : 'hide',\n          timestamp: getTimestamp()\n        }\n        this.onEvent(event)\n      }\n    })\n    this._intersectionObserver.observe(viewElement)\n\n    // ----- resize ---------------\n\n    this._resizeObserver = new ResizeObserver((entries) => {\n      // The physical size is easy. The logical size can be much more tricky\n      // to obtain due to all the CSS stuff. But the base class will just calculate that\n      // from the physical size and the pixel ratio.\n\n      // Select entry matching our element\n      const ourEntries = entries.filter((entry) => entry.target.id === viewElement.id)\n      if (!ourEntries.length) {\n        return\n      }\n\n      const entry = ourEntries[0]\n      const ratio = window.devicePixelRatio\n      let physicalWidth\n      let physicalHeight\n\n      if (entry.devicePixelContentBoxSize) {\n        physicalWidth = entry.devicePixelContentBoxSize[0].inlineSize\n        physicalHeight = entry.devicePixelContentBoxSize[0].blockSize\n      } else {\n        // Some browsers don't support devicePixelContentBoxSize\n        let lsize\n        if (entry.contentBoxSize) {\n          lsize = [\n            entry.contentBoxSize[0].inlineSize,\n            entry.contentBoxSize[0].blockSize\n          ]\n        } else {\n          lsize = [entry.contentRect.width, entry.contentRect.height]\n        }\n        physicalWidth = Math.floor(lsize[0] * ratio)\n        physicalHeight = Math.floor(lsize[1] * ratio)\n      }\n\n      // If the container element does not have its size set via its style, we set it to the logical size.\n      const logicalWidth = physicalWidth / ratio\n      const logicalHeight = physicalHeight / ratio\n\n      // prevent massive size due to auto-scroll (https://github.com/vispy/jupyter_rfb/issues/62)\n      if (!this.sizeElement.style.width) {\n        this.sizeElement.style.width = `${logicalWidth}px`\n        this.sizeElement.style.maxWidth = '90vmin'\n      }\n      if (!this.sizeElement.style.height) {\n        this.sizeElement.style.height = `${logicalHeight}px`\n        this.sizeElement.style.maxHeight = '90vmin'\n      }\n\n      // Store logical size\n      this._lsize = [logicalWidth, logicalHeight]\n\n      const event = {\n        type: 'resize',\n        width: logicalWidth,\n        height: logicalHeight,\n        pwidth: physicalWidth,\n        pheight: physicalHeight,\n        ratio,\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    })\n\n    this._resizeObserver.observe(this.viewElement)\n\n    // ----- pointer ---------------\n\n    // Current pointer ids, mapping to initial button\n    const pointerToButton = {}\n\n    // The last used buttons, so we can pass to wheel event\n    let lastButtons = []\n\n    viewElement.addEventListener('pointerdown', (ev) => {\n      // When pointer is down, set focus to the focus-element.\n      if (!LOOKS_LIKE_MOBILE) {\n        this._focusElement.focus({ preventScroll: true, focusVisble: false })\n      }\n      // capture the pointing device.\n      // Because we capture the event, there will be no other events when buttons are pressed down,\n      // although they will end up in the 'buttons'. The lost/release will only get fired when all buttons\n      // are released/lost. Which is why we look up the original button in our `pointers` list.\n      viewElement.setPointerCapture(ev.pointerId)\n      // Prevent default unless alt is pressed\n      if (!ev.altKey) {\n        ev.preventDefault()\n      }\n\n      // Collect info\n      const [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n\n      // Manage\n      pointerToButton[ev.pointerId] = button\n      lastButtons = buttons\n\n      const event = {\n        type: 'pointer_down',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        ntouches: 0, // TODO later: maybe via https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent\n        touches: {},\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    let pendingMoveEvent = null\n\n    const sendMoveEvent = () => {\n      if (pendingMoveEvent !== null) {\n        const event = pendingMoveEvent\n        pendingMoveEvent = null\n        this.onEvent(event)\n      }\n    }\n\n    viewElement.addEventListener('pointermove', (ev) => {\n      // If this pointer is not down, but other pointers are, don't emit an event.\n      if (pointerToButton[ev.pointerId] === undefined) {\n        if (Object.keys(pointerToButton).length > 0) {\n          return\n        }\n      }\n\n      // Collect info, use button that started this drag-action\n      let [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n      button = pointerToButton[ev.pointerId] || 0\n\n      // Manage\n      lastButtons = buttons\n\n      // This event is throttled. We either update the pending event or create a new one\n      if (\n        pendingMoveEvent !== null &&\n        arraysEqual(pendingMoveEvent.buttons, buttons) &&\n        arraysEqual(pendingMoveEvent.modifiers, modifiers)\n      ) {\n        pendingMoveEvent.x = ev.offsetX\n        pendingMoveEvent.y = ev.offsetY\n      } else {\n        const event = {\n          type: 'pointer_move',\n          x: ev.offsetX,\n          y: ev.offsetY,\n          button,\n          buttons,\n          modifiers,\n          ntouches: 0,\n          touches: {},\n          timestamp: getTimestamp()\n        }\n        if (this._moveThrottle > 0) {\n          sendMoveEvent() // Send previous (if any)\n          pendingMoveEvent = event\n          window.setTimeout(sendMoveEvent, this._moveThrottle)\n        } else {\n          this.onEvent(event)\n        }\n      }\n    },\n    { signal }\n    )\n\n    viewElement.addEventListener('lostpointercapture', (ev) => {\n      // This happens on pointer-up or pointer-cancel. We threat them the same.\n\n      // Get info, use the button stat started the drag-action\n      const modifiers = getModifiers(ev)\n      const button = pointerToButton[ev.pointerId] || 0\n      const buttons = []\n\n      // Manage\n      delete pointerToButton[ev.pointerId]\n      lastButtons = buttons\n\n      const event = {\n        type: 'pointer_up',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        ntouches: 0,\n        touches: {},\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    viewElement.addEventListener('pointerenter', (ev) => {\n      // If this pointer is not down, but other pointers are, don't emit an event.\n      if (pointerToButton[ev.pointerId] === undefined) {\n        if (Object.keys(pointerToButton).length > 0) {\n          return\n        }\n      }\n\n      // Collect info, but use button 0. It usually is, and should be.\n      let [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n      button = 0\n\n      const event = {\n        type: 'pointer_enter',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        ntouches: 0,\n        touches: {},\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    viewElement.addEventListener('pointerleave', (ev) => {\n      // If this pointer is not down, but other pointers are, don't emit an event.\n      if (pointerToButton[ev.pointerId] === undefined) {\n        if (Object.keys(pointerToButton).length > 0) {\n          return\n        }\n      }\n\n      // Collect info, but use button 0. It usually is, and should be.\n      let [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n      button = 0\n\n      const event = {\n        type: 'pointer_leave',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        ntouches: 0,\n        touches: {},\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    // ----- click ---------------\n\n    // Click events are not pointer events. In most apps that this targets, click events\n    // don't add much over pointer events. But double-click can be useful.\n    viewElement.addEventListener('dblclick', (ev) => {\n      // Prevent default unless alt is pressed\n      if (!ev.altKey) {\n        ev.preventDefault()\n      }\n\n      // Collect info\n      const [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n\n      const event = {\n        type: 'double_click',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        // no touches here\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    // ----- wheel ---------------\n\n    let pendingWheelEvent = null\n\n    const sendWheelEvent = () => {\n      if (pendingWheelEvent !== null) {\n        const event = pendingWheelEvent\n        pendingWheelEvent = null\n        this.onEvent(event)\n      }\n    }\n\n    viewElement.addEventListener('wheel', (ev) => {\n      // Only scroll if we have focus\n      if (window.document.activeElement !== this._focusElement) {\n        return\n      }\n      // Prevent default unless alt is pressed\n      if (!ev.altKey) {\n        ev.preventDefault()\n      }\n\n      // Collect info\n      const scales = [1 / window.devicePixelRatio, 16, 600] // pixel, line, page\n      const scale = scales[ev.deltaMode]\n      const modifiers = getModifiers(ev)\n      const buttons = [...lastButtons]\n\n      // This event is throttled. We either update the pending event or create a new one\n      if (\n        pendingWheelEvent !== null &&\n        arraysEqual(pendingWheelEvent.buttons, buttons) &&\n        arraysEqual(pendingWheelEvent.modifiers, modifiers)\n      ) {\n        pendingWheelEvent.x = ev.offsetX\n        pendingWheelEvent.y = ev.offsetY\n        pendingWheelEvent.dx += ev.deltaX * scale\n        pendingWheelEvent.dy += ev.deltaY * scale\n      } else {\n        const event = {\n          type: 'wheel',\n          x: ev.offsetX,\n          y: ev.offsetY,\n          dx: ev.deltaX * scale,\n          dy: ev.deltaY * scale,\n          buttons,\n          modifiers,\n          timestamp: getTimestamp()\n        }\n        if (this._wheelThrottle > 0) {\n          sendWheelEvent() // Send previous (if any)\n          pendingWheelEvent = event\n          window.setTimeout(sendWheelEvent, this._wheelThrottle)\n        } else {\n          this.onEvent(event)\n        }\n      }\n    },\n    { signal }\n    )\n\n    // ----- key ---------------\n\n    this._focusElement.addEventListener('keydown', (ev) => {\n      // Failsafe in case the element is deleted or detached.\n      if (this.sizeElement.offsetParent === null) {\n        return\n      }\n      // Ignore repeated events (key being held down)\n      if (ev.repeat) {\n        return\n      }\n      // No need for stopPropagation or preventDefault because we are in a text-input.\n\n      const modifiers = getModifiers(ev)\n\n      const event = {\n        type: 'key_down',\n        key: KEY_MAP[ev.key] || ev.key,\n        modifiers,\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    this._focusElement.addEventListener('keyup', (ev) => {\n      if (this.sizeElement.offsetParent === null) {\n        return\n      }\n\n      const modifiers = getModifiers(ev)\n\n      const event = {\n        type: 'key_up',\n        key: KEY_MAP[ev.key] || ev.key,\n        modifiers,\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    this._focusElement.addEventListener('input', (ev) => {\n      // Failsafe in case the element is deleted or detached.\n      if (this.sizeElement.offsetParent === null) {\n        return\n      }\n      // Prevent the text box from growing\n      if (!ev.isComposing) {\n        this.focus_el.value = ''\n      }\n\n      const event = {\n        type: 'char',\n        data: ev.data,\n        is_composing: ev.isComposing,\n        input_type: ev.inputType,\n        // repeat: ev.repeat,  // n.a.\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n  }\n}\n\n// Export\nwindow.BaseRenderView = BaseRenderView\n\n\n/* global BaseRenderView getTimestamp */\n\n/**\n * An object that represents the model (wrapping the anywidget model object), that can have multiple views.\n */\nclass RendercanvasAnywidgetModel {\n  constructor (anymodel) {\n    this.anymodel = anymodel\n    this.views = []\n    this._hasVisibleViews = false\n\n    // Variables to store frames and the last frame\n    this._frames = []\n    this._lastSrc = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR42mOor68HAAL+AX6E2KOJAAAAAElFTkSuQmCC'\n    this._lastFrame = {\n      src: this._lastSrc,\n      index: 0,\n      timestamp: 0\n    }\n\n    // Register callbacks\n    anymodel.on('msg:custom', (msg, buffers) => {\n      if (msg.type === 'framebufferdata') {\n        this._frames.push({ ...msg, buffers })\n        this._request_animation_frame()\n      }\n    })\n    // For traits we allow the public and private version, this means we can use the\n    // same JS code for multiple anywidget implementations (specifically rendercanvas.anywidget vs jupyter_rfb)\n    for (const prefix of ['', '_']) {\n      anymodel.on(`change:${prefix}css_width`, () => {\n        const cssWidth = anymodel.get(`${prefix}css_width`)\n        for (const view of this.views) {\n          view.setCssWidth(cssWidth)\n        }\n      })\n      anymodel.on(`change:${prefix}css_height`, () => {\n        const cssHeight = anymodel.get(`${prefix}css_height`)\n        for (const view of this.views) {\n          view.setCssHeight(cssHeight)\n        }\n      })\n      anymodel.on(`change:${prefix}resizable`, () => {\n        const resizable = anymodel.get(`${prefix}resizable`)\n        for (const view of this.views) {\n          view.setResizable(resizable)\n        }\n      })\n      anymodel.on(`change:${prefix}has_titlebar`, () => {\n        const titlebar = anymodel.get(`${prefix}has_titlebar`)\n        for (const view of this.views) {\n          view.showTitlebar(titlebar)\n        }\n      })\n      anymodel.on(`change:${prefix}title`, () => {\n        const title = anymodel.get(`${prefix}title`)\n        for (const view of this.views) {\n          view.setTitle(title)\n        }\n      })\n      anymodel.on(`change:${prefix}cursor`, () => {\n        const cursor = anymodel.get(`${prefix}cursor`)\n        for (const view of this.views) {\n          view.setCursor(cursor)\n        }\n      })\n    }\n\n    // Start the animation loop\n    this._img_update_pending = false\n    this._request_animation_frame()\n  }\n\n  close () {\n    URL.revokeObjectURL(this._lastSrc)\n    this._lastSrc = null\n    this._lastFrame = null\n    this._frames = []\n    for (const view of this.views) {\n      view.close()\n    }\n    // This gets called when the model is closed and the comm is removed. Notify Py just in time!\n    const t = getTimestamp()\n    const event = {\n      type: 'close',\n      timestamp: t\n    }\n    this.onEvent(event)\n  }\n\n  addView (view) {\n    this.views.push(view)\n    this.updateVisibility()\n    // Init attrs\n    const anymodel = this.anymodel\n    view.setCssWidth(anymodel.get('_css_width') ?? anymodel.get('css_width'))\n    view.setCssHeight(anymodel.get('_css_height') ?? anymodel.get('css_height'))\n    view.setResizable(anymodel.get('_resizable') ?? anymodel.get('resizable'))\n    view.showTitlebar(anymodel.get('_has_titlebar') ?? anymodel.get('has_titlebar'))\n    view.setTitle(anymodel.get('_title') ?? anymodel.get('title'))\n    view.setCursor(anymodel.get('_cursor') ?? anymodel.get('cursor'))\n    // Init view\n    if (this._lastSrc) {\n      view.viewElement.src = this._lastSrc\n    }\n  }\n\n  removeView (view) {\n    this.views = this.views.filter(v => v !== view)\n    this.updateVisibility()\n  }\n\n  updateVisibility () {\n    let visibleViewsCount = 0\n    for (const view of this.views) {\n      if (view.isVisible) { visibleViewsCount += 1 }\n    }\n    const hasVisibleViews = visibleViewsCount > 0\n    this.anymodel.set('_has_visible_views', hasVisibleViews)\n    this.anymodel.save_changes()\n    if (hasVisibleViews) {\n      this._request_animation_frame()\n    }\n  }\n\n  _send_response () {\n    // Let Python know what we have at the frame. This prop is a dict, making it \"atomic\".\n    const frame = this._lastFrame\n    const frameFeedback = { index: frame.index, timestamp: frame.timestamp, localtime: Date.now() / 1000 }\n    this.anymodel.set('_frame_feedback', frameFeedback)\n    this.anymodel.save_changes()\n  }\n\n  _request_animation_frame () {\n    // Request an animation frame.\n    // Before the anywidget refactor, we did this via a tiny delay, which supposedly made things more smooth,\n    // but it also increases the delay for a frame to hit the screen, and limits the max fps, so let's not do that.\n    if (!this._img_update_pending) {\n      this._img_update_pending = true\n      window.requestAnimationFrame(this._animate.bind(this))\n      // window.setTimeout(window.requestAnimationFrame, 5, this._animate.bind(this)) // via a delay\n    }\n  }\n\n  _animate () {\n    this._img_update_pending = false\n    if (this._frames.length === 0) { return };\n\n    // Pick the oldest frame from the stack, and get its source\n    const frame = this._frames.shift()\n    let newSrc\n    if (frame.buffers.length > 0) {\n      const blob = new Blob([frame.buffers[0].buffer], { type: frame.mimetype })\n      newSrc = URL.createObjectURL(blob)\n    } else {\n      newSrc = frame.data_b64\n    }\n\n    // Revoke last objectURL\n    URL.revokeObjectURL(this._lastSrc)\n    this._lastSrc = newSrc\n\n    // Update the image sources\n    for (const view of this.views) {\n      view.viewElement.src = newSrc\n      view.viewElement.onload = this._request_animation_frame.bind(this)\n    }\n\n    // Let the server know we processed the image (even if it's not shown yet)\n    this._lastFrame = frame\n    this._send_response()\n  }\n\n  onEvent (event) {\n    try {\n      this.anymodel.send(event)\n    } catch { } // probably attempt to send when widget is closed\n  }\n}\n\n/**\n * View to show the anywidget output and observe events, based on renderview.js.\n */\nclass AnywidgetRenderView extends BaseRenderView {\n  constructor (model, containerElement) {\n    // Create the wrapper element\n    const wrapperElement = document.createElement('div')\n    wrapperElement.classList.add('renderview-wrapper')\n    wrapperElement.classList.add('is-resizable')\n    // wrapperElement.classList.add('has-titlebar') -> not by default\n    containerElement.appendChild(wrapperElement)\n\n    // Create img element\n    const viewElement = document.createElement('img')\n    viewElement.decoding = 'sync'\n    viewElement.loading = 'eager'\n    viewElement.style.touchAction = 'none' // prevent default pan/zoom behavior\n    viewElement.ondragstart = () => false // prevent browser's built-in image drag\n\n    // Call super\n    super(viewElement, wrapperElement)\n    this.setThrottle(20) // 20ms -> max 50 move/wheel events per second\n\n    // Connect to the model, it will initialize it with the current size and frame-data\n    this.model = model\n    this.model.addView(this)\n  }\n\n  close () {\n    super.close()\n    this.model.removeView(this)\n  }\n\n  onEvent (event) {\n    if (event.type === 'resize') {\n      // Note that there can be multiple views that can possibly be individually resized.\n      // TODO: keep logical size in check between different views?\n      if (event.width * event.height <= 0) {\n        return // The element of a new view is temporarily zero-sized at initialization\n      }\n    } else if (event.type === 'close') {\n      return // we don't close when one view closes, only when the widget closes\n    } else if (event.type === 'show') {\n      this.isVisible = true\n      this.model.updateVisibility()\n    } else if (event.type === 'hide') {\n      this.isVisible = false\n      this.model.updateVisibility()\n    }\n\n    this.model.onEvent(event)\n  }\n}\n\n// anywidget lifecycle export\nexport default () => {\n  let model\n  return {\n    initialize (ctx) {\n      model = new RendercanvasAnywidgetModel(ctx.model)\n      // window.model = model // debug\n      return () => { model.close() }\n    },\n    render (ctx) {\n      const view = new AnywidgetRenderView(model, ctx.el)\n      return () => { view.close() }\n    }\n  }\n}\n\n\n", "_frame_feedback": {}, "_has_visible_views": false, "_model_module": "anywidget", "_model_module_version": "~0.11.*", "_model_name": "AnyModel", "_view_count": null, "_view_module": "anywidget", "_view_module_version": "~0.11.*", "_view_name": "AnyView", "css_height": "480px", "css_width": "640px", "cursor": "default", "has_titlebar": false, "layout": "IPY_MODEL_22114d5ed2e4469494fa2acf1d68e829", "resizable": true, "tabbable": null, "title": "GraphsAndResults", "tooltip": null}}, "80f0b47e2aa24a1aa76b18fa1ebf1b55": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "08841ebb2a2d4a47a2a077855be3981b": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_80f0b47e2aa24a1aa76b18fa1ebf1b55", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}, "c1439c54bb6041ec989d55ac158ccd9a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "662423501ce94fea8d83f2bd14f9dea2": {"model_name": "AnyModel", "model_module": "anywidget", "model_module_version": "~0.11.*", "state": {"_anywidget_id": "ansys.stk.core.experimental.jupyterwidgets.MapWidget", "_css": "/*************************************************************************************************\n  renderview.css\n\n  This file is dedicated to the public domain under CC0 1.0.\n  This file is developed at https://github.com/pygfx/renderview, please contribute changes there.\n\n *************************************************************************************************/\n\ndiv.renderview-wrapper {\n    display: inline-block;\n    position: relative;\n    box-sizing: border-box;\n    overflow: visible;\n    min-width: 32px;\n    min-height: 32px;\n}\n\ndiv.renderview-wrapper .renderview-view {\n    display: block;\n    box-sizing: border-box;\n    width: 100%;\n    height: 100%;\n    background: none;\n    border-radius: 6px;\n    border: 1px solid rgba(127, 127, 127, 0.2);\n}\n\ndiv.renderview-wrapper .renderview-hidden {\n    display: none;\n}\n\ndiv.renderview-wrapper .renderview-top {\n    display: none;\n    position: absolute;\n    box-sizing: border-box;\n    z-index: 2;\n    top: -1.5em;\n    height: 1.5em;\n    width: 100%;\n    border-radius: 6px 6px 0 0;\n    border: 1px solid rgba(127, 127, 127, 0.2);\n    border-bottom: 0;\n}\n\ndiv.renderview-wrapper .renderview-top span {\n    display: inline-block;\n    box-sizing: border-box;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    padding: 0.1em 0.5em;\n    width: 100%;\n}\n\ndiv.renderview-wrapper .renderview-resizer {\n    display: none;\n    position: absolute;\n    box-sizing: border-box;\n    z-index: 3;\n    bottom: 0;\n    right: 0;\n    width: 14px;\n    height: 14px;\n    cursor: nwse-resize;\n}\n\ndiv.renderview-wrapper.has-titlebar {\n    margin-top: 2em !important;\n}\n\ndiv.renderview-wrapper.has-titlebar .renderview-top {\n    display: block;\n}\n\ndiv.renderview-wrapper.has-titlebar .renderview-view {\n    border-top-left-radius: 0 !important;\n    border-top-right-radius: 0 !important;\n}\n\ndiv.renderview-wrapper.is-resizable .renderview-resizer {\n    display: block;\n}", "_dom_classes": [], "_esm": "/*************************************************************************************************\n  renderview.js\n\n  This file is dedicated to the public domain under CC0 1.0.\n  This file is developed at https://github.com/pygfx/renderview, please contribute changes there.\n\n  This module implements a common event spec for render targets in a browser.\n  The code is written with little assumptions about the application, so that it\n  can be shared between different use-cases, such as rendercanvas backends\n  (pyodide, anywidget, remote-browser), jupyter_rfb, and other projects.\n\n  Code that loads this script should avoid loading it in the global scope.\n  Either by putting it in a ``<script type='module>``, or wrapping it in an IIFE\n  with ``(() => {\\n{JS}\\n})();``\n\n  This code is formatted and linted with standardjs (quite similar to Ruff in\n  Python). It adheres to common JS practices, but also has some Python habits,\n  like underscore prefix for private attributes.\n\n *************************************************************************************************/\n\n'use strict'\n\nconst Element = window.Element\nconst IntersectionObserver = window.IntersectionObserver\nconst ResizeObserver = window.ResizeObserver\n\nconst LOOKS_LIKE_MOBILE = /mobi|android|iphone|ipad|ipod|tablet/.test(\n  navigator.userAgent.toLowerCase()\n)\n\nconst KEY_MAP = {\n  Ctrl: 'Control',\n  Del: 'Delete',\n  Esc: 'Escape'\n}\n\nconst KEY_MOD_MAP = {\n  altKey: 'Alt',\n  ctrlKey: 'Control',\n  metaKey: 'Meta',\n  shiftKey: 'Shift'\n}\n\nconst MOUSE_BUTTON_MAP = {\n  0: 1, // left\n  1: 3, // middle/wheel\n  2: 2, // right\n  3: 4, // backwards\n  4: 5 // forwards\n}\n\nfunction getButtons (ev) {\n  // Note that ev.button has a historic awkward mapping, but ev.buttons is in the order that we want\n  const button = MOUSE_BUTTON_MAP[ev.button] || 0\n  const buttons = []\n  for (const b of [0, 1, 2, 3, 4, 5]) {\n    if ((1 << b) & ev.buttons) {\n      buttons.push(b + 1)\n    }\n  }\n  return [button, buttons]\n}\n\nfunction getModifiers (ev) {\n  return Object.entries(KEY_MOD_MAP)\n    .filter(([k]) => ev[k])\n    .map(([, v]) => v)\n}\n\nfunction getTimestamp () {\n  return performance.now() / 1000\n}\n\nfunction arraysEqual (a, b) {\n  return a.length === b.length && a.every((val, i) => val === b[i])\n}\n\n/**\n * The BaseRenderView handles the client-side logic for a render target (typically a <canvas> or <img>).\n *\n * It observes events and calls `this.OnEvent()`.\n * It provides convenience methods for setting the size, cursor, and more.\n *\n * When used with a wrapper element, more features are enabled:\n *\n * - It can be manually resized if the wrapper element has the 'is-resizable' class.\n * - A title bar is shown if the wrapper has the 'has-titlebar' class.\n * - The above mentioned classes can also be programmatically set via `setResizable()` and `showTitlebar()`.\n * - The title can be set using `setTitle()`.\n *\n */\nclass BaseRenderView {\n  /**\n   * Create a new RenderView.\n   *\n   * If a single element is given, the view directly manages that element, nice and simple.\n   * No styling is applied except for `width` and `height`.\n   *\n   * If a wrapper element is also given, the view supports features like manual resizing and a title-bar.\n   * In this case, any user styling that effects positioning should be applied to the wrapper.\n   * The wrapper may contain placeholder content; on initialization, it's innerHTML and padding are reset.\n   *\n   * @param {HTMLElement} viewElement - The element (e.g. canvas or img) used for rendering.\n   * @param {HTMLElement} wrapperElement - The wrapper element (optional; can be null).\n   */\n  constructor (viewElement, wrapperElement) {\n    // Check given element\n    if (viewElement === undefined || !(viewElement instanceof Element)) {\n      throw new Error('BaseRenderView: viewElement must be an Element.')\n    }\n    if (wrapperElement !== null) {\n      if (wrapperElement === undefined || !(wrapperElement instanceof Element)) {\n        throw new Error('BaseRenderView: wrapperElement must be null or an Element.')\n      }\n      wrapperElement.innerHTML = ''\n      wrapperElement.style.padding = '0'\n      wrapperElement.style.background = ''\n    }\n\n    // Tweak viewElement\n    viewElement.tabIndex = -1\n    // Prevent context menu on RMB. Firefox still shows it when shift is pressed. It seems\n    // impossible to override this (tips welcome!), so let's make this the actual behavior.\n    viewElement.oncontextmenu = (e) => {\n      if (!e.shiftKey) {\n        e.preventDefault()\n        e.stopPropagation()\n        return false\n      }\n    }\n\n    this.viewElement = viewElement\n    this.wrapperElement = wrapperElement\n    this.sizeElement = (wrapperElement === null) ? viewElement : wrapperElement\n    this.titleElement = null // is set in _initElements() if wrapperElement is given\n\n    this._lsize = null // cached logical size\n    this._wheelThrottle = 20 // to avoid flooding wheel events\n    this._moveThrottle = 20 // to avoid flooding move events\n    this._isVisible = false // set by intersection observer\n\n    this._focusElement = null\n    this._abortController = new AbortController()\n    this._resizeObserver = null\n    this._intersectionObserver = null\n\n    this._initElements()\n    this._registerEvents()\n  }\n\n  /**\n   * Close the view, disconnecting observers and clearing callbacks.\n   * This does not remove the the element from the DOM; that's up to the caller.\n   */\n  close () {\n    if (this._focusElement) {\n      this._focusElement.remove()\n      this._focusElement = null\n    }\n    if (this._abortController) {\n      this._abortController.abort()\n      this._abortController = null\n    }\n    if (this._resizeObserver) {\n      this._resizeObserver.disconnect()\n      this._resizeObserver = null\n    }\n    if (this._intersectionObserver) {\n      this._intersectionObserver.disconnect()\n      this._intersectionObserver = null\n    }\n    this.viewElement = null\n    this.sizeElement = null\n    this.titleElement = null\n    if (this.wrapperElement) {\n      this.wrapperElement.innerHTML = ''\n      this.wrapperElement = null\n    }\n    const event = {\n      type: 'close',\n      timestamp: getTimestamp()\n    }\n    this.onEvent(event)\n  }\n\n  /**\n   * Set the view's size in logical pixels.\n   *\n   * @param {string} width - The requested width.\n   * @param {string} height - The requested height.\n   */\n  setLogicalSize (width, height) {\n    this.sizeElement.style.maxWidth = ''\n    this.sizeElement.style.maxHeight = ''\n    this.sizeElement.style.width = width + 'px'\n    this.sizeElement.style.height = height + 'px'\n  }\n\n  /**\n   * Set the width of the view as a CSS string.\n   *\n   * @param {string} cssWidth - The requested width as a css string, e.g. '640px' or '90%' or 'calc(100% - 10px)'.\n   */\n  setCssWidth (cssWidth) {\n    this.sizeElement.style.maxWidth = ''\n    this.sizeElement.style.width = cssWidth\n  }\n\n  /**\n   * Set the height of the view as a CSS string.\n   *\n   * @param {string} cssHeight - The requested height as a css string, e.g. '480px' or '40vh'.\n   */\n  setCssHeight (cssHeight) {\n    this.sizeElement.style.maxHeight = ''\n    this.sizeElement.style.height = cssHeight\n  }\n\n  /**\n   * Set whether the view is manually resizable.\n   * Note that the view can only be made resizable if it was instantiated with a wrapper.\n   *\n   * @param {boolean} resizable - Whether to make it resizable or not.\n   */\n  setResizable (resizable) {\n    if (this.wrapperElement) {\n      if (resizable) {\n        this.wrapperElement.classList.add('is-resizable')\n      } else {\n        this.wrapperElement.classList.remove('is-resizable')\n      }\n    }\n  }\n\n  /**\n   * Set whether the view has a titlebar.\n   * Note that the view can only have a titlebar if it was instantiated with a wrapper.\n   *\n   * @param {boolean} titlebar - Whether to show the titlebar or not.\n   */\n  showTitlebar (titlebar) {\n    if (this.wrapperElement) {\n      if (titlebar) {\n        this.wrapperElement.classList.add('has-titlebar')\n      } else {\n        this.wrapperElement.classList.remove('has-titlebar')\n      }\n    }\n  }\n\n  /**\n   * Set the view's title in the titlebar.\n   *\n   * Note that the title is only visible if the view was instantiated with a wrapper,\n   * and the titlebar is shown.\n   *\n   * @param {string} title - The title to set.\n   */\n  setTitle (title) {\n    if (this.titleElement) {\n      this.titleElement.innerText = title\n    }\n  }\n\n  /**\n   * Set the `style.cursor`.\n   *\n   * @param {string} cursor - A valid string for CSS cursor.\n   */\n  setCursor (cursor) {\n    this.viewElement.style.cursor = cursor\n  }\n\n  /**\n   * Set the throttle setting. Set to zero to disable throttling.\n   *\n   * @param {number} throttle - The timeout (in ms) to wait before sending a move/wheel event.\n   */\n  setThrottle (throttle) {\n    this._wheelThrottle = throttle\n    this._moveThrottle = throttle\n  }\n\n  /**\n   * The subclass should implement this to handle events.\n   *\n   * @param {object} event - The event object as a 'dictionary', following the spec.\n   */\n  onEvent (event) { }\n\n  /**\n   * Internal method to initialize the view's helper elements.\n   */\n  _initElements () {\n    const signal = this._abortController.signal\n\n    // Obtain container to put our hidden focus element.\n    // Putting the focusElement as a child of the canvas prevents chrome from emitting input events.\n    const focusElementContainerId = 'rendercanvas-focus-element-container'\n    let focusElementContainer = document.getElementById(focusElementContainerId)\n\n    if (!focusElementContainer) {\n      focusElementContainer = document.createElement('div')\n      focusElementContainer.setAttribute('id', focusElementContainerId)\n      focusElementContainer.style.position = 'absolute'\n      focusElementContainer.style.top = '0'\n      focusElementContainer.style.left = '-9999px'\n      document.body.appendChild(focusElementContainer)\n    }\n\n    // Create an element to which we transfer focus, so we can capture key events and prevent global shortcuts\n    const focusElement = document.createElement('input')\n    this._focusElement = focusElement\n    focusElement.type = 'text'\n    focusElement.tabIndex = -1\n    focusElement.autocomplete = 'off'\n    focusElement.autocorrect = 'off'\n    focusElement.autocapitalize = 'off'\n    focusElement.spellcheck = false\n    focusElement.style.width = '1px'\n    focusElement.style.height = '1px'\n    focusElement.style.padding = '0'\n    focusElement.style.opacity = 0\n    focusElement.style.pointerEvents = 'none'\n    focusElementContainer.appendChild(focusElement)\n\n    const wrapperElement = this.wrapperElement\n\n    if (wrapperElement !== null) {\n      this.viewElement.classList.add('renderview-view')\n\n      // Wrap it\n      wrapperElement.classList.add('renderview-wrapper')\n      wrapperElement.appendChild(this.viewElement)\n\n      // Debug element\n      const debugElement = document.createElement('div')\n      debugElement.innerHTML = '<b>If you can read this, the rendercanvas.css is likely not applied.</b>'\n      debugElement.classList.add('renderview-hidden')\n      wrapperElement.appendChild(debugElement)\n\n      // Create title bar\n      const topElement = document.createElement('div')\n      topElement.classList.add('renderview-top')\n      const titleElement = document.createElement('span')\n      this.titleElement = titleElement\n      titleElement.innerText = 'RenderView'\n      topElement.appendChild(titleElement)\n      wrapperElement.appendChild(topElement)\n\n      // Enable resizing\n      const resizeElement = document.createElement('div')\n      resizeElement.classList.add('renderview-resizer')\n      wrapperElement.appendChild(resizeElement)\n      let resizeInfo = null\n      resizeElement.addEventListener('pointerdown', (ev) => {\n        if (this._lsize) {\n          resizeInfo = { w: this._lsize[0], h: this._lsize[1], x: ev.clientX, y: ev.clientY }\n          resizeElement.setPointerCapture(ev.pointerId)\n        }\n      },\n      { signal }\n      )\n      resizeElement.addEventListener('pointermove', (ev) => {\n        if (resizeInfo !== null) {\n          this.sizeElement.style.maxWidth = ''\n          this.sizeElement.style.maxHeight = ''\n          this.sizeElement.style.width = resizeInfo.w + (ev.clientX - resizeInfo.x) + 'px'\n          this.sizeElement.style.height = resizeInfo.h + (ev.clientY - resizeInfo.y) + 'px'\n        }\n      },\n      { signal }\n      )\n      resizeElement.addEventListener('lostpointercapture', (ev) => {\n        resizeInfo = null\n      },\n      { signal }\n      )\n    } // wrapperElement !== null\n  }\n\n  /**\n   * Internal method to setup listeners and register callbacks.\n   */\n  _registerEvents () {\n    // Register events\n\n    const viewElement = this.viewElement\n    const signal = this._abortController.signal // to unregister/abort stuff\n\n    // ----- visibility ---------------\n\n    this._intersectionObserver = new IntersectionObserver((entries, observer) => {\n      // This gets called when one of the observed elements becomes visible/invisible.\n      // Note that entries only contains the *changed* elements, so we keep track ourselves.\n      let isVisible = false\n      for (const entry of entries) {\n        isVisible = isVisible || entry.isIntersecting\n      }\n      if (isVisible !== this._isVisible) {\n        this._isVisible = isVisible\n        const event = {\n          type: isVisible ? 'show' : 'hide',\n          timestamp: getTimestamp()\n        }\n        this.onEvent(event)\n      }\n    })\n    this._intersectionObserver.observe(viewElement)\n\n    // ----- resize ---------------\n\n    this._resizeObserver = new ResizeObserver((entries) => {\n      // The physical size is easy. The logical size can be much more tricky\n      // to obtain due to all the CSS stuff. But the base class will just calculate that\n      // from the physical size and the pixel ratio.\n\n      // Select entry matching our element\n      const ourEntries = entries.filter((entry) => entry.target.id === viewElement.id)\n      if (!ourEntries.length) {\n        return\n      }\n\n      const entry = ourEntries[0]\n      const ratio = window.devicePixelRatio\n      let physicalWidth\n      let physicalHeight\n\n      if (entry.devicePixelContentBoxSize) {\n        physicalWidth = entry.devicePixelContentBoxSize[0].inlineSize\n        physicalHeight = entry.devicePixelContentBoxSize[0].blockSize\n      } else {\n        // Some browsers don't support devicePixelContentBoxSize\n        let lsize\n        if (entry.contentBoxSize) {\n          lsize = [\n            entry.contentBoxSize[0].inlineSize,\n            entry.contentBoxSize[0].blockSize\n          ]\n        } else {\n          lsize = [entry.contentRect.width, entry.contentRect.height]\n        }\n        physicalWidth = Math.floor(lsize[0] * ratio)\n        physicalHeight = Math.floor(lsize[1] * ratio)\n      }\n\n      // If the container element does not have its size set via its style, we set it to the logical size.\n      const logicalWidth = physicalWidth / ratio\n      const logicalHeight = physicalHeight / ratio\n\n      // prevent massive size due to auto-scroll (https://github.com/vispy/jupyter_rfb/issues/62)\n      if (!this.sizeElement.style.width) {\n        this.sizeElement.style.width = `${logicalWidth}px`\n        this.sizeElement.style.maxWidth = '90vmin'\n      }\n      if (!this.sizeElement.style.height) {\n        this.sizeElement.style.height = `${logicalHeight}px`\n        this.sizeElement.style.maxHeight = '90vmin'\n      }\n\n      // Store logical size\n      this._lsize = [logicalWidth, logicalHeight]\n\n      const event = {\n        type: 'resize',\n        width: logicalWidth,\n        height: logicalHeight,\n        pwidth: physicalWidth,\n        pheight: physicalHeight,\n        ratio,\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    })\n\n    this._resizeObserver.observe(this.viewElement)\n\n    // ----- pointer ---------------\n\n    // Current pointer ids, mapping to initial button\n    const pointerToButton = {}\n\n    // The last used buttons, so we can pass to wheel event\n    let lastButtons = []\n\n    viewElement.addEventListener('pointerdown', (ev) => {\n      // When pointer is down, set focus to the focus-element.\n      if (!LOOKS_LIKE_MOBILE) {\n        this._focusElement.focus({ preventScroll: true, focusVisble: false })\n      }\n      // capture the pointing device.\n      // Because we capture the event, there will be no other events when buttons are pressed down,\n      // although they will end up in the 'buttons'. The lost/release will only get fired when all buttons\n      // are released/lost. Which is why we look up the original button in our `pointers` list.\n      viewElement.setPointerCapture(ev.pointerId)\n      // Prevent default unless alt is pressed\n      if (!ev.altKey) {\n        ev.preventDefault()\n      }\n\n      // Collect info\n      const [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n\n      // Manage\n      pointerToButton[ev.pointerId] = button\n      lastButtons = buttons\n\n      const event = {\n        type: 'pointer_down',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        ntouches: 0, // TODO later: maybe via https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent\n        touches: {},\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    let pendingMoveEvent = null\n\n    const sendMoveEvent = () => {\n      if (pendingMoveEvent !== null) {\n        const event = pendingMoveEvent\n        pendingMoveEvent = null\n        this.onEvent(event)\n      }\n    }\n\n    viewElement.addEventListener('pointermove', (ev) => {\n      // If this pointer is not down, but other pointers are, don't emit an event.\n      if (pointerToButton[ev.pointerId] === undefined) {\n        if (Object.keys(pointerToButton).length > 0) {\n          return\n        }\n      }\n\n      // Collect info, use button that started this drag-action\n      let [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n      button = pointerToButton[ev.pointerId] || 0\n\n      // Manage\n      lastButtons = buttons\n\n      // This event is throttled. We either update the pending event or create a new one\n      if (\n        pendingMoveEvent !== null &&\n        arraysEqual(pendingMoveEvent.buttons, buttons) &&\n        arraysEqual(pendingMoveEvent.modifiers, modifiers)\n      ) {\n        pendingMoveEvent.x = ev.offsetX\n        pendingMoveEvent.y = ev.offsetY\n      } else {\n        const event = {\n          type: 'pointer_move',\n          x: ev.offsetX,\n          y: ev.offsetY,\n          button,\n          buttons,\n          modifiers,\n          ntouches: 0,\n          touches: {},\n          timestamp: getTimestamp()\n        }\n        if (this._moveThrottle > 0) {\n          sendMoveEvent() // Send previous (if any)\n          pendingMoveEvent = event\n          window.setTimeout(sendMoveEvent, this._moveThrottle)\n        } else {\n          this.onEvent(event)\n        }\n      }\n    },\n    { signal }\n    )\n\n    viewElement.addEventListener('lostpointercapture', (ev) => {\n      // This happens on pointer-up or pointer-cancel. We threat them the same.\n\n      // Get info, use the button stat started the drag-action\n      const modifiers = getModifiers(ev)\n      const button = pointerToButton[ev.pointerId] || 0\n      const buttons = []\n\n      // Manage\n      delete pointerToButton[ev.pointerId]\n      lastButtons = buttons\n\n      const event = {\n        type: 'pointer_up',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        ntouches: 0,\n        touches: {},\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    viewElement.addEventListener('pointerenter', (ev) => {\n      // If this pointer is not down, but other pointers are, don't emit an event.\n      if (pointerToButton[ev.pointerId] === undefined) {\n        if (Object.keys(pointerToButton).length > 0) {\n          return\n        }\n      }\n\n      // Collect info, but use button 0. It usually is, and should be.\n      let [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n      button = 0\n\n      const event = {\n        type: 'pointer_enter',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        ntouches: 0,\n        touches: {},\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    viewElement.addEventListener('pointerleave', (ev) => {\n      // If this pointer is not down, but other pointers are, don't emit an event.\n      if (pointerToButton[ev.pointerId] === undefined) {\n        if (Object.keys(pointerToButton).length > 0) {\n          return\n        }\n      }\n\n      // Collect info, but use button 0. It usually is, and should be.\n      let [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n      button = 0\n\n      const event = {\n        type: 'pointer_leave',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        ntouches: 0,\n        touches: {},\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    // ----- click ---------------\n\n    // Click events are not pointer events. In most apps that this targets, click events\n    // don't add much over pointer events. But double-click can be useful.\n    viewElement.addEventListener('dblclick', (ev) => {\n      // Prevent default unless alt is pressed\n      if (!ev.altKey) {\n        ev.preventDefault()\n      }\n\n      // Collect info\n      const [button, buttons] = getButtons(ev)\n      const modifiers = getModifiers(ev)\n\n      const event = {\n        type: 'double_click',\n        x: ev.offsetX,\n        y: ev.offsetY,\n        button,\n        buttons,\n        modifiers,\n        // no touches here\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    // ----- wheel ---------------\n\n    let pendingWheelEvent = null\n\n    const sendWheelEvent = () => {\n      if (pendingWheelEvent !== null) {\n        const event = pendingWheelEvent\n        pendingWheelEvent = null\n        this.onEvent(event)\n      }\n    }\n\n    viewElement.addEventListener('wheel', (ev) => {\n      // Only scroll if we have focus\n      if (window.document.activeElement !== this._focusElement) {\n        return\n      }\n      // Prevent default unless alt is pressed\n      if (!ev.altKey) {\n        ev.preventDefault()\n      }\n\n      // Collect info\n      const scales = [1 / window.devicePixelRatio, 16, 600] // pixel, line, page\n      const scale = scales[ev.deltaMode]\n      const modifiers = getModifiers(ev)\n      const buttons = [...lastButtons]\n\n      // This event is throttled. We either update the pending event or create a new one\n      if (\n        pendingWheelEvent !== null &&\n        arraysEqual(pendingWheelEvent.buttons, buttons) &&\n        arraysEqual(pendingWheelEvent.modifiers, modifiers)\n      ) {\n        pendingWheelEvent.x = ev.offsetX\n        pendingWheelEvent.y = ev.offsetY\n        pendingWheelEvent.dx += ev.deltaX * scale\n        pendingWheelEvent.dy += ev.deltaY * scale\n      } else {\n        const event = {\n          type: 'wheel',\n          x: ev.offsetX,\n          y: ev.offsetY,\n          dx: ev.deltaX * scale,\n          dy: ev.deltaY * scale,\n          buttons,\n          modifiers,\n          timestamp: getTimestamp()\n        }\n        if (this._wheelThrottle > 0) {\n          sendWheelEvent() // Send previous (if any)\n          pendingWheelEvent = event\n          window.setTimeout(sendWheelEvent, this._wheelThrottle)\n        } else {\n          this.onEvent(event)\n        }\n      }\n    },\n    { signal }\n    )\n\n    // ----- key ---------------\n\n    this._focusElement.addEventListener('keydown', (ev) => {\n      // Failsafe in case the element is deleted or detached.\n      if (this.sizeElement.offsetParent === null) {\n        return\n      }\n      // Ignore repeated events (key being held down)\n      if (ev.repeat) {\n        return\n      }\n      // No need for stopPropagation or preventDefault because we are in a text-input.\n\n      const modifiers = getModifiers(ev)\n\n      const event = {\n        type: 'key_down',\n        key: KEY_MAP[ev.key] || ev.key,\n        modifiers,\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    this._focusElement.addEventListener('keyup', (ev) => {\n      if (this.sizeElement.offsetParent === null) {\n        return\n      }\n\n      const modifiers = getModifiers(ev)\n\n      const event = {\n        type: 'key_up',\n        key: KEY_MAP[ev.key] || ev.key,\n        modifiers,\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n\n    this._focusElement.addEventListener('input', (ev) => {\n      // Failsafe in case the element is deleted or detached.\n      if (this.sizeElement.offsetParent === null) {\n        return\n      }\n      // Prevent the text box from growing\n      if (!ev.isComposing) {\n        this.focus_el.value = ''\n      }\n\n      const event = {\n        type: 'char',\n        data: ev.data,\n        is_composing: ev.isComposing,\n        input_type: ev.inputType,\n        // repeat: ev.repeat,  // n.a.\n        timestamp: getTimestamp()\n      }\n      this.onEvent(event)\n    },\n    { signal }\n    )\n  }\n}\n\n// Export\nwindow.BaseRenderView = BaseRenderView\n\n\n/* global BaseRenderView getTimestamp */\n\n/**\n * An object that represents the model (wrapping the anywidget model object), that can have multiple views.\n */\nclass RendercanvasAnywidgetModel {\n  constructor (anymodel) {\n    this.anymodel = anymodel\n    this.views = []\n    this._hasVisibleViews = false\n\n    // Variables to store frames and the last frame\n    this._frames = []\n    this._lastSrc = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR42mOor68HAAL+AX6E2KOJAAAAAElFTkSuQmCC'\n    this._lastFrame = {\n      src: this._lastSrc,\n      index: 0,\n      timestamp: 0\n    }\n\n    // Register callbacks\n    anymodel.on('msg:custom', (msg, buffers) => {\n      if (msg.type === 'framebufferdata') {\n        this._frames.push({ ...msg, buffers })\n        this._request_animation_frame()\n      }\n    })\n    // For traits we allow the public and private version, this means we can use the\n    // same JS code for multiple anywidget implementations (specifically rendercanvas.anywidget vs jupyter_rfb)\n    for (const prefix of ['', '_']) {\n      anymodel.on(`change:${prefix}css_width`, () => {\n        const cssWidth = anymodel.get(`${prefix}css_width`)\n        for (const view of this.views) {\n          view.setCssWidth(cssWidth)\n        }\n      })\n      anymodel.on(`change:${prefix}css_height`, () => {\n        const cssHeight = anymodel.get(`${prefix}css_height`)\n        for (const view of this.views) {\n          view.setCssHeight(cssHeight)\n        }\n      })\n      anymodel.on(`change:${prefix}resizable`, () => {\n        const resizable = anymodel.get(`${prefix}resizable`)\n        for (const view of this.views) {\n          view.setResizable(resizable)\n        }\n      })\n      anymodel.on(`change:${prefix}has_titlebar`, () => {\n        const titlebar = anymodel.get(`${prefix}has_titlebar`)\n        for (const view of this.views) {\n          view.showTitlebar(titlebar)\n        }\n      })\n      anymodel.on(`change:${prefix}title`, () => {\n        const title = anymodel.get(`${prefix}title`)\n        for (const view of this.views) {\n          view.setTitle(title)\n        }\n      })\n      anymodel.on(`change:${prefix}cursor`, () => {\n        const cursor = anymodel.get(`${prefix}cursor`)\n        for (const view of this.views) {\n          view.setCursor(cursor)\n        }\n      })\n    }\n\n    // Start the animation loop\n    this._img_update_pending = false\n    this._request_animation_frame()\n  }\n\n  close () {\n    URL.revokeObjectURL(this._lastSrc)\n    this._lastSrc = null\n    this._lastFrame = null\n    this._frames = []\n    for (const view of this.views) {\n      view.close()\n    }\n    // This gets called when the model is closed and the comm is removed. Notify Py just in time!\n    const t = getTimestamp()\n    const event = {\n      type: 'close',\n      timestamp: t\n    }\n    this.onEvent(event)\n  }\n\n  addView (view) {\n    this.views.push(view)\n    this.updateVisibility()\n    // Init attrs\n    const anymodel = this.anymodel\n    view.setCssWidth(anymodel.get('_css_width') ?? anymodel.get('css_width'))\n    view.setCssHeight(anymodel.get('_css_height') ?? anymodel.get('css_height'))\n    view.setResizable(anymodel.get('_resizable') ?? anymodel.get('resizable'))\n    view.showTitlebar(anymodel.get('_has_titlebar') ?? anymodel.get('has_titlebar'))\n    view.setTitle(anymodel.get('_title') ?? anymodel.get('title'))\n    view.setCursor(anymodel.get('_cursor') ?? anymodel.get('cursor'))\n    // Init view\n    if (this._lastSrc) {\n      view.viewElement.src = this._lastSrc\n    }\n  }\n\n  removeView (view) {\n    this.views = this.views.filter(v => v !== view)\n    this.updateVisibility()\n  }\n\n  updateVisibility () {\n    let visibleViewsCount = 0\n    for (const view of this.views) {\n      if (view.isVisible) { visibleViewsCount += 1 }\n    }\n    const hasVisibleViews = visibleViewsCount > 0\n    this.anymodel.set('_has_visible_views', hasVisibleViews)\n    this.anymodel.save_changes()\n    if (hasVisibleViews) {\n      this._request_animation_frame()\n    }\n  }\n\n  _send_response () {\n    // Let Python know what we have at the frame. This prop is a dict, making it \"atomic\".\n    const frame = this._lastFrame\n    const frameFeedback = { index: frame.index, timestamp: frame.timestamp, localtime: Date.now() / 1000 }\n    this.anymodel.set('_frame_feedback', frameFeedback)\n    this.anymodel.save_changes()\n  }\n\n  _request_animation_frame () {\n    // Request an animation frame.\n    // Before the anywidget refactor, we did this via a tiny delay, which supposedly made things more smooth,\n    // but it also increases the delay for a frame to hit the screen, and limits the max fps, so let's not do that.\n    if (!this._img_update_pending) {\n      this._img_update_pending = true\n      window.requestAnimationFrame(this._animate.bind(this))\n      // window.setTimeout(window.requestAnimationFrame, 5, this._animate.bind(this)) // via a delay\n    }\n  }\n\n  _animate () {\n    this._img_update_pending = false\n    if (this._frames.length === 0) { return };\n\n    // Pick the oldest frame from the stack, and get its source\n    const frame = this._frames.shift()\n    let newSrc\n    if (frame.buffers.length > 0) {\n      const blob = new Blob([frame.buffers[0].buffer], { type: frame.mimetype })\n      newSrc = URL.createObjectURL(blob)\n    } else {\n      newSrc = frame.data_b64\n    }\n\n    // Revoke last objectURL\n    URL.revokeObjectURL(this._lastSrc)\n    this._lastSrc = newSrc\n\n    // Update the image sources\n    for (const view of this.views) {\n      view.viewElement.src = newSrc\n      view.viewElement.onload = this._request_animation_frame.bind(this)\n    }\n\n    // Let the server know we processed the image (even if it's not shown yet)\n    this._lastFrame = frame\n    this._send_response()\n  }\n\n  onEvent (event) {\n    try {\n      this.anymodel.send(event)\n    } catch { } // probably attempt to send when widget is closed\n  }\n}\n\n/**\n * View to show the anywidget output and observe events, based on renderview.js.\n */\nclass AnywidgetRenderView extends BaseRenderView {\n  constructor (model, containerElement) {\n    // Create the wrapper element\n    const wrapperElement = document.createElement('div')\n    wrapperElement.classList.add('renderview-wrapper')\n    wrapperElement.classList.add('is-resizable')\n    // wrapperElement.classList.add('has-titlebar') -> not by default\n    containerElement.appendChild(wrapperElement)\n\n    // Create img element\n    const viewElement = document.createElement('img')\n    viewElement.decoding = 'sync'\n    viewElement.loading = 'eager'\n    viewElement.style.touchAction = 'none' // prevent default pan/zoom behavior\n    viewElement.ondragstart = () => false // prevent browser's built-in image drag\n\n    // Call super\n    super(viewElement, wrapperElement)\n    this.setThrottle(20) // 20ms -> max 50 move/wheel events per second\n\n    // Connect to the model, it will initialize it with the current size and frame-data\n    this.model = model\n    this.model.addView(this)\n  }\n\n  close () {\n    super.close()\n    this.model.removeView(this)\n  }\n\n  onEvent (event) {\n    if (event.type === 'resize') {\n      // Note that there can be multiple views that can possibly be individually resized.\n      // TODO: keep logical size in check between different views?\n      if (event.width * event.height <= 0) {\n        return // The element of a new view is temporarily zero-sized at initialization\n      }\n    } else if (event.type === 'close') {\n      return // we don't close when one view closes, only when the widget closes\n    } else if (event.type === 'show') {\n      this.isVisible = true\n      this.model.updateVisibility()\n    } else if (event.type === 'hide') {\n      this.isVisible = false\n      this.model.updateVisibility()\n    }\n\n    this.model.onEvent(event)\n  }\n}\n\n// anywidget lifecycle export\nexport default () => {\n  let model\n  return {\n    initialize (ctx) {\n      model = new RendercanvasAnywidgetModel(ctx.model)\n      // window.model = model // debug\n      return () => { model.close() }\n    },\n    render (ctx) {\n      const view = new AnywidgetRenderView(model, ctx.el)\n      return () => { view.close() }\n    }\n  }\n}\n\n\n", "_frame_feedback": {}, "_has_visible_views": false, "_model_module": "anywidget", "_model_module_version": "~0.11.*", "_model_name": "AnyModel", "_view_count": null, "_view_module": "anywidget", "_view_module_version": "~0.11.*", "_view_name": "AnyView", "css_height": "480px", "css_width": "640px", "cursor": "default", "has_titlebar": false, "layout": "IPY_MODEL_c1439c54bb6041ec989d55ac158ccd9a", "resizable": true, "tabbable": null, "title": "GraphsAndResults", "tooltip": null}}, "23c1ff8fb5f14af69f4395358ff7c3a5": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "20349ca7362d48cca8e5f6ce56db3e27": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_23c1ff8fb5f14af69f4395358ff7c3a5", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}
+</script></section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="create-load-scenarios.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Create and load scenarios</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="facility-to-satellite-access.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Access between facility and satellite calculator</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-a-new-STK-instance">Launch a new STK instance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Set-the-scenario-time-period">Set the scenario time period</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Adding-a-satellite-to-the-scenario">Adding a satellite to the scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Setup-data-providers-for-use-in-the-object-model">Setup data providers for use in the object model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Data-provider-%22PreData%22-inputs">Data provider “PreData” inputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Set-the-pre_data-property-on-the-IDataProvider-interface">Set the <code class="docutils literal notranslate"><span class="pre">pre_data</span></code> property on the <code class="docutils literal notranslate"><span class="pre">IDataProvider</span></code> interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Data-provider-time-inputs">Data provider time inputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Retrieve-the-data">Retrieve the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Retrieve-specific-elements">Retrieve specific elements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Traverse-the-result-data">Traverse the result data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Complete-the-output">Complete the output</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+
+  
+  <nav class="tocsection editthispage" aria-label="Edit this page">
+    <a href="https://github.com/ansys/pystk/blob/main/examples/results-graphs.py" rel="noopener noreferrer">
+      <i class="fa-solid fa-pencil" aria-hidden="true"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </nav>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+
+
+  <!-- Include desired assets -->
+  
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "minMatchCharLength": 2, "threshold": 0.2}');
+const SEARCH_FILE = "../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<!--
+  Theme Version Footer
+  Displays the Sphinx theme version and the last updated date.
+  Accessibility and semantic improvements included.
+-->
+<footer class="theme-version" aria-label="Theme version and last update">
+  <span>
+    
+      Built with the
+      <a href="https://sphinxdocs.ansys.com/version/stable/index.html" target="_blank" rel="noopener noreferrer">
+        Ansys Sphinx Theme
+      </a>
+      1.9.0.
+    
+  </span>
+  <br />
+  <span>Last updated on <time id="ast_build_date"></time></span>
+</footer>
+<script>
+  // Set the last updated date in a readable format
+  (function() {
+    var options = { day: "numeric", month: "long", year: "numeric" };
+    var ast_lastModifiedDate = new Date(document.lastModified);
+    var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+    var dateElem = document.getElementById("ast_build_date");
+    if (dateElem) {
+      dateElem.textContent = ast_build_date;
+    }
+  })();
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

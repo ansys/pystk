@@ -1,0 +1,1435 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Release notes &#8212; PySTK</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/ansys-sphinx-theme.css?v=5ffe81b6" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/ansys-sphinx-theme.css?v=5ffe81b6" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/css/highlight.css?v=e507d2d0" />
+    <link rel="stylesheet" type="text/css" href="_static/css/search.css?v=6f836f60" />
+    <link rel="stylesheet" type="text/css" href="_static/css/datatable.css?v=cb1cc588" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  
+  
+  
+
+  
+    <link href="_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="_static/jquery.js?v=5d32c60e"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="_static/documentation_options.js?v=5e9438ed"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'changelog';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://stk.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="_static/js/download.js?v=ef68161c"></script>
+    <link rel="icon" href="_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Artifacts" href="artifacts.html" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="main" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  <link rel="canonical" href="https://stk.docs.pyansys.com/version/stable/changelog.html" />
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PySTK - Home"/>
+    <img src="_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PySTK - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index.html" title="PySTK home">Home</a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav>
+</div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+  
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    
+<!--
+  Announcement Version Loader
+  Dynamically loads the announcement.html content into the announcement_msg div.
+-->
+<div id="announcement_msg" aria-live="polite"></div>
+<script>
+  // Fetch and inject the announcement HTML content
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status} Announcement.html file not found, Please ignore this, if you are in dev/stable documentation`);
+      }
+      return response.text();
+    })
+    .then((text) => {
+      var msgDiv = document.getElementById("announcement_msg");
+      if (msgDiv) {
+        msgDiv.innerHTML = text;
+      }
+    })
+    .catch((error) => {
+      // Log only unexpected fetch errors
+      if (!(error.message && error.message.startsWith("HTTP error: 404"))) {
+        console.error(`Fetch problem: ${error.message} Announcement.html could not be loaded.`);
+      }
+    });
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index.html" title="PySTK home">Home</a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav>
+</div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+  
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Release notes</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="release-notes">
+<span id="ref-release-notes"></span><h1>Release notes<a class="headerlink" href="#release-notes" title="Link to this heading">#</a></h1>
+<p>This document contains the release notes for the PySTK project.</p>
+<section id="april-17-2026">
+<h2><a class="reference external" href="https://github.com/ansys/pystk/releases/tag/v0.3.0">0.3.0</a> - April 17, 2026<a class="headerlink" href="#april-17-2026" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Added</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Switch the repo to STK 13.1.0</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/988">#988</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Dependencies</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Build: bump sphinxcontrib-mermaid from 1.1.0 to 1.2.2 in the doc group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/901">#901</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump ansys/actions from 10.2.0 to 10.2.2 in the actions group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/905">#905</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump sphinxcontrib-mermaid from 1.2.2 to 1.2.3 in the doc group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/910">#910</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump the doc group with 2 updates</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/914">#914</a>, <a class="reference external" href="https://github.com/ansys/pystk/pull/966">#966</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump the actions group with 2 updates</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/915">#915</a>, <a class="reference external" href="https://github.com/ansys/pystk/pull/921">#921</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump pytest from 9.0.1 to 9.0.2 in the tests group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/917">#917</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump codecov/codecov-action from 5.5.1 to 5.5.2 in the actions group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/918">#918</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump matplotlib from 3.10.7 to 3.10.8</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/919">#919</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump jupyterlab from 4.5.0 to 4.5.1 in the doc group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/920">#920</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump typer from 0.20.0 to 0.20.1</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/922">#922</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump typer from 0.20.1 to 0.21.0</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/923">#923</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump typer from 0.21.0 to 0.21.1</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/929">#929</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump build from 1.3.0 to 1.4.0</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/931">#931</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump plotly from 6.5.0 to 6.5.1</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/932">#932</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump the doc group across 1 directory with 2 updates</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/934">#934</a>, <a class="reference external" href="https://github.com/ansys/pystk/pull/964">#964</a>, <a class="reference external" href="https://github.com/ansys/pystk/pull/977">#977</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump plotly from 6.5.1 to 6.5.2</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/936">#936</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump actions/checkout from 6.0.1 to 6.0.2 in the actions group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/937">#937</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump bandit[toml] from 1.9.2 to 1.9.3</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/939">#939</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump ansys/actions from 10.2.3 to 10.2.4 in the actions group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/940">#940</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump actions/setup-python from 6.1.0 to 6.2.0 in the actions group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/942">#942</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump the doc group across 1 directory with 3 updates</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/943">#943</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump nbconvert from 7.16.6 to 7.17.0 in the doc group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/949">#949</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump ansys/actions from 10.2.4 to 10.2.5 in the actions group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/953">#953</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump typer from 0.21.1 to 0.23.0</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/956">#956</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump typer from 0.23.0 to 0.24.0</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/962">#962</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump ansys/actions from 10.2.5 to 10.2.6 in the actions group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/963">#963</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump ansys/actions from 10.2.6 to 10.2.7 in the actions group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/965">#965</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump typer from 0.24.0 to 0.24.1</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/967">#967</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump bandit[toml] from 1.9.3 to 1.9.4</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/969">#969</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump pytz from 2025.2 to 2026.1.post1 in the tests group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/971">#971</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump plotly from 6.5.2 to 6.6.0</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/972">#972</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump the actions group across 1 directory with 2 updates</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/973">#973</a>, <a class="reference external" href="https://github.com/ansys/pystk/pull/976">#976</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump ansys/actions from 10.2.9 to 10.2.10 in the actions group across 1 directory</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/980">#980</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump pytest-cov from 7.0.0 to 7.1.0 in the tests group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/981">#981</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump ansys/actions from 10.2.10 to 10.2.12 in the actions group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/982">#982</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump pytest-mpl from 0.18.0 to 0.19.0 in the tests group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/984">#984</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump build from 1.4.0 to 1.4.2</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/985">#985</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump codecov/codecov-action from 5.5.2 to 6.0.0 in the actions group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/986">#986</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump pytest from 9.0.2 to 9.0.3 in the tests group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/990">#990</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump pypa/gh-action-pypi-publish from 1.13.0 to 1.14.0 in the actions group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/991">#991</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump nbconvert from 7.17.0 to 7.17.1 in the doc group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/992">#992</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Documentation</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Docs: update broken link</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/908">#908</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Replaced broken link to RST documentation</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/944">#944</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Improve docker install documentation</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/958">#958</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Fixed</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Stop using docker network host</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/913">#913</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Link to docker compose release notes</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/927">#927</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Missing permissions</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/945">#945</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Installation path for STK 13.0 in windows containers</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/947">#947</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Pin tox to 4.38.0</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/960">#960</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Skip jupyter-rfb license compatibility check</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/979">#979</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Fix globe/map doc snapshots with latest jupyter_rfb</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/983">#983</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Maintenance</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Update CHANGELOG for v0.2.0</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/862">#862</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Chore: update CHANGELOG for v0.2.1</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/904">#904</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Update CHANGELOG for v0.1.3</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/909">#909</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Update copyright headers to reference 2026.</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/924">#924</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Re-enable vale for PR workflow</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/989">#989</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="december-03-2025">
+<h2><a class="reference external" href="https://github.com/ansys/pystk/releases/tag/v0.2.1">0.2.1</a> - December 03, 2025<a class="headerlink" href="#december-03-2025" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Added</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Hooks for YAML and pyproject.toml files</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/865">#865</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Switch the repo to STK 13.0.1</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/900">#900</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+Dependencies</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Bump pandas from 2.3.2 to 2.3.3</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/857">#857</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump ansys-sphinx-theme from 1.6.1 to 1.6.3 in the doc group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/859">#859</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump plotly from 6.3.0 to 6.3.1</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/863">#863</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump matplotlib from 3.10.6 to 3.10.7</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/868">#868</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Update pre-commit hooks and use hashed versions</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/871">#871</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump jupytext from 1.17.3 to 1.18.1 in the doc group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/875">#875</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump typer from 0.19.2 to 0.20.0</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/876">#876</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump jupyterlab from 4.4.9 to 4.4.10 in the doc group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/878">#878</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump the actions group across 1 directory with 3 updates</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/884">#884</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump vale from 3.12.0.2 to 3.13.0.0</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/885">#885</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump libcst from 1.8.5 to 1.8.6</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/888">#888</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump plotly from 6.3.1 to 6.4.0</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/889">#889</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump safety from 3.6.2 to 3.7.0</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/890">#890</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump the tests group across 1 directory with 2 updates</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/892">#892</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump plotly from 6.4.0 to 6.5.0</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/894">#894</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump the doc group across 1 directory with 4 updates</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/897">#897</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump bandit[toml] from 1.8.6 to 1.9.2</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/898">#898</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump the actions group across 1 directory with 2 updates</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/899">#899</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Build: bump ansys/actions from 10.1.5 to 10.2.0 in the actions group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/902">#902</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+Documentation</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Remove PyPI installation tab for development versions</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/870">#870</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Add instructions on how to create account</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/880">#880</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Disable the Show Source link in the sidebar</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/886">#886</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Only use wheelhouses for all dependencies</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/887">#887</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+Fixed</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Close widget before STK shutdown</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/864">#864</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Fix doc build</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/874">#874</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+Maintenance</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Label strategy for changelog fragments</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/872">#872</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Ci(release): use stable images</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/903">#903</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+Test</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Update tests to use local data</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/882">#882</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="october-09-2025">
+<h2><a class="reference external" href="https://github.com/ansys/pystk/releases/tag/v0.2.0">0.2.0</a> - October 09, 2025<a class="headerlink" href="#october-09-2025" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-11" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+Added</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Switch the repo to STK 13.0.0</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/837">#837</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-12" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-12">
+Dependencies</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Bump jupytext from 1.17.2 to 1.17.3 in the doc group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/819">#819</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump matplotlib from 3.10.5 to 3.10.6</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/822">#822</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump typer from 0.16.1 to 0.17.3</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/823">#823</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump jupyterlab from 4.4.6 to 4.4.7 in the doc group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/825">#825</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump pytest from 8.4.1 to 8.4.2 in the tests group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/826">#826</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump ansys-sphinx-theme from 1.6.0 to 1.6.1 in the doc group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/827">#827</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump the actions group across 1 directory with 4 updates</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/829">#829</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump pytest-cov from 6.2.1 to 6.3.0 in the tests group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/831">#831</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump typer from 0.17.3 to 0.17.4</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/832">#832</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump vale from 3.12.0.1 to 3.12.0.2</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/833">#833</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump pytest-cov from 6.3.0 to 7.0.0 in the tests group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/834">#834</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump libcst from 1.8.2 to 1.8.4</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/835">#835</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump ansys/actions from 10.0.20 to 10.1.1 in the actions group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/836">#836</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump ansys/actions from 10.1.1 to 10.1.2 in the actions group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/838">#838</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump ansys/actions from 10.1.2 to 10.1.3 in the actions group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/842">#842</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump typer from 0.17.4 to 0.19.1</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/843">#843</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump typer from 0.19.1 to 0.19.2</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/845">#845</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump safety from 3.6.1 to 3.6.2</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/846">#846</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump ansys/actions from 10.1.3 to 10.1.4 in the actions group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/847">#847</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump jupyterlab from 4.4.7 to 4.4.8 in the doc group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/849">#849</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump libcst from 1.8.4 to 1.8.5</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/850">#850</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump jupyterlab from 4.4.8 to 4.4.9 in the doc group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/853">#853</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-13">
+Fixed</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Fix building the STK docker images with latest docker which uses Bake</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/821">#821</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pedantic warnings</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/830">#830</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Use Python 3.10 for testing</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/840">#840</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Empty environment variable</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/844">#844</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Use runner name when starting a new container</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/848">#848</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Adjust container name in nightly build</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/851">#851</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Use raw link to display logo</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/852">#852</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Image name in tests job</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/855">#855</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Ignore python, jupyter, and PDF artifacts</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/860">#860</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-14" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-14">
+Maintenance</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Update CHANGELOG for v0.1.2</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/816">#816</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Setup multi-runners strategy</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/841">#841</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="december-05-2025">
+<h2><a class="reference external" href="https://github.com/ansys/pystk/releases/tag/v0.1.3">0.1.3</a> - December 05, 2025<a class="headerlink" href="#december-05-2025" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-15" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-15">
+Added</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Switch the 0.1 branch to stk12.10.1</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/907">#907</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="september-05-2025">
+<h2><a class="reference external" href="https://github.com/ansys/pystk/releases/tag/v0.1.2">0.1.2</a> - September 05, 2025<a class="headerlink" href="#september-05-2025" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-16">
+Added</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>More graph wrappers</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/794">#794</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-17" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-17">
+Dependencies</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Bump matplotlib from 3.10.3 to 3.10.5</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/788">#788</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump build from 1.2.2.post1 to 1.3.0</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/790">#790</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump actions/download-artifact from 4 to 5 in the actions group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/793">#793</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump actions/checkout from 4 to 5 in the actions group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/795">#795</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump plotly from 6.2.0 to 6.3.0</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/797">#797</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump the doc group across 1 directory with 2 updates</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/800">#800</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump pandas from 2.3.1 to 2.3.2</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/804">#804</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump jupyter-server from 2.16.0 to 2.17.0 in the doc group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/805">#805</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bump vale from 3.12.0.0 to 3.12.0.1</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/806">#806</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Bump ansys/actions from 10.0.15 to 10.0.16 in the actions group</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/810">#810</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-18" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-18">
+Documentation</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Alphabetize methods, properties in doc</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/786">#786</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Tweak migration guide</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/791">#791</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Add compatibility table</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/801">#801</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Fix <code class="docutils literal notranslate"><span class="pre">datatable</span></code> background style for dark theme</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/815">#815</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-19" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-19">
+Fixed</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Update codecov badge</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/789">#789</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Include wheelhouse artifacts in releases</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/792">#792</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Restore linkcheck for changelog</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/796">#796</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pin typer package to prevent AttributeError</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/807">#807</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Non-breaking space and invalid variable names</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/811">#811</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Invalid variable names</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/814">#814</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-20" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-20">
+Maintenance</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Update CHANGELOG for v0.1.1</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/785">#785</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Enable codecov</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/787">#787</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>General improvements</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/802">#802</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Update classifiers to include Python 3.10</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/808">#808</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="august-06-2025">
+<h2><a class="reference external" href="https://github.com/ansys/pystk/releases/tag/v0.1.1">0.1.1</a> - August 06, 2025<a class="headerlink" href="#august-06-2025" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-21" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-21">
+Added</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>First release of PySTK</p></td>
+<td><p><a class="reference external" href="https://github.com/ansys/pystk/pull/784">#784</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="artifacts.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Artifacts</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#april-17-2026">0.3.0 - April 17, 2026</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#december-03-2025">0.2.1 - December 03, 2025</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#october-09-2025">0.2.0 - October 09, 2025</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#december-05-2025">0.1.3 - December 05, 2025</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#september-05-2025">0.1.2 - September 05, 2025</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#august-06-2025">0.1.1 - August 06, 2025</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+
+  
+  <nav class="tocsection editthispage" aria-label="Edit this page">
+    <a href="https://github.com/ansys/pystk/blob/main/doc/source/changelog.rst" rel="noopener noreferrer">
+      <i class="fa-solid fa-pencil" aria-hidden="true"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </nav>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+
+
+  <!-- Include desired assets -->
+  
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "minMatchCharLength": 2, "threshold": 0.2}');
+const SEARCH_FILE = "_static/search.json";
+const ADVANCE_SEARCH_PATH = "search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<!--
+  Theme Version Footer
+  Displays the Sphinx theme version and the last updated date.
+  Accessibility and semantic improvements included.
+-->
+<footer class="theme-version" aria-label="Theme version and last update">
+  <span>
+    
+      Built with the
+      <a href="https://sphinxdocs.ansys.com/version/stable/index.html" target="_blank" rel="noopener noreferrer">
+        Ansys Sphinx Theme
+      </a>
+      1.9.0.
+    
+  </span>
+  <br />
+  <span>Last updated on <time id="ast_build_date"></time></span>
+</footer>
+<script>
+  // Set the last updated date in a readable format
+  (function() {
+    var options = { day: "numeric", month: "long", year: "numeric" };
+    var ast_lastModifiedDate = new Date(document.lastModified);
+    var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+    var dateElem = document.getElementById("ast_build_date");
+    if (dateElem) {
+      dateElem.textContent = ast_build_date;
+    }
+  })();
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
