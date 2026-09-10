@@ -22,7 +22,7 @@
 
 """Starts STK Engine and provides access to the Object Model root."""
 
-__all__ = ["STKEngine", "STKEngineApplication", "STKEngineTimerType", "GlobeVisualization", "MapVisualization"]
+__all__ = ["STKEngine", "STKEngineApplication", "STKEngineTimerType"]
 
 import atexit
 from ctypes import byref
@@ -51,9 +51,6 @@ from ..internal.stkxinitialization import STKXInitialize
 from ..stkobjects import STKObjectModelContext, STKObjectRoot
 from ..stkx import STKXApplication, STKXApplicationPartnerAccess
 from ..utilities.grpcutilities import GrpcCallBatcher
-from .visualization import GlobeVisualization, MapVisualization
-
-
 class STKEngineTimerType(IntEnum):
     """
     Specify the timer implementation to use.
