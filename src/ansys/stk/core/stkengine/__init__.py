@@ -51,6 +51,8 @@ from ..internal.stkxinitialization import STKXInitialize
 from ..stkobjects import STKObjectModelContext, STKObjectRoot
 from ..stkx import STKXApplication, STKXApplicationPartnerAccess
 from ..utilities.grpcutilities import GrpcCallBatcher
+
+
 class STKEngineTimerType(IntEnum):
     """
     Specify the timer implementation to use.

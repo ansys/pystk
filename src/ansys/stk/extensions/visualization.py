@@ -26,7 +26,6 @@ from __future__ import annotations
 
 from typing import Any
 
-
 __all__ = ["GlobeVisualization", "MapVisualization", "is_jupyter_environment"]
 
 
