@@ -7,6 +7,8 @@
 .. _PySTK labels: https://github.com/ansys/pystk/labels
 .. _docker/ directory: https://github.com/ansys/pystk/tree/docker/
 .. _code snippet directory: https://github.com/ansys/pystk/tree/main/tests/doc_snippets_tests
+.. _create and load scenarios example: https://github.com/ansys/pystk/blob/main/examples/create-load-scenarios.py
+.. _results and graphs example: https://github.com/ansys/pystk/blob/main/examples/results-graphs.py
 
 .. Ansys products
 
