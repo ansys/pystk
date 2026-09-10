@@ -30,7 +30,13 @@ __all__ = ["GlobeVisualization", "MapVisualization", "is_jupyter_environment"]
 
 
 def is_jupyter_environment() -> bool:
-    """Return ``True`` when running inside a Jupyter kernel."""
+    """Determine whether the active Python process runs in a Jupyter kernel.
+
+    Returns
+    -------
+    bool
+        ``True`` when running inside a Jupyter kernel. ``False`` otherwise.
+    """
     try:
         from IPython import get_ipython
     except ModuleNotFoundError:
@@ -60,6 +66,33 @@ class _VisualizationBase:
         backend: str = "auto",
         **kwargs,
     ):
+        """Initialize a visualization wrapper around a concrete UI backend.
+
+        Parameters
+        ----------
+        root : object, optional
+            Root object passed to the Jupyter widget backend. Required when
+            ``backend="jupyter"`` or when ``backend="auto"`` resolves to Jupyter.
+        parent : object, optional
+            Parent container passed to the Tk backend. Required when
+            ``backend="tk"`` or when ``backend="auto"`` resolves to Tk.
+        width : int, default: 800
+            Width of the visualization surface in pixels.
+        height : int, default: 600
+            Height of the visualization surface in pixels.
+        title : str, optional
+            Window title for backends that support it.
+        backend : {"auto", "jupyter", "tk"}, default: "auto"
+            Backend selection strategy.
+        **kwargs
+            Additional keyword arguments forwarded to the Tk backend constructor.
+
+        Raises
+        ------
+        ValueError
+            Raised when a required backend argument is not provided or when
+            ``backend`` is not one of ``"auto"``, ``"jupyter"``, or ``"tk"``.
+        """
         self._backend = self._create_backend(
             root=root,
             parent=parent,
@@ -72,7 +105,13 @@ class _VisualizationBase:
 
     @property
     def backend(self) -> Any:
-        """Return the concrete backend object."""
+        """Return the concrete backend instance selected for this visualization.
+
+        Returns
+        -------
+        typing.Any
+            Backend object that implements the underlying visualization behavior.
+        """
         return self._backend
 
     def _create_backend(
@@ -114,7 +153,14 @@ class _VisualizationBase:
         )
 
     def show(self):
-        """Render the current visualization."""
+        """Render the current visualization if the backend exposes ``show``.
+
+        Returns
+        -------
+        typing.Any
+            Return value from ``backend.show()`` when available; otherwise this
+            visualization wrapper instance.
+        """
         show_method = getattr(self._backend, "show", None)
         if callable(show_method):
             return show_method()
@@ -125,14 +171,64 @@ class _VisualizationBase:
 
 
 class GlobeVisualization(_VisualizationBase):
-    """Create a globe visualization in Jupyter or Tk automatically."""
+    """Create a globe visualization using either the Jupyter or Tk backend.
+
+    Parameters
+    ----------
+    root : object, optional
+        Root object passed to the Jupyter ``GlobeWidget`` backend.
+    parent : object, optional
+        Parent Tk object passed to the ``GlobeControl`` backend.
+    width : int, default: 800
+        Width of the visualization surface in pixels.
+    height : int, default: 600
+        Height of the visualization surface in pixels.
+    title : str, optional
+        Window title for the Jupyter backend when supported.
+    backend : {"auto", "jupyter", "tk"}, default: "auto"
+        Backend selection strategy. ``"auto"`` selects Jupyter when running in a
+        notebook kernel; otherwise Tk.
+    **kwargs
+        Additional keyword arguments forwarded to the Tk backend.
+
+    Raises
+    ------
+    ValueError
+        Raised when ``root`` or ``parent`` is missing for the selected backend,
+        or when ``backend`` is not a supported option.
+    """
 
     _jupyter_backend_name = "GlobeWidget"
     _tk_backend_name = "GlobeControl"
 
 
 class MapVisualization(_VisualizationBase):
-    """Create a map visualization in Jupyter or Tk automatically."""
+    """Create a map visualization using either the Jupyter or Tk backend.
+
+    Parameters
+    ----------
+    root : object, optional
+        Root object passed to the Jupyter ``MapWidget`` backend.
+    parent : object, optional
+        Parent Tk object passed to the ``MapControl`` backend.
+    width : int, default: 800
+        Width of the visualization surface in pixels.
+    height : int, default: 600
+        Height of the visualization surface in pixels.
+    title : str, optional
+        Window title for the Jupyter backend when supported.
+    backend : {"auto", "jupyter", "tk"}, default: "auto"
+        Backend selection strategy. ``"auto"`` selects Jupyter when running in a
+        notebook kernel; otherwise Tk.
+    **kwargs
+        Additional keyword arguments forwarded to the Tk backend.
+
+    Raises
+    ------
+    ValueError
+        Raised when ``root`` or ``parent`` is missing for the selected backend,
+        or when ``backend`` is not a supported option.
+    """
 
     _jupyter_backend_name = "MapWidget"
     _tk_backend_name = "MapControl"
