@@ -22,7 +22,7 @@
 
 import pytest
 
-from ansys.stk.core.stkengine.visualization import GlobeVisualization, MapVisualization
+from ansys.stk.extensions.visualization import GlobeVisualization, MapVisualization
 
 
 class _FakeJupyterBackend:
@@ -45,7 +45,7 @@ class _FakeTkBackend:
 
 
 def test_globe_visualization_uses_jupyter_backend(monkeypatch):
-    monkeypatch.setattr("ansys.stk.core.stkengine.visualization.is_jupyter_environment", lambda: True)
+    monkeypatch.setattr("ansys.stk.extensions.visualization.is_jupyter_environment", lambda: True)
     monkeypatch.setattr(GlobeVisualization, "_load_backends", lambda self: (_FakeJupyterBackend, _FakeTkBackend))
 
     visualization = GlobeVisualization(root="root", width=640, height=480, title="A")
@@ -56,7 +56,7 @@ def test_globe_visualization_uses_jupyter_backend(monkeypatch):
 
 
 def test_map_visualization_uses_tk_backend(monkeypatch):
-    monkeypatch.setattr("ansys.stk.core.stkengine.visualization.is_jupyter_environment", lambda: False)
+    monkeypatch.setattr("ansys.stk.extensions.visualization.is_jupyter_environment", lambda: False)
     monkeypatch.setattr(MapVisualization, "_load_backends", lambda self: (_FakeJupyterBackend, _FakeTkBackend))
 
     visualization = MapVisualization(parent="window", width=320, height=200)
@@ -68,7 +68,7 @@ def test_map_visualization_uses_tk_backend(monkeypatch):
 
 
 def test_visualization_requires_root_for_jupyter(monkeypatch):
-    monkeypatch.setattr("ansys.stk.core.stkengine.visualization.is_jupyter_environment", lambda: True)
+    monkeypatch.setattr("ansys.stk.extensions.visualization.is_jupyter_environment", lambda: True)
     monkeypatch.setattr(GlobeVisualization, "_load_backends", lambda self: (_FakeJupyterBackend, _FakeTkBackend))
 
     with pytest.raises(ValueError, match="root"):
@@ -76,7 +76,7 @@ def test_visualization_requires_root_for_jupyter(monkeypatch):
 
 
 def test_visualization_requires_parent_for_tk(monkeypatch):
-    monkeypatch.setattr("ansys.stk.core.stkengine.visualization.is_jupyter_environment", lambda: False)
+    monkeypatch.setattr("ansys.stk.extensions.visualization.is_jupyter_environment", lambda: False)
     monkeypatch.setattr(MapVisualization, "_load_backends", lambda self: (_FakeJupyterBackend, _FakeTkBackend))
 
     with pytest.raises(ValueError, match="parent"):
@@ -84,7 +84,7 @@ def test_visualization_requires_parent_for_tk(monkeypatch):
 
 
 def test_visualization_rejects_invalid_backend(monkeypatch):
-    monkeypatch.setattr("ansys.stk.core.stkengine.visualization.is_jupyter_environment", lambda: False)
+    monkeypatch.setattr("ansys.stk.extensions.visualization.is_jupyter_environment", lambda: False)
     monkeypatch.setattr(GlobeVisualization, "_load_backends", lambda self: (_FakeJupyterBackend, _FakeTkBackend))
 
     with pytest.raises(ValueError, match="backend"):

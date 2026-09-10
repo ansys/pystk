@@ -102,8 +102,8 @@ Tkinter globe control, map control, and graphics analysis control
 This section describes how to use PySTK with the Tkinter :py:class:`~ansys.stk.core.stkengine.tkcontrols.GlobeControl`, :py:class:`~ansys.stk.core.stkengine.tkcontrols.MapControl`, and :py:class:`~ansys.stk.core.stkengine.tkcontrols.GfxAnalysisControl` classes.
 
 If you need a single API that works in both notebook and Tkinter workflows, use
-:py:class:`~ansys.stk.core.stkengine.GlobeVisualization` and
-:py:class:`~ansys.stk.core.stkengine.MapVisualization`. These helpers
+:py:class:`~ansys.stk.extensions.GlobeVisualization` and
+:py:class:`~ansys.stk.extensions.MapVisualization`. These helpers
 automatically select the Jupyter widget backend when running in a notebook
 kernel and the Tkinter control backend otherwise.
 
