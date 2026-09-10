@@ -1,4 +1,5 @@
 # # GEO Orbit Phasing
+"""PySTK tutorial example for geostationary orbit phasing analysis."""
 #
 # This tutorial provides a practical example on how to solve a phasing maneuver problem using Python.
 #

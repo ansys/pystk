@@ -1,4 +1,5 @@
 # # Multifunction radar design
+"""PySTK tutorial example for multifunction radar design."""
 
 # This tutorial demonstrates how to simulate and design a multifunction radar system using PySTK. It is inspired by [this](https://help.agi.com/stk/Content/training/MFR_Tutorial.htm) tutorial.
 
