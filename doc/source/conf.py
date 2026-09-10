@@ -192,11 +192,6 @@ linkcheck_ignore = [
     # Spurious failures
     r"https://www.khronos.org/collada/",
     r"https://www.khronos.org/gltf/",
-    # Ignore links to the examples pdf/ipynb/py files as they are not
-    # available until documentation is not published
-    rf"https://{cname}/version/{release}/examples/.*\.pdf",
-    rf"https://{cname}/version/{release}/examples/.*\.ipynb",
-    rf"https://{cname}/version/{release}/examples/.*\.py",
 ]
 
 # -- Declare the Jinja context -----------------------------------------------
@@ -207,6 +202,17 @@ if not BUILD_API:
 BUILD_EXAMPLES = True if os.environ.get("BUILD_EXAMPLES", "true") == "true" else False
 if not BUILD_EXAMPLES:
     exclude_patterns.extend(["examples/**"])
+    linkcheck_ignore.extend(
+        [
+            # Ignore links to the examples pdf/ipynb/py files as they are not
+            # available until documentation is published
+            rf"https://{cname}/version/{release}/examples/.*\.pdf",
+            rf"https://{cname}/version/{release}/examples/.*\.ipynb",
+            rf"https://{cname}/version/{release}/examples/.*\.py",
+            r"https://github\.com/ansys/pystk/blob/main/examples/create-load-scenarios\.py",
+            r"https://github\.com/ansys/pystk/blob/main/examples/results-graphs\.py",
+        ]
+    )
 else:
     extensions.extend(["myst_parser", "nbsphinx"])
     nbsphinx_execute = "always"
