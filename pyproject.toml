@@ -179,25 +179,6 @@ lint.pep8-naming.extend-ignore-names = [ "leave_*", "visit_*" ]
 # Settings: https://docs.astral.sh/ruff/settings/#lintpydocstyle
 lint.pydocstyle.convention = "numpy"
 
-[tool.interrogate]
-exclude = [
-  "doc",
-  "examples",
-  "scripts",
-  "src/ansys/stk/core/internal",
-  "tests",
-]
-fail-under = 70
-ignore-init-method = true
-ignore-init-module = true
-ignore-magic = true
-ignore-module = true
-ignore-nested-functions = true
-ignore-private = true
-ignore-property-decorators = true
-ignore-semiprivate = true
-verbose = 1
-
 [tool.coverage.paths]
 source = [
   "src",
@@ -259,3 +240,18 @@ showcontent = true
 directory = "test"
 name = "Test"
 showcontent = true
+
+[tool.interrogate]
+exclude = [
+  "src/ansys/stk/core/internal",
+  "tests",
+]
+fail-under = 100
+ignore-init-method = true
+ignore-init-module = true
+ignore-magic = true
+ignore-nested-functions = true
+ignore-private = true
+ignore-property-decorators = true
+ignore-semiprivate = true
+verbose = 1

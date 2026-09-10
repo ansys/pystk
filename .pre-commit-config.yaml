@@ -23,7 +23,7 @@ repos:
     rev: 1.7.0
     hooks:
       - id: interrogate
-        args: [--config=pyproject.toml]
+        args: [--config=pyproject.toml, src/ansys/stk/extensions, examples, scripts]
         pass_filenames: false
 
   - repo: https://github.com/zizmorcore/zizmor-pre-commit

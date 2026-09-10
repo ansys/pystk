@@ -1,4 +1,5 @@
 # # Solar eclipse coverage: path of totality over Spain
+"""PySTK tutorial example for solar-eclipse path-of-totality analysis."""
 
 # This tutorial demonstrates how to compute and visualize the contour map of the totality duration of a solar eclipse using Python and PySTK. It is inspired by [this training](https://register.agi.com/training/on-demand/solar-eclipse/).
 

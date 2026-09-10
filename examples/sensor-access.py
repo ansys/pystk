@@ -1,4 +1,5 @@
 # # Sensors and access
+"""PySTK tutorial example for sensor modeling and access analysis."""
 
 # This tutorial demonstrates how to use different types of sensors to analyze [access](./facility-to-satellite-access.py#What-is-access?) using Python and PySTK. It is inspired by [this training](https://help.agi.com/stk/Content/training/IntroSensors.htm).
 

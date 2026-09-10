@@ -305,7 +305,9 @@ All examples submitted to the PySTK GitHub must pass a code-style check, which e
 
 This command formats any files committed so that they follow the code-style rules. It is then possible to stage the formatted files and commit them.
 
-To run only the docstring coverage check, run `tox -e docstring-coverage`.
+The docstring coverage check is part of the same `tox -e code-style` run and
+requires 100% coverage for `src/ansys/stk/extensions`, `examples`, and
+`scripts`.
 
 ## Additional documentation
 
