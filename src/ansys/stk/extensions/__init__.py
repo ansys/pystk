@@ -25,3 +25,7 @@ PySTK extensions package.
 
 A set of high-level workflows for automating common tasks with STK.
 """
+
+from .visualization import GlobeVisualization, MapVisualization
+
+__all__ = ["GlobeVisualization", "MapVisualization"]
