@@ -1,4 +1,5 @@
 # # Radio Frequency (RF) Spectrum Filters
+"""PySTK tutorial example for RF spectrum filter analysis."""
 
 # This tutorial demonstrates how to use STK's Communications capability and RF spectrum filters to enable transmission reception using PySTK. It is inspired by [this tutorial](https://help.agi.com/stk/Content/training/DetailedInterferenceAnalysis.htm).
 

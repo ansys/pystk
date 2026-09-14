@@ -1,4 +1,5 @@
 # # Satellite coverage area calculator
+"""PySTK tutorial example for satellite coverage area calculation."""
 #
 # This tutorial demonstrates how to calculate satellite coverage using Python and PySTK. It is inspired by [this training](https://help.agi.com/stk/Content/training/GetStart_7_Coverage.htm).
 #

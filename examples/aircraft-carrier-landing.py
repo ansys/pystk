@@ -1,4 +1,5 @@
 # # Multi-aircraft carrier landing with Aviator
+"""PySTK tutorial example for multi-aircraft carrier landing with Aviator."""
 
 # This tutorial demonstrates how to plan a multi-aircraft mission using Python, PySTK, and Aviator. It is inspired by a Python example included with the STK install.
 

@@ -1,4 +1,5 @@
 # # Bi-elliptic transfer
+"""PySTK tutorial example for solving a bi-elliptic transfer."""
 #
 # This tutorial provides a practical example on how to solve a bi-elliptic transfer problem using Python.
 #

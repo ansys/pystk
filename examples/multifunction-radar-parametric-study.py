@@ -1,4 +1,5 @@
 # # Multifunction radar parametric study
+"""PySTK tutorial example for multifunction radar parametric studies."""
 
 # This tutorial demonstrates how to conduct a parametric study on a multifunction radar system using PySTK. It is inspired by [this tutorial]( https://help.agi.com/stk/Content/training/MFR_Analyzer.htm).
 
