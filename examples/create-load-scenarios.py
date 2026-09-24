@@ -1,4 +1,5 @@
 # # Create and load scenarios
+"""PySTK tutorial example for creating and loading STK scenarios."""
 
 # This tutorial explains how to use PySTK to create and load STK scenarios. PySTK can automate the setup of complex scenarios, load existing scenarios, and interact with various objects within STK, such as satellites, aircraft, and ground stations. Configure and analyze scenarios without needing to manually input data or interact with the STK graphical user interface.
 
