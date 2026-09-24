@@ -37,11 +37,8 @@ dependencies = [
 ]
 
 optional-dependencies.all = [
-  # HACK: self-referential extra. Pip's resolver models `ansys-stk[all]` as an
-  # `ExtrasCandidate` that adds a hard dependency on the base `ansys-stk`
-  # candidate, so `ansys-stk[extensions,grpc,jupyter,migration]` is unified at
-  # the same version being installed instead of resolving to the latest.
-  # See: https://github.com/pypa/pip/blob/main/src/pip/_internal/resolution/resolvelib/candidates.py (class ExtrasCandidate).
+  # NOTE: self-referential extras are supported by pip's requirement specifiers.
+  # See: https://pip.pypa.io/en/latest/reference/requirement-specifiers/#self-referential-extras
   "ansys-stk[extensions,grpc,jupyter,migration]",
 ]
 optional-dependencies.core = [
