@@ -90,7 +90,7 @@ scripts.pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistan
 vulnerabilities = [
   "bandit[toml]==1.9.4",
   "safety==3.8.1",
-  "typer==0.27.2",
+  "typer==0.25.0",
 ]
 tests = [
   "numpy==2.2.6",
@@ -129,6 +129,9 @@ docstyle = [
   "rst2html==2020.7.4",
   "vale==3.19.0.0",
 ]
+
+[tool.uv]
+environments = [ "python_version >= '3.11'" ]
 
 [tool.flit.module]
 name = "ansys.stk"

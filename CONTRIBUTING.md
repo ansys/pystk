@@ -34,16 +34,22 @@ versions, interpreters, and platforms.
 
 ### Installing Tox
 
-To install Tox, you can use the following command:
+To install Tox with uv and enable uv-backed environments, use:
 
 ```console
-python -m pip install tox
+uv tool install tox --with tox-uv
 ```
 
 You can verify the installation by running:
 
 ```console
 tox --version
+```
+
+To generate or refresh the project lock file for development, run:
+
+```console
+uv lock --all-extras --group tests --group doc --group docstyle --group vulnerabilities
 ```
 
 ### Listing Tox environments
