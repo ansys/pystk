@@ -57,10 +57,10 @@ propagator.propagate()  # To propagate the orbit
 # It is possible to display the created scenario by using PySTK widgets for Jupyter:
 
 # + tags=["nbsphinx-thumbnail"]
-from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
+from ansys.stk.extensions import GlobeVisualization
 
 
-plotter = GlobeWidget(root, 640, 480)
+plotter = GlobeVisualization(root=root, width=640, height=480)
 plotter.show()
 # -
 
