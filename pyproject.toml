@@ -39,7 +39,7 @@ dependencies = [
 optional-dependencies.all = [
   # NOTE: self-referential extras are supported by pip's requirement specifiers.
   # See: https://pip.pypa.io/en/latest/reference/requirement-specifiers/#self-referential-extras
-  "ansys-stk[extensions,grpc,jupyter,migration]",
+  "ansys-stk[core,extensions,grpc,jupyter,migration]",
 ]
 optional-dependencies.core = [
   # NOTE: no dependencies are installed by default ensuring a dependency-free installation of ansys-stk[core]
