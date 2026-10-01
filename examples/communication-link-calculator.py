@@ -1,4 +1,5 @@
 # # Communication link budget calculator
+"""PySTK tutorial example for communication link budget analysis."""
 
 # This tutorial demonstrates how to model a communications system including transmitters and receivers, and calculate link budgets considering factors like terrain, rain models, and atmospheric losses using Python and PySTK. It is inspired by [this](https://help.agi.com/stk/Content/training/StartCommunications.htm) tutorial.
 

@@ -1,4 +1,5 @@
 # # Porkchop plots
+"""PySTK tutorial example for generating porkchop plots."""
 #
 # This tutorial showcases how to create a porkchop plot using Python and PySTK.
 #

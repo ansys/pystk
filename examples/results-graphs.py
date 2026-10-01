@@ -1,4 +1,5 @@
 # # Results and graphs
+"""PySTK tutorial example for results extraction and graphing."""
 
 # This tutorial demonstrates how the STK object model provides direct access to the data provider tools exposed by each object in STK that form the foundation of the report styles in the GUI.
 

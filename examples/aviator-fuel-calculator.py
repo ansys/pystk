@@ -1,4 +1,5 @@
 # # Commercial aircraft fuel calculator with Aviator
+"""PySTK tutorial example for commercial aircraft fuel analysis with Aviator."""
 
 # This tutorial demonstrates how to use Aviator to model an aircraft's flight and determine its fuel usage using Python and PySTK. It is inspired by [this training](https://help.agi.com/stk/Content/training/StartAMM.htm).
 

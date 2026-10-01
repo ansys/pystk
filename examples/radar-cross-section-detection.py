@@ -1,4 +1,5 @@
 # # Radar cross section detection calculator
+"""PySTK tutorial example for radar cross-section detection analysis."""
 
 # This tutorial demonstrates how to determine a radar's ability to track differently sized targets with varying radar cross sections using Python and PySTK. It is inspired by [this](https://help.agi.com/stk/Content/training/StartRadar.htm) tutorial.
 
