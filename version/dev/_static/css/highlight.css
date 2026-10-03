@@ -1,0 +1,21 @@
+@import "../../ansys-sphinx-theme.css";
+
+/* Do not show number cells */
+.nbinput .prompt,
+.nboutput .prompt {
+    display: none;
+}
+
+/* Center output notebook images */
+.nboutput img {
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+/* Remove the 'snapshot' label in the JupyterWidget snapshots */
+.nboutput img + * {
+    display: none;
+}
+
+/* Ensure that text in the code blocks has the desired font-size */
+.highlight { font-size: 1rem; background: #f0f0f0 !important; }
