@@ -98,24 +98,24 @@ tests = [
   "pytest==9.1.1",
   "pytest-cov==7.1.0",
   "pytest-mpl==0.19.0",
-  "pytz==2026.3.post1",
+  "pytz==2026.4",
   "scipy==1.15.3",
 ]
 doc = [
   "ansys-sphinx-theme==1.9.0",
-  "build==1.6.0",
+  "build==1.6.1",
   "ipykernel==7.3.0",
-  "jupyter-server==2.21.0",
-  "jupyterlab==4.6.3",
+  "jupyter-server==2.21.1",
+  "jupyterlab==4.6.4",
   "jupytext==1.19.5",
   "libcst==1.9.0",
   "matplotlib==3.10.9",
   "myst-parser==4.0.1",
   "nbconvert==7.17.1",
   "nbsphinx==0.9.8",
-  "numpydoc==1.10.0",
+  "numpydoc==1.11.0",
   "pandas==2.3.3",
-  "plotly==7.0.0",
+  "plotly==7.1.0",
   "scipy==1.15.3",
   "sphinx==8.2.3",
   "sphinx-copybutton==0.5.2",
@@ -127,7 +127,7 @@ doc = [
 ]
 docstyle = [
   "rst2html==2020.7.4",
-  "vale==3.19.0.0",
+  "vale==3.22.0.0",
 ]
 
 [tool.flit.module]
