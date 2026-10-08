@@ -130,9 +130,6 @@ docstyle = [
   "vale==3.21.0.0",
 ]
 
-[tool.uv]
-environments = [ "python_version >= '3.11'" ]
-
 [tool.flit.module]
 name = "ansys.stk"
 
@@ -243,3 +240,6 @@ showcontent = true
 directory = "test"
 name = "Test"
 showcontent = true
+
+[tool.uv]
+environments = [ "python_version >= '3.11'" ]
