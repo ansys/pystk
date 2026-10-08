@@ -90,31 +90,226 @@ class NativeContainerMethods:
             jni_core_dll_path = stkx_dll_path.parent / "AgJNICore.dll"
             return str(jni_core_dll_path)
     def create_container(self, progid):
+        """Create a native STK control container.
+
+        Parameters
+        ----------
+        progid : str
+            Programmatic identifier for the STK control.
+
+        Returns
+        -------
+        ctypes.c_void_p
+            Pointer to the native container.
+        """
         return self.AgPythonCreateContainer(LPVOID(None), LPVOID(None), LPCWSTR(progid))
     def attach_container(self, container, winid, display):
+        """Attach a native container to a window.
+
+        Parameters
+        ----------
+        container : int
+            Pointer to the native container.
+        winid : int
+            Native window identifier.
+        display : int
+            Pointer to the native display.
+        """
         self.Java_agi_core_awt_AgAwtNativeContainer_AttachContainer(LPVOID(None), LPVOID(None), winid, display, LPVOID(container))
     def resize_container(self, container, x, y, width, height):
+        """Resize a native container.
+
+        Parameters
+        ----------
+        container : int
+            Pointer to the native container.
+        x : int
+            Horizontal position of the container.
+        y : int
+            Vertical position of the container.
+        width : int
+            Width of the container.
+        height : int
+            Height of the container.
+        """
         self.Java_agi_core_awt_AgAwtNativeContainer_ResizeContainer(LPVOID(None), LPVOID(None), LPVOID(container), INT(x), INT(y), INT(width), INT(height))
     def get_unknown(self, container):
+        """Get the IUnknown pointer for a native container.
+
+        Parameters
+        ----------
+        container : int
+            Pointer to the native container.
+
+        Returns
+        -------
+        ctypes.c_void_p
+            Pointer to the container's IUnknown interface.
+        """
         return self.AgPythonGetIAgUnknown(LPVOID(None), LPVOID(None), LPVOID(container))
     def detach_container(self, container):
+        """Detach a native container from its window.
+
+        Parameters
+        ----------
+        container : int
+            Pointer to the native container.
+        """
         self.Java_agi_core_awt_AgAwtNativeContainer_DetachContainer(LPVOID(None), LPVOID(None), LPVOID(container))
     def release_container(self, container):
+        """Release a native container.
+
+        Parameters
+        ----------
+        container : int
+            Pointer to the native container.
+        """
         self.Java_agi_core_awt_AgAwtNativeContainer_ReleaseContainer(LPVOID(None), LPVOID(None), LPVOID(container))
     if os.name!="nt":
         def paint(self, container):
+            """Paint a native container.
+
+            Parameters
+            ----------
+            container : int
+                Pointer to the native container.
+            """
             self.Java_agi_core_awt_AgAwtNativeContainer_Paint(LPVOID(None), LPVOID(None), LPVOID(container))
         def mouse_pressed(self, container, x, y, left_button_down, middle_button_down, right_button_down, ctrl_key_down, alt_key_down, shift_key_down):
+            """Forward a mouse-button press to a native container.
+
+            Parameters
+            ----------
+            container : int
+                Pointer to the native container.
+            x : int
+                Horizontal pointer coordinate.
+            y : int
+                Vertical pointer coordinate.
+            left_button_down : bool
+                Whether the left mouse button is pressed.
+            middle_button_down : bool
+                Whether the middle mouse button is pressed.
+            right_button_down : bool
+                Whether the right mouse button is pressed.
+            ctrl_key_down : bool
+                Whether the Ctrl key is pressed.
+            alt_key_down : bool
+                Whether the Alt key is pressed.
+            shift_key_down : bool
+                Whether the Shift key is pressed.
+            """
             self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseAdapter_MousePressed(LPVOID(None), LPVOID(None), LPVOID(container), INT(x), INT(y), BOOL(left_button_down), BOOL(middle_button_down), BOOL(right_button_down), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
         def mouse_released(self, container, x, y, left_button_down, middle_button_down, right_button_down, ctrl_key_down, alt_key_down, shift_key_down):
+            """Forward a mouse-button release to a native container.
+
+            Parameters
+            ----------
+            container : int
+                Pointer to the native container.
+            x : int
+                Horizontal pointer coordinate.
+            y : int
+                Vertical pointer coordinate.
+            left_button_down : bool
+                Whether the left mouse button is pressed.
+            middle_button_down : bool
+                Whether the middle mouse button is pressed.
+            right_button_down : bool
+                Whether the right mouse button is pressed.
+            ctrl_key_down : bool
+                Whether the Ctrl key is pressed.
+            alt_key_down : bool
+                Whether the Alt key is pressed.
+            shift_key_down : bool
+                Whether the Shift key is pressed.
+            """
             self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseAdapter_MouseReleased(LPVOID(None), LPVOID(None), LPVOID(container), INT(x), INT(y), BOOL(left_button_down), BOOL(middle_button_down), BOOL(right_button_down), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
         def mouse_moved(self, container, x, y, left_button_down, middle_button_down, right_button_down, ctrl_key_down, alt_key_down, shift_key_down):
+            """Forward mouse movement to a native container.
+
+            Parameters
+            ----------
+            container : int
+                Pointer to the native container.
+            x : int
+                Horizontal pointer coordinate.
+            y : int
+                Vertical pointer coordinate.
+            left_button_down : bool
+                Whether the left mouse button is pressed.
+            middle_button_down : bool
+                Whether the middle mouse button is pressed.
+            right_button_down : bool
+                Whether the right mouse button is pressed.
+            ctrl_key_down : bool
+                Whether the Ctrl key is pressed.
+            alt_key_down : bool
+                Whether the Alt key is pressed.
+            shift_key_down : bool
+                Whether the Shift key is pressed.
+            """
             self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseMotionAdapter_MouseMoved(LPVOID(None), LPVOID(None), LPVOID(container), INT(x), INT(y), BOOL(left_button_down), BOOL(middle_button_down), BOOL(right_button_down), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
         def mouse_wheel_moved(self, container, x, y, ticks, left_button_down, middle_button_down, right_button_down, ctrl_key_down, alt_key_down, shift_key_down):
+            """Forward mouse-wheel movement to a native container.
+
+            Parameters
+            ----------
+            container : int
+                Pointer to the native container.
+            x : int
+                Horizontal pointer coordinate.
+            y : int
+                Vertical pointer coordinate.
+            ticks : int
+                Number of wheel ticks.
+            left_button_down : bool
+                Whether the left mouse button is pressed.
+            middle_button_down : bool
+                Whether the middle mouse button is pressed.
+            right_button_down : bool
+                Whether the right mouse button is pressed.
+            ctrl_key_down : bool
+                Whether the Ctrl key is pressed.
+            alt_key_down : bool
+                Whether the Alt key is pressed.
+            shift_key_down : bool
+                Whether the Shift key is pressed.
+            """
             self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseWheelAdapter_MouseWheelMoved(LPVOID(None), LPVOID(None), LPVOID(container), INT(x), INT(y), INT(ticks), BOOL(left_button_down), BOOL(middle_button_down), BOOL(right_button_down), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
         def key_pressed(self, container, key_code, ctrl_key_down, alt_key_down, shift_key_down):
+            """Forward a key press to a native container.
+
+            Parameters
+            ----------
+            container : int
+                Pointer to the native container.
+            key_code : int
+                Native key code.
+            ctrl_key_down : bool
+                Whether the Ctrl key is pressed.
+            alt_key_down : bool
+                Whether the Alt key is pressed.
+            shift_key_down : bool
+                Whether the Shift key is pressed.
+            """
             self.AgPythonKeyPressed(LPVOID(None), LPVOID(None), LPVOID(container), INT(key_code), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
         def key_released(self, container, key_code, ctrl_key_down, alt_key_down, shift_key_down):
+            """Forward a key release to a native container.
+
+            Parameters
+            ----------
+            container : int
+                Pointer to the native container.
+            key_code : int
+                Native key code.
+            ctrl_key_down : bool
+                Whether the Ctrl key is pressed.
+            alt_key_down : bool
+                Whether the Alt key is pressed.
+            shift_key_down : bool
+                Whether the Shift key is pressed.
+            """
             self.AgPythonKeyReleased(LPVOID(None), LPVOID(None), LPVOID(container), INT(key_code), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
 
 class ControlBase(Frame):
