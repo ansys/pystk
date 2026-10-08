@@ -101,6 +101,12 @@ Tkinter globe control, map control, and graphics analysis control
 -----------------------------------------------------------------
 This section describes how to use PySTK with the Tkinter :py:class:`~ansys.stk.core.stkengine.tkcontrols.GlobeControl`, :py:class:`~ansys.stk.core.stkengine.tkcontrols.MapControl`, and :py:class:`~ansys.stk.core.stkengine.tkcontrols.GfxAnalysisControl` classes.
 
+If you need a single API that works in both notebook and Tkinter workflows, use
+:py:class:`~ansys.stk.extensions.GlobeVisualization` and
+:py:class:`~ansys.stk.extensions.MapVisualization`. These helpers
+automatically select the Jupyter widget backend when running in a notebook
+kernel and the Tkinter control backend otherwise.
+
 Create a Tkinter window with a map control and a globe control
 ``````````````````````````````````````````````````````````````
 
@@ -150,4 +156,3 @@ To attach to a running STKRuntime application via gRPC, you can use :py:meth:`~a
   :dedent:
 
 If you need to configure the gRPC connection with STKRuntime, the :py:meth:`~ansys.stk.core.stkruntime.STKRuntime.attach_to_application` method provides additional arguments such as the gRPC host, port, and timeout.
-
