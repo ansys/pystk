@@ -84,6 +84,7 @@ class AsyncioTimerManager(object):
             self.next_proc = time.perf_counter() + self.interval
 
         def fire(self):
+            """Invoke the timer callback when its interval has elapsed."""
             if time.perf_counter() >= self.next_proc:
                 self.callback(self.id)
                 self._reset()
@@ -114,6 +115,7 @@ class AsyncioTimerManager(object):
             self._delete_timer_cfunc, c_void_p())
 
     def terminate(self):
+        """Remove all registered timers."""
         self._timers.clear()
 
     def __install_timer(self, milliseconds, timer_proc, callback_data):
@@ -380,6 +382,13 @@ class WidgetBase(RemoteFrameBuffer):
         return (x, y)
 
     def handle_event(self, event):
+        """Process a remote frame buffer input event.
+
+        Parameters
+        ----------
+        event : dict
+            Event data produced by the Jupyter remote frame buffer.
+        """
         if threading.get_native_id() != self.stk_main_thread:
             asyncio.run_coroutine_threadsafe(self.handle_event_coroutine(event), self.loop)
         else:
@@ -420,12 +429,33 @@ class WidgetBase(RemoteFrameBuffer):
 
 
     async def handle_event_coroutine(self, event):
+        """Process an input event on the STK main thread.
+
+        Parameters
+        ----------
+        event : dict
+            Event data produced by the Jupyter remote frame buffer.
+        """
         self.handle_event(event)
 
     def set_title(self, title):
+        """Set the widget title.
+
+        Parameters
+        ----------
+        title : str
+            Title to display for the widget.
+        """
         self.title = title
 
     def get_frame(self):
+        """Get the current rendered frame.
+
+        Returns
+        -------
+        numpy.ndarray
+            RGB image data for the current frame.
+        """
         if threading.get_native_id() != self.stk_main_thread:
             asyncio.run_coroutine_threadsafe(self.get_frame_coroutine(), self.loop)
         elif self._runtime:
@@ -437,9 +467,17 @@ class WidgetBase(RemoteFrameBuffer):
         return self.frame
 
     async def get_frame_coroutine(self):
+        """Get the current rendered frame on the STK main thread."""
         self.get_frame()
 
     def animate(self, time_step):
+        """Start forward animation using the specified time step.
+
+        Parameters
+        ----------
+        time_step : float
+            Time between animation frames.
+        """
         if threading.get_native_id() != self.stk_main_thread:
             asyncio.run_coroutine_threadsafe(self.animate_coroutine(time_step), self.loop)
         else:
@@ -450,6 +488,13 @@ class WidgetBase(RemoteFrameBuffer):
             self.show()
 
     async def animate_coroutine(self, time_step):
+        """Start forward animation on the STK main thread.
+
+        Parameters
+        ----------
+        time_step : float
+            Time between animation frames.
+        """
         self.animate(time_step)
 
     def _repr_mimebundle_(self, **kwargs):
@@ -484,6 +529,20 @@ class WidgetBase(RemoteFrameBuffer):
         return data
 
     def show(self, in_sidecar=False, **snapshot_kwargs):
+        """Display the widget.
+
+        Parameters
+        ----------
+        in_sidecar : bool, optional
+            Whether to display the widget in a Jupyter sidecar.
+        **snapshot_kwargs : dict
+            Options reserved for snapshot rendering.
+
+        Returns
+        -------
+        WidgetBase or None
+            This widget when displayed inline, otherwise ``None``.
+        """
         if in_sidecar:
             from sidecar import Sidecar
             with Sidecar(title=self.title):

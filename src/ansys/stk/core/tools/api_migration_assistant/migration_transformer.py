@@ -54,7 +54,21 @@ class MigrationTransformer(CSTTransformer):
         self.mappings = mappings
         self.call_stack = []
 
-    def leave_Arg(self, original_node: Arg, updated_node: Arg) -> Arg:  # noqa: N802, D102
+    def leave_Arg(self, original_node: Arg, updated_node: Arg) -> Arg:  # noqa: N802
+        """Apply a recorded named-argument migration.
+
+        Parameters
+        ----------
+        original_node : libcst.Arg
+            Argument before child nodes are transformed.
+        updated_node : libcst.Arg
+            Argument after child nodes are transformed.
+
+        Returns
+        -------
+        libcst.Arg
+            Updated argument.
+        """
         # The keyword of Arg is neither an Assignment nor an Access and we explicitly don't visit it.
         if updated_node.keyword is not None:
             function_call = self.call_stack[-1]
@@ -85,11 +99,31 @@ class MigrationTransformer(CSTTransformer):
         return updated_node
 
     def visit_Call(self, node: Call) -> None:  # noqa: N802, D102
+        """Record the qualified name of a function call.
+
+        Parameters
+        ----------
+        node : libcst.Call
+            Function call being visited.
+        """
         full_name = get_full_name_for_node(node)
         self.call_stack.append(full_name)
 
     def leave_Call(self, original_node: Call, updated_node: Call) -> Call:  # noqa: N802, D102
+        """Apply a recorded constructor migration.
 
+        Parameters
+        ----------
+        original_node : libcst.Call
+            Function call before child nodes are transformed.
+        updated_node : libcst.Call
+            Function call after child nodes are transformed.
+
+        Returns
+        -------
+        libcst.Call
+            Updated function call.
+        """
         self.call_stack.pop()
 
         # Intercept constructor calls
@@ -126,6 +160,20 @@ class MigrationTransformer(CSTTransformer):
         return updated_node
 
     def leave_Name(self, original_node, updated_node):  # noqa: N802, D102
+        """Apply a recorded member-name migration.
+
+        Parameters
+        ----------
+        original_node : libcst.Name
+            Name before child nodes are transformed.
+        updated_node : libcst.Name
+            Name after child nodes are transformed.
+
+        Returns
+        -------
+        libcst.Name
+            Updated name.
+        """
         name = original_node.value
 
         if name is not None and self.mappings.is_member_name_of_interest(name):
@@ -150,7 +198,20 @@ class MigrationTransformer(CSTTransformer):
         return updated_node
 
     def leave_Attribute(self, original_node, updated_node):  # noqa: N802, D102
+        """Apply an enumeration attribute migration.
 
+        Parameters
+        ----------
+        original_node : libcst.Attribute
+            Attribute before child nodes are transformed.
+        updated_node : libcst.Attribute
+            Attribute after child nodes are transformed.
+
+        Returns
+        -------
+        libcst.Attribute
+            Updated attribute.
+        """
         attr_node = ensure_type(updated_node, Attribute)
         if isinstance(attr_node.value, Name) and isinstance(attr_node.attr, Name):
             lhs_name = attr_node.value.value
@@ -171,7 +232,20 @@ class MigrationTransformer(CSTTransformer):
             )
 
     def leave_Import(self, original_node: Import, updated_node: Import) -> None:  # noqa: N802, D102
+        """Apply namespace migrations to an import statement.
 
+        Parameters
+        ----------
+        original_node : libcst.Import
+            Import before child nodes are transformed.
+        updated_node : libcst.Import
+            Import after child nodes are transformed.
+
+        Returns
+        -------
+        libcst.Import
+            Updated import.
+        """
         module_name = updated_node.names
 
         new_names = []
@@ -190,7 +264,20 @@ class MigrationTransformer(CSTTransformer):
         return updated_node
 
     def leave_Annotation(self, original_node: Annotation, updated_node: Annotation) -> None:  # noqa: N802, D102
+        """Apply namespace and type migrations to an annotation.
 
+        Parameters
+        ----------
+        original_node : libcst.Annotation
+            Annotation before child nodes are transformed.
+        updated_node : libcst.Annotation
+            Annotation after child nodes are transformed.
+
+        Returns
+        -------
+        libcst.Annotation
+            Updated annotation.
+        """
         if isinstance(updated_node.annotation, SimpleString):
             was_quoted = True
             annotation_full_name = updated_node.annotation.value[1:-1]  # remove quotes
@@ -221,7 +308,20 @@ class MigrationTransformer(CSTTransformer):
         return updated_node
 
     def leave_ImportFrom(self, original_node: ImportFrom, updated_node: ImportFrom) -> None:  # noqa: N802, D102
+        """Apply namespace and type migrations to a from-import statement.
 
+        Parameters
+        ----------
+        original_node : libcst.ImportFrom
+            Import before child nodes are transformed.
+        updated_node : libcst.ImportFrom
+            Import after child nodes are transformed.
+
+        Returns
+        -------
+        libcst.ImportFrom
+            Updated import.
+        """
         module_name = updated_node.module
         old_imported_module = get_full_name_for_node(module_name)
 
