@@ -49,7 +49,7 @@ tox --version
 To generate or refresh the project lock file for development, run:
 
 ```console
-uv lock --all-extras --group tests --group doc --group docstyle --group vulnerabilities
+uv lock
 ```
 
 ### Listing Tox environments
