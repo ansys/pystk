@@ -54,7 +54,7 @@ class MigrationTransformer(CSTTransformer):
         self.mappings = mappings
         self.call_stack = []
 
-    def leave_Arg(self, original_node: Arg, updated_node: Arg) -> Arg:  # noqa: N802, D102
+    def leave_Arg(self, original_node: Arg, updated_node: Arg) -> Arg:  # noqa: N802
         """Apply a recorded named-argument migration.
 
         Parameters
