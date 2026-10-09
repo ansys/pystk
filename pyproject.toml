@@ -79,7 +79,7 @@ scripts.pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistan
 vulnerabilities = [
   "bandit[toml]==1.9.4",
   "safety==3.8.1",
-  "typer==0.27.2",
+  "typer==0.25.0",
 ]
 tests = [
   "numpy==2.2.6",
@@ -229,3 +229,6 @@ showcontent = true
 directory = "test"
 name = "Test"
 showcontent = true
+
+[tool.uv.dependency-groups]
+doc = { requires-python = ">=3.11" }
