@@ -229,3 +229,6 @@ showcontent = true
 directory = "test"
 name = "Test"
 showcontent = true
+
+[tool.uv.dependency-groups]
+doc = { requires-python = ">=3.11" }
