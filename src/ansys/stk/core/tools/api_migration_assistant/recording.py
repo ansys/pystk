@@ -75,7 +75,21 @@ class Recording:
         sorted_call_records = sorted(self.call_records)
 
         class CallRecordEncoder(json.JSONEncoder):
+            """Encode call records as JSON objects."""
+
             def default(self, o: Any):
+                """Convert a call record into a JSON-compatible object.
+
+                Parameters
+                ----------
+                o : Any
+                    Object to encode.
+
+                Returns
+                -------
+                Any
+                    JSON-compatible object.
+                """
                 if isinstance(o, CallRecord):
                     return {
                         "filename": o.filename,
