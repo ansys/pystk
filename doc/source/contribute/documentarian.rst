@@ -217,7 +217,7 @@ your new snippet runs and passes.
 
 .. code-block:: console
 
-   $ python -m tox -e test-snippets
+   $ python -m tox -e tests-core-snippets-graphics-cov-linux
 
 .. vale on
 
