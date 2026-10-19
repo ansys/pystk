@@ -100,7 +100,7 @@ doc = [
   "libcst==1.9.0",
   "matplotlib==3.10.9",
   "myst-parser==4.0.1",
-  "nbconvert==7.17.1",
+  "nbconvert==7.17.2",
   "nbsphinx==0.9.8",
   "numpydoc==1.11.0",
   "pandas==2.3.3",
