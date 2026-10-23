@@ -40,6 +40,7 @@ precessing
 PySTK
 Python
 sidelobe
+SEET
 STK
 STK Desktop
 STKEngine
