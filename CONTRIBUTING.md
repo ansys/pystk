@@ -299,7 +299,7 @@ If your example requires any dependencies that are not already present in the `d
 
 ### Code-style check
 
-All examples submitted to the PySTK GitHub must pass a code-style check, which enforces rules like maximum line lengths, double quotes for strings, and avoiding trailing spaces. It is possible to run the code-style check locally by running
+All examples submitted to the PySTK GitHub must pass a code-style check, which enforces rules like maximum line lengths, double quotes for strings, avoiding trailing spaces, and minimum docstring coverage. It is possible to run the code-style check locally by running
 
 `tox -e code-style`
 
