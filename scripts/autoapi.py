@@ -206,11 +206,13 @@ class ManualRSTGenerator:
                         write_list_tab(
                             def_type,
                             defs,
-                            lambda d: f"{tag}`~{containing_namespace}.{module_name}.{d.name}`"
-                            + (
-                                f"\n              - {ast.get_docstring(d).splitlines()[0]}"
-                                if ast.get_docstring(d)
-                                else ""
+                            lambda d: (
+                                f"{tag}`~{containing_namespace}.{module_name}.{d.name}`"
+                                + (
+                                    f"\n              - {ast.get_docstring(d).splitlines()[0]}"
+                                    if ast.get_docstring(d)
+                                    else ""
+                                )
                             ),
                         )
 
