@@ -11,7 +11,6 @@ license-files = [ "LICENSE" ]
 maintainers = [
   { name = "ANSYS, Inc.", email = "pyansys.core@ansys.com" },
 ]
-
 authors = [
   { name = "ANSYS, Inc.", email = "pyansys.core@ansys.com" },
 ]
@@ -27,6 +26,7 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: 3.15",
   "Topic :: Scientific/Engineering :: Information Analysis",
   "Topic :: Scientific/Engineering :: Physics",
   "Topic :: Software Development :: Libraries",
@@ -35,7 +35,6 @@ dynamic = [ "version" ]
 dependencies = [
   # NOTE: no dependencies are installed by default ensuring a dependency-free installation by default
 ]
-
 optional-dependencies.all = [
   # NOTE: self-referential extras are supported by pip's requirement specifiers.
   # See: https://pip.pypa.io/en/latest/reference/requirement-specifiers/#self-referential-extras
@@ -76,20 +75,6 @@ urls.Source = "https://github.com/ansys/pystk"
 scripts.pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistant.api_migration_assistant:main"
 
 [dependency-groups]
-vulnerabilities = [
-  "bandit[toml]==1.9.4",
-  "safety==3.8.1",
-  "typer==0.27.3",
-]
-tests = [
-  "numpy==2.2.6",
-  "parameterized==0.9.0",
-  "pytest==9.1.1",
-  "pytest-cov==7.1.0",
-  "pytest-mpl==0.19.0",
-  "pytz==2026.5",
-  "scipy==1.15.3",
-]
 doc = [
   "ansys-sphinx-theme==1.9.0",
   "build==1.6.1",
@@ -118,9 +103,23 @@ docstyle = [
   "rst2html==2020.7.4",
   "vale==3.22.0.0",
 ]
+tests = [
+  "numpy==2.2.6",
+  "parameterized==0.9.0",
+  "pytest==9.1.1",
+  "pytest-cov==7.1.0",
+  "pytest-mpl==0.19.0",
+  "pytz==2026.5",
+  "scipy==1.15.3",
+]
+vulnerabilities = [
+  "bandit[toml]==1.9.4",
+  "safety==3.8.1",
+  "typer==0.27.3",
+]
 
-[tool.flit.module]
-name = "ansys.stk"
+[tool.flit]
+module.name = "ansys.stk"
 
 [tool.ruff]
 line-length = 120
@@ -129,7 +128,6 @@ extend-exclude = [
   "src/ansys/stk/core/internal/*.py",
   "tests/**/*.py",
 ]
-
 # TODO: the following configuration has no effect, see issue
 # https://github.com/codespell-project/codespell/issues/2375
 # At the moment, all codespell configuration is done in the pre-commit file.
@@ -168,18 +166,14 @@ lint.pep8-naming.extend-ignore-names = [ "leave_*", "visit_*" ]
 # Settings: https://docs.astral.sh/ruff/settings/#lintpydocstyle
 lint.pydocstyle.convention = "numpy"
 
-[tool.coverage.paths]
-source = [
+[tool.coverage]
+run.source = [ "src/ansys/stk" ]
+run.branch = true
+run.relative_files = true
+paths.source = [
   "src",
 ]
-
-[tool.coverage.run]
-branch = true
-source = [ "src/ansys/stk" ]
-relative_files = true
-
-[tool.coverage.report]
-show_missing = true
+report.show_missing = true
 
 [tool.towncrier]
 package = "ansys.stk.core"
@@ -189,43 +183,13 @@ start_string = ".. towncrier release notes start\n"
 template = "doc/source/changelog/template"
 title_format = "`{version} <https://github.com/ansys/pystk/releases/tag/v{version}>`_ - {project_date}"
 issue_format = "`#{issue} <https://github.com/ansys/pystk/pull/{issue}>`_"
-
-[[tool.towncrier.type]]
-directory = "breaking"
-name = "Breaking"
-showcontent = true
-
-[[tool.towncrier.type]]
-directory = "added"
-name = "Added"
-showcontent = true
-
-[[tool.towncrier.type]]
-directory = "fixed"
-name = "Fixed"
-showcontent = true
-
-[[tool.towncrier.type]]
-directory = "documentation"
-name = "Documentation"
-showcontent = true
-
-[[tool.towncrier.type]]
-directory = "dependencies"
-name = "Dependencies"
-showcontent = true
-
-[[tool.towncrier.type]]
-directory = "maintenance"
-name = "Maintenance"
-showcontent = true
-
-[[tool.towncrier.type]]
-directory = "miscellaneous"
-name = "Miscellaneous"
-showcontent = true
-
-[[tool.towncrier.type]]
-directory = "test"
-name = "Test"
-showcontent = true
+type = [
+  { directory = "breaking", name = "Breaking", showcontent = true },
+  { directory = "added", name = "Added", showcontent = true },
+  { directory = "fixed", name = "Fixed", showcontent = true },
+  { directory = "documentation", name = "Documentation", showcontent = true },
+  { directory = "dependencies", name = "Dependencies", showcontent = true },
+  { directory = "maintenance", name = "Maintenance", showcontent = true },
+  { directory = "miscellaneous", name = "Miscellaneous", showcontent = true },
+  { directory = "test", name = "Test", showcontent = true },
+]
