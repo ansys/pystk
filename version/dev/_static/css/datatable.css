@@ -1,0 +1,27 @@
+table.dataTable.display tbody tr.odd>.sorting_1,
+table.dataTable.display tbody tr.even>.sorting_1{
+    background-color: var(--ast-color-table-background);
+}
+
+table.dataTable.display tbody tr.odd>.sorting_1:hover,
+table.dataTable.display tbody tr.even>.sorting_1:hover{
+    background-color: var(--ast-color-table-row-hover-bg);
+}
+
+
+table.dataTable.display tbody tr.odd>.sorting_1:active,
+table.dataTable.display tbody tr.even>.sorting_1:active{
+    background-color: var(--ast-color-table-active-bg);
+}
+
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper .dataTables_paginate {
+    color: var(--ast-color-text);
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+    color: var(--ast-color-text) !important; /* !important to override inline style */
+}
