@@ -50,6 +50,12 @@ print(f"Using {stk.version}")
 root = stk.new_object_root()
 root.new_scenario("InclinationManeuver")
 
+# Set the analysis period of the scenario to one day. The initial state of the satellite is set to start at the beginning of this period:
+
+root.current_scenario.set_time_period(
+    "1 Jan 2026 12:00:00.000", "2 Jan 2026 12:00:00.000"
+)
+
 # Once created, it is possible to show a 3D graphics window by running:
 
 # +
@@ -90,6 +96,7 @@ initial_state = satellite.propagator.main_sequence.insert(
     SegmentType.INITIAL_STATE, "Initial State", "-"
 )
 initial_state.set_element_type(ElementSetType.KEPLERIAN)
+initial_state.orbit_epoch = scenario.start_time
 
 initial_state.element.periapsis_radius_size = r_initial
 initial_state.element.eccentricity = 0.00
@@ -261,18 +268,14 @@ satellite.propagator.run_mcs()
 
 # ## Retrieve the results
 #
-# Retrieve the $\Delta v$ of each impulse from the Maneuver Summary data provider. Convert the data to a Pandas dataframe:
-
-maneuver_result = satellite.data_providers["Maneuver Summary"].execute(
-    scenario.start_time, scenario.stop_time
-)
-maneuver_dataframe = maneuver_result.data_sets.to_pandas_dataframe()
-
-# The values are reported in meters per second. Convert them to kilometers per second:
+# Retrieve the $\Delta v$ of each impulse from the final values of the control parameters. The first impulse only has a component along the velocity direction. The last impulse has components along the velocity and the orbit normal directions, so its magnitude is the norm of both:
 
 # +
-delta_v1 = float(maneuver_dataframe.at[0, "delta v"]) / 1000
-delta_v2 = float(maneuver_dataframe.at[1, "delta v"]) / 1000
+import math
+
+
+delta_v1 = abs(delta_v1_x.final_value)
+delta_v2 = math.hypot(delta_v2_x.final_value, delta_v2_y.final_value)
 
 print(f"\N{GREEK CAPITAL LETTER DELTA}V1 = {delta_v1:.4f} [km/s]")
 print(f"\N{GREEK CAPITAL LETTER DELTA}V2 = {delta_v2:.4f} [km/s]")
@@ -357,8 +360,9 @@ def create_transfer_satellite(name, inclination_after_first_impulse):
 
     Returns
     -------
-    Satellite
-        Satellite with the maneuver sequence defined but not yet run.
+    tuple
+        Satellite with the maneuver sequence defined but not yet run, and the
+        control parameters of the first and last impulses.
     """
     new_satellite = scenario.children.new(STKObjectType.SATELLITE, name)
     new_satellite.set_propagator_type(PropagatorType.ASTROGATOR)
@@ -368,6 +372,7 @@ def create_transfer_satellite(name, inclination_after_first_impulse):
 
     state = sequence.insert(SegmentType.INITIAL_STATE, "Initial State", "-")
     state.set_element_type(ElementSetType.KEPLERIAN)
+    state.orbit_epoch = scenario.start_time
     state.element.periapsis_radius_size = r_initial
     state.element.eccentricity = 0.00
     state.element.inclination = inclination_initial
@@ -416,6 +421,7 @@ def create_transfer_satellite(name, inclination_after_first_impulse):
             },
         ),
     ]
+    impulse_controls = []
     for target_sequence, segment_name, results in solver_settings:
         solver = target_sequence.profiles["Differential Corrector"]
         solver.mode = ProfileMode.ITERATE
@@ -426,6 +432,7 @@ def create_transfer_satellite(name, inclination_after_first_impulse):
             )
             control.enable = True
             control.max_step = 0.30
+            impulse_controls.append(control)
         for result_name, (desired_value, tolerance) in results.items():
             result = solver.results.get_result_by_paths(segment_name, result_name)
             result.enable = True
@@ -433,7 +440,7 @@ def create_transfer_satellite(name, inclination_after_first_impulse):
             result.tolerance = tolerance
         target_sequence.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
 
-    return new_satellite
+    return new_satellite, impulse_controls
 
 
 # -
@@ -446,20 +453,16 @@ splits = [0.0, 1.0, 2.0, 3.0, 5.0, 10.0, 15.0, total_inclination_change]
 
 results = []
 for split in splits:
-    split_satellite = create_transfer_satellite(
-        f"Split_{split:.1f}", inclination_initial - split
+    split_satellite, controls = create_transfer_satellite(
+        f"Split_{split:.1f}".replace(".", "_"), inclination_initial - split
     )
     split_satellite.propagator.run_mcs()
-    summary = (
-        split_satellite.data_providers["Maneuver Summary"]
-        .execute(scenario.start_time, scenario.stop_time)
-        .data_sets.to_pandas_dataframe()
-    )
+    first_x, first_y, last_x, last_y = controls
     results.append(
         {
             "split": split,
-            "first_impulse": float(summary.at[0, "delta v"]) / 1000,
-            "last_impulse": float(summary.at[1, "delta v"]) / 1000,
+            "first_impulse": math.hypot(first_x.final_value, first_y.final_value),
+            "last_impulse": math.hypot(last_x.final_value, last_y.final_value),
         }
     )
 
@@ -553,4 +556,4 @@ print(
 )
 # -
 
-# The last impulse takes place at a much lower velocity than the first one. Therefore, its cost grows slowly with the inclination change, while the cost of the first impulse grows quickly. Applying the whole plane change in LEO is the most expensive strategy by a large margin. Applying it all at the apoapsis is close to the minimum, and sharing a few degrees with the first impulse reduces the total $\Delta v$ only marginally.
+# Moving the plane change from the apoapsis to the periapsis makes the first impulse more expensive, because the satellite moves much faster in LEO. The last impulse becomes cheaper, but by a smaller amount. As a result, applying the whole plane change in LEO is the most expensive strategy by a large margin, about $1.6$ km/s more than the best split. Applying it all at the apoapsis is close to the minimum. Sharing about $2$ degrees with the first impulse reduces the total $\Delta v$ by only about $0.02$ km/s.
