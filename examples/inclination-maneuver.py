@@ -4,13 +4,13 @@
 #
 # ## What is an inclination change maneuver?
 #
-# An inclination change maneuver rotates the orbital plane of a spacecraft around the line of nodes. It is one of the most expensive maneuvers in spaceflight because the impulse must rotate the whole velocity vector, not only change its magnitude. For a circular orbit with velocity $v$, a pure plane change of $\Delta i$ requires:
+# An inclination change maneuver rotates the orbital plane of a spacecraft around the line of intersection between the initial and final orbital planes. It is one of the most expensive maneuvers in spaceflight because the impulse must rotate the velocity vector, not only change its magnitude. For a circular orbit with velocity $v$, a pure plane change of $\Delta i$ requires:
 #
 # $$\Delta v = 2 v \sin\left(\frac{\Delta i}{2}\right)$$
 #
-# The impulse must take place at the ascending or the descending node. At any other point, the same impulse also changes the right ascension of the ascending node (RAAN).
+# To change the inclination without altering the right ascension of the ascending node (RAAN), the impulse must take place at the equatorial ascending or descending node. An out-of-plane impulse at any other latitude also rotates the RAAN.
 #
-# Since the required $\Delta v$ is proportional to the velocity, it is cheaper to change the plane where the spacecraft moves slowly, that is, far from the central body. This is the reason why geostationary transfers rarely change the inclination in low Earth orbit (LEO). Instead, the inclination change is combined with the circularization burn at the apoapsis of the transfer orbit. In that case, the required $\Delta v$ is obtained from the law of cosines:
+# Since the required $\Delta v$ is proportional to the velocity, it is cheaper to change the plane where the spacecraft moves slowly, that is, far from the central body. This is the reason why geosynchronous transfers rarely change the inclination in low Earth orbit (LEO). Instead, the inclination change is combined with the circularization burn at the apoapsis of the transfer orbit. In that case, the required $\Delta v$ is obtained from the law of cosines:
 #
 # $$\Delta v = \sqrt{v_a^2 + v_c^2 - 2 v_a v_c \cos\left(\Delta i\right)}$$
 #
@@ -18,7 +18,7 @@
 #
 # ## Problem statement
 #
-# A satellite presents a circular orbit with a radius of $7000$ kilometers and an inclination of $51.6$ degrees. Use a Hohmann transfer to raise the orbit up to a geostationary radius of $42164$ kilometers. At the same time, change the inclination of the orbit down to $28.5$ degrees.
+# A satellite is in a circular orbit with a radius of $7000$ kilometers and an inclination of $51.6$ degrees. Use a Hohmann transfer to raise the orbit up to a geosynchronous radius of $42164$ kilometers. At the same time, change the inclination of the orbit down to $28.5$ degrees.
 #
 # Compute the required $\Delta v$ for each impulse of the maneuver when the whole plane change takes place at the apoapsis. Then, compare it with the cost of changing the plane in LEO before the transfer. Next, find how to share the plane change between both impulses of the transfer to minimize the total $\Delta v$. Finally, perform a parametric analysis to study how these results change with the inclination change and with the radius of the final orbit.
 
@@ -87,7 +87,7 @@ satellite.propagator.options.draw_trajectory_in_3d = True
 
 # ## Set up the initial state of the satellite
 #
-# Add a new segment to the main sequence for modeling the initial state of the satellite. The satellite starts at the ascending node, which is the location of the periapsis of the transfer orbit. Half an orbit later, the satellite reaches the apoapsis at the descending node. Both impulses take place at a node, so they can change the inclination without changing the RAAN:
+# Add a new segment to the main sequence for modeling the initial state of the satellite. The satellite starts at the equatorial ascending node ($\omega = 0^\circ, \nu = 0^\circ$), which is the location of the periapsis of the transfer orbit. Half an orbit later, the satellite reaches the apoapsis at the equatorial descending node. Because both impulses take place on the equator at an apsis, they change the inclination without altering the RAAN or the argument of periapsis:
 
 # +
 from ansys.stk.core.stkobjects.astrogator import ElementSetType, SegmentType
@@ -111,11 +111,11 @@ initial_state.element.true_anomaly = 0.00
 #
 # The maneuver is modeled as a sequence of three segments:
 #
-# - **First impulse**: it is applied at the periapsis to raise the radius of apoapsis up to the geostationary radius. It can also apply part of the plane change.
+# - **First impulse**: it is applied at the periapsis to raise the radius of apoapsis up to the geosynchronous radius. It can also apply part of the plane change.
 # - **Propagation**: the satellite is propagated along its transfer orbit until it reaches the apoapsis.
 # - **Last impulse**: it is applied at the apoapsis to circularize the orbit and complete the plane change.
 #
-# Differential correctors are required for solving both impulses. Therefore, these segments are modeled using a `TARGET_SEQUENCE` segment type. All maneuvers are modeled as `IMPULSIVE` maneuver type with a `THRUST_VECTOR` attitude control. By default, the thrust vector is defined in the velocity-normal-conormal (VNC) axes. The X component of the impulse is aligned with the velocity and the Y component is aligned with the orbit normal.
+# Differential correctors are required for solving both impulses. Therefore, these segments are modeled using a `TARGET_SEQUENCE` segment type. All maneuvers are modeled as `IMPULSIVE` maneuver type with a `THRUST_VECTOR` attitude control. By default, the thrust vector is defined in the velocity-normal-conormal (VNC) axes of the pre-burn orbit. The X component of the impulse is aligned with the pre-burn velocity and the Y component is aligned with the pre-burn orbit normal. Because rotating the velocity vector requires both an out-of-plane (Y) component and a retrograde along-track (X) adjustment, the two components act together to achieve the target orbital size and inclination.
 
 # +
 from ansys.stk.core.stkobjects.astrogator import AttitudeControl, ManeuverType
@@ -208,7 +208,7 @@ transfer_propagate.properties.color = Colors.Red
 
 # ### Last impulse
 #
-# Again, two control parameters are required. The component along the velocity circularizes the orbit and the component along the orbit normal completes the plane change. Add the eccentricity and the inclination as results to be achieved:
+# Again, the X (along-track) and Y (orbit-normal) impulse components are used as control parameters to simultaneously circularize the orbit and complete the plane change. Add the eccentricity and the inclination as results to be achieved:
 
 last_impulse.enable_control_parameter(ControlManeuver.IMPULSIVE_CARTESIAN_X)
 last_impulse.enable_control_parameter(ControlManeuver.IMPULSIVE_CARTESIAN_Y)
@@ -946,7 +946,7 @@ def plot_excess_map(dataframe, excess, parameter, label):
 
 # ### Inclination change
 #
-# Evaluate the strategies for a total inclination change between $5$ and $50$ degrees. The final orbit is the geostationary radius in all cases:
+# Evaluate the strategies for a total inclination change between $5$ and $50$ degrees. The final orbit is at the geosynchronous radius in all cases:
 
 # +
 inclination_dataframe = pd.DataFrame(
@@ -982,7 +982,7 @@ plot_excess_map(
 
 # ### Final orbit radius
 #
-# Now, evaluate the strategies for a final orbit radius between $10000$ kilometers and the geostationary radius. The total inclination change is the one from the problem statement in all cases:
+# Now, evaluate the strategies for a final orbit radius between $10000$ kilometers and the geosynchronous radius. The total inclination change is the one from the problem statement in all cases:
 
 # +
 radius_dataframe = pd.DataFrame(
@@ -1007,4 +1007,4 @@ plot_excess_map(
 )
 # -
 
-# For a low final orbit, the velocity at the apoapsis of the transfer orbit is closer to the velocity in LEO. Therefore, applying part of the plane change at the first impulse is more useful, and both the optimal split and its saving compared with the plane change at the apoapsis are larger. As the final radius grows, the velocity at the apoapsis decreases, and the optimal strategy moves almost all of the plane change to the last impulse. At the same time, the saving of the combined maneuver compared with the plane change in LEO grows with the final radius. The map confirms this trend. For a low final orbit, applying the whole plane change at the apoapsis costs several percent more than the optimal split. For the geostationary radius, the difference is below one percent.
+# For a low final orbit, the velocity at the apoapsis of the transfer orbit is closer to the velocity in LEO. Therefore, applying part of the plane change at the first impulse is more useful, and both the optimal split and its saving compared with the plane change at the apoapsis are larger. As the final radius grows, the velocity at the apoapsis decreases, and the optimal strategy moves almost all of the plane change to the last impulse. At the same time, the saving of the combined maneuver compared with the plane change in LEO grows with the final radius. The map confirms this trend. For a low final orbit, applying the whole plane change at the apoapsis costs several percent more than the optimal split. For the geosynchronous radius, the difference is below one percent.
