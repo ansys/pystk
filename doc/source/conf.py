@@ -214,7 +214,6 @@ if not BUILD_EXAMPLES:
         ]
     )
 else:
-    extensions.extend(["myst_parser", "nbsphinx"])
     nbsphinx_execute = "always"
     nbsphinx_custom_formats = {
         ".mystnb": ["jupytext.reads", {"fmt": "mystnb"}],
@@ -501,6 +500,9 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
         Exception encountered during the building of the documentation.
 
     """
+    if app.builder.name == "linkcheck":
+        return
+
     OUTPUT_EXAMPLES = pathlib.Path(app.outdir) / "examples"
     OUTPUT_DATA = OUTPUT_EXAMPLES / "data"
     OUTPUT_IMAGES = OUTPUT_EXAMPLES / "img"
@@ -564,6 +566,10 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
         Sphinx application instance containing the all the doc build configuration.
 
     """
+    if app.builder.name == "linkcheck":
+        app.config.nbsphinx_execute = "never"
+        app.config.suppress_warnings.append("nbsphinx.thumbnail")
+
     SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
     SOURCE_DATA = SOURCE_EXAMPLES / "data"
     SOURCE_IMAGES = SOURCE_EXAMPLES / "img"
@@ -651,6 +657,9 @@ def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception)
         Exception encountered during the building of the documentation.
 
     """
+    if app.builder.name == "linkcheck":
+        return
+
     try:
         RENDERED_EXAMPLES_DIRECTORY = pathlib.Path(app.outdir) / "examples"
         notebooks = list(RENDERED_EXAMPLES_DIRECTORY.glob("*.ipynb"))
