@@ -99,10 +99,8 @@ extensions = [
     "sphinx_design",
     "sphinx_jinja",
     "numpydoc",
-    "nbsphinx",
-    "myst_parser",
     "sphinxcontrib.jquery",
-    "sphinxcontrib.mermaid"
+    "sphinxcontrib.mermaid",
 ]
 
 # Intersphinx mapping
@@ -214,6 +212,7 @@ if not BUILD_EXAMPLES:
         ]
     )
 else:
+    extensions.extend(["myst_parser", "nbsphinx"])
     nbsphinx_execute = "always"
     nbsphinx_custom_formats = {
         ".mystnb": ["jupytext.reads", {"fmt": "mystnb"}],
