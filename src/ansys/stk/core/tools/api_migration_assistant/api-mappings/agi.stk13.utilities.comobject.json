@@ -1,0 +1,18 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.utilities.comobject",
+        "NewRootScope": "ansys.stk.core.utilities.comobject"
+    },
+    "MemberMappings": [
+        {
+            "ParentScope": "COMObject",
+            "OldName": "GetPointer",
+            "NewName": "get_pointer"
+        }
+    ],
+    "InterfaceMappings": [],
+    "ClassMappings": [],
+    "EnumTypeMappings": [],
+    "EnumValueMappings": [],
+    "NamedArgumentMappings": []
+}

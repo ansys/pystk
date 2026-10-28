@@ -36,7 +36,7 @@ root.new_scenario("Communications")
 # Once the scenario is created, it is possible to show a 3D graphics window by running:
 
 # +
-from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
+from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe = GlobeWidget(root, 640, 480)
@@ -100,9 +100,10 @@ satellite = root.current_scenario.children.new(
 satellite.set_propagator_type(PropagatorType.SGP4)
 propagator = satellite.propagator
 
-# Finally, use the propagator's `common_tasks` property to add the satellite's orbit from an online source, and propagate the satellite:
+# Finally, use the propagator's `common_tasks` property to add the satellite's orbit from a local file, and propagate the satellite:
 
-propagator.common_tasks.add_segments_from_online_source("31698")
+tle_file = pathlib.Path("data") / "TerraSarX_31698.tle"
+propagator.common_tasks.add_segments_from_file("31698", str(tle_file.resolve()))
 propagator.propagate()
 
 # ## Add the camp site

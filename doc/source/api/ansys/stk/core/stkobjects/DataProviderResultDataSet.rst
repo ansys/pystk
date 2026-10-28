@@ -22,6 +22,8 @@ Overview
               - Get the Internal Unit Values of the Data.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.get_values`
               - Retrieve an array of values of the elements in the dataset.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.get_values_subset`
+              - Retrieve a subset of an array of values of the elements in the dataset beginning at a given zero-indexed position and containing a specified number of values.
 
     .. tab-item:: Properties
 
@@ -104,6 +106,22 @@ Method detail
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.get_values
 
     Retrieve an array of values of the elements in the dataset.
+
+    :Returns:
+
+        :obj:`~list`
+
+.. py:method:: get_values_subset(self, index: int, count: int) -> list
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.get_values_subset
+
+    Retrieve a subset of an array of values of the elements in the dataset beginning at a given zero-indexed position and containing a specified number of values.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+        **count** : :obj:`~int`
+
 
     :Returns:
 

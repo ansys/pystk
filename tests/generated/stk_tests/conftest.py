@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -26,6 +26,7 @@ from test_util import EngineLifetimeManager, CategoryManager
 
 
 def pytest_addoption(parser):
+
     parser.addoption(
         "--target",
         action="store",
@@ -81,6 +82,7 @@ def pytest_addoption(parser):
 
 
 def pytest_sessionstart(session):
+
     target = session.config.getoption("--target")
     attach = session.config.getoption("--attach")
     grpc_host = session.config.getoption("--grpc_host")
@@ -109,6 +111,7 @@ def pytest_sessionstart(session):
 
 
 def pytest_sessionfinish(session):
+
     print("\n\nUninitializing STK")
     EngineLifetimeManager.Uninitialize(force=True)
 

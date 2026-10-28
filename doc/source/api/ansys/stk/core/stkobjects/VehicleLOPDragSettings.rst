@@ -20,8 +20,6 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPDragSettings.atmosphere_density_model`
               - Atmospheric density model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPDragSettings.atmospheric_density_model`
-              - Do not use this property, as it is deprecated. Use AtmosDensityModel instead. Atmospheric density model.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPDragSettings.density_weighing_factor`
               - Get or set the scale factor to be used during density calculations. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPDragSettings.exponential_density_model_parameters`
@@ -49,12 +47,6 @@ Property detail
     :type: LOPAtmosphericDensityModel
 
     Atmospheric density model.
-
-.. py:property:: atmospheric_density_model
-    :canonical: ansys.stk.core.stkobjects.VehicleLOPDragSettings.atmospheric_density_model
-    :type: AtmosphericDensityModel
-
-    Do not use this property, as it is deprecated. Use AtmosDensityModel instead. Atmospheric density model.
 
 .. py:property:: density_weighing_factor
     :canonical: ansys.stk.core.stkobjects.VehicleLOPDragSettings.density_weighing_factor

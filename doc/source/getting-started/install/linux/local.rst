@@ -58,12 +58,14 @@ Install Linux artifacts by using the `pip`_ command:
     .. tab-set::
         :sync-group: artifacts
 
+        {% if not PYSTK_VERSION.endswith('dev0') %}
         .. tab-item:: **PyPI install**
             :sync: pypi
 
             .. code-block:: text
 
                 python -m pip install "ansys-stk=={{ PYSTK_VERSION }}"
+        {% endif %}
 
         .. tab-item:: **Wheels install**
             :sync: wheels

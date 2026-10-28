@@ -20,8 +20,6 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelComplex.set_filter`
-              - Do not use this method, as it is deprecated. Use FilterComponentLinking on TransmitterModelComplex instead. Sets the current filter model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelComplex.set_modulator`
               - Set the current modulator model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelComplex.set_polarization_type`
@@ -41,8 +39,6 @@ Overview
               - Get or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelComplex.enable_polarization`
               - Get or set the enable polarization option.
-            * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelComplex.filter`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on TransmitterModelComplex instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelComplex.filter_component_linking`
               - Get the link/embed controller for managing the filter model component.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelComplex.frequency`
@@ -55,8 +51,6 @@ Overview
               - Get the collection of additional post transmit gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelComplex.power`
               - Get or set the power.
-            * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelComplex.supported_filters`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on TransmitterModelComplex instead. Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelComplex.supported_modulators`
               - Get an array of supported modulator model names.
 
@@ -97,12 +91,6 @@ Property detail
 
     Get or set the enable polarization option.
 
-.. py:property:: filter
-    :canonical: ansys.stk.core.stkobjects.TransmitterModelComplex.filter
-    :type: IRFFilterModel
-
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on TransmitterModelComplex instead. Gets the current filter model.
-
 .. py:property:: filter_component_linking
     :canonical: ansys.stk.core.stkobjects.TransmitterModelComplex.filter_component_linking
     :type: IComponentLinkEmbedControl
@@ -139,12 +127,6 @@ Property detail
 
     Get or set the power.
 
-.. py:property:: supported_filters
-    :canonical: ansys.stk.core.stkobjects.TransmitterModelComplex.supported_filters
-    :type: list
-
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on TransmitterModelComplex instead. Gets an array of supported filter model names.
-
 .. py:property:: supported_modulators
     :canonical: ansys.stk.core.stkobjects.TransmitterModelComplex.supported_modulators
     :type: list
@@ -169,21 +151,6 @@ Method detail
 
 
 
-
-
-.. py:method:: set_filter(self, name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.TransmitterModelComplex.set_filter
-
-    Do not use this method, as it is deprecated. Use FilterComponentLinking on TransmitterModelComplex instead. Sets the current filter model by name.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: set_modulator(self, name: str) -> None
     :canonical: ansys.stk.core.stkobjects.TransmitterModelComplex.set_modulator
@@ -212,6 +179,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
 
 

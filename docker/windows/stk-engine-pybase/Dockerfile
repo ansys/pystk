@@ -1,4 +1,4 @@
-ARG baseImage=ansys/stk-12.10:dev-windowsservercore-ltsc2019
+ARG baseImage=ansys/stk-13.1:dev-windowsservercore-ltsc2019
 FROM ${baseImage}
 
 USER ContainerAdministrator

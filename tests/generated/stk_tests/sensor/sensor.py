@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -26,6 +26,7 @@ from access_constraints.access_constraint_helper import *
 from app_provider import *
 from assert_extension import *
 from assertion_harness import *
+from chain_analysis_options_helper import *
 from display_times_helper import *
 from interfaces.stk_objects import *
 from logger import *
@@ -187,6 +188,7 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
+    # region SpatialInfoTest
     def test_SpatialInfoTest(self):
         helper = SpatialInfoHelper(TestBase.Application)
         o: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
@@ -748,6 +750,9 @@ class SensorHelper(object):
         self.SpatialInfo()
         Console.WriteLine(DateTime.Now.TimeOfDay.ToString())
 
+        helper = ChainAnalysisOptionsHelper()
+        helper.Run(self.m_oSensor.chain_analysis_options, False)
+
     # endregion
 
     # region AccessConstraints
@@ -1137,7 +1142,6 @@ class SensorHelper(object):
             self.m_logger.WriteLine5("\t\tThe current AttachName is: {0}", o3DModel.attachment_name)
             arElements = o3DModel.available_elements
             self.m_logger.WriteLine3("\t\tThere are {0} available elements:", Array.Length(arElements))
-
             iIndex: int = 0
             while iIndex < Array.Length(arElements):
                 o3DModel.attachment_name = str(arElements[iIndex])
@@ -1875,6 +1879,8 @@ class SensorHelper(object):
         self.m_oRoot.units_preferences.reset_units()
         self.m_logger.WriteLine("----- THE BASIC POINTING TEST ----- END -----")
 
+    # endregion
+
     # region BasicResolution
     def BasicResolution(self):
         self.m_logger.WriteLine("----- THE BASIC RESOLUTION TEST ----- BEGIN -----")
@@ -2149,7 +2155,6 @@ class SensorHelper(object):
         # AvailableConstraints
         arAvailable = oProjection.available_constraints()
         self.m_logger.WriteLine3("\tThe AvailableConstraints array contains: {0} elements.", Array.Length(arAvailable))
-
         iIndex: int = 0
         while iIndex < Array.Length(arAvailable):
             self.m_logger.WriteLine7("\t\tElement {0}: {1}", iIndex, arAvailable[iIndex])
@@ -2160,7 +2165,6 @@ class SensorHelper(object):
         # EnabledConstraints
         arEnabled = oProjection.enabled_constraints()
         self.m_logger.WriteLine3("\tThe EnabledConstraints array contains: {0} elements.", Array.Length(arEnabled))
-
         iIndex: int = 0
         while iIndex < Array.Length(arEnabled):
             self.m_logger.WriteLine7("\t\tElement {0}: {1}", iIndex, arEnabled[iIndex])
@@ -2278,7 +2282,6 @@ class SensorHelper(object):
         self.m_logger.WriteLine3(
             "\t\tThe Available Altitude objects array contains: {0} elements.", Array.Length(arObjects)
         )
-
         iIndex: int = 0
         while iIndex < Array.Length(arObjects):
             strName: str = str(arObjects[iIndex])
@@ -2660,7 +2663,7 @@ class SensorHelper(object):
                 "\tThe new Space Projection Intervals collection contains: {0} elements", oSPCollection.count
             )
             Assert.assertEqual(2, oSPCollection.count)
-
+            # Item
             iIndex: int = 0
             while iIndex < oSPCollection.count:
                 self.m_logger.WriteLine8(
@@ -2680,7 +2683,7 @@ class SensorHelper(object):
             )
             with pytest.raises(Exception):
                 oSPCollection.remove_at(23)
-
+            # Item
             iIndex: int = 0
             while iIndex < oSPCollection.count:
                 self.m_logger.WriteLine8(
@@ -2753,7 +2756,7 @@ class SensorHelper(object):
                 "\tThe new Target Projection Intervals collection contains: {0} elements", oTPCollection.count
             )
             Assert.assertEqual(2, oTPCollection.count)
-
+            # Item
             iIndex: int = 0
             while iIndex < oTPCollection.count:
                 self.m_logger.WriteLine8(
@@ -2774,7 +2777,6 @@ class SensorHelper(object):
             self.m_logger.WriteLine3(
                 "\tThe new Target Projection Intervals collection contains: {0} elements", oTPCollection.count
             )
-
             iIndex: int = 0
             while iIndex < oTPCollection.count:
                 self.m_logger.WriteLine8(
@@ -2937,7 +2939,6 @@ class SensorHelper(object):
         # AvailableAttachPoints
         arPoints = oOffset.available_attachment_points
         self.m_logger.WriteLine3("\t\tThe AvailableAttachPoints array contains: {0} elements.", Array.Length(arPoints))
-
         iIndex: int = 0
         while iIndex < Array.Length(arPoints):
             self.m_logger.WriteLine7("\t\t\tElement {0}: {1}", iIndex, arPoints[iIndex])
@@ -3186,7 +3187,6 @@ class SensorHelper(object):
         self.m_logger.WriteLine3("\t\tThe new number of Time Intervals is: {0}", oSwath.time_interval_count)
         # ToArray
         arIntervals = oSwath.to_array(0, -1)
-
         iIndex: int = 0
         while iIndex < len(arIntervals):
             self.m_logger.WriteLine8(
@@ -3209,7 +3209,6 @@ class SensorHelper(object):
         self.m_logger.WriteLine3("\t\tThe new number of Time Intervals is: {0}", oSwath.time_interval_count)
         # ToArray
         arIntervals = oSwath.to_array(0, -1)
-
         iIndex: int = 0
         while iIndex < len(arIntervals):
             self.m_logger.WriteLine8(
@@ -3226,7 +3225,6 @@ class SensorHelper(object):
         self.m_logger.WriteLine3("\t\tThe new number of Time Intervals is: {0}", oSwath.time_interval_count)
         # ToArray
         arIntervals = oSwath.to_array(0, -1)
-
         iIndex: int = 0
         while iIndex < len(arIntervals):
             self.m_logger.WriteLine8(
@@ -3245,7 +3243,6 @@ class SensorHelper(object):
         self.m_logger.WriteLine3("\t\tThe new number of Time Intervals is: {0}", oSwath.time_interval_count)
         # ToArray
         arIntervals = oSwath.to_array(0, -1)
-
         iIndex: int = 0
         while iIndex < len(arIntervals):
             self.m_logger.WriteLine8(
@@ -3325,7 +3322,6 @@ class SensorHelper(object):
         arTypes = self.m_oSensor.refraction_supported_types
         self.m_logger.WriteLine3("\tThe Sensor supports: {0} refraction types.", len(arTypes))
         Assert.assertEqual(3, len(arTypes))
-
         iIndex: int = 0
         while iIndex < len(arTypes):
             eType: "SensorRefractionType" = SensorRefractionType(int(arTypes[iIndex][0]))
@@ -3738,7 +3734,6 @@ class SensorHelper(object):
         Assert.assertIsNotNone(oFixed1)
         oOrientation1: "IOrientation" = oFixed1.orientation
         Assert.assertIsNotNone(oOrientation1)
-
         az: typing.Any = None
         el: typing.Any = None
 
@@ -3758,7 +3753,6 @@ class SensorHelper(object):
         Assert.assertIsNotNone(oFixed2)
         oOrientation2: "IOrientation" = oFixed2.orientation
         Assert.assertIsNotNone(oOrientation2)
-
         a: typing.Any = None
         b: typing.Any = None
         c: typing.Any = None
@@ -3774,7 +3768,6 @@ class SensorHelper(object):
         Assert.assertIsNotNone(oFixed3)
         oOrientation3: "IOrientation" = oFixed3.orientation
         Assert.assertIsNotNone(oOrientation3)
-
         qx: float = 0
         qy: float = 0
         qz: float = 0
@@ -3794,7 +3787,6 @@ class SensorHelper(object):
         Assert.assertIsNotNone(oFixed4)
         oOrientation4: "IOrientation" = oFixed4.orientation
         Assert.assertIsNotNone(oOrientation4)
-
         y: typing.Any = None
         p: typing.Any = None
         r: typing.Any = None
@@ -3814,7 +3806,6 @@ class SensorHelper(object):
         Assert.assertIsNotNone(oOrientation5)
         sReferenceAxes5: str = oFixedAxes5.reference_axes
         Assert.assertEqual("CentralBody/Sun MOJ2000 Axes", sReferenceAxes5)
-
         az5: typing.Any = None
         el5: typing.Any = None
 
@@ -3836,7 +3827,6 @@ class SensorHelper(object):
         Assert.assertIsNotNone(oOrientation6)
         sReferenceAxes6: str = oFixedAxes6.reference_axes
         Assert.assertEqual("CentralBody/Sun J2000 Axes", sReferenceAxes6)
-
         a6: typing.Any = None
         b6: typing.Any = None
         c6: typing.Any = None
@@ -3856,7 +3846,6 @@ class SensorHelper(object):
         Assert.assertIsNotNone(oOrientation7)
         sReferenceAxes7: str = oFixedAxes7.reference_axes
         Assert.assertEqual("CentralBody/Sun MOJ2000 Axes", sReferenceAxes7)
-
         qx7: float = 0
         qy7: float = 0
         qz7: float = 0
@@ -3876,7 +3865,6 @@ class SensorHelper(object):
         Assert.assertIsNotNone(oFixedAxes8)
         oOrientation8: "IOrientation" = oFixedAxes8.orientation
         Assert.assertIsNotNone(oOrientation8)
-
         y8: typing.Any = None
         p8: typing.Any = None
         r8: typing.Any = None

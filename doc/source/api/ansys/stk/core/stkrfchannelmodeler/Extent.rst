@@ -12,6 +12,15 @@ Overview
 
 .. tab-set::
 
+    .. tab-item:: Methods
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.Extent.set_extent_values`
+              - Set the extent values in degrees
+
     .. tab-item:: Properties
 
         .. list-table::
@@ -63,5 +72,36 @@ Property detail
     :type: float
 
     Get or set the west longitude.
+
+
+Method detail
+-------------
+
+
+
+
+
+.. py:method:: set_extent_values(self, north: float, south: float, east: float, west: float) -> None
+    :canonical: ansys.stk.core.stkrfchannelmodeler.Extent.set_extent_values
+
+    Set the extent values in degrees
+
+    :Parameters:
+
+        **north** : :obj:`~float`
+
+        **south** : :obj:`~float`
+
+        **east** : :obj:`~float`
+
+        **west** : :obj:`~float`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
 
 

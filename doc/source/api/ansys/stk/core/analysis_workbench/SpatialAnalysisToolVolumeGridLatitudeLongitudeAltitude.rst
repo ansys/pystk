@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.latitude_coordinates`
               - Return latitude Coordinates parameters for the Theta system.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.longitude_coordinates`
-              - Return longtitude Coordinates parameters for the Radius system.
+              - Return longitude Coordinates parameters for the Radius system.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.reference_central_body`
               - Get the central body for the volume grid. Both the central body reference shape and its CBF (central body centered fixed) system are used by this volume grid.
 
@@ -66,7 +66,7 @@ Property detail
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.longitude_coordinates
     :type: SpatialAnalysisToolGridCoordinateDefinition
 
-    Return longtitude Coordinates parameters for the Radius system.
+    Return longitude Coordinates parameters for the Radius system.
 
 .. py:property:: reference_central_body
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.reference_central_body

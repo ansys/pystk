@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -38,7 +38,6 @@ class LogMessageMonitor(IObjectModelEventMonitor):
         self._filterEcho: bool = filterEcho
         self._counter: int = 0
         self._root: "STKObjectRoot" = root
-
         self.csToPy_OnLogMessageSubscription = (self._root).subscribe()
         self.csToPy_OnLogMessageSubscription.on_log_message += self._root_OnLogMessage
 

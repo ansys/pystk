@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -259,16 +259,16 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
         # Specify the element to be changed, the action, and the value
 
         # Add values
-        update.set_action_and_value(UpdateParam.CD, UpdateAction.ADD_VALUE, 2)
-        update.set_action_and_value(UpdateParam.FUEL_DENSITY, UpdateAction.ADD_VALUE, 1)
+        update.set_action_and_value(UpdateParameter.CD, UpdateAction.ADD_VALUE, 2)
+        update.set_action_and_value(UpdateParameter.FUEL_DENSITY, UpdateAction.ADD_VALUE, 1)
 
         # Set to new value
-        update.set_action_and_value(UpdateParam.TANK_PRESSURE, UpdateAction.SET_TO_NEW_VALUE, 6000)
-        update.set_action_and_value(UpdateParam.TANK_TEMPERATURE, UpdateAction.SET_TO_NEW_VALUE, 5)
+        update.set_action_and_value(UpdateParameter.TANK_PRESSURE, UpdateAction.SET_TO_NEW_VALUE, 6000)
+        update.set_action_and_value(UpdateParameter.TANK_TEMPERATURE, UpdateAction.SET_TO_NEW_VALUE, 5)
 
         # Subtract values
-        update.set_action_and_value(UpdateParam.SRP_AREA, UpdateAction.SUBTRACT_VALUE, 10)
-        update.set_action_and_value(UpdateParam.SRP_AREA, UpdateAction.SUBTRACT_VALUE, 1)
+        update.set_action_and_value(UpdateParameter.SRP_AREA, UpdateAction.SUBTRACT_VALUE, 10)
+        update.set_action_and_value(UpdateParameter.SRP_AREA, UpdateAction.SUBTRACT_VALUE, 1)
 
     # endregion
 
@@ -385,7 +385,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
             # Configure differential corrector
             dc.clear_corrections_before_run = True
             dc.convergence_criteria = (
-                ConvergenceCriteria.CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMS
+                ConvergenceCriteria.CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMETERS
             )
             dc.enable_b_plane_nominal = False
             dc.enable_b_plane_perturbations = False
@@ -419,7 +419,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
         )
         newMoon.set_mode_type(ThirdBodyMode.POINT_MASS)
         pointMass: "PointMassFunction" = clr.CastAs(newMoon.mode, PointMassFunction)
-        pointMass.gravitational_parameter_source = GravParamSource.USER
+        pointMass.gravitational_parameter_source = GravParameterSource.USER
         pointMass.mu = 390000.0
 
     # endregion
@@ -434,12 +434,13 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
         compInfoCol: "ComponentInfoCollection" = scenario.component_directory.get_components(Component.ASTROGATOR)
         propagatorFolder: "ComponentInfoCollection" = compInfoCol.get_folder("Propagators")
         myEathHPOP: "NumericalPropagatorWrapper" = clr.CastAs(
-            propagatorFolder.duplicate_component("Earth HPOP Default v10", "myEathHPOP"), NumericalPropagatorWrapper
+            propagatorFolder.duplicate_component("Earth Default High Fidelity v13", "myEathHPOP"),
+            NumericalPropagatorWrapper,
         )
         moon: "ThirdBodyFunction" = clr.CastAs(myEathHPOP.propagator_functions["Moon"], ThirdBodyFunction)
         moon.set_mode_type(ThirdBodyMode.POINT_MASS)
         pointMass: "PointMassFunction" = clr.CastAs(moon.mode, PointMassFunction)
-        pointMass.gravitational_parameter_source = GravParamSource.USER
+        pointMass.gravitational_parameter_source = GravParameterSource.USER
         pointMass.mu = 390000.0
 
     # endregion

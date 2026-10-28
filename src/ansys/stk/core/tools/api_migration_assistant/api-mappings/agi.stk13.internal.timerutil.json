@@ -1,0 +1,12 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.internal.timerutil",
+        "NewRootScope": "ansys.stk.core.internal.timerutil"
+    },
+    "MemberMappings": [],
+    "InterfaceMappings": [],
+    "ClassMappings": [],
+    "EnumTypeMappings": [],
+    "EnumValueMappings": [],
+    "NamedArgumentMappings": []
+}

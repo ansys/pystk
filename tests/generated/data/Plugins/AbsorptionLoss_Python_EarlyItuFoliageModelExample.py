@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -21,9 +21,8 @@
 # SOFTWARE.
 
 import typing, math
-from agi.stk12.plugins.commrdrplugin import IAgStkCommRdrAbsorptionLossPropagateSignalParams
-from agi.stk12.plugins.attrautomation import AgEAttrAddFlags
-from agi.stk12.plugins.stkplugin import AgStkPluginSite
+from agi.stk13.plugins.attrautomation import AgEAttrAddFlags
+from agi.stk13.plugins.stkplugin import AgStkPluginSite
 
 
 class CAgStkCommRdrAbsorpLossPlugin(object):
@@ -41,7 +40,7 @@ class CAgStkCommRdrAbsorpLossPlugin(object):
     def __del__(self):
         pass
 
-    def Initialize(self, site: "IAgUtPluginSite") -> bool:
+    def Initialize(self, site: "IUtPluginSite") -> bool:
         self.site = AgStkPluginSite(site)
         self.root = self.site.StkRootObject
         self.VectorToolProvider = self.site.VectorToolProvider
@@ -51,7 +50,7 @@ class CAgStkCommRdrAbsorpLossPlugin(object):
     def PrePropagateSignal(self) -> bool:
         return True
 
-    def PropagateSignal(self, params: "IAgStkCommRdrAbsorptionLossPropagateSignalParams") -> bool:
+    def PropagateSignal(self, params: "ISTKCommRdrAbsorptionLossPropagateSignalParameters") -> bool:
         xmtrPosCBF = params.XmtrPosCBF
         rcvrPosCBF = params.RcvrPosCBF
         deltaX = rcvrPosCBF[0] - xmtrPosCBF[0]

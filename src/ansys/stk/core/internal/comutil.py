@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -25,12 +25,11 @@ from __future__ import annotations
 
 import os
 import typing
-import copy
 
 from ctypes import c_void_p, c_longlong, c_ulonglong, c_int, c_uint, c_ulong, c_ushort, c_short, c_ubyte, c_wchar_p, c_double, c_float, c_bool
-from ctypes import POINTER, Structure, Union, byref, cast, pointer
+from ctypes import POINTER, Structure, Union, byref, cast, pointer, addressof
 
-from .apiutil import OutArg, GcDisabler
+from .apiutil import OutArg
 
 ###############################################################################
 #   COM Types
@@ -72,6 +71,7 @@ OLE_XPOS_PIXELS = LONG
 OLE_YPOS_PIXELS = LONG
 LPSAFEARRAY = PVOID
 LPSTREAM = PVOID
+PGRPCBYTES = PVOID
 
 
 ###############################################################################
@@ -171,11 +171,14 @@ class GUID(Structure):
 
         return guid
 
+    _data_pair_cache = {}
+
     @staticmethod
     def from_data_pair(data:tuple) -> "GUID":
-        guid_union = _guid_union(data)
-        guid = copy.deepcopy(guid_union.guid)
-        return guid
+        if data not in GUID._data_pair_cache:
+            guid_union = _guid_union(data)
+            GUID._data_pair_cache[data] = guid_union.guid
+        return GUID._data_pair_cache[data]
 
     def as_data_pair(self) -> tuple:
         guid_union = _guid_union(self)
@@ -232,6 +235,13 @@ class _guid_union(Union):
 IID = GUID
 REFIID = POINTER(IID)
 
+class Variant(Structure):
+    # Copy a varUnion into the buffer to get the correct data.
+    _fields_ = [("vt", WORD), ("wReserved1", WORD), ("wReserved2", WORD), ("wReserved3", WORD), ("buffer", BYTE*16)]
+    def __init__(self):
+        # To initialize Variant from python data, use marshall.VARIANT_from_python_data
+        pass
+
 class varUnion(Union):
     # GCC throws an error when trying to marshall ctypes.Union to C++ methods. Therefore the Variant class
     # only has a raw buffer that is equivalent in size to the varUnion.
@@ -269,19 +279,12 @@ class varUnion(Union):
                 ("pullVal", POINTER(ULONGLONG)), #VT_UI8|VT_BYREF
                 ("pintVal", POINTER(INT)), #VT_INT|VT_BYREF
                 ("puintVal", POINTER(UINT)), #VT_UINT|VT_BYREF
-                ("pvarVal", POINTER(PVOID)), #VT_VARIANT|VT_BYREF
+                ("pvarVal", POINTER(Variant)), #VT_VARIANT|VT_BYREF
                 ("scode", HRESULT), #VT_ERROR
                 ("pscode", POINTER(HRESULT)), #VT_ERROR|VT_BYREF
                 ("pdispVal", PVOID), #VT_DISPATCH
                 ("ppdispVal", POINTER(PVOID)) #VT_DISPATCH|VT_BYREF
                ]
-
-class Variant(Structure):
-    # Copy a varUnion into the buffer to get the correct data.
-    _fields_ = [("vt", WORD), ("wReserved1", WORD), ("wReserved2", WORD), ("wReserved3", WORD), ("buffer", BYTE*16)]
-    def __init__(self):
-        # To initialize Variant from python data, use marshall.VARIANT_from_python_data
-        pass
 
 class SafearrayBound(Structure):
     _fields_ = [("cElements", ULONG), ("lLbound", LONG)]
@@ -324,12 +327,19 @@ class OLE32Lib:
     CoUninitialize      = None
     StringFromCLSID     = None
 
-    if os.name=="nt":
+    use_xcom_registry = False
+    xcom_bin_dir = None
+    if os.name != "nt":
+        use_xcom_registry = True
+    elif os.getenv("STK_USE_XCOM_REGISTRY") is not None:
+        use_xcom_registry = True
+        if os.getenv("STK_BIN_DIR") is not None:
+            xcom_bin_dir = os.path.normpath(os.getenv("STK_BIN_DIR"))
 
+    if not use_xcom_registry:
         CoMarshalInterThreadInterfaceInStream = None
         CoGetInterfaceAndReleaseStream        = None
         CoReleaseMarshalData                  = None
-
         CreateClassMoniker    = None
         GetRunningObjectTable = None
         CreateBindCtx         = None
@@ -340,23 +350,39 @@ class OLE32Lib:
         if OLE32Lib._handle is not None:
             return
 
-        if os.name == "nt":
+        if os.name == "nt" and not OLE32Lib.use_xcom_registry:
             from ctypes import windll
             OLE32Lib._handle = windll.ole32
         else:
             from ctypes import cdll
-            OLE32Lib._handle = cdll.LoadLibrary("libagxcom.so")
+            if os.name == "nt":
+                try:
+                    if OLE32Lib.xcom_bin_dir is not None:
+                        OLE32Lib._handle = cdll.LoadLibrary(os.path.join(OLE32Lib.xcom_bin_dir, "AgXCom.dll"))
+                    else:
+                        raise RuntimeError("Error loading STK libraries. Ensure STK libraries can be found from the STK_BIN_DIR environment variable.")
+                except FileNotFoundError as e:
+                    raise RuntimeError(f"Error loading STK libraries. Ensure STK libraries can be found from the STK_BIN_DIR environment variable.") from e
+            else:
+                OLE32Lib._handle = cdll.LoadLibrary("libagxcom.so")
 
-        OLE32Lib.CLSIDFromString     = WINFUNCTYPE(HRESULT, LPCWSTR, POINTER(GUID))(("CLSIDFromString", OLE32Lib._handle), ((1, "lpsz"), (1, "pclsid")))
-        OLE32Lib.CLSIDFromProgID     = WINFUNCTYPE(HRESULT, LPCWSTR, POINTER(GUID))(("CLSIDFromProgID", OLE32Lib._handle), ((1, "lpszProgID"), (1, "lpclsid")))
-        OLE32Lib.CoCreateInstance    = WINFUNCTYPE(HRESULT, POINTER(GUID), LPVOID, DWORD, POINTER(GUID), POINTER(LPVOID))(("CoCreateInstance", OLE32Lib._handle),
+        xcom_prefix = "AgXCom" if OLE32Lib.use_xcom_registry else ""
+
+        OLE32Lib.CLSIDFromString     = WINFUNCTYPE(HRESULT, LPCWSTR, POINTER(GUID))((f"{xcom_prefix}CLSIDFromString", OLE32Lib._handle), ((1, "lpsz"), (1, "pclsid")))
+        OLE32Lib.CLSIDFromProgID     = WINFUNCTYPE(HRESULT, LPCWSTR, POINTER(GUID))((f"{xcom_prefix}CLSIDFromProgID", OLE32Lib._handle), ((1, "lpszProgID"), (1, "lpclsid")))
+        OLE32Lib.CoCreateInstance    = WINFUNCTYPE(HRESULT, POINTER(GUID), LPVOID, DWORD, POINTER(GUID), POINTER(LPVOID))((f"{xcom_prefix}CoCreateInstance", OLE32Lib._handle),
                                        ((1, "rclsid"), (1, "pUnkOuter"), (1, "dwClsContext"), (1, "riid"), (1, "ppv")))
-        OLE32Lib.CoInitializeEx      = WINFUNCTYPE(HRESULT, c_void_p, DWORD)(("CoInitializeEx", OLE32Lib._handle), ((1, "pvReserved"), (1, "dwCoInit")))
-        OLE32Lib.CoTaskMemFree       = WINFUNCTYPE(None, LPVOID)(("CoTaskMemFree", OLE32Lib._handle), ((1, "pv"),))
-        OLE32Lib.CoUninitialize      = WINFUNCTYPE(None)(("CoUninitialize", OLE32Lib._handle))
-        OLE32Lib.StringFromCLSID     = WINFUNCTYPE(HRESULT, POINTER(GUID), POINTER(LPOLESTR))(("StringFromCLSID", OLE32Lib._handle), ((1, "rclsid"), (1, "lplpsz")))
+        OLE32Lib.CoInitializeEx      = WINFUNCTYPE(HRESULT, c_void_p, DWORD)((f"{xcom_prefix}CoInitializeEx", OLE32Lib._handle), ((1, "pvReserved"), (1, "dwCoInit")))
+        OLE32Lib.CoUninitialize      = WINFUNCTYPE(None)((f"{xcom_prefix}CoUninitialize", OLE32Lib._handle))
+        OLE32Lib.StringFromCLSID     = WINFUNCTYPE(HRESULT, POINTER(GUID), POINTER(LPOLESTR))((f"{xcom_prefix}StringFromCLSID", OLE32Lib._handle), ((1, "rclsid"), (1, "lplpsz")))
 
-        if os.name=="nt":
+        if os.name == "nt":
+            from ctypes import windll
+            OLE32Lib.CoTaskMemFree = WINFUNCTYPE(None, LPVOID)(("CoTaskMemFree", windll.ole32), ((1, "pv"),))
+        else:
+            OLE32Lib.CoTaskMemFree = WINFUNCTYPE(None, LPVOID)(("CoTaskMemFree", OLE32Lib._handle), ((1, "pv"),))
+
+        if os.name == "nt" and not OLE32Lib.use_xcom_registry:
 
             OLE32Lib.CoMarshalInterThreadInterfaceInStream = WINFUNCTYPE(HRESULT, REFIID, PVOID, POINTER(LPSTREAM))(("CoMarshalInterThreadInterfaceInStream", OLE32Lib._handle), ((1, "riid"), (1, "pUnk"), (1, "ppStm")))
             OLE32Lib.CoGetInterfaceAndReleaseStream        = WINFUNCTYPE(HRESULT, LPSTREAM, REFIID, POINTER(PVOID))(("CoGetInterfaceAndReleaseStream", OLE32Lib._handle), ((1, "pStm"), (1, "iid"), (1, "ppv")))
@@ -425,119 +451,65 @@ def Succeeded(hr):
     return hr >= S_OK
 
 class _CreateAgObjectLifetimeManager(object):
-    """Singleton class for managing reference counts on COM interfaces."""
-    _AddRef = WINFUNCTYPE(ULONG, LPVOID)
-    _Release = WINFUNCTYPE(ULONG, LPVOID)
-    if os.name == "nt":
-        _AddRefIndex = 1
-        _ReleaseIndex = 2
-    else:
-        _AddRefIndex = 0
-        _ReleaseIndex = 1
+    """Singleton class for managing the lifetime of COM interfaces."""
 
     def __init__(self):
-        self._ref_counts = dict()
-        self._applications = list()
+        self._objects = set()
+        self._applications = set()
+        self._shutting_down = False
 
-    @staticmethod
-    def _release_impl(pUnk:"IUnknown"):
-        """Call Release in STK."""
-        _CreateAgObjectLifetimeManager._Release(pUnk._get_vtbl_entry(_CreateAgObjectLifetimeManager._ReleaseIndex))(pUnk.p)
+    def add_application(self, pUnk:"IUnknown"):
+        """Add pUnk to the list of applications."""
+        self._applications.add(pUnk)
 
-    @staticmethod
-    def _add_ref_impl(pUnk:"IUnknown"):
-        """Call AddRef in STK."""
-        _CreateAgObjectLifetimeManager._AddRef(pUnk._get_vtbl_entry(_CreateAgObjectLifetimeManager._AddRefIndex))(pUnk.p)
+    def add_object(self, pUnk:"IUnknown"):
+        """Add pUnk to the reference manager."""
+        self._objects.add(pUnk)
 
-    def create_ownership(self, pUnk:"IUnknown"):
-        """
-        Add pUnk to the reference manager and call AddRef in STK.
+    def remove_object(self, pUnk:"IUnknown"):
+        """Remove pUnk from the reference manager."""
+        if not self._shutting_down:
+            if pUnk in self._objects:
+                self._objects.remove(pUnk)
+            elif pUnk in self._applications:
+                self._applications.remove(pUnk)
 
-        Use if pUnk has a ref-count of 0.
-        """
-        ptraddress = pUnk.p.value
-        if ptraddress is not None:
-            _CreateAgObjectLifetimeManager._add_ref_impl(pUnk)
-            self.take_ownership(pUnk, False)
-
-    def take_ownership(self, pUnk:"IUnknown", isApplication=False):
-        """
-        Add pUnk to the reference manager; does not call AddRef in STK.
-
-        Use if pUnk has a ref-count of 1.
-        """
-        ptraddress = pUnk.p.value
-        if ptraddress is not None:
-            with GcDisabler():
-                if isApplication:
-                    self._applications.append(ptraddress)
-                if ptraddress in self._ref_counts:
-                    _CreateAgObjectLifetimeManager._release_impl(pUnk)
-                    self.internal_add_ref(pUnk)
-                else:
-                    self._ref_counts[ptraddress] = 1
-
-    def internal_add_ref(self, pUnk:"IUnknown"):
-        """Increment the internal reference count of pUnk."""
-        ptraddress = pUnk.p.value
-        with GcDisabler():
-            if ptraddress in self._ref_counts:
-                self._ref_counts[ptraddress] = self._ref_counts[ptraddress] + 1
-
-    def release(self, pUnk:"IUnknown"):
-        """
-        Decrements the internal reference count of pUnk.
-
-        If the internal reference count reaches zero, calls Release in STK.
-        """
-        ptraddress = pUnk.p.value
-        if ptraddress is not None:
-            with GcDisabler():
-                if ptraddress in self._ref_counts:
-                    if self._ref_counts[ptraddress] == 1:
-                        _CreateAgObjectLifetimeManager._release_impl(pUnk)
-                        del(self._ref_counts[ptraddress])
-                    else:
-                        self._ref_counts[ptraddress] = self._ref_counts[ptraddress] - 1
-
-    def release_all(self, releaseApplication=True):
-        with GcDisabler():
-            preserved_app_ref_counts = dict()
-            while len(self._ref_counts) > 0:
-                ref_count = self._ref_counts.popitem()
-                ptraddress = ref_count[0]
-                if not releaseApplication and ptraddress in self._applications:
-                    preserved_app_ref_counts[ptraddress] = ref_count[1]
-                    continue
-                pUnk = IUnknown()
-                pUnk.p = c_void_p(ptraddress)
-                _CreateAgObjectLifetimeManager._release_impl(pUnk)
-                pUnk.p = c_void_p(0)
-            self._ref_counts = preserved_app_ref_counts
+    def release_all(self, release_applications=True):
+        self._shutting_down = True
+        for obj in self._objects:
+            obj.final_release()
+        self._objects = set()
+        if release_applications:
+            for app in self._applications:
+                app.final_release()
+            self._applications = set()
+        self._shutting_down = False
 
 ObjectLifetimeManager = _CreateAgObjectLifetimeManager()
 
 
 class _CreateCoInitializeManager(object):
-    def __init__(self):
+    def __init__(self, ole32lib, oleaut32lib):
         self.init_count = 0
+        self.ole32lib = ole32lib
+        self.oleaut32lib = oleaut32lib
 
     def initialize(self):
         if self.init_count == 0:
-            OLE32Lib._initialize()
-            OLEAut32Lib._initialize()
-            OLE32Lib.CoInitializeEx(None, COINIT_APARTMENTTHREADED)
+            self.ole32lib._initialize()
+            self.oleaut32lib._initialize()
+            self.ole32lib.CoInitializeEx(None, COINIT_APARTMENTTHREADED)
         self.init_count = self.init_count + 1
 
     def uninitialize(self):
         self.init_count = self.init_count - 1
         if self.init_count == 0:
-            OLE32Lib.CoUninitialize()
+            self.ole32lib.CoUninitialize()
 
-CoInitializeManager = _CreateCoInitializeManager()
+CoInitializeManager = _CreateCoInitializeManager(OLE32Lib, OLEAut32Lib)
 
 def _initialize_embedded():
-    """Initialize OLE libraries for STK plugin initialization."""
+    """Initialize OLE libraries for plugin initialization."""
     OLE32Lib._initialize()
     OLEAut32Lib._initialize()
 
@@ -548,69 +520,110 @@ class IUnknown(object):
     _guid = "{00000000-0000-0000-C000-000000000046}"
     _vtable_offset = 0
     _num_methods = 3
+    _AddRef = WINFUNCTYPE(ULONG, LPVOID)
+    _Release = WINFUNCTYPE(ULONG, LPVOID)
     _QueryInterface = WINFUNCTYPE(HRESULT, LPVOID, POINTER(GUID), POINTER(LPVOID))
+    _ptr_to_vtable = POINTER(POINTER(c_void_p))
     _metadata = {
         "iid_data" : (0, 5044031582654955712),
     }
     if os.name == "nt":
         _QIIndex = 0
+        _AddRefIndex = 1
+        _ReleaseIndex = 2
     else:
+        _AddRefIndex = 0
+        _ReleaseIndex = 1
         _QIIndex = 2
-    def __init__(self, pUnk=None):
-        if pUnk is not None:
-            self.p = pUnk.p
-            self.add_ref()
-        else:
-            self.p = c_void_p()
+    def __init__(self):
+        self._vtbl = None
+        self._vtbl_p_value = -1
+        self._interfaces = {}
+        self.p = c_void_p()
+        self._skip_release = False
+        self._application = False
+        # Local references needed during shutdown
+        self._ObjectLifetimeManager = ObjectLifetimeManager
+        self._Release = IUnknown._Release
+        self._ReleaseIndex = IUnknown._ReleaseIndex
+    @staticmethod
+    def create_weak_interface(addr:int, prefetch_interface_iids:tuple[tuple[int, int]]=()) -> "IUnknown":
+        """
+        Create a weak Python wrapper around IUnknown without owning the reference.
+
+        addr is the integer value of the IUnknown pointer address.
+        prefetch_interface_iids are a set of interface iids that the wrapped interface implements.
+            Providing these improves performance by bypassing calls to QueryInterface. IUnknown
+            is always prefetched.
+        """
+        pUnk = IUnknown()
+        pUnk.p.value = addr
+        pUnk._interfaces[IUnknown._metadata["iid_data"]] = pUnk
+        for prefetch_iid in prefetch_interface_iids:
+            pUnk._interfaces[prefetch_iid] = pUnk
+        pUnk._skip_release = True
+        return pUnk
     def __del__(self):
-        if self:
-            self.release()
+        self._ObjectLifetimeManager.remove_object(self)
+        self.final_release()
     def __eq__(self, other):
         return self.p.value == other.p.value
     def __hash__(self):
-        return self.p.value
+        return id(self)
     def __bool__(self):
         return self.p.value is not None and self.p.value > 0
+    def _ensure_vtbl(self):
+        if self.p.value != self._vtbl_p_value:
+            self._vtbl_p_value = self.p.value
+            self._vtbl = IUnknown._ptr_to_vtable.from_address(addressof(self.p))[0]
     def _get_vtbl_entry(self, index):
-        vptr = cast(self.p, POINTER(c_void_p))
-        vtbl = cast(vptr.contents, POINTER(c_void_p))
-        return vtbl[index]
+        self._ensure_vtbl()
+        return self._vtbl[index]
     def _query_backwards_compatability_interface(self, iid):
         from .coclassutil import AgBackwardsCompatabilityMapping
         iid_tuple = iid.as_data_pair()
         if AgBackwardsCompatabilityMapping.check_guid_available(iid_tuple):
             old_iid = GUID.from_data_pair(AgBackwardsCompatabilityMapping.get_old_guid(iid_tuple))
-            return self.query_interface(old_iid)
+            return self.query_interface(intf_metadata=None, iid=old_iid)
         return None
-    def query_interface(self, arg:typing.Union[GUID, dict]) -> "IUnknown":
-        if type(arg) == dict:
-            iid = GUID.from_data_pair(arg["iid_data"])
+    def query_interface(self, intf_metadata:dict=None, iid:GUID=None) -> "IUnknown":
+        if intf_metadata is not None:
+            iid_tuple = intf_metadata["iid_data"]
         else:
-            iid = arg
-        pIntf = IUnknown()
-        hr = IUnknown._QueryInterface(self._get_vtbl_entry(IUnknown._QIIndex))(self.p, byref(iid), byref(pIntf.p))
+            iid_tuple = iid.as_data_pair()
+        if iid_tuple in self._interfaces:
+            return self._interfaces[iid_tuple]
+        if iid is None:
+            iid = GUID.from_data_pair(intf_metadata["iid_data"])
+        intf = IUnknown()
+        hr = IUnknown._QueryInterface(self._get_vtbl_entry(IUnknown._QIIndex))(self.p, byref(iid), byref(intf.p))
         if not Succeeded(hr):
             return self._query_backwards_compatability_interface(iid)
-        pIntf.take_ownership()
-        return pIntf
-    def create_ownership(self):
-        """Call AddRef on the pointer, and register the pointer to be Released when the ref count goes to zero."""
-        ObjectLifetimeManager.create_ownership(self)
-    def take_ownership(self, isApplication=False):
-        """Register the pointer to be Released when the ref count goes to zero but does not call AddRef."""
-        ObjectLifetimeManager.take_ownership(self, isApplication)
+        intf.take_ownership(is_application=self._application)
+        self._interfaces[iid_tuple] = intf
+        return intf
+    def take_ownership(self, is_application:bool=False):
+        """Register the pointer to be Released at exit."""
+        if is_application:
+            self._application = True
+            self._ObjectLifetimeManager.add_application(self)
+        else:
+            self._ObjectLifetimeManager.add_object(self)
     def add_ref(self):
-        """Increment the ref count if the pointer was registered.
-
-        Pointer registration must be done by create_ownership or take_ownership.
-        """
-        ObjectLifetimeManager.internal_add_ref(self)
+        """Call AddRef on the COM interface."""
+        IUnknown._AddRef(self._get_vtbl_entry(IUnknown._AddRefIndex))(self.p)
     def release(self):
-        """Decrement the ref count if the pointer was registered. Calls Release if the ref count goes to zero.
-
-        Pointer registration must be done by create_ownership or take_ownership.
-        """
-        ObjectLifetimeManager.release(self)
+        """Call Release on the COM interface."""
+        self._Release(self._get_vtbl_entry(self._ReleaseIndex))(self.p)
+    def final_release(self):
+        """Clean up resources and nullify object."""
+        if self:
+            self._interfaces = {}
+            if not self._skip_release:
+                self.release()
+            self._vtbl = None
+            self._vtbl_p_value = -1
+            self.p.value = 0
 
     def invoke(self, intf_metadata:dict, method_metadata:dict, *args):
         return self._invoke_impl(intf_metadata, method_metadata, *args)
@@ -623,12 +636,11 @@ class IUnknown(object):
 
     def _invoke_impl(self, intf_metadata:dict, method_metadata:dict, *args):
         from .coclassutil import evaluate_hresult
-        guid = GUID.from_data_pair(intf_metadata["iid_data"])
         method_offset = method_metadata["offset"]
         vtable_index = intf_metadata["vtable_reference"] + method_offset
         arg_types = method_metadata["arg_types"]
         marshaller_classes = method_metadata["marshallers"]
-        method = IFuncType(self, guid, vtable_index, *arg_types)
+        method = IFuncType(self, intf_metadata, vtable_index, *arg_types)
         marshallers = []
         for arg, marshaller_class in zip(args, marshaller_classes):
             if type(arg) is OutArg:
@@ -660,45 +672,63 @@ class IDispatch(IUnknown):
     _guid = "{00020400-0000-0000-C000-000000000046}"
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _num_methods = 4
+    _metadata = {
+        "iid_data" : (132096, 5044031582654955712),
+    }
     def __init__(self, pUnk: IUnknown):
         IUnknown.__init__(self, pUnk)
 
 class IPictureDisp(IUnknown):
     def __init__(self):
-        raise STKRuntimeError("IPictureDisp not supported.")
+        raise RuntimeError("IPictureDisp not supported.")
 
 class IEnumVariant(object):
     guid = "{00020404-0000-0000-C000-000000000046}"
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _num_methods = 4
-    def __init__(self, pUnk):
-        self.pUnk = pUnk
-        IID_IEnumVARIANT = GUID(IEnumVariant.guid)
+    _metadata = {
+        "iid_data" : (132100, 5044031582654955712),
+    }
+    def __init__(self, pIntf):
+        self._intf: IUnknown = pIntf.query_interface(IEnumVariant._metadata)
         vtable_offset_local = IEnumVariant._vtable_offset - 1
-        self._Next  = IFuncType(pUnk, IID_IEnumVARIANT, vtable_offset_local+1, ULONG, POINTER(Variant), POINTER(ULONG))
-        self._Reset = IFuncType(pUnk, IID_IEnumVARIANT, vtable_offset_local+3)
+        self._Next = WINFUNCTYPE(HRESULT, LPVOID, ULONG, POINTER(Variant), POINTER(ULONG))(self._intf._get_vtbl_entry(vtable_offset_local + 1))
+        self._Reset = WINFUNCTYPE(HRESULT, LPVOID)(self._intf._get_vtbl_entry(vtable_offset_local + 3))
     def next(self) -> Variant:
         from .marshall import python_val_from_VARIANT
         one_obj = ULONG(1)
         num_fetched = ULONG()
         obj = Variant()
         OLEAut32Lib.VariantInit(obj)
-        if self._Next(one_obj, byref(obj), byref(num_fetched)) == S_OK:
+        if self._Next(self._intf.p, one_obj, byref(obj), byref(num_fetched)) == S_OK:
             return python_val_from_VARIANT(obj, clear_variant=True)
         else:
             return None
     def reset(self) -> None:
-        self._Reset()
+        self._Reset(self._intf.p)
 
 class IFuncType(object):
     """Wrapper for calling methods into COM interface vtables."""
-    def __init__(self, pUnk, iid, method_index, *argtypes):
+    def __init__(self, pUnk, iid:typing.Union[GUID, dict], method_index, *argtypes):
         self.pUnk = pUnk
         self.iid = iid
         self.index = method_index
         self.method = WINFUNCTYPE(HRESULT, LPVOID, *argtypes)
     def __call__(self, *args):
-        pIntf: IUnknown = self.pUnk.query_interface(self.iid)
+        if type(self.iid) == GUID:
+            pIntf: IUnknown = self.pUnk.query_interface(iid=self.iid)
+        else:
+            pIntf: IUnknown = self.pUnk.query_interface(self.iid)
         ret = self.method(pIntf._get_vtbl_entry(self.index))(pIntf.p, *args)
         del(pIntf)
         return ret
+
+def create_instance(guid:str) -> IUnknown:
+    """Uses CoCreateInstance to instantiate the coclass associated with the provided guid."""
+    clsid = GUID()
+    pUnk = IUnknown()
+    if Succeeded(OLE32Lib.CLSIDFromString(guid, clsid)):
+        IID_IUnknown = GUID(IUnknown._guid)
+        if Succeeded(OLE32Lib.CoCreateInstance(byref(clsid), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(pUnk.p))):
+            pUnk.take_ownership()
+    return pUnk

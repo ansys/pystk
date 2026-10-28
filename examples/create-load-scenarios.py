@@ -15,7 +15,8 @@ stk = STKEngine.start_application(no_graphics=False)
 print(f"Using {stk.version}")
 # -
 
-# This creates an instance of the STK application. Setting `no_graphics` to `False` opens the STK window.
+# This creates an instance of STK Engine. Setting `no_graphics` to `False` enables graphics support, but it does not open an STK Desktop window.
+# For details on `no_graphics`, see the `STK programming help <https://help.agi.com/stkdevkit/index.htm#stkEngine/NoGraphics.htm>`_.
 
 # Next, it's time to create a scenario.
 
@@ -56,7 +57,7 @@ propagator.propagate()  # To propagate the orbit
 # It is possible to display the created scenario by using PySTK widgets for Jupyter:
 
 # + tags=["nbsphinx-thumbnail"]
-from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
+from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
 
 
 plotter = GlobeWidget(root, 640, 480)
@@ -92,5 +93,10 @@ scenario = root.load_scenario(str(scenario_path))
 
 # After you're done, you can close the STK application:
 
+# +
+# Close the Jupyter widget to ensure graceful exit
+plotter.close()
+
 # Close the STK application
 stk.shutdown()
+# -

@@ -18,6 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessGraphics.color_mode`
+              - Color mode for access graphics, either use the object colors or a single, custom color.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessGraphics.custom_color`
+              - Color for all access graphics, used when color mode is set to custom.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessGraphics.inherit`
               - Specify whether the Access graphics inherit from the Scenario. Otherwise they can be set locally for this object.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessGraphics.line_style`
@@ -43,6 +47,18 @@ Import detail
 
 Property detail
 ---------------
+
+.. py:property:: color_mode
+    :canonical: ansys.stk.core.stkobjects.AccessGraphics.color_mode
+    :type: IvColorMode
+
+    Color mode for access graphics, either use the object colors or a single, custom color.
+
+.. py:property:: custom_color
+    :canonical: ansys.stk.core.stkobjects.AccessGraphics.custom_color
+    :type: Color
+
+    Color for all access graphics, used when color mode is set to custom.
 
 .. py:property:: inherit
     :canonical: ansys.stk.core.stkobjects.AccessGraphics.inherit

@@ -14,6 +14,9 @@ Summary
             :header-rows: 0
             :widths: auto
 
+            * - :py:class:`~ansys.stk.core.utilities.grpcutilities.GrpcAuthenticationMode`
+              - Specify the method of client-server authentication to use for gRPC.
+
             * - :py:class:`~ansys.stk.core.utilities.grpcutilities.GrpcCallBatcher`
               - A class used to batch together API calls to optimize performance.
 
@@ -36,6 +39,7 @@ by batching together API commands that do not require return values.
     :maxdepth: 1
     :hidden:
 
+     GrpcAuthenticationMode<grpcutilities/GrpcAuthenticationMode>
      GrpcCallBatcher<grpcutilities/GrpcCallBatcher>
 
 

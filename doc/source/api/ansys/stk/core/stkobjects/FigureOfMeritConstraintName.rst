@@ -172,15 +172,6 @@ Overview
             * - :py:attr:`~POINT_METRIC`
               - Coordinate Point Metric constraint.
 
-            * - :py:attr:`~CENTROID_AZIMUTH_ANGLE`
-              - Do not use this enumeration, as it is deprecated. Centroid Azimuth Angle constraint.
-
-            * - :py:attr:`~CENTROID_RANGE`
-              - Do not use this enumeration, as it is deprecated. Centroid Range constraint.
-
-            * - :py:attr:`~CENTROID_SUN_ELEVATION_ANGLE`
-              - Do not use this enumeration, as it is deprecated. Centroid Sun Elevation Angle constraint.
-
             * - :py:attr:`~COLLECTION_ANGLE`
               - Collection Angle constraint.
 
@@ -213,9 +204,6 @@ Overview
 
             * - :py:attr:`~BETA_ANGLE`
               - Beta Angle constraint.
-
-            * - :py:attr:`~AREA_TARGET_CENTROID_ELEVATION_ANGLE`
-              - Do not use this enumeration, as it is deprecated. Area Target Centroid Elevation Angle constraint.
 
             * - :py:attr:`~EXCLUSION_ZONE`
               - Exclusion Zone constraint.
@@ -528,9 +516,6 @@ Overview
 
             * - :py:attr:`~ACCESS_CONSTRAINT_PLUGIN`
               - Access Constraint Plugin constraint.
-
-            * - :py:attr:`~THIRD_BODY_OBS`
-              - Do not use this enumeration, as it is deprecated. Third Body Obstruction constraint.
 
             * - :py:attr:`~SPECTRAL_FLUX_DENSITY`
               - Spectral Flux Density constraint.

@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -323,9 +323,7 @@ class EarlyBoundTests(TestBase):
         sequence: "MCSTargetSequence" = clr.CastAs(
             driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence1", "-"), MCSTargetSequence
         )
-        directory: "ComponentDirectory" = (
-            clr.CastAs(TestBase.Application.current_scenario, Scenario)
-        ).component_directory
+        directory: "ComponentDirectory" = (Scenario(TestBase.Application.current_scenario)).component_directory
         infoCollection: "ComponentInfoCollection" = directory.get_components(Component.ASTROGATOR).get_folder(
             "MCS Segments"
         )
@@ -1106,7 +1104,6 @@ class EarlyBoundTests(TestBase):
             sc.add_eclipsing_body("Bogus")
 
         assigned = sc.eclipsing_bodies
-
         i: int = 0
         while i < Array.Length(assigned):
             TestBase.logger.WriteLine2(assigned[i])
@@ -1118,7 +1115,6 @@ class EarlyBoundTests(TestBase):
             sc.remove_eclipsing_body("Bogus")
 
         available = sc.available_eclipsing_bodies
-
         i: int = 0
         while i < Array.Length(available):
             TestBase.logger.WriteLine2(available[i])
@@ -1467,6 +1463,136 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
+    # region TargetSequence_SetAllRunModes
+    def test_TargetSequence_SetAllRunModes(self):
+        ts: "MCSTargetSequence" = MCSTargetSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "ts2", "-")
+        )
+
+        profDC: "IProfile" = ts.profiles["Differential Corrector"]  # Iterate, Not Active, Run Once
+        profGSS: "IProfile" = ts.profiles.add("Golden Section Search")  # Iterate, Not Active, Run Once
+        profCMT: "IProfile" = ts.profiles.add("Change Maneuver Type")  # Active, Not Active
+        profCP: "IProfile" = ts.profiles.add("Change Propagator")  # Active, Not Active
+
+        # Initial state
+        Assert.assertEqual(ProfileMode.ITERATE_ACTIVE, ts.set_all_profile_modes_to)
+        Assert.assertEqual(ProfileMode.ITERATE, profDC.mode)
+        Assert.assertEqual(ProfileMode.ITERATE, profGSS.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCMT.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCP.mode)
+
+        ts.set_all_profile_modes_to = ProfileMode.RUN_ONCE
+        Assert.assertEqual(ProfileMode.RUN_ONCE, ts.set_all_profile_modes_to)
+        ts.set_all_profile_modes()
+        Assert.assertEqual(ProfileMode.RUN_ONCE, profDC.mode)
+        Assert.assertEqual(ProfileMode.RUN_ONCE, profGSS.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCMT.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCP.mode)
+
+        ts.set_all_profile_modes_to = ProfileMode.NOT_ACTIVE
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, ts.set_all_profile_modes_to)
+        ts.set_all_profile_modes()
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, profDC.mode)
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, profGSS.mode)
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, profCMT.mode)
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, profCP.mode)
+
+        ts.set_all_profile_modes_to = ProfileMode.ITERATE_ACTIVE
+        Assert.assertEqual(ProfileMode.ITERATE_ACTIVE, ts.set_all_profile_modes_to)
+        ts.set_all_profile_modes()
+        Assert.assertEqual(ProfileMode.ITERATE, profDC.mode)
+        Assert.assertEqual(ProfileMode.ITERATE, profGSS.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCMT.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCP.mode)
+
+        EarlyBoundTests.AG_VA.main_sequence.remove("ts2")
+
+    # endregion
+
+    # region MCSOptions_SetAllRunModes
+    def test_MCSOptions_SetAllRunModes(self):
+        ts: "MCSTargetSequence" = MCSTargetSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "ts2", "-")
+        )
+
+        profDC: "IProfile" = ts.profiles["Differential Corrector"]  # Iterate, Not Active, Run Once
+        profGSS: "IProfile" = ts.profiles.add("Golden Section Search")  # Iterate, Not Active, Run Once
+        profCMT: "IProfile" = ts.profiles.add("Change Maneuver Type")  # Active, Not Active
+        profCP: "IProfile" = ts.profiles.add("Change Propagator")  # Active, Not Active
+
+        # Initial state
+        Assert.assertEqual(ProfileMode.ITERATE_ACTIVE, ts.set_all_profile_modes_to)
+        Assert.assertEqual(ProfileMode.ITERATE, profDC.mode)
+        Assert.assertEqual(ProfileMode.ITERATE, profGSS.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCMT.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCP.mode)
+
+        EarlyBoundTests.AG_VA.set_all_profile_modes_to = ProfileMode.RUN_ONCE
+        Assert.assertEqual(ProfileMode.RUN_ONCE, EarlyBoundTests.AG_VA.set_all_profile_modes_to)
+        EarlyBoundTests.AG_VA.set_all_profile_modes()
+        Assert.assertEqual(ProfileMode.RUN_ONCE, profDC.mode)
+        Assert.assertEqual(ProfileMode.RUN_ONCE, profGSS.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCMT.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCP.mode)
+
+        EarlyBoundTests.AG_VA.set_all_profile_modes_to = ProfileMode.NOT_ACTIVE
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, EarlyBoundTests.AG_VA.set_all_profile_modes_to)
+        EarlyBoundTests.AG_VA.set_all_profile_modes()
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, profDC.mode)
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, profGSS.mode)
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, profCMT.mode)
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, profCP.mode)
+
+        EarlyBoundTests.AG_VA.set_all_profile_modes_to = ProfileMode.ITERATE_ACTIVE
+        Assert.assertEqual(ProfileMode.ITERATE_ACTIVE, EarlyBoundTests.AG_VA.set_all_profile_modes_to)
+        EarlyBoundTests.AG_VA.set_all_profile_modes()
+        Assert.assertEqual(ProfileMode.ITERATE, profDC.mode)
+        Assert.assertEqual(ProfileMode.ITERATE, profGSS.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCMT.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCP.mode)
+
+        EarlyBoundTests.AG_VA.main_sequence.remove("ts2")
+
+    # endregion
+
+    # region MCSOptions_SetAllTargetSequenceActions
+    def test_MCSOptions_SetAllTargetSequenceActions(self):
+        ts2: "MCSTargetSequence" = MCSTargetSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "ts2", "-")
+        )
+        ts3: "MCSTargetSequence" = MCSTargetSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "ts3", "-")
+        )
+
+        EarlyBoundTests.AG_VA.set_all_target_sequence_actions_to = TargetSequenceAction.RUN_NOMINAL_SEQUENCE
+        Assert.assertEqual(
+            TargetSequenceAction.RUN_NOMINAL_SEQUENCE, EarlyBoundTests.AG_VA.set_all_target_sequence_actions_to
+        )
+        EarlyBoundTests.AG_VA.set_all_sequence_actions()
+        Assert.assertEqual(TargetSequenceAction.RUN_NOMINAL_SEQUENCE, ts2.action)
+        Assert.assertEqual(TargetSequenceAction.RUN_NOMINAL_SEQUENCE, ts3.action)
+
+        EarlyBoundTests.AG_VA.set_all_target_sequence_actions_to = TargetSequenceAction.RUN_ACTIVE_PROFILES
+        Assert.assertEqual(
+            TargetSequenceAction.RUN_ACTIVE_PROFILES, EarlyBoundTests.AG_VA.set_all_target_sequence_actions_to
+        )
+        EarlyBoundTests.AG_VA.set_all_sequence_actions()
+        Assert.assertEqual(TargetSequenceAction.RUN_ACTIVE_PROFILES, ts2.action)
+        Assert.assertEqual(TargetSequenceAction.RUN_ACTIVE_PROFILES, ts3.action)
+
+        EarlyBoundTests.AG_VA.set_all_target_sequence_actions_to = TargetSequenceAction.RUN_ACTIVE_PROFILES_ONCE
+        Assert.assertEqual(
+            TargetSequenceAction.RUN_ACTIVE_PROFILES_ONCE, EarlyBoundTests.AG_VA.set_all_target_sequence_actions_to
+        )
+        EarlyBoundTests.AG_VA.set_all_sequence_actions()
+        Assert.assertEqual(TargetSequenceAction.RUN_ACTIVE_PROFILES_ONCE, ts2.action)
+        Assert.assertEqual(TargetSequenceAction.RUN_ACTIVE_PROFILES_ONCE, ts3.action)
+
+        EarlyBoundTests.AG_VA.main_sequence.remove("ts2")
+        EarlyBoundTests.AG_VA.main_sequence.remove("ts3")
+
+    # endregion
+
     # region MoonMission
     def test_MoonMission(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - MoonMission START")
@@ -1744,9 +1870,9 @@ class EarlyBoundTests(TestBase):
             True,
             dcCopy.control_parameters.get_control_by_paths("TransLunarInjection", "ImpulsiveMnvr.Cartesian.X").enable,
         )
-        dcCopy.control_parameters.get_control_by_paths(
-            "TransLunarInjection", "ImpulsiveMnvr.Cartesian.X"
-        ).enable = False
+        dcCopy.control_parameters.get_control_by_paths("TransLunarInjection", "ImpulsiveMnvr.Cartesian.X").enable = (
+            False
+        )
         Assert.assertEqual(
             False,
             dcCopy.control_parameters.get_control_by_paths("TransLunarInjection", "ImpulsiveMnvr.Cartesian.X").enable,
@@ -1834,6 +1960,7 @@ class EarlyBoundTests(TestBase):
             (IMCSSegment(toPersilene)).results.add("Keplerian Elems/Inclination")
         )
         calcInc.coord_system_name = "CentralBody/Moon True_Lunar_Equatorial"
+        #
 
         count: int = 0
         while count < altInc.results.count:
@@ -3079,7 +3206,7 @@ longitude = 121;"""
             driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-"), MCSTargetSequence
         )
         targSeq.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
-        code: "RunCode" = driver.run_mcs2()
+        code: "RunCode" = driver.run_mcs()
         code0: "RunCode" = RunCode.ERROR
         Assert.assertEqual(code0, code)
         driver.begin_run()
@@ -3087,7 +3214,7 @@ longitude = 121;"""
             (IMCSSegment(targSeq)).run()
             Assert.fail("Expected an exception, none thrown.")
 
-        except STKRuntimeError as e:
+        except RuntimeError as e:
             Assert.assertEqual(
                 "An error occurred while running the segment.  See the Message Viewer for details, or try running the segment from the user interface.",
                 str(e),
@@ -3108,7 +3235,7 @@ longitude = 121;"""
         diffCorr.control_parameters[0].enable = True
         diffCorr.results[0].enable = True
         diffCorr.max_iterations = 1
-        code = driver.run_mcs2()
+        code = driver.run_mcs()
         code0 = RunCode.PROFILE_FAILURE
         Assert.assertEqual(code0, code)
         driver.begin_run()
@@ -3119,7 +3246,7 @@ longitude = 121;"""
         driver.main_sequence.remove("TargetSequence")
 
         stop: "IMCSSegment" = driver.main_sequence.insert(SegmentType.STOP, "STOP", "Initial_State")
-        code = driver.run_mcs2()
+        code = driver.run_mcs()
         code0 = RunCode.STOPPED
         Assert.assertEqual(code0, code)
         driver.begin_run()
@@ -3129,7 +3256,7 @@ longitude = 121;"""
 
         driver.main_sequence.remove("STOP")
 
-        code = driver.run_mcs2()
+        code = driver.run_mcs()
         code0 = RunCode.MARCHING
         Assert.assertEqual(code0, code)
         seg: "IMCSSegment" = driver.main_sequence["Propagate"]
@@ -3403,7 +3530,7 @@ longitude = 121;"""
         driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
 
         # set up the epochs
-        scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
+        scene: "Scenario" = Scenario(TestBase.Application.current_scenario)
         scene.stop_time = "3 Jan 2010 12:00:00.000"
         scene.start_time = "1 Jan 2010 12:00:00.000"
         scene.epoch = "1 Jan 2010 12:00:00.000"
@@ -3507,15 +3634,15 @@ longitude = 121;"""
 
         Assert.assertEqual("Delta V", intervals[0].data_sets[6].element_name)
         dataSet = intervals[0].data_sets[6].get_values()
-        Assert.assertAlmostEqual(153.96, float(dataSet[0]), delta=0.02)
-        Assert.assertAlmostEqual(162.46, float(dataSet[1]), delta=0.02)
-        Assert.assertAlmostEqual(171.96, float(dataSet[2]), delta=0.02)
+        Assert.assertAlmostEqual(2039.24, float(dataSet[0]), delta=0.02)
+        Assert.assertAlmostEqual(0.0, float(dataSet[1]), delta=0.02)
+        Assert.assertAlmostEqual(0.0, float(dataSet[2]), delta=0.02)
 
         Assert.assertEqual("Fuel Used", intervals[0].data_sets[7].element_name)
         dataSet = intervals[0].data_sets[7].get_values()
-        Assert.assertAlmostEqual(50.99, float(dataSet[0]), delta=0.02)
-        Assert.assertAlmostEqual(50.99, float(dataSet[1]), delta=0.02)
-        Assert.assertAlmostEqual(50.99, float(dataSet[2]), delta=0.02)
+        Assert.assertAlmostEqual(50.0, float(dataSet[0]), delta=0.02)
+        Assert.assertAlmostEqual(0.0, float(dataSet[1]), delta=0.02)
+        Assert.assertAlmostEqual(0.0, float(dataSet[2]), delta=0.02)
 
         Assert.assertEqual("Thruster/Engine", intervals[0].data_sets[8].element_name)
         dataSet = intervals[0].data_sets[8].get_values()
@@ -3595,15 +3722,15 @@ longitude = 121;"""
 
         Assert.assertEqual("Delta V", intervals[0].data_sets[6].element_name)
         dataSet = intervals[0].data_sets[6].get_values()
-        Assert.assertAlmostEqual(146.3, float(dataSet[0]), delta=0.02)
-        Assert.assertAlmostEqual(139.37, float(dataSet[1]), delta=0.02)
-        Assert.assertAlmostEqual(133.06, float(dataSet[2]), delta=0.02)
+        Assert.assertAlmostEqual(1212.15, float(dataSet[0]), delta=0.02)
+        Assert.assertAlmostEqual(827.09, float(dataSet[1]), delta=0.02)
+        Assert.assertAlmostEqual(0.0, float(dataSet[2]), delta=0.02)
 
         Assert.assertEqual("Fuel Used", intervals[0].data_sets[7].element_name)
         dataSet = intervals[0].data_sets[7].get_values()
         Assert.assertAlmostEqual(50.99, float(dataSet[0]), delta=0.02)
-        Assert.assertAlmostEqual(50.99, float(dataSet[1]), delta=0.02)
-        Assert.assertAlmostEqual(50.99, float(dataSet[2]), delta=0.02)
+        Assert.assertAlmostEqual(49.01, float(dataSet[1]), delta=0.02)
+        Assert.assertAlmostEqual(0.0, float(dataSet[2]), delta=0.02)
 
         Assert.assertEqual("Thruster/Engine", intervals[0].data_sets[8].element_name)
         dataSet = intervals[0].data_sets[8].get_values()
@@ -4389,7 +4516,6 @@ longitude = 121;"""
         impulse: "ManeuverImpulsive" = ManeuverImpulsive(maneuver.maneuver)
         att: "AttitudeControlImpulsiveAttitude" = AttitudeControlImpulsiveAttitude(impulse.attitude_control)
         att.orientation.assign_euler_angles(EulerOrientationSequenceType.SEQUENCE_312, deuler0, deuler1, deuler2)
-
         a: typing.Any = None
         b: typing.Any = None
         c: typing.Any = None
@@ -4463,6 +4589,258 @@ longitude = 121;"""
 
         Assert.assertTrue((graphs.count == 0))
         (ISTKObject(sat)).unload()
+
+    # endregion
+
+    # region FlightDynamicsRecordCreator
+    def test_FlightDynamicsRecordCreator(self):
+        # Create a new propagator to be used by the FDR
+        gatorComps: "ComponentInfoCollection" = (
+            Scenario(TestBase.Application.current_scenario)
+        ).component_directory.get_components(Component.ASTROGATOR)
+        propComps: "ComponentInfoCollection" = gatorComps.get_folder("Propagators")
+        propEarthJ2: "IComponentInfo" = propComps["Earth J2"]
+        propEarthJ2Clone: "IComponentInfo" = clr.CastAs(
+            (clr.CastAs(propEarthJ2, ICloneable)).clone_object(), IComponentInfo
+        )
+        propEarthJ2Clone.name = "Test Earth J2"
+        Assert.assertEqual("Test Earth J2", propEarthJ2Clone.name)
+
+        # Create an Astrogator satelllite using the new propagator
+        sat: "Satellite" = Satellite(
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "FlightDynamicsRecordCreator")
+        )
+        sat.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = MCSDriver(sat.propagator)
+        propSeg: "MCSPropagate" = clr.CastAs(driver.main_sequence["Propagate"], MCSPropagate)
+        propSeg.propagator_name = "Test Earth J2"
+
+        # Configure and Export the new FDR
+        FlightDynamicsRecordCreator: "FlightDynamicsRecordCreator" = driver.flight_dynamics_record_creator
+        FlightDynamicsRecordCreator.desired_epoch_type = FlightDynamicsRecordEpochType.FIRST_POINT
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("Select a segment.")):
+            prev1: typing.Any = FlightDynamicsRecordCreator.preview
+
+        Assert.assertEqual("-Not Set-", FlightDynamicsRecordCreator.segment_name)
+        FlightDynamicsRecordCreator.segment_name = "Propagate"
+        Assert.assertEqual("Propagate", FlightDynamicsRecordCreator.segment_name)
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid object specified")):
+            FlightDynamicsRecordCreator.segment_name = "Bogus"
+        with pytest.raises(
+            Exception, match=RegexSubstringMatch("Cannot obtain state from segment. Segment has not been run.")
+        ):
+            prev1: typing.Any = FlightDynamicsRecordCreator.preview
+
+        FlightDynamicsRecordCreator.desired_epoch_type = FlightDynamicsRecordEpochType.FIRST_POINT
+        Assert.assertEqual(FlightDynamicsRecordEpochType.FIRST_POINT, FlightDynamicsRecordCreator.desired_epoch_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("Epoch can only be set for closest point")):
+            FlightDynamicsRecordCreator.epoch = "2 Jul 1999 00:00:00.000"
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot obtain state from segment")):
+            prev2: typing.Any = FlightDynamicsRecordCreator.preview
+
+        FlightDynamicsRecordCreator.desired_epoch_type = FlightDynamicsRecordEpochType.LAST_POINT
+        Assert.assertEqual(FlightDynamicsRecordEpochType.LAST_POINT, FlightDynamicsRecordCreator.desired_epoch_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("Epoch can only be set for closest point")):
+            FlightDynamicsRecordCreator.epoch = "2 Jul 1999 00:00:00.000"
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot obtain state from segment")):
+            prev2: typing.Any = FlightDynamicsRecordCreator.preview
+
+        FlightDynamicsRecordCreator.desired_epoch_type = FlightDynamicsRecordEpochType.CLOSEST_POINT
+        Assert.assertEqual(FlightDynamicsRecordEpochType.CLOSEST_POINT, FlightDynamicsRecordCreator.desired_epoch_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("Error obtaining ephemeris.")):
+            prev2: typing.Any = FlightDynamicsRecordCreator.preview
+
+        FlightDynamicsRecordCreator.epoch = "2 Jul 1999 00:00:00.000"
+        Assert.assertEqual("2 Jul 1999 00:00:00.000", FlightDynamicsRecordCreator.epoch)
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid value")):
+            FlightDynamicsRecordCreator.epoch = "1 Jul 1999 Bogus"
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("Error obtaining ephemeris.")):
+            FlightDynamicsRecordCreator.export()
+
+        driver.run_mcs()
+
+        Assert.assertTrue(FlightDynamicsRecordCreator.use_default_record_name)
+        Assert.assertEqual(String.Empty, FlightDynamicsRecordCreator.record_name)
+        FlightDynamicsRecordCreator.use_default_record_name = False
+        Assert.assertFalse(FlightDynamicsRecordCreator.use_default_record_name)
+        FlightDynamicsRecordCreator.record_name = "My Dynamics Record"
+        Assert.assertEqual("My Dynamics Record", FlightDynamicsRecordCreator.record_name)
+
+        # Preview with epoch after the end time of the segment
+        FlightDynamicsRecordCreator.epoch = "2 Jul 1999 00:00:00.000"
+        preview: "FlightDynamicsRecordPreview" = FlightDynamicsRecordCreator.preview
+        Assert.assertEqual("Epoch: 1 Jul 1999 12:00:00.000", preview.epoch_label)
+
+        # Preview with epoch before the start time of the segment
+        FlightDynamicsRecordCreator.reset()
+        Assert.assertEqual("-Not Set-", FlightDynamicsRecordCreator.segment_name)
+        FlightDynamicsRecordCreator.epoch = "30 Jun 1999 00:00:00.000"
+        preview = FlightDynamicsRecordCreator.preview
+        Assert.assertEqual("Epoch: 1 Jul 1999 00:00:00.000", preview.epoch_label)
+
+        # Preview from the start time of the segment
+        FlightDynamicsRecordCreator.segment_name = "Propagate"
+        FlightDynamicsRecordCreator.epoch = "1 Jul 1999 00:00:00.000"
+        Assert.assertEqual("1 Jul 1999 00:00:00.000", FlightDynamicsRecordCreator.epoch)
+        preview = FlightDynamicsRecordCreator.preview
+
+        Assert.assertTrue(("Epoch:" in preview.epoch_label))
+        Assert.assertTrue(("Coordinate System: Earth Inertial" in preview.preview_result_label))
+        Assert.assertEqual("6878.137000", preview.rx_label)
+        Assert.assertEqual("0.000000", preview.ry_label)
+        Assert.assertEqual("0.000000", preview.rz_label)
+        Assert.assertEqual("0.000000", preview.vx_label)
+        Assert.assertEqual("6.690090", preview.vy_label)
+        Assert.assertEqual("3.632423", preview.vz_label)
+
+        FlightDynamicsRecordCreator.export()
+
+        # Update the MCS to not use the new propagator (but don't RunMCS)
+        propSeg.propagator_name = "Earth J2"
+
+        # Delete the new propagator (so it can be recreated later).
+        propComps.remove("Test Earth J2")
+
+        # Test importing the FDR into the Initial State Segment
+        initState: "MCSInitialState" = MCSInitialState(driver.main_sequence.get_item_by_name("Initial State"))
+        Assert.assertEqual("", initState.flight_dynamics_record_name)
+        Assert.assertEqual("No Flight Dynamics Record selected", initState.propagator_name)
+        initState.unlock_initial_state_segment()
+
+        # TODO - As a part of GATOR-3530, this connect command should be replaced with the OM commands created to import FDRs into the Intial State
+        TestBase.Application.execute_command(
+            'InitialState */Satellite/FlightDynamicsRecordCreator Import Flight_Dynamics_Record "My Dynamics Record"'
+        )
+
+        Assert.assertEqual("My_Dynamics_Record", initState.flight_dynamics_record_name)
+        Assert.assertEqual("Test_Earth_J2", initState.propagator_name)
+        initState.unlock_initial_state_segment()
+
+        self.Test_FDRCreator_Component()
+
+        (ISTKObject(sat)).unload()
+
+    def Test_FDRCreator_Component(self):
+        gatorComps: "ComponentInfoCollection" = (
+            Scenario(TestBase.Application.current_scenario)
+        ).component_directory.get_components(Component.ASTROGATOR)
+        FDRComps: "ComponentInfoCollection" = gatorComps.get_folder("Flight Dynamics Records")
+        Assert.assertEqual(2, FDRComps.count)
+
+        # Default FDR - read only, cannot clone
+        compInfoFDRC: "IComponentInfo" = FDRComps.get_item_by_name("Flight Dynamics Record")
+        STKUtilHelper.TestComponent(compInfoFDRC, True)  # read-only
+        clonable: "ICloneable" = clr.CastAs(compInfoFDRC, ICloneable)
+        # PLAT-40755 TryCatchAssertBlock.ExpectedException("invalid", delegate () { object objClone = clonable.CloneObject(); });    // cannot Clone, or Export
+
+        # Exported FDR
+        compInfoFDRC = FDRComps.get_item_by_name("My Dynamics Record")
+        # STKUtilHelper.TestComponent(compInfoFDRC, false);
+
+        # FlightDynamicsRecord
+        fdr: "FlightDynamicsRecord" = clr.CastAs(compInfoFDRC, FlightDynamicsRecord)
+        Assert.assertIsNotNone(fdr)
+        Assert.assertEqual("Test_Earth_J2", fdr.propagator_name)
+        Assert.assertEqual("Add record notes...", fdr.notes)
+        fdr.notes = "These are my notes!"
+        Assert.assertEqual("These are my notes!", fdr.notes)
+        Assert.assertTrue(("Record created on:" in fdr.record_time_stamp))
+
+        self.Test_IAgVAStateConfigCollection(fdr.state_config_properties)
+
+        compInfoPropagator: "IComponentInfo" = fdr.propagator
+        Assert.assertEqual("Test Earth J2", compInfoPropagator.name)
+
+        propagators: "ComponentInfoCollection" = (
+            (Scenario(TestBase.Application.current_scenario))
+            .component_directory.get_components(Component.ASTROGATOR)
+            .get_folder("Propagators")
+        )
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
+            propTestEarthJ2X: "IComponentInfo" = propagators["Test Earth J2"]
+
+        fdr.export_propulsion_to_browser()
+        propTestEarthJ2: "IComponentInfo" = propagators["Test Earth J2"]
+        Assert.assertIsNotNone(propTestEarthJ2)
+        Assert.assertEqual("Test Earth J2", propTestEarthJ2.name)
+
+        # IComponentInfo
+        Assert.assertFalse(compInfoFDRC.is_read_only())
+        Assert.assertTrue(("A prototypical " in compInfoFDRC.description))
+        compInfoFDRC.user_comment = "My new user comment!"
+        Assert.assertEqual("My new user comment!", compInfoFDRC.user_comment)
+        compInfoFDRC.name = "My Dynamics Record XYZ"
+        Assert.assertEqual("My Dynamics Record XYZ", compInfoFDRC.name)
+
+        myClone: "IComponentInfo" = clr.CastAs((clr.CastAs(compInfoFDRC, ICloneable)).clone_object(), IComponentInfo)
+        Assert.assertEqual("My Dynamics Record XYZ1", myClone.name)
+
+        # Export
+        compInfoFDRC.export()
+
+        # ExportWithFilenamePath
+        exportDir: str = Path.Combine(TestBase.ScenarioDirectory, r"ExportDir")
+        if Directory.Exists(exportDir):
+            Directory.Delete(exportDir, True)
+
+        Directory.CreateDirectory(exportDir)
+        compCloneName: str = compInfoFDRC.name
+        filename: str = Path.Combine(exportDir, (compCloneName + r".exported"))
+        compInfoFDRC.export_with_filename_path(filename)
+        FDRComps.load_component(filename)
+        FDRComps.remove(compCloneName)
+        if Directory.Exists(exportDir):
+            Directory.Delete(exportDir, True)
+
+    def Test_IAgVAStateConfigCollection(self, scc: "StateConfigCollection"):
+        counter: int = 0
+        scX: "StateConfig"
+        for scX in scc:
+            counter += 1
+
+        Assert.assertEqual(scc.count, counter)
+
+        sc: "StateConfig" = scc[0]
+        Assert.assertEqual("Epoch", sc.name)
+        Assert.assertEqual("1 Jul 1999 00:00:00.000", sc.value)
+        Assert.assertEqual("The epoch input for the requested state", sc.description)
+
+        sc = scc["CentralBody"]
+        Assert.assertEqual("CentralBody", sc.name)
+        Assert.assertEqual("Earth", sc.value)
+        Assert.assertEqual("A string representing the spacecraft central body", sc.description)
+
+        sc = scc[3]
+        Assert.assertEqual("PositionX", sc.name)
+        Assert.assertEqual(6878.137, sc.value)
+        Assert.assertEqual("X Position of the state in CoordinateSystem", sc.description)
+
+        sc = scc["VelocityY"]
+        Assert.assertEqual("VelocityY", sc.name)
+        Assert.assertAlmostEqual(6.69009, float(sc.value), delta=1e-05)
+        Assert.assertEqual("Y Velocity of the state in CoordinateSystem", sc.description)
+
+        sc = scc.get_item_by_index(8)
+        Assert.assertEqual("VelocityZ", sc.name)
+        Assert.assertAlmostEqual(3.63242, float(sc.value), delta=1e-05)
+        Assert.assertEqual("Z Velocity of the state in CoordinateSystem", sc.description)
+
+        sc = scc.get_item_by_name("CdNominal")
+        Assert.assertEqual("CdNominal", sc.name)
+        Assert.assertEqual(2.2, sc.value)
+        Assert.assertEqual("The nominal coefficient of drag of the spacecraft", sc.description)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("could not be found")):
+            bogus: "StateConfig" = scc[counter]
+        with pytest.raises(Exception, match=RegexSubstringMatch("could not be found")):
+            bogus: "StateConfig" = scc["Bogus"]
+        with pytest.raises(Exception, match=RegexSubstringMatch("could not be found")):
+            bogus: "StateConfig" = scc.get_item_by_index(counter)
+        with pytest.raises(Exception, match=RegexSubstringMatch("could not be found")):
+            bogus: "StateConfig" = scc.get_item_by_name("Bogus")
 
     # endregion
 
@@ -4557,9 +4935,7 @@ longitude = 121;"""
         driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
         prop1: "MCSPropagate" = clr.CastAs(driver.main_sequence["Propagate"], MCSPropagate)
 
-        # StoppingConditionElement stopCondElemXXX = prop1.StoppingConditions.Add("UserSelect");
-        # StoppingCondition stopCondXXX = (StoppingCondition)stopCondElemXXX.Properties;
-        # stopCondXXX.PasteUserCalcObjectFromClipboard();
+        NULL_EXCEPTION_MESSAGE: str = "Invalid object instance"
 
         # AsTriggerCondition cond1;
         prop2: "MCSPropagate" = clr.CastAs(
@@ -4582,7 +4958,7 @@ longitude = 121;"""
         Assert.assertIsNotNone(conditionA)
         Assert.assertIsNotNone(conditionB)
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not of correct type")):
             prop2.stopping_conditions.paste()
 
         apoElem2: "StoppingConditionElement" = prop2.stopping_conditions.insert_copy(apoElem)
@@ -4590,7 +4966,7 @@ longitude = 121;"""
         Assert.assertEqual(2, prop2.stopping_conditions.count)
         Assert.assertEqual(apo.central_body_name, apo2.central_body_name)
         apoElem2 = prop2.stopping_conditions.insert_copy(apoElem)
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch(NULL_EXCEPTION_MESSAGE)):
             apoElem2 = prop2.stopping_conditions.insert_copy(None)
 
         prop1.stopping_conditions.cut(1)
@@ -4603,9 +4979,9 @@ longitude = 121;"""
         Assert.assertEqual(2, prop1.stopping_conditions.count)
         Assert.assertEqual(3, prop2.stopping_conditions.count)
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("Index out of bounds")):
             prop1.stopping_conditions.cut(4)
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("could not be found")):
             prop2.stopping_conditions.cut("bogus")
 
         # ConstraintCollection test
@@ -4617,7 +4993,7 @@ longitude = 121;"""
         cond1.calculation_object_name = "Cartesian Elems/X"
         Assert.assertEqual(1, apo.constraints.count)
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not of correct type")):
             apo.constraints.paste()
 
         # test copy within stopping condition
@@ -4643,9 +5019,9 @@ longitude = 121;"""
         Assert.assertEqual(2, apo.constraints.count)
         Assert.assertEqual(1, apo2.constraints.count)
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             apo.constraints.cut(4)
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("could not be found")):
             apo2.constraints.cut("bogus")
 
         # ProfileCollection test
@@ -4658,18 +5034,18 @@ longitude = 121;"""
         )
         (diffCorr).mode = ProfileMode.NOT_ACTIVE
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not of correct type")):
             targSeq.profiles.paste(0, ProfileInsertDirection.AFTER)
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("could not be found")):
             targSeq.profiles.cut("bogus")
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             targSeq.profiles.cut(3)
 
         targSeq.profiles.cut("Differential Corrector")
         Assert.assertEqual(0, targSeq.profiles.count)
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("Could not find")):
             targSeq.profiles.paste("Differential Corrector", ProfileInsertDirection.BEFORE)
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             targSeq.profiles.paste(5, ProfileInsertDirection.BEFORE)
 
         targSeq.profiles.add("Scripting Tool")
@@ -4759,7 +5135,7 @@ longitude = 121;"""
         Assert.assertEqual(4, targSeq.profiles.count)
 
         # what happens if I Add2 after a nonexistent index
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             dc6: "IProfile" = targSeq.profiles.add2("Differential Corrector", 5, ProfileInsertDirection.AFTER)
 
         # what happens if I Add2 after the last index?
@@ -4800,9 +5176,9 @@ longitude = 121;"""
         Assert.assertEqual(7, targSeq.profiles.count)
         Assert.assertEqual(targSeq.profiles[6].name, "Scripting Tool3")
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("Could not find")):
             targSeq.profiles.insert_copy(profile0, "bogus", ProfileInsertDirection.AFTER)
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             targSeq.profiles.insert_copy(profile0, 8, ProfileInsertDirection.AFTER)
 
         # ThrusterSetCollection test
@@ -4817,7 +5193,7 @@ longitude = 121;"""
         thrusterSetColl: "ThrusterSetCollection" = newThrusterSet.thrusters
         thrusterSetColl.remove_all()
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not of correct type")):
             thrusterSetColl.paste()
 
         thrusterSetColl.add("Thruster1")
@@ -4837,9 +5213,9 @@ longitude = 121;"""
 
         # and now, try to remove guys that aren't there
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("could not be found")):
             thrusterSetColl.cut("NonExistent Thruster")
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             thrusterSetColl.cut(1)
 
         newThruster: "Thruster" = thrusterSetColl.paste()
@@ -4851,7 +5227,7 @@ longitude = 121;"""
         Assert.assertEqual(3, thrusterSetColl.count)
         Assert.assertEqual(0.5, anotherNewThruster.thruster_efficiency)
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch(NULL_EXCEPTION_MESSAGE)):
             thrusterSetColl.insert_copy(None)
 
         # PropagatorFunctionCollection test
@@ -4866,11 +5242,11 @@ longitude = 121;"""
 
         propFuncColl: "PropagatorFunctionCollection" = newPropagator.propagator_functions
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not of correct type")):
             propFuncColl.paste()
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("while removing an item")):
             propFuncColl.cut("bogus")
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of bounds")):
             propFuncColl.cut(3)
 
         ci0: "IComponentInfo" = propFuncColl["WGS84"]
@@ -4887,21 +5263,21 @@ longitude = 121;"""
         Assert.assertEqual(16, sameGravField.degree)
         Assert.assertEqual(1, propFuncColl.count)
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("while removing an item")):
             propFuncColl.cut("NonExistent Prop Func")
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of bounds")):
             propFuncColl.cut(99)
 
         anotherNewPropagator: "NumericalPropagatorWrapper" = clr.CastAs(
             (ICloneable(propagators["Earth J2"])).clone_object(), NumericalPropagatorWrapper
         )
         propFuncColl2: "PropagatorFunctionCollection" = anotherNewPropagator.propagator_functions
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("Element already in List")):
             propFuncColl2.paste()
         propFuncColl2.remove(0)
         Assert.assertEqual(0, propFuncColl2.count)
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("Element already in List")):
             propFuncColl.paste()
 
         anotherFunc: "GravityFieldFunction" = clr.CastAs(propFuncColl2.paste(), GravityFieldFunction)
@@ -4914,7 +5290,7 @@ longitude = 121;"""
         )
         Assert.assertEqual(16, lastFunc.degree)
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch(NULL_EXCEPTION_MESSAGE)):
             propFuncColl2.insert_copy(None)
 
         # CalculationObjectCollection test
@@ -4922,11 +5298,11 @@ longitude = 121;"""
         initState: "IMCSSegment" = driver.main_sequence["Initial State"]
         calcObjColl: "CalculationObjectCollection" = initState.results
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not of correct type")):
             calcObjColl.paste()
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("while removing an item")):
             calcObjColl.cut("bogus")
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of bounds")):
             calcObjColl.cut(3)
 
         alt: "StateCalcGeodeticElem" = clr.CastAs(calcObjColl.add("Geodetic/Altitude"), StateCalcGeodeticElem)
@@ -4946,7 +5322,7 @@ longitude = 121;"""
         prop.results.remove(0)
         Assert.assertEqual(0, prop.results.count)
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch(NULL_EXCEPTION_MESSAGE)):
             calcObjColl.insert_copy(None)
 
         pasted = clr.CastAs(prop.results.insert_copy(IComponentInfo(alt)), StateCalcGeodeticElem)
@@ -4961,11 +5337,11 @@ longitude = 121;"""
         diffCorr: "ProfileDifferentialCorrector" = ProfileDifferentialCorrector(dc8)
         targGraphColl: "TargeterGraphCollection" = diffCorr.targeter_graphs
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not of correct type")):
             targGraphColl.paste()
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("while removing an item")):
             targGraphColl.cut("bogus")
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of bounds")):
             targGraphColl.cut(3)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Index Out of Range")):
@@ -4998,7 +5374,7 @@ longitude = 121;"""
         Assert.assertEqual(1, targGraphColl.count)
         Assert.assertEqual("NewGraph", pastedGraph2.name)
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch(NULL_EXCEPTION_MESSAGE)):
             targGraphColl.insert_copy(None)
 
         newPastedGraph: "TargeterGraph" = targGraphColl.insert_copy(pastedGraph)
@@ -5017,11 +5393,11 @@ longitude = 121;"""
         scriptTool: "ProfileScriptingTool" = clr.CastAs(targSeq.profiles.add("Scripting Tool"), ProfileScriptingTool)
         ssColl: "ScriptingSegmentCollection" = scriptTool.segment_properties
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not of correct type")):
             ssColl.paste()
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("while removing an item")):
             ssColl.cut("bogus")
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of bounds")):
             ssColl.cut(3)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Index Out of Range")):
@@ -5046,7 +5422,7 @@ longitude = 121;"""
         Assert.assertEqual("ObjectProperty1", objProp2.component_name)
         Assert.assertEqual(2, ssColl.count)
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch(NULL_EXCEPTION_MESSAGE)):
             ssColl.insert_copy(None)
 
         ssColl.cut(objProp2.component_name)
@@ -5075,25 +5451,25 @@ longitude = 121;"""
         scriptTool: "ProfileScriptingTool" = clr.CastAs(targSeq.profiles.add("Scripting Tool"), ProfileScriptingTool)
         coColl: "ScriptingCalculationObjectCollection" = scriptTool.calculation_objects
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not of correct type")):
             coColl.paste()
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("while removing an item")):
             coColl.cut("bogus")
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of bounds")):
             coColl.cut(3)
 
         calcObj: "ScriptingCalculationObject" = coColl.add("NewCalcObj")
         calcObj2: "ScriptingCalculationObject" = coColl.insert_copy(calcObj)
         Assert.assertEqual("NewCalcObj1", calcObj2.component_name)
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch(NULL_EXCEPTION_MESSAGE)):
             coColl.insert_copy(None)
 
         scriptTool.calculation_objects.cut("NewCalcObj1")
         Assert.assertEqual(1, coColl.count)
 
         scriptTool.enable = False
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("Unable to paste")):
             scriptTool.calculation_objects.paste()
 
         scriptTool.enable = True
@@ -5119,11 +5495,11 @@ longitude = 121;"""
         scriptTool: "ProfileScriptingTool" = clr.CastAs(targSeq.profiles.add("Scripting Tool"), ProfileScriptingTool)
         paramColl: "ScriptingParameterCollection" = scriptTool.parameters
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not of correct type")):
             paramColl.paste()
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("while removing an item")):
             paramColl.cut("bogus")
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of bounds")):
             paramColl.cut(3)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Index Out of Range")):
@@ -5145,14 +5521,14 @@ longitude = 121;"""
         param2: "ScriptingParameter" = scriptTool.parameters.insert_copy(param)
         Assert.assertEqual("NewParam1", param2.name)
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch(NULL_EXCEPTION_MESSAGE)):
             paramColl.insert_copy(None)
 
         paramColl.cut("NewParam1")
         Assert.assertEqual(1, paramColl.count)
 
         scriptTool.enable = False
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("Unable to paste item")):
             scriptTool.parameters.paste()
 
         scriptTool.enable = True
@@ -5184,17 +5560,17 @@ longitude = 121;"""
         psTool.paste_from_clipboard()
         Assert.assertEqual("TestParameterWoot", psTool.parameters[0].name)
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not of correct type")):
             psTool.calculation_objects.paste()
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not of correct type")):
             psTool.segment_properties.paste()
         calcObj: "ScriptingCalculationObject" = psTool.calculation_objects.add("NewCalcObj")
         psTool.calculation_objects.cut(0)
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not of correct type")):
             psTool.parameters.paste()
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("item is not a Scripting Tool")):
             psTool.paste_from_clipboard()
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("item is not a Scripting Tool")):
             psTool.paste_from_clipboard()
 
         # ScriptingTool - CopyToClipboard and PasteFromClipboard
@@ -5216,17 +5592,17 @@ longitude = 121;"""
         scriptTool.paste_from_clipboard()
         Assert.assertEqual("TestParameterWoot", scriptTool.parameters[0].name)
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not of correct type")):
             scriptTool.calculation_objects.paste()
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not of correct type")):
             scriptTool.segment_properties.paste()
         calcObj: "ScriptingCalculationObject" = scriptTool.calculation_objects.add("NewCalcObj")
         scriptTool.calculation_objects.cut(0)
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not of correct type")):
             scriptTool.parameters.paste()
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not a Scripting Tool")):
             scriptTool.paste_from_clipboard()
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not a Scripting Tool")):
             scriptTool.paste_from_clipboard()
 
         # test copying calc objects in UserSelect stopping conditions, stopping condition constraints, calc object wrappers
@@ -5248,11 +5624,11 @@ longitude = 121;"""
         stopCondElem: "StoppingConditionElement" = prop1.stopping_conditions.add("UserSelect")
         stopCond: "StoppingCondition" = StoppingCondition(stopCondElem.properties)
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not a calculation object")):
             stopCond.paste_user_calculation_object_from_clipboard()
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not a calculation object")):
             cond1.paste_calculation_object_from_clipboard()
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not a calculation object")):
             newCalcObj.paste_calculation_object_from_clipboard()
 
         # user select stopping condition
@@ -5307,17 +5683,19 @@ longitude = 121;"""
             Scenario(TestBase.Application.current_scenario)
         ).component_directory.get_components(Component.ASTROGATOR)
         cbs: "ComponentInfoCollection" = astComps.get_folder("Central Bodies")
-        cb: "CentralBodyComponent" = clr.CastAs((ICloneable(cbs["Charon"])).clone_object(), CentralBodyComponent)
+        cb: "CentralBodyComponent" = clr.CastAs(
+            (ICloneable(cbs["AsteroidTemplate"])).clone_object(), CentralBodyComponent
+        )
         model: "CentralBodyComponentGravityModel" = cb.add_gravity_model(
             CentralBodyGravityModel.EARTH_SIMPLE, "NewGrav"
         )
         model.gravitational_parameter = 1337
 
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("not a gravity model")):
             cb.paste_gravity_model()
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("Error cutting the gravity model")):
             cb.cut_gravity_model_by_name("bogus")
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch(NULL_EXCEPTION_MESSAGE)):
             cb.add_copy_of_gravity_model(None)
 
         # cut
@@ -5342,11 +5720,11 @@ longitude = 121;"""
         Assert.assertEqual(1337, pastedGrav.gravitational_parameter)
 
         # Shape
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("item is not a shape")):
             cb.paste_shape()
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("Error cutting the shape")):
             cb.cut_shape_by_name("bogus")
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch(NULL_EXCEPTION_MESSAGE)):
             cb.add_copy_of_shape(None)
 
         shape: "CentralBodyComponentShapeOblateSpheroid" = clr.CastAs(
@@ -5380,11 +5758,11 @@ longitude = 121;"""
         Assert.assertEqual(1337, pastedShape.min_radius)
 
         # Attitude Definition
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("item is not an attitude")):
             cb.paste_attitude()
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("Error cutting the attitude")):
             cb.cut_attitude_by_name("bogus")
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch(NULL_EXCEPTION_MESSAGE)):
             cb.add_copy_of_attitude(None)
 
         newAtt: "CentralBodyComponentAttitudeIAU1994" = clr.CastAs(
@@ -5417,11 +5795,11 @@ longitude = 121;"""
         Assert.assertEqual(1, pastedAttitude.rotation_rate)
 
         # Ephemeris Definition
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("item is not an Ephemeris")):
             cb.paste_ephemeris()
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("Error cutting the Ephemeris")):
             cb.cut_ephemeris_by_name("bogus")
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch(NULL_EXCEPTION_MESSAGE)):
             cb.add_copy_of_ephemeris(None)
 
         newEphem: "CentralBodyComponentEphemerisAnalyticOrbit" = clr.CastAs(
@@ -5587,7 +5965,7 @@ longitude = 121;"""
 
     @category("ExcludeOnLinux")
     def test_MarsGRAM(self):
-        scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
+        scenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
         compCollection: "ComponentInfoCollection" = scenario.component_directory.get_components(Component.ASTROGATOR)
         propObjs: "ComponentInfoCollection" = compCollection.get_folder("Propagators")
         epmProp: "ICloneable" = clr.CastAs(propObjs["Earth Point Mass"], ICloneable)
@@ -5644,4 +6022,757 @@ longitude = 121;"""
 
         TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "Sat78776")
 
+    # region NPlate_Stochastic_Params
+    def test_NPlate_Stochastic_Params(self):
+        compInfoCol: "ComponentInfoCollection" = (
+            Scenario(TestBase.Application.current_scenario)
+        ).component_directory.get_components(Component.ASTROGATOR)
+
+        FDRFolder: "ComponentInfoCollection" = compInfoCol.get_folder("Flight Dynamics Records")
+        fdr: "IComponentInfo" = FDRFolder.load_component(TestBase.GetScenarioFile("NPlate_Record.FlightDynamicsRecord"))
+
+        propagatorFolder: "ComponentInfoCollection" = compInfoCol.get_folder("Propagators")
+        prop: "IComponentInfo" = propagatorFolder["Copy of Earth Default High Fidelity v13"]
+        wrapper: "NumericalPropagatorWrapper" = clr.CastAs(prop, NumericalPropagatorWrapper)
+
+        jr: "JacchiaRoberts" = clr.CastAs(wrapper.propagator_functions["Jacchia-Roberts"], JacchiaRoberts)
+        self.Test_IAgVANPlateStochasticParamsCollection(jr.n_plate_stochastic_parameters)
+
+        nplateSRP: "SRPNPlate" = clr.CastAs(wrapper.propagator_functions["NPlate SRP"], SRPNPlate)
+        self.Test_IAgVANPlateStochasticParamsCollection(nplateSRP.n_plate_stochastic_parameters)
+
+        # Cleanup
+        propagatorFolder.remove("Copy of Earth Default High Fidelity v13")
+        FDRFolder.remove("NPlate Record")
+
+    def Test_IAgVANPlateStochasticParamsCollection(self, nplateStochParamsCol: "NPlateStochasticParametersCollection"):
+        Assert.assertEqual(2, nplateStochParamsCol.count)
+
+        names: str = ""
+        nplateStochParam1: "NPlateStochasticParameter"
+        for nplateStochParam1 in nplateStochParamsCol:
+            names += nplateStochParam1.name
+
+        Assert.assertEqual("SolarPanelsBody", names)
+
+        names = ""
+        i: int = 0
+        while i < nplateStochParamsCol.count:
+            nplateStochParam2: "NPlateStochasticParameter" = nplateStochParamsCol[i]
+            names += nplateStochParam2.name
+
+            i += 1
+
+        Assert.assertEqual("SolarPanelsBody", names)
+
+        nplateStochParam3: "NPlateStochasticParameter" = nplateStochParamsCol.get_item_by_name("SolarPanels")
+        self.Test_IAgVANPlateStochasticParam(nplateStochParam3, "SolarPanels")
+
+        nplateStochParam4: "NPlateStochasticParameter" = nplateStochParamsCol.get_item_by_index(1)  # Body
+        self.Test_IAgVANPlateStochasticParam(nplateStochParam4, "Body")
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("could not be found")):
+            nplateStochParam3 = nplateStochParamsCol.get_item_by_name("Bogus")
+        with pytest.raises(Exception, match=RegexSubstringMatch("Out of Range")):
+            nplateStochParam3 = nplateStochParamsCol.get_item_by_index(2)
+
+    def Test_IAgVANPlateStochasticParam(self, param: "NPlateStochasticParameter", name: str):
+        Assert.assertEqual(name, param.name)
+
+        param.nominal_value = 2
+        Assert.assertEqual(2, param.nominal_value)
+
+        param.estimate_parameter = True
+        Assert.assertTrue(param.estimate_parameter)
+        param.estimate_parameter = False
+        Assert.assertFalse(param.estimate_parameter)
+
+        param.half_life = 86401
+        Assert.assertEqual(86401, param.half_life)
+
+        param.sigma = 3
+        Assert.assertEqual(3, param.sigma)
+
+        param.long_term_sigma = 4
+        Assert.assertEqual(4, param.long_term_sigma)
+
+    # endregion
+
+    # region InitialState_Stochastic_Params
+    def test_InitialState_Stochastic_Params(self):
+        compInfoCol: "ComponentInfoCollection" = (
+            Scenario(TestBase.Application.current_scenario)
+        ).component_directory.get_components(Component.ASTROGATOR)
+
+        FDRFolder: "ComponentInfoCollection" = compInfoCol.get_folder("Flight Dynamics Records")
+        fdr: "IComponentInfo" = FDRFolder.load_component(TestBase.GetScenarioFile("NPlate_Record.FlightDynamicsRecord"))
+        propagatorFolder: "ComponentInfoCollection" = compInfoCol.get_folder("Propagators")
+        TestBase.Application.execute_command(
+            'InitialState */Satellite/Satellite1 Import Flight_Dynamics_Record "NPlate Record"'
+        )  # no OM support for Initial State Tool
+
+        sat: "Satellite" = clr.CastAs(TestBase.Application.current_scenario.children["Satellite1"], Satellite)
+        initState: "MCSInitialState" = clr.CastAs(EarlyBoundTests.AG_VA.main_sequence["Initial State"], MCSInitialState)
+
+        # Locked - properties read-only
+
+        dragCorrections: "NPlateStochasticCorrectionParametersCollection" = (
+            initState.stochastic_parameters.drag_n_plate_stochastic_correction_parameters
+        )
+        self.Test_IAgVANPlateStochasticCorrectionParamsCollection(dragCorrections, True)
+
+        srpCorrections: "NPlateStochasticCorrectionParametersCollection" = (
+            initState.stochastic_parameters.srp_n_plate_stochastic_correction_parameters
+        )
+        self.Test_IAgVANPlateStochasticCorrectionParamsCollection(srpCorrections, True)
+
+        # Unlocked - properties read/write
+
+        initState.unlock_initial_state_segment()
+
+        dragCorrections = (
+            initState.stochastic_parameters.drag_n_plate_stochastic_correction_parameters
+        )  # refresh interface
+        self.Test_IAgVANPlateStochasticCorrectionParamsCollection(dragCorrections, False)
+
+        srpCorrections = (
+            initState.stochastic_parameters.srp_n_plate_stochastic_correction_parameters
+        )  # refresh interface
+        self.Test_IAgVANPlateStochasticCorrectionParamsCollection(srpCorrections, False)
+
+        # Cleanup
+        propagatorFolder.remove("Copy of Earth Default High Fidelity v13")
+        FDRFolder.remove("NPlate Record")
+
+    def Test_IAgVANPlateStochasticCorrectionParamsCollection(
+        self, correctionParams: "NPlateStochasticCorrectionParametersCollection", readOnly: bool
+    ):
+        Assert.assertEqual(2, correctionParams.count)
+
+        names: str = ""
+        correctionParam1: "NPlateStochasticCorrectionParameter"
+        for correctionParam1 in correctionParams:
+            names += correctionParam1.name
+
+        Assert.assertEqual("SolarPanelsBody", names)
+
+        names = ""
+        i: int = 0
+        while i < correctionParams.count:
+            correctionParam2: "NPlateStochasticCorrectionParameter" = correctionParams[i]
+            names += correctionParam2.name
+
+            i += 1
+
+        Assert.assertEqual("SolarPanelsBody", names)
+
+        correctionParam3: "NPlateStochasticCorrectionParameter" = correctionParams.get_item_by_name("SolarPanels")
+        self.Test_IAgVANPlateStochasticCorrectionParam(correctionParam3, "SolarPanels", readOnly)
+
+        correctionParam4: "NPlateStochasticCorrectionParameter" = correctionParams.get_item_by_index(1)  # Body
+        self.Test_IAgVANPlateStochasticCorrectionParam(correctionParam4, "Body", readOnly)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("could not be found")):
+            correctionParam3 = correctionParams.get_item_by_name("Bogus")
+        with pytest.raises(Exception, match=RegexSubstringMatch("Out of Range")):
+            correctionParam3 = correctionParams.get_item_by_index(2)
+
+    def Test_IAgVANPlateStochasticCorrectionParam(
+        self, param: "NPlateStochasticCorrectionParameter", name: str, readOnly: bool
+    ):
+        Assert.assertEqual(name, param.name)
+        if param.name == "SolarPanels":
+            if readOnly:
+                with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                    param.initial_estimate = 0.1
+                with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                    param.long_term_initial_estimate = 0.2
+
+            else:
+                param.initial_estimate = 0.1
+                Assert.assertEqual(0.1, param.initial_estimate)
+
+                param.long_term_initial_estimate = 0.2
+                Assert.assertEqual(0.2, param.long_term_initial_estimate)
+
+        else:
+            if readOnly:
+                with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                    param.initial_estimate = 0.3
+                with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                    param.long_term_initial_estimate = 0.4
+
+            else:
+                param.initial_estimate = 0.3
+                Assert.assertEqual(0.3, param.initial_estimate)
+
+                param.long_term_initial_estimate = 0.4
+                Assert.assertEqual(0.4, param.long_term_initial_estimate)
+
+    # endregion
+
+    # region SRP_Spherical_StochasticSRPCoeff_GaussMarkov
+    def test_SRP_Spherical_StochasticSRPCoeff_GaussMarkov(self):
+        compInfoCol: "ComponentInfoCollection" = (
+            Scenario(TestBase.Application.current_scenario)
+        ).component_directory.get_components(Component.ASTROGATOR)
+
+        srpModelsFolder: "ComponentInfoCollection" = compInfoCol.get_folder("Propagator Functions").get_folder(
+            "SRP Models"
+        )
+        propFunc: "SRPSpherical" = clr.CastAs(
+            srpModelsFolder.duplicate_component("Spherical SRP", "Test-SphericalSRP"), SRPSpherical
+        )
+
+        propFunc.use_stochastic_srp_coefficient = False
+        Assert.assertFalse(propFunc.use_stochastic_srp_coefficient)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):
+            stochModelParamsX: "StochasticModelParameters" = propFunc.stochastic_srp_coefficient
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):
+            propFunc.srp_correction_type = SRPCorrectionType.CR_A_OVER_M_RELATIVE
+
+        propFunc.use_stochastic_srp_coefficient = True
+        Assert.assertTrue(propFunc.use_stochastic_srp_coefficient)
+
+        stochModelParams: "StochasticModelParameters" = propFunc.stochastic_srp_coefficient
+
+        propFunc.srp_correction_type = SRPCorrectionType.CR_ADDITIVE
+        Assert.assertEqual(SRPCorrectionType.CR_ADDITIVE, propFunc.srp_correction_type)
+        propFunc.srp_correction_type = SRPCorrectionType.CR_A_OVER_M_ADDITIVE
+        Assert.assertEqual(SRPCorrectionType.CR_A_OVER_M_ADDITIVE, propFunc.srp_correction_type)
+        propFunc.srp_correction_type = SRPCorrectionType.CR_A_OVER_M_RELATIVE
+        Assert.assertEqual(SRPCorrectionType.CR_A_OVER_M_RELATIVE, propFunc.srp_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            propFunc.srp_correction_type = SRPCorrectionType.CR_RELATIVE
+
+        stochModelParams.model_type = StochasticModel.GAUSS_MARKOV
+        Assert.assertEqual(StochasticModel.GAUSS_MARKOV, stochModelParams.model_type)
+
+        stochModelParams.sigma = 0
+        Assert.assertEqual(0, stochModelParams.sigma)
+        stochModelParams.sigma = 10000000000.0
+        Assert.assertEqual(10000000000.0, stochModelParams.sigma)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.sigma = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.sigma = 100000000000.0
+
+        stochModelParams.half_life = 0
+        Assert.assertEqual(0, stochModelParams.half_life)
+        stochModelParams.half_life = 10000000000.0
+        Assert.assertEqual(10000000000.0, stochModelParams.half_life)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.half_life = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.half_life = 100000000000.0
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("not supported by the current Stochastic Model")):
+            stochModelParams.sigma_long_term = 0.3
+        with pytest.raises(Exception, match=RegexSubstringMatch("not supported by the current Stochastic Model")):
+            stochModelParams.error_threshold = 0.3
+        with pytest.raises(Exception, match=RegexSubstringMatch("not supported by the current Stochastic Model")):
+            stochModelParams.process_noise_step = 0.3
+        with pytest.raises(Exception, match=RegexSubstringMatch("not supported by the current Stochastic Model")):
+            stochModelParams.diffusion_coefficient = 0.3
+
+        # Cleanup
+        srpModelsFolder.remove("Test-SphericalSRP")
+
+    # endregion
+
+    # region SRP_VariableArea_StochasticSRPCoeff_RandomWalk
+    def test_SRP_VariableArea_StochasticSRPCoeff_RandomWalk(self):
+        compInfoCol: "ComponentInfoCollection" = (
+            Scenario(TestBase.Application.current_scenario)
+        ).component_directory.get_components(Component.ASTROGATOR)
+
+        srpModelsFolder: "ComponentInfoCollection" = compInfoCol.get_folder("Propagator Functions").get_folder(
+            "SRP Models"
+        )
+        propFunc: "SRPVariableArea" = clr.CastAs(
+            srpModelsFolder.duplicate_component("VariableArea SRP", "Test-VASRP"), SRPVariableArea
+        )
+
+        propFunc.use_stochastic_srp_coefficient = False
+        Assert.assertFalse(propFunc.use_stochastic_srp_coefficient)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):
+            stochModelParamsX: "StochasticModelParameters" = propFunc.stochastic_srp_coefficient
+
+        propFunc.use_stochastic_srp_coefficient = True
+        Assert.assertTrue(propFunc.use_stochastic_srp_coefficient)
+
+        stochModelParams: "StochasticModelParameters" = propFunc.stochastic_srp_coefficient
+
+        stochModelParams.model_type = StochasticModel.RANDOM_WALK
+        Assert.assertEqual(StochasticModel.RANDOM_WALK, stochModelParams.model_type)
+
+        stochModelParams.sigma = 0
+        Assert.assertEqual(0, stochModelParams.sigma)
+        stochModelParams.sigma = 10000000000.0
+        Assert.assertEqual(10000000000.0, stochModelParams.sigma)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.sigma = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.sigma = 100000000000.0
+
+        stochModelParams.diffusion_coefficient = 0
+        Assert.assertEqual(0, stochModelParams.diffusion_coefficient)
+        stochModelParams.diffusion_coefficient = 10000000000.0
+        Assert.assertEqual(10000000000.0, stochModelParams.diffusion_coefficient)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.diffusion_coefficient = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.diffusion_coefficient = 100000000000.0
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("not supported by the current Stochastic Model")):
+            stochModelParams.half_life = 0.3
+        with pytest.raises(Exception, match=RegexSubstringMatch("not supported by the current Stochastic Model")):
+            stochModelParams.sigma_long_term = 0.3
+        with pytest.raises(Exception, match=RegexSubstringMatch("not supported by the current Stochastic Model")):
+            stochModelParams.error_threshold = 0.3
+        with pytest.raises(Exception, match=RegexSubstringMatch("not supported by the current Stochastic Model")):
+            stochModelParams.process_noise_step = 0.3
+
+        # Cleanup
+        srpModelsFolder.remove("Test-VASRP")
+
+    # endregion
+
+    # region SRP_TabAreaVector_StochasticSRPCoeff_Vasicek
+    def test_SRP_TabAreaVector_StochasticSRPCoeff_Vasicek(self):
+        compInfoCol: "ComponentInfoCollection" = (
+            Scenario(TestBase.Application.current_scenario)
+        ).component_directory.get_components(Component.ASTROGATOR)
+
+        srpModelsFolder: "ComponentInfoCollection" = compInfoCol.get_folder("Propagator Functions").get_folder(
+            "SRP Models"
+        )
+        propFunc: "SRPTabulatedAreaVector" = clr.CastAs(
+            srpModelsFolder.duplicate_component("TabAreaVector SRP", "Test-TAVSRP"), SRPTabulatedAreaVector
+        )
+
+        propFunc.use_stochastic_srp_coefficient = False
+        Assert.assertFalse(propFunc.use_stochastic_srp_coefficient)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):
+            stochModelParamsX: "StochasticModelParameters" = propFunc.stochastic_srp_coefficient
+
+        propFunc.use_stochastic_srp_coefficient = True
+        Assert.assertTrue(propFunc.use_stochastic_srp_coefficient)
+
+        stochModelParams: "StochasticModelParameters" = propFunc.stochastic_srp_coefficient
+
+        stochModelParams.model_type = StochasticModel.VASICEK
+        Assert.assertEqual(StochasticModel.VASICEK, stochModelParams.model_type)
+
+        stochModelParams.sigma = 0
+        Assert.assertEqual(0, stochModelParams.sigma)
+        stochModelParams.sigma = 10000000000.0
+        Assert.assertEqual(10000000000.0, stochModelParams.sigma)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.sigma = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.sigma = 100000000000.0
+
+        stochModelParams.half_life = 0
+        Assert.assertEqual(0, stochModelParams.half_life)
+        stochModelParams.half_life = 10000000000.0
+        Assert.assertEqual(10000000000.0, stochModelParams.half_life)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.half_life = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.half_life = 100000000000.0
+
+        stochModelParams.sigma_long_term = 0
+        Assert.assertEqual(0, stochModelParams.sigma_long_term)
+        stochModelParams.sigma_long_term = 10000000000.0
+        Assert.assertEqual(10000000000.0, stochModelParams.sigma_long_term)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.sigma_long_term = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.sigma_long_term = 100000000000.0
+
+        stochModelParams.error_threshold = 0
+        Assert.assertEqual(0, stochModelParams.error_threshold)
+        stochModelParams.error_threshold = 10000000000.0
+        Assert.assertEqual(10000000000.0, stochModelParams.error_threshold)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.error_threshold = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.error_threshold = 100000000000.0
+
+        stochModelParams.process_noise_step = 0
+        Assert.assertEqual(0, stochModelParams.process_noise_step)
+        stochModelParams.process_noise_step = 10000000000.0
+        Assert.assertEqual(10000000000.0, stochModelParams.process_noise_step)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.process_noise_step = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.process_noise_step = 100000000000.0
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("not supported by the current Stochastic Model")):
+            stochModelParams.diffusion_coefficient = 0.3
+
+        # Cleanup
+        srpModelsFolder.remove("Test-TAVSRP")
+
+    # endregion
+
+    # region DragModel_Spherical_StochasticBallisticCoeff_GaussMarkov
+    def test_DragModel_Spherical_StochasticBallisticCoeff_GaussMarkov(self):
+        compInfoCol: "ComponentInfoCollection" = (
+            Scenario(TestBase.Application.current_scenario)
+        ).component_directory.get_components(Component.ASTROGATOR)
+
+        atmosphericModelsFolder: "ComponentInfoCollection" = compInfoCol.get_folder("Propagator Functions").get_folder(
+            "Atmospheric Models"
+        )
+        jr: "JacchiaRoberts" = clr.CastAs(
+            atmosphericModelsFolder.duplicate_component("Jacchia-Roberts", "Test-Jacchia-Roberts"), JacchiaRoberts
+        )
+        Assert.assertFalse(jr.use_stochastic_ballistic_coefficient)
+        Assert.assertEqual(DragModelType.SPHERICAL, jr.drag_model_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("set UseStochasticBallisticCoeff to true")):
+            unused: "NPlateStochasticParametersCollection" = jr.n_plate_stochastic_parameters
+        with pytest.raises(Exception, match=RegexSubstringMatch("set UseStochasticBallisticCoeff to true")):
+            unused: "StochasticModelParameters" = jr.stochastic_ballistic_coefficient
+
+        jr.use_stochastic_ballistic_coefficient = False
+        Assert.assertFalse(jr.use_stochastic_ballistic_coefficient)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):
+            stochModelParamsX: "StochasticModelParameters" = jr.stochastic_ballistic_coefficient
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):
+            jr.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+
+        jr.use_stochastic_ballistic_coefficient = True
+        Assert.assertTrue(jr.use_stochastic_ballistic_coefficient)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("set Drag Model type to N-Plate")):
+            unused: "NPlateStochasticParametersCollection" = jr.n_plate_stochastic_parameters
+
+        stochModelParams: "StochasticModelParameters" = jr.stochastic_ballistic_coefficient
+
+        jr.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, jr.drag_correction_type)
+        jr.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, jr.drag_correction_type)
+        jr.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, jr.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            jr.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
+        stochModelParams.model_type = StochasticModel.GAUSS_MARKOV
+        Assert.assertEqual(StochasticModel.GAUSS_MARKOV, stochModelParams.model_type)
+
+        stochModelParams.sigma = 0
+        Assert.assertEqual(0, stochModelParams.sigma)
+        stochModelParams.sigma = 10000000000.0
+        Assert.assertEqual(10000000000.0, stochModelParams.sigma)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.sigma = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.sigma = 100000000000.0
+
+        stochModelParams.half_life = 0
+        Assert.assertEqual(0, stochModelParams.half_life)
+        stochModelParams.half_life = 10000000000.0
+        Assert.assertEqual(10000000000.0, stochModelParams.half_life)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.half_life = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.half_life = 100000000000.0
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("not supported by the current Stochastic Model")):
+            stochModelParams.sigma_long_term = 0.3
+        with pytest.raises(Exception, match=RegexSubstringMatch("not supported by the current Stochastic Model")):
+            stochModelParams.error_threshold = 0.3
+        with pytest.raises(Exception, match=RegexSubstringMatch("not supported by the current Stochastic Model")):
+            stochModelParams.process_noise_step = 0.3
+        with pytest.raises(Exception, match=RegexSubstringMatch("not supported by the current Stochastic Model")):
+            stochModelParams.diffusion_coefficient = 0.3
+
+        # Cleanup
+        atmosphericModelsFolder.remove("Test-Jacchia-Roberts")
+
+    # endregion
+
+    # region DragModel_VariableArea_StochasticBallisticCoeff_RandomWalk
+    def test_DragModel_VariableArea_StochasticBallisticCoeff_RandomWalk(self):
+        compInfoCol: "ComponentInfoCollection" = (
+            Scenario(TestBase.Application.current_scenario)
+        ).component_directory.get_components(Component.ASTROGATOR)
+
+        atmosphericModelsFolder: "ComponentInfoCollection" = compInfoCol.get_folder("Propagator Functions").get_folder(
+            "Atmospheric Models"
+        )
+        cira72: "Cira72Function" = clr.CastAs(
+            atmosphericModelsFolder.duplicate_component("Cira72", "Test-Cira72"), Cira72Function
+        )
+
+        cira72.use_stochastic_ballistic_coefficient = False
+        Assert.assertFalse(cira72.use_stochastic_ballistic_coefficient)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):
+            stochModelParamsX: "StochasticModelParameters" = cira72.stochastic_ballistic_coefficient
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):
+            cira72.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+
+        cira72.use_stochastic_ballistic_coefficient = True
+        Assert.assertTrue(cira72.use_stochastic_ballistic_coefficient)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("set Drag Model type to N-Plate")):
+            unused: "NPlateStochasticParametersCollection" = cira72.n_plate_stochastic_parameters
+
+        stochModelParams: "StochasticModelParameters" = cira72.stochastic_ballistic_coefficient
+
+        cira72.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE, cira72.drag_correction_type)
+        cira72.drag_correction_type = DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE
+        Assert.assertEqual(DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE, cira72.drag_correction_type)
+        cira72.drag_correction_type = DragCorrectionType.CD_ADDITIVE
+        Assert.assertEqual(DragCorrectionType.CD_ADDITIVE, cira72.drag_correction_type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            cira72.drag_correction_type = DragCorrectionType.CD_RELATIVE
+
+        stochModelParams.model_type = StochasticModel.RANDOM_WALK
+        Assert.assertEqual(StochasticModel.RANDOM_WALK, stochModelParams.model_type)
+
+        stochModelParams.sigma = 0
+        Assert.assertEqual(0, stochModelParams.sigma)
+        stochModelParams.sigma = 10000000000.0
+        Assert.assertEqual(10000000000.0, stochModelParams.sigma)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.sigma = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.sigma = 100000000000.0
+
+        stochModelParams.diffusion_coefficient = 0
+        Assert.assertEqual(0, stochModelParams.diffusion_coefficient)
+        stochModelParams.diffusion_coefficient = 10000000000.0
+        Assert.assertEqual(10000000000.0, stochModelParams.diffusion_coefficient)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.diffusion_coefficient = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.diffusion_coefficient = 100000000000.0
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("not supported by the current Stochastic Model")):
+            stochModelParams.half_life = 0.3
+        with pytest.raises(Exception, match=RegexSubstringMatch("not supported by the current Stochastic Model")):
+            stochModelParams.sigma_long_term = 0.3
+        with pytest.raises(Exception, match=RegexSubstringMatch("not supported by the current Stochastic Model")):
+            stochModelParams.error_threshold = 0.3
+        with pytest.raises(Exception, match=RegexSubstringMatch("not supported by the current Stochastic Model")):
+            stochModelParams.process_noise_step = 0.3
+
+        # Cleanup
+        atmosphericModelsFolder.remove("Test-Cira72")
+
+    # endregion
+
+    # region DragModel_Spherical_StochasticBallisticCoeff_Vasicek
+    def test_DragModel_Spherical_StochasticBallisticCoeff_Vasicek(self):
+        compInfoCol: "ComponentInfoCollection" = (
+            Scenario(TestBase.Application.current_scenario)
+        ).component_directory.get_components(Component.ASTROGATOR)
+
+        atmosphericModelsFolder: "ComponentInfoCollection" = compInfoCol.get_folder("Propagator Functions").get_folder(
+            "Atmospheric Models"
+        )
+        marsGram2010: "MarsGRAM2010" = clr.CastAs(
+            atmosphericModelsFolder.duplicate_component("Mars GRAM 2010", "Test-MG2010"), MarsGRAM2010
+        )
+
+        marsGram2010.use_stochastic_ballistic_coefficient = False
+        Assert.assertFalse(marsGram2010.use_stochastic_ballistic_coefficient)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("is not available")):
+            stochModelParamsX: "StochasticModelParameters" = marsGram2010.stochastic_ballistic_coefficient
+
+        marsGram2010.use_stochastic_ballistic_coefficient = True
+        Assert.assertTrue(marsGram2010.use_stochastic_ballistic_coefficient)
+
+        marsGram2010.drag_model_type = DragModelType.SPHERICAL
+
+        stochModelParams: "StochasticModelParameters" = marsGram2010.stochastic_ballistic_coefficient
+
+        stochModelParams.model_type = StochasticModel.VASICEK
+        Assert.assertEqual(StochasticModel.VASICEK, stochModelParams.model_type)
+
+        stochModelParams.sigma = 0
+        Assert.assertEqual(0, stochModelParams.sigma)
+        stochModelParams.sigma = 10000000000.0
+        Assert.assertEqual(10000000000.0, stochModelParams.sigma)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.sigma = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.sigma = 100000000000.0
+
+        stochModelParams.half_life = 0
+        Assert.assertEqual(0, stochModelParams.half_life)
+        stochModelParams.half_life = 10000000000.0
+        Assert.assertEqual(10000000000.0, stochModelParams.half_life)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.half_life = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.half_life = 100000000000.0
+
+        stochModelParams.sigma_long_term = 0
+        Assert.assertEqual(0, stochModelParams.sigma_long_term)
+        stochModelParams.sigma_long_term = 10000000000.0
+        Assert.assertEqual(10000000000.0, stochModelParams.sigma_long_term)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.sigma_long_term = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.sigma_long_term = 100000000000.0
+
+        stochModelParams.error_threshold = 0
+        Assert.assertEqual(0, stochModelParams.error_threshold)
+        stochModelParams.error_threshold = 10000000000.0
+        Assert.assertEqual(10000000000.0, stochModelParams.error_threshold)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.error_threshold = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.error_threshold = 100000000000.0
+
+        stochModelParams.process_noise_step = 0
+        Assert.assertEqual(0, stochModelParams.process_noise_step)
+        stochModelParams.process_noise_step = 10000000000.0
+        Assert.assertEqual(10000000000.0, stochModelParams.process_noise_step)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.process_noise_step = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            stochModelParams.process_noise_step = 100000000000.0
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("not supported by the current Stochastic Model")):
+            stochModelParams.diffusion_coefficient = 0.3
+
+        # Cleanup
+        atmosphericModelsFolder.remove("Test-MG2010")
+
+    # endregion
+
+    # region StochasticDensityCorrection_Earth
+    def test_StochasticDensityCorrection_Earth(self):
+        compInfoCol: "ComponentInfoCollection" = (
+            Scenario(TestBase.Application.current_scenario)
+        ).component_directory.get_components(Component.ASTROGATOR)
+
+        atmosphericModelsFolder: "ComponentInfoCollection" = compInfoCol.get_folder("Propagator Functions").get_folder(
+            "Atmospheric Models"
+        )
+        msise1990: "MSISE1990" = clr.CastAs(
+            atmosphericModelsFolder.duplicate_component("MSISE 1990", "Test-MSISE1990"), MSISE1990
+        )
+
+        msise1990.use_stochastic_density_correction = False
+        Assert.assertFalse(msise1990.use_stochastic_density_correction)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("set UseStochasticDensityCorrection to true")):
+            unused: "StochasticDensityCorrection" = msise1990.stochastic_density_correction
+
+        msise1990.use_stochastic_density_correction = True
+        Assert.assertTrue(msise1990.use_stochastic_density_correction)
+
+        densityCorrection: "StochasticDensityCorrection" = msise1990.stochastic_density_correction
+
+        densityCorrection.half_life = 0
+        Assert.assertEqual(0, densityCorrection.half_life)
+        densityCorrection.half_life = 10000000000.0
+        Assert.assertEqual(10000000000.0, densityCorrection.half_life)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            densityCorrection.half_life = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            densityCorrection.half_life = 100000000000.0
+
+        densityCorrection.sigma_scale = 0
+        Assert.assertEqual(0, densityCorrection.sigma_scale)
+        densityCorrection.sigma_scale = 10000000000.0
+        Assert.assertEqual(10000000000.0, densityCorrection.sigma_scale)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            densityCorrection.sigma_scale = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            densityCorrection.sigma_scale = 100000000000.0
+
+        densityCorrection.density_ratio_root = 0
+        Assert.assertEqual(0, densityCorrection.density_ratio_root)
+        densityCorrection.density_ratio_root = 10000000000.0
+        Assert.assertEqual(10000000000.0, densityCorrection.density_ratio_root)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            densityCorrection.density_ratio_root = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            densityCorrection.density_ratio_root = 100000000000.0
+
+        densityCorrection.density_increase_threshold = 0
+        Assert.assertEqual(0, densityCorrection.density_increase_threshold)
+        densityCorrection.density_increase_threshold = 10000000000.0
+        Assert.assertEqual(10000000000.0, densityCorrection.density_increase_threshold)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            densityCorrection.density_increase_threshold = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            densityCorrection.density_increase_threshold = 100000000000.0
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("not available for Earth density models")):
+            densityCorrection.sigma = 1.4
+
+        # Cleanup
+        atmosphericModelsFolder.remove("Test-MSISE1990")
+
+    # endregion
+
+    # region StochasticDensityCorrection_NonEarth
+    def test_StochasticDensityCorrection_NonEarth(self):
+        compInfoCol: "ComponentInfoCollection" = (
+            Scenario(TestBase.Application.current_scenario)
+        ).component_directory.get_components(Component.ASTROGATOR)
+
+        atmosphericModelsFolder: "ComponentInfoCollection" = compInfoCol.get_folder("Propagator Functions").get_folder(
+            "Atmospheric Models"
+        )
+        marsGram2000: "MarsGRAM2000" = clr.CastAs(
+            atmosphericModelsFolder.duplicate_component("Mars GRAM 2000", "Test-MG2000"), MarsGRAM2000
+        )
+
+        marsGram2000.use_stochastic_density_correction = False
+        Assert.assertFalse(marsGram2000.use_stochastic_density_correction)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("set UseStochasticDensityCorrection to true")):
+            unused: "StochasticDensityCorrection" = marsGram2000.stochastic_density_correction
+
+        marsGram2000.use_stochastic_density_correction = True
+        Assert.assertTrue(marsGram2000.use_stochastic_density_correction)
+
+        densityCorrection: "StochasticDensityCorrection" = marsGram2000.stochastic_density_correction
+
+        densityCorrection.half_life = 0
+        Assert.assertEqual(0, densityCorrection.half_life)
+        densityCorrection.half_life = 10000000000.0
+        Assert.assertEqual(10000000000.0, densityCorrection.half_life)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            densityCorrection.half_life = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            densityCorrection.half_life = 100000000000.0
+
+        densityCorrection.sigma = 0
+        Assert.assertEqual(0, densityCorrection.sigma)
+        densityCorrection.sigma = 10000000000.0
+        Assert.assertEqual(10000000000.0, densityCorrection.sigma)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            densityCorrection.sigma = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            densityCorrection.sigma = 100000000000.0
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("only available for Earth density models")):
+            densityCorrection.sigma_scale = 1.1
+        with pytest.raises(Exception, match=RegexSubstringMatch("only available for Earth density models")):
+            densityCorrection.density_ratio_root = 1.2
+        with pytest.raises(Exception, match=RegexSubstringMatch("only available for Earth density models")):
+            densityCorrection.density_increase_threshold = 1.3
+
+        # Cleanup
+        atmosphericModelsFolder.remove("Test-MG2000")
+
+    # endregion
     # endregion

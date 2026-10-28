@@ -1,0 +1,59 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.stkruntime",
+        "NewRootScope": "ansys.stk.core.stkruntime"
+    },
+    "MemberMappings": [
+        {
+            "ParentScope": "STKRuntimeApplication",
+            "OldName": "NewObjectRoot",
+            "NewName": "new_object_root"
+        },
+        {
+            "ParentScope": "STKRuntimeApplication",
+            "OldName": "NewObjectModelContext",
+            "NewName": "new_object_model_context"
+        },
+        {
+            "ParentScope": "STKRuntimeApplication",
+            "OldName": "SetGrpcOptions",
+            "NewName": "set_grpc_options"
+        },
+        {
+            "ParentScope": "STKRuntimeApplication",
+            "OldName": "NewGrpcCallBatcher",
+            "NewName": "new_grpc_call_batcher"
+        },
+        {
+            "ParentScope": "STKRuntimeApplication",
+            "OldName": "ShutDown",
+            "NewName": "shutdown"
+        },
+        {
+            "ParentScope": "STKRuntime",
+            "OldName": "StartApplication",
+            "NewName": "start_application"
+        },
+        {
+            "ParentScope": "STKRuntime",
+            "OldName": "AttachToApplication",
+            "NewName": "attach_to_application"
+        }
+    ],
+    "InterfaceMappings": [],
+    "ClassMappings": [],
+    "EnumTypeMappings": [],
+    "EnumValueMappings": [],
+    "NamedArgumentMappings": [
+        {
+            "ParentScope": "STKRuntime.StartApplication",
+            "OldName": "userControl",
+            "NewName": "user_control"
+        },
+        {
+            "ParentScope": "STKRuntime.StartApplication",
+            "OldName": "noGraphics",
+            "NewName": "no_graphics"
+        }
+    ]
+}

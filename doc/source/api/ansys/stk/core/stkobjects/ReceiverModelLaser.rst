@@ -22,8 +22,6 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.set_demodulator`
               - Set the current demodulator model by name.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.set_filter`
-              - Do not use this method, as it is deprecated. Use FilterComponentLinking on ReceiverModelLaser instead. Sets the current filter model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.set_polarization_type`
               - Set the current polarization type.
 
@@ -55,8 +53,6 @@ Overview
               - Get or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.enable_polarization`
               - Get or set the enable polarization option.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.filter`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelLaser instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.filter_component_linking`
               - Get the link/embed controller for managing the filter model component.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.frequency`
@@ -69,16 +65,12 @@ Overview
               - Get the collection of additional pre-demod gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.pre_receive_gains_losses`
               - Get the collection of additional pre-receive gains and losses.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.propagation_loss_models`
-              - Do not use this property, as it is deprecated. The laser propagation loss models can be accessed from the LaserEnvironment property.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.scale_bandwidth_automatically`
               - Get or set the auto scale bandwidth option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.select_demodulator_automatically`
               - Get or set the auto select demodulator option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.supported_demodulators`
               - Get an array of supported demodulator model names.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.supported_filters`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelLaser instead. Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.track_frequency_automatically`
               - Get or set the auto track frequency option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.use_avalanche_photo_detector_model`
@@ -163,12 +155,6 @@ Property detail
 
     Get or set the enable polarization option.
 
-.. py:property:: filter
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.filter
-    :type: IRFFilterModel
-
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelLaser instead. Gets the current filter model.
-
 .. py:property:: filter_component_linking
     :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.filter_component_linking
     :type: IComponentLinkEmbedControl
@@ -205,12 +191,6 @@ Property detail
 
     Get the collection of additional pre-receive gains and losses.
 
-.. py:property:: propagation_loss_models
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.propagation_loss_models
-    :type: LaserPropagationLossModels
-
-    Do not use this property, as it is deprecated. The laser propagation loss models can be accessed from the LaserEnvironment property.
-
 .. py:property:: scale_bandwidth_automatically
     :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.scale_bandwidth_automatically
     :type: bool
@@ -228,12 +208,6 @@ Property detail
     :type: list
 
     Get an array of supported demodulator model names.
-
-.. py:property:: supported_filters
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.supported_filters
-    :type: list
-
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelLaser instead. Gets an array of supported filter model names.
 
 .. py:property:: track_frequency_automatically
     :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.track_frequency_automatically
@@ -284,26 +258,10 @@ Method detail
 
 
 
-
-
 .. py:method:: set_demodulator(self, name: str) -> None
     :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.set_demodulator
 
     Set the current demodulator model by name.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: set_filter(self, name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.set_filter
-
-    Do not use this method, as it is deprecated. Use FilterComponentLinking on ReceiverModelLaser instead. Sets the current filter model by name.
 
     :Parameters:
 
@@ -327,7 +285,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
 
 
 

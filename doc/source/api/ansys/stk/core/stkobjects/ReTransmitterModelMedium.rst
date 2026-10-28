@@ -20,8 +20,6 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelMedium.set_filter`
-              - Do not use this method, as it is deprecated. Use FilterComponentLinking on ReTransmitterModelMedium instead. Sets the current filter model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelMedium.set_polarization_type`
               - Set the current polarization type.
 
@@ -37,8 +35,6 @@ Overview
               - Get or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelMedium.enable_polarization`
               - Get or set the enable polarization option.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelMedium.filter`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReTransmitterModelMedium instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelMedium.filter_component_linking`
               - Get the link/embed controller for managing the filter model component.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelMedium.polarization`
@@ -47,8 +43,6 @@ Overview
               - Get the collection of additional post transmit gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelMedium.saturated_power`
               - Get or set the saturated power.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelMedium.supported_filters`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReTransmitterModelMedium instead. Gets an array of supported filter model names.
 
 
 
@@ -81,12 +75,6 @@ Property detail
 
     Get or set the enable polarization option.
 
-.. py:property:: filter
-    :canonical: ansys.stk.core.stkobjects.ReTransmitterModelMedium.filter
-    :type: IRFFilterModel
-
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReTransmitterModelMedium instead. Gets the current filter model.
-
 .. py:property:: filter_component_linking
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelMedium.filter_component_linking
     :type: IComponentLinkEmbedControl
@@ -111,12 +99,6 @@ Property detail
 
     Get or set the saturated power.
 
-.. py:property:: supported_filters
-    :canonical: ansys.stk.core.stkobjects.ReTransmitterModelMedium.supported_filters
-    :type: list
-
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReTransmitterModelMedium instead. Gets an array of supported filter model names.
-
 
 Method detail
 -------------
@@ -132,21 +114,6 @@ Method detail
 
 
 
-
-.. py:method:: set_filter(self, name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.ReTransmitterModelMedium.set_filter
-
-    Do not use this method, as it is deprecated. Use FilterComponentLinking on ReTransmitterModelMedium instead. Sets the current filter model by name.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
-
 .. py:method:: set_polarization_type(self, value: PolarizationType) -> None
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelMedium.set_polarization_type
 
@@ -160,5 +127,4 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
 

@@ -41,8 +41,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintCollection.remove_constraint`
               - Remove a constraint from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintCollection.remove_named_constraint`
-              - Do not use this method, as it is deprecated. Use RemoveNamedConstraintEx instead. Removes a constraint with the given name from the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintCollection.remove_named_constraint_ex`
               - Remove a constraint with the given name from the collection.
 
     .. tab-item:: Properties
@@ -275,20 +273,6 @@ Method detail
 
 .. py:method:: remove_named_constraint(self, cnstr_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.AccessConstraintCollection.remove_named_constraint
-
-    Do not use this method, as it is deprecated. Use RemoveNamedConstraintEx instead. Removes a constraint with the given name from the collection.
-
-    :Parameters:
-
-        **cnstr_name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: remove_named_constraint_ex(self, cnstr_name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintCollection.remove_named_constraint_ex
 
     Remove a constraint with the given name from the collection.
 

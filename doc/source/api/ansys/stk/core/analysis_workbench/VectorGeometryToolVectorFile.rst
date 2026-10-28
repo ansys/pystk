@@ -30,7 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorFile.filename`
-              - >A path to vector data file.
+              - A path to vector data file.
 
 
 
@@ -49,7 +49,7 @@ Property detail
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorFile.filename
     :type: str
 
-    >A path to vector data file.
+    A path to vector data file.
 
 
 Method detail

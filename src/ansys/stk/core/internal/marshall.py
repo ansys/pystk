@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -32,8 +32,6 @@ from .           import comutil     as agcom
 from .           import coclassutil as agcoclass
 from ..utilities import colors      as agcolor
 from ..utilities import comobject   as agcomobj
-
-from ..utilities.exceptions import STKColorError, STKPluginMethodNotImplementedError
 
 ###############################################################################
 #   Marshalling DATE
@@ -117,7 +115,7 @@ def VARIANT_from_python_data(data:typing.Any) -> agcom.Variant:
             union_val.dblVal = agcom.DOUBLE(data)
         elif var.vt == agcom.VT_UNKNOWN:
             union_val.punkVal = data._intf.p
-            agcom._CreateAgObjectLifetimeManager._add_ref_impl(data._intf)
+            typing.cast(agcom.IUnknown, data._intf).add_ref()
         elif var.vt & agcom.VT_ARRAY:
             union_val.parray = SAFEARRAY_from_list(data, True)
         var.buffer = union_val.buffer
@@ -192,7 +190,7 @@ def ctype_val_from_VARIANT(var:agcom.Variant) -> typing.Any:
     elif var.vt == agcom.VT_UINT|agcom.VT_BYREF:
         return union_val.puintVal
     elif var.vt == agcom.VT_VARIANT|agcom.VT_BYREF:
-        return cast(union_val.pvarVal, POINTER(agcom.Variant))
+        return union_val.pvarVal
     elif var.vt == agcom.VT_ERROR:
         return agcom.HRESULT(union_val.scode)
     elif var.vt == agcom.VT_ERROR|agcom.VT_BYREF:
@@ -244,7 +242,8 @@ def python_val_from_ctypes_val(ctypes_val:typing.Any, vt:int):
             pUnk = ctypes_val
         ret = agcom.IUnknown()
         ret.p = pUnk
-        ret.create_ownership()
+        ret.add_ref()
+        ret.take_ownership()
         return agcoclass.get_concrete_class(ret)
     elif vt & agcom.VT_ARRAY:
         if vt & agcom.VT_BYREF:
@@ -402,6 +401,31 @@ def _vartype_to_ctypes_type(vt:agcom.INT) -> typing.Any:
     else:
         raise RuntimeError("Unrecognized variant type: " + str(vt))
 
+def _is_uniform_type(p_array:POINTER(agcom.Variant), num_elems:int) -> bool:
+    first_elem_type = p_array[0].vt
+    for i in range(num_elems):
+        if p_array[i].vt != first_elem_type:
+            return False
+    return True
+
+def _fast_1d_numeric_array(p_variant_array:agcom.LPVOID, num_elems:int, data_type) -> list:
+    if data_type == agcom.FLOAT:
+        # Index is 2 - the third FLOAT value in Union(FLOAT*6, Variant)
+        data_union_type = data_type * 6
+        data_union_index = 2
+    elif data_type == agcom.DOUBLE:
+        # Index is 1 - the second DOUBLE value in Union(DOUBLE*3, Variant)
+        data_union_type = data_type * 3
+        data_union_index = 1
+    src_array_type = data_union_type * num_elems
+    p_source_array = cast(p_variant_array, POINTER(src_array_type))
+    source_array = p_source_array[0]
+    dest_array_type = data_type * num_elems
+    dest_array = dest_array_type()
+    for i in range(num_elems):
+        dest_array[i] = source_array[i][data_union_index]
+    return list(dest_array)
+
 def _single_dimension_list_from_SAFEARRAY(sa:agcom.LPSAFEARRAY, index:int, from_2d_array=False) -> list:
     python_array = list()
     vt = agcom.VARTYPE()
@@ -410,71 +434,27 @@ def _single_dimension_list_from_SAFEARRAY(sa:agcom.LPSAFEARRAY, index:int, from_
     ub1 = agcom.LONG()
     agcom.OLEAut32Lib.SafeArrayGetLBound(sa, agcom.UINT(1), byref(lb1))
     agcom.OLEAut32Lib.SafeArrayGetUBound(sa, agcom.UINT(1), byref(ub1))
-    nElem1 = int(ub1.value)+1-int(lb1.value)
+    num_elems_dim1 = int(ub1.value) + 1 - int(lb1.value)
+    if num_elems_dim1 == 0:
+        return []
     pVoid = agcom.LPVOID()
     hr = agcom.OLEAut32Lib.SafeArrayAccessData(sa, byref(pVoid))
     pElem = cast(pVoid, POINTER(_vartype_to_ctypes_type(vt.value)))
     if not from_2d_array:
-        for i in range(int(lb1.value), int(lb1.value)+nElem1):
-            python_array.append(python_val_from_ctypes_val(pElem[i], vt.value))
+        if vt.value == agcom.VT_VARIANT and _vartype_to_ctypes_type(pElem[0].vt) in [agcom.FLOAT, agcom.DOUBLE] and _is_uniform_type(pElem, num_elems_dim1) and lb1.value == 0:
+                python_array = _fast_1d_numeric_array(pVoid, num_elems_dim1, _vartype_to_ctypes_type(pElem[0].vt))
+        else:
+            for i in range(int(lb1.value), int(lb1.value) + num_elems_dim1):
+                python_array.append(python_val_from_ctypes_val(pElem[i], vt.value))
     else:
         lb2 = agcom.LONG()
         ub2 = agcom.LONG()
         agcom.OLEAut32Lib.SafeArrayGetLBound(sa, agcom.UINT(2), byref(lb2))
         agcom.OLEAut32Lib.SafeArrayGetUBound(sa, agcom.UINT(2), byref(ub2))
-        nElem2 = int(ub2.value)+1-int(lb2.value)
-        for i in range(int(lb2.value), int(lb2.value)+nElem2):
-            python_array.append(python_val_from_ctypes_val(pElem[(i * nElem1) + index], vt.value))
+        num_elems_dim2 = int(ub2.value) + 1 - int(lb2.value)
+        for i in range(int(lb2.value), int(lb2.value) + num_elems_dim2):
+            python_array.append(python_val_from_ctypes_val(pElem[(i * (num_elems_dim1)) + index], vt.value))
     hr = agcom.OLEAut32Lib.SafeArrayUnaccessData(sa)
-    return python_array
-
-
-def _five_dimension_list_from_SAFEARRAY(sa:agcom.LPSAFEARRAY) -> list:
-    python_array = []
-    vt = agcom.VARTYPE()
-    agcom.OLEAut32Lib.SafeArrayGetVartype(sa, byref(vt))
-    if vt.value != agcom.VT_VARIANT:
-        return []
-    indices = (agcom.LONG*5)()
-    indices[0] = 0
-    indices[1] = 0
-    indices[2] = 0
-    indices[3] = 0
-    indices[4] = 0
-    pIndx = cast(pointer(indices), POINTER(agcom.LONG))
-    lb = (agcom.LONG*5)()
-    ub = (agcom.LONG*5)()
-    for i in range(0,5):
-        getlb = agcom.LONG()
-        getub = agcom.LONG()
-        agcom.OLEAut32Lib.SafeArrayGetLBound(sa, agcom.UINT(i+1), byref(getlb))
-        agcom.OLEAut32Lib.SafeArrayGetUBound(sa, agcom.UINT(i+1), byref(getub))
-        lb[i] = getlb
-        ub[i] = getub
-    for first in range(int(lb[0]), int(ub[0]) + 1):
-        indices[0] = agcom.LONG(first)
-        secondlvl = []
-        for second in range(int(lb[1]), int(ub[1]) + 1):
-            indices[1] = agcom.LONG(second)
-            thirdlvl = []
-            for third in range(int(lb[2]), int(ub[2]) + 1):
-                indices[2]= agcom.LONG(third)
-                fourthlvl = []
-                for fourth in range(int(lb[3]), int(ub[3]) + 1):
-                    indices[3] = agcom.LONG(fourth)
-                    fifthlvl = []
-                    for fifth in range(int(lb[4]), int(ub[4]) + 1):
-                        indices[4] = agcom.LONG(fifth)
-                        pElem = _vartype_to_ctypes_type(agcom.VT_VARIANT)()
-                        agcom.OLEAut32Lib.VariantInit(pElem)
-                        hr = agcom.OLEAut32Lib.SafeArrayGetElement(sa, pIndx, byref(pElem))
-                        python_elem = python_val_from_ctypes_val(pElem, agcom.VT_VARIANT)
-                        agcom.OLEAut32Lib.VariantClear(pElem)
-                        fifthlvl.append(python_elem)
-                    fourthlvl.append(fifthlvl)
-                thirdlvl.append(fourthlvl)
-            secondlvl.append(thirdlvl)
-        python_array.append(secondlvl)
     return python_array
 
 def list_from_SAFEARRAY(sa:agcom.LPSAFEARRAY) -> list:
@@ -492,8 +472,6 @@ def list_from_SAFEARRAY(sa:agcom.LPSAFEARRAY) -> list:
         for i in range(int(lb.value), int(ub.value)+1):
             ret.append(_single_dimension_list_from_SAFEARRAY(sa, i, True))
         return ret
-    elif dim == 5:
-        return _five_dimension_list_from_SAFEARRAY(sa)
     else:
         raise RuntimeError("Unexpected dimension of SafeArray.  Expected 1 or 2, got " + str(dim) + ".")
 
@@ -660,7 +638,7 @@ class OLEColorArg(object):
             self.OLE_COLOR = agcom.OLE_COLOR()
         else:
             if type(val) == agcolor.ColorRGBA:
-                raise STKColorError("Argument type is RGB only, use Color class instead of ColorRGBA.")
+                raise RuntimeError("Argument type is RGB only, use Color class instead of ColorRGBA.")
             self.OLE_COLOR = agcom.OLE_COLOR(val._to_ole_color())
     def __enter__(self):
         return self
@@ -825,7 +803,7 @@ class InterfaceInArg(object):
         Initialize an InterfaceInArg object.
 
         val should be a python CoClass object (e.g. Facility)
-        as_interface is the interface class to send to STK
+        as_interface is the argument interface class
         """
         new_inst = InterfaceInArg(self.as_interface)
         new_inst.pIntf = None
@@ -835,9 +813,9 @@ class InterfaceInArg(object):
         elif val is not None and hasattr(val, "_intf"):
             new_inst.val = val
             if new_inst.as_interface=="IDispatch":
-                new_inst.pIntf = val._intf.query_interface(agcom.GUID(agcom.IDispatch._guid))
+                new_inst.pIntf = val._intf.query_interface(agcom.IDispatch._metadata)
             elif new_inst.as_interface=="IUnknown":
-                new_inst.pIntf = val._intf.query_interface(agcom.GUID(agcom.IUnknown._guid))
+                new_inst.pIntf = val._intf.query_interface(agcom.IUnknown._metadata)
             else:
                 intf_class = agcoclass.AgTypeNameMap[new_inst.as_interface]
                 new_inst.pIntf = val._intf.query_interface(intf_class._metadata)
@@ -917,6 +895,9 @@ class InterfaceEventCallbackArg(object):
         """
         ptr = agcom.IUnknown()
         ptr.p = agcom.PVOID(pUnk) if type(pUnk)==int else pUnk
+        # Reference to the event args is held on the STK side, we just borrow it here,
+        # so do not release it as we are not calling AddRef/adding our own reference
+        ptr._skip_release = True
         self.intf = as_interface()
         self.intf._private_init(ptr)
         del(ptr)
@@ -956,7 +937,7 @@ class IEnumVariantArg(object):
             return None
 
 class EnumArg(object):
-    def __init__(self, enum_type: IntEnum):
+    def __init__(self, enum_type: typing.Type[IntEnum]):
         self.enum_type = enum_type
     def __call__(self, val: typing.Any = None):
         if val is None:
@@ -1001,7 +982,7 @@ class LPSafearrayArg(object):
 
 class IPictureDispArg(object):
     def __init__(self, val: agcom.IPictureDisp = None):
-        raise STKPluginMethodNotImplementedError(f"Methods with the argument type \"IPictureDisp\" are not available using Python")
+        raise SyntaxError(f"Methods with the argument type \"IPictureDisp\" are not available using Python")
         if val is None:
             self.ipd = agcom.IPictureDisp()
         else:
@@ -1084,3 +1065,20 @@ class OLEYPosPixelsArg(object):
     @property
     def python_val(self) -> int:
         return self.OLE_YPOS_PIXELS.value
+
+class PGrpcBytesArg(object):
+    def __init__(self, val: bytes = None):
+        if val is None:
+            self.byte_array = bytes()
+        else:
+            self.byte_array = val
+    def __enter__(self):
+        return self
+    def __exit__(self, type, value, tb):
+        return False
+    @property
+    def com_val(self):
+        raise RuntimeError("Calling gRPC-only method via COM.")
+    @property
+    def python_val(self) -> bytes:
+        return self.byte_array

@@ -48,4 +48,16 @@ Property detail
 
     Get or set the SaveScenarioAsVDF property determines whether a scenario will be saved as a scenario file or as a VDF file when the Save method is called. If a VDF file is loaded, then the SaveScenarioAsVDF property has no effect when Save is called.
 
+    Examples
+    --------
+
+    Save the current scenario as a VDF
+
+    .. code-block:: python
+
+        # STKObjectRoot root: STK Object Model Root
+        scenario = root.current_scenario
+        root.preferences.vdf_preferences.save_scenario_as_vdf = True
+
+
 

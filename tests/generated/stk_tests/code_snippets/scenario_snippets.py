@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -144,7 +144,7 @@ class ScenarioSnippets(CodeSnippetsTestBase):
     # region AddAnalyticalTerrainToEarthCentralBody
     def test_AddAnalyticalTerrainToEarthCentralBody(self):
         self.AddAnalyticalTerrainToEarthCentralBody(
-            CodeSnippetsTestBase.m_Root, TestBase.GetScenarioFile("CodeSnippetsTests", "ny512.dte")
+            CodeSnippetsTestBase.m_Root, TestBase.GetScenarioFile("ScenarioTests", "NED", "w001001.adf")
         )
 
     def AddAnalyticalTerrainToEarthCentralBody(self, root: "STKObjectRoot", terrainFile: str):
@@ -156,7 +156,7 @@ class ScenarioSnippets(CodeSnippetsTestBase):
 
         # Add terrain data file to current scenario's terrain collection
         # Terrain data files traditionally have .dte extensions
-        terrain: "Terrain" = elementCollection.add(terrainFile, TerrainFileType.MUSE_RASTER_FILE)
+        terrain: "Terrain" = elementCollection.add(terrainFile, TerrainFileType.ARC_INFO_BINARY_GRID_MEAN_SEA_LEVEL)
 
         # Set Scenario to use terrain data file
         terrain.use_terrain = True

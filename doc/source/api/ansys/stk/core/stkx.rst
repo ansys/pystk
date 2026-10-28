@@ -131,6 +131,9 @@ Summary
             * - :py:class:`~ansys.stk.core.stkx.ShowProgressImage`
               - Specify to show progress image.
 
+            * - :py:class:`~ansys.stk.core.stkx.STKXConnectAuthenticationMode`
+              - Determine the authentication mode for connect.
+
 
 
 Description
@@ -222,4 +225,5 @@ Solar Panel Tool
     ≔ ProgressImageYOrigin<stkx/ProgressImageYOrigin>
     ≔ ShiftValues<stkx/ShiftValues>
     ≔ ShowProgressImage<stkx/ShowProgressImage>
+    ≔ STKXConnectAuthenticationMode<stkx/STKXConnectAuthenticationMode>
 

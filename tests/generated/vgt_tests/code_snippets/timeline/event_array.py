@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -43,7 +43,6 @@ class EventArray(TimelineCodeSnippetsTestBase):
         if foundTimes.is_valid:
             Console.WriteLine("Times")
             numTimes: int = len(foundTimes.times)
-
             i: int = 0
             while i < numTimes:
                 Console.WriteLine(foundTimes.times[i])
@@ -82,7 +81,6 @@ class EventArray(TimelineCodeSnippetsTestBase):
         if timeArrays.is_valid:
             Console.WriteLine("Times")
             numTimes: int = len(timeArrays.times)
-
             i: int = 0
             while i < numTimes:
                 Console.WriteLine(timeArrays.times[i])
@@ -124,7 +122,6 @@ class EventArray(TimelineCodeSnippetsTestBase):
         if timeArrays.is_valid:
             Console.WriteLine("Times")
             numTimes: int = len(timeArrays.times)
-
             i: int = 0
             while i < numTimes:
                 Console.WriteLine(timeArrays.times[i])
@@ -158,7 +155,6 @@ class EventArray(TimelineCodeSnippetsTestBase):
         if timeArrays.is_valid:
             Console.WriteLine("Times")
             numTimes: int = len(timeArrays.times)
-
             i: int = 0
             while i < numTimes:
                 Console.WriteLine(timeArrays.times[i])
@@ -205,7 +201,6 @@ class EventArray(TimelineCodeSnippetsTestBase):
         if timeArrays.is_valid:
             Console.WriteLine("Times")
             numTimes: int = len(timeArrays.times)
-
             i: int = 0
             while i < numTimes:
                 Console.WriteLine(timeArrays.times[i])
@@ -239,7 +234,6 @@ class EventArray(TimelineCodeSnippetsTestBase):
         if timeArrays.is_valid:
             Console.WriteLine("Times")
             numTimes: int = len(timeArrays.times)
-
             i: int = 0
             while i < numTimes:
                 Console.WriteLine(timeArrays.times[i])
@@ -284,7 +278,6 @@ class EventArray(TimelineCodeSnippetsTestBase):
         if timeArrays.is_valid:
             Console.WriteLine("Times")
             numTimes: int = len(timeArrays.times)
-
             i: int = 0
             while i < numTimes:
                 Console.WriteLine(timeArrays.times[i])
@@ -320,7 +313,6 @@ class EventArray(TimelineCodeSnippetsTestBase):
         if timeArrays.is_valid:
             Console.WriteLine("Times")
             numTimes: int = len(timeArrays.times)
-
             i: int = 0
             while i < numTimes:
                 Console.WriteLine(timeArrays.times[i])
@@ -361,7 +353,6 @@ class EventArray(TimelineCodeSnippetsTestBase):
         if timeArrays.is_valid:
             Console.WriteLine("Times")
             numTimes: int = len(timeArrays.times)
-
             i: int = 0
             while i < numTimes:
                 epoch: typing.Any = timeArrays.times[i]

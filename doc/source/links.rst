@@ -7,6 +7,8 @@
 .. _PySTK labels: https://github.com/ansys/pystk/labels
 .. _docker/ directory: https://github.com/ansys/pystk/tree/docker/
 .. _code snippet directory: https://github.com/ansys/pystk/tree/main/tests/doc_snippets_tests
+.. _create and load scenarios example: https://github.com/ansys/pystk/blob/main/examples/create-load-scenarios.py
+.. _results and graphs example: https://github.com/ansys/pystk/blob/main/examples/results-graphs.py
 
 .. Ansys products
 
@@ -30,7 +32,7 @@
 .. _pip: https://pypi.org/project/pip/
 .. _Tox: https://tox.wiki/en/stable/
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
-.. _reStructuredText: https://docutils.sourceforge.io/rst.html
+.. _reStructuredText: https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
 .. _Markdown: https://www.markdownguide.org/
 .. _myst-parser: https://myst-parser.readthedocs.io/en/latest/
 .. _jupytext: https://jupytext.readthedocs.io/en/latest/

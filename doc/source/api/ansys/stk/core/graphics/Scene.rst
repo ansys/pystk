@@ -62,7 +62,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.graphics.Scene.show_water_surface`
               - Get or set whether water surface on earth is shown or hidden in the scene.
             * - :py:attr:`~ansys.stk.core.graphics.Scene.visual_effects`
-              - Get the visual  effects associated with the scene.
+              - Get the visual effects associated with the scene.
 
 
 
@@ -173,7 +173,7 @@ Property detail
     :canonical: ansys.stk.core.graphics.Scene.visual_effects
     :type: VisualEffects
 
-    Get the visual  effects associated with the scene.
+    Get the visual effects associated with the scene.
 
 
 Method detail

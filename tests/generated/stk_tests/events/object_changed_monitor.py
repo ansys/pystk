@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -36,7 +36,6 @@ class ObjectChangedMonitor(IObjectModelEventMonitor):
         self._lastSender: str = None
         self._counter: int = 0
         self._root: "STKObjectRoot" = root
-
         self.csToPy_OnStkObjectChangedSubscription = (self._root).subscribe()
         self.csToPy_OnStkObjectChangedSubscription.on_stk_object_changed += self._root_OnStkObjectChanged
 

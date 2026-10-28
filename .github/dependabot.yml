@@ -7,7 +7,7 @@ updates:
     cooldown:
       default-days: 7
       include:
-        - "*"  # Include all dependencies in cooldown
+        - "*" # Include all dependencies in cooldown
       exclude:
         - "ansys-sphinx-theme"
     labels:
@@ -40,7 +40,7 @@ updates:
     cooldown:
       default-days: 7
       include:
-        - "*"  # Include all dependencies in cooldown
+        - "*" # Include all dependencies in cooldown
       exclude:
         - "ansys/actions"
     labels:

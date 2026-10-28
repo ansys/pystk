@@ -28,6 +28,8 @@ Overview
               - Sees if a control is enabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSInitialState.set_element_type`
               - Select an coordinate type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSInitialState.unlock_initial_state_segment`
+              - Unlocks the initial state segment.
 
     .. tab-item:: Properties
 
@@ -43,12 +45,18 @@ Overview
               - Get the elements of the selected coordinate type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSInitialState.element_type`
               - Get the coordinate type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSInitialState.flight_dynamics_record_name`
+              - Return the name of the flight dynamics record used in the initial state segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSInitialState.fuel_tank`
               - Get the fuel tank parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSInitialState.orbit_epoch`
               - Get or set the orbit epoch. Uses DateFormat Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSInitialState.propagator_name`
+              - Return the name of the propagator embedded in the flight dynamics record used in the initial state segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSInitialState.spacecraft_parameters`
               - Get the spacecraft  parameters.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSInitialState.stochastic_parameters`
+              - Get the stochastic parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSInitialState.user_variables`
               - Interface used to modify user variables for the initial state segment.
 
@@ -89,6 +97,12 @@ Property detail
 
     Get the coordinate type.
 
+.. py:property:: flight_dynamics_record_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.flight_dynamics_record_name
+    :type: str
+
+    Return the name of the flight dynamics record used in the initial state segment.
+
 .. py:property:: fuel_tank
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.fuel_tank
     :type: FuelTank
@@ -101,11 +115,23 @@ Property detail
 
     Get or set the orbit epoch. Uses DateFormat Dimension.
 
+.. py:property:: propagator_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.propagator_name
+    :type: str
+
+    Return the name of the propagator embedded in the flight dynamics record used in the initial state segment.
+
 .. py:property:: spacecraft_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.spacecraft_parameters
     :type: SpacecraftParameters
 
     Get the spacecraft  parameters.
+
+.. py:property:: stochastic_parameters
+    :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.stochastic_parameters
+    :type: StochasticParameters
+
+    Get the stochastic parameters.
 
 .. py:property:: user_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.user_variables
@@ -151,6 +177,7 @@ Method detail
         :obj:`~None`
 
 
+
 .. py:method:: is_control_parameter_enabled(self, param: ControlInitState) -> bool
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.is_control_parameter_enabled
 
@@ -164,6 +191,7 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
 
 
 
@@ -181,5 +209,15 @@ Method detail
 
         :obj:`~None`
 
+
+
+.. py:method:: unlock_initial_state_segment(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.unlock_initial_state_segment
+
+    Unlocks the initial state segment.
+
+    :Returns:
+
+        :obj:`~None`
 
 

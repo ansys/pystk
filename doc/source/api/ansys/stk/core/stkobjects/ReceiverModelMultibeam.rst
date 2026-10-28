@@ -22,8 +22,6 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.set_demodulator`
               - Set the current demodulator model by name.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.set_filter`
-              - Do not use this method, as it is deprecated. Use FilterComponentLinking on ReceiverModelMultibeam instead. Sets the current filter model by name.
 
     .. tab-item:: Properties
 
@@ -41,8 +39,6 @@ Overview
               - Get the current demodulator model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.enable_filter`
               - Get or set the flag determines whether or not to enable the Filter.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.filter`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMultibeam instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.filter_component_linking`
               - Get the link/embed controller for managing the filter model component.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.interference`
@@ -65,8 +61,6 @@ Overview
               - Get or set the auto select demodulator option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.supported_demodulators`
               - Get an array of supported demodulator model names.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.supported_filters`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMultibeam instead. Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.supported_rain_outage_percent_values`
               - Get an array of supported rain outage percent values.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.system_noise_temperature`
@@ -118,12 +112,6 @@ Property detail
     :type: bool
 
     Get or set the flag determines whether or not to enable the Filter.
-
-.. py:property:: filter
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.filter
-    :type: IRFFilterModel
-
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMultibeam instead. Gets the current filter model.
 
 .. py:property:: filter_component_linking
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.filter_component_linking
@@ -191,12 +179,6 @@ Property detail
 
     Get an array of supported demodulator model names.
 
-.. py:property:: supported_filters
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.supported_filters
-    :type: list
-
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMultibeam instead. Gets an array of supported filter model names.
-
 .. py:property:: supported_rain_outage_percent_values
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.supported_rain_outage_percent_values
     :type: list
@@ -250,7 +232,6 @@ Method detail
 
 
 
-
 .. py:method:: set_demodulator(self, name: str) -> None
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.set_demodulator
 
@@ -264,21 +245,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-.. py:method:: set_filter(self, name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.set_filter
-
-    Do not use this method, as it is deprecated. Use FilterComponentLinking on ReceiverModelMultibeam instead. Sets the current filter model by name.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
-
 
 
 

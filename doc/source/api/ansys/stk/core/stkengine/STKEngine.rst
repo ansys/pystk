@@ -25,6 +25,7 @@ Overview
               - Initialize STK Engine in-process and return the instance.
 
                 Must only be used once per Python process.
+                Specify no_graphics = True to start the application in no-graphics mode.
 
 Import detail
 -------------
@@ -43,6 +44,7 @@ Method detail
     Initialize STK Engine in-process and return the instance.
 
     Must only be used once per Python process.
+    Specify no_graphics = True to start the application in no-graphics mode.
 
     :Parameters:
 

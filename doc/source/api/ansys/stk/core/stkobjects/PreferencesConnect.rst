@@ -28,6 +28,8 @@ Overview
               - Allow connections from other machines.
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.allow_logging`
               - Allow for command logging.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.authentication_mode`
+              - Get or set the authentication mode for the server.
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.error_notify_mode`
               - Get or set the initial connect Error Notify mode state.
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.log_filename`
@@ -38,6 +40,16 @@ Overview
               - Period between port polls in msec.
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.socket`
               - TCP/IP Socket Port.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.tls_ca_file`
+              - Get or set the filepath to the server certificate authentication file for mTLS authentication. (e.g. ca.crt)
+            * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.tls_server_certificate_file`
+              - Get or set the filepath to the server certificate file for mTLS authentication. (e.g. server.crt)
+            * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.tls_server_key_file`
+              - Get or set the filepath to the server key file for mTLS authentication. (e.g. server.key)
+            * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.uds_directory`
+              - Get or set the filepath to the directory for the UDS socket file. Supported on Linux platforms only.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.uds_identifier`
+              - Get or set an optional UDS ID for multiple connections. Supported on Linux platforms only.
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.verbose`
               - Get or set the initial connect Verbose mode state.
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.wildcard_ignore_nack`
@@ -86,6 +98,12 @@ Property detail
 
     Allow for command logging.
 
+.. py:property:: authentication_mode
+    :canonical: ansys.stk.core.stkobjects.PreferencesConnect.authentication_mode
+    :type: ConnectAuthenticationMode
+
+    Get or set the authentication mode for the server.
+
 .. py:property:: error_notify_mode
     :canonical: ansys.stk.core.stkobjects.PreferencesConnect.error_notify_mode
     :type: bool
@@ -115,6 +133,36 @@ Property detail
     :type: int
 
     TCP/IP Socket Port.
+
+.. py:property:: tls_ca_file
+    :canonical: ansys.stk.core.stkobjects.PreferencesConnect.tls_ca_file
+    :type: str
+
+    Get or set the filepath to the server certificate authentication file for mTLS authentication. (e.g. ca.crt)
+
+.. py:property:: tls_server_certificate_file
+    :canonical: ansys.stk.core.stkobjects.PreferencesConnect.tls_server_certificate_file
+    :type: str
+
+    Get or set the filepath to the server certificate file for mTLS authentication. (e.g. server.crt)
+
+.. py:property:: tls_server_key_file
+    :canonical: ansys.stk.core.stkobjects.PreferencesConnect.tls_server_key_file
+    :type: str
+
+    Get or set the filepath to the server key file for mTLS authentication. (e.g. server.key)
+
+.. py:property:: uds_directory
+    :canonical: ansys.stk.core.stkobjects.PreferencesConnect.uds_directory
+    :type: str
+
+    Get or set the filepath to the directory for the UDS socket file. Supported on Linux platforms only.
+
+.. py:property:: uds_identifier
+    :canonical: ansys.stk.core.stkobjects.PreferencesConnect.uds_identifier
+    :type: str
+
+    Get or set an optional UDS ID for multiple connections. Supported on Linux platforms only.
 
 .. py:property:: verbose
     :canonical: ansys.stk.core.stkobjects.PreferencesConnect.verbose

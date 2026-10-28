@@ -15,7 +15,7 @@ foreach ($zipFile in $zipFiles) {
     Write-Host "Extracting $zipFile"
     $zipFile -match "(?<archive>.*)\.zip" | Out-Null
     $dirname = $matches['archive']
-    Expand-Archive -Path "C:/Users/STK/dist/$zipFile" -DestinationPath C:/Users/STK/dist/
+    Expand-Archive -Path "C:/Users/STK/dist/$zipFile" -DestinationPath "C:/Users/STK/dist/$dirname" -Force
     Write-Host "Extracted $zipFile"
 
     # Install current ZIP using setup.exe
@@ -29,6 +29,9 @@ foreach ($zipFile in $zipFiles) {
     Remove-Item -Path "C:/Users/STK/dist/$dirname" -Force -Recurse
 }
 
-Copy-Item "C:\Program Files\AGI\STK 12\bin\AgAsCode500.dll" -Destination "C:\Program Files\AGI\STK 12\Modules"
+$source = "C:/Users/STK/dist/AgAsCode500.dll"
+if (Test-Path $source) {
+    Copy-Item -Path $source -Destination "C:\Program Files\AGI\STK_ODTK 13\Modules"
+}
 
 Remove-Item -Path C:/Users/STK/dist/ -Force -Recurse

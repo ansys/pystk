@@ -17,8 +17,8 @@ The API migration assistant automates migrating your code to the new API. It rel
 
 The following steps are recommended:
 
-1. Upgrade your code to STK software version 12.10.0.
-2. Test your code using STK software version 12.10.0 to ensure it works properly.
+1. Upgrade your code to STK software version 13.0.1.
+2. Test your code using STK software version 13.0.1 to ensure it works properly.
 3. Run the API migration assistant in recording mode. Repeat to cover all of the code paths.
 4. Run the API migration assistant to apply the changes.
 5. Review the changes.

@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -422,6 +422,8 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def IterateThroughVectors(self, provider: "AnalysisWorkbenchComponentProvider"):
+        # Iterate through the the group of existing vectors associated
+        # with the specified CrdnProvider.
         i: int = 0
         while i < provider.vectors.count:
             vector: "IVectorGeometryToolVector" = provider.vectors[i]
@@ -446,6 +448,8 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def IterateThroughPoints(self, provider: "AnalysisWorkbenchComponentProvider"):
+        # Iterate through the the group of existing points associated
+        # with the specified CrdnProvider.
         i: int = 0
         while i < provider.points.count:
             point: "IVectorGeometryToolPoint" = provider.points[i]
@@ -470,6 +474,8 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def IterateThroughAngles(self, provider: "AnalysisWorkbenchComponentProvider"):
+        # Iterate through the the group of existing angles associated
+        # with the specified CrdnProvider.
         i: int = 0
         while i < provider.angles.count:
             angle: "IVectorGeometryToolAngle" = provider.angles[i]
@@ -494,6 +500,8 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def IterateThroughAxes(self, provider: "AnalysisWorkbenchComponentProvider"):
+        # Iterate through the the group of existing angles associated
+        # with the specified CrdnProvider.
         i: int = 0
         while i < provider.axes.count:
             axes: "IVectorGeometryToolAxes" = provider.axes[i]
@@ -518,6 +526,8 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def IterateThroughPlanes(self, provider: "AnalysisWorkbenchComponentProvider"):
+        # Iterate through the the group of existing planes associated
+        # with the specified CrdnProvider.
         i: int = 0
         while i < provider.planes.count:
             plane: "IVectorGeometryToolPlane" = provider.planes[i]
@@ -542,6 +552,8 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def IterateThroughSystems(self, provider: "AnalysisWorkbenchComponentProvider"):
+        # Iterate through the the group of existing systems associated
+        # with the specified CrdnProvider.
         i: int = 0
         while i < provider.systems.count:
             crdnSystem: "IVectorGeometryToolSystem" = provider.systems[i]
@@ -566,6 +578,8 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def IterateThroughParameterSets(self, provider: "AnalysisWorkbenchComponentProvider"):
+        # Iterate through the the group of existing parameter sets associated
+        # with the specified CrdnProvider.
         i: int = 0
         while i < provider.parameter_sets.count:
             parameterSet: "ICalculationToolParameterSet" = provider.parameter_sets[i]
@@ -590,6 +604,8 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def IterateThroughCalcScalars(self, provider: "AnalysisWorkbenchComponentProvider"):
+        # Iterate through the the group of existing calc scalars associated
+        # with the specified CrdnProvider.
         i: int = 0
         while i < provider.calculation_scalars.count:
             calcScalar: "ICalculationToolScalar" = provider.calculation_scalars[i]
@@ -616,6 +632,8 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def IterateThroughConditions(self, provider: "AnalysisWorkbenchComponentProvider"):
+        # Iterate through the the group of existing conditions associated
+        # with the specified CrdnProvider.
         i: int = 0
         while i < provider.conditions.count:
             condition: "ICalculationToolCondition" = provider.conditions[i]
@@ -640,6 +658,8 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def IterateThroughEvents(self, provider: "AnalysisWorkbenchComponentProvider"):
+        # Iterate through the the group of existing events associated
+        # with the specified CrdnProvider.
         i: int = 0
         while i < provider.time_instants.count:
             event: "ITimeToolInstant" = provider.time_instants[i]
@@ -664,6 +684,8 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def IterateThroughEventArrays(self, provider: "AnalysisWorkbenchComponentProvider"):
+        # Iterate through the the group of existing event arrays associated
+        # with the specified CrdnProvider.
         i: int = 0
         while i < provider.time_arrays.count:
             eventArray: "ITimeToolTimeArray" = provider.time_arrays[i]
@@ -688,6 +710,8 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def IterateThroughEventIntervals(self, provider: "AnalysisWorkbenchComponentProvider"):
+        # Iterate through the the group of existing event intervals associated
+        # with the specified CrdnProvider.
         i: int = 0
         while i < provider.time_intervals.count:
             eventInterval: "ITimeToolTimeInterval" = provider.time_intervals[i]
@@ -712,6 +736,8 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def IterateThroughEventIntervalCollections(self, provider: "AnalysisWorkbenchComponentProvider"):
+        # Iterate through the the group of existing event interval collections associated
+        # with the specified CrdnProvider.
         i: int = 0
         while i < provider.time_interval_collections.count:
             eventIntervalCollection: "ITimeToolTimeIntervalCollection" = provider.time_interval_collections[i]
@@ -738,6 +764,8 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def IterateThroughEventIntervalLists(self, provider: "AnalysisWorkbenchComponentProvider"):
+        # Iterate through the the group of existing event interval lists associated
+        # with the specified CrdnProvider.
         i: int = 0
         while i < provider.time_interval_lists.count:
             eventIntervalList: "ITimeToolTimeIntervalList" = provider.time_interval_lists[i]
@@ -1189,6 +1217,7 @@ class VGT(CodeSnippetsTestBase):
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.systems.contains("SystemName")))
         try:
+
             self.CreateSystemAssembled(provider, provider.points["Center"], provider.axes["Body"])
 
         finally:

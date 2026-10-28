@@ -61,8 +61,6 @@ Overview
               - Specify whether scenario needs to be saved.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.laser_environment`
               - Return the laser environment.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.radar_clutter_map`
-              - Return the global radar clutter map.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.radar_cross_section`
               - Return the global radar cross section.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.rf_environment`
@@ -87,11 +85,41 @@ Overview
               - Return a list of 3D Tilesets used for Analysis.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.use_analysis_start_time_for_epoch`
               - Whether the scenario Epoch is the same as the scenario's StartTime.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.use_terrain_server_for_analysis`
+              - Whether STK uses the Terrain Server for analysis.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.use_terrain_server_for_az_el_mask`
+              - Whether STK uses the Terrain Server for Azimuth/Elevation mask.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.use_terrain_server_for_line_of_sight_terrain_mask`
+              - Whether STK uses the Terrain Server for Line-of-sight terrain mask.
 
 
 
 Examples
 --------
+
+Save the current scenario
+
+.. code-block:: python
+
+    from pathlib import Path
+
+    # Create a directory for scenario files
+    scenario_directory = Path.cwd() / "MyScenario"
+    scenario_directory.mkdir(parents=True, exist_ok=True)
+
+    # Save the scenario
+    scenario_path = scenario_directory / "MyScenario.sc"
+    root.save_as(str(scenario_path))
+
+
+Save the current scenario as a VDF
+
+.. code-block:: python
+
+    # STKObjectRoot root: STK Object Model Root
+    scenario = root.current_scenario
+    root.preferences.vdf_preferences.save_scenario_as_vdf = True
+
 
 Set the current scenario's time period
 
@@ -191,12 +219,6 @@ Property detail
 
     Return the laser environment.
 
-.. py:property:: radar_clutter_map
-    :canonical: ansys.stk.core.stkobjects.Scenario.radar_clutter_map
-    :type: IRadarClutterMap
-
-    Return the global radar clutter map.
-
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.Scenario.radar_cross_section
     :type: RadarCrossSection
@@ -269,6 +291,24 @@ Property detail
 
     Whether the scenario Epoch is the same as the scenario's StartTime.
 
+.. py:property:: use_terrain_server_for_analysis
+    :canonical: ansys.stk.core.stkobjects.Scenario.use_terrain_server_for_analysis
+    :type: bool
+
+    Whether STK uses the Terrain Server for analysis.
+
+.. py:property:: use_terrain_server_for_az_el_mask
+    :canonical: ansys.stk.core.stkobjects.Scenario.use_terrain_server_for_az_el_mask
+    :type: bool
+
+    Whether STK uses the Terrain Server for Azimuth/Elevation mask.
+
+.. py:property:: use_terrain_server_for_line_of_sight_terrain_mask
+    :canonical: ansys.stk.core.stkobjects.Scenario.use_terrain_server_for_line_of_sight_terrain_mask
+    :type: bool
+
+    Whether STK uses the Terrain Server for Line-of-sight terrain mask.
+
 
 Method detail
 -------------
@@ -321,7 +361,6 @@ Method detail
 
 
 
-
 .. py:method:: set_dirty(self) -> None
     :canonical: ansys.stk.core.stkobjects.Scenario.set_dirty
 
@@ -346,6 +385,12 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+
+
+
+
 
 
 

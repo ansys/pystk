@@ -20,7 +20,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~UNKNOWN`
-              - Unklnown.
+              - Unknown.
 
             * - :py:attr:`~TRANSMIT`
               - Position is computed in Time Sense.

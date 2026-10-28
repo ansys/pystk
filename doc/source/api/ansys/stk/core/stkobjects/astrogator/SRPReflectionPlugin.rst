@@ -36,6 +36,8 @@ Overview
               - Get the solar radius value to use in eclipse calculations.  Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.sun_position`
               - Get or set the sun position computation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.use_stochastic_srp_coefficient`
+              - True if using a stochastic SRP for propagation or estimation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.use_sun_central_body_file_values`
               - True if solar values should come from the Sun.cb file.
 
@@ -99,6 +101,12 @@ Property detail
     :type: SunPosition
 
     Get or set the sun position computation.
+
+.. py:property:: use_stochastic_srp_coefficient
+    :canonical: ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.use_stochastic_srp_coefficient
+    :type: bool
+
+    True if using a stochastic SRP for propagation or estimation.
 
 .. py:property:: use_sun_central_body_file_values
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.use_sun_central_body_file_values

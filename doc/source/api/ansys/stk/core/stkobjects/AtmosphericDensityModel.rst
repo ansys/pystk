@@ -25,9 +25,6 @@ Overview
             * - :py:attr:`~CIRA72`
               - CIRA 1972: empirical model of atmospheric temperature and densities as recommended by the Committee on Space Research (COSPAR). Lower altitude boundary is 90 km.
 
-            * - :py:attr:`~EXPONENTIAL_MODEL`
-              - Do not use this enumeration, as it is deprecated. Exponential Model: uses equation calculating atmospheric density on basis of a specified altitude, reference density, reference altitude and scale altitude.
-
             * - :py:attr:`~HARRIS_PRIESTER`
               - Harris-Priester: takes into account a 10.7 cm solar flux level and diurnal bulge. Uses density tables. Valid range of 0-1000 km.
 
@@ -54,9 +51,6 @@ Overview
 
             * - :py:attr:`~UNKNOWN`
               - Unsupported or unknown atmospheric density model.
-
-            * - :py:attr:`~USER_DEFINED`
-              - Do not use this enumeration, as it is deprecated. This option is no longer available for VehicleHPOPForceModelDrag. User-defined atmospheric density model.
 
             * - :py:attr:`~DTM2012`
               - DTM 2012: The Drag Temperature Model (DTM), 2012 version, is a semi-empirical model which computes the temperature, density, and composition of the thermosphere. Developed at CNES. Valid range of 120 - 1500 km.

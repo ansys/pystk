@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -24,15 +24,13 @@
 import gc
 import typing
 
-from ..utilities.exceptions import STKAttributeError, STKInitializationError, STKInvalidCastError
-
 class InterfaceProxy(object):
-    """Proxy class to isolate the call strategy to STK (COM, gRPC, etc)."""
+    """Proxy class to isolate the call strategy (COM, gRPC, etc)."""
     def __init__(self):
         pass
 
     def __eq__(self, other):
-        """Check for equivalence of the underlying STK interface."""
+        """Check for equivalence of the underlying interface."""
         return False
 
     def __hash__(self):
@@ -88,7 +86,7 @@ class GcDisabler(object):
     def __init__(self):
         self._is_gc_enabled = False
     def __enter__(self):
-        if gc.isenabled():
+        if gc.isenabled is not None and gc.isenabled():
             self._is_gc_enabled = True
             gc.disable()
         return self
@@ -102,10 +100,10 @@ def initialize_from_source_object(this, sourceObject, interfaceType):
     if sourceObject is not None and sourceObject._intf is not None:
         intf = sourceObject._intf.query_interface(interfaceType._metadata)
         if intf is not None:
-            this._private_init(intf)
+            this._private_init(sourceObject._intf)
             del(intf)
         else:
-            raise STKInvalidCastError(f"Failed to create {interfaceType.__name__} from source object.")
+            raise RuntimeError(f"Failed to create {interfaceType.__name__} from source object.")
 
 def get_interface_property(attrname, interfaceType):
     if attrname in interfaceType.__dict__ and type(interfaceType.__dict__[attrname]) == property:
@@ -118,7 +116,7 @@ def set_interface_attribute(this, attrname, value, interfaceType, baseType):
     elif baseType is not None:
         baseType.__setattr__(this, attrname, value)
     else:
-        raise STKAttributeError(f"{attrname} is not a recognized attribute in {interfaceType.__name__}.")
+        raise AttributeError(f"{attrname} is not a recognized attribute in {interfaceType.__name__}.")
 
 def set_class_attribute(this, attrname, value, classType, interfaceTypes):
     found_prop = None
@@ -129,7 +127,7 @@ def set_class_attribute(this, attrname, value, classType, interfaceTypes):
     if found_prop is not None:
         found_prop.__set__(this, value)
     else:
-        raise STKAttributeError(f"{attrname} is not a recognized attribute in {classType.__name__}.")
+        raise AttributeError(f"{attrname} is not a recognized attribute in {classType.__name__}.")
 
 def _unquoted(s:str) -> str:
     if s is not None and len(s) > 0:
@@ -149,12 +147,24 @@ def read_registry_key(key, value=None, root=None, silent_exception=False):
         return _unquoted(val)
     except Exception as e:
         if not silent_exception:
-            raise STKInitializationError(f"Error Reading Registry for {key}: {e}")
+            raise RuntimeError(f"Error Reading Registry for {key}: {e}")
         return None
 
 def winreg_stk_binary_dir():
     try:
         import winreg
-        return _unquoted(read_registry_key(f"SOFTWARE\\AGI\\STK\\12.0", root=winreg.HKEY_LOCAL_MACHINE, value="STKBinaryFolder"))
+        return _unquoted(read_registry_key(f"SOFTWARE\\AGI\\STK_ODTK\\13.0", root=winreg.HKEY_LOCAL_MACHINE, value="STKBinaryFolder"))
     except Exception as e:
         return None
+
+def error_msg_from_hresult(hr:int) -> str:
+    '''Error messages from common HRESULT values.'''
+    hr = (hr & 0xFFFFFFFF)
+    if hr == 0x80070057: # E_INVALIDARG
+        return "One or more arguments are invalid."
+    elif hr == 0x8007000E: # E_OUTOFMEMORY
+        return "Data size exceeds memory limit. Try chunking the data request."
+    elif hr == 0x80004003: # E_POINTER
+        return "Invalid object instance."
+    else:
+        return "(HRESULT = 0x%x)" % (hr)

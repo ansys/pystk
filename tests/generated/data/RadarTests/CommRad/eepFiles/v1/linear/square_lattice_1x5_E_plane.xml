@@ -1,0 +1,59 @@
+<Metadata>
+  <ElementPatterns>
+    <Source name='A[1,1]RectProbe_ATK1_coax_pin_T1'>
+      <Filename>exportfield_0.ffd      </Filename>
+      <PortLocation>0.000000,-0.028179,-0.005000      </PortLocation>
+      <ReferenceLocation>0.000000,0.000000,0.000000      </ReferenceLocation>
+        <PowerInfo>
+            <Power Freq='10GHz'>
+              <IncidentPower>0.009914              </IncidentPower>
+              <AcceptedPower>0.009208              </AcceptedPower>
+            </Power>
+        </PowerInfo>
+    </Source>
+    <Source name='A[2,1]RectProbe_ATK1_coax_pin_T1'>
+      <Filename>exportfield_1.ffd      </Filename>
+      <PortLocation>0.000000,-0.013190,-0.005000      </PortLocation>
+      <ReferenceLocation>0.000000,0.014990,0.000000      </ReferenceLocation>
+        <PowerInfo>
+            <Power Freq='10GHz'>
+              <IncidentPower>0.009914              </IncidentPower>
+              <AcceptedPower>0.008984              </AcceptedPower>
+            </Power>
+        </PowerInfo>
+    </Source>
+    <Source name='A[3,1]RectProbe_ATK1_coax_pin_T1'>
+      <Filename>exportfield_2.ffd      </Filename>
+      <PortLocation>0.000000,0.001800,-0.005000      </PortLocation>
+      <ReferenceLocation>0.000000,0.029979,0.000000      </ReferenceLocation>
+        <PowerInfo>
+            <Power Freq='10GHz'>
+              <IncidentPower>0.009914              </IncidentPower>
+              <AcceptedPower>0.008976              </AcceptedPower>
+            </Power>
+        </PowerInfo>
+    </Source>
+    <Source name='A[4,1]RectProbe_ATK1_coax_pin_T1'>
+      <Filename>exportfield_3.ffd      </Filename>
+      <PortLocation>0.000000,0.016790,-0.005000      </PortLocation>
+      <ReferenceLocation>0.000000,0.044969,0.000000      </ReferenceLocation>
+        <PowerInfo>
+            <Power Freq='10GHz'>
+              <IncidentPower>0.009914              </IncidentPower>
+              <AcceptedPower>0.008979              </AcceptedPower>
+            </Power>
+        </PowerInfo>
+    </Source>
+    <Source name='A[5,1]RectProbe_ATK1_coax_pin_T1'>
+      <Filename>exportfield_4.ffd      </Filename>
+      <PortLocation>0.000000,0.031779,-0.005000      </PortLocation>
+      <ReferenceLocation>0.000000,0.059958,0.000000      </ReferenceLocation>
+        <PowerInfo>
+            <Power Freq='10GHz'>
+              <IncidentPower>0.009914              </IncidentPower>
+              <AcceptedPower>0.009166              </AcceptedPower>
+            </Power>
+        </PowerInfo>
+    </Source>
+  </ElementPatterns>
+</Metadata>

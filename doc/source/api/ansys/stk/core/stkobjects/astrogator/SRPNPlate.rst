@@ -32,6 +32,8 @@ Overview
               - Get or set the mean solar flux at 1 au (W/m^2).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPNPlate.n_plate_definition_file`
               - Full path of NPlate definition file.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPNPlate.n_plate_stochastic_parameters`
+              - NPlate Stochastic Parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPNPlate.shadow_model`
               - Get or set the shadow model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPNPlate.solar_force_method`
@@ -40,6 +42,8 @@ Overview
               - Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPNPlate.sun_position`
               - Get or set the sun position computation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPNPlate.use_stochastic_srp_coefficient`
+              - True if using a stochastic SRP for propagation or estimation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPNPlate.use_sun_central_body_file_values`
               - True if solar values should come from the Sun.cb file.
 
@@ -92,6 +96,12 @@ Property detail
 
     Full path of NPlate definition file.
 
+.. py:property:: n_plate_stochastic_parameters
+    :canonical: ansys.stk.core.stkobjects.astrogator.SRPNPlate.n_plate_stochastic_parameters
+    :type: NPlateStochasticParametersCollection
+
+    NPlate Stochastic Parameters.
+
 .. py:property:: shadow_model
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPNPlate.shadow_model
     :type: ShadowModel
@@ -115,6 +125,12 @@ Property detail
     :type: SunPosition
 
     Get or set the sun position computation.
+
+.. py:property:: use_stochastic_srp_coefficient
+    :canonical: ansys.stk.core.stkobjects.astrogator.SRPNPlate.use_stochastic_srp_coefficient
+    :type: bool
+
+    True if using a stochastic SRP for propagation or estimation.
 
 .. py:property:: use_sun_central_body_file_values
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPNPlate.use_sun_central_body_file_values

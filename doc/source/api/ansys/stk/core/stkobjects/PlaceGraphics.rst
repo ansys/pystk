@@ -3,6 +3,8 @@ PlaceGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.PlaceGraphics
 
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IGroundLocationGraphics`
+
    2D Graphics properties of a Place.
 
 .. py:currentmodule:: PlaceGraphics

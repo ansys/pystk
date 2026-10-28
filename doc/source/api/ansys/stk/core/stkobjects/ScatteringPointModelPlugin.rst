@@ -3,7 +3,7 @@ ScatteringPointModelPlugin
 
 .. py:class:: ansys.stk.core.stkobjects.ScatteringPointModelPlugin
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IScatteringPointModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.IRadarClutterMapModelPlugin`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IScatteringPointModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a plugin scattering point model.
 

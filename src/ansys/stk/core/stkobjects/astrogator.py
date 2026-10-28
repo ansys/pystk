@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -42,33 +42,34 @@ __all__ = ["AccessCriterion", "AccessStoppingCondition", "AsTriggerCondition", "
 "CentralBodyComponentEphemerisJPLDesignExplorerOptimizer", "CentralBodyComponentEphemerisJPLSpice",
 "CentralBodyComponentEphemerisPlanetary", "CentralBodyComponentGravityModel", "CentralBodyComponentShapeOblateSpheroid",
 "CentralBodyComponentShapeSphere", "CentralBodyComponentShapeTriaxialEllipsoid", "CentralBodyEphemeris",
-"CentralBodyGravityModel", "CentralBodyShape", "Cira72Function", "ClearEphemerisDirection", "CoeffRungeKuttaV8th9th",
-"ComplexNumber", "ConstraintCollection", "ConstraintSign", "ControlAdvanced", "ControlEngineConstant",
-"ControlEngineConstantAcceleration", "ControlEngineCustom", "ControlEngineIon", "ControlEngineModelPolynomial",
-"ControlEngineThrottleTable", "ControlFollow", "ControlInitState", "ControlLaunch", "ControlManeuver",
-"ControlOrbitStateValue", "ControlPowerInternal", "ControlPowerProcessed", "ControlPowerSolarArray",
+"CentralBodyGravityModel", "CentralBodyShape", "Cira72Function", "ClearEphemerisDirection",
+"CoefficientRungeKuttaV8th9th", "ComplexNumber", "ConstraintCollection", "ConstraintSign", "ControlAdvanced",
+"ControlEngineConstant", "ControlEngineConstantAcceleration", "ControlEngineCustom", "ControlEngineIon",
+"ControlEngineModelPolynomial", "ControlEngineThrottleTable", "ControlFollow", "ControlInitState", "ControlLaunch",
+"ControlManeuver", "ControlOrbitStateValue", "ControlPowerInternal", "ControlPowerProcessed", "ControlPowerSolarArray",
 "ControlRepeatingGroundTrackErr", "ControlStoppingCondition", "ControlThrusters", "ControlUpdate",
 "ConvergenceCriteria", "Criteria", "Criterion", "CustomFunction", "CustomFunctionScriptEngine", "DTM2012", "DTM2020",
 "DensityModelPlugin", "DerivativeCalculationMethod", "DesignCR3BPObject", "DesignCR3BPObjectCollection",
 "DesignCR3BPSetup", "DesignER3BPObject", "DesignER3BPObjectCollection", "DesignER3BPSetup", "DifferenceOrder",
 "DifferentialCorrectorControl", "DifferentialCorrectorControlCollection", "DifferentialCorrectorResult",
 "DifferentialCorrectorResultCollection", "DifferentialCorrectorScalingMethod", "DisplaySystemGeocentric",
-"DisplaySystemGeodetic", "DragModelPlugin", "DragModelType", "DrawPerturbation", "EOMFuncPluginFunction", "ER3BPFunc",
-"EclipsingBodiesSource", "ElementBPlane", "ElementCartesian", "ElementDelaunay", "ElementEquinoctial",
-"ElementGeodetic", "ElementKeplerian", "ElementMixedSpherical", "ElementSetType", "ElementSpherical",
-"ElementSphericalRangeRate", "ElementTargetVectorIncomingAsymptote", "ElementTargetVectorOutgoingAsymptote",
-"ElementType", "EngineConstant", "EngineConstantAcceleration", "EngineCustom", "EngineDefinition", "EngineIon",
-"EngineModelFunction", "EngineModelIspCoefficients", "EngineModelPolynomial", "EngineModelThrustCoefficients",
-"EnginePlugin", "EngineThrottleTable", "EphemerisSource", "ErrorControl", "Exponential", "FollowJoin",
-"FollowSeparation", "FollowSpacecraftAndFuelTank", "Formulation", "FuelTank", "GaussJacksonIntegrator",
-"GeneralRelativityFunction", "GeoMagneticFluxSource", "GeoMagneticFluxUpdateRate", "GeoStationaryDriftRateModel",
-"GeoStationaryInclinationMagnitude", "GoldenSectionControl", "GoldenSectionControlCollection",
-"GoldenSectionDesiredOperation", "GoldenSectionResult", "GoldenSectionResultCollection", "GraphOption",
-"GravParamSource", "GravitationalParameterSource", "GravityCoefficientNormalizationType", "GravityCoefficientType",
-"GravityFieldFunction", "GridSearchControl", "GridSearchControlCollection", "GridSearchDesiredOperation",
-"GridSearchResult", "GridSearchResultCollection", "HPOPPluginFunction", "HarrisPriester", "IAttitudeControl",
-"IAttitudeControlFinite", "IAttitudeControlImpulsive", "IAttitudeControlOptimalFinite", "IBurnout",
-"ICentralBodyComponentAttitude", "ICentralBodyComponentEphemeris",
+"DisplaySystemGeodetic", "DragCorrectionType", "DragModelPlugin", "DragModelType", "DrawPerturbation",
+"EOMFuncPluginFunction", "ER3BPFunc", "EclipsingBodiesSource", "ElementBPlane", "ElementCartesian", "ElementDelaunay",
+"ElementEquinoctial", "ElementGeodetic", "ElementKeplerian", "ElementMixedSpherical", "ElementSetType",
+"ElementSpherical", "ElementSphericalRangeRate", "ElementTargetVectorIncomingAsymptote",
+"ElementTargetVectorOutgoingAsymptote", "ElementType", "EngineConstant", "EngineConstantAcceleration", "EngineCustom",
+"EngineDefinition", "EngineIon", "EngineModelFunction", "EngineModelIspCoefficients", "EngineModelPolynomial",
+"EngineModelThrustCoefficients", "EnginePlugin", "EngineThrottleTable", "EphemerisSource", "ErrorControl",
+"Exponential", "FlightDynamicsRecord", "FlightDynamicsRecordCreator", "FlightDynamicsRecordEpochType",
+"FlightDynamicsRecordPreview", "FollowJoin", "FollowSeparation", "FollowSpacecraftAndFuelTank", "Formulation",
+"FuelTank", "GaussJacksonIntegrator", "GeneralRelativityFunction", "GeoMagneticFluxSource", "GeoMagneticFluxUpdateRate",
+"GeoStationaryDriftRateModel", "GeoStationaryInclinationMagnitude", "GoldenSectionControl",
+"GoldenSectionControlCollection", "GoldenSectionDesiredOperation", "GoldenSectionResult",
+"GoldenSectionResultCollection", "GraphOption", "GravParameterSource", "GravitationalParameterSource",
+"GravityCoefficientNormalizationType", "GravityCoefficientType", "GravityFieldFunction", "GridSearchControl",
+"GridSearchControlCollection", "GridSearchDesiredOperation", "GridSearchResult", "GridSearchResultCollection",
+"HPOPPluginFunction", "HarrisPriester", "IAttitudeControl", "IAttitudeControlFinite", "IAttitudeControlImpulsive",
+"IAttitudeControlOptimalFinite", "IBurnout", "ICentralBodyComponentAttitude", "ICentralBodyComponentEphemeris",
 "ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides", "ICentralBodyComponentShape", "IDisplaySystem", "IElement",
 "IMCSSegment", "IMCSSequence", "IManeuver", "INumericalIntegrator", "IPOPTControl", "IPOPTControlCollection",
 "IPOPTGoal", "IPOPTResult", "IPOPTResultCollection", "IProfile", "IStoppingConditionComponent", "IdealOrbitRadius",
@@ -82,23 +83,24 @@ __all__ = ["AccessCriterion", "AccessStoppingCondition", "AsTriggerCondition", "
 "ManeuverOptimalFiniteInitialBoundaryConditions", "ManeuverOptimalFinitePathBoundaryConditions",
 "ManeuverOptimalFiniteSNOPTOptimizer", "ManeuverOptimalFiniteSteeringNodeCollection",
 "ManeuverOptimalFiniteSteeringNodeElement", "ManeuverType", "MarsGRAM2000", "MarsGRAM2001", "MarsGRAM2005",
-"MarsGRAM2010", "MarsGRAM37", "MarsGRAMDensityType", "NRLMSISE2000", "NumericalIntegrator",
-"NumericalPropagatorWrapper", "NumericalPropagatorWrapperCR3BP", "OptimalFiniteDiscretizationStrategy",
-"OptimalFiniteExportNodesFormat", "OptimalFiniteGuessMethod", "OptimalFiniteRunMode", "OptimalFiniteSNOPTObjective",
-"OptimalFiniteSNOPTScaling", "OptimalFiniteScalingOptions", "OptimalFiniteSeedMethod", "OptimalFiniteWorkingVariables",
-"PluginProperties", "PointMassFunction", "PowerInternal", "PowerProcessed", "PowerSolarArray", "PredictorCorrector",
-"PressureMode", "Profile", "ProfileBisection", "ProfileChangeManeuverType", "ProfileChangePropagator",
-"ProfileChangeReturnSegment", "ProfileChangeStopSegment", "ProfileChangeStoppingConditionState", "ProfileCollection",
-"ProfileDifferentialCorrector", "ProfileGoldenSection", "ProfileGridSearch", "ProfileIPOPTOptimizer",
-"ProfileInsertDirection", "ProfileLambertProfile", "ProfileLambertSearchProfile", "ProfileMode", "ProfileRunOnce",
-"ProfileSNOPTOptimizer", "ProfileScriptingTool", "ProfileSearchPlugin", "ProfileSeedFiniteManeuver", "ProfilesFinish",
-"PropagatorFunctionCollection", "PropulsionMethod", "RadiationPressureFunction", "ReferenceRadiusSource",
-"ReturnControl", "RootFindingAlgorithm", "RotatingCoordinateSystem", "RunCode", "RungeKutta2nd3rd", "RungeKutta4th",
-"RungeKutta4th5th", "RungeKutta4thAdapt", "RungeKuttaF7th8th", "RungeKuttaV8th9th", "SNOPTControl",
-"SNOPTControlCollection", "SNOPTGoal", "SNOPTResult", "SNOPTResultCollection", "SRPAerospaceT20", "SRPAerospaceT30",
-"SRPGSPM04aIIA", "SRPGSPM04aIIR", "SRPGSPM04aeIIA", "SRPGSPM04aeIIR", "SRPNPlate", "SRPReflectionPlugin",
-"SRPSpherical", "SRPTabulatedAreaVector", "SRPVariableArea", "STMEigenNumber", "STMPerturbationVariables",
-"ScriptingCalculationObject", "ScriptingCalculationObjectCollection", "ScriptingParameter",
+"MarsGRAM2010", "MarsGRAM37", "MarsGRAMDensityType", "NPlateStochasticCorrectionParameter",
+"NPlateStochasticCorrectionParametersCollection", "NPlateStochasticParameter", "NPlateStochasticParametersCollection",
+"NRLMSISE2000", "NumericalIntegrator", "NumericalPropagatorWrapper", "NumericalPropagatorWrapperCR3BP",
+"OptimalFiniteDiscretizationStrategy", "OptimalFiniteExportNodesFormat", "OptimalFiniteGuessMethod",
+"OptimalFiniteRunMode", "OptimalFiniteSNOPTObjective", "OptimalFiniteSNOPTScaling", "OptimalFiniteScalingOptions",
+"OptimalFiniteSeedMethod", "OptimalFiniteWorkingVariables", "PluginProperties", "PointMassFunction", "PowerInternal",
+"PowerProcessed", "PowerSolarArray", "PredictorCorrector", "PressureMode", "Profile", "ProfileBisection",
+"ProfileChangeManeuverType", "ProfileChangePropagator", "ProfileChangeReturnSegment", "ProfileChangeStopSegment",
+"ProfileChangeStoppingConditionState", "ProfileCollection", "ProfileDifferentialCorrector", "ProfileGoldenSection",
+"ProfileGridSearch", "ProfileIPOPTOptimizer", "ProfileInsertDirection", "ProfileLambertProfile",
+"ProfileLambertSearchProfile", "ProfileMode", "ProfileRunOnce", "ProfileSNOPTOptimizer", "ProfileScriptingTool",
+"ProfileSearchPlugin", "ProfileSeedFiniteManeuver", "ProfilesFinish", "PropagatorFunctionCollection",
+"PropulsionMethod", "RadiationPressureFunction", "ReferenceRadiusSource", "ReturnControl", "RootFindingAlgorithm",
+"RotatingCoordinateSystem", "RunCode", "RungeKutta4th", "RungeKutta4th5th", "RungeKuttaF7th8th", "RungeKuttaV8th9th",
+"SNOPTControl", "SNOPTControlCollection", "SNOPTGoal", "SNOPTResult", "SNOPTResultCollection", "SRPAerospaceT20",
+"SRPAerospaceT30", "SRPCorrectionType", "SRPGSPM04aIIA", "SRPGSPM04aIIR", "SRPGSPM04aeIIA", "SRPGSPM04aeIIR",
+"SRPNPlate", "SRPReflectionPlugin", "SRPSpherical", "SRPTabulatedAreaVector", "SRPVariableArea", "STMEigenNumber",
+"STMPerturbationVariables", "ScriptingCalculationObject", "ScriptingCalculationObjectCollection", "ScriptingParameter",
 "ScriptingParameterCollection", "ScriptingParameterEnumerationChoice", "ScriptingParameterEnumerationChoiceCollection",
 "ScriptingParameterType", "ScriptingSegment", "ScriptingSegmentCollection", "ScriptingTool", "SearchPluginControl",
 "SearchPluginControlCollection", "SearchPluginResult", "SearchPluginResultCollection", "SegmentDifferenceOrder",
@@ -117,7 +119,7 @@ __all__ = ["AccessCriterion", "AccessStoppingCondition", "AsTriggerCondition", "
 "StateCalcEccentricityAnomaly", "StateCalcEccentricityX", "StateCalcEccentricityY", "StateCalcEnvironment",
 "StateCalcEpoch", "StateCalcEquinoctialElem", "StateCalcFlightPathAngle", "StateCalcFuelMass", "StateCalcGeodeticElem",
 "StateCalcGeodeticMeanRightAscension", "StateCalcGeodeticTrueLongitude",
-"StateCalcGeodeticTrueLongitudeAtTimeOfPerigee", "StateCalcGravCoeff", "StateCalcGravitationalParameter",
+"StateCalcGeodeticTrueLongitudeAtTimeOfPerigee", "StateCalcGravCoefficient", "StateCalcGravitationalParameter",
 "StateCalcHeightAboveTerrain", "StateCalcImpactFlux", "StateCalcImpactMassFlux", "StateCalcInAsympDec",
 "StateCalcInAsympRA", "StateCalcInVelocityAzAtPeriapsis", "StateCalcInclination", "StateCalcInclinationX",
 "StateCalcInclinationY", "StateCalcInertialDeltaVMagnitude", "StateCalcInertialDeltaVx", "StateCalcInertialDeltaVy",
@@ -130,30 +132,31 @@ __all__ = ["AccessCriterion", "AccessStoppingCondition", "AsTriggerCondition", "
 "StateCalcOrbitDelaunayG", "StateCalcOrbitDelaunayH", "StateCalcOrbitDelaunayL", "StateCalcOrbitPeriod",
 "StateCalcOrbitSemilatusRectum", "StateCalcOrbitStateValue", "StateCalcOutAsympDec", "StateCalcOutAsympRA",
 "StateCalcOutVelocityAzAtPeriapsis", "StateCalcPi", "StateCalcPositionDifferenceOtherSegment",
-"StateCalcPositionVelocityDifferenceOtherSegment", "StateCalcPower", "StateCalcPressure", "StateCalcRA",
-"StateCalcRAAN", "StateCalcRARate", "StateCalcRMagnitude", "StateCalcRadOfApoapsis", "StateCalcRadOfPeriapsis",
-"StateCalcRadiationPressureArea", "StateCalcRadiationPressureCoefficient", "StateCalcRangeRate",
-"StateCalcRectifiedLon", "StateCalcReferenceRadius", "StateCalcRelativeAtAOLMaster",
+"StateCalcPositionVelocityDifferenceOtherSegment", "StateCalcPower", "StateCalcPressure", "StateCalcPythonScript",
+"StateCalcRA", "StateCalcRAAN", "StateCalcRARate", "StateCalcRMagnitude", "StateCalcRadOfApoapsis",
+"StateCalcRadOfPeriapsis", "StateCalcRadiationPressureArea", "StateCalcRadiationPressureCoefficient",
+"StateCalcRangeRate", "StateCalcRectifiedLon", "StateCalcReferenceRadius", "StateCalcRelativeAtAOLMaster",
 "StateCalcRelativeGroundTrackError", "StateCalcRelativeInclination", "StateCalcRelativeMotion",
 "StateCalcRelativePositionDecAngle", "StateCalcRelativePositionInPlaneAngle", "StateCalcRepeatingGroundTrackErr",
 "StateCalcSEETMagneticFieldLineSeparationAngle", "StateCalcSEETSAAFlux", "StateCalcSEETVehTemp", "StateCalcSRPArea",
 "StateCalcSTMEigenval", "StateCalcSTMEigenvecElem", "StateCalcScalar", "StateCalcScript", "StateCalcSemimajorAxis",
-"StateCalcSequenceDeltaV", "StateCalcSequenceDeltaVSquared", "StateCalcSignedEccentricity", "StateCalcSolarBetaAngle",
-"StateCalcSolarInPlaneAngle", "StateCalcSpeedOfLight", "StateCalcStandardDeviation", "StateCalcTemperature",
-"StateCalcTimePastAscNode", "StateCalcTimePastPeriapsis", "StateCalcTrueAnomaly", "StateCalcTrueLon",
-"StateCalcTrueLongitude", "StateCalcTwoBodyDriftRate", "StateCalcUnitAngularMomentumX", "StateCalcUnitAngularMomentumY",
-"StateCalcUnitAngularMomentumZ", "StateCalcUserValue", "StateCalcVMagnitude", "StateCalcValueAtSegment",
-"StateCalcValueAtSegmentOtherSat", "StateCalcVectorDec", "StateCalcVectorGeometryToolAngle", "StateCalcVectorMagnitude",
-"StateCalcVectorRA", "StateCalcVectorX", "StateCalcVectorY", "StateCalcVectorZ", "StateCalcVelocityAz",
-"StateCalcVelocityDifferenceOtherSegment", "StateTransformationFunction", "StateType", "StoppingCondition",
-"StoppingConditionCollection", "StoppingConditionElement", "StoppingConditionType", "SunPosition",
-"TabVecInterpolationMethod", "TargetSequenceAction", "TargeterGraph", "TargeterGraphActiveControl",
-"TargeterGraphActiveControlCollection", "TargeterGraphCollection", "TargeterGraphResult",
-"TargeterGraphResultCollection", "ThirdBodyFunction", "ThirdBodyMode", "ThrottleTableOperationMode", "ThrustType",
-"Thruster", "ThrusterDirection", "ThrusterSet", "ThrusterSetCollection", "TwoBodyFunction", "USStandardAtmosphere",
-"UpdateAction", "UpdateParam", "UserVariable", "UserVariableCollection", "UserVariableDefinition",
-"UserVariableDefinitionCollection", "UserVariableUpdate", "UserVariableUpdateCollection", "VenusGRAM2005",
-"VenusGRAMDensityType", "YarkovskyFunc"]
+"StateCalcSequenceDeltaV", "StateCalcSequenceDeltaVSquared", "StateCalcSignedEccentricity",
+"StateCalcSignedInclination", "StateCalcSolarBetaAngle", "StateCalcSolarInPlaneAngle", "StateCalcSpeedOfLight",
+"StateCalcStandardDeviation", "StateCalcTemperature", "StateCalcTimePastAscNode", "StateCalcTimePastPeriapsis",
+"StateCalcTrueAnomaly", "StateCalcTrueLon", "StateCalcTrueLongitude", "StateCalcTwoBodyDriftRate",
+"StateCalcUnitAngularMomentumX", "StateCalcUnitAngularMomentumY", "StateCalcUnitAngularMomentumZ", "StateCalcUserValue",
+"StateCalcVMagnitude", "StateCalcValueAtSegment", "StateCalcValueAtSegmentOtherSat", "StateCalcVectorDec",
+"StateCalcVectorGeometryToolAngle", "StateCalcVectorMagnitude", "StateCalcVectorRA", "StateCalcVectorX",
+"StateCalcVectorY", "StateCalcVectorZ", "StateCalcVelocityAz", "StateCalcVelocityDifferenceOtherSegment", "StateConfig",
+"StateConfigCollection", "StateTransformationFunction", "StateType", "StochasticDensityCorrection", "StochasticModel",
+"StochasticModelParameters", "StochasticParameters", "StoppingCondition", "StoppingConditionCollection",
+"StoppingConditionElement", "StoppingConditionType", "SunPosition", "TabVecInterpolationMethod", "TargetSequenceAction",
+"TargeterGraph", "TargeterGraphActiveControl", "TargeterGraphActiveControlCollection", "TargeterGraphCollection",
+"TargeterGraphResult", "TargeterGraphResultCollection", "ThirdBodyFunction", "ThirdBodyMode",
+"ThrottleTableOperationMode", "ThrustType", "Thruster", "ThrusterDirection", "ThrusterSet", "ThrusterSetCollection",
+"TwoBodyFunction", "USStandardAtmosphere", "UpdateAction", "UpdateParameter", "UserVariable", "UserVariableCollection",
+"UserVariableDefinition", "UserVariableDefinitionCollection", "UserVariableUpdate", "UserVariableUpdateCollection",
+"VenusGRAM2005", "VenusGRAMDensityType", "YarkovskyFunc"]
 
 from ctypes import POINTER
 from enum import IntEnum
@@ -184,11 +187,7 @@ from ..stkobjects import (
 )
 from ..stkutil import IDirection, IOrientation, IRuntimeTypeInfoProvider, RuntimeTypeInfo
 from ..utilities import colors as agcolor
-from ..utilities.exceptions import STKRuntimeError
 
-
-def _raise_uninitialized_error(*args):
-    raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
 class GraphOption(IntEnum):
     """Mode that the mcs will run in."""
@@ -416,11 +415,14 @@ class ProfileMode(IntEnum):
     """Run Once - the Target Sequence will run the profile once according to its current configuration."""
     ACTIVE = 3
     """Active - the Target Sequence will apply the change that the profile passes when running."""
+    ITERATE_ACTIVE = 4
+    """Iterate/Active - this combined mode option is for use with the MCS level Set All Profile Modes action in place of the individual Iterate and Active options."""
 
 ProfileMode.ITERATE.__doc__ = "Iterate - the Target Sequence will run the profile as it is configured in an attempt to attain the desired solution."
 ProfileMode.NOT_ACTIVE.__doc__ = "Not Active - the Target Sequence will ignore the profile when running."
 ProfileMode.RUN_ONCE.__doc__ = "Run Once - the Target Sequence will run the profile once according to its current configuration."
 ProfileMode.ACTIVE.__doc__ = "Active - the Target Sequence will apply the change that the profile passes when running."
+ProfileMode.ITERATE_ACTIVE.__doc__ = "Iterate/Active - this combined mode option is for use with the MCS level Set All Profile Modes action in place of the individual Iterate and Active options."
 
 agcls.AgTypeNameMap["ProfileMode"] = ProfileMode
 
@@ -500,11 +502,11 @@ class ConvergenceCriteria(IntEnum):
 
     EQUALITY_CONSTRAINT_WITHIN_TOLERANCE = 0
     """Equality Constraints Satisfied - the differences between the achieved and desired equality constraint values must be within the specified tolerances for convergence."""
-    CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMS = 1
+    CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMETERS = 1
     """Equality Constraints Satisfied or Parameter Variations within Tolerance - the differences between the achieved and desired EC values must be within tolerances, or the last updates to the control parameters must be within tolerances for convergence."""
 
 ConvergenceCriteria.EQUALITY_CONSTRAINT_WITHIN_TOLERANCE.__doc__ = "Equality Constraints Satisfied - the differences between the achieved and desired equality constraint values must be within the specified tolerances for convergence."
-ConvergenceCriteria.CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMS.__doc__ = "Equality Constraints Satisfied or Parameter Variations within Tolerance - the differences between the achieved and desired EC values must be within tolerances, or the last updates to the control parameters must be within tolerances for convergence."
+ConvergenceCriteria.CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMETERS.__doc__ = "Equality Constraints Satisfied or Parameter Variations within Tolerance - the differences between the achieved and desired EC values must be within tolerances, or the last updates to the control parameters must be within tolerances for convergence."
 
 agcls.AgTypeNameMap["ConvergenceCriteria"] = ConvergenceCriteria
 
@@ -1192,7 +1194,7 @@ ProfilesFinish.STOP.__doc__ = "Stop - stop the MCS as soon as the target sequenc
 
 agcls.AgTypeNameMap["ProfilesFinish"] = ProfilesFinish
 
-class UpdateParam(IntEnum):
+class UpdateParameter(IntEnum):
     """Spacecraft parameters that can be modified by an Update segment."""
 
     DRAG_AREA = 0
@@ -1218,19 +1220,19 @@ class UpdateParam(IntEnum):
     RADIATION_PRESSURE_AREA = 10
     """Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations."""
 
-UpdateParam.DRAG_AREA.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations."
-UpdateParam.SRP_AREA.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations."
-UpdateParam.DRY_MASS.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant."
-UpdateParam.FUEL_MASS.__doc__ = "The mass of the spacecraft propellant."
-UpdateParam.FUEL_DENSITY.__doc__ = "The density of the fuel tank."
-UpdateParam.TANK_PRESSURE.__doc__ = "The fuel tank pressure."
-UpdateParam.TANK_TEMPERATURE.__doc__ = "The temperature of the fuel tank."
-UpdateParam.CR.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
-UpdateParam.CD.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
-UpdateParam.CK.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
-UpdateParam.RADIATION_PRESSURE_AREA.__doc__ = "Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations."
+UpdateParameter.DRAG_AREA.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations."
+UpdateParameter.SRP_AREA.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations."
+UpdateParameter.DRY_MASS.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant."
+UpdateParameter.FUEL_MASS.__doc__ = "The mass of the spacecraft propellant."
+UpdateParameter.FUEL_DENSITY.__doc__ = "The density of the fuel tank."
+UpdateParameter.TANK_PRESSURE.__doc__ = "The fuel tank pressure."
+UpdateParameter.TANK_TEMPERATURE.__doc__ = "The temperature of the fuel tank."
+UpdateParameter.CR.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+UpdateParameter.CD.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
+UpdateParameter.CK.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+UpdateParameter.RADIATION_PRESSURE_AREA.__doc__ = "Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations."
 
-agcls.AgTypeNameMap["UpdateParam"] = UpdateParam
+agcls.AgTypeNameMap["UpdateParameter"] = UpdateParameter
 
 class UpdateAction(IntEnum):
     """Actions for the Update segment."""
@@ -1649,10 +1651,13 @@ class Language(IntEnum):
     """JScript."""
     MATLAB = 2
     """MATLAB."""
+    PYTHON = 3
+    """Python."""
 
 Language.VB_SCRIPT.__doc__ = "VBScript."
 Language.J_SCRIPT.__doc__ = "JScript."
 Language.MATLAB.__doc__ = "MATLAB."
+Language.PYTHON.__doc__ = "Python."
 
 agcls.AgTypeNameMap["Language"] = Language
 
@@ -1991,6 +1996,22 @@ GridSearchDesiredOperation.MAXIMIZE_VALUE.__doc__ = "Maximize value."
 
 agcls.AgTypeNameMap["GridSearchDesiredOperation"] = GridSearchDesiredOperation
 
+class FlightDynamicsRecordEpochType(IntEnum):
+    """The types for Desired Epoch Type for Vector Selection."""
+
+    CLOSEST_POINT = 0
+    """Desired epcoh at closest point."""
+    FIRST_POINT = 1
+    """Desired epcoh at first point."""
+    LAST_POINT = 2
+    """Desired epcoh at last point."""
+
+FlightDynamicsRecordEpochType.CLOSEST_POINT.__doc__ = "Desired epcoh at closest point."
+FlightDynamicsRecordEpochType.FIRST_POINT.__doc__ = "Desired epcoh at first point."
+FlightDynamicsRecordEpochType.LAST_POINT.__doc__ = "Desired epcoh at last point."
+
+agcls.AgTypeNameMap["FlightDynamicsRecordEpochType"] = FlightDynamicsRecordEpochType
+
 class ElementType(IntEnum):
     """Which type of elements (osculating or mean)."""
 
@@ -2249,7 +2270,7 @@ ReferenceRadiusSource.GRAVITY_FILE.__doc__ = "Gravity File."
 agcls.AgTypeNameMap["ReferenceRadiusSource"] = ReferenceRadiusSource
 
 class GravityCoefficientNormalizationType(IntEnum):
-    """The normalization type for the CStateCalcGravCoeff calculation object."""
+    """The normalization type for the CStateCalcGravCoefficient calculation object."""
 
     NORMALIZED = 0
     """Normalized."""
@@ -2262,7 +2283,7 @@ GravityCoefficientNormalizationType.UNNORMALIZED.__doc__ = "Unnormalized."
 agcls.AgTypeNameMap["GravityCoefficientNormalizationType"] = GravityCoefficientNormalizationType
 
 class GravityCoefficientType(IntEnum):
-    """The coefficient type for the CStateCalcGravCoeff calculation object."""
+    """The coefficient type for the CStateCalcGravCoefficient calculation object."""
 
     ZONAL = 0
     """Zonal."""
@@ -2624,7 +2645,7 @@ ThirdBodyMode.POINT_MASS.__doc__ = "Define the gravitational effect as a third b
 
 agcls.AgTypeNameMap["ThirdBodyMode"] = ThirdBodyMode
 
-class GravParamSource(IntEnum):
+class GravParameterSource(IntEnum):
     """The gravity parameter source."""
 
     CENTRAL_BODY_FILE = 0
@@ -2636,12 +2657,12 @@ class GravParamSource(IntEnum):
     CENTRAL_BODY_FILE_SYSTEM = 3
     """The Cb file provided with STK; uses the default, barycentered gravity source for the central body."""
 
-GravParamSource.CENTRAL_BODY_FILE.__doc__ = "The Cb file provided with STK; uses the default, body centered gravity source for the central body."
-GravParamSource.DESIGN_EXPLORER_OPTIMIZER_FILE.__doc__ = "A DE file; body centered for the inner planets and barycentered for the outer planets."
-GravParamSource.USER.__doc__ = "User defined; requires you to specify the mu value of the Gravitational Parameter."
-GravParamSource.CENTRAL_BODY_FILE_SYSTEM.__doc__ = "The Cb file provided with STK; uses the default, barycentered gravity source for the central body."
+GravParameterSource.CENTRAL_BODY_FILE.__doc__ = "The Cb file provided with STK; uses the default, body centered gravity source for the central body."
+GravParameterSource.DESIGN_EXPLORER_OPTIMIZER_FILE.__doc__ = "A DE file; body centered for the inner planets and barycentered for the outer planets."
+GravParameterSource.USER.__doc__ = "User defined; requires you to specify the mu value of the Gravitational Parameter."
+GravParameterSource.CENTRAL_BODY_FILE_SYSTEM.__doc__ = "The Cb file provided with STK; uses the default, barycentered gravity source for the central body."
 
-agcls.AgTypeNameMap["GravParamSource"] = GravParamSource
+agcls.AgTypeNameMap["GravParameterSource"] = GravParameterSource
 
 class EphemerisSource(IntEnum):
     """The ephemeris source type."""
@@ -2821,6 +2842,60 @@ TabVecInterpolationMethod.CARTESIAN_INTERPOLATION.__doc__ = "Bilinear interpolat
 TabVecInterpolationMethod.MAGNITUDE_AND_DIRECTION_INTERPOLATION.__doc__ = "Bilinear interpolation in magnitude and direction space."
 
 agcls.AgTypeNameMap["TabVecInterpolationMethod"] = TabVecInterpolationMethod
+
+class DragCorrectionType(IntEnum):
+    """Interpretation of the Gauss Markov used for spherical drag accelerations."""
+
+    BALLISTIC_COEFFICIENT_RELATIVE = 0
+    """Relative correction to ballistic coefficient."""
+    BALLISTIC_COEFFICIENT_ADDITIVE = 1
+    """Additive correction to ballistic coefficient."""
+    CD_RELATIVE = 2
+    """Relative correction to Cd."""
+    CD_ADDITIVE = 3
+    """Additive correction to Cd."""
+
+DragCorrectionType.BALLISTIC_COEFFICIENT_RELATIVE.__doc__ = "Relative correction to ballistic coefficient."
+DragCorrectionType.BALLISTIC_COEFFICIENT_ADDITIVE.__doc__ = "Additive correction to ballistic coefficient."
+DragCorrectionType.CD_RELATIVE.__doc__ = "Relative correction to Cd."
+DragCorrectionType.CD_ADDITIVE.__doc__ = "Additive correction to Cd."
+
+agcls.AgTypeNameMap["DragCorrectionType"] = DragCorrectionType
+
+class SRPCorrectionType(IntEnum):
+    """Interpretation of the Gauss Markov used for spherical SRP accelerations."""
+
+    CR_A_OVER_M_RELATIVE = 0
+    """Relative correction to CrA/M."""
+    CR_A_OVER_M_ADDITIVE = 1
+    """Additive correction to CrA/M."""
+    CR_RELATIVE = 2
+    """Relative correction to Cr."""
+    CR_ADDITIVE = 3
+    """Additive correction to Cr."""
+
+SRPCorrectionType.CR_A_OVER_M_RELATIVE.__doc__ = "Relative correction to CrA/M."
+SRPCorrectionType.CR_A_OVER_M_ADDITIVE.__doc__ = "Additive correction to CrA/M."
+SRPCorrectionType.CR_RELATIVE.__doc__ = "Relative correction to Cr."
+SRPCorrectionType.CR_ADDITIVE.__doc__ = "Additive correction to Cr."
+
+agcls.AgTypeNameMap["SRPCorrectionType"] = SRPCorrectionType
+
+class StochasticModel(IntEnum):
+    """Interpretation of the Gauss Markov used for spherical SRP accelerations."""
+
+    GAUSS_MARKOV = 0
+    """Gauss Markov Stochastic Model."""
+    RANDOM_WALK = 1
+    """Random Walk Stochastic Model."""
+    VASICEK = 2
+    """Vasicek Stochastic Model."""
+
+StochasticModel.GAUSS_MARKOV.__doc__ = "Gauss Markov Stochastic Model."
+StochasticModel.RANDOM_WALK.__doc__ = "Random Walk Stochastic Model."
+StochasticModel.VASICEK.__doc__ = "Vasicek Stochastic Model."
+
+agcls.AgTypeNameMap["StochasticModel"] = StochasticModel
 
 class ControlEngineConstantAcceleration(IntEnum):
     """Constant Acceleration and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
@@ -3236,8 +3311,6 @@ agcls.AgTypeNameMap["PredictorCorrector"] = PredictorCorrector
 class NumericalIntegrator(IntEnum):
     """Numerical integrator type."""
 
-    RUNGE_KUTTA_4TH_ADAPT = 0
-    """A 4th order Runge-Kutta integrator, adapting step size by comparing one full step to two half steps. Although this technique can be quite slow compared to the other algorithms, it is very common and can be used for comparison."""
     RUNGE_KUTTA_FEHLBERG_7TH_8TH = 1
     """A 7th order Runge-Kutta-Fehlberg integrator with 8th order error control. This is the default integrator used in the HPOP propagator."""
     RUNGE_KUTTA_VERNER_8TH_9TH = 2
@@ -3246,25 +3319,21 @@ class NumericalIntegrator(IntEnum):
     """An integrator based on Richardson extrapolation with automatic step size control."""
     GAUSS_JACKSON = 4
     """A 12th order Gauss-Jackson integrator for second order ODEs. There is currently no error control implemented for this method, meaning that a fixed step size is used."""
-    RUNGE_KUTTA_2ND_3RD = 5
-    """A 2nd order Runge-Kutta integrator with 3rd order error control, using Bogacki and Shampine coefficients."""
     RUNGE_KUTTA_4TH_5TH = 6
     """A 4th order Runge-Kutta integrator with 5th order error control, using Cash-Karp coefficients."""
     RUNGE_KUTTA_4TH = 7
     """A 4th order Runge-Kutta integrator that does not employ error control."""
 
-NumericalIntegrator.RUNGE_KUTTA_4TH_ADAPT.__doc__ = "A 4th order Runge-Kutta integrator, adapting step size by comparing one full step to two half steps. Although this technique can be quite slow compared to the other algorithms, it is very common and can be used for comparison."
 NumericalIntegrator.RUNGE_KUTTA_FEHLBERG_7TH_8TH.__doc__ = "A 7th order Runge-Kutta-Fehlberg integrator with 8th order error control. This is the default integrator used in the HPOP propagator."
 NumericalIntegrator.RUNGE_KUTTA_VERNER_8TH_9TH.__doc__ = "A 9th order Runge-Kutta-Verner integrator with 8th order error control."
 NumericalIntegrator.BULIRSCH_STOER.__doc__ = "An integrator based on Richardson extrapolation with automatic step size control."
 NumericalIntegrator.GAUSS_JACKSON.__doc__ = "A 12th order Gauss-Jackson integrator for second order ODEs. There is currently no error control implemented for this method, meaning that a fixed step size is used."
-NumericalIntegrator.RUNGE_KUTTA_2ND_3RD.__doc__ = "A 2nd order Runge-Kutta integrator with 3rd order error control, using Bogacki and Shampine coefficients."
 NumericalIntegrator.RUNGE_KUTTA_4TH_5TH.__doc__ = "A 4th order Runge-Kutta integrator with 5th order error control, using Cash-Karp coefficients."
 NumericalIntegrator.RUNGE_KUTTA_4TH.__doc__ = "A 4th order Runge-Kutta integrator that does not employ error control."
 
 agcls.AgTypeNameMap["NumericalIntegrator"] = NumericalIntegrator
 
-class CoeffRungeKuttaV8th9th(IntEnum):
+class CoefficientRungeKuttaV8th9th(IntEnum):
     """Coefficient sets for RKV8th(9th) integrator."""
 
     COEFFICIENT_1978 = 0
@@ -3272,10 +3341,10 @@ class CoeffRungeKuttaV8th9th(IntEnum):
     EFFICIENT = 1
     """Efficient."""
 
-CoeffRungeKuttaV8th9th.COEFFICIENT_1978.__doc__ = "SIAM 1978."
-CoeffRungeKuttaV8th9th.EFFICIENT.__doc__ = "Efficient."
+CoefficientRungeKuttaV8th9th.COEFFICIENT_1978.__doc__ = "SIAM 1978."
+CoefficientRungeKuttaV8th9th.EFFICIENT.__doc__ = "Efficient."
 
-agcls.AgTypeNameMap["CoeffRungeKuttaV8th9th"] = CoeffRungeKuttaV8th9th
+agcls.AgTypeNameMap["CoefficientRungeKuttaV8th9th"] = CoefficientRungeKuttaV8th9th
 
 
 class IStoppingConditionComponent(object):
@@ -3285,7 +3354,7 @@ class IStoppingConditionComponent(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_stopping_condition_type_method_offset = 1
     _metadata = {
-        "iid_data" : (5269503036530625707, 17454438145196234173),
+        "iid_data" : (5023811168781628099, 18296352657124902804),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3314,7 +3383,7 @@ class IStoppingConditionComponent(object):
     _property_names[stopping_condition_type] = "stopping_condition_type"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5269503036530625707, 17454438145196234173), IStoppingConditionComponent)
+agcls.AgClassCatalog.add_catalog_entry((5023811168781628099, 18296352657124902804), IStoppingConditionComponent)
 agcls.AgTypeNameMap["IStoppingConditionComponent"] = IStoppingConditionComponent
 
 class IAttitudeControl(object):
@@ -3335,7 +3404,7 @@ class IAttitudeControl(object):
     _get_custom_function_method_offset = 11
     _set_custom_function_method_offset = 12
     _metadata = {
-        "iid_data" : (4987937969676742434, 14787099081003210654),
+        "iid_data" : (4864487483219255471, 13702666187266966449),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3451,7 +3520,7 @@ class IAttitudeControl(object):
     _property_names[custom_function] = "custom_function"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4987937969676742434, 14787099081003210654), IAttitudeControl)
+agcls.AgClassCatalog.add_catalog_entry((4864487483219255471, 13702666187266966449), IAttitudeControl)
 agcls.AgTypeNameMap["IAttitudeControl"] = IAttitudeControl
 
 class IAttitudeControlFinite(IAttitudeControl):
@@ -3460,7 +3529,7 @@ class IAttitudeControlFinite(IAttitudeControl):
     _num_methods = 0
     _vtable_offset = IAttitudeControl._vtable_offset + IAttitudeControl._num_methods
     _metadata = {
-        "iid_data" : (5056364145348131654, 13409090031304170403),
+        "iid_data" : (5728709710028404369, 7790325057335378328),
         "vtable_reference" : IAttitudeControl._vtable_offset + IAttitudeControl._num_methods - 1,
     }
     _property_names = {}
@@ -3481,7 +3550,7 @@ class IAttitudeControlFinite(IAttitudeControl):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5056364145348131654, 13409090031304170403), IAttitudeControlFinite)
+agcls.AgClassCatalog.add_catalog_entry((5728709710028404369, 7790325057335378328), IAttitudeControlFinite)
 agcls.AgTypeNameMap["IAttitudeControlFinite"] = IAttitudeControlFinite
 
 class IAttitudeControlImpulsive(IAttitudeControl):
@@ -3490,7 +3559,7 @@ class IAttitudeControlImpulsive(IAttitudeControl):
     _num_methods = 0
     _vtable_offset = IAttitudeControl._vtable_offset + IAttitudeControl._num_methods
     _metadata = {
-        "iid_data" : (4710479165606193296, 7418419355563075998),
+        "iid_data" : (4663814651338811556, 17763833165569518766),
         "vtable_reference" : IAttitudeControl._vtable_offset + IAttitudeControl._num_methods - 1,
     }
     _property_names = {}
@@ -3511,7 +3580,7 @@ class IAttitudeControlImpulsive(IAttitudeControl):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4710479165606193296, 7418419355563075998), IAttitudeControlImpulsive)
+agcls.AgClassCatalog.add_catalog_entry((4663814651338811556, 17763833165569518766), IAttitudeControlImpulsive)
 agcls.AgTypeNameMap["IAttitudeControlImpulsive"] = IAttitudeControlImpulsive
 
 class IAttitudeControlOptimalFinite(IAttitudeControl):
@@ -3520,7 +3589,7 @@ class IAttitudeControlOptimalFinite(IAttitudeControl):
     _num_methods = 0
     _vtable_offset = IAttitudeControl._vtable_offset + IAttitudeControl._num_methods
     _metadata = {
-        "iid_data" : (5442963331835446219, 1789868880099233963),
+        "iid_data" : (4996465943822546330, 5105699174754837429),
         "vtable_reference" : IAttitudeControl._vtable_offset + IAttitudeControl._num_methods - 1,
     }
     _property_names = {}
@@ -3541,7 +3610,7 @@ class IAttitudeControlOptimalFinite(IAttitudeControl):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5442963331835446219, 1789868880099233963), IAttitudeControlOptimalFinite)
+agcls.AgClassCatalog.add_catalog_entry((4996465943822546330, 5105699174754837429), IAttitudeControlOptimalFinite)
 agcls.AgTypeNameMap["IAttitudeControlOptimalFinite"] = IAttitudeControlOptimalFinite
 
 class IManeuver(object):
@@ -3556,7 +3625,7 @@ class IManeuver(object):
     _set_propulsion_method_method_offset = 5
     _get_propulsion_method_value_method_offset = 6
     _metadata = {
-        "iid_data" : (4677218856107458942, 12562241327114738828),
+        "iid_data" : (5162837632512590480, 7729033166226752139),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3626,7 +3695,7 @@ class IManeuver(object):
     _property_names[propulsion_method_value] = "propulsion_method_value"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4677218856107458942, 12562241327114738828), IManeuver)
+agcls.AgClassCatalog.add_catalog_entry((5162837632512590480, 7729033166226752139), IManeuver)
 agcls.AgTypeNameMap["IManeuver"] = IManeuver
 
 class IDisplaySystem(object):
@@ -3635,7 +3704,7 @@ class IDisplaySystem(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (4713357538953774204, 7691016069329601429),
+        "iid_data" : (5056775395933698946, 13624352060324397238),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3655,7 +3724,7 @@ class IDisplaySystem(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4713357538953774204, 7691016069329601429), IDisplaySystem)
+agcls.AgClassCatalog.add_catalog_entry((5056775395933698946, 13624352060324397238), IDisplaySystem)
 agcls.AgTypeNameMap["IDisplaySystem"] = IDisplaySystem
 
 class IBurnout(object):
@@ -3664,7 +3733,7 @@ class IBurnout(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (4768490459946272698, 6896606911126661053),
+        "iid_data" : (5578059069385754977, 936712194792916363),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3684,7 +3753,7 @@ class IBurnout(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4768490459946272698, 6896606911126661053), IBurnout)
+agcls.AgClassCatalog.add_catalog_entry((5578059069385754977, 936712194792916363), IBurnout)
 agcls.AgTypeNameMap["IBurnout"] = IBurnout
 
 class IElement(object):
@@ -3693,7 +3762,7 @@ class IElement(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5488204777371386664, 9539562261869440956),
+        "iid_data" : (5328740578917893163, 11118485869547318691),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3713,7 +3782,7 @@ class IElement(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5488204777371386664, 9539562261869440956), IElement)
+agcls.AgClassCatalog.add_catalog_entry((5328740578917893163, 11118485869547318691), IElement)
 agcls.AgTypeNameMap["IElement"] = IElement
 
 class IMCSSegment(object):
@@ -3730,7 +3799,7 @@ class IMCSSegment(object):
     _get_results_method_offset = 7
     _get_segment_summary_method_offset = 8
     _metadata = {
-        "iid_data" : (5363594983371740097, 13023539001208839335),
+        "iid_data" : (5094568931565827926, 17211896705303178641),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3818,7 +3887,7 @@ class IMCSSegment(object):
     _property_names[segment_summary] = "segment_summary"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5363594983371740097, 13023539001208839335), IMCSSegment)
+agcls.AgClassCatalog.add_catalog_entry((5094568931565827926, 17211896705303178641), IMCSSegment)
 agcls.AgTypeNameMap["IMCSSegment"] = IMCSSegment
 
 class IMCSSequence(object):
@@ -3836,7 +3905,7 @@ class IMCSSequence(object):
     _get_scripting_tool_method_offset = 8
     _apply_script_method_offset = 9
     _metadata = {
-        "iid_data" : (5582283013374644007, 10842020077807962011),
+        "iid_data" : (4843628582434241411, 1847512841533124771),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3929,7 +3998,7 @@ class IMCSSequence(object):
     _property_names[scripting_tool] = "scripting_tool"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5582283013374644007, 10842020077807962011), IMCSSequence)
+agcls.AgClassCatalog.add_catalog_entry((4843628582434241411, 1847512841533124771), IMCSSequence)
 agcls.AgTypeNameMap["IMCSSequence"] = IMCSSequence
 
 class IProfile(object):
@@ -3947,7 +4016,7 @@ class IProfile(object):
     _set_mode_method_offset = 8
     _get_type_method_offset = 9
     _metadata = {
-        "iid_data" : (4686877490284796494, 11687945607961083032),
+        "iid_data" : (5134822823028732841, 16457067571903109510),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4040,7 +4109,7 @@ class IProfile(object):
     _property_names[type] = "type"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4686877490284796494, 11687945607961083032), IProfile)
+agcls.AgClassCatalog.add_catalog_entry((5134822823028732841, 16457067571903109510), IProfile)
 agcls.AgTypeNameMap["IProfile"] = IProfile
 
 class ICentralBodyComponentEphemeris(object):
@@ -4049,7 +4118,7 @@ class ICentralBodyComponentEphemeris(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5592778241070953614, 10499311837320329628),
+        "iid_data" : (5704514180134866486, 15262698207832028335),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4069,7 +4138,7 @@ class ICentralBodyComponentEphemeris(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5592778241070953614, 10499311837320329628), ICentralBodyComponentEphemeris)
+agcls.AgClassCatalog.add_catalog_entry((5704514180134866486, 15262698207832028335), ICentralBodyComponentEphemeris)
 agcls.AgTypeNameMap["ICentralBodyComponentEphemeris"] = ICentralBodyComponentEphemeris
 
 class ICentralBodyComponentShape(object):
@@ -4078,7 +4147,7 @@ class ICentralBodyComponentShape(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (4933547587540680255, 5573209392764395165),
+        "iid_data" : (5423988146465098836, 8514496739062940059),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4098,7 +4167,7 @@ class ICentralBodyComponentShape(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4933547587540680255, 5573209392764395165), ICentralBodyComponentShape)
+agcls.AgClassCatalog.add_catalog_entry((5423988146465098836, 8514496739062940059), ICentralBodyComponentShape)
 agcls.AgTypeNameMap["ICentralBodyComponentShape"] = ICentralBodyComponentShape
 
 class ICentralBodyComponentAttitude(object):
@@ -4107,7 +4176,7 @@ class ICentralBodyComponentAttitude(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5344723028474245754, 5582255056768029873),
+        "iid_data" : (4865912021769373822, 14691633511075142555),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4127,7 +4196,7 @@ class ICentralBodyComponentAttitude(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5344723028474245754, 5582255056768029873), ICentralBodyComponentAttitude)
+agcls.AgClassCatalog.add_catalog_entry((4865912021769373822, 14691633511075142555), ICentralBodyComponentAttitude)
 agcls.AgTypeNameMap["ICentralBodyComponentAttitude"] = ICentralBodyComponentAttitude
 
 class ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides(ICentralBodyComponentEphemeris):
@@ -4138,7 +4207,7 @@ class ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides(ICentralBodyComp
     _get_jplde_filename_method_offset = 1
     _set_jplde_filename_method_offset = 2
     _metadata = {
-        "iid_data" : (5096958885497432761, 15383033303903279551),
+        "iid_data" : (4675848925889480937, 7499602249794597506),
         "vtable_reference" : ICentralBodyComponentEphemeris._vtable_offset + ICentralBodyComponentEphemeris._num_methods - 1,
     }
     _property_names = {}
@@ -4175,7 +4244,7 @@ class ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides(ICentralBodyComp
     _property_names[jplde_filename] = "jplde_filename"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5096958885497432761, 15383033303903279551), ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides)
+agcls.AgClassCatalog.add_catalog_entry((4675848925889480937, 7499602249794597506), ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides)
 agcls.AgTypeNameMap["ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides"] = ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides
 
 class INumericalIntegrator(object):
@@ -4184,7 +4253,7 @@ class INumericalIntegrator(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (4724514531705891614, 6171053309445421234),
+        "iid_data" : (5676399591773054668, 7817686020788830084),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4204,7 +4273,7 @@ class INumericalIntegrator(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4724514531705891614, 6171053309445421234), INumericalIntegrator)
+agcls.AgClassCatalog.add_catalog_entry((5676399591773054668, 7817686020788830084), INumericalIntegrator)
 agcls.AgTypeNameMap["INumericalIntegrator"] = INumericalIntegrator
 
 
@@ -4227,12 +4296,12 @@ class MCSDriver(IPropagator, SupportsDeleteCallback):
     >>> driver.run_mcs()
     """
 
-    _num_methods = 14
+    _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_main_sequence_method_offset = 1
     _get_options_method_offset = 2
     _get_auto_sequence_method_offset = 3
-    _run_mcs_method_offset = 4
+
     _begin_run_method_offset = 5
     _end_run_method_offset = 6
     _clear_draw_while_calculating_graphics_method_offset = 7
@@ -4241,10 +4310,17 @@ class MCSDriver(IPropagator, SupportsDeleteCallback):
     _append_run_method_offset = 10
     _append_run_from_time_method_offset = 11
     _append_run_from_state_method_offset = 12
-    _run_mcs2_method_offset = 13
+    _run_mcs_method_offset = 13
     _get_calculation_graphs_method_offset = 14
+    _get_flight_dynamics_record_creator_method_offset = 15
+    _get_set_all_target_sequence_actions_to_method_offset = 16
+    _set_set_all_target_sequence_actions_to_method_offset = 17
+    _set_all_sequence_actions_method_offset = 18
+    _get_set_all_profile_modes_to_method_offset = 19
+    _set_set_all_profile_modes_to_method_offset = 20
+    _set_all_profile_modes_method_offset = 21
     _metadata = {
-        "iid_data" : (5434593673786300345, 9884445645793902248),
+        "iid_data" : (4994733263183903758, 17552885387466519222),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4275,12 +4351,6 @@ class MCSDriver(IPropagator, SupportsDeleteCallback):
         """Get the Automatic Sequences."""
         return self._intf.get_property(MCSDriver._metadata, MCSDriver._get_auto_sequence_metadata)
 
-    _run_mcs_metadata = { "offset" : _run_mcs_method_offset,
-            "arg_types" : (),
-            "marshallers" : () }
-    def run_mcs(self) -> None:
-        """Run the current MCS."""
-        return self._intf.invoke(MCSDriver._metadata, MCSDriver._run_mcs_metadata, )
 
     _begin_run_metadata = { "offset" : _begin_run_method_offset,
             "arg_types" : (),
@@ -4338,12 +4408,12 @@ class MCSDriver(IPropagator, SupportsDeleteCallback):
         """Append the existing ephemeris with another individual segment mode run, starting at a specified state. Ephemeris is cleared from time based on clear direction."""
         return self._intf.invoke(MCSDriver._metadata, MCSDriver._append_run_from_state_metadata, append_state, clear_ephemeris_direction)
 
-    _run_mcs2_metadata = { "offset" : _run_mcs2_method_offset,
+    _run_mcs_metadata = { "offset" : _run_mcs_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(RunCode),) }
-    def run_mcs2(self) -> "RunCode":
+    def run_mcs(self) -> "RunCode":
         """Run the current MCS and returns an error code."""
-        return self._intf.invoke(MCSDriver._metadata, MCSDriver._run_mcs2_metadata, OutArg())
+        return self._intf.invoke(MCSDriver._metadata, MCSDriver._run_mcs_metadata, OutArg())
 
     _get_calculation_graphs_metadata = { "offset" : _get_calculation_graphs_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4353,10 +4423,65 @@ class MCSDriver(IPropagator, SupportsDeleteCallback):
         """Get the calculation graphs."""
         return self._intf.get_property(MCSDriver._metadata, MCSDriver._get_calculation_graphs_metadata)
 
+    _get_flight_dynamics_record_creator_metadata = { "offset" : _get_flight_dynamics_record_creator_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def flight_dynamics_record_creator(self) -> "FlightDynamicsRecordCreator":
+        """Get the flight dynamics record creator."""
+        return self._intf.get_property(MCSDriver._metadata, MCSDriver._get_flight_dynamics_record_creator_metadata)
+
+    _get_set_all_target_sequence_actions_to_metadata = { "offset" : _get_set_all_target_sequence_actions_to_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(TargetSequenceAction),) }
+    @property
+    def set_all_target_sequence_actions_to(self) -> "TargetSequenceAction":
+        """The action setting that will be applied to all target sequences in the MCS when the SetAllSequenceActions method is invoked."""
+        return self._intf.get_property(MCSDriver._metadata, MCSDriver._get_set_all_target_sequence_actions_to_metadata)
+
+    _set_set_all_target_sequence_actions_to_metadata = { "offset" : _set_set_all_target_sequence_actions_to_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(TargetSequenceAction),) }
+    @set_all_target_sequence_actions_to.setter
+    def set_all_target_sequence_actions_to(self, value:"TargetSequenceAction") -> None:
+        return self._intf.set_property(MCSDriver._metadata, MCSDriver._set_set_all_target_sequence_actions_to_metadata, value)
+
+    _set_all_sequence_actions_metadata = { "offset" : _set_all_sequence_actions_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def set_all_sequence_actions(self) -> None:
+        """Set the action for all target sequences to the value held by the SetAllTargetSequenceActionsTo property."""
+        return self._intf.invoke(MCSDriver._metadata, MCSDriver._set_all_sequence_actions_metadata, )
+
+    _get_set_all_profile_modes_to_metadata = { "offset" : _get_set_all_profile_modes_to_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(ProfileMode),) }
+    @property
+    def set_all_profile_modes_to(self) -> "ProfileMode":
+        """The mode setting that will be applied to all profiles in all target sequences in the MCS when the SetAllProfileModes method is invoked."""
+        return self._intf.get_property(MCSDriver._metadata, MCSDriver._get_set_all_profile_modes_to_metadata)
+
+    _set_set_all_profile_modes_to_metadata = { "offset" : _set_set_all_profile_modes_to_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(ProfileMode),) }
+    @set_all_profile_modes_to.setter
+    def set_all_profile_modes_to(self, value:"ProfileMode") -> None:
+        return self._intf.set_property(MCSDriver._metadata, MCSDriver._set_set_all_profile_modes_to_metadata, value)
+
+    _set_all_profile_modes_metadata = { "offset" : _set_all_profile_modes_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def set_all_profile_modes(self) -> None:
+        """Set the mode for all profiles in all target sequences to the value held by the SetAllProfileModesTo property."""
+        return self._intf.invoke(MCSDriver._metadata, MCSDriver._set_all_profile_modes_metadata, )
+
     _property_names[main_sequence] = "main_sequence"
     _property_names[options] = "options"
     _property_names[auto_sequence] = "auto_sequence"
     _property_names[calculation_graphs] = "calculation_graphs"
+    _property_names[flight_dynamics_record_creator] = "flight_dynamics_record_creator"
+    _property_names[set_all_target_sequence_actions_to] = "set_all_target_sequence_actions_to"
+    _property_names[set_all_profile_modes_to] = "set_all_profile_modes_to"
 
     def __init__(self, source_object=None):
         """Construct an object of type MCSDriver."""
@@ -4373,7 +4498,7 @@ class MCSDriver(IPropagator, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MCSDriver, [MCSDriver, IPropagator])
 
-agcls.AgClassCatalog.add_catalog_entry((5389292584719371376, 5476973722651125132), MCSDriver)
+agcls.AgClassCatalog.add_catalog_entry((4917143741887478584, 1914205998158186885), MCSDriver)
 agcls.AgTypeNameMap["MCSDriver"] = MCSDriver
 
 class MCSSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -4395,7 +4520,7 @@ class MCSSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _get_item_by_index_method_offset = 12
     _get_item_by_name_method_offset = 13
     _metadata = {
-        "iid_data" : (5058380971033415851, 1014008794519657865),
+        "iid_data" : (5003995926211287562, 10716247730870813341),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -4531,7 +4656,7 @@ class MCSSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MCSSegmentCollection, [MCSSegmentCollection, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4909520030354968962, 14065348172908224678), MCSSegmentCollection)
+agcls.AgClassCatalog.add_catalog_entry((4851158208932705006, 1087187978756164790), MCSSegmentCollection)
 agcls.AgTypeNameMap["MCSSegmentCollection"] = MCSSegmentCollection
 
 class MCSEnd(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, SupportsDeleteCallback):
@@ -4540,7 +4665,7 @@ class MCSEnd(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, SupportsDele
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5377430998049428360, 10736208053127098559),
+        "iid_data" : (5520071051830685619, 4643578520825679030),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4567,13 +4692,13 @@ class MCSEnd(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, SupportsDele
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MCSEnd, [MCSEnd, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo])
 
-agcls.AgClassCatalog.add_catalog_entry((4611836544222750290, 3791847305781604787), MCSEnd)
+agcls.AgClassCatalog.add_catalog_entry((4764334079884501185, 7022892029883753613), MCSEnd)
 agcls.AgTypeNameMap["MCSEnd"] = MCSEnd
 
 class MCSInitialState(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for an Initial State segment."""
 
-    _num_methods = 14
+    _num_methods = 18
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_coord_system_name_method_offset = 1
     _set_coord_system_name_method_offset = 2
@@ -4589,8 +4714,12 @@ class MCSInitialState(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICl
     _is_control_parameter_enabled_method_offset = 12
     _get_control_parameters_available_method_offset = 13
     _get_user_variables_method_offset = 14
+    _get_stochastic_parameters_method_offset = 15
+    _get_flight_dynamics_record_name_method_offset = 16
+    _get_propagator_name_method_offset = 17
+    _unlock_initial_state_segment_method_offset = 18
     _metadata = {
-        "iid_data" : (5028451386241945120, 18244435719331815809),
+        "iid_data" : (5208510868759005769, 13548567409789362344),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4703,6 +4832,37 @@ class MCSInitialState(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICl
         """Interface used to modify user variables for the initial state segment."""
         return self._intf.get_property(MCSInitialState._metadata, MCSInitialState._get_user_variables_metadata)
 
+    _get_stochastic_parameters_metadata = { "offset" : _get_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_parameters(self) -> "StochasticParameters":
+        """Get the stochastic parameters."""
+        return self._intf.get_property(MCSInitialState._metadata, MCSInitialState._get_stochastic_parameters_metadata)
+
+    _get_flight_dynamics_record_name_metadata = { "offset" : _get_flight_dynamics_record_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def flight_dynamics_record_name(self) -> str:
+        """Return the name of the flight dynamics record used in the initial state segment."""
+        return self._intf.get_property(MCSInitialState._metadata, MCSInitialState._get_flight_dynamics_record_name_metadata)
+
+    _get_propagator_name_metadata = { "offset" : _get_propagator_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def propagator_name(self) -> str:
+        """Return the name of the propagator embedded in the flight dynamics record used in the initial state segment."""
+        return self._intf.get_property(MCSInitialState._metadata, MCSInitialState._get_propagator_name_metadata)
+
+    _unlock_initial_state_segment_metadata = { "offset" : _unlock_initial_state_segment_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def unlock_initial_state_segment(self) -> None:
+        """Unlocks the initial state segment."""
+        return self._intf.invoke(MCSInitialState._metadata, MCSInitialState._unlock_initial_state_segment_metadata, )
+
     _property_names[coord_system_name] = "coord_system_name"
     _property_names[orbit_epoch] = "orbit_epoch"
     _property_names[spacecraft_parameters] = "spacecraft_parameters"
@@ -4711,6 +4871,9 @@ class MCSInitialState(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICl
     _property_names[element] = "element"
     _property_names[control_parameters_available] = "control_parameters_available"
     _property_names[user_variables] = "user_variables"
+    _property_names[stochastic_parameters] = "stochastic_parameters"
+    _property_names[flight_dynamics_record_name] = "flight_dynamics_record_name"
+    _property_names[propagator_name] = "propagator_name"
 
     def __init__(self, source_object=None):
         """Construct an object of type MCSInitialState."""
@@ -4733,7 +4896,7 @@ class MCSInitialState(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICl
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MCSInitialState, [MCSInitialState, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5119690725327440606, 12426330438899630259), MCSInitialState)
+agcls.AgClassCatalog.add_catalog_entry((5065782636874618729, 11976473175597650053), MCSInitialState)
 agcls.AgTypeNameMap["MCSInitialState"] = MCSInitialState
 
 class SpacecraftParameters(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -4760,7 +4923,7 @@ class SpacecraftParameters(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _get_k2_method_offset = 17
     _set_k2_method_offset = 18
     _metadata = {
-        "iid_data" : (5571064856599243066, 14979986637316024483),
+        "iid_data" : (4993368916543374036, 6364338506758409917),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4927,7 +5090,7 @@ class SpacecraftParameters(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpacecraftParameters, [SpacecraftParameters, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5397758463997765929, 8149019131139753100), SpacecraftParameters)
+agcls.AgClassCatalog.add_catalog_entry((5119613969288764326, 15434471937863686582), SpacecraftParameters)
 agcls.AgTypeNameMap["SpacecraftParameters"] = SpacecraftParameters
 
 class FuelTank(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -4948,7 +5111,7 @@ class FuelTank(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _get_maximum_fuel_mass_method_offset = 11
     _set_maximum_fuel_mass_method_offset = 12
     _metadata = {
-        "iid_data" : (5624502096774973488, 5173171893781027749),
+        "iid_data" : (5611059327322562228, 211884676197652647),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -5067,8 +5230,170 @@ class FuelTank(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FuelTank, [FuelTank, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5728765514206679012, 4259677341011527818), FuelTank)
+agcls.AgClassCatalog.add_catalog_entry((5270035699153109821, 8257925326420965531), FuelTank)
 agcls.AgTypeNameMap["FuelTank"] = FuelTank
+
+class StochasticParameters(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
+    """The segment's stochastic parameters."""
+
+    _num_methods = 14
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_drag_initial_correction_method_offset = 1
+    _set_drag_initial_correction_method_offset = 2
+    _get_drag_long_term_initial_correction_method_offset = 3
+    _set_drag_long_term_initial_correction_method_offset = 4
+    _get_density_model_initial_correction_method_offset = 5
+    _set_density_model_initial_correction_method_offset = 6
+    _get_srp_initial_correction_method_offset = 7
+    _set_srp_initial_correction_method_offset = 8
+    _get_srp_long_term_initial_correction_method_offset = 9
+    _set_srp_long_term_initial_correction_method_offset = 10
+    _get_ballistic_coefficient_method_offset = 11
+    _get_cr_a_over_m_method_offset = 12
+    _get_drag_n_plate_stochastic_correction_parameters_method_offset = 13
+    _get_srp_n_plate_stochastic_correction_parameters_method_offset = 14
+    _metadata = {
+        "iid_data" : (5511443792595116471, 1448597601540131721),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, StochasticParameters)
+
+    _get_drag_initial_correction_metadata = { "offset" : _get_drag_initial_correction_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def drag_initial_correction(self) -> float:
+        """Get or set the drag initial correction."""
+        return self._intf.get_property(StochasticParameters._metadata, StochasticParameters._get_drag_initial_correction_metadata)
+
+    _set_drag_initial_correction_metadata = { "offset" : _set_drag_initial_correction_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @drag_initial_correction.setter
+    def drag_initial_correction(self, value:float) -> None:
+        return self._intf.set_property(StochasticParameters._metadata, StochasticParameters._set_drag_initial_correction_metadata, value)
+
+    _get_drag_long_term_initial_correction_metadata = { "offset" : _get_drag_long_term_initial_correction_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def drag_long_term_initial_correction(self) -> float:
+        """Get or set the drag long term initial correction."""
+        return self._intf.get_property(StochasticParameters._metadata, StochasticParameters._get_drag_long_term_initial_correction_metadata)
+
+    _set_drag_long_term_initial_correction_metadata = { "offset" : _set_drag_long_term_initial_correction_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @drag_long_term_initial_correction.setter
+    def drag_long_term_initial_correction(self, value:float) -> None:
+        return self._intf.set_property(StochasticParameters._metadata, StochasticParameters._set_drag_long_term_initial_correction_metadata, value)
+
+    _get_density_model_initial_correction_metadata = { "offset" : _get_density_model_initial_correction_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def density_model_initial_correction(self) -> float:
+        """Get or set the density model initial correction."""
+        return self._intf.get_property(StochasticParameters._metadata, StochasticParameters._get_density_model_initial_correction_metadata)
+
+    _set_density_model_initial_correction_metadata = { "offset" : _set_density_model_initial_correction_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @density_model_initial_correction.setter
+    def density_model_initial_correction(self, value:float) -> None:
+        return self._intf.set_property(StochasticParameters._metadata, StochasticParameters._set_density_model_initial_correction_metadata, value)
+
+    _get_srp_initial_correction_metadata = { "offset" : _get_srp_initial_correction_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def srp_initial_correction(self) -> float:
+        """Get or set the Solar Radiation Pressure initial correction."""
+        return self._intf.get_property(StochasticParameters._metadata, StochasticParameters._get_srp_initial_correction_metadata)
+
+    _set_srp_initial_correction_metadata = { "offset" : _set_srp_initial_correction_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @srp_initial_correction.setter
+    def srp_initial_correction(self, value:float) -> None:
+        return self._intf.set_property(StochasticParameters._metadata, StochasticParameters._set_srp_initial_correction_metadata, value)
+
+    _get_srp_long_term_initial_correction_metadata = { "offset" : _get_srp_long_term_initial_correction_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def srp_long_term_initial_correction(self) -> float:
+        """Get or set the Solar Radiation Pressure long term initial correction."""
+        return self._intf.get_property(StochasticParameters._metadata, StochasticParameters._get_srp_long_term_initial_correction_metadata)
+
+    _set_srp_long_term_initial_correction_metadata = { "offset" : _set_srp_long_term_initial_correction_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @srp_long_term_initial_correction.setter
+    def srp_long_term_initial_correction(self, value:float) -> None:
+        return self._intf.set_property(StochasticParameters._metadata, StochasticParameters._set_srp_long_term_initial_correction_metadata, value)
+
+    _get_ballistic_coefficient_metadata = { "offset" : _get_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def ballistic_coefficient(self) -> float:
+        """Get the ballistic coefficient."""
+        return self._intf.get_property(StochasticParameters._metadata, StochasticParameters._get_ballistic_coefficient_metadata)
+
+    _get_cr_a_over_m_metadata = { "offset" : _get_cr_a_over_m_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def cr_a_over_m(self) -> float:
+        """Get the Cr A / M"""
+        return self._intf.get_property(StochasticParameters._metadata, StochasticParameters._get_cr_a_over_m_metadata)
+
+    _get_drag_n_plate_stochastic_correction_parameters_metadata = { "offset" : _get_drag_n_plate_stochastic_correction_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def drag_n_plate_stochastic_correction_parameters(self) -> "NPlateStochasticCorrectionParametersCollection":
+        """Drag NPlate Stochastic Correction Parameters."""
+        return self._intf.get_property(StochasticParameters._metadata, StochasticParameters._get_drag_n_plate_stochastic_correction_parameters_metadata)
+
+    _get_srp_n_plate_stochastic_correction_parameters_metadata = { "offset" : _get_srp_n_plate_stochastic_correction_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def srp_n_plate_stochastic_correction_parameters(self) -> "NPlateStochasticCorrectionParametersCollection":
+        """SRP NPlate Stochastic Correction Parameters."""
+        return self._intf.get_property(StochasticParameters._metadata, StochasticParameters._get_srp_n_plate_stochastic_correction_parameters_metadata)
+
+    _property_names[drag_initial_correction] = "drag_initial_correction"
+    _property_names[drag_long_term_initial_correction] = "drag_long_term_initial_correction"
+    _property_names[density_model_initial_correction] = "density_model_initial_correction"
+    _property_names[srp_initial_correction] = "srp_initial_correction"
+    _property_names[srp_long_term_initial_correction] = "srp_long_term_initial_correction"
+    _property_names[ballistic_coefficient] = "ballistic_coefficient"
+    _property_names[cr_a_over_m] = "cr_a_over_m"
+    _property_names[drag_n_plate_stochastic_correction_parameters] = "drag_n_plate_stochastic_correction_parameters"
+    _property_names[srp_n_plate_stochastic_correction_parameters] = "srp_n_plate_stochastic_correction_parameters"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type StochasticParameters."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, StochasticParameters)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IRuntimeTypeInfoProvider._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, StochasticParameters, [StochasticParameters, IRuntimeTypeInfoProvider])
+
+agcls.AgClassCatalog.add_catalog_entry((5051075336015377662, 5180309403084802195), StochasticParameters)
+agcls.AgTypeNameMap["StochasticParameters"] = StochasticParameters
 
 class ElementCartesian(IElement, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     """Properties for Cartesian elements."""
@@ -5088,7 +5413,7 @@ class ElementCartesian(IElement, IRuntimeTypeInfoProvider, SupportsDeleteCallbac
     _get_vz_method_offset = 11
     _set_vz_method_offset = 12
     _metadata = {
-        "iid_data" : (5300421637043411044, 13353383975691849384),
+        "iid_data" : (4754725509434138093, 11844729002923716224),
         "vtable_reference" : IElement._vtable_offset + IElement._num_methods - 1,
     }
     _property_names = {}
@@ -5209,7 +5534,7 @@ class ElementCartesian(IElement, IRuntimeTypeInfoProvider, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ElementCartesian, [ElementCartesian, IElement, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5499013447957353870, 11386343310021492869), ElementCartesian)
+agcls.AgClassCatalog.add_catalog_entry((5001586217053946581, 14251771642119198896), ElementCartesian)
 agcls.AgTypeNameMap["ElementCartesian"] = ElementCartesian
 
 class ElementKeplerian(IElement, SupportsDeleteCallback):
@@ -5264,7 +5589,7 @@ class ElementKeplerian(IElement, SupportsDeleteCallback):
     _get_periapsis_radius_shape_method_offset = 45
     _set_periapsis_radius_shape_method_offset = 46
     _metadata = {
-        "iid_data" : (4838552578512971254, 14667696790538271421),
+        "iid_data" : (4737229008602739093, 7264585218110189451),
         "vtable_reference" : IElement._vtable_offset + IElement._num_methods - 1,
     }
     _property_names = {}
@@ -5655,7 +5980,7 @@ class ElementKeplerian(IElement, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ElementKeplerian, [ElementKeplerian, IElement])
 
-agcls.AgClassCatalog.add_catalog_entry((4837397415885939909, 2998991674367307441), ElementKeplerian)
+agcls.AgClassCatalog.add_catalog_entry((5285699785681264903, 222837755344947844), ElementKeplerian)
 agcls.AgTypeNameMap["ElementKeplerian"] = ElementKeplerian
 
 class ElementEquinoctial(IElement, SupportsDeleteCallback):
@@ -5680,7 +6005,7 @@ class ElementEquinoctial(IElement, SupportsDeleteCallback):
     _get_formulation_method_offset = 15
     _set_formulation_method_offset = 16
     _metadata = {
-        "iid_data" : (4929939837613149187, 12262545808188521122),
+        "iid_data" : (4972830598544152799, 163456776789359233),
         "vtable_reference" : IElement._vtable_offset + IElement._num_methods - 1,
     }
     _property_names = {}
@@ -5831,7 +6156,7 @@ class ElementEquinoctial(IElement, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ElementEquinoctial, [ElementEquinoctial, IElement])
 
-agcls.AgClassCatalog.add_catalog_entry((4616647420053820287, 5121823230219393442), ElementEquinoctial)
+agcls.AgClassCatalog.add_catalog_entry((4702992785962880848, 6556267701914943666), ElementEquinoctial)
 agcls.AgTypeNameMap["ElementEquinoctial"] = ElementEquinoctial
 
 class ElementDelaunay(IElement, SupportsDeleteCallback):
@@ -5858,7 +6183,7 @@ class ElementDelaunay(IElement, SupportsDeleteCallback):
     _get_inclination_method_offset = 17
     _set_inclination_method_offset = 18
     _metadata = {
-        "iid_data" : (4889723355609554180, 2305371170781207216),
+        "iid_data" : (5072657538866730446, 3437222748692444291),
         "vtable_reference" : IElement._vtable_offset + IElement._num_methods - 1,
     }
     _property_names = {}
@@ -6025,7 +6350,7 @@ class ElementDelaunay(IElement, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ElementDelaunay, [ElementDelaunay, IElement])
 
-agcls.AgClassCatalog.add_catalog_entry((5235483572359958962, 10845894774806134964), ElementDelaunay)
+agcls.AgClassCatalog.add_catalog_entry((4855187817604308451, 7916181135426662843), ElementDelaunay)
 agcls.AgTypeNameMap["ElementDelaunay"] = ElementDelaunay
 
 class ElementMixedSpherical(IElement, SupportsDeleteCallback):
@@ -6048,7 +6373,7 @@ class ElementMixedSpherical(IElement, SupportsDeleteCallback):
     _get_vertical_flight_path_angle_method_offset = 13
     _set_vertical_flight_path_angle_method_offset = 14
     _metadata = {
-        "iid_data" : (5321102592411773457, 10534508528245466780),
+        "iid_data" : (4850755641275672515, 13284806175104917405),
         "vtable_reference" : IElement._vtable_offset + IElement._num_methods - 1,
     }
     _property_names = {}
@@ -6183,7 +6508,7 @@ class ElementMixedSpherical(IElement, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ElementMixedSpherical, [ElementMixedSpherical, IElement])
 
-agcls.AgClassCatalog.add_catalog_entry((5073171977022283093, 17307231198305551532), ElementMixedSpherical)
+agcls.AgClassCatalog.add_catalog_entry((5654601300443504242, 8687842302515470764), ElementMixedSpherical)
 agcls.AgTypeNameMap["ElementMixedSpherical"] = ElementMixedSpherical
 
 class ElementSpherical(IElement, SupportsDeleteCallback):
@@ -6206,7 +6531,7 @@ class ElementSpherical(IElement, SupportsDeleteCallback):
     _get_vertical_flight_path_angle_method_offset = 13
     _set_vertical_flight_path_angle_method_offset = 14
     _metadata = {
-        "iid_data" : (5756098792360695636, 8434394741165502088),
+        "iid_data" : (5084323654258953508, 6538736422850986650),
         "vtable_reference" : IElement._vtable_offset + IElement._num_methods - 1,
     }
     _property_names = {}
@@ -6341,7 +6666,7 @@ class ElementSpherical(IElement, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ElementSpherical, [ElementSpherical, IElement])
 
-agcls.AgClassCatalog.add_catalog_entry((5178479078200941926, 400212392703168189), ElementSpherical)
+agcls.AgClassCatalog.add_catalog_entry((5385215885749651786, 5756942959819183500), ElementSpherical)
 agcls.AgTypeNameMap["ElementSpherical"] = ElementSpherical
 
 class ElementTargetVectorIncomingAsymptote(IElement, SupportsDeleteCallback):
@@ -6362,7 +6687,7 @@ class ElementTargetVectorIncomingAsymptote(IElement, SupportsDeleteCallback):
     _get_true_anomaly_method_offset = 11
     _set_true_anomaly_method_offset = 12
     _metadata = {
-        "iid_data" : (4892995040687317426, 11752684495085238196),
+        "iid_data" : (5348792092637420111, 3615427991654044837),
         "vtable_reference" : IElement._vtable_offset + IElement._num_methods - 1,
     }
     _property_names = {}
@@ -6481,7 +6806,7 @@ class ElementTargetVectorIncomingAsymptote(IElement, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ElementTargetVectorIncomingAsymptote, [ElementTargetVectorIncomingAsymptote, IElement])
 
-agcls.AgClassCatalog.add_catalog_entry((4791707063847479912, 8451572865872127390), ElementTargetVectorIncomingAsymptote)
+agcls.AgClassCatalog.add_catalog_entry((5444142091574005833, 8605399399316812444), ElementTargetVectorIncomingAsymptote)
 agcls.AgTypeNameMap["ElementTargetVectorIncomingAsymptote"] = ElementTargetVectorIncomingAsymptote
 
 class ElementTargetVectorOutgoingAsymptote(IElement, SupportsDeleteCallback):
@@ -6502,7 +6827,7 @@ class ElementTargetVectorOutgoingAsymptote(IElement, SupportsDeleteCallback):
     _get_true_anomaly_method_offset = 11
     _set_true_anomaly_method_offset = 12
     _metadata = {
-        "iid_data" : (5339488085564360630, 8608472543383636129),
+        "iid_data" : (5512856055590729835, 5068451356660051883),
         "vtable_reference" : IElement._vtable_offset + IElement._num_methods - 1,
     }
     _property_names = {}
@@ -6621,7 +6946,7 @@ class ElementTargetVectorOutgoingAsymptote(IElement, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ElementTargetVectorOutgoingAsymptote, [ElementTargetVectorOutgoingAsymptote, IElement])
 
-agcls.AgClassCatalog.add_catalog_entry((5739406173576252558, 18013377322023481482), ElementTargetVectorOutgoingAsymptote)
+agcls.AgClassCatalog.add_catalog_entry((4910965005754493931, 1093325866388547226), ElementTargetVectorOutgoingAsymptote)
 agcls.AgTypeNameMap["ElementTargetVectorOutgoingAsymptote"] = ElementTargetVectorOutgoingAsymptote
 
 class ElementGeodetic(IElement, SupportsDeleteCallback):
@@ -6646,7 +6971,7 @@ class ElementGeodetic(IElement, SupportsDeleteCallback):
     _get_radius_rate_method_offset = 15
     _set_radius_rate_method_offset = 16
     _metadata = {
-        "iid_data" : (5001084873375430510, 1131906645414183102),
+        "iid_data" : (5177036305371394654, 7056358111563403924),
         "vtable_reference" : IElement._vtable_offset + IElement._num_methods - 1,
     }
     _property_names = {}
@@ -6797,7 +7122,7 @@ class ElementGeodetic(IElement, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ElementGeodetic, [ElementGeodetic, IElement])
 
-agcls.AgClassCatalog.add_catalog_entry((4649398427299663878, 376586418108698241), ElementGeodetic)
+agcls.AgClassCatalog.add_catalog_entry((4924127058167071712, 10849237518494243751), ElementGeodetic)
 agcls.AgTypeNameMap["ElementGeodetic"] = ElementGeodetic
 
 class ElementBPlane(IElement, SupportsDeleteCallback):
@@ -6832,7 +7157,7 @@ class ElementBPlane(IElement, SupportsDeleteCallback):
     _get_true_anomaly_method_offset = 25
     _set_true_anomaly_method_offset = 26
     _metadata = {
-        "iid_data" : (5408340847027096584, 1882909674586958218),
+        "iid_data" : (5253518477817538815, 14086877501399307184),
         "vtable_reference" : IElement._vtable_offset + IElement._num_methods - 1,
     }
     _property_names = {}
@@ -7063,7 +7388,7 @@ class ElementBPlane(IElement, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ElementBPlane, [ElementBPlane, IElement])
 
-agcls.AgClassCatalog.add_catalog_entry((5159631324272900961, 8893182645510748334), ElementBPlane)
+agcls.AgClassCatalog.add_catalog_entry((5301010450885527084, 10471659590782911667), ElementBPlane)
 agcls.AgTypeNameMap["ElementBPlane"] = ElementBPlane
 
 class ElementSphericalRangeRate(IElement, SupportsDeleteCallback):
@@ -7084,7 +7409,7 @@ class ElementSphericalRangeRate(IElement, SupportsDeleteCallback):
     _get_range_rate_method_offset = 11
     _set_range_rate_method_offset = 12
     _metadata = {
-        "iid_data" : (5305548903845118989, 13104622450174055820),
+        "iid_data" : (5349478013774871676, 13100178990723822468),
         "vtable_reference" : IElement._vtable_offset + IElement._num_methods - 1,
     }
     _property_names = {}
@@ -7203,7 +7528,7 @@ class ElementSphericalRangeRate(IElement, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ElementSphericalRangeRate, [ElementSphericalRangeRate, IElement])
 
-agcls.AgClassCatalog.add_catalog_entry((4959039473664888368, 13118382122406988682), ElementSphericalRangeRate)
+agcls.AgClassCatalog.add_catalog_entry((5655427194729004546, 2297519469343687356), ElementSphericalRangeRate)
 agcls.AgTypeNameMap["ElementSphericalRangeRate"] = ElementSphericalRangeRate
 
 class MCSPropagate(IMCSSegment, IComponentInfo, ICloneable, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -7233,7 +7558,7 @@ class MCSPropagate(IMCSSegment, IComponentInfo, ICloneable, IRuntimeTypeInfoProv
     _get_should_reinitialize_stm_at_start_of_segment_propagation_method_offset = 20
     _set_should_reinitialize_stm_at_start_of_segment_propagation_method_offset = 21
     _metadata = {
-        "iid_data" : (4982104245615881734, 11405336420499347081),
+        "iid_data" : (4907710947260880591, 6934035241970949544),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -7429,7 +7754,7 @@ class MCSPropagate(IMCSSegment, IComponentInfo, ICloneable, IRuntimeTypeInfoProv
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MCSPropagate, [MCSPropagate, IMCSSegment, IComponentInfo, ICloneable, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5194969086151067853, 10177006802175344288), MCSPropagate)
+agcls.AgClassCatalog.add_catalog_entry((5379026390492776926, 11356467692178641302), MCSPropagate)
 agcls.AgTypeNameMap["MCSPropagate"] = MCSPropagate
 
 class State(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -7471,7 +7796,7 @@ class State(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _set_k2_method_offset = 32
     _get_in_frame_name_method_offset = 33
     _metadata = {
-        "iid_data" : (4804985124432915391, 9179349462890422656),
+        "iid_data" : (4679475864876479133, 16094245988557651850),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -7759,7 +8084,7 @@ class State(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, State, [State, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4795127631371666389, 13941908390852527797), State)
+agcls.AgClassCatalog.add_catalog_entry((5319867118952459775, 17549475604682092464), State)
 agcls.AgTypeNameMap["State"] = State
 
 class StoppingConditionCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -7778,7 +8103,7 @@ class StoppingConditionCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallba
     _get_item_by_index_method_offset = 9
     _get_item_by_name_method_offset = 10
     _metadata = {
-        "iid_data" : (5630863724408399388, 12206717745624651652),
+        "iid_data" : (4968689595999377893, 12027930503854613156),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -7891,7 +8216,7 @@ class StoppingConditionCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallba
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StoppingConditionCollection, [StoppingConditionCollection, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5312353168653404039, 12679003996478946741), StoppingConditionCollection)
+agcls.AgClassCatalog.add_catalog_entry((5002109284907525235, 3736376952929626546), StoppingConditionCollection)
 agcls.AgTypeNameMap["StoppingConditionCollection"] = StoppingConditionCollection
 
 class AccessStoppingCondition(IComponentInfo, ICloneable, IStoppingConditionComponent, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -7928,7 +8253,7 @@ class AccessStoppingCondition(IComponentInfo, ICloneable, IStoppingConditionComp
     _get_use_light_time_delay_method_offset = 27
     _set_use_light_time_delay_method_offset = 28
     _metadata = {
-        "iid_data" : (4897277133588344594, 316659950229172406),
+        "iid_data" : (5092364774032629568, 5477778004592410550),
         "vtable_reference" : IStoppingConditionComponent._vtable_offset + IStoppingConditionComponent._num_methods - 1,
     }
     _property_names = {}
@@ -8185,7 +8510,7 @@ class AccessStoppingCondition(IComponentInfo, ICloneable, IStoppingConditionComp
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AccessStoppingCondition, [AccessStoppingCondition, IComponentInfo, ICloneable, IStoppingConditionComponent, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4811929967101649166, 10033959377873712801), AccessStoppingCondition)
+agcls.AgClassCatalog.add_catalog_entry((4747011128530517666, 16333304833909642686), AccessStoppingCondition)
 agcls.AgTypeNameMap["AccessStoppingCondition"] = AccessStoppingCondition
 
 class LightingStoppingCondition(IComponentInfo, ICloneable, IStoppingConditionComponent, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -8212,7 +8537,7 @@ class LightingStoppingCondition(IComponentInfo, ICloneable, IStoppingConditionCo
     _get_eclipsing_bodies_method_offset = 17
     _get_available_eclipsing_bodies_method_offset = 18
     _metadata = {
-        "iid_data" : (5629329659757080199, 7326471514331213698),
+        "iid_data" : (5553668681731514875, 8344518756562787713),
         "vtable_reference" : IStoppingConditionComponent._vtable_offset + IStoppingConditionComponent._num_methods - 1,
     }
     _property_names = {}
@@ -8387,7 +8712,7 @@ class LightingStoppingCondition(IComponentInfo, ICloneable, IStoppingConditionCo
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, LightingStoppingCondition, [LightingStoppingCondition, IComponentInfo, ICloneable, IStoppingConditionComponent, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5265280262797051925, 13545129389778936992), LightingStoppingCondition)
+agcls.AgClassCatalog.add_catalog_entry((4818363256155244530, 8559542189256832161), LightingStoppingCondition)
 agcls.AgTypeNameMap["LightingStoppingCondition"] = LightingStoppingCondition
 
 class StoppingCondition(IComponentInfo, ICloneable, IStoppingConditionComponent, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -8426,7 +8751,7 @@ class StoppingCondition(IComponentInfo, ICloneable, IStoppingConditionComponent,
     _paste_user_calculation_object_from_clipboard_method_offset = 29
     _get_user_calculation_object_link_embed_control_method_offset = 30
     _metadata = {
-        "iid_data" : (4986301151178184009, 6721367927442663319),
+        "iid_data" : (5553167968135652861, 5533859391106223760),
         "vtable_reference" : IStoppingConditionComponent._vtable_offset + IStoppingConditionComponent._num_methods - 1,
     }
     _property_names = {}
@@ -8698,7 +9023,7 @@ class StoppingCondition(IComponentInfo, ICloneable, IStoppingConditionComponent,
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StoppingCondition, [StoppingCondition, IComponentInfo, ICloneable, IStoppingConditionComponent, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5288325747025247960, 14620341470789352850), StoppingCondition)
+agcls.AgClassCatalog.add_catalog_entry((5519724928531000492, 16952187656576806055), StoppingCondition)
 agcls.AgTypeNameMap["StoppingCondition"] = StoppingCondition
 
 class StoppingConditionElement(IComponentInfo, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -8714,7 +9039,7 @@ class StoppingConditionElement(IComponentInfo, IRuntimeTypeInfoProvider, Support
     _get_control_parameters_available_method_offset = 6
     _get_properties_method_offset = 7
     _metadata = {
-        "iid_data" : (4803961492800537644, 11540006383510258587),
+        "iid_data" : (4969013874829730466, 4336593572652072374),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -8794,7 +9119,7 @@ class StoppingConditionElement(IComponentInfo, IRuntimeTypeInfoProvider, Support
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StoppingConditionElement, [StoppingConditionElement, IComponentInfo, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5056737663241954080, 13082724610818700691), StoppingConditionElement)
+agcls.AgClassCatalog.add_catalog_entry((5193540742135032738, 1209444052252165783), StoppingConditionElement)
 agcls.AgTypeNameMap["StoppingConditionElement"] = StoppingConditionElement
 
 class MCSSequence(IMCSSegment, IRuntimeTypeInfoProvider, IMCSSequence, IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -8821,7 +9146,7 @@ class MCSSequence(IMCSSegment, IRuntimeTypeInfoProvider, IMCSSequence, IComponen
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MCSSequence, [IMCSSegment, IRuntimeTypeInfoProvider, IMCSSequence, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4728221592052087246, 17245365907217799322), MCSSequence)
+agcls.AgClassCatalog.add_catalog_entry((5627353153909402854, 14122086653634309002), MCSSequence)
 agcls.AgTypeNameMap["MCSSequence"] = MCSSequence
 
 class MCSBackwardSequence(IMCSSegment, IRuntimeTypeInfoProvider, IMCSSequence, IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -8830,7 +9155,7 @@ class MCSBackwardSequence(IMCSSegment, IRuntimeTypeInfoProvider, IMCSSequence, I
     _num_methods = 0
     _vtable_offset = IMCSSequence._vtable_offset + IMCSSequence._num_methods
     _metadata = {
-        "iid_data" : (5647154259170389577, 17278564796132019345),
+        "iid_data" : (5484418609440262314, 561516619709124285),
         "vtable_reference" : IMCSSequence._vtable_offset + IMCSSequence._num_methods - 1,
     }
     _property_names = {}
@@ -8861,7 +9186,7 @@ class MCSBackwardSequence(IMCSSegment, IRuntimeTypeInfoProvider, IMCSSequence, I
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MCSBackwardSequence, [MCSBackwardSequence, IMCSSegment, IRuntimeTypeInfoProvider, IMCSSequence, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5483461179733130724, 18354047637942609031), MCSBackwardSequence)
+agcls.AgClassCatalog.add_catalog_entry((4933862565201625262, 12649297480045836212), MCSBackwardSequence)
 agcls.AgTypeNameMap["MCSBackwardSequence"] = MCSBackwardSequence
 
 class MCSLaunch(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -8902,7 +9227,7 @@ class MCSLaunch(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneabl
     _set_set_mission_elapsed_time_epoch_method_offset = 31
     _get_user_variables_method_offset = 32
     _metadata = {
-        "iid_data" : (5629359826497880460, 7376461998916133763),
+        "iid_data" : (4703203469734420615, 5943981186049068168),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -9191,7 +9516,7 @@ class MCSLaunch(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneabl
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MCSLaunch, [MCSLaunch, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4943627088855875894, 16294750130809619880), MCSLaunch)
+agcls.AgClassCatalog.add_catalog_entry((4688589716938728944, 6983819145588502958), MCSLaunch)
 agcls.AgTypeNameMap["MCSLaunch"] = MCSLaunch
 
 class DisplaySystemGeodetic(IDisplaySystem, SupportsDeleteCallback):
@@ -9206,7 +9531,7 @@ class DisplaySystemGeodetic(IDisplaySystem, SupportsDeleteCallback):
     _get_altitude_method_offset = 5
     _set_altitude_method_offset = 6
     _metadata = {
-        "iid_data" : (4956741510127523826, 11651406499667779456),
+        "iid_data" : (4728057318656483227, 400499763730982029),
         "vtable_reference" : IDisplaySystem._vtable_offset + IDisplaySystem._num_methods - 1,
     }
     _property_names = {}
@@ -9277,7 +9602,7 @@ class DisplaySystemGeodetic(IDisplaySystem, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DisplaySystemGeodetic, [DisplaySystemGeodetic, IDisplaySystem])
 
-agcls.AgClassCatalog.add_catalog_entry((5185180578154751703, 12390255830257417611), DisplaySystemGeodetic)
+agcls.AgClassCatalog.add_catalog_entry((4669418655564041286, 15112009430572624825), DisplaySystemGeodetic)
 agcls.AgTypeNameMap["DisplaySystemGeodetic"] = DisplaySystemGeodetic
 
 class DisplaySystemGeocentric(IDisplaySystem, SupportsDeleteCallback):
@@ -9292,7 +9617,7 @@ class DisplaySystemGeocentric(IDisplaySystem, SupportsDeleteCallback):
     _get_radius_method_offset = 5
     _set_radius_method_offset = 6
     _metadata = {
-        "iid_data" : (5196042213365885690, 9963805608834460839),
+        "iid_data" : (5552892689317634351, 18372225012228848317),
         "vtable_reference" : IDisplaySystem._vtable_offset + IDisplaySystem._num_methods - 1,
     }
     _property_names = {}
@@ -9363,7 +9688,7 @@ class DisplaySystemGeocentric(IDisplaySystem, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DisplaySystemGeocentric, [DisplaySystemGeocentric, IDisplaySystem])
 
-agcls.AgClassCatalog.add_catalog_entry((5504948962407842285, 6237651898638065543), DisplaySystemGeocentric)
+agcls.AgClassCatalog.add_catalog_entry((5675058987604135914, 9077932388130161799), DisplaySystemGeocentric)
 agcls.AgTypeNameMap["DisplaySystemGeocentric"] = DisplaySystemGeocentric
 
 class BurnoutGeodetic(IBurnout, SupportsDeleteCallback):
@@ -9378,7 +9703,7 @@ class BurnoutGeodetic(IBurnout, SupportsDeleteCallback):
     _get_altitude_method_offset = 5
     _set_altitude_method_offset = 6
     _metadata = {
-        "iid_data" : (5576865739894481099, 2369937294263193020),
+        "iid_data" : (5107389513245245047, 3221714739912187319),
         "vtable_reference" : IBurnout._vtable_offset + IBurnout._num_methods - 1,
     }
     _property_names = {}
@@ -9449,7 +9774,7 @@ class BurnoutGeodetic(IBurnout, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BurnoutGeodetic, [BurnoutGeodetic, IBurnout])
 
-agcls.AgClassCatalog.add_catalog_entry((5539865009872503013, 8668164257717054908), BurnoutGeodetic)
+agcls.AgClassCatalog.add_catalog_entry((4747985084217437937, 4479705546763704708), BurnoutGeodetic)
 agcls.AgTypeNameMap["BurnoutGeodetic"] = BurnoutGeodetic
 
 class BurnoutCBFCartesian(IBurnout, SupportsDeleteCallback):
@@ -9470,7 +9795,7 @@ class BurnoutCBFCartesian(IBurnout, SupportsDeleteCallback):
     _get_cartesian_burnout_vz_method_offset = 11
     _set_cartesian_burnout_vz_method_offset = 12
     _metadata = {
-        "iid_data" : (5533696357243410767, 4114781725420291000),
+        "iid_data" : (4957483880187940479, 12462373927492468927),
         "vtable_reference" : IBurnout._vtable_offset + IBurnout._num_methods - 1,
     }
     _property_names = {}
@@ -9589,7 +9914,7 @@ class BurnoutCBFCartesian(IBurnout, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BurnoutCBFCartesian, [BurnoutCBFCartesian, IBurnout])
 
-agcls.AgClassCatalog.add_catalog_entry((5317169324524563753, 10355185014748398739), BurnoutCBFCartesian)
+agcls.AgClassCatalog.add_catalog_entry((4906231524412054084, 13896987091420773529), BurnoutCBFCartesian)
 agcls.AgTypeNameMap["BurnoutCBFCartesian"] = BurnoutCBFCartesian
 
 class BurnoutGeocentric(IBurnout, SupportsDeleteCallback):
@@ -9604,7 +9929,7 @@ class BurnoutGeocentric(IBurnout, SupportsDeleteCallback):
     _get_radius_method_offset = 5
     _set_radius_method_offset = 6
     _metadata = {
-        "iid_data" : (5762718672652749616, 7859120436857445764),
+        "iid_data" : (5266413179375333528, 17737639183274162879),
         "vtable_reference" : IBurnout._vtable_offset + IBurnout._num_methods - 1,
     }
     _property_names = {}
@@ -9675,7 +10000,7 @@ class BurnoutGeocentric(IBurnout, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BurnoutGeocentric, [BurnoutGeocentric, IBurnout])
 
-agcls.AgClassCatalog.add_catalog_entry((5595051361256152931, 155232765662894480), BurnoutGeocentric)
+agcls.AgClassCatalog.add_catalog_entry((5355552139907581956, 10311283353411218843), BurnoutGeocentric)
 agcls.AgTypeNameMap["BurnoutGeocentric"] = BurnoutGeocentric
 
 class BurnoutLaunchAzAltitude(IBurnout, SupportsDeleteCallback):
@@ -9690,7 +10015,7 @@ class BurnoutLaunchAzAltitude(IBurnout, SupportsDeleteCallback):
     _get_altitude_radius_method_offset = 5
     _set_altitude_radius_method_offset = 6
     _metadata = {
-        "iid_data" : (5725841762349009839, 190320382121745067),
+        "iid_data" : (5513700980299544028, 6248189000296283529),
         "vtable_reference" : IBurnout._vtable_offset + IBurnout._num_methods - 1,
     }
     _property_names = {}
@@ -9761,7 +10086,7 @@ class BurnoutLaunchAzAltitude(IBurnout, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BurnoutLaunchAzAltitude, [BurnoutLaunchAzAltitude, IBurnout])
 
-agcls.AgClassCatalog.add_catalog_entry((5762357320506376366, 9632671212585029549), BurnoutLaunchAzAltitude)
+agcls.AgClassCatalog.add_catalog_entry((5526347824942280316, 16506326317024416384), BurnoutLaunchAzAltitude)
 agcls.AgTypeNameMap["BurnoutLaunchAzAltitude"] = BurnoutLaunchAzAltitude
 
 class BurnoutLaunchAzRadius(IBurnout, SupportsDeleteCallback):
@@ -9776,7 +10101,7 @@ class BurnoutLaunchAzRadius(IBurnout, SupportsDeleteCallback):
     _get_radius_method_offset = 5
     _set_radius_method_offset = 6
     _metadata = {
-        "iid_data" : (5453106663533698568, 1463398942728011174),
+        "iid_data" : (4710168328294987601, 16102529341521658525),
         "vtable_reference" : IBurnout._vtable_offset + IBurnout._num_methods - 1,
     }
     _property_names = {}
@@ -9847,7 +10172,7 @@ class BurnoutLaunchAzRadius(IBurnout, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BurnoutLaunchAzRadius, [BurnoutLaunchAzRadius, IBurnout])
 
-agcls.AgClassCatalog.add_catalog_entry((4790898737235059150, 10276049878661454781), BurnoutLaunchAzRadius)
+agcls.AgClassCatalog.add_catalog_entry((4917190882969392820, 5519810777684826297), BurnoutLaunchAzRadius)
 agcls.AgTypeNameMap["BurnoutLaunchAzRadius"] = BurnoutLaunchAzRadius
 
 class BurnoutVelocity(SupportsDeleteCallback):
@@ -9866,7 +10191,7 @@ class BurnoutVelocity(SupportsDeleteCallback):
     _get_inertial_horizontal_flight_path_angle_method_offset = 9
     _set_inertial_horizontal_flight_path_angle_method_offset = 10
     _metadata = {
-        "iid_data" : (4907025633322372581, 16846539782637522584),
+        "iid_data" : (4616442666745300314, 18113623439532036759),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -9967,7 +10292,7 @@ class BurnoutVelocity(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BurnoutVelocity, [BurnoutVelocity, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5357386615005395369, 9502758749122036118), BurnoutVelocity)
+agcls.AgClassCatalog.add_catalog_entry((5700140737277828951, 787440969839280521), BurnoutVelocity)
 agcls.AgTypeNameMap["BurnoutVelocity"] = BurnoutVelocity
 
 class MCSFollow(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -9998,7 +10323,7 @@ class MCSFollow(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneabl
     _get_control_parameters_available_method_offset = 21
     _get_user_variables_method_offset = 22
     _metadata = {
-        "iid_data" : (5434070931037272692, 14909867834553447813),
+        "iid_data" : (4950549121423000505, 1688346104735752364),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10207,7 +10532,7 @@ class MCSFollow(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneabl
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MCSFollow, [MCSFollow, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4651089075740067830, 16957833940556717219), MCSFollow)
+agcls.AgClassCatalog.add_catalog_entry((4872378855776560259, 4274020066356144043), MCSFollow)
 agcls.AgTypeNameMap["MCSFollow"] = MCSFollow
 
 class MCSManeuver(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -10223,7 +10548,7 @@ class MCSManeuver(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, IClonea
     _is_control_parameter_enabled_method_offset = 6
     _get_control_parameters_available_method_offset = 7
     _metadata = {
-        "iid_data" : (5274901131733017230, 16553439757625640619),
+        "iid_data" : (5601529060748991119, 5979143663808422335),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -10307,7 +10632,7 @@ class MCSManeuver(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, IClonea
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MCSManeuver, [MCSManeuver, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5197336180196135168, 17213101951654587804), MCSManeuver)
+agcls.AgClassCatalog.add_catalog_entry((4744277497916640520, 9244629912069739698), MCSManeuver)
 agcls.AgTypeNameMap["MCSManeuver"] = MCSManeuver
 
 class ManeuverFinite(IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -10323,7 +10648,7 @@ class ManeuverFinite(IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteCallback
     _set_thrust_efficiency_mode_method_offset = 6
     _get_propagator_method_offset = 7
     _metadata = {
-        "iid_data" : (5217603186191275445, 13780017606388512913),
+        "iid_data" : (5400498270784175660, 17065387083379834520),
         "vtable_reference" : IManeuver._vtable_offset + IManeuver._num_methods - 1,
     }
     _property_names = {}
@@ -10405,7 +10730,7 @@ class ManeuverFinite(IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ManeuverFinite, [ManeuverFinite, IManeuver, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5240610333708177546, 2799450710697962646), ManeuverFinite)
+agcls.AgClassCatalog.add_catalog_entry((5061085953930151527, 16453736005989534593), ManeuverFinite)
 agcls.AgTypeNameMap["ManeuverFinite"] = ManeuverFinite
 
 class ManeuverImpulsive(IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -10416,7 +10741,7 @@ class ManeuverImpulsive(IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteCallb
     _get_update_mass_method_offset = 1
     _set_update_mass_method_offset = 2
     _metadata = {
-        "iid_data" : (4750637454318981908, 11599245637405498752),
+        "iid_data" : (4820360831511911036, 7161118244038219939),
         "vtable_reference" : IManeuver._vtable_offset + IManeuver._num_methods - 1,
     }
     _property_names = {}
@@ -10457,7 +10782,7 @@ class ManeuverImpulsive(IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteCallb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ManeuverImpulsive, [ManeuverImpulsive, IManeuver, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5132300925433346245, 9116018589565227669), ManeuverImpulsive)
+agcls.AgClassCatalog.add_catalog_entry((5280940993433745476, 2788715644673180584), ManeuverImpulsive)
 agcls.AgTypeNameMap["ManeuverImpulsive"] = ManeuverImpulsive
 
 class AttitudeControlImpulsiveVelocityVector(IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -10469,7 +10794,7 @@ class AttitudeControlImpulsiveVelocityVector(IAttitudeControlImpulsive, IAttitud
     _set_delta_v_magnitude_method_offset = 2
     _get_body_constraint_vector_method_offset = 3
     _metadata = {
-        "iid_data" : (5383729676911479635, 15831358368491906978),
+        "iid_data" : (4986808283419653745, 14991890682368752260),
         "vtable_reference" : IAttitudeControlImpulsive._vtable_offset + IAttitudeControlImpulsive._num_methods - 1,
     }
     _property_names = {}
@@ -10521,7 +10846,7 @@ class AttitudeControlImpulsiveVelocityVector(IAttitudeControlImpulsive, IAttitud
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AttitudeControlImpulsiveVelocityVector, [AttitudeControlImpulsiveVelocityVector, IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4884403392612853562, 4746486195757777540), AttitudeControlImpulsiveVelocityVector)
+agcls.AgClassCatalog.add_catalog_entry((4653614907957405685, 3324621596039010239), AttitudeControlImpulsiveVelocityVector)
 agcls.AgTypeNameMap["AttitudeControlImpulsiveVelocityVector"] = AttitudeControlImpulsiveVelocityVector
 
 class AttitudeControlImpulsiveAntiVelocityVector(IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -10533,7 +10858,7 @@ class AttitudeControlImpulsiveAntiVelocityVector(IAttitudeControlImpulsive, IAtt
     _set_delta_v_magnitude_method_offset = 2
     _get_body_constraint_vector_method_offset = 3
     _metadata = {
-        "iid_data" : (5478756088215709330, 17473176637230871450),
+        "iid_data" : (5719770972766261423, 17161224829609577344),
         "vtable_reference" : IAttitudeControlImpulsive._vtable_offset + IAttitudeControlImpulsive._num_methods - 1,
     }
     _property_names = {}
@@ -10585,7 +10910,7 @@ class AttitudeControlImpulsiveAntiVelocityVector(IAttitudeControlImpulsive, IAtt
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AttitudeControlImpulsiveAntiVelocityVector, [AttitudeControlImpulsiveAntiVelocityVector, IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5209788070296914908, 11656929720675121292), AttitudeControlImpulsiveAntiVelocityVector)
+agcls.AgClassCatalog.add_catalog_entry((4882381356319841623, 2576786103616691329), AttitudeControlImpulsiveAntiVelocityVector)
 agcls.AgTypeNameMap["AttitudeControlImpulsiveAntiVelocityVector"] = AttitudeControlImpulsiveAntiVelocityVector
 
 class AttitudeControlImpulsiveAttitude(IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -10599,7 +10924,7 @@ class AttitudeControlImpulsiveAttitude(IAttitudeControlImpulsive, IAttitudeContr
     _set_reference_axes_name_method_offset = 4
     _get_orientation_method_offset = 5
     _metadata = {
-        "iid_data" : (5725077979125730187, 16239998713400669345),
+        "iid_data" : (4617294119823060029, 1129775825460471203),
         "vtable_reference" : IAttitudeControlImpulsive._vtable_offset + IAttitudeControlImpulsive._num_methods - 1,
     }
     _property_names = {}
@@ -10667,7 +10992,7 @@ class AttitudeControlImpulsiveAttitude(IAttitudeControlImpulsive, IAttitudeContr
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AttitudeControlImpulsiveAttitude, [AttitudeControlImpulsiveAttitude, IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5745604571369372982, 2700112517730179510), AttitudeControlImpulsiveAttitude)
+agcls.AgClassCatalog.add_catalog_entry((5295364413318020355, 17277569407245234596), AttitudeControlImpulsiveAttitude)
 agcls.AgTypeNameMap["AttitudeControlImpulsiveAttitude"] = AttitudeControlImpulsiveAttitude
 
 class AttitudeControlImpulsiveFile(IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -10683,7 +11008,7 @@ class AttitudeControlImpulsiveFile(IAttitudeControlImpulsive, IAttitudeControl, 
     _set_file_time_offset_method_offset = 6
     _get_full_filename_method_offset = 7
     _metadata = {
-        "iid_data" : (4902519617822865926, 15504321543168614062),
+        "iid_data" : (5697614101927191833, 8508238954540101307),
         "vtable_reference" : IAttitudeControlImpulsive._vtable_offset + IAttitudeControlImpulsive._num_methods - 1,
     }
     _property_names = {}
@@ -10767,7 +11092,7 @@ class AttitudeControlImpulsiveFile(IAttitudeControlImpulsive, IAttitudeControl, 
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AttitudeControlImpulsiveFile, [AttitudeControlImpulsiveFile, IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5004932378358409643, 12572056464618414249), AttitudeControlImpulsiveFile)
+agcls.AgClassCatalog.add_catalog_entry((4989157495442500319, 12987781859782707382), AttitudeControlImpulsiveFile)
 agcls.AgTypeNameMap["AttitudeControlImpulsiveFile"] = AttitudeControlImpulsiveFile
 
 class AttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -10799,7 +11124,7 @@ class AttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsive, IAttitudeC
     _assign_spherical_method_offset = 22
     _query_spherical_method_offset = 23
     _metadata = {
-        "iid_data" : (5502906477986733323, 9761518986136370305),
+        "iid_data" : (5557768256698449838, 11643939389434096316),
         "vtable_reference" : IAttitudeControlImpulsive._vtable_offset + IAttitudeControlImpulsive._num_methods - 1,
     }
     _property_names = {}
@@ -11007,7 +11332,7 @@ class AttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsive, IAttitudeC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AttitudeControlImpulsiveThrustVector, [AttitudeControlImpulsiveThrustVector, IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5575491667768589580, 12658580146838550400), AttitudeControlImpulsiveThrustVector)
+agcls.AgClassCatalog.add_catalog_entry((5087689285910053574, 17183238770554694567), AttitudeControlImpulsiveThrustVector)
 agcls.AgTypeNameMap["AttitudeControlImpulsiveThrustVector"] = AttitudeControlImpulsiveThrustVector
 
 class AttitudeControlFiniteAntiVelocityVector(IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -11019,7 +11344,7 @@ class AttitudeControlFiniteAntiVelocityVector(IAttitudeControlFinite, IAttitudeC
     _set_attitude_update_method_offset = 2
     _get_body_constraint_vector_method_offset = 3
     _metadata = {
-        "iid_data" : (4782013786436564730, 1569290256608416660),
+        "iid_data" : (5257414515345026103, 4695764529555364520),
         "vtable_reference" : IAttitudeControlFinite._vtable_offset + IAttitudeControlFinite._num_methods - 1,
     }
     _property_names = {}
@@ -11071,7 +11396,7 @@ class AttitudeControlFiniteAntiVelocityVector(IAttitudeControlFinite, IAttitudeC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AttitudeControlFiniteAntiVelocityVector, [AttitudeControlFiniteAntiVelocityVector, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4929934656189608976, 9775493696746436502), AttitudeControlFiniteAntiVelocityVector)
+agcls.AgClassCatalog.add_catalog_entry((5239072844927171968, 11237450101303646909), AttitudeControlFiniteAntiVelocityVector)
 agcls.AgTypeNameMap["AttitudeControlFiniteAntiVelocityVector"] = AttitudeControlFiniteAntiVelocityVector
 
 class AttitudeControlFiniteAttitude(IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -11085,7 +11410,7 @@ class AttitudeControlFiniteAttitude(IAttitudeControlFinite, IAttitudeControl, IR
     _set_reference_axes_name_method_offset = 4
     _get_orientation_method_offset = 5
     _metadata = {
-        "iid_data" : (4631154172073222433, 9787163487429423038),
+        "iid_data" : (5725194168088559615, 5840864263697030046),
         "vtable_reference" : IAttitudeControlFinite._vtable_offset + IAttitudeControlFinite._num_methods - 1,
     }
     _property_names = {}
@@ -11153,7 +11478,7 @@ class AttitudeControlFiniteAttitude(IAttitudeControlFinite, IAttitudeControl, IR
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AttitudeControlFiniteAttitude, [AttitudeControlFiniteAttitude, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5543774537829345684, 6248581389650464156), AttitudeControlFiniteAttitude)
+agcls.AgClassCatalog.add_catalog_entry((4775298512690276810, 4770659208492244614), AttitudeControlFiniteAttitude)
 agcls.AgTypeNameMap["AttitudeControlFiniteAttitude"] = AttitudeControlFiniteAttitude
 
 class AttitudeControlFiniteFile(IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -11167,7 +11492,7 @@ class AttitudeControlFiniteFile(IAttitudeControlFinite, IAttitudeControl, IRunti
     _set_file_time_offset_method_offset = 4
     _get_full_filename_method_offset = 5
     _metadata = {
-        "iid_data" : (5395533152266767476, 10947136709492955554),
+        "iid_data" : (5331973873404189883, 12448741664314570157),
         "vtable_reference" : IAttitudeControlFinite._vtable_offset + IAttitudeControlFinite._num_methods - 1,
     }
     _property_names = {}
@@ -11235,7 +11560,7 @@ class AttitudeControlFiniteFile(IAttitudeControlFinite, IAttitudeControl, IRunti
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AttitudeControlFiniteFile, [AttitudeControlFiniteFile, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5304200409859175388, 7105606624544560287), AttitudeControlFiniteFile)
+agcls.AgClassCatalog.add_catalog_entry((4805518608984790942, 7466974492911000996), AttitudeControlFiniteFile)
 agcls.AgTypeNameMap["AttitudeControlFiniteFile"] = AttitudeControlFiniteFile
 
 class AttitudeControlFiniteThrustVector(IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -11250,7 +11575,7 @@ class AttitudeControlFiniteThrustVector(IAttitudeControlFinite, IAttitudeControl
     _get_body_constraint_vector_method_offset = 5
     _get_thrust_vector_method_offset = 6
     _metadata = {
-        "iid_data" : (5148522151278071898, 11453760759581062313),
+        "iid_data" : (5507757928040970232, 8382863800457914815),
         "vtable_reference" : IAttitudeControlFinite._vtable_offset + IAttitudeControlFinite._num_methods - 1,
     }
     _property_names = {}
@@ -11327,7 +11652,7 @@ class AttitudeControlFiniteThrustVector(IAttitudeControlFinite, IAttitudeControl
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AttitudeControlFiniteThrustVector, [AttitudeControlFiniteThrustVector, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5300112662321021295, 17392290777368689581), AttitudeControlFiniteThrustVector)
+agcls.AgClassCatalog.add_catalog_entry((4964094626040873683, 7283369989888207538), AttitudeControlFiniteThrustVector)
 agcls.AgTypeNameMap["AttitudeControlFiniteThrustVector"] = AttitudeControlFiniteThrustVector
 
 class AttitudeControlFiniteTimeVarying(IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -11371,7 +11696,7 @@ class AttitudeControlFiniteTimeVarying(IAttitudeControlFinite, IAttitudeControl,
     _get_elevation_sinusoidal_phase_method_offset = 34
     _set_elevation_sinusoidal_phase_method_offset = 35
     _metadata = {
-        "iid_data" : (5634020525553782637, 14867654061630199955),
+        "iid_data" : (5367645829631987543, 12565071862749288883),
         "vtable_reference" : IAttitudeControlFinite._vtable_offset + IAttitudeControlFinite._num_methods - 1,
     }
     _property_names = {}
@@ -11679,7 +12004,7 @@ class AttitudeControlFiniteTimeVarying(IAttitudeControlFinite, IAttitudeControl,
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AttitudeControlFiniteTimeVarying, [AttitudeControlFiniteTimeVarying, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4702333051035569318, 8055730207611007421), AttitudeControlFiniteTimeVarying)
+agcls.AgClassCatalog.add_catalog_entry((5171541269578073493, 3437005705128601006), AttitudeControlFiniteTimeVarying)
 agcls.AgTypeNameMap["AttitudeControlFiniteTimeVarying"] = AttitudeControlFiniteTimeVarying
 
 class AttitudeControlFiniteVelocityVector(IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -11691,7 +12016,7 @@ class AttitudeControlFiniteVelocityVector(IAttitudeControlFinite, IAttitudeContr
     _set_attitude_update_method_offset = 2
     _get_body_constraint_vector_method_offset = 3
     _metadata = {
-        "iid_data" : (5137071414965646431, 4057671418243972257),
+        "iid_data" : (5253077997538702210, 3746946803391621265),
         "vtable_reference" : IAttitudeControlFinite._vtable_offset + IAttitudeControlFinite._num_methods - 1,
     }
     _property_names = {}
@@ -11743,7 +12068,7 @@ class AttitudeControlFiniteVelocityVector(IAttitudeControlFinite, IAttitudeContr
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AttitudeControlFiniteVelocityVector, [AttitudeControlFiniteVelocityVector, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5340603337482853225, 4608082530829545350), AttitudeControlFiniteVelocityVector)
+agcls.AgClassCatalog.add_catalog_entry((5080311436956500885, 10602565582069371834), AttitudeControlFiniteVelocityVector)
 agcls.AgTypeNameMap["AttitudeControlFiniteVelocityVector"] = AttitudeControlFiniteVelocityVector
 
 class AttitudeControlFinitePlugin(IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -11755,7 +12080,7 @@ class AttitudeControlFinitePlugin(IAttitudeControlFinite, IAttitudeControl, IRun
     _get_plugin_name_method_offset = 2
     _get_plugin_config_method_offset = 3
     _metadata = {
-        "iid_data" : (4773268931231490560, 6457243350605167235),
+        "iid_data" : (4812995807923834646, 2141921776763325865),
         "vtable_reference" : IAttitudeControlFinite._vtable_offset + IAttitudeControlFinite._num_methods - 1,
     }
     _property_names = {}
@@ -11807,7 +12132,7 @@ class AttitudeControlFinitePlugin(IAttitudeControlFinite, IAttitudeControl, IRun
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AttitudeControlFinitePlugin, [AttitudeControlFinitePlugin, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5751876833050268726, 10430523435175771071), AttitudeControlFinitePlugin)
+agcls.AgClassCatalog.add_catalog_entry((4790408438126583480, 6185767376662592659), AttitudeControlFinitePlugin)
 agcls.AgTypeNameMap["AttitudeControlFinitePlugin"] = AttitudeControlFinitePlugin
 
 class AttitudeControlOptimalFiniteLagrange(IAttitudeControlOptimalFinite, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -11817,7 +12142,7 @@ class AttitudeControlOptimalFiniteLagrange(IAttitudeControlOptimalFinite, IAttit
     _vtable_offset = IAttitudeControlOptimalFinite._vtable_offset + IAttitudeControlOptimalFinite._num_methods
     _get_body_constraint_vector_method_offset = 1
     _metadata = {
-        "iid_data" : (5193424269214069960, 1358925997096785086),
+        "iid_data" : (5117615206788370658, 8506130835757167241),
         "vtable_reference" : IAttitudeControlOptimalFinite._vtable_offset + IAttitudeControlOptimalFinite._num_methods - 1,
     }
     _property_names = {}
@@ -11853,7 +12178,7 @@ class AttitudeControlOptimalFiniteLagrange(IAttitudeControlOptimalFinite, IAttit
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AttitudeControlOptimalFiniteLagrange, [AttitudeControlOptimalFiniteLagrange, IAttitudeControlOptimalFinite, IAttitudeControl, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4745590117958740244, 14748864079568769432), AttitudeControlOptimalFiniteLagrange)
+agcls.AgClassCatalog.add_catalog_entry((4627852445592411968, 8099060312925167247), AttitudeControlOptimalFiniteLagrange)
 agcls.AgTypeNameMap["AttitudeControlOptimalFiniteLagrange"] = AttitudeControlOptimalFiniteLagrange
 
 class ManeuverFinitePropagator(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -11883,7 +12208,7 @@ class ManeuverFinitePropagator(IRuntimeTypeInfoProvider, SupportsDeleteCallback)
     _get_should_reinitialize_stm_at_start_of_segment_propagation_method_offset = 20
     _set_should_reinitialize_stm_at_start_of_segment_propagation_method_offset = 21
     _metadata = {
-        "iid_data" : (5566679304303890544, 11813338934988407462),
+        "iid_data" : (5503483215734448510, 8759490092895376017),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12075,7 +12400,7 @@ class ManeuverFinitePropagator(IRuntimeTypeInfoProvider, SupportsDeleteCallback)
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ManeuverFinitePropagator, [ManeuverFinitePropagator, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5539664440505171113, 10732172948923783042), ManeuverFinitePropagator)
+agcls.AgClassCatalog.add_catalog_entry((4866665705929387994, 10860530924843364784), ManeuverFinitePropagator)
 agcls.AgTypeNameMap["ManeuverFinitePropagator"] = ManeuverFinitePropagator
 
 class MCSHold(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -12107,7 +12432,7 @@ class MCSHold(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable,
     _get_should_stop_for_initially_surpassed_epoch_stopping_conditions_method_offset = 22
     _set_should_stop_for_initially_surpassed_epoch_stopping_conditions_method_offset = 23
     _metadata = {
-        "iid_data" : (4662680246288167963, 8721114741357391511),
+        "iid_data" : (5677656444576988662, 8892249179858295428),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12319,7 +12644,7 @@ class MCSHold(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable,
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MCSHold, [MCSHold, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5036634056898744919, 16511560869260231339), MCSHold)
+agcls.AgClassCatalog.add_catalog_entry((5344469930330008001, 15487659365326569645), MCSHold)
 agcls.AgTypeNameMap["MCSHold"] = MCSHold
 
 class MCSUpdate(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -12338,7 +12663,7 @@ class MCSUpdate(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneabl
     _get_control_parameters_available_method_offset = 9
     _get_user_variables_method_offset = 10
     _metadata = {
-        "iid_data" : (4612298704220394462, 16427056929712906381),
+        "iid_data" : (5311992918058687353, 8550626084413030564),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12347,36 +12672,36 @@ class MCSUpdate(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneabl
 
     _set_action_and_value_metadata = { "offset" : _set_action_and_value_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(UpdateParam), agmarshall.EnumArg(UpdateAction), agmarshall.DoubleArg,) }
-    def set_action_and_value(self, parameter_type:"UpdateParam", action_type:"UpdateAction", value:float) -> None:
+            "marshallers" : (agmarshall.EnumArg(UpdateParameter), agmarshall.EnumArg(UpdateAction), agmarshall.DoubleArg,) }
+    def set_action_and_value(self, parameter_type:"UpdateParameter", action_type:"UpdateAction", value:float) -> None:
         """Set an action and the new value."""
         return self._intf.invoke(MCSUpdate._metadata, MCSUpdate._set_action_and_value_metadata, parameter_type, action_type, value)
 
     _get_action_metadata = { "offset" : _get_action_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(UpdateParam), agmarshall.EnumArg(UpdateAction),) }
-    def get_action(self, parameter_type:"UpdateParam") -> "UpdateAction":
+            "marshallers" : (agmarshall.EnumArg(UpdateParameter), agmarshall.EnumArg(UpdateAction),) }
+    def get_action(self, parameter_type:"UpdateParameter") -> "UpdateAction":
         """Get the action type for a parameter."""
         return self._intf.invoke(MCSUpdate._metadata, MCSUpdate._get_action_metadata, parameter_type, OutArg())
 
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.EnumArg(UpdateParam), agmarshall.DoubleArg,) }
-    def get_value(self, parameter_type:"UpdateParam") -> float:
+            "marshallers" : (agmarshall.EnumArg(UpdateParameter), agmarshall.DoubleArg,) }
+    def get_value(self, parameter_type:"UpdateParameter") -> float:
         """Get the value type for a parameter."""
         return self._intf.invoke(MCSUpdate._metadata, MCSUpdate._get_value_metadata, parameter_type, OutArg())
 
     _set_action_metadata = { "offset" : _set_action_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(UpdateParam), agmarshall.EnumArg(UpdateAction),) }
-    def set_action(self, parameter_name:"UpdateParam", action_type:"UpdateAction") -> None:
+            "marshallers" : (agmarshall.EnumArg(UpdateParameter), agmarshall.EnumArg(UpdateAction),) }
+    def set_action(self, parameter_name:"UpdateParameter", action_type:"UpdateAction") -> None:
         """Set the update action type."""
         return self._intf.invoke(MCSUpdate._metadata, MCSUpdate._set_action_metadata, parameter_name, action_type)
 
     _set_value_metadata = { "offset" : _set_value_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(UpdateParam), agmarshall.DoubleArg,) }
-    def set_value(self, parameter_name:"UpdateParam", value:float) -> None:
+            "marshallers" : (agmarshall.EnumArg(UpdateParameter), agmarshall.DoubleArg,) }
+    def set_value(self, parameter_name:"UpdateParameter", value:float) -> None:
         """Set the update value."""
         return self._intf.invoke(MCSUpdate._metadata, MCSUpdate._set_value_metadata, parameter_name, value)
 
@@ -12441,7 +12766,7 @@ class MCSUpdate(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneabl
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MCSUpdate, [MCSUpdate, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4769851952476936711, 12743095332754810808), MCSUpdate)
+agcls.AgClassCatalog.add_catalog_entry((4657199480251886067, 3992090456954975921), MCSUpdate)
 agcls.AgTypeNameMap["MCSUpdate"] = MCSUpdate
 
 class MCSReturn(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -12452,7 +12777,7 @@ class MCSReturn(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneabl
     _get_return_control_to_parent_sequence_method_offset = 1
     _set_return_control_to_parent_sequence_method_offset = 2
     _metadata = {
-        "iid_data" : (5086645245770904087, 7110397434433108120),
+        "iid_data" : (5249927037627376901, 9491124448077047225),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12497,7 +12822,7 @@ class MCSReturn(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneabl
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MCSReturn, [MCSReturn, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5338959801614235290, 674960884198980233), MCSReturn)
+agcls.AgClassCatalog.add_catalog_entry((4873790590523624784, 15744055807456980880), MCSReturn)
 agcls.AgTypeNameMap["MCSReturn"] = MCSReturn
 
 class MCSStop(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -12508,7 +12833,7 @@ class MCSStop(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable,
     _get_enabled_method_offset = 1
     _set_enabled_method_offset = 2
     _metadata = {
-        "iid_data" : (5433661175555402357, 6615063642560173976),
+        "iid_data" : (4886463216083544136, 4611370856993431171),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12553,13 +12878,13 @@ class MCSStop(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable,
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MCSStop, [MCSStop, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5575190769478601305, 3572350491614611646), MCSStop)
+agcls.AgClassCatalog.add_catalog_entry((5182312336563034349, 4748606671795327121), MCSStop)
 agcls.AgTypeNameMap["MCSStop"] = MCSStop
 
 class MCSTargetSequence(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """General properties of a TargetSequence segment."""
 
-    _num_methods = 16
+    _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_action_method_offset = 1
     _set_action_method_offset = 2
@@ -12577,8 +12902,11 @@ class MCSTargetSequence(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, I
     _reset_profile_by_name_method_offset = 14
     _get_reset_inner_targeters_method_offset = 15
     _set_reset_inner_targeters_method_offset = 16
+    _get_set_all_profile_modes_to_method_offset = 17
+    _set_set_all_profile_modes_to_method_offset = 18
+    _set_all_profile_modes_method_offset = 19
     _metadata = {
-        "iid_data" : (4754863831773773924, 14533412604548864682),
+        "iid_data" : (5553564801331532023, 7167747684923605155),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -12703,12 +13031,35 @@ class MCSTargetSequence(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, I
     def reset_inner_targeters(self, value:bool) -> None:
         return self._intf.set_property(MCSTargetSequence._metadata, MCSTargetSequence._set_reset_inner_targeters_metadata, value)
 
+    _get_set_all_profile_modes_to_metadata = { "offset" : _get_set_all_profile_modes_to_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(ProfileMode),) }
+    @property
+    def set_all_profile_modes_to(self) -> "ProfileMode":
+        """The mode setting that will be applied to all profiles in this target sequence when the SetAllProfileModes method is invoked."""
+        return self._intf.get_property(MCSTargetSequence._metadata, MCSTargetSequence._get_set_all_profile_modes_to_metadata)
+
+    _set_set_all_profile_modes_to_metadata = { "offset" : _set_set_all_profile_modes_to_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(ProfileMode),) }
+    @set_all_profile_modes_to.setter
+    def set_all_profile_modes_to(self, value:"ProfileMode") -> None:
+        return self._intf.set_property(MCSTargetSequence._metadata, MCSTargetSequence._set_set_all_profile_modes_to_metadata, value)
+
+    _set_all_profile_modes_metadata = { "offset" : _set_all_profile_modes_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def set_all_profile_modes(self) -> None:
+        """Set the mode for all profiles in this target sequence to the value held by the SetAllProfileModesTo property."""
+        return self._intf.invoke(MCSTargetSequence._metadata, MCSTargetSequence._set_all_profile_modes_metadata, )
+
     _property_names[action] = "action"
     _property_names[when_profiles_finish] = "when_profiles_finish"
     _property_names[continue_on_failure] = "continue_on_failure"
     _property_names[segments] = "segments"
     _property_names[profiles] = "profiles"
     _property_names[reset_inner_targeters] = "reset_inner_targeters"
+    _property_names[set_all_profile_modes_to] = "set_all_profile_modes_to"
 
     def __init__(self, source_object=None):
         """Construct an object of type MCSTargetSequence."""
@@ -12731,7 +13082,7 @@ class MCSTargetSequence(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, I
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MCSTargetSequence, [MCSTargetSequence, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5275189599605526062, 2875478924429173914), MCSTargetSequence)
+agcls.AgClassCatalog.add_catalog_entry((4991661075477221718, 7603665829579305905), MCSTargetSequence)
 agcls.AgTypeNameMap["MCSTargetSequence"] = MCSTargetSequence
 
 class ProfileCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -12754,7 +13105,7 @@ class ProfileCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _get_item_by_index_method_offset = 13
     _get_item_by_name_method_offset = 14
     _metadata = {
-        "iid_data" : (5630196485976636884, 6542187252655594407),
+        "iid_data" : (5557149379523482824, 15944058490760586681),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -12899,7 +13250,7 @@ class ProfileCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProfileCollection, [ProfileCollection, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5143990449118478455, 3349457320014041742), ProfileCollection)
+agcls.AgClassCatalog.add_catalog_entry((5366049128948858913, 16331415528212736917), ProfileCollection)
 agcls.AgTypeNameMap["ProfileCollection"] = ProfileCollection
 
 class MCSOptions(SupportsDeleteCallback):
@@ -12945,7 +13296,7 @@ class MCSOptions(SupportsDeleteCallback):
     _get_smart_run_mode_method_offset = 36
     _set_smart_run_mode_method_offset = 37
     _metadata = {
-        "iid_data" : (4995434399239591698, 15701662039751640989),
+        "iid_data" : (5589820953541482722, 5997340538983956649),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13264,7 +13615,7 @@ class MCSOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MCSOptions, [MCSOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5252079360558931739, 420969178435848603), MCSOptions)
+agcls.AgClassCatalog.add_catalog_entry((5470481360234940838, 6153038066240543637), MCSOptions)
 agcls.AgTypeNameMap["MCSOptions"] = MCSOptions
 
 class CalculationObjectCollection(SupportsDeleteCallback):
@@ -13283,7 +13634,7 @@ class CalculationObjectCollection(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 9
     _get_item_by_name_method_offset = 10
     _metadata = {
-        "iid_data" : (4871526303947963367, 9557979883536836749),
+        "iid_data" : (5646886158727836472, 4657602970449326262),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -13394,7 +13745,7 @@ class CalculationObjectCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationObjectCollection, [CalculationObjectCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5427828449804903932, 12224863713293115564), CalculationObjectCollection)
+agcls.AgClassCatalog.add_catalog_entry((5074300814404038573, 6184004559435606441), CalculationObjectCollection)
 agcls.AgTypeNameMap["CalculationObjectCollection"] = CalculationObjectCollection
 
 class ConstraintCollection(SupportsDeleteCallback):
@@ -13413,7 +13764,7 @@ class ConstraintCollection(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 9
     _get_item_by_name_method_offset = 10
     _metadata = {
-        "iid_data" : (5396110646366435143, 4493176677956963970),
+        "iid_data" : (5600325993608499889, 2173365066329699227),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -13524,7 +13875,7 @@ class ConstraintCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ConstraintCollection, [ConstraintCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4630173644378793429, 7503241363423471795), ConstraintCollection)
+agcls.AgClassCatalog.add_catalog_entry((4917690598718615411, 12831678376496359329), ConstraintCollection)
 agcls.AgTypeNameMap["ConstraintCollection"] = ConstraintCollection
 
 class PluginProperties(SupportsDeleteCallback):
@@ -13536,7 +13887,7 @@ class PluginProperties(SupportsDeleteCallback):
     _set_property_method_offset = 2
     _get_available_properties_method_offset = 3
     _metadata = {
-        "iid_data" : (5256416044241565756, 10938286104523749517),
+        "iid_data" : (5093926574417636806, 9881512558172243131),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13580,7 +13931,7 @@ class PluginProperties(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PluginProperties, [PluginProperties, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4832164181540462688, 9736795849403081643), PluginProperties)
+agcls.AgClassCatalog.add_catalog_entry((5057000225464582182, 17412460843776801442), PluginProperties)
 agcls.AgTypeNameMap["PluginProperties"] = PluginProperties
 
 class ProfileSearchPlugin(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -13598,7 +13949,7 @@ class ProfileSearchPlugin(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCall
     _get_targeter_graphs_method_offset = 8
     _get_log_file_method_offset = 9
     _metadata = {
-        "iid_data" : (4989321574453629085, 18383769424312266673),
+        "iid_data" : (5237816012076362441, 2953252502771721347),
         "vtable_reference" : IProfile._vtable_offset + IProfile._num_methods - 1,
     }
     _property_names = {}
@@ -13702,7 +14053,7 @@ class ProfileSearchPlugin(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProfileSearchPlugin, [ProfileSearchPlugin, IProfile, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5288551634889688931, 6097150253307945909), ProfileSearchPlugin)
+agcls.AgClassCatalog.add_catalog_entry((4747738881431275803, 11927695706113586564), ProfileSearchPlugin)
 agcls.AgTypeNameMap["ProfileSearchPlugin"] = ProfileSearchPlugin
 
 class TargeterGraph(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -13727,7 +14078,7 @@ class TargeterGraph(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _get_active_controls_method_offset = 15
     _get_results_method_offset = 16
     _metadata = {
-        "iid_data" : (5135924380442436999, 7678843553599670682),
+        "iid_data" : (4670129846514531575, 2758226103622231960),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -13887,7 +14238,7 @@ class TargeterGraph(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TargeterGraph, [TargeterGraph, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4820292145119127894, 2993481562376072357), TargeterGraph)
+agcls.AgClassCatalog.add_catalog_entry((4795597737320867653, 5601981712552083110), TargeterGraph)
 agcls.AgTypeNameMap["TargeterGraph"] = TargeterGraph
 
 class TargeterGraphCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -13907,7 +14258,7 @@ class TargeterGraphCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _get_item_by_index_method_offset = 10
     _get_item_by_name_method_offset = 11
     _metadata = {
-        "iid_data" : (4666281358055310374, 1442486553483265713),
+        "iid_data" : (4742140685880218525, 2519626075377242297),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -14029,7 +14380,7 @@ class TargeterGraphCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TargeterGraphCollection, [TargeterGraphCollection, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5713818234225934544, 4609064603796981650), TargeterGraphCollection)
+agcls.AgClassCatalog.add_catalog_entry((5484532409490262518, 2715383741920530069), TargeterGraphCollection)
 agcls.AgTypeNameMap["TargeterGraphCollection"] = TargeterGraphCollection
 
 class TargeterGraphResultCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -14042,7 +14393,7 @@ class TargeterGraphResultCollection(IRuntimeTypeInfoProvider, SupportsDeleteCall
     _get_count_method_offset = 3
     _get_provide_runtime_type_info_method_offset = 4
     _metadata = {
-        "iid_data" : (5681214531064451260, 3542062518212208806),
+        "iid_data" : (5351341239215197139, 5495430706593293748),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -14115,7 +14466,7 @@ class TargeterGraphResultCollection(IRuntimeTypeInfoProvider, SupportsDeleteCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TargeterGraphResultCollection, [TargeterGraphResultCollection, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4675941918306799033, 16991213643032778938), TargeterGraphResultCollection)
+agcls.AgClassCatalog.add_catalog_entry((4844577188933949124, 5150044975090173824), TargeterGraphResultCollection)
 agcls.AgTypeNameMap["TargeterGraphResultCollection"] = TargeterGraphResultCollection
 
 class TargeterGraphActiveControlCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -14128,7 +14479,7 @@ class TargeterGraphActiveControlCollection(IRuntimeTypeInfoProvider, SupportsDel
     _get_count_method_offset = 3
     _get_provide_runtime_type_info_method_offset = 4
     _metadata = {
-        "iid_data" : (5718318377038943766, 11707308167199207819),
+        "iid_data" : (5480583509966331611, 13812658409782420608),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -14201,7 +14552,7 @@ class TargeterGraphActiveControlCollection(IRuntimeTypeInfoProvider, SupportsDel
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TargeterGraphActiveControlCollection, [TargeterGraphActiveControlCollection, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5060958647911646068, 16483538695082057382), TargeterGraphActiveControlCollection)
+agcls.AgClassCatalog.add_catalog_entry((5121662063296736240, 13906790352795281035), TargeterGraphActiveControlCollection)
 agcls.AgTypeNameMap["TargeterGraphActiveControlCollection"] = TargeterGraphActiveControlCollection
 
 class TargeterGraphActiveControl(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -14220,7 +14571,7 @@ class TargeterGraphActiveControl(IRuntimeTypeInfoProvider, SupportsDeleteCallbac
     _get_y_axis_method_offset = 9
     _set_y_axis_method_offset = 10
     _metadata = {
-        "iid_data" : (5193288564717621701, 9284685105260980413),
+        "iid_data" : (4769149232543864347, 12878628615346533301),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14329,7 +14680,7 @@ class TargeterGraphActiveControl(IRuntimeTypeInfoProvider, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TargeterGraphActiveControl, [TargeterGraphActiveControl, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5123733805731250082, 10040985544979632029), TargeterGraphActiveControl)
+agcls.AgClassCatalog.add_catalog_entry((4737284071735075205, 12410879628612263602), TargeterGraphActiveControl)
 agcls.AgTypeNameMap["TargeterGraphActiveControl"] = TargeterGraphActiveControl
 
 class TargeterGraphResult(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -14352,7 +14703,7 @@ class TargeterGraphResult(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _get_show_tolerance_band_method_offset = 13
     _set_show_tolerance_band_method_offset = 14
     _metadata = {
-        "iid_data" : (5079886305028495981, 16269527803066934938),
+        "iid_data" : (5187559590311748241, 9668543599252848805),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -14495,7 +14846,7 @@ class TargeterGraphResult(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TargeterGraphResult, [TargeterGraphResult, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5372818770923136803, 2677805927587744941), TargeterGraphResult)
+agcls.AgClassCatalog.add_catalog_entry((4824065034109934009, 5314129702145765025), TargeterGraphResult)
 agcls.AgTypeNameMap["TargeterGraphResult"] = TargeterGraphResult
 
 class ProfileDifferentialCorrector(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -14543,7 +14894,7 @@ class ProfileDifferentialCorrector(IProfile, IRuntimeTypeInfoProvider, SupportsD
     _get_stop_on_limit_cycle_detection_method_offset = 38
     _set_stop_on_limit_cycle_detection_method_offset = 39
     _metadata = {
-        "iid_data" : (4651276936250783348, 17358117410539768209),
+        "iid_data" : (5618123860563220098, 16594804378877463467),
         "vtable_reference" : IProfile._vtable_offset + IProfile._num_methods - 1,
     }
     _property_names = {}
@@ -14885,7 +15236,7 @@ class ProfileDifferentialCorrector(IProfile, IRuntimeTypeInfoProvider, SupportsD
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProfileDifferentialCorrector, [ProfileDifferentialCorrector, IProfile, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5697793952066233454, 6970629070586778798), ProfileDifferentialCorrector)
+agcls.AgClassCatalog.add_catalog_entry((5633079624948980251, 16987462113303034774), ProfileDifferentialCorrector)
 agcls.AgTypeNameMap["ProfileDifferentialCorrector"] = ProfileDifferentialCorrector
 
 class ProfileScriptingTool(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -14904,7 +15255,7 @@ class ProfileScriptingTool(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCal
     _copy_to_clipboard_method_offset = 9
     _paste_from_clipboard_method_offset = 10
     _metadata = {
-        "iid_data" : (4932992111891026631, 13621962777049563066),
+        "iid_data" : (4613473620762204831, 8489179828888089778),
         "vtable_reference" : IProfile._vtable_offset + IProfile._num_methods - 1,
     }
     _property_names = {}
@@ -15009,7 +15360,7 @@ class ProfileScriptingTool(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCal
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProfileScriptingTool, [ProfileScriptingTool, IProfile, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5081539591855218287, 5356479670344280495), ProfileScriptingTool)
+agcls.AgClassCatalog.add_catalog_entry((5760850533623509276, 17474317100880755124), ProfileScriptingTool)
 agcls.AgTypeNameMap["ProfileScriptingTool"] = ProfileScriptingTool
 
 class DifferentialCorrectorControl(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -15043,7 +15394,7 @@ class DifferentialCorrectorControl(IRuntimeTypeInfoProvider, SupportsDeleteCallb
     _set_custom_display_unit_method_offset = 24
     _get_values_method_offset = 25
     _metadata = {
-        "iid_data" : (5253000958888501130, 7959737892745020576),
+        "iid_data" : (5352352321375509370, 826526620605388446),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15273,7 +15624,7 @@ class DifferentialCorrectorControl(IRuntimeTypeInfoProvider, SupportsDeleteCallb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DifferentialCorrectorControl, [DifferentialCorrectorControl, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5558465406678164076, 14489559354740820113), DifferentialCorrectorControl)
+agcls.AgClassCatalog.add_catalog_entry((5404184320510138730, 12542940946652328615), DifferentialCorrectorControl)
 agcls.AgTypeNameMap["DifferentialCorrectorControl"] = DifferentialCorrectorControl
 
 class DifferentialCorrectorResult(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -15304,7 +15655,7 @@ class DifferentialCorrectorResult(IRuntimeTypeInfoProvider, SupportsDeleteCallba
     _set_custom_display_unit_method_offset = 21
     _get_values_method_offset = 22
     _metadata = {
-        "iid_data" : (5087800593462724886, 6103903351099707307),
+        "iid_data" : (5295737067516205373, 10494713030240167330),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15509,7 +15860,7 @@ class DifferentialCorrectorResult(IRuntimeTypeInfoProvider, SupportsDeleteCallba
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DifferentialCorrectorResult, [DifferentialCorrectorResult, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4848528198033868470, 13072468517312703888), DifferentialCorrectorResult)
+agcls.AgClassCatalog.add_catalog_entry((5239138207698703985, 14262953472284306603), DifferentialCorrectorResult)
 agcls.AgTypeNameMap["DifferentialCorrectorResult"] = DifferentialCorrectorResult
 
 class DifferentialCorrectorControlCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -15523,7 +15874,7 @@ class DifferentialCorrectorControlCollection(IRuntimeTypeInfoProvider, SupportsD
     _get_control_by_paths_method_offset = 4
     _get_provide_runtime_type_info_method_offset = 5
     _metadata = {
-        "iid_data" : (5331395578659733574, 4228290395270634151),
+        "iid_data" : (5099920915316174870, 13571352143437952447),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -15603,7 +15954,7 @@ class DifferentialCorrectorControlCollection(IRuntimeTypeInfoProvider, SupportsD
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DifferentialCorrectorControlCollection, [DifferentialCorrectorControlCollection, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5052038889388285920, 16755659920294581388), DifferentialCorrectorControlCollection)
+agcls.AgClassCatalog.add_catalog_entry((5132240321171065627, 9153401394085758598), DifferentialCorrectorControlCollection)
 agcls.AgTypeNameMap["DifferentialCorrectorControlCollection"] = DifferentialCorrectorControlCollection
 
 class DifferentialCorrectorResultCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -15617,7 +15968,7 @@ class DifferentialCorrectorResultCollection(IRuntimeTypeInfoProvider, SupportsDe
     _get_result_by_paths_method_offset = 4
     _get_provide_runtime_type_info_method_offset = 5
     _metadata = {
-        "iid_data" : (4818834817002475399, 15340702828551915904),
+        "iid_data" : (4769361078798030700, 3754927323842307222),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -15697,7 +16048,7 @@ class DifferentialCorrectorResultCollection(IRuntimeTypeInfoProvider, SupportsDe
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DifferentialCorrectorResultCollection, [DifferentialCorrectorResultCollection, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5420089016781372257, 3020197927996230316), DifferentialCorrectorResultCollection)
+agcls.AgClassCatalog.add_catalog_entry((4846841980775600237, 3525240320672483985), DifferentialCorrectorResultCollection)
 agcls.AgTypeNameMap["DifferentialCorrectorResultCollection"] = DifferentialCorrectorResultCollection
 
 class SearchPluginControl(SupportsDeleteCallback):
@@ -15719,7 +16070,7 @@ class SearchPluginControl(SupportsDeleteCallback):
     _get_values_method_offset = 12
     _set_current_value_method_offset = 13
     _metadata = {
-        "iid_data" : (4867399211973024127, 7320608480965167759),
+        "iid_data" : (5409611194166141740, 383900049212517280),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -15851,7 +16202,7 @@ class SearchPluginControl(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SearchPluginControl, [SearchPluginControl, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5045474660547290749, 17356533529411786427), SearchPluginControl)
+agcls.AgClassCatalog.add_catalog_entry((5051860005343037282, 451715151147060903), SearchPluginControl)
 agcls.AgTypeNameMap["SearchPluginControl"] = SearchPluginControl
 
 class SearchPluginControlCollection(SupportsDeleteCallback):
@@ -15864,7 +16215,7 @@ class SearchPluginControlCollection(SupportsDeleteCallback):
     _get_count_method_offset = 3
     _get_control_by_paths_method_offset = 4
     _metadata = {
-        "iid_data" : (4624987267695215442, 5534608355596712125),
+        "iid_data" : (5483482156394580248, 13445451201483115414),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -15933,7 +16284,7 @@ class SearchPluginControlCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SearchPluginControlCollection, [SearchPluginControlCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4848900109341529946, 9106163264584221337), SearchPluginControlCollection)
+agcls.AgClassCatalog.add_catalog_entry((4797947573343783338, 9922358297191824296), SearchPluginControlCollection)
 agcls.AgTypeNameMap["SearchPluginControlCollection"] = SearchPluginControlCollection
 
 class SearchPluginResult(SupportsDeleteCallback):
@@ -15953,7 +16304,7 @@ class SearchPluginResult(SupportsDeleteCallback):
     _set_custom_display_unit_method_offset = 10
     _get_values_method_offset = 11
     _metadata = {
-        "iid_data" : (4895148609240169264, 4585343154220999064),
+        "iid_data" : (4617050020715716276, 8654848869114416305),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16069,7 +16420,7 @@ class SearchPluginResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SearchPluginResult, [SearchPluginResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5546957583458452990, 17896374163675725444), SearchPluginResult)
+agcls.AgClassCatalog.add_catalog_entry((4759408767322007171, 8509245357517131927), SearchPluginResult)
 agcls.AgTypeNameMap["SearchPluginResult"] = SearchPluginResult
 
 class SearchPluginResultCollection(SupportsDeleteCallback):
@@ -16082,7 +16433,7 @@ class SearchPluginResultCollection(SupportsDeleteCallback):
     _get_count_method_offset = 3
     _get_result_by_paths_method_offset = 4
     _metadata = {
-        "iid_data" : (4689816242179407525, 118837404913377457),
+        "iid_data" : (5484229474189578411, 6078135072717736883),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -16151,7 +16502,7 @@ class SearchPluginResultCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SearchPluginResultCollection, [SearchPluginResultCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4906992132230204902, 3876273479435196306), SearchPluginResultCollection)
+agcls.AgClassCatalog.add_catalog_entry((4643408036218177804, 920856910880995727), SearchPluginResultCollection)
 agcls.AgTypeNameMap["SearchPluginResultCollection"] = SearchPluginResultCollection
 
 class ProfileChangeManeuverType(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -16164,7 +16515,7 @@ class ProfileChangeManeuverType(IProfile, IRuntimeTypeInfoProvider, SupportsDele
     _get_maneuver_type_method_offset = 3
     _set_maneuver_type_method_offset = 4
     _metadata = {
-        "iid_data" : (4638741168878062177, 15357931456736488104),
+        "iid_data" : (5012423564522499787, 15951028312416667818),
         "vtable_reference" : IProfile._vtable_offset + IProfile._num_methods - 1,
     }
     _property_names = {}
@@ -16221,7 +16572,7 @@ class ProfileChangeManeuverType(IProfile, IRuntimeTypeInfoProvider, SupportsDele
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProfileChangeManeuverType, [ProfileChangeManeuverType, IProfile, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5514825464600670224, 11753580946685421731), ProfileChangeManeuverType)
+agcls.AgClassCatalog.add_catalog_entry((4818878491477786299, 564327659436956323), ProfileChangeManeuverType)
 agcls.AgTypeNameMap["ProfileChangeManeuverType"] = ProfileChangeManeuverType
 
 class ProfileChangeReturnSegment(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -16235,7 +16586,7 @@ class ProfileChangeReturnSegment(IProfile, IRuntimeTypeInfoProvider, SupportsDel
     _get_state_method_offset = 4
     _set_state_method_offset = 5
     _metadata = {
-        "iid_data" : (4705165520827975122, 8995277470071094949),
+        "iid_data" : (5495083661829071458, 6587009536066586527),
         "vtable_reference" : IProfile._vtable_offset + IProfile._num_methods - 1,
     }
     _property_names = {}
@@ -16299,7 +16650,7 @@ class ProfileChangeReturnSegment(IProfile, IRuntimeTypeInfoProvider, SupportsDel
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProfileChangeReturnSegment, [ProfileChangeReturnSegment, IProfile, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4746376939470809221, 4289144284289568669), ProfileChangeReturnSegment)
+agcls.AgClassCatalog.add_catalog_entry((4719101657772880890, 8127891880029041542), ProfileChangeReturnSegment)
 agcls.AgTypeNameMap["ProfileChangeReturnSegment"] = ProfileChangeReturnSegment
 
 class ProfileChangePropagator(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -16313,7 +16664,7 @@ class ProfileChangePropagator(IProfile, IRuntimeTypeInfoProvider, SupportsDelete
     _get_propagator_name_method_offset = 4
     _set_propagator_name_method_offset = 5
     _metadata = {
-        "iid_data" : (4634704878393296108, 17784937878159440318),
+        "iid_data" : (4682307392937360564, 16039672550576812443),
         "vtable_reference" : IProfile._vtable_offset + IProfile._num_methods - 1,
     }
     _property_names = {}
@@ -16377,7 +16728,7 @@ class ProfileChangePropagator(IProfile, IRuntimeTypeInfoProvider, SupportsDelete
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProfileChangePropagator, [ProfileChangePropagator, IProfile, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4917428364571480839, 14790385948966539179), ProfileChangePropagator)
+agcls.AgClassCatalog.add_catalog_entry((5487418280822730089, 5371476669683059602), ProfileChangePropagator)
 agcls.AgTypeNameMap["ProfileChangePropagator"] = ProfileChangePropagator
 
 class ProfileChangeStopSegment(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -16391,7 +16742,7 @@ class ProfileChangeStopSegment(IProfile, IRuntimeTypeInfoProvider, SupportsDelet
     _get_state_method_offset = 4
     _set_state_method_offset = 5
     _metadata = {
-        "iid_data" : (4939758405760454184, 7478107008343462300),
+        "iid_data" : (5031589996437564261, 12847383753692740256),
         "vtable_reference" : IProfile._vtable_offset + IProfile._num_methods - 1,
     }
     _property_names = {}
@@ -16455,7 +16806,7 @@ class ProfileChangeStopSegment(IProfile, IRuntimeTypeInfoProvider, SupportsDelet
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProfileChangeStopSegment, [ProfileChangeStopSegment, IProfile, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5176652920498491223, 12779532205614345663), ProfileChangeStopSegment)
+agcls.AgClassCatalog.add_catalog_entry((5633695990273905122, 15571565479931909546), ProfileChangeStopSegment)
 agcls.AgTypeNameMap["ProfileChangeStopSegment"] = ProfileChangeStopSegment
 
 class ProfileChangeStoppingConditionState(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -16472,7 +16823,7 @@ class ProfileChangeStoppingConditionState(IProfile, IRuntimeTypeInfoProvider, Su
     _get_trigger_name_method_offset = 7
     _set_trigger_name_method_offset = 8
     _metadata = {
-        "iid_data" : (5430643143655333764, 9065193238726384518),
+        "iid_data" : (5280529809057620933, 4391421944101408414),
         "vtable_reference" : IProfile._vtable_offset + IProfile._num_methods - 1,
     }
     _property_names = {}
@@ -16559,7 +16910,7 @@ class ProfileChangeStoppingConditionState(IProfile, IRuntimeTypeInfoProvider, Su
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProfileChangeStoppingConditionState, [ProfileChangeStoppingConditionState, IProfile, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4678353966876850557, 14685284640460450435), ProfileChangeStoppingConditionState)
+agcls.AgClassCatalog.add_catalog_entry((5641392780839695330, 4044729580911280276), ProfileChangeStoppingConditionState)
 agcls.AgTypeNameMap["ProfileChangeStoppingConditionState"] = ProfileChangeStoppingConditionState
 
 class ProfileSeedFiniteManeuver(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -16573,7 +16924,7 @@ class ProfileSeedFiniteManeuver(IProfile, IRuntimeTypeInfoProvider, SupportsDele
     _get_leave_all_active_stopping_conditions_active_method_offset = 4
     _set_leave_all_active_stopping_conditions_active_method_offset = 5
     _metadata = {
-        "iid_data" : (5161634194327496149, 14603357244715454085),
+        "iid_data" : (5127727667179262977, 13864902881792389272),
         "vtable_reference" : IProfile._vtable_offset + IProfile._num_methods - 1,
     }
     _property_names = {}
@@ -16637,7 +16988,7 @@ class ProfileSeedFiniteManeuver(IProfile, IRuntimeTypeInfoProvider, SupportsDele
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProfileSeedFiniteManeuver, [ProfileSeedFiniteManeuver, IProfile, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4619183164175431290, 12957669796538914955), ProfileSeedFiniteManeuver)
+agcls.AgClassCatalog.add_catalog_entry((5439849779731376425, 13064764866388347042), ProfileSeedFiniteManeuver)
 agcls.AgTypeNameMap["ProfileSeedFiniteManeuver"] = ProfileSeedFiniteManeuver
 
 class ProfileRunOnce(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -16646,7 +16997,7 @@ class ProfileRunOnce(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback)
     _num_methods = 0
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _metadata = {
-        "iid_data" : (5362986155356147363, 15814818936516716949),
+        "iid_data" : (5380877317030337984, 9697730006552870025),
         "vtable_reference" : IProfile._vtable_offset + IProfile._num_methods - 1,
     }
     _property_names = {}
@@ -16671,7 +17022,7 @@ class ProfileRunOnce(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback)
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProfileRunOnce, [ProfileRunOnce, IProfile, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5722064001165018176, 12997517095273249469), ProfileRunOnce)
+agcls.AgClassCatalog.add_catalog_entry((4987300248091983164, 12785340393108417970), ProfileRunOnce)
 agcls.AgTypeNameMap["ProfileRunOnce"] = ProfileRunOnce
 
 class BPlaneCollection(SupportsDeleteCallback):
@@ -16686,7 +17037,7 @@ class BPlaneCollection(SupportsDeleteCallback):
     _get__new_enum_method_offset = 5
     _get_count_method_offset = 6
     _metadata = {
-        "iid_data" : (5594941962752983119, 13562937374643146671),
+        "iid_data" : (5067641688339090214, 2687421274233995423),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -16769,7 +17120,7 @@ class BPlaneCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BPlaneCollection, [BPlaneCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5110455434975895853, 10166370749291811978), BPlaneCollection)
+agcls.AgClassCatalog.add_catalog_entry((5589220156609813836, 2553636027153812874), BPlaneCollection)
 agcls.AgTypeNameMap["BPlaneCollection"] = BPlaneCollection
 
 class StateCalcDamageFlux(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -16778,7 +17129,7 @@ class StateCalcDamageFlux(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5064599181893483132, 838052118368786821),
+        "iid_data" : (4851253080242640413, 8068390923453085329),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16803,7 +17154,7 @@ class StateCalcDamageFlux(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcDamageFlux, [StateCalcDamageFlux, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5061318997549054970, 5706412726880589720), StateCalcDamageFlux)
+agcls.AgClassCatalog.add_catalog_entry((5038712399815331960, 9032113844818128573), StateCalcDamageFlux)
 agcls.AgTypeNameMap["StateCalcDamageFlux"] = StateCalcDamageFlux
 
 class StateCalcDamageMassFlux(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -16812,7 +17163,7 @@ class StateCalcDamageMassFlux(IComponentInfo, ICloneable, SupportsDeleteCallback
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5323133528960076198, 12570579641122910654),
+        "iid_data" : (5015214692786357622, 4383571203374634663),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16837,7 +17188,7 @@ class StateCalcDamageMassFlux(IComponentInfo, ICloneable, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcDamageMassFlux, [StateCalcDamageMassFlux, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4973428904588242653, 6958212153847005885), StateCalcDamageMassFlux)
+agcls.AgClassCatalog.add_catalog_entry((5444290781104767514, 10085869265401628591), StateCalcDamageMassFlux)
 agcls.AgTypeNameMap["StateCalcDamageMassFlux"] = StateCalcDamageMassFlux
 
 class StateCalcMagneticFieldDipoleL(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -16846,7 +17197,7 @@ class StateCalcMagneticFieldDipoleL(IComponentInfo, ICloneable, SupportsDeleteCa
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5572993639986105434, 2150862437823850410),
+        "iid_data" : (5462243756992333189, 9705762921774514844),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16871,7 +17222,7 @@ class StateCalcMagneticFieldDipoleL(IComponentInfo, ICloneable, SupportsDeleteCa
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcMagneticFieldDipoleL, [StateCalcMagneticFieldDipoleL, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4679876560310607257, 8310578291428709278), StateCalcMagneticFieldDipoleL)
+agcls.AgClassCatalog.add_catalog_entry((5498456464655499079, 12565131446175297970), StateCalcMagneticFieldDipoleL)
 agcls.AgTypeNameMap["StateCalcMagneticFieldDipoleL"] = StateCalcMagneticFieldDipoleL
 
 class StateCalcSEETMagneticFieldLineSeparationAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -16881,7 +17232,7 @@ class StateCalcSEETMagneticFieldLineSeparationAngle(IComponentInfo, ICloneable, 
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_target_object_method_offset = 1
     _metadata = {
-        "iid_data" : (5335771638573946346, 7564082294565021117),
+        "iid_data" : (5264431695562364440, 13820833398582206347),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16915,7 +17266,7 @@ class StateCalcSEETMagneticFieldLineSeparationAngle(IComponentInfo, ICloneable, 
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcSEETMagneticFieldLineSeparationAngle, [StateCalcSEETMagneticFieldLineSeparationAngle, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5587815812935971298, 7525019620982063505), StateCalcSEETMagneticFieldLineSeparationAngle)
+agcls.AgClassCatalog.add_catalog_entry((5616334004454975355, 2815166125711539903), StateCalcSEETMagneticFieldLineSeparationAngle)
 agcls.AgTypeNameMap["StateCalcSEETMagneticFieldLineSeparationAngle"] = StateCalcSEETMagneticFieldLineSeparationAngle
 
 class StateCalcImpactFlux(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -16924,7 +17275,7 @@ class StateCalcImpactFlux(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (4712475622720863446, 9874820785248486066),
+        "iid_data" : (4837198736989027543, 13851228545575263142),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16949,7 +17300,7 @@ class StateCalcImpactFlux(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcImpactFlux, [StateCalcImpactFlux, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5205176986868350023, 2621073616466898844), StateCalcImpactFlux)
+agcls.AgClassCatalog.add_catalog_entry((5001763298366176187, 6328514701391371943), StateCalcImpactFlux)
 agcls.AgTypeNameMap["StateCalcImpactFlux"] = StateCalcImpactFlux
 
 class StateCalcImpactMassFlux(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -16958,7 +17309,7 @@ class StateCalcImpactMassFlux(IComponentInfo, ICloneable, SupportsDeleteCallback
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5663867202832921241, 12848046706352279460),
+        "iid_data" : (4718695623288534681, 18417066863093836943),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -16983,7 +17334,7 @@ class StateCalcImpactMassFlux(IComponentInfo, ICloneable, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcImpactMassFlux, [StateCalcImpactMassFlux, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5270447181510537100, 9273433778213163966), StateCalcImpactMassFlux)
+agcls.AgClassCatalog.add_catalog_entry((5627444001640472758, 13917758478808867979), StateCalcImpactMassFlux)
 agcls.AgTypeNameMap["StateCalcImpactMassFlux"] = StateCalcImpactMassFlux
 
 class StateCalcSEETSAAFlux(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -16992,7 +17343,7 @@ class StateCalcSEETSAAFlux(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5229848331502696195, 11640390802336049814),
+        "iid_data" : (4775109730458219340, 9304930579967054243),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17017,7 +17368,7 @@ class StateCalcSEETSAAFlux(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcSEETSAAFlux, [StateCalcSEETSAAFlux, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5390130523806265182, 8748824487015767454), StateCalcSEETSAAFlux)
+agcls.AgClassCatalog.add_catalog_entry((5458297060935937314, 4551776206549141651), StateCalcSEETSAAFlux)
 agcls.AgTypeNameMap["StateCalcSEETSAAFlux"] = StateCalcSEETSAAFlux
 
 class StateCalcSEETVehTemp(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -17026,7 +17377,7 @@ class StateCalcSEETVehTemp(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5710340041284306171, 10643006267837267871),
+        "iid_data" : (4906203759864325008, 11067523864163111097),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17051,7 +17402,7 @@ class StateCalcSEETVehTemp(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcSEETVehTemp, [StateCalcSEETVehTemp, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5450830750262536790, 298824803349435582), StateCalcSEETVehTemp)
+agcls.AgClassCatalog.add_catalog_entry((4668888585799371676, 12109426344721477787), StateCalcSEETVehTemp)
 agcls.AgTypeNameMap["StateCalcSEETVehTemp"] = StateCalcSEETVehTemp
 
 class StateCalcEpoch(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -17060,7 +17411,7 @@ class StateCalcEpoch(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (4735976942903942727, 11382373395637864086),
+        "iid_data" : (5608971576868580372, 10823345412087880576),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17085,7 +17436,7 @@ class StateCalcEpoch(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcEpoch, [StateCalcEpoch, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5546769491034375944, 206659031291144346), StateCalcEpoch)
+agcls.AgClassCatalog.add_catalog_entry((5664441870569349387, 7552061562880875451), StateCalcEpoch)
 agcls.AgTypeNameMap["StateCalcEpoch"] = StateCalcEpoch
 
 class StateCalcJacobiConstant(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -17094,7 +17445,7 @@ class StateCalcJacobiConstant(IComponentInfo, ICloneable, SupportsDeleteCallback
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5313931721597877856, 6320025579692878468),
+        "iid_data" : (4867999056399487574, 2383890918758830208),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17119,7 +17470,7 @@ class StateCalcJacobiConstant(IComponentInfo, ICloneable, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcJacobiConstant, [StateCalcJacobiConstant, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4926408186651605609, 4266894203843328418), StateCalcJacobiConstant)
+agcls.AgClassCatalog.add_catalog_entry((5599889155201430790, 17905937721706115982), StateCalcJacobiConstant)
 agcls.AgTypeNameMap["StateCalcJacobiConstant"] = StateCalcJacobiConstant
 
 class StateCalcJacobiOsculating(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -17132,7 +17483,7 @@ class StateCalcJacobiOsculating(IComponentInfo, ICloneable, SupportsDeleteCallba
     _get_secondary_name_method_offset = 3
     _set_secondary_name_method_offset = 4
     _metadata = {
-        "iid_data" : (4962445305111709194, 10572901812271851444),
+        "iid_data" : (5553257773179745223, 8732814584236322227),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17189,7 +17540,7 @@ class StateCalcJacobiOsculating(IComponentInfo, ICloneable, SupportsDeleteCallba
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcJacobiOsculating, [StateCalcJacobiOsculating, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4893148544095721651, 9245737750026533311), StateCalcJacobiOsculating)
+agcls.AgClassCatalog.add_catalog_entry((5639942727413613083, 1912512739118073777), StateCalcJacobiOsculating)
 agcls.AgTypeNameMap["StateCalcJacobiOsculating"] = StateCalcJacobiOsculating
 
 class StateCalcCartesianElem(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -17200,7 +17551,7 @@ class StateCalcCartesianElem(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _get_coord_system_name_method_offset = 1
     _set_coord_system_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5592104075436038276, 13656611350088774319),
+        "iid_data" : (5323499555715844270, 8908747278339656624),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17241,7 +17592,7 @@ class StateCalcCartesianElem(IComponentInfo, ICloneable, SupportsDeleteCallback)
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcCartesianElem, [StateCalcCartesianElem, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5671576764808850599, 13911282508128967061), StateCalcCartesianElem)
+agcls.AgClassCatalog.add_catalog_entry((5017966591674090461, 16556271488514404535), StateCalcCartesianElem)
 agcls.AgTypeNameMap["StateCalcCartesianElem"] = StateCalcCartesianElem
 
 class StateCalcCartSTMElem(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -17256,7 +17607,7 @@ class StateCalcCartSTMElem(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_initial_state_component_method_offset = 5
     _set_initial_state_component_method_offset = 6
     _metadata = {
-        "iid_data" : (4663303186423105219, 10757831706775060869),
+        "iid_data" : (5593171326008693986, 11368444729959808923),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17329,7 +17680,7 @@ class StateCalcCartSTMElem(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcCartSTMElem, [StateCalcCartSTMElem, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4764427105086404315, 18352981306806488972), StateCalcCartSTMElem)
+agcls.AgClassCatalog.add_catalog_entry((4823526517743082341, 13422909624296815025), StateCalcCartSTMElem)
 agcls.AgTypeNameMap["StateCalcCartSTMElem"] = StateCalcCartSTMElem
 
 class StateCalcSTMEigenval(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -17344,7 +17695,7 @@ class StateCalcSTMEigenval(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_eigenvalue_complex_part_method_offset = 5
     _set_eigenvalue_complex_part_method_offset = 6
     _metadata = {
-        "iid_data" : (4683699417864441378, 8882850736444958850),
+        "iid_data" : (5101830918022690774, 8723156881079659707),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17417,7 +17768,7 @@ class StateCalcSTMEigenval(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcSTMEigenval, [StateCalcSTMEigenval, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4668678151179349103, 6834144943639096487), StateCalcSTMEigenval)
+agcls.AgClassCatalog.add_catalog_entry((4988430719767623844, 9056102702725774725), StateCalcSTMEigenval)
 agcls.AgTypeNameMap["StateCalcSTMEigenval"] = StateCalcSTMEigenval
 
 class StateCalcSTMEigenvecElem(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -17434,7 +17785,7 @@ class StateCalcSTMEigenvecElem(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _get_eigenvector_complex_part_method_offset = 7
     _set_eigenvector_complex_part_method_offset = 8
     _metadata = {
-        "iid_data" : (5656549373487126346, 16982121463062240904),
+        "iid_data" : (5061567825351446069, 3744035615283053234),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17523,7 +17874,7 @@ class StateCalcSTMEigenvecElem(IComponentInfo, ICloneable, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcSTMEigenvecElem, [StateCalcSTMEigenvecElem, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5648792996863224538, 14390084934938091964), StateCalcSTMEigenvecElem)
+agcls.AgClassCatalog.add_catalog_entry((4796587326059639357, 15952837495971805599), StateCalcSTMEigenvecElem)
 agcls.AgTypeNameMap["StateCalcSTMEigenvecElem"] = StateCalcSTMEigenvecElem
 
 class StateCalcEnvironment(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -17536,7 +17887,7 @@ class StateCalcEnvironment(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_atmosphere_model_name_method_offset = 3
     _set_atmosphere_model_name_method_offset = 4
     _metadata = {
-        "iid_data" : (4823976028697900760, 927912681356112823),
+        "iid_data" : (5589241828993826097, 6481065499042731659),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17593,7 +17944,7 @@ class StateCalcEnvironment(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcEnvironment, [StateCalcEnvironment, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5228943156068851180, 17757122866649733292), StateCalcEnvironment)
+agcls.AgClassCatalog.add_catalog_entry((5260626653724653323, 9977511799265735603), StateCalcEnvironment)
 agcls.AgTypeNameMap["StateCalcEnvironment"] = StateCalcEnvironment
 
 class StateCalcOrbitDelaunayG(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -17606,7 +17957,7 @@ class StateCalcOrbitDelaunayG(IComponentInfo, ICloneable, SupportsDeleteCallback
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (4629954694119662350, 8751096521941454219),
+        "iid_data" : (5284350761036400313, 2407530798905131405),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17665,7 +18016,7 @@ class StateCalcOrbitDelaunayG(IComponentInfo, ICloneable, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcOrbitDelaunayG, [StateCalcOrbitDelaunayG, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4685955006802271629, 16763781113943652765), StateCalcOrbitDelaunayG)
+agcls.AgClassCatalog.add_catalog_entry((4682083171245728730, 9804914088590306176), StateCalcOrbitDelaunayG)
 agcls.AgTypeNameMap["StateCalcOrbitDelaunayG"] = StateCalcOrbitDelaunayG
 
 class StateCalcOrbitDelaunayH(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -17678,7 +18029,7 @@ class StateCalcOrbitDelaunayH(IComponentInfo, ICloneable, SupportsDeleteCallback
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (4828188022700843748, 13086359271346066049),
+        "iid_data" : (5033472756756977168, 18072596076268962461),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17737,7 +18088,7 @@ class StateCalcOrbitDelaunayH(IComponentInfo, ICloneable, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcOrbitDelaunayH, [StateCalcOrbitDelaunayH, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4695981083676433439, 17340207238014231457), StateCalcOrbitDelaunayH)
+agcls.AgClassCatalog.add_catalog_entry((5341019074518835228, 4664118499080853172), StateCalcOrbitDelaunayH)
 agcls.AgTypeNameMap["StateCalcOrbitDelaunayH"] = StateCalcOrbitDelaunayH
 
 class StateCalcOrbitDelaunayL(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -17750,7 +18101,7 @@ class StateCalcOrbitDelaunayL(IComponentInfo, ICloneable, SupportsDeleteCallback
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5043781925077325770, 5014519046419148467),
+        "iid_data" : (5642681606074597712, 5081178740989031857),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17809,7 +18160,7 @@ class StateCalcOrbitDelaunayL(IComponentInfo, ICloneable, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcOrbitDelaunayL, [StateCalcOrbitDelaunayL, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5342683362640941046, 3476677555251016876), StateCalcOrbitDelaunayL)
+agcls.AgClassCatalog.add_catalog_entry((5659529453059915562, 3753306027115678619), StateCalcOrbitDelaunayL)
 agcls.AgTypeNameMap["StateCalcOrbitDelaunayL"] = StateCalcOrbitDelaunayL
 
 class StateCalcOrbitSemilatusRectum(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -17822,7 +18173,7 @@ class StateCalcOrbitSemilatusRectum(IComponentInfo, ICloneable, SupportsDeleteCa
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (4727248633391047542, 9754913951693591686),
+        "iid_data" : (5455825181269028999, 6528009791898745270),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17881,7 +18232,7 @@ class StateCalcOrbitSemilatusRectum(IComponentInfo, ICloneable, SupportsDeleteCa
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcOrbitSemilatusRectum, [StateCalcOrbitSemilatusRectum, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5167808672944813185, 3570909631788799361), StateCalcOrbitSemilatusRectum)
+agcls.AgClassCatalog.add_catalog_entry((5369955793301520525, 8519898309992614530), StateCalcOrbitSemilatusRectum)
 agcls.AgTypeNameMap["StateCalcOrbitSemilatusRectum"] = StateCalcOrbitSemilatusRectum
 
 class StateCalcEquinoctialElem(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -17894,7 +18245,7 @@ class StateCalcEquinoctialElem(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (4687629718843532572, 7588634511906910083),
+        "iid_data" : (5251795340013275933, 8841085161218985368),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -17951,7 +18302,7 @@ class StateCalcEquinoctialElem(IComponentInfo, ICloneable, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcEquinoctialElem, [StateCalcEquinoctialElem, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5398742840011437893, 227870584704275350), StateCalcEquinoctialElem)
+agcls.AgClassCatalog.add_catalog_entry((4653382240330834467, 3572821911957716632), StateCalcEquinoctialElem)
 agcls.AgTypeNameMap["StateCalcEquinoctialElem"] = StateCalcEquinoctialElem
 
 class StateCalcCloseApproachBearing(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -17965,7 +18316,7 @@ class StateCalcCloseApproachBearing(IComponentInfo, ICloneable, SupportsDeleteCa
     _set_reference_selection_method_offset = 4
     _get_reference_method_offset = 5
     _metadata = {
-        "iid_data" : (5677747572906750359, 17530109461809240255),
+        "iid_data" : (4681744353396598612, 2051215965520658364),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18031,7 +18382,7 @@ class StateCalcCloseApproachBearing(IComponentInfo, ICloneable, SupportsDeleteCa
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcCloseApproachBearing, [StateCalcCloseApproachBearing, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5673849013798805503, 12351132588816539044), StateCalcCloseApproachBearing)
+agcls.AgClassCatalog.add_catalog_entry((5437766695338759153, 8286111405107066292), StateCalcCloseApproachBearing)
 agcls.AgTypeNameMap["StateCalcCloseApproachBearing"] = StateCalcCloseApproachBearing
 
 class StateCalcCloseApproachMagnitude(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -18045,7 +18396,7 @@ class StateCalcCloseApproachMagnitude(IComponentInfo, ICloneable, SupportsDelete
     _set_reference_selection_method_offset = 4
     _get_reference_method_offset = 5
     _metadata = {
-        "iid_data" : (5096713311629407959, 7012635135066643106),
+        "iid_data" : (5082431186285923162, 334146165189956495),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18111,7 +18462,7 @@ class StateCalcCloseApproachMagnitude(IComponentInfo, ICloneable, SupportsDelete
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcCloseApproachMagnitude, [StateCalcCloseApproachMagnitude, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4806523612511477556, 15183989687545663893), StateCalcCloseApproachMagnitude)
+agcls.AgClassCatalog.add_catalog_entry((4806273762713066271, 7679734147388945831), StateCalcCloseApproachMagnitude)
 agcls.AgTypeNameMap["StateCalcCloseApproachMagnitude"] = StateCalcCloseApproachMagnitude
 
 class StateCalcCloseApproachTheta(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -18125,7 +18476,7 @@ class StateCalcCloseApproachTheta(IComponentInfo, ICloneable, SupportsDeleteCall
     _set_reference_selection_method_offset = 4
     _get_reference_method_offset = 5
     _metadata = {
-        "iid_data" : (5543110129027246069, 1448557117509499520),
+        "iid_data" : (4673544525578232881, 13643018472360619923),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18191,7 +18542,7 @@ class StateCalcCloseApproachTheta(IComponentInfo, ICloneable, SupportsDeleteCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcCloseApproachTheta, [StateCalcCloseApproachTheta, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4909532356409140730, 18100928748041625783), StateCalcCloseApproachTheta)
+agcls.AgClassCatalog.add_catalog_entry((5368170434376541760, 13014801083577509286), StateCalcCloseApproachTheta)
 agcls.AgTypeNameMap["StateCalcCloseApproachTheta"] = StateCalcCloseApproachTheta
 
 class StateCalcCloseApproachX(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -18205,7 +18556,7 @@ class StateCalcCloseApproachX(IComponentInfo, ICloneable, SupportsDeleteCallback
     _set_reference_selection_method_offset = 4
     _get_reference_method_offset = 5
     _metadata = {
-        "iid_data" : (5703412290879946724, 17147536145516108952),
+        "iid_data" : (5701358851748318563, 15769978030627180686),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18271,7 +18622,7 @@ class StateCalcCloseApproachX(IComponentInfo, ICloneable, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcCloseApproachX, [StateCalcCloseApproachX, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5353198940786789077, 95422187460363692), StateCalcCloseApproachX)
+agcls.AgClassCatalog.add_catalog_entry((5312108988222017849, 5170168343611509142), StateCalcCloseApproachX)
 agcls.AgTypeNameMap["StateCalcCloseApproachX"] = StateCalcCloseApproachX
 
 class StateCalcCloseApproachY(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -18285,7 +18636,7 @@ class StateCalcCloseApproachY(IComponentInfo, ICloneable, SupportsDeleteCallback
     _set_reference_selection_method_offset = 4
     _get_reference_method_offset = 5
     _metadata = {
-        "iid_data" : (5341388972549716688, 7926797166447798699),
+        "iid_data" : (5470174571412629749, 3642524518628213641),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18351,7 +18702,7 @@ class StateCalcCloseApproachY(IComponentInfo, ICloneable, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcCloseApproachY, [StateCalcCloseApproachY, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5349645181006472612, 9759450691620504739), StateCalcCloseApproachY)
+agcls.AgClassCatalog.add_catalog_entry((5695517042471576907, 13290300235222006970), StateCalcCloseApproachY)
 agcls.AgTypeNameMap["StateCalcCloseApproachY"] = StateCalcCloseApproachY
 
 class StateCalcCloseApproachCosBearing(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -18365,7 +18716,7 @@ class StateCalcCloseApproachCosBearing(IComponentInfo, ICloneable, SupportsDelet
     _set_reference_selection_method_offset = 4
     _get_reference_method_offset = 5
     _metadata = {
-        "iid_data" : (5319004906284090405, 2840766454167777156),
+        "iid_data" : (4717139664449692338, 15477159846426325685),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18431,7 +18782,7 @@ class StateCalcCloseApproachCosBearing(IComponentInfo, ICloneable, SupportsDelet
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcCloseApproachCosBearing, [StateCalcCloseApproachCosBearing, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5505780054597041956, 16274471926901001118), StateCalcCloseApproachCosBearing)
+agcls.AgClassCatalog.add_catalog_entry((4853984097528427182, 5192019788346358450), StateCalcCloseApproachCosBearing)
 agcls.AgTypeNameMap["StateCalcCloseApproachCosBearing"] = StateCalcCloseApproachCosBearing
 
 class StateCalcRelativeGroundTrackError(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -18449,7 +18800,7 @@ class StateCalcRelativeGroundTrackError(IComponentInfo, ICloneable, SupportsDele
     _set_reference_selection_method_offset = 8
     _get_reference_method_offset = 9
     _metadata = {
-        "iid_data" : (5429647627719116828, 4957543161310045354),
+        "iid_data" : (5721587713560159346, 13633987993948077194),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18547,7 +18898,7 @@ class StateCalcRelativeGroundTrackError(IComponentInfo, ICloneable, SupportsDele
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcRelativeGroundTrackError, [StateCalcRelativeGroundTrackError, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4720669564841700935, 1002250866014191547), StateCalcRelativeGroundTrackError)
+agcls.AgClassCatalog.add_catalog_entry((5289128936531602488, 13563165268198546330), StateCalcRelativeGroundTrackError)
 agcls.AgTypeNameMap["StateCalcRelativeGroundTrackError"] = StateCalcRelativeGroundTrackError
 
 class StateCalcRelativeAtAOLMaster(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -18565,7 +18916,7 @@ class StateCalcRelativeAtAOLMaster(IComponentInfo, ICloneable, SupportsDeleteCal
     _set_reference_selection_method_offset = 8
     _get_reference_method_offset = 9
     _metadata = {
-        "iid_data" : (5046657111336222496, 5887915217920829318),
+        "iid_data" : (5445246670103322115, 15456424694510789010),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18663,7 +19014,7 @@ class StateCalcRelativeAtAOLMaster(IComponentInfo, ICloneable, SupportsDeleteCal
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcRelativeAtAOLMaster, [StateCalcRelativeAtAOLMaster, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4849229807442923025, 3055985504414007725), StateCalcRelativeAtAOLMaster)
+agcls.AgClassCatalog.add_catalog_entry((4708904706881434368, 1310654914466002591), StateCalcRelativeAtAOLMaster)
 agcls.AgTypeNameMap["StateCalcRelativeAtAOLMaster"] = StateCalcRelativeAtAOLMaster
 
 class StateCalcDeltaFromMaster(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -18677,7 +19028,7 @@ class StateCalcDeltaFromMaster(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _set_reference_selection_method_offset = 4
     _get_reference_method_offset = 5
     _metadata = {
-        "iid_data" : (4814878964340470878, 16005736277946868411),
+        "iid_data" : (5678238496916260817, 13554492050789135500),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18743,7 +19094,7 @@ class StateCalcDeltaFromMaster(IComponentInfo, ICloneable, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcDeltaFromMaster, [StateCalcDeltaFromMaster, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4703993515557400644, 17614379936262850950), StateCalcDeltaFromMaster)
+agcls.AgClassCatalog.add_catalog_entry((5076852655717682763, 4209482661970510003), StateCalcDeltaFromMaster)
 agcls.AgTypeNameMap["StateCalcDeltaFromMaster"] = StateCalcDeltaFromMaster
 
 class StateCalcLonDriftRate(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -18756,7 +19107,7 @@ class StateCalcLonDriftRate(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (4984696819182526163, 17998640845723229365),
+        "iid_data" : (4773896754221417365, 16733774380026838948),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18813,7 +19164,7 @@ class StateCalcLonDriftRate(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcLonDriftRate, [StateCalcLonDriftRate, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4810368111146926421, 10706735339631060658), StateCalcLonDriftRate)
+agcls.AgClassCatalog.add_catalog_entry((5351272323401717100, 8076287913785454527), StateCalcLonDriftRate)
 agcls.AgTypeNameMap["StateCalcLonDriftRate"] = StateCalcLonDriftRate
 
 class StateCalcMeanEarthLon(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -18824,7 +19175,7 @@ class StateCalcMeanEarthLon(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5644491088733836955, 17171648271203899024),
+        "iid_data" : (4885479659820260060, 10031435953460269474),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18865,7 +19216,7 @@ class StateCalcMeanEarthLon(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcMeanEarthLon, [StateCalcMeanEarthLon, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4611762585032604408, 12477000884665354939), StateCalcMeanEarthLon)
+agcls.AgClassCatalog.add_catalog_entry((4762886981847590856, 16978453872166661306), StateCalcMeanEarthLon)
 agcls.AgTypeNameMap["StateCalcMeanEarthLon"] = StateCalcMeanEarthLon
 
 class StateCalcRectifiedLon(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -18876,7 +19227,7 @@ class StateCalcRectifiedLon(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5312716339989036234, 6717266252030860970),
+        "iid_data" : (5247593902517999104, 248773960016496040),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18917,7 +19268,7 @@ class StateCalcRectifiedLon(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcRectifiedLon, [StateCalcRectifiedLon, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5561226218367470789, 8835336233279258043), StateCalcRectifiedLon)
+agcls.AgClassCatalog.add_catalog_entry((5340593998574833988, 1482107467519228294), StateCalcRectifiedLon)
 agcls.AgTypeNameMap["StateCalcRectifiedLon"] = StateCalcRectifiedLon
 
 class StateCalcTrueLongitude(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -18928,7 +19279,7 @@ class StateCalcTrueLongitude(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (4646564303455954466, 8643954749026340259),
+        "iid_data" : (5671506158498601123, 17851849063373152385),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -18969,7 +19320,7 @@ class StateCalcTrueLongitude(IComponentInfo, ICloneable, SupportsDeleteCallback)
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcTrueLongitude, [StateCalcTrueLongitude, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5081472865222949767, 13080973831116124831), StateCalcTrueLongitude)
+agcls.AgClassCatalog.add_catalog_entry((5733861437765373558, 4787613484159945403), StateCalcTrueLongitude)
 agcls.AgTypeNameMap["StateCalcTrueLongitude"] = StateCalcTrueLongitude
 
 class StateCalcGeodeticTrueLongitude(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -18980,7 +19331,7 @@ class StateCalcGeodeticTrueLongitude(IComponentInfo, ICloneable, SupportsDeleteC
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5154862674554485027, 12869896454512467592),
+        "iid_data" : (5293716697928242231, 15855942658083753660),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19021,7 +19372,7 @@ class StateCalcGeodeticTrueLongitude(IComponentInfo, ICloneable, SupportsDeleteC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcGeodeticTrueLongitude, [StateCalcGeodeticTrueLongitude, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5561180435966022811, 7429962574372477857), StateCalcGeodeticTrueLongitude)
+agcls.AgClassCatalog.add_catalog_entry((5662625716403494455, 13060926128479119773), StateCalcGeodeticTrueLongitude)
 agcls.AgTypeNameMap["StateCalcGeodeticTrueLongitude"] = StateCalcGeodeticTrueLongitude
 
 class StateCalcGeodeticTrueLongitudeAtTimeOfPerigee(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -19032,7 +19383,7 @@ class StateCalcGeodeticTrueLongitudeAtTimeOfPerigee(IComponentInfo, ICloneable, 
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5549871358551969066, 16300921313053700520),
+        "iid_data" : (5515621489256400977, 16732908459990200987),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19073,7 +19424,7 @@ class StateCalcGeodeticTrueLongitudeAtTimeOfPerigee(IComponentInfo, ICloneable, 
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcGeodeticTrueLongitudeAtTimeOfPerigee, [StateCalcGeodeticTrueLongitudeAtTimeOfPerigee, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5219991753247005554, 16509626988308879526), StateCalcGeodeticTrueLongitudeAtTimeOfPerigee)
+agcls.AgClassCatalog.add_catalog_entry((5560772750486086008, 9401971922007325329), StateCalcGeodeticTrueLongitudeAtTimeOfPerigee)
 agcls.AgTypeNameMap["StateCalcGeodeticTrueLongitudeAtTimeOfPerigee"] = StateCalcGeodeticTrueLongitudeAtTimeOfPerigee
 
 class StateCalcMeanRightAscension(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -19084,7 +19435,7 @@ class StateCalcMeanRightAscension(IComponentInfo, ICloneable, SupportsDeleteCall
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5048103804478321115, 12837897915778585227),
+        "iid_data" : (5148427476347100897, 603965794277859753),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19125,7 +19476,7 @@ class StateCalcMeanRightAscension(IComponentInfo, ICloneable, SupportsDeleteCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcMeanRightAscension, [StateCalcMeanRightAscension, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5672415644848178978, 12226805203773668537), StateCalcMeanRightAscension)
+agcls.AgClassCatalog.add_catalog_entry((5562392158400637929, 12610202378785989044), StateCalcMeanRightAscension)
 agcls.AgTypeNameMap["StateCalcMeanRightAscension"] = StateCalcMeanRightAscension
 
 class StateCalcGeodeticMeanRightAscension(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -19136,7 +19487,7 @@ class StateCalcGeodeticMeanRightAscension(IComponentInfo, ICloneable, SupportsDe
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5344325760036946824, 18191401588842309799),
+        "iid_data" : (4689959314653526274, 10074620139707513006),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19177,7 +19528,7 @@ class StateCalcGeodeticMeanRightAscension(IComponentInfo, ICloneable, SupportsDe
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcGeodeticMeanRightAscension, [StateCalcGeodeticMeanRightAscension, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5378244282744007939, 15680331730474888836), StateCalcGeodeticMeanRightAscension)
+agcls.AgClassCatalog.add_catalog_entry((5203929746708069649, 15145096405876888222), StateCalcGeodeticMeanRightAscension)
 agcls.AgTypeNameMap["StateCalcGeodeticMeanRightAscension"] = StateCalcGeodeticMeanRightAscension
 
 class StateCalcTwoBodyDriftRate(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -19188,7 +19539,7 @@ class StateCalcTwoBodyDriftRate(IComponentInfo, ICloneable, SupportsDeleteCallba
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5460810173689551905, 16225637095795943845),
+        "iid_data" : (5129943886379800105, 12221075423885678514),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19229,7 +19580,7 @@ class StateCalcTwoBodyDriftRate(IComponentInfo, ICloneable, SupportsDeleteCallba
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcTwoBodyDriftRate, [StateCalcTwoBodyDriftRate, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5383774435343665060, 7184945879283363001), StateCalcTwoBodyDriftRate)
+agcls.AgClassCatalog.add_catalog_entry((4919874499801948418, 15440603403892259515), StateCalcTwoBodyDriftRate)
 agcls.AgTypeNameMap["StateCalcTwoBodyDriftRate"] = StateCalcTwoBodyDriftRate
 
 class StateCalcDriftRateFactor(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -19242,7 +19593,7 @@ class StateCalcDriftRateFactor(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _get_drift_rate_model_method_offset = 3
     _set_drift_rate_model_method_offset = 4
     _metadata = {
-        "iid_data" : (5330249542569526815, 5634931923199992731),
+        "iid_data" : (4794795344381651466, 4414364856294122173),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19299,7 +19650,7 @@ class StateCalcDriftRateFactor(IComponentInfo, ICloneable, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcDriftRateFactor, [StateCalcDriftRateFactor, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5659328086407966292, 4398427823108609201), StateCalcDriftRateFactor)
+agcls.AgClassCatalog.add_catalog_entry((4763439084270474951, 18306205407549444239), StateCalcDriftRateFactor)
 agcls.AgTypeNameMap["StateCalcDriftRateFactor"] = StateCalcDriftRateFactor
 
 class StateCalcEccentricityX(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -19310,7 +19661,7 @@ class StateCalcEccentricityX(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (4894238426602256437, 17333050540446122149),
+        "iid_data" : (4977340072542402860, 16769735901598281906),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19351,7 +19702,7 @@ class StateCalcEccentricityX(IComponentInfo, ICloneable, SupportsDeleteCallback)
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcEccentricityX, [StateCalcEccentricityX, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4890000948450699546, 11908915193556800643), StateCalcEccentricityX)
+agcls.AgClassCatalog.add_catalog_entry((5023532910584529466, 17878736704428017053), StateCalcEccentricityX)
 agcls.AgTypeNameMap["StateCalcEccentricityX"] = StateCalcEccentricityX
 
 class StateCalcEccentricityY(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -19362,7 +19713,7 @@ class StateCalcEccentricityY(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (4931098808898744401, 15828586612520832163),
+        "iid_data" : (5161725350290700925, 5955722491467860384),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19403,7 +19754,7 @@ class StateCalcEccentricityY(IComponentInfo, ICloneable, SupportsDeleteCallback)
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcEccentricityY, [StateCalcEccentricityY, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5195751570829662446, 17374761392091557022), StateCalcEccentricityY)
+agcls.AgClassCatalog.add_catalog_entry((4661719371316015203, 16531347586680569013), StateCalcEccentricityY)
 agcls.AgTypeNameMap["StateCalcEccentricityY"] = StateCalcEccentricityY
 
 class StateCalcInclinationX(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -19416,7 +19767,7 @@ class StateCalcInclinationX(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_inclination_magnitude_type_method_offset = 3
     _set_inclination_magnitude_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5303116798892466546, 8652600110648124591),
+        "iid_data" : (5363369677484823318, 16611690068428060837),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19473,7 +19824,7 @@ class StateCalcInclinationX(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcInclinationX, [StateCalcInclinationX, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5343058450031167507, 16391122691667095461), StateCalcInclinationX)
+agcls.AgClassCatalog.add_catalog_entry((5306413221763229967, 10066792343013856181), StateCalcInclinationX)
 agcls.AgTypeNameMap["StateCalcInclinationX"] = StateCalcInclinationX
 
 class StateCalcInclinationY(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -19486,7 +19837,7 @@ class StateCalcInclinationY(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_inclination_magnitude_type_method_offset = 3
     _set_inclination_magnitude_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5451370693498009019, 10642033776934022825),
+        "iid_data" : (5183800398114498016, 4012743196337311923),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19543,7 +19894,7 @@ class StateCalcInclinationY(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcInclinationY, [StateCalcInclinationY, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4863529585957113128, 10102237046352894897), StateCalcInclinationY)
+agcls.AgClassCatalog.add_catalog_entry((5717828895113323988, 9099290826280541320), StateCalcInclinationY)
 agcls.AgTypeNameMap["StateCalcInclinationY"] = StateCalcInclinationY
 
 class StateCalcUnitAngularMomentumX(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -19554,7 +19905,7 @@ class StateCalcUnitAngularMomentumX(IComponentInfo, ICloneable, SupportsDeleteCa
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (4867031833350884905, 3301894672569955263),
+        "iid_data" : (4907966517406220370, 11458425984119313792),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19595,7 +19946,7 @@ class StateCalcUnitAngularMomentumX(IComponentInfo, ICloneable, SupportsDeleteCa
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcUnitAngularMomentumX, [StateCalcUnitAngularMomentumX, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5447705866460823284, 13783482782719490212), StateCalcUnitAngularMomentumX)
+agcls.AgClassCatalog.add_catalog_entry((4650740043872469317, 824994723995069091), StateCalcUnitAngularMomentumX)
 agcls.AgTypeNameMap["StateCalcUnitAngularMomentumX"] = StateCalcUnitAngularMomentumX
 
 class StateCalcUnitAngularMomentumY(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -19606,7 +19957,7 @@ class StateCalcUnitAngularMomentumY(IComponentInfo, ICloneable, SupportsDeleteCa
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (4620132140076523895, 14996909192432193432),
+        "iid_data" : (5151731464226182051, 14386823160174139780),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19647,7 +19998,7 @@ class StateCalcUnitAngularMomentumY(IComponentInfo, ICloneable, SupportsDeleteCa
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcUnitAngularMomentumY, [StateCalcUnitAngularMomentumY, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4786968704254907389, 13158431096979751558), StateCalcUnitAngularMomentumY)
+agcls.AgClassCatalog.add_catalog_entry((5460543974614922452, 17118492963342548368), StateCalcUnitAngularMomentumY)
 agcls.AgTypeNameMap["StateCalcUnitAngularMomentumY"] = StateCalcUnitAngularMomentumY
 
 class StateCalcUnitAngularMomentumZ(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -19658,7 +20009,7 @@ class StateCalcUnitAngularMomentumZ(IComponentInfo, ICloneable, SupportsDeleteCa
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5157286771188626290, 103471323176308659),
+        "iid_data" : (4705815500224057874, 17591044085421226894),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19699,7 +20050,7 @@ class StateCalcUnitAngularMomentumZ(IComponentInfo, ICloneable, SupportsDeleteCa
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcUnitAngularMomentumZ, [StateCalcUnitAngularMomentumZ, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5431982115791144105, 4613613462980346503), StateCalcUnitAngularMomentumZ)
+agcls.AgClassCatalog.add_catalog_entry((4969215614042185822, 2580100977131957646), StateCalcUnitAngularMomentumZ)
 agcls.AgTypeNameMap["StateCalcUnitAngularMomentumZ"] = StateCalcUnitAngularMomentumZ
 
 class StateCalcHeightAboveTerrain(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -19710,7 +20061,7 @@ class StateCalcHeightAboveTerrain(IComponentInfo, ICloneable, SupportsDeleteCall
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5001830471771159235, 8470443678088309179),
+        "iid_data" : (5551894567649596563, 6462319070023077557),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19752,7 +20103,7 @@ class StateCalcHeightAboveTerrain(IComponentInfo, ICloneable, SupportsDeleteCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcHeightAboveTerrain, [StateCalcHeightAboveTerrain, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5679191460559336989, 1313569402354780308), StateCalcHeightAboveTerrain)
+agcls.AgClassCatalog.add_catalog_entry((4732128338292196456, 15678084291523286660), StateCalcHeightAboveTerrain)
 agcls.AgTypeNameMap["StateCalcHeightAboveTerrain"] = StateCalcHeightAboveTerrain
 
 class StateCalcGeodeticElem(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -19763,7 +20114,7 @@ class StateCalcGeodeticElem(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (4669942275556971148, 5814687713330014126),
+        "iid_data" : (5518242019253665702, 2196779096239870655),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19804,7 +20155,7 @@ class StateCalcGeodeticElem(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcGeodeticElem, [StateCalcGeodeticElem, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5368597638791724835, 15722023724069301167), StateCalcGeodeticElem)
+agcls.AgClassCatalog.add_catalog_entry((5670781763412111735, 4655351505287987869), StateCalcGeodeticElem)
 agcls.AgTypeNameMap["StateCalcGeodeticElem"] = StateCalcGeodeticElem
 
 class StateCalcRepeatingGroundTrackErr(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -19823,7 +20174,7 @@ class StateCalcRepeatingGroundTrackErr(IComponentInfo, ICloneable, SupportsDelet
     _is_control_parameter_enabled_method_offset = 9
     _get_control_parameters_available_method_offset = 10
     _metadata = {
-        "iid_data" : (4823386117493643824, 1763726539818968494),
+        "iid_data" : (5569889376414383266, 12540978918107511977),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19926,7 +20277,7 @@ class StateCalcRepeatingGroundTrackErr(IComponentInfo, ICloneable, SupportsDelet
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcRepeatingGroundTrackErr, [StateCalcRepeatingGroundTrackErr, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4802952676793573249, 3742314941598062748), StateCalcRepeatingGroundTrackErr)
+agcls.AgClassCatalog.add_catalog_entry((5239781223147600745, 7786093950266847422), StateCalcRepeatingGroundTrackErr)
 agcls.AgTypeNameMap["StateCalcRepeatingGroundTrackErr"] = StateCalcRepeatingGroundTrackErr
 
 class StateCalcAltitudeOfApoapsis(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -19939,7 +20290,7 @@ class StateCalcAltitudeOfApoapsis(IComponentInfo, ICloneable, SupportsDeleteCall
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (4804961906984959380, 3379445527920073108),
+        "iid_data" : (5434739906363528056, 7312519670504177071),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -19996,7 +20347,7 @@ class StateCalcAltitudeOfApoapsis(IComponentInfo, ICloneable, SupportsDeleteCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcAltitudeOfApoapsis, [StateCalcAltitudeOfApoapsis, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4680045279095392866, 2885707908870599052), StateCalcAltitudeOfApoapsis)
+agcls.AgClassCatalog.add_catalog_entry((5695519423883265425, 208924040465090702), StateCalcAltitudeOfApoapsis)
 agcls.AgTypeNameMap["StateCalcAltitudeOfApoapsis"] = StateCalcAltitudeOfApoapsis
 
 class StateCalcAltitudeOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -20009,7 +20360,7 @@ class StateCalcAltitudeOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCal
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (4737053168431653768, 6669250612885585032),
+        "iid_data" : (5255519072914949876, 6463502658670638982),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20066,7 +20417,7 @@ class StateCalcAltitudeOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCal
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcAltitudeOfPeriapsis, [StateCalcAltitudeOfPeriapsis, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5711549813926167011, 172247784438999984), StateCalcAltitudeOfPeriapsis)
+agcls.AgClassCatalog.add_catalog_entry((5313095485204097301, 17997209336149796518), StateCalcAltitudeOfPeriapsis)
 agcls.AgTypeNameMap["StateCalcAltitudeOfPeriapsis"] = StateCalcAltitudeOfPeriapsis
 
 class StateCalcArgumentOfLatitude(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -20079,7 +20430,7 @@ class StateCalcArgumentOfLatitude(IComponentInfo, ICloneable, SupportsDeleteCall
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (4646620714499650179, 13630006269487185795),
+        "iid_data" : (5140315710951242092, 13833870185740617138),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20136,7 +20487,7 @@ class StateCalcArgumentOfLatitude(IComponentInfo, ICloneable, SupportsDeleteCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcArgumentOfLatitude, [StateCalcArgumentOfLatitude, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5721561101168071631, 8215502116176583064), StateCalcArgumentOfLatitude)
+agcls.AgClassCatalog.add_catalog_entry((5500814107760470665, 17528532940801284227), StateCalcArgumentOfLatitude)
 agcls.AgTypeNameMap["StateCalcArgumentOfLatitude"] = StateCalcArgumentOfLatitude
 
 class StateCalcArgumentOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -20149,7 +20500,7 @@ class StateCalcArgumentOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCal
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5751021743421934462, 1138987020898760380),
+        "iid_data" : (5199733264829855683, 14748938379232674725),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20206,7 +20557,7 @@ class StateCalcArgumentOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCal
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcArgumentOfPeriapsis, [StateCalcArgumentOfPeriapsis, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5684255884981629138, 3677058005489362621), StateCalcArgumentOfPeriapsis)
+agcls.AgClassCatalog.add_catalog_entry((4926291014600641546, 11147044206061007002), StateCalcArgumentOfPeriapsis)
 agcls.AgTypeNameMap["StateCalcArgumentOfPeriapsis"] = StateCalcArgumentOfPeriapsis
 
 class StateCalcEccentricityAnomaly(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -20219,7 +20570,7 @@ class StateCalcEccentricityAnomaly(IComponentInfo, ICloneable, SupportsDeleteCal
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5641923176315593130, 5159228630191255194),
+        "iid_data" : (5732161323049872660, 4486124682855637691),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20276,7 +20627,7 @@ class StateCalcEccentricityAnomaly(IComponentInfo, ICloneable, SupportsDeleteCal
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcEccentricityAnomaly, [StateCalcEccentricityAnomaly, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5472882556788075591, 6568513677222152077), StateCalcEccentricityAnomaly)
+agcls.AgClassCatalog.add_catalog_entry((5302070363670982380, 9793591249000092337), StateCalcEccentricityAnomaly)
 agcls.AgTypeNameMap["StateCalcEccentricityAnomaly"] = StateCalcEccentricityAnomaly
 
 class StateCalcLonOfAscNode(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -20289,7 +20640,7 @@ class StateCalcLonOfAscNode(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (4943815842015931666, 10560249350701891763),
+        "iid_data" : (5198424781051202777, 935069893710918580),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20346,7 +20697,7 @@ class StateCalcLonOfAscNode(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcLonOfAscNode, [StateCalcLonOfAscNode, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4869631541520654432, 2995754984005813684), StateCalcLonOfAscNode)
+agcls.AgClassCatalog.add_catalog_entry((4906705234510357737, 14769533059289128587), StateCalcLonOfAscNode)
 agcls.AgTypeNameMap["StateCalcLonOfAscNode"] = StateCalcLonOfAscNode
 
 class StateCalcMeanMotion(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -20359,7 +20710,7 @@ class StateCalcMeanMotion(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5272477230544721892, 16800233696536864958),
+        "iid_data" : (4678481412955933763, 1002983188941591972),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20416,7 +20767,7 @@ class StateCalcMeanMotion(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcMeanMotion, [StateCalcMeanMotion, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4747596417491606013, 15395657420428995495), StateCalcMeanMotion)
+agcls.AgClassCatalog.add_catalog_entry((4638698306418119634, 11912296063909690496), StateCalcMeanMotion)
 agcls.AgTypeNameMap["StateCalcMeanMotion"] = StateCalcMeanMotion
 
 class StateCalcOrbitPeriod(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -20429,7 +20780,7 @@ class StateCalcOrbitPeriod(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (4613752124273608812, 15403231600106864030),
+        "iid_data" : (5350578148754646401, 8720214914201059459),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20486,7 +20837,7 @@ class StateCalcOrbitPeriod(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcOrbitPeriod, [StateCalcOrbitPeriod, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4883509369718059623, 9523723199357936256), StateCalcOrbitPeriod)
+agcls.AgClassCatalog.add_catalog_entry((5203403895069521722, 10987180559761567893), StateCalcOrbitPeriod)
 agcls.AgTypeNameMap["StateCalcOrbitPeriod"] = StateCalcOrbitPeriod
 
 class StateCalcNumRevs(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -20499,7 +20850,7 @@ class StateCalcNumRevs(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (4967851475699997060, 9372108415445250466),
+        "iid_data" : (5560101313551806577, 6483855755431850939),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20556,7 +20907,7 @@ class StateCalcNumRevs(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcNumRevs, [StateCalcNumRevs, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5128543494425042730, 1166581705760978097), StateCalcNumRevs)
+agcls.AgClassCatalog.add_catalog_entry((5687239499700784580, 1505175522968318090), StateCalcNumRevs)
 agcls.AgTypeNameMap["StateCalcNumRevs"] = StateCalcNumRevs
 
 class StateCalcRadOfApoapsis(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -20569,7 +20920,7 @@ class StateCalcRadOfApoapsis(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (4965803044756787528, 17018162359568687774),
+        "iid_data" : (5373131616221783359, 14689875224955606448),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20626,7 +20977,7 @@ class StateCalcRadOfApoapsis(IComponentInfo, ICloneable, SupportsDeleteCallback)
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcRadOfApoapsis, [StateCalcRadOfApoapsis, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5610435208412011938, 15680633327063310238), StateCalcRadOfApoapsis)
+agcls.AgClassCatalog.add_catalog_entry((5434223159216698426, 6117727399240967350), StateCalcRadOfApoapsis)
 agcls.AgTypeNameMap["StateCalcRadOfApoapsis"] = StateCalcRadOfApoapsis
 
 class StateCalcRadOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -20639,7 +20990,7 @@ class StateCalcRadOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5130986865795971189, 16789141452098079673),
+        "iid_data" : (5673788684882169479, 4826043733244741258),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20696,7 +21047,7 @@ class StateCalcRadOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcRadOfPeriapsis, [StateCalcRadOfPeriapsis, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4913547247352946746, 6032480820430129067), StateCalcRadOfPeriapsis)
+agcls.AgClassCatalog.add_catalog_entry((5322497352325281103, 596903277940484281), StateCalcRadOfPeriapsis)
 agcls.AgTypeNameMap["StateCalcRadOfPeriapsis"] = StateCalcRadOfPeriapsis
 
 class StateCalcSemimajorAxis(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -20709,7 +21060,7 @@ class StateCalcSemimajorAxis(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5590870916411176225, 16124915921295777960),
+        "iid_data" : (5334019606796378815, 5588559622666081707),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20766,7 +21117,7 @@ class StateCalcSemimajorAxis(IComponentInfo, ICloneable, SupportsDeleteCallback)
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcSemimajorAxis, [StateCalcSemimajorAxis, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5118541904447365438, 10801378442445865622), StateCalcSemimajorAxis)
+agcls.AgClassCatalog.add_catalog_entry((4662861410563436189, 889151407325287085), StateCalcSemimajorAxis)
 agcls.AgTypeNameMap["StateCalcSemimajorAxis"] = StateCalcSemimajorAxis
 
 class StateCalcTimePastAscNode(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -20779,7 +21130,7 @@ class StateCalcTimePastAscNode(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5562589395377256243, 13497037947049292677),
+        "iid_data" : (5486919505762020690, 7653812107335809684),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20836,7 +21187,7 @@ class StateCalcTimePastAscNode(IComponentInfo, ICloneable, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcTimePastAscNode, [StateCalcTimePastAscNode, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5564567196649759285, 9406082925819798685), StateCalcTimePastAscNode)
+agcls.AgClassCatalog.add_catalog_entry((5513849627852358253, 6213845351377916844), StateCalcTimePastAscNode)
 agcls.AgTypeNameMap["StateCalcTimePastAscNode"] = StateCalcTimePastAscNode
 
 class StateCalcTimePastPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -20849,7 +21200,7 @@ class StateCalcTimePastPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallb
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5684995327153450736, 9483471647629985712),
+        "iid_data" : (5154375356660384967, 7311152743378254511),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20906,7 +21257,7 @@ class StateCalcTimePastPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcTimePastPeriapsis, [StateCalcTimePastPeriapsis, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5407430146817268966, 10284458395368679078), StateCalcTimePastPeriapsis)
+agcls.AgClassCatalog.add_catalog_entry((4743488923022156427, 5790944847064834951), StateCalcTimePastPeriapsis)
 agcls.AgTypeNameMap["StateCalcTimePastPeriapsis"] = StateCalcTimePastPeriapsis
 
 class StateCalcTrueAnomaly(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -20919,7 +21270,7 @@ class StateCalcTrueAnomaly(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5315225285503473966, 17168653625677065383),
+        "iid_data" : (5483958093589817310, 572767902551506562),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -20976,7 +21327,7 @@ class StateCalcTrueAnomaly(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcTrueAnomaly, [StateCalcTrueAnomaly, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5111376757081525828, 8458902587457567926), StateCalcTrueAnomaly)
+agcls.AgClassCatalog.add_catalog_entry((4668936704806784332, 7268145633381611672), StateCalcTrueAnomaly)
 agcls.AgTypeNameMap["StateCalcTrueAnomaly"] = StateCalcTrueAnomaly
 
 class StateCalcDeltaV(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -20985,7 +21336,7 @@ class StateCalcDeltaV(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5534952825540803418, 13420343991370104736),
+        "iid_data" : (4687160042491521849, 7830473149804001667),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21010,7 +21361,7 @@ class StateCalcDeltaV(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcDeltaV, [StateCalcDeltaV, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5735205105008486861, 4958177406641049504), StateCalcDeltaV)
+agcls.AgClassCatalog.add_catalog_entry((5201230801310856892, 3635787123828506792), StateCalcDeltaV)
 agcls.AgTypeNameMap["StateCalcDeltaV"] = StateCalcDeltaV
 
 class StateCalcDeltaVSquared(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21019,7 +21370,7 @@ class StateCalcDeltaVSquared(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5704565883071914391, 3071057530161522337),
+        "iid_data" : (5641180401299669741, 9989907366771843772),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21044,7 +21395,7 @@ class StateCalcDeltaVSquared(IComponentInfo, ICloneable, SupportsDeleteCallback)
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcDeltaVSquared, [StateCalcDeltaVSquared, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5018999258309169900, 18294161584335658669), StateCalcDeltaVSquared)
+agcls.AgClassCatalog.add_catalog_entry((5292217816047875877, 5285628421203938206), StateCalcDeltaVSquared)
 agcls.AgTypeNameMap["StateCalcDeltaVSquared"] = StateCalcDeltaVSquared
 
 class StateCalcMCSDeltaV(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21053,7 +21404,7 @@ class StateCalcMCSDeltaV(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5316237708087118868, 6452972329347706796),
+        "iid_data" : (5444413680668681223, 7323846890983340205),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21078,7 +21429,7 @@ class StateCalcMCSDeltaV(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcMCSDeltaV, [StateCalcMCSDeltaV, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5376311996187022567, 10704423917084038577), StateCalcMCSDeltaV)
+agcls.AgClassCatalog.add_catalog_entry((4727304825319443106, 657965303140994730), StateCalcMCSDeltaV)
 agcls.AgTypeNameMap["StateCalcMCSDeltaV"] = StateCalcMCSDeltaV
 
 class StateCalcMCSDeltaVSquared(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21089,7 +21440,7 @@ class StateCalcMCSDeltaVSquared(IComponentInfo, ICloneable, SupportsDeleteCallba
     _get_squared_type_method_offset = 1
     _set_squared_type_method_offset = 2
     _metadata = {
-        "iid_data" : (4645033948798417354, 9487747245930481071),
+        "iid_data" : (5302730604329598868, 3471290787643981224),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21131,7 +21482,7 @@ class StateCalcMCSDeltaVSquared(IComponentInfo, ICloneable, SupportsDeleteCallba
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcMCSDeltaVSquared, [StateCalcMCSDeltaVSquared, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5628482244802819265, 12608246510277330571), StateCalcMCSDeltaVSquared)
+agcls.AgClassCatalog.add_catalog_entry((5299115195119647911, 4666384631206205345), StateCalcMCSDeltaVSquared)
 agcls.AgTypeNameMap["StateCalcMCSDeltaVSquared"] = StateCalcMCSDeltaVSquared
 
 class StateCalcSequenceDeltaV(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21142,7 +21493,7 @@ class StateCalcSequenceDeltaV(IComponentInfo, ICloneable, SupportsDeleteCallback
     _get_sequence_name_method_offset = 1
     _set_sequence_name_method_offset = 2
     _metadata = {
-        "iid_data" : (4633447003068296805, 2676702751796205994),
+        "iid_data" : (5639249602877317044, 16305429193293217197),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21183,7 +21534,7 @@ class StateCalcSequenceDeltaV(IComponentInfo, ICloneable, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcSequenceDeltaV, [StateCalcSequenceDeltaV, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5097550551983029190, 1249982837446207875), StateCalcSequenceDeltaV)
+agcls.AgClassCatalog.add_catalog_entry((4613781590745600771, 7006056077831594922), StateCalcSequenceDeltaV)
 agcls.AgTypeNameMap["StateCalcSequenceDeltaV"] = StateCalcSequenceDeltaV
 
 class StateCalcSequenceDeltaVSquared(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21196,7 +21547,7 @@ class StateCalcSequenceDeltaVSquared(IComponentInfo, ICloneable, SupportsDeleteC
     _get_squared_type_method_offset = 3
     _set_squared_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5635671843908320145, 4152975408965574534),
+        "iid_data" : (5153120164928279739, 1110861920329738895),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21254,7 +21605,7 @@ class StateCalcSequenceDeltaVSquared(IComponentInfo, ICloneable, SupportsDeleteC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcSequenceDeltaVSquared, [StateCalcSequenceDeltaVSquared, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5630825541610308831, 15774632184071493555), StateCalcSequenceDeltaVSquared)
+agcls.AgClassCatalog.add_catalog_entry((5516966661539136416, 7070115196571100848), StateCalcSequenceDeltaVSquared)
 agcls.AgTypeNameMap["StateCalcSequenceDeltaVSquared"] = StateCalcSequenceDeltaVSquared
 
 class StateCalcFuelMass(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21263,7 +21614,7 @@ class StateCalcFuelMass(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5151428709425076440, 7487392127807473330),
+        "iid_data" : (5550845683347654439, 569625017427031688),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21288,7 +21639,7 @@ class StateCalcFuelMass(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcFuelMass, [StateCalcFuelMass, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5332377876689301450, 9083355359145196446), StateCalcFuelMass)
+agcls.AgClassCatalog.add_catalog_entry((5284381052636476312, 14223204518839641785), StateCalcFuelMass)
 agcls.AgTypeNameMap["StateCalcFuelMass"] = StateCalcFuelMass
 
 class StateCalcDensity(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21297,7 +21648,7 @@ class StateCalcDensity(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5017809731874998764, 8924756791837866658),
+        "iid_data" : (4804691647531134749, 18135522358750610359),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21322,7 +21673,7 @@ class StateCalcDensity(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcDensity, [StateCalcDensity, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5430632087509559798, 9149872271344420512), StateCalcDensity)
+agcls.AgClassCatalog.add_catalog_entry((4972741934203604002, 7157721734211089052), StateCalcDensity)
 agcls.AgTypeNameMap["StateCalcDensity"] = StateCalcDensity
 
 class StateCalcInertialDeltaVMagnitude(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21331,7 +21682,7 @@ class StateCalcInertialDeltaVMagnitude(IComponentInfo, ICloneable, SupportsDelet
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5655263703535879206, 14229486467541672352),
+        "iid_data" : (5140916981814463964, 10619453326254126988),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21356,7 +21707,7 @@ class StateCalcInertialDeltaVMagnitude(IComponentInfo, ICloneable, SupportsDelet
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcInertialDeltaVMagnitude, [StateCalcInertialDeltaVMagnitude, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4886899391864671900, 15236932873941812910), StateCalcInertialDeltaVMagnitude)
+agcls.AgClassCatalog.add_catalog_entry((5037798451812912029, 14762466415772230054), StateCalcInertialDeltaVMagnitude)
 agcls.AgTypeNameMap["StateCalcInertialDeltaVMagnitude"] = StateCalcInertialDeltaVMagnitude
 
 class StateCalcInertialDeltaVx(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21367,7 +21718,7 @@ class StateCalcInertialDeltaVx(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _get_coord_axes_name_method_offset = 1
     _set_coord_axes_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5147140685656921702, 2892503026461819017),
+        "iid_data" : (5704950478557053294, 12626658218050326705),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21408,7 +21759,7 @@ class StateCalcInertialDeltaVx(IComponentInfo, ICloneable, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcInertialDeltaVx, [StateCalcInertialDeltaVx, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4821595772988904722, 12220769280307415212), StateCalcInertialDeltaVx)
+agcls.AgClassCatalog.add_catalog_entry((4773069382946939090, 5808380699414658997), StateCalcInertialDeltaVx)
 agcls.AgTypeNameMap["StateCalcInertialDeltaVx"] = StateCalcInertialDeltaVx
 
 class StateCalcInertialDeltaVy(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21419,7 +21770,7 @@ class StateCalcInertialDeltaVy(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _get_coord_axes_name_method_offset = 1
     _set_coord_axes_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5535239348503742884, 15276188469658558399),
+        "iid_data" : (5071736938339632220, 287336784417729177),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21460,7 +21811,7 @@ class StateCalcInertialDeltaVy(IComponentInfo, ICloneable, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcInertialDeltaVy, [StateCalcInertialDeltaVy, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4855464037190244874, 3375418175855904949), StateCalcInertialDeltaVy)
+agcls.AgClassCatalog.add_catalog_entry((4666959722325219284, 2868144979324911777), StateCalcInertialDeltaVy)
 agcls.AgTypeNameMap["StateCalcInertialDeltaVy"] = StateCalcInertialDeltaVy
 
 class StateCalcInertialDeltaVz(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21471,7 +21822,7 @@ class StateCalcInertialDeltaVz(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _get_coord_axes_name_method_offset = 1
     _set_coord_axes_name_method_offset = 2
     _metadata = {
-        "iid_data" : (4691307025227964777, 13663375653406686621),
+        "iid_data" : (4684444422886224488, 13707389658908188594),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21512,7 +21863,7 @@ class StateCalcInertialDeltaVz(IComponentInfo, ICloneable, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcInertialDeltaVz, [StateCalcInertialDeltaVz, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4822846875597407381, 13296331241838685581), StateCalcInertialDeltaVz)
+agcls.AgClassCatalog.add_catalog_entry((5441204111967738562, 5314974702538942370), StateCalcInertialDeltaVz)
 agcls.AgTypeNameMap["StateCalcInertialDeltaVz"] = StateCalcInertialDeltaVz
 
 class StateCalcManeuverSpecificImpulse(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21521,7 +21872,7 @@ class StateCalcManeuverSpecificImpulse(IComponentInfo, ICloneable, SupportsDelet
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (4637712452113764989, 15886083855590906538),
+        "iid_data" : (5314515121908238380, 17951646059133010087),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21546,7 +21897,7 @@ class StateCalcManeuverSpecificImpulse(IComponentInfo, ICloneable, SupportsDelet
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcManeuverSpecificImpulse, [StateCalcManeuverSpecificImpulse, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4622503106430628545, 6107233881266172821), StateCalcManeuverSpecificImpulse)
+agcls.AgClassCatalog.add_catalog_entry((4948474728341565830, 17750519548267019395), StateCalcManeuverSpecificImpulse)
 agcls.AgTypeNameMap["StateCalcManeuverSpecificImpulse"] = StateCalcManeuverSpecificImpulse
 
 class StateCalcPressure(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21555,7 +21906,7 @@ class StateCalcPressure(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5449490418666210004, 15448348542096366226),
+        "iid_data" : (5157479984436377213, 12162136049946561188),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21580,7 +21931,7 @@ class StateCalcPressure(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcPressure, [StateCalcPressure, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4794915601194535984, 5940540998251569597), StateCalcPressure)
+agcls.AgClassCatalog.add_catalog_entry((4769986238696783183, 16841345338335602563), StateCalcPressure)
 agcls.AgTypeNameMap["StateCalcPressure"] = StateCalcPressure
 
 class StateCalcTemperature(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21589,7 +21940,7 @@ class StateCalcTemperature(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5475729774530559001, 10941078062920403866),
+        "iid_data" : (4963615079594573831, 14781472917804435903),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21614,7 +21965,7 @@ class StateCalcTemperature(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcTemperature, [StateCalcTemperature, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5536041037581480431, 10686749433105631157), StateCalcTemperature)
+agcls.AgClassCatalog.add_catalog_entry((5462504571269227362, 128328960223364775), StateCalcTemperature)
 agcls.AgTypeNameMap["StateCalcTemperature"] = StateCalcTemperature
 
 class StateCalcVectorY(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21631,7 +21982,7 @@ class StateCalcVectorY(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_normalize_method_offset = 7
     _set_normalize_method_offset = 8
     _metadata = {
-        "iid_data" : (5267983331101176658, 9823313191056859545),
+        "iid_data" : (5736466969277100514, 13098211244378232740),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21720,7 +22071,7 @@ class StateCalcVectorY(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcVectorY, [StateCalcVectorY, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5421805410493711150, 17871064854232439969), StateCalcVectorY)
+agcls.AgClassCatalog.add_catalog_entry((4729452062110356755, 10693775602189472685), StateCalcVectorY)
 agcls.AgTypeNameMap["StateCalcVectorY"] = StateCalcVectorY
 
 class StateCalcVectorZ(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21737,7 +22088,7 @@ class StateCalcVectorZ(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_normalize_method_offset = 7
     _set_normalize_method_offset = 8
     _metadata = {
-        "iid_data" : (5252175952045025930, 153518083256492710),
+        "iid_data" : (4613616790635803642, 4108700468448059804),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21826,7 +22177,7 @@ class StateCalcVectorZ(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcVectorZ, [StateCalcVectorZ, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5216554707482900455, 10991111390992105651), StateCalcVectorZ)
+agcls.AgClassCatalog.add_catalog_entry((4713742641596215052, 13176150401624715703), StateCalcVectorZ)
 agcls.AgTypeNameMap["StateCalcVectorZ"] = StateCalcVectorZ
 
 class StateCalcMass(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21835,7 +22186,7 @@ class StateCalcMass(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (4824138427327990760, 14867348190747208111),
+        "iid_data" : (4778940466535421309, 12239597602233168516),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21860,7 +22211,7 @@ class StateCalcMass(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcMass, [StateCalcMass, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4997657165484082210, 3541058383396595871), StateCalcMass)
+agcls.AgClassCatalog.add_catalog_entry((5150534157361802863, 13702389182141971120), StateCalcMass)
 agcls.AgTypeNameMap["StateCalcMass"] = StateCalcMass
 
 class StateCalcManeuverTotalMassFlowRate(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21869,7 +22220,7 @@ class StateCalcManeuverTotalMassFlowRate(IComponentInfo, ICloneable, SupportsDel
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5526044805283548379, 10435494578370294662),
+        "iid_data" : (4940438240531520278, 17875907067884740510),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21894,7 +22245,7 @@ class StateCalcManeuverTotalMassFlowRate(IComponentInfo, ICloneable, SupportsDel
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcManeuverTotalMassFlowRate, [StateCalcManeuverTotalMassFlowRate, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5504217790692566183, 3415641010481336239), StateCalcManeuverTotalMassFlowRate)
+agcls.AgClassCatalog.add_catalog_entry((5098053902914936970, 5166538185951377543), StateCalcManeuverTotalMassFlowRate)
 agcls.AgTypeNameMap["StateCalcManeuverTotalMassFlowRate"] = StateCalcManeuverTotalMassFlowRate
 
 class StateCalcAbsoluteValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21905,7 +22256,7 @@ class StateCalcAbsoluteValue(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _get_calculation_object_name_method_offset = 1
     _set_calculation_object_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5242501412076507984, 7725825147363795095),
+        "iid_data" : (5040086766813778223, 16464434766792094348),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -21946,7 +22297,7 @@ class StateCalcAbsoluteValue(IComponentInfo, ICloneable, SupportsDeleteCallback)
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcAbsoluteValue, [StateCalcAbsoluteValue, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5649254655531211135, 6218154849600881073), StateCalcAbsoluteValue)
+agcls.AgClassCatalog.add_catalog_entry((4953102768116583312, 4157940150048942735), StateCalcAbsoluteValue)
 agcls.AgTypeNameMap["StateCalcAbsoluteValue"] = StateCalcAbsoluteValue
 
 class StateCalcDifference(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -21959,7 +22310,7 @@ class StateCalcDifference(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_difference_order_method_offset = 3
     _set_difference_order_method_offset = 4
     _metadata = {
-        "iid_data" : (5286816172224215455, 1036938080734512060),
+        "iid_data" : (4655616143320983186, 10540032377800097418),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22016,7 +22367,7 @@ class StateCalcDifference(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcDifference, [StateCalcDifference, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5521971242167934141, 6064248763181856402), StateCalcDifference)
+agcls.AgClassCatalog.add_catalog_entry((5159670794202831814, 18133959094148377987), StateCalcDifference)
 agcls.AgTypeNameMap["StateCalcDifference"] = StateCalcDifference
 
 class StateCalcDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -22033,7 +22384,7 @@ class StateCalcDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDelete
     _get_difference_order_method_offset = 7
     _set_difference_order_method_offset = 8
     _metadata = {
-        "iid_data" : (4838331601109046283, 10861212503697690540),
+        "iid_data" : (5139464331381668191, 12699536844367409066),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22122,7 +22473,7 @@ class StateCalcDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDelete
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcDifferenceOtherSegment, [StateCalcDifferenceOtherSegment, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5714208844396347834, 5962452290304441480), StateCalcDifferenceOtherSegment)
+agcls.AgClassCatalog.add_catalog_entry((4749235430217432833, 2773863249206594731), StateCalcDifferenceOtherSegment)
 agcls.AgTypeNameMap["StateCalcDifferenceOtherSegment"] = StateCalcDifferenceOtherSegment
 
 class StateCalcPositionDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -22135,7 +22486,7 @@ class StateCalcPositionDifferenceOtherSegment(IComponentInfo, ICloneable, Suppor
     _get_segment_state_to_use_method_offset = 3
     _set_segment_state_to_use_method_offset = 4
     _metadata = {
-        "iid_data" : (4976467856226832650, 9795326462409064358),
+        "iid_data" : (4742528391490486821, 4992901391397868673),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22192,7 +22543,7 @@ class StateCalcPositionDifferenceOtherSegment(IComponentInfo, ICloneable, Suppor
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcPositionDifferenceOtherSegment, [StateCalcPositionDifferenceOtherSegment, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5410120896638206049, 17404805778208513193), StateCalcPositionDifferenceOtherSegment)
+agcls.AgClassCatalog.add_catalog_entry((4678153935277886348, 10833563486137438905), StateCalcPositionDifferenceOtherSegment)
 agcls.AgTypeNameMap["StateCalcPositionDifferenceOtherSegment"] = StateCalcPositionDifferenceOtherSegment
 
 class StateCalcVelocityDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -22205,7 +22556,7 @@ class StateCalcVelocityDifferenceOtherSegment(IComponentInfo, ICloneable, Suppor
     _get_segment_state_to_use_method_offset = 3
     _set_segment_state_to_use_method_offset = 4
     _metadata = {
-        "iid_data" : (5761930326505428509, 15079222405094269835),
+        "iid_data" : (5376345393496012083, 820833441848423592),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22262,7 +22613,7 @@ class StateCalcVelocityDifferenceOtherSegment(IComponentInfo, ICloneable, Suppor
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcVelocityDifferenceOtherSegment, [StateCalcVelocityDifferenceOtherSegment, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4700414338115361174, 7357519667103594396), StateCalcVelocityDifferenceOtherSegment)
+agcls.AgClassCatalog.add_catalog_entry((4706204101250603968, 5768672959010549914), StateCalcVelocityDifferenceOtherSegment)
 agcls.AgTypeNameMap["StateCalcVelocityDifferenceOtherSegment"] = StateCalcVelocityDifferenceOtherSegment
 
 class StateCalcPositionVelocityDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -22275,7 +22626,7 @@ class StateCalcPositionVelocityDifferenceOtherSegment(IComponentInfo, ICloneable
     _get_segment_state_to_use_method_offset = 3
     _set_segment_state_to_use_method_offset = 4
     _metadata = {
-        "iid_data" : (5099216661152147837, 12403806086621600668),
+        "iid_data" : (5483468551177474667, 12504453094896215465),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22332,7 +22683,7 @@ class StateCalcPositionVelocityDifferenceOtherSegment(IComponentInfo, ICloneable
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcPositionVelocityDifferenceOtherSegment, [StateCalcPositionVelocityDifferenceOtherSegment, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4698031524605327091, 1241434726579484094), StateCalcPositionVelocityDifferenceOtherSegment)
+agcls.AgClassCatalog.add_catalog_entry((4974284142022504282, 3824552070775423387), StateCalcPositionVelocityDifferenceOtherSegment)
 agcls.AgTypeNameMap["StateCalcPositionVelocityDifferenceOtherSegment"] = StateCalcPositionVelocityDifferenceOtherSegment
 
 class StateCalcValueAtSegment(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -22347,7 +22698,7 @@ class StateCalcValueAtSegment(IComponentInfo, ICloneable, SupportsDeleteCallback
     _get_segment_state_to_use_method_offset = 5
     _set_segment_state_to_use_method_offset = 6
     _metadata = {
-        "iid_data" : (5685182645245177465, 12446171846639774123),
+        "iid_data" : (5121379848265261754, 8572565986939417020),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22420,7 +22771,7 @@ class StateCalcValueAtSegment(IComponentInfo, ICloneable, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcValueAtSegment, [StateCalcValueAtSegment, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4717001101179136674, 7712842298125538966), StateCalcValueAtSegment)
+agcls.AgClassCatalog.add_catalog_entry((4825649765890914782, 9979162716101883275), StateCalcValueAtSegment)
 agcls.AgTypeNameMap["StateCalcValueAtSegment"] = StateCalcValueAtSegment
 
 class StateCalcMaxValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -22431,7 +22782,7 @@ class StateCalcMaxValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_calculation_object_name_method_offset = 1
     _set_calculation_object_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5693913850214738875, 7362033195491517325),
+        "iid_data" : (4726261802839483385, 15240564093006699949),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22472,7 +22823,7 @@ class StateCalcMaxValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcMaxValue, [StateCalcMaxValue, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5335981867772603023, 14948483817211843495), StateCalcMaxValue)
+agcls.AgClassCatalog.add_catalog_entry((4982878528751669606, 9764951680872031368), StateCalcMaxValue)
 agcls.AgTypeNameMap["StateCalcMaxValue"] = StateCalcMaxValue
 
 class StateCalcMinValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -22483,7 +22834,7 @@ class StateCalcMinValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_calculation_object_name_method_offset = 1
     _set_calculation_object_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5508979191941518953, 13437319745405890183),
+        "iid_data" : (5442179352034294502, 8851319893605644170),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22524,7 +22875,7 @@ class StateCalcMinValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcMinValue, [StateCalcMinValue, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5325867396643517457, 15325837370797593534), StateCalcMinValue)
+agcls.AgClassCatalog.add_catalog_entry((5582964783232330961, 1038280635948234165), StateCalcMinValue)
 agcls.AgTypeNameMap["StateCalcMinValue"] = StateCalcMinValue
 
 class StateCalcMeanValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -22535,7 +22886,7 @@ class StateCalcMeanValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_calculation_object_name_method_offset = 1
     _set_calculation_object_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5071065384386542095, 2074797407162959239),
+        "iid_data" : (4746121188511210116, 3697917198640147851),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22576,7 +22927,7 @@ class StateCalcMeanValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcMeanValue, [StateCalcMeanValue, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4892731750122549927, 895807499915618237), StateCalcMeanValue)
+agcls.AgClassCatalog.add_catalog_entry((5460420126944210958, 2116107780766652057), StateCalcMeanValue)
 agcls.AgTypeNameMap["StateCalcMeanValue"] = StateCalcMeanValue
 
 class StateCalcMedianValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -22587,7 +22938,7 @@ class StateCalcMedianValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_calculation_object_name_method_offset = 1
     _set_calculation_object_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5380204605260779977, 8527191360378932610),
+        "iid_data" : (5502482115157988529, 12522646643841265029),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22628,7 +22979,7 @@ class StateCalcMedianValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcMedianValue, [StateCalcMedianValue, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5017390870345423063, 11107553627398305450), StateCalcMedianValue)
+agcls.AgClassCatalog.add_catalog_entry((5242874933558276814, 5065729275599587204), StateCalcMedianValue)
 agcls.AgTypeNameMap["StateCalcMedianValue"] = StateCalcMedianValue
 
 class StateCalcStandardDeviation(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -22639,7 +22990,7 @@ class StateCalcStandardDeviation(IComponentInfo, ICloneable, SupportsDeleteCallb
     _get_calculation_object_name_method_offset = 1
     _set_calculation_object_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5109749522595346465, 5943122520799404),
+        "iid_data" : (5411069921873822721, 12647235761030054023),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22680,7 +23031,7 @@ class StateCalcStandardDeviation(IComponentInfo, ICloneable, SupportsDeleteCallb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcStandardDeviation, [StateCalcStandardDeviation, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5706630325153378416, 7346312026473310895), StateCalcStandardDeviation)
+agcls.AgClassCatalog.add_catalog_entry((5693277365896880952, 2832984426842017166), StateCalcStandardDeviation)
 agcls.AgTypeNameMap["StateCalcStandardDeviation"] = StateCalcStandardDeviation
 
 class StateCalcNegative(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -22691,7 +23042,7 @@ class StateCalcNegative(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_calculation_object_name_method_offset = 1
     _set_calculation_object_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5494223374580793993, 17445090105393654670),
+        "iid_data" : (5016306566474740990, 13824810896026814861),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22732,7 +23083,7 @@ class StateCalcNegative(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcNegative, [StateCalcNegative, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4756880992387727043, 16118258532645794438), StateCalcNegative)
+agcls.AgClassCatalog.add_catalog_entry((4830594504052932050, 6666824880444511118), StateCalcNegative)
 agcls.AgTypeNameMap["StateCalcNegative"] = StateCalcNegative
 
 class StateCalcEccentricity(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -22745,7 +23096,7 @@ class StateCalcEccentricity(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5132596794288842807, 76886317482222211),
+        "iid_data" : (5250014103651244951, 4993622349609528759),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22802,7 +23153,7 @@ class StateCalcEccentricity(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcEccentricity, [StateCalcEccentricity, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5501682676133367136, 3167489185269360787), StateCalcEccentricity)
+agcls.AgClassCatalog.add_catalog_entry((4703815087304411674, 6536803663634767773), StateCalcEccentricity)
 agcls.AgTypeNameMap["StateCalcEccentricity"] = StateCalcEccentricity
 
 class StateCalcMeanAnomaly(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -22815,7 +23166,7 @@ class StateCalcMeanAnomaly(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5078592635508230677, 199917539856335784),
+        "iid_data" : (5664468562641850710, 14929828581051999882),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22872,7 +23223,7 @@ class StateCalcMeanAnomaly(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcMeanAnomaly, [StateCalcMeanAnomaly, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4892312041291241898, 6574642583384567699), StateCalcMeanAnomaly)
+agcls.AgClassCatalog.add_catalog_entry((5529649959516821677, 2627219749682050692), StateCalcMeanAnomaly)
 agcls.AgTypeNameMap["StateCalcMeanAnomaly"] = StateCalcMeanAnomaly
 
 class StateCalcRAAN(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -22885,7 +23236,7 @@ class StateCalcRAAN(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5381083598080536156, 9958123801964845187),
+        "iid_data" : (4925150436632736097, 4059911806707310470),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -22942,7 +23293,7 @@ class StateCalcRAAN(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcRAAN, [StateCalcRAAN, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5405103448896378970, 4337604741307927470), StateCalcRAAN)
+agcls.AgClassCatalog.add_catalog_entry((5667699585565705520, 7074990118503115170), StateCalcRAAN)
 agcls.AgTypeNameMap["StateCalcRAAN"] = StateCalcRAAN
 
 class BDotRCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -22955,7 +23306,7 @@ class BDotRCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_reference_vector_name_method_offset = 3
     _set_reference_vector_name_method_offset = 4
     _metadata = {
-        "iid_data" : (4788843118955322831, 4556250982297463961),
+        "iid_data" : (4741100850513694729, 10426908221127695241),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23012,7 +23363,7 @@ class BDotRCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BDotRCalc, [BDotRCalc, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4764853868400043048, 18187604709841805988), BDotRCalc)
+agcls.AgClassCatalog.add_catalog_entry((5758181005882580876, 10523637736179969169), BDotRCalc)
 agcls.AgTypeNameMap["BDotRCalc"] = BDotRCalc
 
 class BDotTCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -23025,7 +23376,7 @@ class BDotTCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_reference_vector_name_method_offset = 3
     _set_reference_vector_name_method_offset = 4
     _metadata = {
-        "iid_data" : (4618960820775064092, 18231298778754049955),
+        "iid_data" : (5241074878645075994, 7830597810181835694),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23082,7 +23433,7 @@ class BDotTCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BDotTCalc, [BDotTCalc, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4890798717385089098, 6364035963206107010), BDotTCalc)
+agcls.AgClassCatalog.add_catalog_entry((4943992448146626089, 4688680167930811281), BDotTCalc)
 agcls.AgTypeNameMap["BDotTCalc"] = BDotTCalc
 
 class BMagnitudeCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -23093,7 +23444,7 @@ class BMagnitudeCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_target_body_name_method_offset = 1
     _set_target_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (4647292914321785240, 13934252389565936309),
+        "iid_data" : (4672026192341703503, 7186570580325750912),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23134,7 +23485,7 @@ class BMagnitudeCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BMagnitudeCalc, [BMagnitudeCalc, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5134716065589206218, 7480759871545627779), BMagnitudeCalc)
+agcls.AgClassCatalog.add_catalog_entry((4663877167880718417, 5254681807491901109), BMagnitudeCalc)
 agcls.AgTypeNameMap["BMagnitudeCalc"] = BMagnitudeCalc
 
 class BThetaCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -23147,7 +23498,7 @@ class BThetaCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_reference_vector_name_method_offset = 3
     _set_reference_vector_name_method_offset = 4
     _metadata = {
-        "iid_data" : (5007774658254643496, 13271531197844527280),
+        "iid_data" : (5706399513256688135, 16314832078369407924),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23204,7 +23555,7 @@ class BThetaCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BThetaCalc, [BThetaCalc, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5596689204320332812, 4811551774192881053), BThetaCalc)
+agcls.AgClassCatalog.add_catalog_entry((5640829093690239767, 13175745967183016091), BThetaCalc)
 agcls.AgTypeNameMap["BThetaCalc"] = BThetaCalc
 
 class StateCalcDeltaDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -23219,7 +23570,7 @@ class StateCalcDeltaDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_reference_body_method_offset = 5
     _set_reference_body_method_offset = 6
     _metadata = {
-        "iid_data" : (5290013676220494388, 9903183221335827391),
+        "iid_data" : (4696671155789716461, 7145260811784532646),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23292,7 +23643,7 @@ class StateCalcDeltaDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcDeltaDec, [StateCalcDeltaDec, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4742177159243228554, 9768761161646057663), StateCalcDeltaDec)
+agcls.AgClassCatalog.add_catalog_entry((4645326547022098487, 11130212679353781893), StateCalcDeltaDec)
 agcls.AgTypeNameMap["StateCalcDeltaDec"] = StateCalcDeltaDec
 
 class StateCalcDeltaRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -23307,7 +23658,7 @@ class StateCalcDeltaRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_reference_body_method_offset = 5
     _set_reference_body_method_offset = 6
     _metadata = {
-        "iid_data" : (4868101605846675839, 11443682580650707381),
+        "iid_data" : (4630027938423147319, 12384380441352964499),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23380,7 +23731,7 @@ class StateCalcDeltaRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcDeltaRA, [StateCalcDeltaRA, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5688767206261697070, 361885936146426807), StateCalcDeltaRA)
+agcls.AgClassCatalog.add_catalog_entry((4696869903578751095, 18285428173430481827), StateCalcDeltaRA)
 agcls.AgTypeNameMap["StateCalcDeltaRA"] = StateCalcDeltaRA
 
 class StateCalcBetaAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -23391,7 +23742,7 @@ class StateCalcBetaAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5491371553853873553, 16290909826073259189),
+        "iid_data" : (5762300692662904917, 6924374345022346913),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23432,7 +23783,7 @@ class StateCalcBetaAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcBetaAngle, [StateCalcBetaAngle, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5083630350938674598, 2520004052854407858), StateCalcBetaAngle)
+agcls.AgClassCatalog.add_catalog_entry((5314501308559938159, 16435170050364615837), StateCalcBetaAngle)
 agcls.AgTypeNameMap["StateCalcBetaAngle"] = StateCalcBetaAngle
 
 class StateCalcLocalApparentSolarLon(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -23443,7 +23794,7 @@ class StateCalcLocalApparentSolarLon(IComponentInfo, ICloneable, SupportsDeleteC
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (4710959404518107307, 6957049819451085726),
+        "iid_data" : (4682257330474652685, 3665484368227122081),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23484,7 +23835,7 @@ class StateCalcLocalApparentSolarLon(IComponentInfo, ICloneable, SupportsDeleteC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcLocalApparentSolarLon, [StateCalcLocalApparentSolarLon, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4935767401018702893, 4837353967401391754), StateCalcLocalApparentSolarLon)
+agcls.AgClassCatalog.add_catalog_entry((4677796588575071264, 16952530400119458482), StateCalcLocalApparentSolarLon)
 agcls.AgTypeNameMap["StateCalcLocalApparentSolarLon"] = StateCalcLocalApparentSolarLon
 
 class StateCalcLonOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -23497,7 +23848,7 @@ class StateCalcLonOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5342377182843817648, 17338033931095343495),
+        "iid_data" : (5367274792318233831, 8946623381511209863),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23554,7 +23905,7 @@ class StateCalcLonOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcLonOfPeriapsis, [StateCalcLonOfPeriapsis, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5390362933097802402, 15121927569055714719), StateCalcLonOfPeriapsis)
+agcls.AgClassCatalog.add_catalog_entry((5247607014690771156, 18287587107126812809), StateCalcLonOfPeriapsis)
 agcls.AgTypeNameMap["StateCalcLonOfPeriapsis"] = StateCalcLonOfPeriapsis
 
 class StateCalcOrbitStateValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -23583,7 +23934,7 @@ class StateCalcOrbitStateValue(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _is_control_parameter_enabled_method_offset = 19
     _get_control_parameters_available_method_offset = 20
     _metadata = {
-        "iid_data" : (5571605285225794087, 11521766938948305318),
+        "iid_data" : (4621242445697600568, 15218374757451158680),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23766,7 +24117,7 @@ class StateCalcOrbitStateValue(IComponentInfo, ICloneable, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcOrbitStateValue, [StateCalcOrbitStateValue, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5660476195838860374, 7373399722690661047), StateCalcOrbitStateValue)
+agcls.AgClassCatalog.add_catalog_entry((5120017355378056722, 4914175048560443053), StateCalcOrbitStateValue)
 agcls.AgTypeNameMap["StateCalcOrbitStateValue"] = StateCalcOrbitStateValue
 
 class StateCalcSignedEccentricity(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -23779,7 +24130,7 @@ class StateCalcSignedEccentricity(IComponentInfo, ICloneable, SupportsDeleteCall
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5758428425739901521, 3466807939090115987),
+        "iid_data" : (4890671639755983267, 2216113223650769057),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23836,7 +24187,7 @@ class StateCalcSignedEccentricity(IComponentInfo, ICloneable, SupportsDeleteCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcSignedEccentricity, [StateCalcSignedEccentricity, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5191176072478866871, 8134725428167828098), StateCalcSignedEccentricity)
+agcls.AgClassCatalog.add_catalog_entry((4977835713240504713, 767475450156152474), StateCalcSignedEccentricity)
 agcls.AgTypeNameMap["StateCalcSignedEccentricity"] = StateCalcSignedEccentricity
 
 class StateCalcInclination(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -23849,7 +24200,7 @@ class StateCalcInclination(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5481867825683167402, 11775092398994058639),
+        "iid_data" : (5218291545235604017, 288639637809410186),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23906,8 +24257,78 @@ class StateCalcInclination(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcInclination, [StateCalcInclination, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5120832088065050933, 16106417628964848268), StateCalcInclination)
+agcls.AgClassCatalog.add_catalog_entry((5023536122523339839, 12094850900364107927), StateCalcInclination)
 agcls.AgTypeNameMap["StateCalcInclination"] = StateCalcInclination
+
+class StateCalcSignedInclination(IComponentInfo, ICloneable, SupportsDeleteCallback):
+    """Properties for a SignedInclination calculation object."""
+
+    _num_methods = 4
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_coord_system_name_method_offset = 1
+    _set_coord_system_name_method_offset = 2
+    _get_element_type_method_offset = 3
+    _set_element_type_method_offset = 4
+    _metadata = {
+        "iid_data" : (5336129723023411026, 6180034959401188000),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, StateCalcSignedInclination)
+
+    _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def coord_system_name(self) -> str:
+        """Get or set the coordinate system within which the element is defined."""
+        return self._intf.get_property(StateCalcSignedInclination._metadata, StateCalcSignedInclination._get_coord_system_name_metadata)
+
+    _set_coord_system_name_metadata = { "offset" : _set_coord_system_name_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @coord_system_name.setter
+    def coord_system_name(self, value:str) -> None:
+        return self._intf.set_property(StateCalcSignedInclination._metadata, StateCalcSignedInclination._set_coord_system_name_metadata, value)
+
+    _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(CalculationObjectElement),) }
+    @property
+    def element_type(self) -> "CalculationObjectElement":
+        """Get or set the element type."""
+        return self._intf.get_property(StateCalcSignedInclination._metadata, StateCalcSignedInclination._get_element_type_metadata)
+
+    _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(CalculationObjectElement),) }
+    @element_type.setter
+    def element_type(self, value:"CalculationObjectElement") -> None:
+        return self._intf.set_property(StateCalcSignedInclination._metadata, StateCalcSignedInclination._set_element_type_metadata, value)
+
+    _property_names[coord_system_name] = "coord_system_name"
+    _property_names[element_type] = "element_type"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type StateCalcSignedInclination."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, StateCalcSignedInclination)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IComponentInfo._private_init(self, intf)
+        ICloneable._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, StateCalcSignedInclination, [StateCalcSignedInclination, IComponentInfo, ICloneable])
+
+agcls.AgClassCatalog.add_catalog_entry((5139349186531030664, 13193042394187492498), StateCalcSignedInclination)
+agcls.AgTypeNameMap["StateCalcSignedInclination"] = StateCalcSignedInclination
 
 class StateCalcTrueLon(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a True Longitude calculation object."""
@@ -23919,7 +24340,7 @@ class StateCalcTrueLon(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (5283503522563827653, 1949981448141737121),
+        "iid_data" : (5353201110504085095, 15829513840389484730),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -23976,7 +24397,7 @@ class StateCalcTrueLon(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcTrueLon, [StateCalcTrueLon, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4659594054530973860, 10956547747767183491), StateCalcTrueLon)
+agcls.AgClassCatalog.add_catalog_entry((5072960249034115778, 11717630456414601373), StateCalcTrueLon)
 agcls.AgTypeNameMap["StateCalcTrueLon"] = StateCalcTrueLon
 
 class StateCalcPower(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -23987,7 +24408,7 @@ class StateCalcPower(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_power_source_name_method_offset = 1
     _set_power_source_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5613531350273265511, 6381946946512684674),
+        "iid_data" : (4912382488647341309, 1289276264896180152),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24028,7 +24449,7 @@ class StateCalcPower(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcPower, [StateCalcPower, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4956417164732171081, 9430265978231260054), StateCalcPower)
+agcls.AgClassCatalog.add_catalog_entry((5423148546599507870, 11399552553250542998), StateCalcPower)
 agcls.AgTypeNameMap["StateCalcPower"] = StateCalcPower
 
 class StateCalcRelativeMotion(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -24044,7 +24465,7 @@ class StateCalcRelativeMotion(IComponentInfo, ICloneable, SupportsDeleteCallback
     _set_reference_selection_method_offset = 6
     _get_reference_method_offset = 7
     _metadata = {
-        "iid_data" : (5002195614498734697, 15794600710772473250),
+        "iid_data" : (5197273524714335383, 16565593998076131751),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24126,7 +24547,7 @@ class StateCalcRelativeMotion(IComponentInfo, ICloneable, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcRelativeMotion, [StateCalcRelativeMotion, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4661395227350171712, 3732445803166842778), StateCalcRelativeMotion)
+agcls.AgClassCatalog.add_catalog_entry((5370822960046205122, 14460610853142967479), StateCalcRelativeMotion)
 agcls.AgTypeNameMap["StateCalcRelativeMotion"] = StateCalcRelativeMotion
 
 class StateCalcSolarBetaAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -24148,7 +24569,7 @@ class StateCalcSolarBetaAngle(IComponentInfo, ICloneable, SupportsDeleteCallback
     _get_sign_convention_method_offset = 12
     _set_sign_convention_method_offset = 13
     _metadata = {
-        "iid_data" : (5398438437428592507, 2650543482928872872),
+        "iid_data" : (4667952348170612155, 549380266764981695),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24278,7 +24699,7 @@ class StateCalcSolarBetaAngle(IComponentInfo, ICloneable, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcSolarBetaAngle, [StateCalcSolarBetaAngle, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5077135050113269633, 9161741470567867320), StateCalcSolarBetaAngle)
+agcls.AgClassCatalog.add_catalog_entry((4914445756703299032, 5430753827002449573), StateCalcSolarBetaAngle)
 agcls.AgTypeNameMap["StateCalcSolarBetaAngle"] = StateCalcSolarBetaAngle
 
 class StateCalcSolarInPlaneAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -24302,7 +24723,7 @@ class StateCalcSolarInPlaneAngle(IComponentInfo, ICloneable, SupportsDeleteCallb
     _get_reference_direction_method_offset = 14
     _set_reference_direction_method_offset = 15
     _metadata = {
-        "iid_data" : (5525853297664348995, 13048979656566293681),
+        "iid_data" : (5101358705943394424, 12101376105977152930),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24448,7 +24869,7 @@ class StateCalcSolarInPlaneAngle(IComponentInfo, ICloneable, SupportsDeleteCallb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcSolarInPlaneAngle, [StateCalcSolarInPlaneAngle, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4748871734981473687, 2552028746492672439), StateCalcSolarInPlaneAngle)
+agcls.AgClassCatalog.add_catalog_entry((5445273935902194883, 17087733309070914481), StateCalcSolarInPlaneAngle)
 agcls.AgTypeNameMap["StateCalcSolarInPlaneAngle"] = StateCalcSolarInPlaneAngle
 
 class StateCalcRelativePositionDecAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -24470,7 +24891,7 @@ class StateCalcRelativePositionDecAngle(IComponentInfo, ICloneable, SupportsDele
     _get_sign_convention_method_offset = 12
     _set_sign_convention_method_offset = 13
     _metadata = {
-        "iid_data" : (5238851579005461793, 16812563106976176295),
+        "iid_data" : (5074482301520547529, 11020864978556102830),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24600,7 +25021,7 @@ class StateCalcRelativePositionDecAngle(IComponentInfo, ICloneable, SupportsDele
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcRelativePositionDecAngle, [StateCalcRelativePositionDecAngle, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4885866484788968886, 3882329827102669962), StateCalcRelativePositionDecAngle)
+agcls.AgClassCatalog.add_catalog_entry((5042011682894145232, 1298377708183583119), StateCalcRelativePositionDecAngle)
 agcls.AgTypeNameMap["StateCalcRelativePositionDecAngle"] = StateCalcRelativePositionDecAngle
 
 class StateCalcRelativePositionInPlaneAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -24624,7 +25045,7 @@ class StateCalcRelativePositionInPlaneAngle(IComponentInfo, ICloneable, Supports
     _get_reference_direction_method_offset = 14
     _set_reference_direction_method_offset = 15
     _metadata = {
-        "iid_data" : (5276106845718310985, 15169476527219437464),
+        "iid_data" : (5183321790809205651, 5676279428482767763),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24770,7 +25191,7 @@ class StateCalcRelativePositionInPlaneAngle(IComponentInfo, ICloneable, Supports
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcRelativePositionInPlaneAngle, [StateCalcRelativePositionInPlaneAngle, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5210025623232990293, 477647256645406897), StateCalcRelativePositionInPlaneAngle)
+agcls.AgClassCatalog.add_catalog_entry((5079884655499636913, 9865349839868466103), StateCalcRelativePositionInPlaneAngle)
 agcls.AgTypeNameMap["StateCalcRelativePositionInPlaneAngle"] = StateCalcRelativePositionInPlaneAngle
 
 class StateCalcRelativeInclination(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -24788,7 +25209,7 @@ class StateCalcRelativeInclination(IComponentInfo, ICloneable, SupportsDeleteCal
     _set_reference_selection_method_offset = 8
     _get_reference_method_offset = 9
     _metadata = {
-        "iid_data" : (5759991403051064866, 13962207682969580418),
+        "iid_data" : (4806883796225180723, 3973230240438951614),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -24886,7 +25307,7 @@ class StateCalcRelativeInclination(IComponentInfo, ICloneable, SupportsDeleteCal
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcRelativeInclination, [StateCalcRelativeInclination, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4783257135833872479, 4009038032584982670), StateCalcRelativeInclination)
+agcls.AgClassCatalog.add_catalog_entry((5190931010709991126, 5702661239001124764), StateCalcRelativeInclination)
 agcls.AgTypeNameMap["StateCalcRelativeInclination"] = StateCalcRelativeInclination
 
 class StateCalcCurvilinearRelativeMotion(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -24908,7 +25329,7 @@ class StateCalcCurvilinearRelativeMotion(IComponentInfo, ICloneable, SupportsDel
     _get_sign_convention_method_offset = 12
     _set_sign_convention_method_offset = 13
     _metadata = {
-        "iid_data" : (5275245114054728959, 566377476357571002),
+        "iid_data" : (5631521112886771956, 8660471226012350614),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25038,11 +25459,11 @@ class StateCalcCurvilinearRelativeMotion(IComponentInfo, ICloneable, SupportsDel
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcCurvilinearRelativeMotion, [StateCalcCurvilinearRelativeMotion, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5266012728748371250, 3853977684437634452), StateCalcCurvilinearRelativeMotion)
+agcls.AgClassCatalog.add_catalog_entry((5732359752868410995, 1334661584183029180), StateCalcCurvilinearRelativeMotion)
 agcls.AgTypeNameMap["StateCalcCurvilinearRelativeMotion"] = StateCalcCurvilinearRelativeMotion
 
 class StateCalcCustomFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
-    """Properties for a Custom Function calculation object."""
+    """Do not use this interface, as it is deprecated. Properties for a Custom Function calculation object."""
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -25053,7 +25474,7 @@ class StateCalcCustomFunction(IComponentInfo, ICloneable, SupportsDeleteCallback
     _get_unit_dimension_method_offset = 5
     _set_unit_dimension_method_offset = 6
     _metadata = {
-        "iid_data" : (5238230135416801421, 14434745392186350476),
+        "iid_data" : (5591043566574223276, 13364135533415100851),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25126,7 +25547,7 @@ class StateCalcCustomFunction(IComponentInfo, ICloneable, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcCustomFunction, [StateCalcCustomFunction, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4689951577606334035, 12382782284568097196), StateCalcCustomFunction)
+agcls.AgClassCatalog.add_catalog_entry((5351293491086082593, 15526052047205287557), StateCalcCustomFunction)
 agcls.AgTypeNameMap["StateCalcCustomFunction"] = StateCalcCustomFunction
 
 class StateCalcScript(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -25141,7 +25562,7 @@ class StateCalcScript(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_unit_dimension_method_offset = 5
     _get_calculation_object_arguments_link_embed_method_offset = 6
     _metadata = {
-        "iid_data" : (5230255327003470545, 156024352906426262),
+        "iid_data" : (5745249577599406918, 4082559348386490287),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25216,8 +25637,116 @@ class StateCalcScript(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcScript, [StateCalcScript, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5428335731628319644, 2349594956521383600), StateCalcScript)
+agcls.AgClassCatalog.add_catalog_entry((4930661583049638533, 10611274137171509637), StateCalcScript)
 agcls.AgTypeNameMap["StateCalcScript"] = StateCalcScript
+
+class StateCalcPythonScript(IComponentInfo, ICloneable, SupportsDeleteCallback):
+    """Properties for a Python script calculation object."""
+
+    _num_methods = 8
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_calculation_object_arguments_method_offset = 1
+    _get_custom_script_method_offset = 2
+    _set_custom_script_method_offset = 3
+    _get_unit_dimension_method_offset = 4
+    _set_unit_dimension_method_offset = 5
+    _get_return_variable_method_offset = 6
+    _set_return_variable_method_offset = 7
+    _get_calculation_object_arguments_link_embed_method_offset = 8
+    _metadata = {
+        "iid_data" : (5417608154021342011, 4501083988592545983),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, StateCalcPythonScript)
+
+    _get_calculation_object_arguments_metadata = { "offset" : _get_calculation_object_arguments_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def calculation_object_arguments(self) -> "CalculationObjectCollection":
+        """Get the arguments to be applied to the function."""
+        return self._intf.get_property(StateCalcPythonScript._metadata, StateCalcPythonScript._get_calculation_object_arguments_metadata)
+
+    _get_custom_script_metadata = { "offset" : _get_custom_script_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def custom_script(self) -> str:
+        """Get or set the user-supplied script to be evaluated as Python code."""
+        return self._intf.get_property(StateCalcPythonScript._metadata, StateCalcPythonScript._get_custom_script_metadata)
+
+    _set_custom_script_metadata = { "offset" : _set_custom_script_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @custom_script.setter
+    def custom_script(self, value:str) -> None:
+        return self._intf.set_property(StateCalcPythonScript._metadata, StateCalcPythonScript._set_custom_script_metadata, value)
+
+    _get_unit_dimension_metadata = { "offset" : _get_unit_dimension_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def unit_dimension(self) -> str:
+        """Get or set the unit dimension."""
+        return self._intf.get_property(StateCalcPythonScript._metadata, StateCalcPythonScript._get_unit_dimension_metadata)
+
+    _set_unit_dimension_metadata = { "offset" : _set_unit_dimension_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @unit_dimension.setter
+    def unit_dimension(self, value:str) -> None:
+        return self._intf.set_property(StateCalcPythonScript._metadata, StateCalcPythonScript._set_unit_dimension_metadata, value)
+
+    _get_return_variable_metadata = { "offset" : _get_return_variable_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def return_variable(self) -> str:
+        """Get or set the name of the Python variable containing the calculated value."""
+        return self._intf.get_property(StateCalcPythonScript._metadata, StateCalcPythonScript._get_return_variable_metadata)
+
+    _set_return_variable_metadata = { "offset" : _set_return_variable_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @return_variable.setter
+    def return_variable(self, value:str) -> None:
+        return self._intf.set_property(StateCalcPythonScript._metadata, StateCalcPythonScript._set_return_variable_metadata, value)
+
+    _get_calculation_object_arguments_link_embed_metadata = { "offset" : _get_calculation_object_arguments_link_embed_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def calculation_object_arguments_link_embed(self) -> "CalculationObjectLinkEmbedControlCollection":
+        """Get the arguments to be applied to the function."""
+        return self._intf.get_property(StateCalcPythonScript._metadata, StateCalcPythonScript._get_calculation_object_arguments_link_embed_metadata)
+
+    _property_names[calculation_object_arguments] = "calculation_object_arguments"
+    _property_names[custom_script] = "custom_script"
+    _property_names[unit_dimension] = "unit_dimension"
+    _property_names[return_variable] = "return_variable"
+    _property_names[calculation_object_arguments_link_embed] = "calculation_object_arguments_link_embed"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type StateCalcPythonScript."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, StateCalcPythonScript)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IComponentInfo._private_init(self, intf)
+        ICloneable._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, StateCalcPythonScript, [StateCalcPythonScript, IComponentInfo, ICloneable])
+
+agcls.AgClassCatalog.add_catalog_entry((5265659296244567948, 9545404042462404505), StateCalcPythonScript)
+agcls.AgTypeNameMap["StateCalcPythonScript"] = StateCalcPythonScript
 
 class StateCalcCd(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Cd calculation object."""
@@ -25225,7 +25754,7 @@ class StateCalcCd(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5568518326231174020, 3538034186170905732),
+        "iid_data" : (4725320014183367995, 6538561698447090583),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25250,7 +25779,7 @@ class StateCalcCd(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcCd, [StateCalcCd, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4749110143901402911, 16411983275256454789), StateCalcCd)
+agcls.AgClassCatalog.add_catalog_entry((4729909098716491956, 3982978321481886865), StateCalcCd)
 agcls.AgTypeNameMap["StateCalcCd"] = StateCalcCd
 
 class StateCalcCr(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -25259,7 +25788,7 @@ class StateCalcCr(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5650258084976318033, 16643474672915319172),
+        "iid_data" : (5166584645912176413, 15259164137893798050),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25284,7 +25813,7 @@ class StateCalcCr(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcCr, [StateCalcCr, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5340250383676600752, 8120486164072751260), StateCalcCr)
+agcls.AgClassCatalog.add_catalog_entry((5479422192770840446, 665722584374989446), StateCalcCr)
 agcls.AgTypeNameMap["StateCalcCr"] = StateCalcCr
 
 class StateCalcDragArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -25293,7 +25822,7 @@ class StateCalcDragArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5545976271796063551, 8226493188790136213),
+        "iid_data" : (5249265104018865110, 16882141432842528910),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25318,7 +25847,7 @@ class StateCalcDragArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcDragArea, [StateCalcDragArea, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5225141382394562543, 5683852515661250210), StateCalcDragArea)
+agcls.AgClassCatalog.add_catalog_entry((5635207636364467538, 3413164318183835525), StateCalcDragArea)
 agcls.AgTypeNameMap["StateCalcDragArea"] = StateCalcDragArea
 
 class StateCalcRadiationPressureArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -25327,7 +25856,7 @@ class StateCalcRadiationPressureArea(IComponentInfo, ICloneable, SupportsDeleteC
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5601118184007744281, 5313246703677317260),
+        "iid_data" : (4860096039367035404, 4107658022463771066),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25352,7 +25881,7 @@ class StateCalcRadiationPressureArea(IComponentInfo, ICloneable, SupportsDeleteC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcRadiationPressureArea, [StateCalcRadiationPressureArea, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4754850115113924725, 2261102432464195480), StateCalcRadiationPressureArea)
+agcls.AgClassCatalog.add_catalog_entry((5184371141493759502, 800363084040269193), StateCalcRadiationPressureArea)
 agcls.AgTypeNameMap["StateCalcRadiationPressureArea"] = StateCalcRadiationPressureArea
 
 class StateCalcRadiationPressureCoefficient(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -25361,7 +25890,7 @@ class StateCalcRadiationPressureCoefficient(IComponentInfo, ICloneable, Supports
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5114990569606955072, 2521564829353782433),
+        "iid_data" : (5312178013754996423, 13430885513629292430),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25386,7 +25915,7 @@ class StateCalcRadiationPressureCoefficient(IComponentInfo, ICloneable, Supports
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcRadiationPressureCoefficient, [StateCalcRadiationPressureCoefficient, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5197406241329793753, 9402952683814630335), StateCalcRadiationPressureCoefficient)
+agcls.AgClassCatalog.add_catalog_entry((4628906992410581386, 14201129842514452640), StateCalcRadiationPressureCoefficient)
 agcls.AgTypeNameMap["StateCalcRadiationPressureCoefficient"] = StateCalcRadiationPressureCoefficient
 
 class StateCalcSRPArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -25395,7 +25924,7 @@ class StateCalcSRPArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5679124288434228247, 17043898137571845285),
+        "iid_data" : (4719778789450365777, 18027229266030861230),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25420,7 +25949,7 @@ class StateCalcSRPArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcSRPArea, [StateCalcSRPArea, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5114327262628149603, 6327582764702271372), StateCalcSRPArea)
+agcls.AgClassCatalog.add_catalog_entry((4923215824886672577, 11404234635105167262), StateCalcSRPArea)
 agcls.AgTypeNameMap["StateCalcSRPArea"] = StateCalcSRPArea
 
 class StateCalcCosOfVerticalFlightPathAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -25431,7 +25960,7 @@ class StateCalcCosOfVerticalFlightPathAngle(IComponentInfo, ICloneable, Supports
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5109452923180625915, 14418310655883773619),
+        "iid_data" : (5286213666467098830, 8422100121321436558),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25472,7 +26001,7 @@ class StateCalcCosOfVerticalFlightPathAngle(IComponentInfo, ICloneable, Supports
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcCosOfVerticalFlightPathAngle, [StateCalcCosOfVerticalFlightPathAngle, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4912325927198559876, 16519063181087398335), StateCalcCosOfVerticalFlightPathAngle)
+agcls.AgClassCatalog.add_catalog_entry((5584674781091819942, 4408835872099300003), StateCalcCosOfVerticalFlightPathAngle)
 agcls.AgTypeNameMap["StateCalcCosOfVerticalFlightPathAngle"] = StateCalcCosOfVerticalFlightPathAngle
 
 class StateCalcDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -25483,7 +26012,7 @@ class StateCalcDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_coord_system_name_method_offset = 1
     _set_coord_system_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5332855122565758901, 9784959898993734033),
+        "iid_data" : (5403940211136268858, 7082292676368005003),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25524,7 +26053,7 @@ class StateCalcDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcDec, [StateCalcDec, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5110197264312311168, 4345047158370537365), StateCalcDec)
+agcls.AgClassCatalog.add_catalog_entry((5562071809007189012, 2598974086953643689), StateCalcDec)
 agcls.AgTypeNameMap["StateCalcDec"] = StateCalcDec
 
 class StateCalcFlightPathAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -25535,7 +26064,7 @@ class StateCalcFlightPathAngle(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _get_coord_system_name_method_offset = 1
     _set_coord_system_name_method_offset = 2
     _metadata = {
-        "iid_data" : (4635334976117933799, 3713105542969753249),
+        "iid_data" : (5302700697048951600, 3238558224736098724),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25576,7 +26105,7 @@ class StateCalcFlightPathAngle(IComponentInfo, ICloneable, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcFlightPathAngle, [StateCalcFlightPathAngle, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5560328887180138477, 15449525910187979693), StateCalcFlightPathAngle)
+agcls.AgClassCatalog.add_catalog_entry((5357454044851455248, 10122128601696994726), StateCalcFlightPathAngle)
 agcls.AgTypeNameMap["StateCalcFlightPathAngle"] = StateCalcFlightPathAngle
 
 class StateCalcRMagnitude(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -25587,7 +26116,7 @@ class StateCalcRMagnitude(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_reference_point_name_method_offset = 1
     _set_reference_point_name_method_offset = 2
     _metadata = {
-        "iid_data" : (4627073220849151600, 6473808253627513503),
+        "iid_data" : (4799275305708183916, 17380026230917425588),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25629,7 +26158,7 @@ class StateCalcRMagnitude(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcRMagnitude, [StateCalcRMagnitude, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4936764719926966041, 8423823670599314579), StateCalcRMagnitude)
+agcls.AgClassCatalog.add_catalog_entry((5545236423991235296, 14180277068914164112), StateCalcRMagnitude)
 agcls.AgTypeNameMap["StateCalcRMagnitude"] = StateCalcRMagnitude
 
 class StateCalcRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -25640,7 +26169,7 @@ class StateCalcRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_coord_system_name_method_offset = 1
     _set_coord_system_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5521666070512946641, 14878656070581862023),
+        "iid_data" : (5301225990061964135, 3410616359937579670),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25681,7 +26210,7 @@ class StateCalcRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcRA, [StateCalcRA, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5316275584337324043, 11081380491017120702), StateCalcRA)
+agcls.AgClassCatalog.add_catalog_entry((5726180418017612779, 16636779338284767620), StateCalcRA)
 agcls.AgTypeNameMap["StateCalcRA"] = StateCalcRA
 
 class StateCalcVMagnitude(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -25692,7 +26221,7 @@ class StateCalcVMagnitude(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_coord_system_name_method_offset = 1
     _set_coord_system_name_method_offset = 2
     _metadata = {
-        "iid_data" : (4803438129335092965, 6567102418307911588),
+        "iid_data" : (4837965634343469177, 5051322219824335259),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25733,7 +26262,7 @@ class StateCalcVMagnitude(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcVMagnitude, [StateCalcVMagnitude, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5490853135291077774, 8078175307779202206), StateCalcVMagnitude)
+agcls.AgClassCatalog.add_catalog_entry((4628421954724833131, 14820566289987316357), StateCalcVMagnitude)
 agcls.AgTypeNameMap["StateCalcVMagnitude"] = StateCalcVMagnitude
 
 class StateCalcVelocityAz(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -25744,7 +26273,7 @@ class StateCalcVelocityAz(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_coord_system_name_method_offset = 1
     _set_coord_system_name_method_offset = 2
     _metadata = {
-        "iid_data" : (4617414247910404419, 13055723531797471401),
+        "iid_data" : (5518711235280250432, 15562576101382587292),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25785,7 +26314,7 @@ class StateCalcVelocityAz(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcVelocityAz, [StateCalcVelocityAz, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5165638287317774015, 15762677018237969026), StateCalcVelocityAz)
+agcls.AgClassCatalog.add_catalog_entry((5224669733845735866, 3249305408171682960), StateCalcVelocityAz)
 agcls.AgTypeNameMap["StateCalcVelocityAz"] = StateCalcVelocityAz
 
 class StateCalcC3Energy(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -25798,7 +26327,7 @@ class StateCalcC3Energy(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_element_type_method_offset = 3
     _set_element_type_method_offset = 4
     _metadata = {
-        "iid_data" : (4795177329830884917, 830721839829273744),
+        "iid_data" : (5612259388545962250, 9185745110553215887),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25855,7 +26384,7 @@ class StateCalcC3Energy(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcC3Energy, [StateCalcC3Energy, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4956270098886536316, 16711553577682302397), StateCalcC3Energy)
+agcls.AgClassCatalog.add_catalog_entry((5053256399504440310, 110817550379809930), StateCalcC3Energy)
 agcls.AgTypeNameMap["StateCalcC3Energy"] = StateCalcC3Energy
 
 class StateCalcInAsympDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -25866,7 +26395,7 @@ class StateCalcInAsympDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_coord_system_name_method_offset = 1
     _set_coord_system_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5028189384223465581, 14983870843088691364),
+        "iid_data" : (5756375201674933621, 4226191636995888531),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25907,7 +26436,7 @@ class StateCalcInAsympDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcInAsympDec, [StateCalcInAsympDec, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4720437332510232716, 2971442058362245276), StateCalcInAsympDec)
+agcls.AgClassCatalog.add_catalog_entry((5576803684926605015, 212340161440002232), StateCalcInAsympDec)
 agcls.AgTypeNameMap["StateCalcInAsympDec"] = StateCalcInAsympDec
 
 class StateCalcInAsympRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -25918,7 +26447,7 @@ class StateCalcInAsympRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_coord_system_name_method_offset = 1
     _set_coord_system_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5492162025506006668, 5827043896990709664),
+        "iid_data" : (5461615683623072539, 14201092299361623213),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -25959,7 +26488,7 @@ class StateCalcInAsympRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcInAsympRA, [StateCalcInAsympRA, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5126981333921246025, 18032583169117203367), StateCalcInAsympRA)
+agcls.AgClassCatalog.add_catalog_entry((5080708667435588023, 10451836283831110580), StateCalcInAsympRA)
 agcls.AgTypeNameMap["StateCalcInAsympRA"] = StateCalcInAsympRA
 
 class StateCalcInVelocityAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -25970,7 +26499,7 @@ class StateCalcInVelocityAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDelet
     _get_coord_system_name_method_offset = 1
     _set_coord_system_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5283077943529571454, 2469071350249978276),
+        "iid_data" : (5693744718326462616, 7386664836539184038),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26011,7 +26540,7 @@ class StateCalcInVelocityAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDelet
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcInVelocityAzAtPeriapsis, [StateCalcInVelocityAzAtPeriapsis, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5179240558843252526, 13982908359142996870), StateCalcInVelocityAzAtPeriapsis)
+agcls.AgClassCatalog.add_catalog_entry((5699203947447680075, 6767183345870309037), StateCalcInVelocityAzAtPeriapsis)
 agcls.AgTypeNameMap["StateCalcInVelocityAzAtPeriapsis"] = StateCalcInVelocityAzAtPeriapsis
 
 class StateCalcOutAsympDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -26022,7 +26551,7 @@ class StateCalcOutAsympDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_coord_system_name_method_offset = 1
     _set_coord_system_name_method_offset = 2
     _metadata = {
-        "iid_data" : (4932054711666868058, 8926848223630516131),
+        "iid_data" : (5440983197613285817, 3569788287656001703),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26063,7 +26592,7 @@ class StateCalcOutAsympDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcOutAsympDec, [StateCalcOutAsympDec, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5454981341664221556, 699121151319611538), StateCalcOutAsympDec)
+agcls.AgClassCatalog.add_catalog_entry((5614445359766488573, 13903482108728643217), StateCalcOutAsympDec)
 agcls.AgTypeNameMap["StateCalcOutAsympDec"] = StateCalcOutAsympDec
 
 class StateCalcOutAsympRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -26074,7 +26603,7 @@ class StateCalcOutAsympRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_coord_system_name_method_offset = 1
     _set_coord_system_name_method_offset = 2
     _metadata = {
-        "iid_data" : (4670900581982298440, 12903419386818387345),
+        "iid_data" : (4756279471114703811, 586620886616905402),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26115,7 +26644,7 @@ class StateCalcOutAsympRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcOutAsympRA, [StateCalcOutAsympRA, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5073736063413390121, 8816824065024077976), StateCalcOutAsympRA)
+agcls.AgClassCatalog.add_catalog_entry((4850366209880718891, 7021332885078254255), StateCalcOutAsympRA)
 agcls.AgTypeNameMap["StateCalcOutAsympRA"] = StateCalcOutAsympRA
 
 class StateCalcOutVelocityAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -26126,7 +26655,7 @@ class StateCalcOutVelocityAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDele
     _get_coord_system_name_method_offset = 1
     _set_coord_system_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5683433371167384637, 6985649904241893300),
+        "iid_data" : (5622607828771806903, 1795891928256950927),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26167,7 +26696,7 @@ class StateCalcOutVelocityAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDele
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcOutVelocityAzAtPeriapsis, [StateCalcOutVelocityAzAtPeriapsis, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4844314183630368135, 5039558183622268350), StateCalcOutVelocityAzAtPeriapsis)
+agcls.AgClassCatalog.add_catalog_entry((4952739268208589366, 1144302852339335562), StateCalcOutVelocityAzAtPeriapsis)
 agcls.AgTypeNameMap["StateCalcOutVelocityAzAtPeriapsis"] = StateCalcOutVelocityAzAtPeriapsis
 
 class StateCalcDuration(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -26176,7 +26705,7 @@ class StateCalcDuration(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5490036406721873421, 17922637933659046047),
+        "iid_data" : (5420143549497922487, 17026571643468546693),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26201,7 +26730,7 @@ class StateCalcDuration(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcDuration, [StateCalcDuration, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5195097791070861727, 15762109350935852979), StateCalcDuration)
+agcls.AgClassCatalog.add_catalog_entry((5762184067263649341, 9359711961377160328), StateCalcDuration)
 agcls.AgTypeNameMap["StateCalcDuration"] = StateCalcDuration
 
 class StateCalcUserValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -26212,7 +26741,7 @@ class StateCalcUserValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_variable_name_method_offset = 1
     _set_variable_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5035748028402725444, 2353582877697722512),
+        "iid_data" : (5103921832921646535, 6502990133405404863),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26254,7 +26783,7 @@ class StateCalcUserValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcUserValue, [StateCalcUserValue, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5075893719684406414, 309963419781242501), StateCalcUserValue)
+agcls.AgClassCatalog.add_catalog_entry((4959500447227617023, 4912870885003475328), StateCalcUserValue)
 agcls.AgTypeNameMap["StateCalcUserValue"] = StateCalcUserValue
 
 class StateCalcVectorGeometryToolAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -26265,7 +26794,7 @@ class StateCalcVectorGeometryToolAngle(IComponentInfo, ICloneable, SupportsDelet
     _get_angle_name_method_offset = 1
     _set_angle_name_method_offset = 2
     _metadata = {
-        "iid_data" : (4652639349765645987, 11922436072353264798),
+        "iid_data" : (5182157406838754780, 7603861108783793583),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26306,7 +26835,7 @@ class StateCalcVectorGeometryToolAngle(IComponentInfo, ICloneable, SupportsDelet
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcVectorGeometryToolAngle, [StateCalcVectorGeometryToolAngle, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5644255745704344347, 14430080963520259744), StateCalcVectorGeometryToolAngle)
+agcls.AgClassCatalog.add_catalog_entry((5324480085844300876, 11388262373602425221), StateCalcVectorGeometryToolAngle)
 agcls.AgTypeNameMap["StateCalcVectorGeometryToolAngle"] = StateCalcVectorGeometryToolAngle
 
 class StateCalcAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -26319,7 +26848,7 @@ class StateCalcAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_vector2_name_method_offset = 3
     _set_vector2_name_method_offset = 4
     _metadata = {
-        "iid_data" : (4646373445201032634, 18417239879106946699),
+        "iid_data" : (5667867226617937509, 11784291010354562432),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26376,7 +26905,7 @@ class StateCalcAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcAngle, [StateCalcAngle, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5256397510869147384, 11126367831258958237), StateCalcAngle)
+agcls.AgClassCatalog.add_catalog_entry((5436046808645135045, 7640635669977561010), StateCalcAngle)
 agcls.AgTypeNameMap["StateCalcAngle"] = StateCalcAngle
 
 class StateCalcDotProduct(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -26389,7 +26918,7 @@ class StateCalcDotProduct(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_vector2_name_method_offset = 3
     _set_vector2_name_method_offset = 4
     _metadata = {
-        "iid_data" : (5247109097718579843, 218601991849819583),
+        "iid_data" : (5028824067402314967, 4992838267227388037),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26446,7 +26975,7 @@ class StateCalcDotProduct(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcDotProduct, [StateCalcDotProduct, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4961147482972533505, 3292612509947718841), StateCalcDotProduct)
+agcls.AgClassCatalog.add_catalog_entry((5010071215325313835, 3680026298737429120), StateCalcDotProduct)
 agcls.AgTypeNameMap["StateCalcDotProduct"] = StateCalcDotProduct
 
 class StateCalcVectorDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -26459,7 +26988,7 @@ class StateCalcVectorDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_vector_name_method_offset = 3
     _set_vector_name_method_offset = 4
     _metadata = {
-        "iid_data" : (5585535507402187666, 4555090200354434236),
+        "iid_data" : (4624875464250304450, 4060729329742085011),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26516,7 +27045,7 @@ class StateCalcVectorDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcVectorDec, [StateCalcVectorDec, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5206425262316127545, 3424396666528829351), StateCalcVectorDec)
+agcls.AgClassCatalog.add_catalog_entry((5708908024010431831, 9240607901125574068), StateCalcVectorDec)
 agcls.AgTypeNameMap["StateCalcVectorDec"] = StateCalcVectorDec
 
 class StateCalcVectorMagnitude(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -26529,7 +27058,7 @@ class StateCalcVectorMagnitude(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _get_unit_dimension_method_offset = 3
     _set_unit_dimension_method_offset = 4
     _metadata = {
-        "iid_data" : (5324102475805554083, 8037218018821806739),
+        "iid_data" : (4800614730146217345, 18019011303283156878),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26586,7 +27115,7 @@ class StateCalcVectorMagnitude(IComponentInfo, ICloneable, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcVectorMagnitude, [StateCalcVectorMagnitude, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5596838771871567286, 16483514214233658248), StateCalcVectorMagnitude)
+agcls.AgClassCatalog.add_catalog_entry((5061431282716669183, 13941558409322673066), StateCalcVectorMagnitude)
 agcls.AgTypeNameMap["StateCalcVectorMagnitude"] = StateCalcVectorMagnitude
 
 class StateCalcVectorRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -26599,7 +27128,7 @@ class StateCalcVectorRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_vector_name_method_offset = 3
     _set_vector_name_method_offset = 4
     _metadata = {
-        "iid_data" : (5107356567157566993, 12516705800010121347),
+        "iid_data" : (5180082749566215231, 16462953216307290807),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26656,7 +27185,7 @@ class StateCalcVectorRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcVectorRA, [StateCalcVectorRA, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5661294235670981293, 865349632008221838), StateCalcVectorRA)
+agcls.AgClassCatalog.add_catalog_entry((5196163836870711651, 12386998407243537319), StateCalcVectorRA)
 agcls.AgTypeNameMap["StateCalcVectorRA"] = StateCalcVectorRA
 
 class StateCalcVectorX(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -26673,7 +27202,7 @@ class StateCalcVectorX(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_normalize_method_offset = 7
     _set_normalize_method_offset = 8
     _metadata = {
-        "iid_data" : (5141058384301335384, 13279974180234312123),
+        "iid_data" : (5363810122717106221, 18023033001537850012),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26762,7 +27291,7 @@ class StateCalcVectorX(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcVectorX, [StateCalcVectorX, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5375549622553239861, 624849717514265264), StateCalcVectorX)
+agcls.AgClassCatalog.add_catalog_entry((4990809230994932209, 12743586160861142418), StateCalcVectorX)
 agcls.AgTypeNameMap["StateCalcVectorX"] = StateCalcVectorX
 
 class StateCalcOnePointAccess(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -26785,7 +27314,7 @@ class StateCalcOnePointAccess(IComponentInfo, ICloneable, SupportsDeleteCallback
     _get_use_light_time_delay_method_offset = 13
     _set_use_light_time_delay_method_offset = 14
     _metadata = {
-        "iid_data" : (5258287937174969888, 14447982092743172993),
+        "iid_data" : (4943419724765434624, 14000456725706512808),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -26924,7 +27453,7 @@ class StateCalcOnePointAccess(IComponentInfo, ICloneable, SupportsDeleteCallback
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcOnePointAccess, [StateCalcOnePointAccess, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5722868679097170223, 4646008177610324386), StateCalcOnePointAccess)
+agcls.AgClassCatalog.add_catalog_entry((4994025772181273865, 6623540761288487100), StateCalcOnePointAccess)
 agcls.AgTypeNameMap["StateCalcOnePointAccess"] = StateCalcOnePointAccess
 
 class StateCalcDifferenceAcrossSegmentsOtherSatellite(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -26942,7 +27471,7 @@ class StateCalcDifferenceAcrossSegmentsOtherSatellite(IComponentInfo, ICloneable
     _set_difference_order_method_offset = 8
     _get_reference_satellite_method_offset = 9
     _metadata = {
-        "iid_data" : (5586974997613699158, 7969105052204490661),
+        "iid_data" : (5215408236972010105, 2849609223416978352),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27040,7 +27569,7 @@ class StateCalcDifferenceAcrossSegmentsOtherSatellite(IComponentInfo, ICloneable
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcDifferenceAcrossSegmentsOtherSatellite, [StateCalcDifferenceAcrossSegmentsOtherSatellite, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5535002555039008667, 9414753759363378563), StateCalcDifferenceAcrossSegmentsOtherSatellite)
+agcls.AgClassCatalog.add_catalog_entry((5178021488417191265, 7349136717906751115), StateCalcDifferenceAcrossSegmentsOtherSatellite)
 agcls.AgTypeNameMap["StateCalcDifferenceAcrossSegmentsOtherSatellite"] = StateCalcDifferenceAcrossSegmentsOtherSatellite
 
 class StateCalcValueAtSegmentOtherSat(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -27056,7 +27585,7 @@ class StateCalcValueAtSegmentOtherSat(IComponentInfo, ICloneable, SupportsDelete
     _set_segment_state_to_use_method_offset = 6
     _get_reference_satellite_method_offset = 7
     _metadata = {
-        "iid_data" : (4861373002110940755, 14099853278507236280),
+        "iid_data" : (5027242505686492804, 17068078738072792475),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27138,7 +27667,7 @@ class StateCalcValueAtSegmentOtherSat(IComponentInfo, ICloneable, SupportsDelete
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcValueAtSegmentOtherSat, [StateCalcValueAtSegmentOtherSat, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5100707839553253780, 16681457764805949839), StateCalcValueAtSegmentOtherSat)
+agcls.AgClassCatalog.add_catalog_entry((4963358959452683081, 2314353515367646902), StateCalcValueAtSegmentOtherSat)
 agcls.AgTypeNameMap["StateCalcValueAtSegmentOtherSat"] = StateCalcValueAtSegmentOtherSat
 
 class StateCalcRARate(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -27149,7 +27678,7 @@ class StateCalcRARate(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_coord_system_name_method_offset = 1
     _set_coord_system_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5169312735323609372, 1351559487964280729),
+        "iid_data" : (5248823864558363359, 9805346924270033595),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27190,7 +27719,7 @@ class StateCalcRARate(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcRARate, [StateCalcRARate, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5427418789905619045, 7913717464183850941), StateCalcRARate)
+agcls.AgClassCatalog.add_catalog_entry((4943854274479222264, 13632789203531670178), StateCalcRARate)
 agcls.AgTypeNameMap["StateCalcRARate"] = StateCalcRARate
 
 class StateCalcDecRate(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -27201,7 +27730,7 @@ class StateCalcDecRate(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_coord_system_name_method_offset = 1
     _set_coord_system_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5198081004019154854, 16296709300563218824),
+        "iid_data" : (5375444167953159582, 9431272755085499816),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27242,7 +27771,7 @@ class StateCalcDecRate(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcDecRate, [StateCalcDecRate, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5447811881180074853, 16119053664595181462), StateCalcDecRate)
+agcls.AgClassCatalog.add_catalog_entry((4940708988460848113, 17519103578660806301), StateCalcDecRate)
 agcls.AgTypeNameMap["StateCalcDecRate"] = StateCalcDecRate
 
 class StateCalcRangeRate(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -27253,7 +27782,7 @@ class StateCalcRangeRate(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_coord_system_name_method_offset = 1
     _set_coord_system_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5190417108120997032, 7467177326937025207),
+        "iid_data" : (5674350943808340090, 2613553209315802303),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27294,7 +27823,7 @@ class StateCalcRangeRate(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcRangeRate, [StateCalcRangeRate, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5739329804608567404, 2124500646456044975), StateCalcRangeRate)
+agcls.AgClassCatalog.add_catalog_entry((5561176881140715352, 17480480068457837219), StateCalcRangeRate)
 agcls.AgTypeNameMap["StateCalcRangeRate"] = StateCalcRangeRate
 
 class StateCalcGravitationalParameter(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -27309,7 +27838,7 @@ class StateCalcGravitationalParameter(IComponentInfo, ICloneable, SupportsDelete
     _get_gravity_filename_method_offset = 5
     _set_gravity_filename_method_offset = 6
     _metadata = {
-        "iid_data" : (4656334884063867319, 15050515386662574250),
+        "iid_data" : (5461091594018904937, 18153277059106554538),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27382,7 +27911,7 @@ class StateCalcGravitationalParameter(IComponentInfo, ICloneable, SupportsDelete
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcGravitationalParameter, [StateCalcGravitationalParameter, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5336449706727541927, 12029373292348620448), StateCalcGravitationalParameter)
+agcls.AgClassCatalog.add_catalog_entry((5409921841968671890, 17592742098944832692), StateCalcGravitationalParameter)
 agcls.AgTypeNameMap["StateCalcGravitationalParameter"] = StateCalcGravitationalParameter
 
 class StateCalcReferenceRadius(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -27397,7 +27926,7 @@ class StateCalcReferenceRadius(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _get_gravity_filename_method_offset = 5
     _set_gravity_filename_method_offset = 6
     _metadata = {
-        "iid_data" : (5257402151595319831, 4633460210786368153),
+        "iid_data" : (5710593588100032522, 11183679903810053563),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27470,10 +27999,10 @@ class StateCalcReferenceRadius(IComponentInfo, ICloneable, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcReferenceRadius, [StateCalcReferenceRadius, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5190710319823653137, 614989305931214249), StateCalcReferenceRadius)
+agcls.AgClassCatalog.add_catalog_entry((5616141900881984030, 4523788179492031891), StateCalcReferenceRadius)
 agcls.AgTypeNameMap["StateCalcReferenceRadius"] = StateCalcReferenceRadius
 
-class StateCalcGravCoeff(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcGravCoefficient(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a gravity coefficient calculation object."""
 
     _num_methods = 12
@@ -27491,12 +28020,12 @@ class StateCalcGravCoeff(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_normalization_type_method_offset = 11
     _set_normalization_type_method_offset = 12
     _metadata = {
-        "iid_data" : (5076942001580635825, 11057982484705034399),
+        "iid_data" : (4927757309331734386, 358512974959967874),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcGravCoeff)
+        return get_interface_property(attrname, StateCalcGravCoefficient)
 
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -27504,14 +28033,14 @@ class StateCalcGravCoeff(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def central_body_name(self) -> str:
         """Get or set the central body of the component."""
-        return self._intf.get_property(StateCalcGravCoeff._metadata, StateCalcGravCoeff._get_central_body_name_metadata)
+        return self._intf.get_property(StateCalcGravCoefficient._metadata, StateCalcGravCoefficient._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "offset" : _set_central_body_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @central_body_name.setter
     def central_body_name(self, value:str) -> None:
-        return self._intf.set_property(StateCalcGravCoeff._metadata, StateCalcGravCoeff._set_central_body_name_metadata, value)
+        return self._intf.set_property(StateCalcGravCoefficient._metadata, StateCalcGravCoefficient._set_central_body_name_metadata, value)
 
     _get_gravity_filename_metadata = { "offset" : _get_gravity_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -27519,14 +28048,14 @@ class StateCalcGravCoeff(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def gravity_filename(self) -> str:
         """Source for the gravity coefficient."""
-        return self._intf.get_property(StateCalcGravCoeff._metadata, StateCalcGravCoeff._get_gravity_filename_metadata)
+        return self._intf.get_property(StateCalcGravCoefficient._metadata, StateCalcGravCoefficient._get_gravity_filename_metadata)
 
     _set_gravity_filename_metadata = { "offset" : _set_gravity_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @gravity_filename.setter
     def gravity_filename(self, value:str) -> None:
-        return self._intf.set_property(StateCalcGravCoeff._metadata, StateCalcGravCoeff._set_gravity_filename_metadata, value)
+        return self._intf.set_property(StateCalcGravCoefficient._metadata, StateCalcGravCoefficient._set_gravity_filename_metadata, value)
 
     _get_coefficient_type_metadata = { "offset" : _get_coefficient_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -27534,14 +28063,14 @@ class StateCalcGravCoeff(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def coefficient_type(self) -> "GravityCoefficientType":
         """Coefficient type."""
-        return self._intf.get_property(StateCalcGravCoeff._metadata, StateCalcGravCoeff._get_coefficient_type_metadata)
+        return self._intf.get_property(StateCalcGravCoefficient._metadata, StateCalcGravCoefficient._get_coefficient_type_metadata)
 
     _set_coefficient_type_metadata = { "offset" : _set_coefficient_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GravityCoefficientType),) }
     @coefficient_type.setter
     def coefficient_type(self, value:"GravityCoefficientType") -> None:
-        return self._intf.set_property(StateCalcGravCoeff._metadata, StateCalcGravCoeff._set_coefficient_type_metadata, value)
+        return self._intf.set_property(StateCalcGravCoefficient._metadata, StateCalcGravCoefficient._set_coefficient_type_metadata, value)
 
     _get_degree_metadata = { "offset" : _get_degree_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
@@ -27549,14 +28078,14 @@ class StateCalcGravCoeff(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def degree(self) -> int:
         """Degree of the coefficient."""
-        return self._intf.get_property(StateCalcGravCoeff._metadata, StateCalcGravCoeff._get_degree_metadata)
+        return self._intf.get_property(StateCalcGravCoefficient._metadata, StateCalcGravCoefficient._get_degree_metadata)
 
     _set_degree_metadata = { "offset" : _set_degree_method_offset,
             "arg_types" : (agcom.INT,),
             "marshallers" : (agmarshall.IntArg,) }
     @degree.setter
     def degree(self, value:int) -> None:
-        return self._intf.set_property(StateCalcGravCoeff._metadata, StateCalcGravCoeff._set_degree_metadata, value)
+        return self._intf.set_property(StateCalcGravCoefficient._metadata, StateCalcGravCoefficient._set_degree_metadata, value)
 
     _get_order_metadata = { "offset" : _get_order_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
@@ -27564,14 +28093,14 @@ class StateCalcGravCoeff(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def order(self) -> int:
         """Order of the coefficient."""
-        return self._intf.get_property(StateCalcGravCoeff._metadata, StateCalcGravCoeff._get_order_metadata)
+        return self._intf.get_property(StateCalcGravCoefficient._metadata, StateCalcGravCoefficient._get_order_metadata)
 
     _set_order_metadata = { "offset" : _set_order_method_offset,
             "arg_types" : (agcom.INT,),
             "marshallers" : (agmarshall.IntArg,) }
     @order.setter
     def order(self, value:int) -> None:
-        return self._intf.set_property(StateCalcGravCoeff._metadata, StateCalcGravCoeff._set_order_metadata, value)
+        return self._intf.set_property(StateCalcGravCoefficient._metadata, StateCalcGravCoefficient._set_order_metadata, value)
 
     _get_normalization_type_metadata = { "offset" : _get_normalization_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -27579,14 +28108,14 @@ class StateCalcGravCoeff(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def normalization_type(self) -> "GravityCoefficientNormalizationType":
         """Normalization type."""
-        return self._intf.get_property(StateCalcGravCoeff._metadata, StateCalcGravCoeff._get_normalization_type_metadata)
+        return self._intf.get_property(StateCalcGravCoefficient._metadata, StateCalcGravCoefficient._get_normalization_type_metadata)
 
     _set_normalization_type_metadata = { "offset" : _set_normalization_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GravityCoefficientNormalizationType),) }
     @normalization_type.setter
     def normalization_type(self, value:"GravityCoefficientNormalizationType") -> None:
-        return self._intf.set_property(StateCalcGravCoeff._metadata, StateCalcGravCoeff._set_normalization_type_metadata, value)
+        return self._intf.set_property(StateCalcGravCoefficient._metadata, StateCalcGravCoefficient._set_normalization_type_metadata, value)
 
     _property_names[central_body_name] = "central_body_name"
     _property_names[gravity_filename] = "gravity_filename"
@@ -27596,9 +28125,9 @@ class StateCalcGravCoeff(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[normalization_type] = "normalization_type"
 
     def __init__(self, source_object=None):
-        """Construct an object of type StateCalcGravCoeff."""
+        """Construct an object of type StateCalcGravCoefficient."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, StateCalcGravCoeff)
+        initialize_from_source_object(self, source_object, StateCalcGravCoefficient)
         IComponentInfo.__init__(self, source_object)
         ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
@@ -27610,10 +28139,10 @@ class StateCalcGravCoeff(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcGravCoeff, [StateCalcGravCoeff, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcGravCoefficient, [StateCalcGravCoefficient, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4936078533960285641, 14479037150342646414), StateCalcGravCoeff)
-agcls.AgTypeNameMap["StateCalcGravCoeff"] = StateCalcGravCoeff
+agcls.AgClassCatalog.add_catalog_entry((5075068838005319305, 1091290620499709619), StateCalcGravCoefficient)
+agcls.AgTypeNameMap["StateCalcGravCoefficient"] = StateCalcGravCoefficient
 
 class StateCalcSpeedOfLight(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Speed of Light calculation object."""
@@ -27621,7 +28150,7 @@ class StateCalcSpeedOfLight(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5680239566686852476, 16205282188573228188),
+        "iid_data" : (5371616077797376219, 17135625175428278912),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27646,7 +28175,7 @@ class StateCalcSpeedOfLight(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcSpeedOfLight, [StateCalcSpeedOfLight, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4887361465284887889, 17594890200945376905), StateCalcSpeedOfLight)
+agcls.AgClassCatalog.add_catalog_entry((4722187047954966079, 2591324872585855363), StateCalcSpeedOfLight)
 agcls.AgTypeNameMap["StateCalcSpeedOfLight"] = StateCalcSpeedOfLight
 
 class StateCalcPi(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -27655,7 +28184,7 @@ class StateCalcPi(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5708338168074948532, 1281499724932318355),
+        "iid_data" : (4814226063347000942, 15763984418982904999),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27680,7 +28209,7 @@ class StateCalcPi(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcPi, [StateCalcPi, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5630115082508146498, 5734333376350242177), StateCalcPi)
+agcls.AgClassCatalog.add_catalog_entry((5267142114741085691, 4776090424144307352), StateCalcPi)
 agcls.AgTypeNameMap["StateCalcPi"] = StateCalcPi
 
 class StateCalcScalar(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -27693,7 +28222,7 @@ class StateCalcScalar(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_unit_dimension_method_offset = 3
     _set_unit_dimension_method_offset = 4
     _metadata = {
-        "iid_data" : (4629925575624144000, 12136319558661325245),
+        "iid_data" : (5438655213030201632, 15025670028574461623),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27750,7 +28279,7 @@ class StateCalcScalar(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcScalar, [StateCalcScalar, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5353708507660250487, 8836083805435505283), StateCalcScalar)
+agcls.AgClassCatalog.add_catalog_entry((5431498362535788764, 12501042110407631784), StateCalcScalar)
 agcls.AgTypeNameMap["StateCalcScalar"] = StateCalcScalar
 
 class StateCalcApparentSolarTime(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -27761,7 +28290,7 @@ class StateCalcApparentSolarTime(IComponentInfo, ICloneable, SupportsDeleteCallb
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5014389841226027657, 1424149512299130022),
+        "iid_data" : (4852426426799519815, 4862449537167527867),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27802,7 +28331,7 @@ class StateCalcApparentSolarTime(IComponentInfo, ICloneable, SupportsDeleteCallb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcApparentSolarTime, [StateCalcApparentSolarTime, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5371855221923459945, 3280181261227876787), StateCalcApparentSolarTime)
+agcls.AgClassCatalog.add_catalog_entry((5002340607161992412, 14958503734163946143), StateCalcApparentSolarTime)
 agcls.AgTypeNameMap["StateCalcApparentSolarTime"] = StateCalcApparentSolarTime
 
 class StateCalcEarthMeanSolarTime(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -27813,7 +28342,7 @@ class StateCalcEarthMeanSolarTime(IComponentInfo, ICloneable, SupportsDeleteCall
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5379733726693653889, 7167384767267044780),
+        "iid_data" : (5506847771156260443, 6001888053644613813),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27854,7 +28383,7 @@ class StateCalcEarthMeanSolarTime(IComponentInfo, ICloneable, SupportsDeleteCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcEarthMeanSolarTime, [StateCalcEarthMeanSolarTime, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4650491514545192557, 13776968428773292448), StateCalcEarthMeanSolarTime)
+agcls.AgClassCatalog.add_catalog_entry((5234220777649382224, 6628234094393800082), StateCalcEarthMeanSolarTime)
 agcls.AgTypeNameMap["StateCalcEarthMeanSolarTime"] = StateCalcEarthMeanSolarTime
 
 class StateCalcEarthMeanLocalTimeOfAscendingNode(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -27865,7 +28394,7 @@ class StateCalcEarthMeanLocalTimeOfAscendingNode(IComponentInfo, ICloneable, Sup
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
     _metadata = {
-        "iid_data" : (5434713757343168361, 2937764617524906412),
+        "iid_data" : (5410769922069073798, 14401270747485045377),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -27906,7 +28435,7 @@ class StateCalcEarthMeanLocalTimeOfAscendingNode(IComponentInfo, ICloneable, Sup
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateCalcEarthMeanLocalTimeOfAscendingNode, [StateCalcEarthMeanLocalTimeOfAscendingNode, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5240793249526993676, 4585501919491212454), StateCalcEarthMeanLocalTimeOfAscendingNode)
+agcls.AgClassCatalog.add_catalog_entry((5758706373345399760, 160204855282639234), StateCalcEarthMeanLocalTimeOfAscendingNode)
 agcls.AgTypeNameMap["StateCalcEarthMeanLocalTimeOfAscendingNode"] = StateCalcEarthMeanLocalTimeOfAscendingNode
 
 class AutomaticSequenceCollection(SupportsDeleteCallback):
@@ -27922,7 +28451,7 @@ class AutomaticSequenceCollection(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 6
     _get_item_by_name_method_offset = 7
     _metadata = {
-        "iid_data" : (5663305449015703647, 15861498692559094205),
+        "iid_data" : (5687256135587047527, 1103549897450300584),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -28012,7 +28541,7 @@ class AutomaticSequenceCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AutomaticSequenceCollection, [AutomaticSequenceCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5071595060173986658, 13823054959921785768), AutomaticSequenceCollection)
+agcls.AgClassCatalog.add_catalog_entry((5755131175950602709, 7402061508698926753), AutomaticSequenceCollection)
 agcls.AgTypeNameMap["AutomaticSequenceCollection"] = AutomaticSequenceCollection
 
 class AutomaticSequence(SupportsDeleteCallback):
@@ -28027,7 +28556,7 @@ class AutomaticSequence(SupportsDeleteCallback):
     _set_user_comment_method_offset = 5
     _get_sequence_method_offset = 6
     _metadata = {
-        "iid_data" : (5730995391160895162, 12407851123050192288),
+        "iid_data" : (5010746028967882707, 17427024904847284621),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28096,7 +28625,7 @@ class AutomaticSequence(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AutomaticSequence, [AutomaticSequence, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5084262556472041234, 3752935948797194130), AutomaticSequence)
+agcls.AgClassCatalog.add_catalog_entry((4762260135647690978, 187838368331681464), AutomaticSequence)
 agcls.AgTypeNameMap["AutomaticSequence"] = AutomaticSequence
 
 class CentralBodyComponentCollection(SupportsDeleteCallback):
@@ -28113,7 +28642,7 @@ class CentralBodyComponentCollection(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 7
     _get_item_by_name_method_offset = 8
     _metadata = {
-        "iid_data" : (4871753960793045745, 5335968105475417007),
+        "iid_data" : (5237804219398926527, 531518388083815064),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -28210,7 +28739,7 @@ class CentralBodyComponentCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CentralBodyComponentCollection, [CentralBodyComponentCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5646011597072473207, 6446331028504217010), CentralBodyComponentCollection)
+agcls.AgClassCatalog.add_catalog_entry((4765895062922597009, 1946551829689846691), CentralBodyComponentCollection)
 agcls.AgTypeNameMap["CentralBodyComponentCollection"] = CentralBodyComponentCollection
 
 class CentralBodyComponent(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -28260,7 +28789,7 @@ class CentralBodyComponent(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _paste_ephemeris_method_offset = 40
     _add_copy_of_ephemeris_method_offset = 41
     _metadata = {
-        "iid_data" : (5640221303112903926, 9492475738650464186),
+        "iid_data" : (4738173355015035077, 5969707878920288395),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28594,7 +29123,7 @@ class CentralBodyComponent(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CentralBodyComponent, [CentralBodyComponent, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4946042482461305423, 869776284401354677), CentralBodyComponent)
+agcls.AgClassCatalog.add_catalog_entry((4978498313912215442, 7292432516360146345), CentralBodyComponent)
 agcls.AgTypeNameMap["CentralBodyComponent"] = CentralBodyComponent
 
 class CentralBodyComponentGravityModel(SupportsDeleteCallback):
@@ -28613,7 +29142,7 @@ class CentralBodyComponentGravityModel(SupportsDeleteCallback):
     _get_j4_method_offset = 9
     _set_j4_method_offset = 10
     _metadata = {
-        "iid_data" : (4697797027617980998, 12130301205692264322),
+        "iid_data" : (4796541277418941375, 6348339706487906946),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -28714,7 +29243,7 @@ class CentralBodyComponentGravityModel(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CentralBodyComponentGravityModel, [CentralBodyComponentGravityModel, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4821830782571341978, 6560769308725594810), CentralBodyComponentGravityModel)
+agcls.AgClassCatalog.add_catalog_entry((4703588262221350086, 16660739411034422673), CentralBodyComponentGravityModel)
 agcls.AgTypeNameMap["CentralBodyComponentGravityModel"] = CentralBodyComponentGravityModel
 
 class CentralBodyComponentShapeSphere(ICentralBodyComponentShape, SupportsDeleteCallback):
@@ -28725,7 +29254,7 @@ class CentralBodyComponentShapeSphere(ICentralBodyComponentShape, SupportsDelete
     _get_radius_method_offset = 1
     _set_radius_method_offset = 2
     _metadata = {
-        "iid_data" : (5230758235408657690, 9823643148124119432),
+        "iid_data" : (4716945119911539261, 16451892949247723656),
         "vtable_reference" : ICentralBodyComponentShape._vtable_offset + ICentralBodyComponentShape._num_methods - 1,
     }
     _property_names = {}
@@ -28764,7 +29293,7 @@ class CentralBodyComponentShapeSphere(ICentralBodyComponentShape, SupportsDelete
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CentralBodyComponentShapeSphere, [CentralBodyComponentShapeSphere, ICentralBodyComponentShape])
 
-agcls.AgClassCatalog.add_catalog_entry((5260078994854281057, 16065891516535457), CentralBodyComponentShapeSphere)
+agcls.AgClassCatalog.add_catalog_entry((4875582964927117121, 11225635910856431285), CentralBodyComponentShapeSphere)
 agcls.AgTypeNameMap["CentralBodyComponentShapeSphere"] = CentralBodyComponentShapeSphere
 
 class CentralBodyComponentShapeOblateSpheroid(ICentralBodyComponentShape, SupportsDeleteCallback):
@@ -28778,7 +29307,7 @@ class CentralBodyComponentShapeOblateSpheroid(ICentralBodyComponentShape, Suppor
     _set_max_radius_method_offset = 4
     _get_flattening_coefficient_method_offset = 5
     _metadata = {
-        "iid_data" : (5485250452012065507, 14839475088817686705),
+        "iid_data" : (5529605020304724825, 17955458114410956964),
         "vtable_reference" : ICentralBodyComponentShape._vtable_offset + ICentralBodyComponentShape._num_methods - 1,
     }
     _property_names = {}
@@ -28842,7 +29371,7 @@ class CentralBodyComponentShapeOblateSpheroid(ICentralBodyComponentShape, Suppor
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CentralBodyComponentShapeOblateSpheroid, [CentralBodyComponentShapeOblateSpheroid, ICentralBodyComponentShape])
 
-agcls.AgClassCatalog.add_catalog_entry((5219245590015143147, 10316844097444389793), CentralBodyComponentShapeOblateSpheroid)
+agcls.AgClassCatalog.add_catalog_entry((5148792717845515071, 6162534063708676019), CentralBodyComponentShapeOblateSpheroid)
 agcls.AgTypeNameMap["CentralBodyComponentShapeOblateSpheroid"] = CentralBodyComponentShapeOblateSpheroid
 
 class CentralBodyComponentShapeTriaxialEllipsoid(ICentralBodyComponentShape, SupportsDeleteCallback):
@@ -28857,7 +29386,7 @@ class CentralBodyComponentShapeTriaxialEllipsoid(ICentralBodyComponentShape, Sup
     _get_semiminor_axis_method_offset = 5
     _set_semiminor_axis_method_offset = 6
     _metadata = {
-        "iid_data" : (5063152003497522251, 9401477560282307262),
+        "iid_data" : (5428753283801106392, 6367729426694991751),
         "vtable_reference" : ICentralBodyComponentShape._vtable_offset + ICentralBodyComponentShape._num_methods - 1,
     }
     _property_names = {}
@@ -28928,7 +29457,7 @@ class CentralBodyComponentShapeTriaxialEllipsoid(ICentralBodyComponentShape, Sup
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CentralBodyComponentShapeTriaxialEllipsoid, [CentralBodyComponentShapeTriaxialEllipsoid, ICentralBodyComponentShape])
 
-agcls.AgClassCatalog.add_catalog_entry((5050867345906750156, 12587040557795424178), CentralBodyComponentShapeTriaxialEllipsoid)
+agcls.AgClassCatalog.add_catalog_entry((4772689771475102733, 7491889474237538697), CentralBodyComponentShapeTriaxialEllipsoid)
 agcls.AgTypeNameMap["CentralBodyComponentShapeTriaxialEllipsoid"] = CentralBodyComponentShapeTriaxialEllipsoid
 
 class CentralBodyComponentAttitudeRotationCoefficientsFile(ICentralBodyComponentAttitude, SupportsDeleteCallback):
@@ -28939,7 +29468,7 @@ class CentralBodyComponentAttitudeRotationCoefficientsFile(ICentralBodyComponent
     _get_filename_method_offset = 1
     _set_filename_method_offset = 2
     _metadata = {
-        "iid_data" : (5095681338417288511, 6927611188181800883),
+        "iid_data" : (4908397367754518614, 13265690546025544876),
         "vtable_reference" : ICentralBodyComponentAttitude._vtable_offset + ICentralBodyComponentAttitude._num_methods - 1,
     }
     _property_names = {}
@@ -28978,7 +29507,7 @@ class CentralBodyComponentAttitudeRotationCoefficientsFile(ICentralBodyComponent
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CentralBodyComponentAttitudeRotationCoefficientsFile, [CentralBodyComponentAttitudeRotationCoefficientsFile, ICentralBodyComponentAttitude])
 
-agcls.AgClassCatalog.add_catalog_entry((4684700220808562037, 7877415965054162825), CentralBodyComponentAttitudeRotationCoefficientsFile)
+agcls.AgClassCatalog.add_catalog_entry((5285368069581423069, 1206265691620806319), CentralBodyComponentAttitudeRotationCoefficientsFile)
 agcls.AgTypeNameMap["CentralBodyComponentAttitudeRotationCoefficientsFile"] = CentralBodyComponentAttitudeRotationCoefficientsFile
 
 class CentralBodyComponentAttitudeIAU1994(ICentralBodyComponentAttitude, SupportsDeleteCallback):
@@ -28999,7 +29528,7 @@ class CentralBodyComponentAttitudeIAU1994(ICentralBodyComponentAttitude, Support
     _get_rotation_rate_method_offset = 11
     _set_rotation_rate_method_offset = 12
     _metadata = {
-        "iid_data" : (5549016629518068083, 12192704956758789263),
+        "iid_data" : (5647960100864907395, 15184952657152785580),
         "vtable_reference" : ICentralBodyComponentAttitude._vtable_offset + ICentralBodyComponentAttitude._num_methods - 1,
     }
     _property_names = {}
@@ -29118,7 +29647,7 @@ class CentralBodyComponentAttitudeIAU1994(ICentralBodyComponentAttitude, Support
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CentralBodyComponentAttitudeIAU1994, [CentralBodyComponentAttitudeIAU1994, ICentralBodyComponentAttitude])
 
-agcls.AgClassCatalog.add_catalog_entry((5033176508424437318, 9839194961858099586), CentralBodyComponentAttitudeIAU1994)
+agcls.AgClassCatalog.add_catalog_entry((5071780168286088063, 2071264508908280229), CentralBodyComponentAttitudeIAU1994)
 agcls.AgTypeNameMap["CentralBodyComponentAttitudeIAU1994"] = CentralBodyComponentAttitudeIAU1994
 
 class CentralBodyComponentEphemerisAnalyticOrbit(ICentralBodyComponentEphemeris, SupportsDeleteCallback):
@@ -29153,7 +29682,7 @@ class CentralBodyComponentEphemerisAnalyticOrbit(ICentralBodyComponentEphemeris,
     _get_mean_longitude_rate_method_offset = 25
     _set_mean_longitude_rate_method_offset = 26
     _metadata = {
-        "iid_data" : (4753317389975628734, 12335812999387687081),
+        "iid_data" : (5154293855321076044, 13089780133750380681),
         "vtable_reference" : ICentralBodyComponentEphemeris._vtable_offset + ICentralBodyComponentEphemeris._num_methods - 1,
     }
     _property_names = {}
@@ -29384,7 +29913,7 @@ class CentralBodyComponentEphemerisAnalyticOrbit(ICentralBodyComponentEphemeris,
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CentralBodyComponentEphemerisAnalyticOrbit, [CentralBodyComponentEphemerisAnalyticOrbit, ICentralBodyComponentEphemeris])
 
-agcls.AgClassCatalog.add_catalog_entry((5191484337519890481, 8136673290563576227), CentralBodyComponentEphemerisAnalyticOrbit)
+agcls.AgClassCatalog.add_catalog_entry((4948251711727061859, 17944702441668943235), CentralBodyComponentEphemerisAnalyticOrbit)
 agcls.AgTypeNameMap["CentralBodyComponentEphemerisAnalyticOrbit"] = CentralBodyComponentEphemerisAnalyticOrbit
 
 class CentralBodyComponentEphemerisJPLSpice(ICentralBodyComponentEphemeris, SupportsDeleteCallback):
@@ -29395,7 +29924,7 @@ class CentralBodyComponentEphemerisJPLSpice(ICentralBodyComponentEphemeris, Supp
     _get_jpl_spice_id_method_offset = 1
     _set_jpl_spice_id_method_offset = 2
     _metadata = {
-        "iid_data" : (5009289977513944391, 11298641061474462136),
+        "iid_data" : (4672528458914740619, 9475984268583999124),
         "vtable_reference" : ICentralBodyComponentEphemeris._vtable_offset + ICentralBodyComponentEphemeris._num_methods - 1,
     }
     _property_names = {}
@@ -29434,7 +29963,7 @@ class CentralBodyComponentEphemerisJPLSpice(ICentralBodyComponentEphemeris, Supp
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CentralBodyComponentEphemerisJPLSpice, [CentralBodyComponentEphemerisJPLSpice, ICentralBodyComponentEphemeris])
 
-agcls.AgClassCatalog.add_catalog_entry((4888079214115957403, 13298646673798486434), CentralBodyComponentEphemerisJPLSpice)
+agcls.AgClassCatalog.add_catalog_entry((4792029746774054773, 17340767885682847665), CentralBodyComponentEphemerisJPLSpice)
 agcls.AgTypeNameMap["CentralBodyComponentEphemerisJPLSpice"] = CentralBodyComponentEphemerisJPLSpice
 
 class CentralBodyComponentEphemerisFile(ICentralBodyComponentEphemeris, SupportsDeleteCallback):
@@ -29445,7 +29974,7 @@ class CentralBodyComponentEphemerisFile(ICentralBodyComponentEphemeris, Supports
     _get_filename_method_offset = 1
     _set_filename_method_offset = 2
     _metadata = {
-        "iid_data" : (5233104570870713964, 9716818812748419470),
+        "iid_data" : (5187358918268247893, 6325331074645261483),
         "vtable_reference" : ICentralBodyComponentEphemeris._vtable_offset + ICentralBodyComponentEphemeris._num_methods - 1,
     }
     _property_names = {}
@@ -29484,7 +30013,7 @@ class CentralBodyComponentEphemerisFile(ICentralBodyComponentEphemeris, Supports
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CentralBodyComponentEphemerisFile, [CentralBodyComponentEphemerisFile, ICentralBodyComponentEphemeris])
 
-agcls.AgClassCatalog.add_catalog_entry((4682194894607589662, 11232696290056966582), CentralBodyComponentEphemerisFile)
+agcls.AgClassCatalog.add_catalog_entry((4673733037759683581, 3003111933080893320), CentralBodyComponentEphemerisFile)
 agcls.AgTypeNameMap["CentralBodyComponentEphemerisFile"] = CentralBodyComponentEphemerisFile
 
 class CentralBodyComponentEphemerisJPLDesignExplorerOptimizer(ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides, ICentralBodyComponentEphemeris, SupportsDeleteCallback):
@@ -29505,7 +30034,7 @@ class CentralBodyComponentEphemerisJPLDesignExplorerOptimizer(ICentralBodyCompon
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CentralBodyComponentEphemerisJPLDesignExplorerOptimizer, [ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides, ICentralBodyComponentEphemeris])
 
-agcls.AgClassCatalog.add_catalog_entry((5100712310690212330, 12064070645483617173), CentralBodyComponentEphemerisJPLDesignExplorerOptimizer)
+agcls.AgClassCatalog.add_catalog_entry((5242555844992367940, 899264810017828265), CentralBodyComponentEphemerisJPLDesignExplorerOptimizer)
 agcls.AgTypeNameMap["CentralBodyComponentEphemerisJPLDesignExplorerOptimizer"] = CentralBodyComponentEphemerisJPLDesignExplorerOptimizer
 
 class CentralBodyComponentEphemerisPlanetary(ICentralBodyComponentEphemeris, SupportsDeleteCallback):
@@ -29516,7 +30045,7 @@ class CentralBodyComponentEphemerisPlanetary(ICentralBodyComponentEphemeris, Sup
     _get_planetary_filename_method_offset = 1
     _set_planetary_filename_method_offset = 2
     _metadata = {
-        "iid_data" : (5004093576315593887, 617831019861958046),
+        "iid_data" : (5667689248472685705, 4548953628427886747),
         "vtable_reference" : ICentralBodyComponentEphemeris._vtable_offset + ICentralBodyComponentEphemeris._num_methods - 1,
     }
     _property_names = {}
@@ -29555,7 +30084,7 @@ class CentralBodyComponentEphemerisPlanetary(ICentralBodyComponentEphemeris, Sup
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CentralBodyComponentEphemerisPlanetary, [CentralBodyComponentEphemerisPlanetary, ICentralBodyComponentEphemeris])
 
-agcls.AgClassCatalog.add_catalog_entry((4833493371149643349, 6987005291541553590), CentralBodyComponentEphemerisPlanetary)
+agcls.AgClassCatalog.add_catalog_entry((5057621377057523235, 4518344208233365427), CentralBodyComponentEphemerisPlanetary)
 agcls.AgTypeNameMap["CentralBodyComponentEphemerisPlanetary"] = CentralBodyComponentEphemerisPlanetary
 
 class MCSSegmentProperties(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -29573,7 +30102,7 @@ class MCSSegmentProperties(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _get_b_planes_method_offset = 8
     _get_last_run_code_method_offset = 9
     _metadata = {
-        "iid_data" : (5508688880440286224, 5556813440259685545),
+        "iid_data" : (5534510751834014024, 3990213501369110174),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29669,7 +30198,7 @@ class MCSSegmentProperties(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MCSSegmentProperties, [MCSSegmentProperties, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4918113374685894782, 11279002414688382869), MCSSegmentProperties)
+agcls.AgClassCatalog.add_catalog_entry((5153972627686672226, 9423691189169989039), MCSSegmentProperties)
 agcls.AgTypeNameMap["MCSSegmentProperties"] = MCSSegmentProperties
 
 class PowerInternal(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -29688,7 +30217,7 @@ class PowerInternal(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _is_control_parameter_enabled_method_offset = 9
     _get_control_parameters_available_method_offset = 10
     _metadata = {
-        "iid_data" : (5652390166041168458, 6352390215897174415),
+        "iid_data" : (5351613047265444238, 4171254362559289758),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29791,7 +30320,7 @@ class PowerInternal(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PowerInternal, [PowerInternal, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5465081336297378060, 3548828207234260144), PowerInternal)
+agcls.AgClassCatalog.add_catalog_entry((4627699213409459659, 10315161802259811991), PowerInternal)
 agcls.AgTypeNameMap["PowerInternal"] = PowerInternal
 
 class PowerProcessed(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -29810,7 +30339,7 @@ class PowerProcessed(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _is_control_parameter_enabled_method_offset = 9
     _get_control_parameters_available_method_offset = 10
     _metadata = {
-        "iid_data" : (5240984076139207842, 265208808243405979),
+        "iid_data" : (4980041449485456651, 18431830551484348336),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -29913,7 +30442,7 @@ class PowerProcessed(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PowerProcessed, [PowerProcessed, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5501401348525152010, 4850138180300987065), PowerProcessed)
+agcls.AgClassCatalog.add_catalog_entry((4957985518957601087, 14705973560789595819), PowerProcessed)
 agcls.AgTypeNameMap["PowerProcessed"] = PowerProcessed
 
 class PowerSolarArray(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -29951,7 +30480,7 @@ class PowerSolarArray(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _is_control_parameter_enabled_method_offset = 28
     _get_control_parameters_available_method_offset = 29
     _metadata = {
-        "iid_data" : (5325557003361674241, 105805187980820608),
+        "iid_data" : (5157447368931273411, 5784541439705829801),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -30207,7 +30736,7 @@ class PowerSolarArray(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PowerSolarArray, [PowerSolarArray, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5353667160712978621, 7978587288160143028), PowerSolarArray)
+agcls.AgClassCatalog.add_catalog_entry((5400643289641451200, 1239947415375571863), PowerSolarArray)
 agcls.AgTypeNameMap["PowerSolarArray"] = PowerSolarArray
 
 class GeneralRelativityFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -30216,7 +30745,7 @@ class GeneralRelativityFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (4659562620205822612, 8000868519763100309),
+        "iid_data" : (5043003604006299692, 2047942845765763217),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -30241,7 +30770,7 @@ class GeneralRelativityFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GeneralRelativityFunction, [GeneralRelativityFunction, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4643607856644942522, 666130216042495142), GeneralRelativityFunction)
+agcls.AgClassCatalog.add_catalog_entry((5571589885257075710, 9613532463224002710), GeneralRelativityFunction)
 agcls.AgTypeNameMap["GeneralRelativityFunction"] = GeneralRelativityFunction
 
 class StateTransformationFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -30250,7 +30779,7 @@ class StateTransformationFunction(IComponentInfo, ICloneable, SupportsDeleteCall
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5131407316737373285, 8597886627293725578),
+        "iid_data" : (5501569346419501354, 3090713608735057552),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -30275,7 +30804,7 @@ class StateTransformationFunction(IComponentInfo, ICloneable, SupportsDeleteCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StateTransformationFunction, [StateTransformationFunction, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4874254178603224723, 3876770599854905017), StateTransformationFunction)
+agcls.AgClassCatalog.add_catalog_entry((4999798385255224056, 7612530776752149166), StateTransformationFunction)
 agcls.AgTypeNameMap["StateTransformationFunction"] = StateTransformationFunction
 
 class CR3BPFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -30293,7 +30822,7 @@ class CR3BPFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_characteristic_velocity_method_offset = 8
     _get_characteristic_acceleration_method_offset = 9
     _metadata = {
-        "iid_data" : (4788117537309996629, 13768587730296853131),
+        "iid_data" : (5276130975520914670, 7628786377368754098),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -30397,7 +30926,7 @@ class CR3BPFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CR3BPFunction, [CR3BPFunction, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4941304847140255314, 46803675568969603), CR3BPFunction)
+agcls.AgClassCatalog.add_catalog_entry((5281266574195327030, 15370176759736341172), CR3BPFunction)
 agcls.AgTypeNameMap["CR3BPFunction"] = CR3BPFunction
 
 class ER3BPFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -30416,7 +30945,7 @@ class ER3BPFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_characteristic_velocity_method_offset = 9
     _get_characteristic_acceleration_method_offset = 10
     _metadata = {
-        "iid_data" : (4916235884320980959, 14502050449445461892),
+        "iid_data" : (4661983797084924944, 17981138580693825171),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -30529,13 +31058,13 @@ class ER3BPFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ER3BPFunc, [ER3BPFunc, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5726653626339621242, 11951515174846408075), ER3BPFunc)
+agcls.AgClassCatalog.add_catalog_entry((5111797791949128574, 10541488770434921352), ER3BPFunc)
 agcls.AgTypeNameMap["ER3BPFunc"] = ER3BPFunc
 
 class RadiationPressureFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Radiation Pressure propagator function."""
 
-    _num_methods = 13
+    _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_include_albedo_method_offset = 1
     _set_include_albedo_method_offset = 2
@@ -30544,14 +31073,8 @@ class RadiationPressureFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
     _get_ground_reflection_model_filename_method_offset = 5
     _set_ground_reflection_model_filename_method_offset = 6
     _get_central_body_name_method_offset = 7
-    _get_override_segment_settings_method_offset = 8
-    _set_override_segment_settings_method_offset = 9
-    _get_radiation_pressure_coefficient_method_offset = 10
-    _set_radiation_pressure_coefficient_method_offset = 11
-    _get_radiation_pressure_area_method_offset = 12
-    _set_radiation_pressure_area_method_offset = 13
     _metadata = {
-        "iid_data" : (4624530237560393103, 8957756315584128935),
+        "iid_data" : (5488317030235962763, 11694640804313276319),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -30611,58 +31134,10 @@ class RadiationPressureFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
         """Name of the central body."""
         return self._intf.get_property(RadiationPressureFunction._metadata, RadiationPressureFunction._get_central_body_name_metadata)
 
-    _get_override_segment_settings_metadata = { "offset" : _get_override_segment_settings_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def override_segment_settings(self) -> bool:
-        """Do not use this property, as it is deprecated. True to use Ck and area values defined on this component for radiation pressure computations, rather than those defined in the MCS segments."""
-        return self._intf.get_property(RadiationPressureFunction._metadata, RadiationPressureFunction._get_override_segment_settings_metadata)
-
-    _set_override_segment_settings_metadata = { "offset" : _set_override_segment_settings_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @override_segment_settings.setter
-    def override_segment_settings(self, value:bool) -> None:
-        return self._intf.set_property(RadiationPressureFunction._metadata, RadiationPressureFunction._set_override_segment_settings_metadata, value)
-
-    _get_radiation_pressure_coefficient_metadata = { "offset" : _get_radiation_pressure_coefficient_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @property
-    def radiation_pressure_coefficient(self) -> float:
-        """Do not use this property, as it is deprecated. Coefficient, Ck, for use with radiation pressure computation."""
-        return self._intf.get_property(RadiationPressureFunction._metadata, RadiationPressureFunction._get_radiation_pressure_coefficient_metadata)
-
-    _set_radiation_pressure_coefficient_metadata = { "offset" : _set_radiation_pressure_coefficient_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @radiation_pressure_coefficient.setter
-    def radiation_pressure_coefficient(self, value:float) -> None:
-        return self._intf.set_property(RadiationPressureFunction._metadata, RadiationPressureFunction._set_radiation_pressure_coefficient_metadata, value)
-
-    _get_radiation_pressure_area_metadata = { "offset" : _get_radiation_pressure_area_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @property
-    def radiation_pressure_area(self) -> float:
-        """Do not use this property, as it is deprecated. Area to be used for radiation pressure computations. Small area dimension."""
-        return self._intf.get_property(RadiationPressureFunction._metadata, RadiationPressureFunction._get_radiation_pressure_area_metadata)
-
-    _set_radiation_pressure_area_metadata = { "offset" : _set_radiation_pressure_area_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @radiation_pressure_area.setter
-    def radiation_pressure_area(self, value:float) -> None:
-        return self._intf.set_property(RadiationPressureFunction._metadata, RadiationPressureFunction._set_radiation_pressure_area_metadata, value)
-
     _property_names[include_albedo] = "include_albedo"
     _property_names[include_thermal_radiation_pressure] = "include_thermal_radiation_pressure"
     _property_names[ground_reflection_model_filename] = "ground_reflection_model_filename"
     _property_names[central_body_name] = "central_body_name"
-    _property_names[override_segment_settings] = "override_segment_settings"
-    _property_names[radiation_pressure_coefficient] = "radiation_pressure_coefficient"
-    _property_names[radiation_pressure_area] = "radiation_pressure_area"
 
     def __init__(self, source_object=None):
         """Construct an object of type RadiationPressureFunction."""
@@ -30681,7 +31156,7 @@ class RadiationPressureFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RadiationPressureFunction, [RadiationPressureFunction, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5473529691251801248, 8545656235795709076), RadiationPressureFunction)
+agcls.AgClassCatalog.add_catalog_entry((5107072258341109895, 11856878385281849479), RadiationPressureFunction)
 agcls.AgTypeNameMap["RadiationPressureFunction"] = RadiationPressureFunction
 
 class YarkovskyFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -30706,7 +31181,7 @@ class YarkovskyFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_a3_method_offset = 15
     _set_a3_method_offset = 16
     _metadata = {
-        "iid_data" : (4684001781513421236, 8844314387280962446),
+        "iid_data" : (4772730099343284705, 9706215357454534331),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -30859,7 +31334,7 @@ class YarkovskyFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, YarkovskyFunc, [YarkovskyFunc, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5058647595155170737, 18218410163996103556), YarkovskyFunc)
+agcls.AgClassCatalog.add_catalog_entry((5407352410647140947, 560128361452193410), YarkovskyFunc)
 agcls.AgTypeNameMap["YarkovskyFunc"] = YarkovskyFunc
 
 class BlendedDensity(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -30877,7 +31352,7 @@ class BlendedDensity(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_use_approx_altitude_method_offset = 8
     _get_lower_bound_upper_atmosphere_model_method_offset = 9
     _metadata = {
-        "iid_data" : (5244451850145830949, 14069455859079753352),
+        "iid_data" : (4978781423999987181, 16091370096694430593),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -30976,13 +31451,13 @@ class BlendedDensity(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BlendedDensity, [BlendedDensity, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5152213418662569854, 18232289047425381262), BlendedDensity)
+agcls.AgClassCatalog.add_catalog_entry((4727253846755384389, 3513763591830312869), BlendedDensity)
 agcls.AgTypeNameMap["BlendedDensity"] = BlendedDensity
 
 class Cira72Function(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the CIRA 72 atmospheric model."""
 
-    _num_methods = 29
+    _num_methods = 38
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -31013,8 +31488,17 @@ class Cira72Function(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 27
     _get_n_plate_definition_file_method_offset = 28
     _set_n_plate_definition_file_method_offset = 29
+    _get_use_stochastic_ballistic_coefficient_method_offset = 30
+    _set_use_stochastic_ballistic_coefficient_method_offset = 31
+    _get_use_stochastic_density_correction_method_offset = 32
+    _set_use_stochastic_density_correction_method_offset = 33
+    _get_stochastic_ballistic_coefficient_method_offset = 34
+    _get_stochastic_density_correction_method_offset = 35
+    _get_n_plate_stochastic_parameters_method_offset = 36
+    _get_drag_correction_type_method_offset = 37
+    _set_drag_correction_type_method_offset = 38
     _metadata = {
-        "iid_data" : (5152253422484607359, 16481737616952338560),
+        "iid_data" : (4921577494829534428, 7262306203083514025),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -31240,6 +31724,75 @@ class Cira72Function(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(Cira72Function._metadata, Cira72Function._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(Cira72Function._metadata, Cira72Function._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(Cira72Function._metadata, Cira72Function._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_use_stochastic_density_correction_metadata = { "offset" : _get_use_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_density_correction(self) -> bool:
+        """True if using stochastic model for a density model correction."""
+        return self._intf.get_property(Cira72Function._metadata, Cira72Function._get_use_stochastic_density_correction_metadata)
+
+    _set_use_stochastic_density_correction_metadata = { "offset" : _set_use_stochastic_density_correction_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_density_correction.setter
+    def use_stochastic_density_correction(self, value:bool) -> None:
+        return self._intf.set_property(Cira72Function._metadata, Cira72Function._set_use_stochastic_density_correction_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(Cira72Function._metadata, Cira72Function._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_stochastic_density_correction_metadata = { "offset" : _get_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_density_correction(self) -> "StochasticDensityCorrection":
+        """Stochastic StochasticDensity Correction."""
+        return self._intf.get_property(Cira72Function._metadata, Cira72Function._get_stochastic_density_correction_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(Cira72Function._metadata, Cira72Function._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(Cira72Function._metadata, Cira72Function._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(Cira72Function._metadata, Cira72Function._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
@@ -31256,6 +31809,12 @@ class Cira72Function(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[use_stochastic_density_correction] = "use_stochastic_density_correction"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[stochastic_density_correction] = "stochastic_density_correction"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type Cira72Function."""
@@ -31274,13 +31833,13 @@ class Cira72Function(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Cira72Function, [Cira72Function, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5681925775911183309, 3648980167297143424), Cira72Function)
+agcls.AgClassCatalog.add_catalog_entry((5231331894953111155, 5065974559846512299), Cira72Function)
 agcls.AgTypeNameMap["Cira72Function"] = Cira72Function
 
 class Exponential(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Exponential atmospheric model - a model that calculates atmospheric density using an equation involving a reference density, reference altitude, and scale altitude."""
 
-    _num_methods = 17
+    _num_methods = 23
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -31299,8 +31858,14 @@ class Exponential(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 15
     _get_n_plate_definition_file_method_offset = 16
     _set_n_plate_definition_file_method_offset = 17
+    _get_use_stochastic_ballistic_coefficient_method_offset = 18
+    _set_use_stochastic_ballistic_coefficient_method_offset = 19
+    _get_stochastic_ballistic_coefficient_method_offset = 20
+    _get_n_plate_stochastic_parameters_method_offset = 21
+    _get_drag_correction_type_method_offset = 22
+    _set_drag_correction_type_method_offset = 23
     _metadata = {
-        "iid_data" : (5059873297206571404, 13470177470048636560),
+        "iid_data" : (5125825286909639657, 2681203116727343270),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -31435,6 +32000,52 @@ class Exponential(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(Exponential._metadata, Exponential._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(Exponential._metadata, Exponential._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(Exponential._metadata, Exponential._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(Exponential._metadata, Exponential._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(Exponential._metadata, Exponential._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(Exponential._metadata, Exponential._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(Exponential._metadata, Exponential._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[reference_density] = "reference_density"
     _property_names[reference_altitude] = "reference_altitude"
@@ -31444,6 +32055,10 @@ class Exponential(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type Exponential."""
@@ -31462,13 +32077,13 @@ class Exponential(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Exponential, [Exponential, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5550718488581795108, 206791106109717402), Exponential)
+agcls.AgClassCatalog.add_catalog_entry((5139602630297461883, 3161134494653515442), Exponential)
 agcls.AgTypeNameMap["Exponential"] = Exponential
 
 class HarrisPriester(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Harris-Priester atmospheric model - a model that takes into account a 10.7 cm solar flux level and diurnal bulge."""
 
-    _num_methods = 21
+    _num_methods = 27
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -31491,8 +32106,14 @@ class HarrisPriester(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 19
     _get_n_plate_definition_file_method_offset = 20
     _set_n_plate_definition_file_method_offset = 21
+    _get_use_stochastic_ballistic_coefficient_method_offset = 22
+    _set_use_stochastic_ballistic_coefficient_method_offset = 23
+    _get_stochastic_ballistic_coefficient_method_offset = 24
+    _get_n_plate_stochastic_parameters_method_offset = 25
+    _get_drag_correction_type_method_offset = 26
+    _set_drag_correction_type_method_offset = 27
     _metadata = {
-        "iid_data" : (5255750643745887133, 6365549969115673235),
+        "iid_data" : (5501181085395469660, 11304599824585106306),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -31658,6 +32279,52 @@ class HarrisPriester(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(HarrisPriester._metadata, HarrisPriester._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(HarrisPriester._metadata, HarrisPriester._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(HarrisPriester._metadata, HarrisPriester._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(HarrisPriester._metadata, HarrisPriester._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(HarrisPriester._metadata, HarrisPriester._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(HarrisPriester._metadata, HarrisPriester._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(HarrisPriester._metadata, HarrisPriester._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
@@ -31670,6 +32337,10 @@ class HarrisPriester(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type HarrisPriester."""
@@ -31688,7 +32359,7 @@ class HarrisPriester(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, HarrisPriester, [HarrisPriester, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5093587573188984474, 9935500784277497264), HarrisPriester)
+agcls.AgClassCatalog.add_catalog_entry((4760878014474553481, 8920408116913818783), HarrisPriester)
 agcls.AgTypeNameMap["HarrisPriester"] = HarrisPriester
 
 class DensityModelPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -31748,7 +32419,7 @@ class DensityModelPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_n_plate_definition_file_method_offset = 50
     _set_n_plate_definition_file_method_offset = 51
     _metadata = {
-        "iid_data" : (5705131430047656123, 17604384030395133073),
+        "iid_data" : (5637292655520606825, 145015685826050967),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -32186,13 +32857,13 @@ class DensityModelPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DensityModelPlugin, [DensityModelPlugin, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5046586733109563435, 8001179388313593535), DensityModelPlugin)
+agcls.AgClassCatalog.add_catalog_entry((5128410364280734159, 4312087650312423335), DensityModelPlugin)
 agcls.AgTypeNameMap["DensityModelPlugin"] = DensityModelPlugin
 
 class JacchiaRoberts(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Jacchia-Roberts atmospheric model - a model that is similar to Jacchia 1971 but uses analytical methods to improve performance."""
 
-    _num_methods = 29
+    _num_methods = 38
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -32223,8 +32894,17 @@ class JacchiaRoberts(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 27
     _get_n_plate_definition_file_method_offset = 28
     _set_n_plate_definition_file_method_offset = 29
+    _get_use_stochastic_ballistic_coefficient_method_offset = 30
+    _set_use_stochastic_ballistic_coefficient_method_offset = 31
+    _get_use_stochastic_density_correction_method_offset = 32
+    _set_use_stochastic_density_correction_method_offset = 33
+    _get_stochastic_ballistic_coefficient_method_offset = 34
+    _get_stochastic_density_correction_method_offset = 35
+    _get_n_plate_stochastic_parameters_method_offset = 36
+    _get_drag_correction_type_method_offset = 37
+    _set_drag_correction_type_method_offset = 38
     _metadata = {
-        "iid_data" : (4983125570264378135, 7298657247116678060),
+        "iid_data" : (5093632554411609992, 1233771015322732931),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -32450,6 +33130,75 @@ class JacchiaRoberts(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(JacchiaRoberts._metadata, JacchiaRoberts._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(JacchiaRoberts._metadata, JacchiaRoberts._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(JacchiaRoberts._metadata, JacchiaRoberts._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_use_stochastic_density_correction_metadata = { "offset" : _get_use_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_density_correction(self) -> bool:
+        """True if using stochastic model for a density model correction."""
+        return self._intf.get_property(JacchiaRoberts._metadata, JacchiaRoberts._get_use_stochastic_density_correction_metadata)
+
+    _set_use_stochastic_density_correction_metadata = { "offset" : _set_use_stochastic_density_correction_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_density_correction.setter
+    def use_stochastic_density_correction(self, value:bool) -> None:
+        return self._intf.set_property(JacchiaRoberts._metadata, JacchiaRoberts._set_use_stochastic_density_correction_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(JacchiaRoberts._metadata, JacchiaRoberts._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_stochastic_density_correction_metadata = { "offset" : _get_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_density_correction(self) -> "StochasticDensityCorrection":
+        """Stochastic StochasticDensity Correction."""
+        return self._intf.get_property(JacchiaRoberts._metadata, JacchiaRoberts._get_stochastic_density_correction_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(JacchiaRoberts._metadata, JacchiaRoberts._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(JacchiaRoberts._metadata, JacchiaRoberts._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(JacchiaRoberts._metadata, JacchiaRoberts._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
@@ -32466,6 +33215,12 @@ class JacchiaRoberts(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[use_stochastic_density_correction] = "use_stochastic_density_correction"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[stochastic_density_correction] = "stochastic_density_correction"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type JacchiaRoberts."""
@@ -32484,13 +33239,13 @@ class JacchiaRoberts(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, JacchiaRoberts, [JacchiaRoberts, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5455487054666773857, 8304942187827049896), JacchiaRoberts)
+agcls.AgClassCatalog.add_catalog_entry((5091972101772875067, 4679088746836216504), JacchiaRoberts)
 agcls.AgTypeNameMap["JacchiaRoberts"] = JacchiaRoberts
 
 class JacchiaBowman2008(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Jacchia Bowman 2008 atmospheric density model."""
 
-    _num_methods = 37
+    _num_methods = 46
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -32529,8 +33284,17 @@ class JacchiaBowman2008(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 35
     _get_n_plate_definition_file_method_offset = 36
     _set_n_plate_definition_file_method_offset = 37
+    _get_use_stochastic_ballistic_coefficient_method_offset = 38
+    _set_use_stochastic_ballistic_coefficient_method_offset = 39
+    _get_use_stochastic_density_correction_method_offset = 40
+    _set_use_stochastic_density_correction_method_offset = 41
+    _get_stochastic_ballistic_coefficient_method_offset = 42
+    _get_stochastic_density_correction_method_offset = 43
+    _get_n_plate_stochastic_parameters_method_offset = 44
+    _get_drag_correction_type_method_offset = 45
+    _set_drag_correction_type_method_offset = 46
     _metadata = {
-        "iid_data" : (5665147081106925816, 11481279672929475993),
+        "iid_data" : (5567577668157305960, 1780225796595063179),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -32815,6 +33579,75 @@ class JacchiaBowman2008(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(JacchiaBowman2008._metadata, JacchiaBowman2008._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(JacchiaBowman2008._metadata, JacchiaBowman2008._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(JacchiaBowman2008._metadata, JacchiaBowman2008._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_use_stochastic_density_correction_metadata = { "offset" : _get_use_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_density_correction(self) -> bool:
+        """True if using stochastic model for a density model correction."""
+        return self._intf.get_property(JacchiaBowman2008._metadata, JacchiaBowman2008._get_use_stochastic_density_correction_metadata)
+
+    _set_use_stochastic_density_correction_metadata = { "offset" : _set_use_stochastic_density_correction_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_density_correction.setter
+    def use_stochastic_density_correction(self, value:bool) -> None:
+        return self._intf.set_property(JacchiaBowman2008._metadata, JacchiaBowman2008._set_use_stochastic_density_correction_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(JacchiaBowman2008._metadata, JacchiaBowman2008._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_stochastic_density_correction_metadata = { "offset" : _get_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_density_correction(self) -> "StochasticDensityCorrection":
+        """Stochastic StochasticDensity Correction."""
+        return self._intf.get_property(JacchiaBowman2008._metadata, JacchiaBowman2008._get_stochastic_density_correction_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(JacchiaBowman2008._metadata, JacchiaBowman2008._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(JacchiaBowman2008._metadata, JacchiaBowman2008._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(JacchiaBowman2008._metadata, JacchiaBowman2008._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[sun_position] = "sun_position"
     _property_names[atmosphere_data_source] = "atmosphere_data_source"
@@ -32834,6 +33667,12 @@ class JacchiaBowman2008(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[use_stochastic_density_correction] = "use_stochastic_density_correction"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[stochastic_density_correction] = "stochastic_density_correction"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type JacchiaBowman2008."""
@@ -32852,13 +33691,13 @@ class JacchiaBowman2008(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, JacchiaBowman2008, [JacchiaBowman2008, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5206262767115704697, 387730423990499725), JacchiaBowman2008)
+agcls.AgClassCatalog.add_catalog_entry((4893463273934360439, 17826376838403628711), JacchiaBowman2008)
 agcls.AgTypeNameMap["JacchiaBowman2008"] = JacchiaBowman2008
 
 class Jacchia1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Jacchia 1960 atmospheric model - an outdated atmospheric model provided for making comparisons with other software."""
 
-    _num_methods = 15
+    _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -32875,8 +33714,14 @@ class Jacchia1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 13
     _get_n_plate_definition_file_method_offset = 14
     _set_n_plate_definition_file_method_offset = 15
+    _get_use_stochastic_ballistic_coefficient_method_offset = 16
+    _set_use_stochastic_ballistic_coefficient_method_offset = 17
+    _get_stochastic_ballistic_coefficient_method_offset = 18
+    _get_n_plate_stochastic_parameters_method_offset = 19
+    _get_drag_correction_type_method_offset = 20
+    _set_drag_correction_type_method_offset = 21
     _metadata = {
-        "iid_data" : (5554672196080858836, 7507800005250584450),
+        "iid_data" : (4952537542237844068, 11682960298824088237),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -32997,6 +33842,52 @@ class Jacchia1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(Jacchia1960._metadata, Jacchia1960._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(Jacchia1960._metadata, Jacchia1960._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(Jacchia1960._metadata, Jacchia1960._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(Jacchia1960._metadata, Jacchia1960._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(Jacchia1960._metadata, Jacchia1960._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(Jacchia1960._metadata, Jacchia1960._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(Jacchia1960._metadata, Jacchia1960._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
@@ -33006,6 +33897,10 @@ class Jacchia1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type Jacchia1960."""
@@ -33024,13 +33919,13 @@ class Jacchia1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Jacchia1960, [Jacchia1960, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5574385053179570645, 3116739936857571001), Jacchia1960)
+agcls.AgClassCatalog.add_catalog_entry((4730617556126589988, 4676865706920178309), Jacchia1960)
 agcls.AgTypeNameMap["Jacchia1960"] = Jacchia1960
 
 class Jacchia1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Jacchia 1970 atmospheric model - a model that computes atmospheric density based on the composition of the atmosphere, which depends on altitude as well as seasonal variation. Valid range is 100-2500 km."""
 
-    _num_methods = 29
+    _num_methods = 38
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -33061,8 +33956,17 @@ class Jacchia1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 27
     _get_n_plate_definition_file_method_offset = 28
     _set_n_plate_definition_file_method_offset = 29
+    _get_use_stochastic_ballistic_coefficient_method_offset = 30
+    _set_use_stochastic_ballistic_coefficient_method_offset = 31
+    _get_use_stochastic_density_correction_method_offset = 32
+    _set_use_stochastic_density_correction_method_offset = 33
+    _get_stochastic_ballistic_coefficient_method_offset = 34
+    _get_stochastic_density_correction_method_offset = 35
+    _get_n_plate_stochastic_parameters_method_offset = 36
+    _get_drag_correction_type_method_offset = 37
+    _set_drag_correction_type_method_offset = 38
     _metadata = {
-        "iid_data" : (5441460915826898670, 17669561608188722089),
+        "iid_data" : (5064602591731626438, 5726544226482813088),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -33288,6 +34192,75 @@ class Jacchia1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_use_stochastic_density_correction_metadata = { "offset" : _get_use_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_density_correction(self) -> bool:
+        """True if using stochastic model for a density model correction."""
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_use_stochastic_density_correction_metadata)
+
+    _set_use_stochastic_density_correction_metadata = { "offset" : _set_use_stochastic_density_correction_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_density_correction.setter
+    def use_stochastic_density_correction(self, value:bool) -> None:
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_use_stochastic_density_correction_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_stochastic_density_correction_metadata = { "offset" : _get_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_density_correction(self) -> "StochasticDensityCorrection":
+        """Stochastic StochasticDensity Correction."""
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_stochastic_density_correction_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
@@ -33304,6 +34277,12 @@ class Jacchia1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[use_stochastic_density_correction] = "use_stochastic_density_correction"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[stochastic_density_correction] = "stochastic_density_correction"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type Jacchia1970."""
@@ -33322,13 +34301,13 @@ class Jacchia1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Jacchia1970, [Jacchia1970, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5341959456453390148, 8490840023175055767), Jacchia1970)
+agcls.AgClassCatalog.add_catalog_entry((4755455189932579512, 2779050606727638715), Jacchia1970)
 agcls.AgTypeNameMap["Jacchia1970"] = Jacchia1970
 
 class Jacchia1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Jacchia 1971 atmospheric model - a model that is similar to Jacchia 1970, with improved treatment of certain solar effects."""
 
-    _num_methods = 29
+    _num_methods = 38
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -33359,8 +34338,17 @@ class Jacchia1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 27
     _get_n_plate_definition_file_method_offset = 28
     _set_n_plate_definition_file_method_offset = 29
+    _get_use_stochastic_ballistic_coefficient_method_offset = 30
+    _set_use_stochastic_ballistic_coefficient_method_offset = 31
+    _get_use_stochastic_density_correction_method_offset = 32
+    _set_use_stochastic_density_correction_method_offset = 33
+    _get_stochastic_ballistic_coefficient_method_offset = 34
+    _get_stochastic_density_correction_method_offset = 35
+    _get_n_plate_stochastic_parameters_method_offset = 36
+    _get_drag_correction_type_method_offset = 37
+    _set_drag_correction_type_method_offset = 38
     _metadata = {
-        "iid_data" : (5408607305502071766, 662924465356789944),
+        "iid_data" : (4821120371231228535, 6255157758717080478),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -33586,6 +34574,75 @@ class Jacchia1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_use_stochastic_density_correction_metadata = { "offset" : _get_use_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_density_correction(self) -> bool:
+        """True if using stochastic model for a density model correction."""
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_use_stochastic_density_correction_metadata)
+
+    _set_use_stochastic_density_correction_metadata = { "offset" : _set_use_stochastic_density_correction_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_density_correction.setter
+    def use_stochastic_density_correction(self, value:bool) -> None:
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_use_stochastic_density_correction_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_stochastic_density_correction_metadata = { "offset" : _get_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_density_correction(self) -> "StochasticDensityCorrection":
+        """Stochastic StochasticDensity Correction."""
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_stochastic_density_correction_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
@@ -33602,6 +34659,12 @@ class Jacchia1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[use_stochastic_density_correction] = "use_stochastic_density_correction"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[stochastic_density_correction] = "stochastic_density_correction"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type Jacchia1971."""
@@ -33620,13 +34683,13 @@ class Jacchia1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Jacchia1971, [Jacchia1971, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5604186918179814220, 16696022812635360702), Jacchia1971)
+agcls.AgClassCatalog.add_catalog_entry((5274342799308056397, 749148244321843111), Jacchia1971)
 agcls.AgTypeNameMap["Jacchia1971"] = Jacchia1971
 
 class MSISE1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the MSISE 1990 atmospheric model - an empirical density model developed by Hedin based on satellite data. Finds the total density by accounting for the contribution of N2, O, O2, He, Ar and H. 1990 version, valid range of 0-1000 km."""
 
-    _num_methods = 29
+    _num_methods = 38
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -33657,8 +34720,17 @@ class MSISE1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 27
     _get_n_plate_definition_file_method_offset = 28
     _set_n_plate_definition_file_method_offset = 29
+    _get_use_stochastic_ballistic_coefficient_method_offset = 30
+    _set_use_stochastic_ballistic_coefficient_method_offset = 31
+    _get_use_stochastic_density_correction_method_offset = 32
+    _set_use_stochastic_density_correction_method_offset = 33
+    _get_stochastic_ballistic_coefficient_method_offset = 34
+    _get_stochastic_density_correction_method_offset = 35
+    _get_n_plate_stochastic_parameters_method_offset = 36
+    _get_drag_correction_type_method_offset = 37
+    _set_drag_correction_type_method_offset = 38
     _metadata = {
-        "iid_data" : (5636554266143253155, 3500985540569343391),
+        "iid_data" : (5736803070577606315, 7919197446855726993),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -33884,6 +34956,75 @@ class MSISE1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_use_stochastic_density_correction_metadata = { "offset" : _get_use_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_density_correction(self) -> bool:
+        """True if using stochastic model for a density model correction."""
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_use_stochastic_density_correction_metadata)
+
+    _set_use_stochastic_density_correction_metadata = { "offset" : _set_use_stochastic_density_correction_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_density_correction.setter
+    def use_stochastic_density_correction(self, value:bool) -> None:
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_use_stochastic_density_correction_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_stochastic_density_correction_metadata = { "offset" : _get_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_density_correction(self) -> "StochasticDensityCorrection":
+        """Stochastic StochasticDensity Correction."""
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_stochastic_density_correction_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
@@ -33900,6 +35041,12 @@ class MSISE1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[use_stochastic_density_correction] = "use_stochastic_density_correction"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[stochastic_density_correction] = "stochastic_density_correction"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type MSISE1990."""
@@ -33918,13 +35065,13 @@ class MSISE1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MSISE1990, [MSISE1990, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5340586931034210800, 11328105258405005975), MSISE1990)
+agcls.AgClassCatalog.add_catalog_entry((5744642865293003176, 15026839743251948960), MSISE1990)
 agcls.AgTypeNameMap["MSISE1990"] = MSISE1990
 
 class MSIS1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the MSIS 1986 atmospheric model - an empirical density model developed by Hedin based on satellite data. Finds the total density by accounting for the contribution of N2, O, O2, He, Ar and H. 1986 version, valid range of 90-1000 km."""
 
-    _num_methods = 29
+    _num_methods = 38
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -33955,8 +35102,17 @@ class MSIS1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 27
     _get_n_plate_definition_file_method_offset = 28
     _set_n_plate_definition_file_method_offset = 29
+    _get_use_stochastic_ballistic_coefficient_method_offset = 30
+    _set_use_stochastic_ballistic_coefficient_method_offset = 31
+    _get_use_stochastic_density_correction_method_offset = 32
+    _set_use_stochastic_density_correction_method_offset = 33
+    _get_stochastic_ballistic_coefficient_method_offset = 34
+    _get_stochastic_density_correction_method_offset = 35
+    _get_n_plate_stochastic_parameters_method_offset = 36
+    _get_drag_correction_type_method_offset = 37
+    _set_drag_correction_type_method_offset = 38
     _metadata = {
-        "iid_data" : (5417413885783215747, 17139870058847460272),
+        "iid_data" : (4948443359751675331, 14708290473309254840),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -34182,6 +35338,75 @@ class MSIS1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_use_stochastic_density_correction_metadata = { "offset" : _get_use_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_density_correction(self) -> bool:
+        """True if using stochastic model for a density model correction."""
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_use_stochastic_density_correction_metadata)
+
+    _set_use_stochastic_density_correction_metadata = { "offset" : _set_use_stochastic_density_correction_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_density_correction.setter
+    def use_stochastic_density_correction(self, value:bool) -> None:
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_use_stochastic_density_correction_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_stochastic_density_correction_metadata = { "offset" : _get_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_density_correction(self) -> "StochasticDensityCorrection":
+        """Stochastic StochasticDensity Correction."""
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_stochastic_density_correction_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
@@ -34198,6 +35423,12 @@ class MSIS1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[use_stochastic_density_correction] = "use_stochastic_density_correction"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[stochastic_density_correction] = "stochastic_density_correction"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type MSIS1986."""
@@ -34216,13 +35447,13 @@ class MSIS1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MSIS1986, [MSIS1986, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5240601690300521833, 8211112362243914380), MSIS1986)
+agcls.AgClassCatalog.add_catalog_entry((5532235829228283271, 11465838649435541392), MSIS1986)
 agcls.AgTypeNameMap["MSIS1986"] = MSIS1986
 
 class NRLMSISE2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the NRLMSISE 2000 atmospheric model."""
 
-    _num_methods = 29
+    _num_methods = 38
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -34253,8 +35484,17 @@ class NRLMSISE2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 27
     _get_n_plate_definition_file_method_offset = 28
     _set_n_plate_definition_file_method_offset = 29
+    _get_use_stochastic_ballistic_coefficient_method_offset = 30
+    _set_use_stochastic_ballistic_coefficient_method_offset = 31
+    _get_use_stochastic_density_correction_method_offset = 32
+    _set_use_stochastic_density_correction_method_offset = 33
+    _get_stochastic_ballistic_coefficient_method_offset = 34
+    _get_stochastic_density_correction_method_offset = 35
+    _get_n_plate_stochastic_parameters_method_offset = 36
+    _get_drag_correction_type_method_offset = 37
+    _set_drag_correction_type_method_offset = 38
     _metadata = {
-        "iid_data" : (4640806513605789872, 4409086059583600283),
+        "iid_data" : (4745123783420870718, 13473579198682466218),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -34480,6 +35720,75 @@ class NRLMSISE2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_use_stochastic_density_correction_metadata = { "offset" : _get_use_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_density_correction(self) -> bool:
+        """True if using stochastic model for a density model correction."""
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_use_stochastic_density_correction_metadata)
+
+    _set_use_stochastic_density_correction_metadata = { "offset" : _set_use_stochastic_density_correction_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_density_correction.setter
+    def use_stochastic_density_correction(self, value:bool) -> None:
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_use_stochastic_density_correction_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_stochastic_density_correction_metadata = { "offset" : _get_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_density_correction(self) -> "StochasticDensityCorrection":
+        """Stochastic StochasticDensity Correction."""
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_stochastic_density_correction_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
@@ -34496,6 +35805,12 @@ class NRLMSISE2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[use_stochastic_density_correction] = "use_stochastic_density_correction"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[stochastic_density_correction] = "stochastic_density_correction"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type NRLMSISE2000."""
@@ -34514,13 +35829,13 @@ class NRLMSISE2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, NRLMSISE2000, [NRLMSISE2000, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5294825104791739528, 9342049865198485677), NRLMSISE2000)
+agcls.AgClassCatalog.add_catalog_entry((5600405053082842821, 16776985455084567692), NRLMSISE2000)
 agcls.AgTypeNameMap["NRLMSISE2000"] = NRLMSISE2000
 
 class USStandardAtmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the US Standard Atmosphere atmospheric model."""
 
-    _num_methods = 13
+    _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -34535,8 +35850,14 @@ class USStandardAtmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 11
     _get_n_plate_definition_file_method_offset = 12
     _set_n_plate_definition_file_method_offset = 13
+    _get_use_stochastic_ballistic_coefficient_method_offset = 14
+    _set_use_stochastic_ballistic_coefficient_method_offset = 15
+    _get_stochastic_ballistic_coefficient_method_offset = 16
+    _get_n_plate_stochastic_parameters_method_offset = 17
+    _get_drag_correction_type_method_offset = 18
+    _set_drag_correction_type_method_offset = 19
     _metadata = {
-        "iid_data" : (5557239014813622132, 16881112267738503602),
+        "iid_data" : (4668260131908939557, 13706683537563329957),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -34642,6 +35963,52 @@ class USStandardAtmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(USStandardAtmosphere._metadata, USStandardAtmosphere._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(USStandardAtmosphere._metadata, USStandardAtmosphere._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(USStandardAtmosphere._metadata, USStandardAtmosphere._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(USStandardAtmosphere._metadata, USStandardAtmosphere._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(USStandardAtmosphere._metadata, USStandardAtmosphere._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(USStandardAtmosphere._metadata, USStandardAtmosphere._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(USStandardAtmosphere._metadata, USStandardAtmosphere._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
@@ -34650,6 +36017,10 @@ class USStandardAtmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type USStandardAtmosphere."""
@@ -34668,13 +36039,13 @@ class USStandardAtmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, USStandardAtmosphere, [USStandardAtmosphere, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4819330301504343063, 7573866645070409350), USStandardAtmosphere)
+agcls.AgClassCatalog.add_catalog_entry((4707256246568435099, 719352051501930170), USStandardAtmosphere)
 agcls.AgTypeNameMap["USStandardAtmosphere"] = USStandardAtmosphere
 
 class MarsGRAM37(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Mars-GRAM 3.7 atmospheric model."""
 
-    _num_methods = 27
+    _num_methods = 36
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -34703,8 +36074,17 @@ class MarsGRAM37(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 25
     _get_n_plate_definition_file_method_offset = 26
     _set_n_plate_definition_file_method_offset = 27
+    _get_use_stochastic_ballistic_coefficient_method_offset = 28
+    _set_use_stochastic_ballistic_coefficient_method_offset = 29
+    _get_use_stochastic_density_correction_method_offset = 30
+    _set_use_stochastic_density_correction_method_offset = 31
+    _get_stochastic_ballistic_coefficient_method_offset = 32
+    _get_stochastic_density_correction_method_offset = 33
+    _get_n_plate_stochastic_parameters_method_offset = 34
+    _get_drag_correction_type_method_offset = 35
+    _set_drag_correction_type_method_offset = 36
     _metadata = {
-        "iid_data" : (5087150452233303935, 8220219674985455019),
+        "iid_data" : (4672571512967072516, 1983423944348880287),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -34915,6 +36295,75 @@ class MarsGRAM37(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(MarsGRAM37._metadata, MarsGRAM37._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(MarsGRAM37._metadata, MarsGRAM37._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(MarsGRAM37._metadata, MarsGRAM37._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_use_stochastic_density_correction_metadata = { "offset" : _get_use_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_density_correction(self) -> bool:
+        """True if using stochastic model for a density model correction."""
+        return self._intf.get_property(MarsGRAM37._metadata, MarsGRAM37._get_use_stochastic_density_correction_metadata)
+
+    _set_use_stochastic_density_correction_metadata = { "offset" : _set_use_stochastic_density_correction_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_density_correction.setter
+    def use_stochastic_density_correction(self, value:bool) -> None:
+        return self._intf.set_property(MarsGRAM37._metadata, MarsGRAM37._set_use_stochastic_density_correction_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(MarsGRAM37._metadata, MarsGRAM37._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_stochastic_density_correction_metadata = { "offset" : _get_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_density_correction(self) -> "StochasticDensityCorrection":
+        """Stochastic StochasticDensity Correction."""
+        return self._intf.get_property(MarsGRAM37._metadata, MarsGRAM37._get_stochastic_density_correction_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(MarsGRAM37._metadata, MarsGRAM37._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(MarsGRAM37._metadata, MarsGRAM37._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(MarsGRAM37._metadata, MarsGRAM37._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
@@ -34930,6 +36379,12 @@ class MarsGRAM37(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[use_stochastic_density_correction] = "use_stochastic_density_correction"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[stochastic_density_correction] = "stochastic_density_correction"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type MarsGRAM37."""
@@ -34948,13 +36403,13 @@ class MarsGRAM37(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MarsGRAM37, [MarsGRAM37, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4904421314534157961, 5291700957109454500), MarsGRAM37)
+agcls.AgClassCatalog.add_catalog_entry((5702336890193886648, 13952693216296053376), MarsGRAM37)
 agcls.AgTypeNameMap["MarsGRAM37"] = MarsGRAM37
 
 class MarsGRAM2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Mars-GRAM 2000 atmospheric model."""
 
-    _num_methods = 27
+    _num_methods = 36
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -34983,8 +36438,17 @@ class MarsGRAM2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 25
     _get_n_plate_definition_file_method_offset = 26
     _set_n_plate_definition_file_method_offset = 27
+    _get_use_stochastic_ballistic_coefficient_method_offset = 28
+    _set_use_stochastic_ballistic_coefficient_method_offset = 29
+    _get_use_stochastic_density_correction_method_offset = 30
+    _set_use_stochastic_density_correction_method_offset = 31
+    _get_stochastic_ballistic_coefficient_method_offset = 32
+    _get_stochastic_density_correction_method_offset = 33
+    _get_n_plate_stochastic_parameters_method_offset = 34
+    _get_drag_correction_type_method_offset = 35
+    _set_drag_correction_type_method_offset = 36
     _metadata = {
-        "iid_data" : (5292965060560654168, 16114187966956624542),
+        "iid_data" : (5612576850816943283, 16114347463808304257),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -35195,6 +36659,75 @@ class MarsGRAM2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(MarsGRAM2000._metadata, MarsGRAM2000._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(MarsGRAM2000._metadata, MarsGRAM2000._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(MarsGRAM2000._metadata, MarsGRAM2000._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_use_stochastic_density_correction_metadata = { "offset" : _get_use_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_density_correction(self) -> bool:
+        """True if using stochastic model for a density model correction."""
+        return self._intf.get_property(MarsGRAM2000._metadata, MarsGRAM2000._get_use_stochastic_density_correction_metadata)
+
+    _set_use_stochastic_density_correction_metadata = { "offset" : _set_use_stochastic_density_correction_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_density_correction.setter
+    def use_stochastic_density_correction(self, value:bool) -> None:
+        return self._intf.set_property(MarsGRAM2000._metadata, MarsGRAM2000._set_use_stochastic_density_correction_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(MarsGRAM2000._metadata, MarsGRAM2000._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_stochastic_density_correction_metadata = { "offset" : _get_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_density_correction(self) -> "StochasticDensityCorrection":
+        """Stochastic StochasticDensity Correction."""
+        return self._intf.get_property(MarsGRAM2000._metadata, MarsGRAM2000._get_stochastic_density_correction_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(MarsGRAM2000._metadata, MarsGRAM2000._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(MarsGRAM2000._metadata, MarsGRAM2000._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(MarsGRAM2000._metadata, MarsGRAM2000._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
@@ -35210,6 +36743,12 @@ class MarsGRAM2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[use_stochastic_density_correction] = "use_stochastic_density_correction"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[stochastic_density_correction] = "stochastic_density_correction"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type MarsGRAM2000."""
@@ -35228,13 +36767,13 @@ class MarsGRAM2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MarsGRAM2000, [MarsGRAM2000, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5732957462272778606, 18167520949376527757), MarsGRAM2000)
+agcls.AgClassCatalog.add_catalog_entry((5762314067007166853, 740635296119823530), MarsGRAM2000)
 agcls.AgTypeNameMap["MarsGRAM2000"] = MarsGRAM2000
 
 class MarsGRAM2001(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Mars-GRAM 2001 atmospheric model."""
 
-    _num_methods = 27
+    _num_methods = 36
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -35263,8 +36802,17 @@ class MarsGRAM2001(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 25
     _get_n_plate_definition_file_method_offset = 26
     _set_n_plate_definition_file_method_offset = 27
+    _get_use_stochastic_ballistic_coefficient_method_offset = 28
+    _set_use_stochastic_ballistic_coefficient_method_offset = 29
+    _get_use_stochastic_density_correction_method_offset = 30
+    _set_use_stochastic_density_correction_method_offset = 31
+    _get_stochastic_ballistic_coefficient_method_offset = 32
+    _get_stochastic_density_correction_method_offset = 33
+    _get_n_plate_stochastic_parameters_method_offset = 34
+    _get_drag_correction_type_method_offset = 35
+    _set_drag_correction_type_method_offset = 36
     _metadata = {
-        "iid_data" : (4778856633245712244, 14821126475863479963),
+        "iid_data" : (5612199026290314172, 11394445714661437855),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -35475,6 +37023,75 @@ class MarsGRAM2001(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(MarsGRAM2001._metadata, MarsGRAM2001._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(MarsGRAM2001._metadata, MarsGRAM2001._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(MarsGRAM2001._metadata, MarsGRAM2001._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_use_stochastic_density_correction_metadata = { "offset" : _get_use_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_density_correction(self) -> bool:
+        """True if using stochastic model for a density model correction."""
+        return self._intf.get_property(MarsGRAM2001._metadata, MarsGRAM2001._get_use_stochastic_density_correction_metadata)
+
+    _set_use_stochastic_density_correction_metadata = { "offset" : _set_use_stochastic_density_correction_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_density_correction.setter
+    def use_stochastic_density_correction(self, value:bool) -> None:
+        return self._intf.set_property(MarsGRAM2001._metadata, MarsGRAM2001._set_use_stochastic_density_correction_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(MarsGRAM2001._metadata, MarsGRAM2001._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_stochastic_density_correction_metadata = { "offset" : _get_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_density_correction(self) -> "StochasticDensityCorrection":
+        """Stochastic StochasticDensity Correction."""
+        return self._intf.get_property(MarsGRAM2001._metadata, MarsGRAM2001._get_stochastic_density_correction_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(MarsGRAM2001._metadata, MarsGRAM2001._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(MarsGRAM2001._metadata, MarsGRAM2001._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(MarsGRAM2001._metadata, MarsGRAM2001._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
@@ -35490,6 +37107,12 @@ class MarsGRAM2001(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[use_stochastic_density_correction] = "use_stochastic_density_correction"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[stochastic_density_correction] = "stochastic_density_correction"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type MarsGRAM2001."""
@@ -35508,13 +37131,13 @@ class MarsGRAM2001(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MarsGRAM2001, [MarsGRAM2001, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5061782166952998125, 12199095019979142569), MarsGRAM2001)
+agcls.AgClassCatalog.add_catalog_entry((4810746202208973087, 2594221456467851663), MarsGRAM2001)
 agcls.AgTypeNameMap["MarsGRAM2001"] = MarsGRAM2001
 
 class MarsGRAM2005(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Mars-GRAM 2005 atmospheric model."""
 
-    _num_methods = 27
+    _num_methods = 36
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -35543,8 +37166,17 @@ class MarsGRAM2005(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 25
     _get_n_plate_definition_file_method_offset = 26
     _set_n_plate_definition_file_method_offset = 27
+    _get_use_stochastic_ballistic_coefficient_method_offset = 28
+    _set_use_stochastic_ballistic_coefficient_method_offset = 29
+    _get_use_stochastic_density_correction_method_offset = 30
+    _set_use_stochastic_density_correction_method_offset = 31
+    _get_stochastic_ballistic_coefficient_method_offset = 32
+    _get_stochastic_density_correction_method_offset = 33
+    _get_n_plate_stochastic_parameters_method_offset = 34
+    _get_drag_correction_type_method_offset = 35
+    _set_drag_correction_type_method_offset = 36
     _metadata = {
-        "iid_data" : (4920835096822718445, 10487593085217522335),
+        "iid_data" : (4760022347402452024, 16862066839767290035),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -35755,6 +37387,75 @@ class MarsGRAM2005(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(MarsGRAM2005._metadata, MarsGRAM2005._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(MarsGRAM2005._metadata, MarsGRAM2005._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(MarsGRAM2005._metadata, MarsGRAM2005._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_use_stochastic_density_correction_metadata = { "offset" : _get_use_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_density_correction(self) -> bool:
+        """True if using stochastic model for a density model correction."""
+        return self._intf.get_property(MarsGRAM2005._metadata, MarsGRAM2005._get_use_stochastic_density_correction_metadata)
+
+    _set_use_stochastic_density_correction_metadata = { "offset" : _set_use_stochastic_density_correction_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_density_correction.setter
+    def use_stochastic_density_correction(self, value:bool) -> None:
+        return self._intf.set_property(MarsGRAM2005._metadata, MarsGRAM2005._set_use_stochastic_density_correction_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(MarsGRAM2005._metadata, MarsGRAM2005._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_stochastic_density_correction_metadata = { "offset" : _get_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_density_correction(self) -> "StochasticDensityCorrection":
+        """Stochastic StochasticDensity Correction."""
+        return self._intf.get_property(MarsGRAM2005._metadata, MarsGRAM2005._get_stochastic_density_correction_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(MarsGRAM2005._metadata, MarsGRAM2005._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(MarsGRAM2005._metadata, MarsGRAM2005._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(MarsGRAM2005._metadata, MarsGRAM2005._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
@@ -35770,6 +37471,12 @@ class MarsGRAM2005(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[use_stochastic_density_correction] = "use_stochastic_density_correction"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[stochastic_density_correction] = "stochastic_density_correction"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type MarsGRAM2005."""
@@ -35788,13 +37495,13 @@ class MarsGRAM2005(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MarsGRAM2005, [MarsGRAM2005, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5209122239906139702, 12410207072342010548), MarsGRAM2005)
+agcls.AgClassCatalog.add_catalog_entry((4736268779281425713, 13151349706727078793), MarsGRAM2005)
 agcls.AgTypeNameMap["MarsGRAM2005"] = MarsGRAM2005
 
 class MarsGRAM2010(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Mars-GRAM 2010 atmospheric model."""
 
-    _num_methods = 27
+    _num_methods = 36
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -35823,8 +37530,17 @@ class MarsGRAM2010(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 25
     _get_n_plate_definition_file_method_offset = 26
     _set_n_plate_definition_file_method_offset = 27
+    _get_use_stochastic_ballistic_coefficient_method_offset = 28
+    _set_use_stochastic_ballistic_coefficient_method_offset = 29
+    _get_use_stochastic_density_correction_method_offset = 30
+    _set_use_stochastic_density_correction_method_offset = 31
+    _get_stochastic_ballistic_coefficient_method_offset = 32
+    _get_stochastic_density_correction_method_offset = 33
+    _get_n_plate_stochastic_parameters_method_offset = 34
+    _get_drag_correction_type_method_offset = 35
+    _set_drag_correction_type_method_offset = 36
     _metadata = {
-        "iid_data" : (5386740031750974041, 5758997999022083731),
+        "iid_data" : (5175945432599444142, 11247384774640519824),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -36035,6 +37751,75 @@ class MarsGRAM2010(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(MarsGRAM2010._metadata, MarsGRAM2010._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(MarsGRAM2010._metadata, MarsGRAM2010._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(MarsGRAM2010._metadata, MarsGRAM2010._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_use_stochastic_density_correction_metadata = { "offset" : _get_use_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_density_correction(self) -> bool:
+        """True if using stochastic model for a density model correction."""
+        return self._intf.get_property(MarsGRAM2010._metadata, MarsGRAM2010._get_use_stochastic_density_correction_metadata)
+
+    _set_use_stochastic_density_correction_metadata = { "offset" : _set_use_stochastic_density_correction_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_density_correction.setter
+    def use_stochastic_density_correction(self, value:bool) -> None:
+        return self._intf.set_property(MarsGRAM2010._metadata, MarsGRAM2010._set_use_stochastic_density_correction_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(MarsGRAM2010._metadata, MarsGRAM2010._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_stochastic_density_correction_metadata = { "offset" : _get_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_density_correction(self) -> "StochasticDensityCorrection":
+        """Stochastic StochasticDensity Correction."""
+        return self._intf.get_property(MarsGRAM2010._metadata, MarsGRAM2010._get_stochastic_density_correction_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(MarsGRAM2010._metadata, MarsGRAM2010._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(MarsGRAM2010._metadata, MarsGRAM2010._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(MarsGRAM2010._metadata, MarsGRAM2010._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
@@ -36050,6 +37835,12 @@ class MarsGRAM2010(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[use_stochastic_density_correction] = "use_stochastic_density_correction"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[stochastic_density_correction] = "stochastic_density_correction"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type MarsGRAM2010."""
@@ -36068,13 +37859,13 @@ class MarsGRAM2010(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MarsGRAM2010, [MarsGRAM2010, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4909809469192368395, 8508181569633631878), MarsGRAM2010)
+agcls.AgClassCatalog.add_catalog_entry((5367874202843019074, 8392112118310645945), MarsGRAM2010)
 agcls.AgTypeNameMap["MarsGRAM2010"] = MarsGRAM2010
 
 class VenusGRAM2005(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Venus-GRAM 2005 atmospheric model."""
 
-    _num_methods = 19
+    _num_methods = 28
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -36095,8 +37886,17 @@ class VenusGRAM2005(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 17
     _get_n_plate_definition_file_method_offset = 18
     _set_n_plate_definition_file_method_offset = 19
+    _get_use_stochastic_ballistic_coefficient_method_offset = 20
+    _set_use_stochastic_ballistic_coefficient_method_offset = 21
+    _get_use_stochastic_density_correction_method_offset = 22
+    _set_use_stochastic_density_correction_method_offset = 23
+    _get_stochastic_ballistic_coefficient_method_offset = 24
+    _get_stochastic_density_correction_method_offset = 25
+    _get_n_plate_stochastic_parameters_method_offset = 26
+    _get_drag_correction_type_method_offset = 27
+    _set_drag_correction_type_method_offset = 28
     _metadata = {
-        "iid_data" : (5644980224795628572, 6106550432953708673),
+        "iid_data" : (4625564423129175456, 14446728958106660517),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -36247,6 +38047,75 @@ class VenusGRAM2005(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(VenusGRAM2005._metadata, VenusGRAM2005._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(VenusGRAM2005._metadata, VenusGRAM2005._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(VenusGRAM2005._metadata, VenusGRAM2005._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_use_stochastic_density_correction_metadata = { "offset" : _get_use_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_density_correction(self) -> bool:
+        """True if using stochastic model for a density model correction."""
+        return self._intf.get_property(VenusGRAM2005._metadata, VenusGRAM2005._get_use_stochastic_density_correction_metadata)
+
+    _set_use_stochastic_density_correction_metadata = { "offset" : _set_use_stochastic_density_correction_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_density_correction.setter
+    def use_stochastic_density_correction(self, value:bool) -> None:
+        return self._intf.set_property(VenusGRAM2005._metadata, VenusGRAM2005._set_use_stochastic_density_correction_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(VenusGRAM2005._metadata, VenusGRAM2005._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_stochastic_density_correction_metadata = { "offset" : _get_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_density_correction(self) -> "StochasticDensityCorrection":
+        """Stochastic StochasticDensity Correction."""
+        return self._intf.get_property(VenusGRAM2005._metadata, VenusGRAM2005._get_stochastic_density_correction_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(VenusGRAM2005._metadata, VenusGRAM2005._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(VenusGRAM2005._metadata, VenusGRAM2005._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(VenusGRAM2005._metadata, VenusGRAM2005._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
@@ -36258,6 +38127,12 @@ class VenusGRAM2005(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[use_stochastic_density_correction] = "use_stochastic_density_correction"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[stochastic_density_correction] = "stochastic_density_correction"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type VenusGRAM2005."""
@@ -36276,13 +38151,13 @@ class VenusGRAM2005(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VenusGRAM2005, [VenusGRAM2005, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4771553107029033260, 15501667541023956872), VenusGRAM2005)
+agcls.AgClassCatalog.add_catalog_entry((5178049835966657781, 14298960734443742891), VenusGRAM2005)
 agcls.AgTypeNameMap["VenusGRAM2005"] = VenusGRAM2005
 
 class DTM2012(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the DTM 2012 atmospheric model."""
 
-    _num_methods = 29
+    _num_methods = 38
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -36313,8 +38188,17 @@ class DTM2012(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 27
     _get_n_plate_definition_file_method_offset = 28
     _set_n_plate_definition_file_method_offset = 29
+    _get_use_stochastic_ballistic_coefficient_method_offset = 30
+    _set_use_stochastic_ballistic_coefficient_method_offset = 31
+    _get_use_stochastic_density_correction_method_offset = 32
+    _set_use_stochastic_density_correction_method_offset = 33
+    _get_stochastic_ballistic_coefficient_method_offset = 34
+    _get_stochastic_density_correction_method_offset = 35
+    _get_n_plate_stochastic_parameters_method_offset = 36
+    _get_drag_correction_type_method_offset = 37
+    _set_drag_correction_type_method_offset = 38
     _metadata = {
-        "iid_data" : (5360516758857901663, 16161184987610090152),
+        "iid_data" : (5670638714594262340, 6587914156244514696),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -36540,6 +38424,75 @@ class DTM2012(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(DTM2012._metadata, DTM2012._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(DTM2012._metadata, DTM2012._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(DTM2012._metadata, DTM2012._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_use_stochastic_density_correction_metadata = { "offset" : _get_use_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_density_correction(self) -> bool:
+        """True if using stochastic model for a density model correction."""
+        return self._intf.get_property(DTM2012._metadata, DTM2012._get_use_stochastic_density_correction_metadata)
+
+    _set_use_stochastic_density_correction_metadata = { "offset" : _set_use_stochastic_density_correction_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_density_correction.setter
+    def use_stochastic_density_correction(self, value:bool) -> None:
+        return self._intf.set_property(DTM2012._metadata, DTM2012._set_use_stochastic_density_correction_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(DTM2012._metadata, DTM2012._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_stochastic_density_correction_metadata = { "offset" : _get_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_density_correction(self) -> "StochasticDensityCorrection":
+        """Stochastic StochasticDensity Correction."""
+        return self._intf.get_property(DTM2012._metadata, DTM2012._get_stochastic_density_correction_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(DTM2012._metadata, DTM2012._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(DTM2012._metadata, DTM2012._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(DTM2012._metadata, DTM2012._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
@@ -36556,6 +38509,12 @@ class DTM2012(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[atmosphere_data_geo_magnetic_flux_update_rate] = "atmosphere_data_geo_magnetic_flux_update_rate"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[use_stochastic_density_correction] = "use_stochastic_density_correction"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[stochastic_density_correction] = "stochastic_density_correction"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type DTM2012."""
@@ -36574,13 +38533,13 @@ class DTM2012(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DTM2012, [DTM2012, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4618305370805059391, 6354340417883156401), DTM2012)
+agcls.AgClassCatalog.add_catalog_entry((4722603101175643007, 18054188896965947291), DTM2012)
 agcls.AgTypeNameMap["DTM2012"] = DTM2012
 
 class DTM2020(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the DTM 2020 atmospheric model."""
 
-    _num_methods = 29
+    _num_methods = 38
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_use_approximate_altitude_method_offset = 1
     _set_use_approximate_altitude_method_offset = 2
@@ -36611,8 +38570,17 @@ class DTM2020(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_variable_area_history_file_method_offset = 27
     _get_n_plate_definition_file_method_offset = 28
     _set_n_plate_definition_file_method_offset = 29
+    _get_use_stochastic_ballistic_coefficient_method_offset = 30
+    _set_use_stochastic_ballistic_coefficient_method_offset = 31
+    _get_use_stochastic_density_correction_method_offset = 32
+    _set_use_stochastic_density_correction_method_offset = 33
+    _get_stochastic_ballistic_coefficient_method_offset = 34
+    _get_stochastic_density_correction_method_offset = 35
+    _get_n_plate_stochastic_parameters_method_offset = 36
+    _get_drag_correction_type_method_offset = 37
+    _set_drag_correction_type_method_offset = 38
     _metadata = {
-        "iid_data" : (4714451895545662258, 8426786274041618100),
+        "iid_data" : (5133842926467743081, 9741420233696727973),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -36838,6 +38806,75 @@ class DTM2020(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(DTM2020._metadata, DTM2020._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_ballistic_coefficient_metadata = { "offset" : _get_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_ballistic_coefficient(self) -> bool:
+        """True if using stochastic model for ballistic coefficient."""
+        return self._intf.get_property(DTM2020._metadata, DTM2020._get_use_stochastic_ballistic_coefficient_metadata)
+
+    _set_use_stochastic_ballistic_coefficient_metadata = { "offset" : _set_use_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_ballistic_coefficient.setter
+    def use_stochastic_ballistic_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(DTM2020._metadata, DTM2020._set_use_stochastic_ballistic_coefficient_metadata, value)
+
+    _get_use_stochastic_density_correction_metadata = { "offset" : _get_use_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_density_correction(self) -> bool:
+        """True if using stochastic model for a density model correction."""
+        return self._intf.get_property(DTM2020._metadata, DTM2020._get_use_stochastic_density_correction_metadata)
+
+    _set_use_stochastic_density_correction_metadata = { "offset" : _set_use_stochastic_density_correction_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_density_correction.setter
+    def use_stochastic_density_correction(self, value:bool) -> None:
+        return self._intf.set_property(DTM2020._metadata, DTM2020._set_use_stochastic_density_correction_metadata, value)
+
+    _get_stochastic_ballistic_coefficient_metadata = { "offset" : _get_stochastic_ballistic_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_ballistic_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic Ballistic Coefficient."""
+        return self._intf.get_property(DTM2020._metadata, DTM2020._get_stochastic_ballistic_coefficient_metadata)
+
+    _get_stochastic_density_correction_metadata = { "offset" : _get_stochastic_density_correction_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_density_correction(self) -> "StochasticDensityCorrection":
+        """Stochastic StochasticDensity Correction."""
+        return self._intf.get_property(DTM2020._metadata, DTM2020._get_stochastic_density_correction_metadata)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(DTM2020._metadata, DTM2020._get_n_plate_stochastic_parameters_metadata)
+
+    _get_drag_correction_type_metadata = { "offset" : _get_drag_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @property
+    def drag_correction_type(self) -> "DragCorrectionType":
+        """Drag correction type."""
+        return self._intf.get_property(DTM2020._metadata, DTM2020._get_drag_correction_type_metadata)
+
+    _set_drag_correction_type_metadata = { "offset" : _set_drag_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(DragCorrectionType),) }
+    @drag_correction_type.setter
+    def drag_correction_type(self, value:"DragCorrectionType") -> None:
+        return self._intf.set_property(DTM2020._metadata, DTM2020._set_drag_correction_type_metadata, value)
+
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
@@ -36854,6 +38891,12 @@ class DTM2020(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[atmosphere_data_geo_magnetic_flux_update_rate] = "atmosphere_data_geo_magnetic_flux_update_rate"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_ballistic_coefficient] = "use_stochastic_ballistic_coefficient"
+    _property_names[use_stochastic_density_correction] = "use_stochastic_density_correction"
+    _property_names[stochastic_ballistic_coefficient] = "stochastic_ballistic_coefficient"
+    _property_names[stochastic_density_correction] = "stochastic_density_correction"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
+    _property_names[drag_correction_type] = "drag_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type DTM2020."""
@@ -36872,7 +38915,7 @@ class DTM2020(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DTM2020, [DTM2020, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5608141479643281526, 8933387321817404818), DTM2020)
+agcls.AgClassCatalog.add_catalog_entry((5467081224770108816, 16172736330640004279), DTM2020)
 agcls.AgTypeNameMap["DTM2020"] = DTM2020
 
 class GravityFieldFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -36916,7 +38959,7 @@ class GravityFieldFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_max_partials_degree_text_method_offset = 34
     _get_max_partials_order_text_method_offset = 35
     _metadata = {
-        "iid_data" : (5524396550678766518, 16059984052708385960),
+        "iid_data" : (4966899601767456974, 7911928618529945264),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -37226,7 +39269,7 @@ class GravityFieldFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GravityFieldFunction, [GravityFieldFunction, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5465429656469651541, 11427577276297574311), GravityFieldFunction)
+agcls.AgClassCatalog.add_catalog_entry((5486623317815648938, 17716385511378842256), GravityFieldFunction)
 agcls.AgTypeNameMap["GravityFieldFunction"] = GravityFieldFunction
 
 class PointMassFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -37239,7 +39282,7 @@ class PointMassFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_mu_method_offset = 3
     _set_mu_method_offset = 4
     _metadata = {
-        "iid_data" : (5462605398119434458, 11783998325358715305),
+        "iid_data" : (5201890537233029244, 653558110433650581),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -37248,17 +39291,17 @@ class PointMassFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _get_gravitational_parameter_source_metadata = { "offset" : _get_gravitational_parameter_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(GravParamSource),) }
+            "marshallers" : (agmarshall.EnumArg(GravParameterSource),) }
     @property
-    def gravitational_parameter_source(self) -> "GravParamSource":
+    def gravitational_parameter_source(self) -> "GravParameterSource":
         """Get or set the source for the third body's gravitational parameter."""
         return self._intf.get_property(PointMassFunction._metadata, PointMassFunction._get_gravitational_parameter_source_metadata)
 
     _set_gravitational_parameter_source_metadata = { "offset" : _set_gravitational_parameter_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(GravParamSource),) }
+            "marshallers" : (agmarshall.EnumArg(GravParameterSource),) }
     @gravitational_parameter_source.setter
-    def gravitational_parameter_source(self, value:"GravParamSource") -> None:
+    def gravitational_parameter_source(self, value:"GravParameterSource") -> None:
         return self._intf.set_property(PointMassFunction._metadata, PointMassFunction._set_gravitational_parameter_source_metadata, value)
 
     _get_mu_metadata = { "offset" : _get_mu_method_offset,
@@ -37296,7 +39339,7 @@ class PointMassFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PointMassFunction, [PointMassFunction, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4889616998052485421, 3064578209889532067), PointMassFunction)
+agcls.AgClassCatalog.add_catalog_entry((5464037926445555510, 7497059215906982830), PointMassFunction)
 agcls.AgTypeNameMap["PointMassFunction"] = PointMassFunction
 
 class TwoBodyFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -37311,7 +39354,7 @@ class TwoBodyFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_min_radius_percent_method_offset = 5
     _set_min_radius_percent_method_offset = 6
     _metadata = {
-        "iid_data" : (4706705304387777866, 7919127694329746305),
+        "iid_data" : (5263160234068898210, 9740141627783385259),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -37320,17 +39363,17 @@ class TwoBodyFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _get_gravitational_parameter_source_metadata = { "offset" : _get_gravitational_parameter_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(GravParamSource),) }
+            "marshallers" : (agmarshall.EnumArg(GravParameterSource),) }
     @property
-    def gravitational_parameter_source(self) -> "GravParamSource":
+    def gravitational_parameter_source(self) -> "GravParameterSource":
         """Get or set the source for the gravitational parameter."""
         return self._intf.get_property(TwoBodyFunction._metadata, TwoBodyFunction._get_gravitational_parameter_source_metadata)
 
     _set_gravitational_parameter_source_metadata = { "offset" : _set_gravitational_parameter_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(GravParamSource),) }
+            "marshallers" : (agmarshall.EnumArg(GravParameterSource),) }
     @gravitational_parameter_source.setter
-    def gravitational_parameter_source(self, value:"GravParamSource") -> None:
+    def gravitational_parameter_source(self, value:"GravParameterSource") -> None:
         return self._intf.set_property(TwoBodyFunction._metadata, TwoBodyFunction._set_gravitational_parameter_source_metadata, value)
 
     _get_mu_metadata = { "offset" : _get_mu_method_offset,
@@ -37384,7 +39427,7 @@ class TwoBodyFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TwoBodyFunction, [TwoBodyFunction, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5589893013807683778, 10547061623759300008), TwoBodyFunction)
+agcls.AgClassCatalog.add_catalog_entry((5431647222360048019, 16104667398209645457), TwoBodyFunction)
 agcls.AgTypeNameMap["TwoBodyFunction"] = TwoBodyFunction
 
 class HPOPPluginFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -37396,7 +39439,7 @@ class HPOPPluginFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_plugin_identifier_method_offset = 2
     _get_plugin_config_method_offset = 3
     _metadata = {
-        "iid_data" : (4969864186118360684, 16828364214523179952),
+        "iid_data" : (5135535344191633106, 602002093220550285),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -37446,7 +39489,7 @@ class HPOPPluginFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, HPOPPluginFunction, [HPOPPluginFunction, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5310367860533452450, 396895054879317942), HPOPPluginFunction)
+agcls.AgClassCatalog.add_catalog_entry((5649362893266649194, 14817404247984945562), HPOPPluginFunction)
 agcls.AgTypeNameMap["HPOPPluginFunction"] = HPOPPluginFunction
 
 class EOMFuncPluginFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -37458,7 +39501,7 @@ class EOMFuncPluginFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_plugin_identifier_method_offset = 2
     _get_plugin_config_method_offset = 3
     _metadata = {
-        "iid_data" : (5400616710515627677, 9364901696839076241),
+        "iid_data" : (5640738595954450013, 12839189695345551745),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -37508,13 +39551,13 @@ class EOMFuncPluginFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EOMFuncPluginFunction, [EOMFuncPluginFunction, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5223247057825617700, 18398972489609883042), EOMFuncPluginFunction)
+agcls.AgClassCatalog.add_catalog_entry((5281104903927664825, 9996074065064150703), EOMFuncPluginFunction)
 agcls.AgTypeNameMap["EOMFuncPluginFunction"] = EOMFuncPluginFunction
 
 class SRPAerospaceT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Aerospace T20 solar radiation pressure model for GPS block IIA."""
 
-    _num_methods = 13
+    _num_methods = 17
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_atmosphere_altitude_method_offset = 1
     _set_atmosphere_altitude_method_offset = 2
@@ -37529,8 +39572,12 @@ class SRPAerospaceT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_use_sun_central_body_file_values_method_offset = 11
     _get_solar_radius_method_offset = 12
     _set_solar_radius_method_offset = 13
+    _get_use_stochastic_srp_coefficient_method_offset = 14
+    _set_use_stochastic_srp_coefficient_method_offset = 15
+    _get_k1_stochastic_srp_coefficient_method_offset = 16
+    _get_k2_stochastic_srp_coefficient_method_offset = 17
     _metadata = {
-        "iid_data" : (4923355036596117844, 13873513725574284471),
+        "iid_data" : (5445689853018538496, 8165337416779815571),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -37635,6 +39682,37 @@ class SRPAerospaceT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def solar_radius(self, value:float) -> None:
         return self._intf.set_property(SRPAerospaceT20._metadata, SRPAerospaceT20._set_solar_radius_metadata, value)
 
+    _get_use_stochastic_srp_coefficient_metadata = { "offset" : _get_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_srp_coefficient(self) -> bool:
+        """True if using a stochastic SRP for propagation or estimation."""
+        return self._intf.get_property(SRPAerospaceT20._metadata, SRPAerospaceT20._get_use_stochastic_srp_coefficient_metadata)
+
+    _set_use_stochastic_srp_coefficient_metadata = { "offset" : _set_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_srp_coefficient.setter
+    def use_stochastic_srp_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(SRPAerospaceT20._metadata, SRPAerospaceT20._set_use_stochastic_srp_coefficient_metadata, value)
+
+    _get_k1_stochastic_srp_coefficient_metadata = { "offset" : _get_k1_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def k1_stochastic_srp_coefficient(self) -> "StochasticModelParameters":
+        """K1 Stochastic SRP Coefficient."""
+        return self._intf.get_property(SRPAerospaceT20._metadata, SRPAerospaceT20._get_k1_stochastic_srp_coefficient_metadata)
+
+    _get_k2_stochastic_srp_coefficient_metadata = { "offset" : _get_k2_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def k2_stochastic_srp_coefficient(self) -> "StochasticModelParameters":
+        """K2 Stochastic SRP Coefficient."""
+        return self._intf.get_property(SRPAerospaceT20._metadata, SRPAerospaceT20._get_k2_stochastic_srp_coefficient_metadata)
+
     _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
@@ -37642,6 +39720,9 @@ class SRPAerospaceT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[include_boundary_mitigation] = "include_boundary_mitigation"
     _property_names[use_sun_central_body_file_values] = "use_sun_central_body_file_values"
     _property_names[solar_radius] = "solar_radius"
+    _property_names[use_stochastic_srp_coefficient] = "use_stochastic_srp_coefficient"
+    _property_names[k1_stochastic_srp_coefficient] = "k1_stochastic_srp_coefficient"
+    _property_names[k2_stochastic_srp_coefficient] = "k2_stochastic_srp_coefficient"
 
     def __init__(self, source_object=None):
         """Construct an object of type SRPAerospaceT20."""
@@ -37660,13 +39741,13 @@ class SRPAerospaceT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SRPAerospaceT20, [SRPAerospaceT20, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5040644487386490720, 8016746528186754470), SRPAerospaceT20)
+agcls.AgClassCatalog.add_catalog_entry((4924422374831556453, 9870967406498334386), SRPAerospaceT20)
 agcls.AgTypeNameMap["SRPAerospaceT20"] = SRPAerospaceT20
 
 class SRPAerospaceT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Aerospace T30 solar radiation pressure model for GPS block IIR."""
 
-    _num_methods = 13
+    _num_methods = 17
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_atmosphere_altitude_method_offset = 1
     _set_atmosphere_altitude_method_offset = 2
@@ -37681,8 +39762,12 @@ class SRPAerospaceT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_use_sun_central_body_file_values_method_offset = 11
     _get_solar_radius_method_offset = 12
     _set_solar_radius_method_offset = 13
+    _get_use_stochastic_srp_coefficient_method_offset = 14
+    _set_use_stochastic_srp_coefficient_method_offset = 15
+    _get_k1_stochastic_srp_coefficient_method_offset = 16
+    _get_k2_stochastic_srp_coefficient_method_offset = 17
     _metadata = {
-        "iid_data" : (5070077088478642131, 13573356320157914276),
+        "iid_data" : (5318768075827547019, 10814275927921101502),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -37787,6 +39872,37 @@ class SRPAerospaceT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def solar_radius(self, value:float) -> None:
         return self._intf.set_property(SRPAerospaceT30._metadata, SRPAerospaceT30._set_solar_radius_metadata, value)
 
+    _get_use_stochastic_srp_coefficient_metadata = { "offset" : _get_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_srp_coefficient(self) -> bool:
+        """True if using a stochastic SRP for propagation or estimation."""
+        return self._intf.get_property(SRPAerospaceT30._metadata, SRPAerospaceT30._get_use_stochastic_srp_coefficient_metadata)
+
+    _set_use_stochastic_srp_coefficient_metadata = { "offset" : _set_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_srp_coefficient.setter
+    def use_stochastic_srp_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(SRPAerospaceT30._metadata, SRPAerospaceT30._set_use_stochastic_srp_coefficient_metadata, value)
+
+    _get_k1_stochastic_srp_coefficient_metadata = { "offset" : _get_k1_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def k1_stochastic_srp_coefficient(self) -> "StochasticModelParameters":
+        """K1 Stochastic SRP Coefficient."""
+        return self._intf.get_property(SRPAerospaceT30._metadata, SRPAerospaceT30._get_k1_stochastic_srp_coefficient_metadata)
+
+    _get_k2_stochastic_srp_coefficient_metadata = { "offset" : _get_k2_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def k2_stochastic_srp_coefficient(self) -> "StochasticModelParameters":
+        """K2 Stochastic SRP Coefficient."""
+        return self._intf.get_property(SRPAerospaceT30._metadata, SRPAerospaceT30._get_k2_stochastic_srp_coefficient_metadata)
+
     _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
@@ -37794,6 +39910,9 @@ class SRPAerospaceT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[include_boundary_mitigation] = "include_boundary_mitigation"
     _property_names[use_sun_central_body_file_values] = "use_sun_central_body_file_values"
     _property_names[solar_radius] = "solar_radius"
+    _property_names[use_stochastic_srp_coefficient] = "use_stochastic_srp_coefficient"
+    _property_names[k1_stochastic_srp_coefficient] = "k1_stochastic_srp_coefficient"
+    _property_names[k2_stochastic_srp_coefficient] = "k2_stochastic_srp_coefficient"
 
     def __init__(self, source_object=None):
         """Construct an object of type SRPAerospaceT30."""
@@ -37812,13 +39931,13 @@ class SRPAerospaceT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SRPAerospaceT30, [SRPAerospaceT30, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5064742270983407105, 17229057075486729390), SRPAerospaceT30)
+agcls.AgClassCatalog.add_catalog_entry((4735036659718136549, 14235326243236184460), SRPAerospaceT30)
 agcls.AgTypeNameMap["SRPAerospaceT30"] = SRPAerospaceT30
 
 class SRPGSPM04aIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Bar-Sever GPS Solar Pressure Model 04a for block IIA."""
 
-    _num_methods = 13
+    _num_methods = 17
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_atmosphere_altitude_method_offset = 1
     _set_atmosphere_altitude_method_offset = 2
@@ -37833,8 +39952,12 @@ class SRPGSPM04aIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_use_sun_central_body_file_values_method_offset = 11
     _get_solar_radius_method_offset = 12
     _set_solar_radius_method_offset = 13
+    _get_use_stochastic_srp_coefficient_method_offset = 14
+    _set_use_stochastic_srp_coefficient_method_offset = 15
+    _get_k1_stochastic_srp_coefficient_method_offset = 16
+    _get_k2_stochastic_srp_coefficient_method_offset = 17
     _metadata = {
-        "iid_data" : (4682363418069451558, 11356800664389510820),
+        "iid_data" : (4875002247873104171, 671876921878394781),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -37939,6 +40062,37 @@ class SRPGSPM04aIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def solar_radius(self, value:float) -> None:
         return self._intf.set_property(SRPGSPM04aIIA._metadata, SRPGSPM04aIIA._set_solar_radius_metadata, value)
 
+    _get_use_stochastic_srp_coefficient_metadata = { "offset" : _get_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_srp_coefficient(self) -> bool:
+        """True if using a stochastic SRP for propagation or estimation."""
+        return self._intf.get_property(SRPGSPM04aIIA._metadata, SRPGSPM04aIIA._get_use_stochastic_srp_coefficient_metadata)
+
+    _set_use_stochastic_srp_coefficient_metadata = { "offset" : _set_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_srp_coefficient.setter
+    def use_stochastic_srp_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(SRPGSPM04aIIA._metadata, SRPGSPM04aIIA._set_use_stochastic_srp_coefficient_metadata, value)
+
+    _get_k1_stochastic_srp_coefficient_metadata = { "offset" : _get_k1_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def k1_stochastic_srp_coefficient(self) -> "StochasticModelParameters":
+        """K1 Stochastic SRP Coefficient."""
+        return self._intf.get_property(SRPGSPM04aIIA._metadata, SRPGSPM04aIIA._get_k1_stochastic_srp_coefficient_metadata)
+
+    _get_k2_stochastic_srp_coefficient_metadata = { "offset" : _get_k2_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def k2_stochastic_srp_coefficient(self) -> "StochasticModelParameters":
+        """K2 Stochastic SRP Coefficient."""
+        return self._intf.get_property(SRPGSPM04aIIA._metadata, SRPGSPM04aIIA._get_k2_stochastic_srp_coefficient_metadata)
+
     _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
@@ -37946,6 +40100,9 @@ class SRPGSPM04aIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[include_boundary_mitigation] = "include_boundary_mitigation"
     _property_names[use_sun_central_body_file_values] = "use_sun_central_body_file_values"
     _property_names[solar_radius] = "solar_radius"
+    _property_names[use_stochastic_srp_coefficient] = "use_stochastic_srp_coefficient"
+    _property_names[k1_stochastic_srp_coefficient] = "k1_stochastic_srp_coefficient"
+    _property_names[k2_stochastic_srp_coefficient] = "k2_stochastic_srp_coefficient"
 
     def __init__(self, source_object=None):
         """Construct an object of type SRPGSPM04aIIA."""
@@ -37964,13 +40121,13 @@ class SRPGSPM04aIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SRPGSPM04aIIA, [SRPGSPM04aIIA, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5065459968903642120, 15868220137074428593), SRPGSPM04aIIA)
+agcls.AgClassCatalog.add_catalog_entry((5126839540896907867, 12799296203301683369), SRPGSPM04aIIA)
 agcls.AgTypeNameMap["SRPGSPM04aIIA"] = SRPGSPM04aIIA
 
 class SRPGSPM04aIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Bar-Sever GPS Solar Pressure Model 04a for block IIR."""
 
-    _num_methods = 13
+    _num_methods = 17
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_atmosphere_altitude_method_offset = 1
     _set_atmosphere_altitude_method_offset = 2
@@ -37985,8 +40142,12 @@ class SRPGSPM04aIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_use_sun_central_body_file_values_method_offset = 11
     _get_solar_radius_method_offset = 12
     _set_solar_radius_method_offset = 13
+    _get_use_stochastic_srp_coefficient_method_offset = 14
+    _set_use_stochastic_srp_coefficient_method_offset = 15
+    _get_k1_stochastic_srp_coefficient_method_offset = 16
+    _get_k2_stochastic_srp_coefficient_method_offset = 17
     _metadata = {
-        "iid_data" : (5755208208197003276, 5041409373774569878),
+        "iid_data" : (4659598151634461624, 12890182641798672571),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -38091,6 +40252,37 @@ class SRPGSPM04aIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def solar_radius(self, value:float) -> None:
         return self._intf.set_property(SRPGSPM04aIIR._metadata, SRPGSPM04aIIR._set_solar_radius_metadata, value)
 
+    _get_use_stochastic_srp_coefficient_metadata = { "offset" : _get_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_srp_coefficient(self) -> bool:
+        """True if using a stochastic SRP for propagation or estimation."""
+        return self._intf.get_property(SRPGSPM04aIIR._metadata, SRPGSPM04aIIR._get_use_stochastic_srp_coefficient_metadata)
+
+    _set_use_stochastic_srp_coefficient_metadata = { "offset" : _set_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_srp_coefficient.setter
+    def use_stochastic_srp_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(SRPGSPM04aIIR._metadata, SRPGSPM04aIIR._set_use_stochastic_srp_coefficient_metadata, value)
+
+    _get_k1_stochastic_srp_coefficient_metadata = { "offset" : _get_k1_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def k1_stochastic_srp_coefficient(self) -> "StochasticModelParameters":
+        """K1 Stochastic SRP Coefficient."""
+        return self._intf.get_property(SRPGSPM04aIIR._metadata, SRPGSPM04aIIR._get_k1_stochastic_srp_coefficient_metadata)
+
+    _get_k2_stochastic_srp_coefficient_metadata = { "offset" : _get_k2_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def k2_stochastic_srp_coefficient(self) -> "StochasticModelParameters":
+        """K2 Stochastic SRP Coefficient."""
+        return self._intf.get_property(SRPGSPM04aIIR._metadata, SRPGSPM04aIIR._get_k2_stochastic_srp_coefficient_metadata)
+
     _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
@@ -38098,6 +40290,9 @@ class SRPGSPM04aIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[include_boundary_mitigation] = "include_boundary_mitigation"
     _property_names[use_sun_central_body_file_values] = "use_sun_central_body_file_values"
     _property_names[solar_radius] = "solar_radius"
+    _property_names[use_stochastic_srp_coefficient] = "use_stochastic_srp_coefficient"
+    _property_names[k1_stochastic_srp_coefficient] = "k1_stochastic_srp_coefficient"
+    _property_names[k2_stochastic_srp_coefficient] = "k2_stochastic_srp_coefficient"
 
     def __init__(self, source_object=None):
         """Construct an object of type SRPGSPM04aIIR."""
@@ -38116,13 +40311,13 @@ class SRPGSPM04aIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SRPGSPM04aIIR, [SRPGSPM04aIIR, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5159592724339510192, 6236067790114421397), SRPGSPM04aIIR)
+agcls.AgClassCatalog.add_catalog_entry((5683242950392317119, 13090335840854962050), SRPGSPM04aIIR)
 agcls.AgTypeNameMap["SRPGSPM04aIIR"] = SRPGSPM04aIIR
 
 class SRPGSPM04aeIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Bar-Sever GPS Solar Pressure Model 04ae for block IIA."""
 
-    _num_methods = 13
+    _num_methods = 17
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_atmosphere_altitude_method_offset = 1
     _set_atmosphere_altitude_method_offset = 2
@@ -38137,8 +40332,12 @@ class SRPGSPM04aeIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_use_sun_central_body_file_values_method_offset = 11
     _get_solar_radius_method_offset = 12
     _set_solar_radius_method_offset = 13
+    _get_use_stochastic_srp_coefficient_method_offset = 14
+    _set_use_stochastic_srp_coefficient_method_offset = 15
+    _get_k1_stochastic_srp_coefficient_method_offset = 16
+    _get_k2_stochastic_srp_coefficient_method_offset = 17
     _metadata = {
-        "iid_data" : (4679833496780922683, 8986734930070695298),
+        "iid_data" : (5081399530407250236, 10332417312105306786),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -38243,6 +40442,37 @@ class SRPGSPM04aeIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def solar_radius(self, value:float) -> None:
         return self._intf.set_property(SRPGSPM04aeIIA._metadata, SRPGSPM04aeIIA._set_solar_radius_metadata, value)
 
+    _get_use_stochastic_srp_coefficient_metadata = { "offset" : _get_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_srp_coefficient(self) -> bool:
+        """True if using a stochastic SRP for propagation or estimation."""
+        return self._intf.get_property(SRPGSPM04aeIIA._metadata, SRPGSPM04aeIIA._get_use_stochastic_srp_coefficient_metadata)
+
+    _set_use_stochastic_srp_coefficient_metadata = { "offset" : _set_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_srp_coefficient.setter
+    def use_stochastic_srp_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(SRPGSPM04aeIIA._metadata, SRPGSPM04aeIIA._set_use_stochastic_srp_coefficient_metadata, value)
+
+    _get_k1_stochastic_srp_coefficient_metadata = { "offset" : _get_k1_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def k1_stochastic_srp_coefficient(self) -> "StochasticModelParameters":
+        """K1 Stochastic SRP Coefficient."""
+        return self._intf.get_property(SRPGSPM04aeIIA._metadata, SRPGSPM04aeIIA._get_k1_stochastic_srp_coefficient_metadata)
+
+    _get_k2_stochastic_srp_coefficient_metadata = { "offset" : _get_k2_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def k2_stochastic_srp_coefficient(self) -> "StochasticModelParameters":
+        """K2 Stochastic SRP Coefficient."""
+        return self._intf.get_property(SRPGSPM04aeIIA._metadata, SRPGSPM04aeIIA._get_k2_stochastic_srp_coefficient_metadata)
+
     _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
@@ -38250,6 +40480,9 @@ class SRPGSPM04aeIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[include_boundary_mitigation] = "include_boundary_mitigation"
     _property_names[use_sun_central_body_file_values] = "use_sun_central_body_file_values"
     _property_names[solar_radius] = "solar_radius"
+    _property_names[use_stochastic_srp_coefficient] = "use_stochastic_srp_coefficient"
+    _property_names[k1_stochastic_srp_coefficient] = "k1_stochastic_srp_coefficient"
+    _property_names[k2_stochastic_srp_coefficient] = "k2_stochastic_srp_coefficient"
 
     def __init__(self, source_object=None):
         """Construct an object of type SRPGSPM04aeIIA."""
@@ -38268,13 +40501,13 @@ class SRPGSPM04aeIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SRPGSPM04aeIIA, [SRPGSPM04aeIIA, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4704207188197051273, 14854464675918841478), SRPGSPM04aeIIA)
+agcls.AgClassCatalog.add_catalog_entry((4927731114197781129, 7158125071994529929), SRPGSPM04aeIIA)
 agcls.AgTypeNameMap["SRPGSPM04aeIIA"] = SRPGSPM04aeIIA
 
 class SRPGSPM04aeIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Bar-Sever GPS Solar Pressure Model 04ae for block IIR."""
 
-    _num_methods = 13
+    _num_methods = 17
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_atmosphere_altitude_method_offset = 1
     _set_atmosphere_altitude_method_offset = 2
@@ -38289,8 +40522,12 @@ class SRPGSPM04aeIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_use_sun_central_body_file_values_method_offset = 11
     _get_solar_radius_method_offset = 12
     _set_solar_radius_method_offset = 13
+    _get_use_stochastic_srp_coefficient_method_offset = 14
+    _set_use_stochastic_srp_coefficient_method_offset = 15
+    _get_k1_stochastic_srp_coefficient_method_offset = 16
+    _get_k2_stochastic_srp_coefficient_method_offset = 17
     _metadata = {
-        "iid_data" : (4901489248279768889, 2643223923493711252),
+        "iid_data" : (5362217538481514668, 3339464003018479492),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -38395,6 +40632,37 @@ class SRPGSPM04aeIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def solar_radius(self, value:float) -> None:
         return self._intf.set_property(SRPGSPM04aeIIR._metadata, SRPGSPM04aeIIR._set_solar_radius_metadata, value)
 
+    _get_use_stochastic_srp_coefficient_metadata = { "offset" : _get_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_srp_coefficient(self) -> bool:
+        """True if using a stochastic SRP for propagation or estimation."""
+        return self._intf.get_property(SRPGSPM04aeIIR._metadata, SRPGSPM04aeIIR._get_use_stochastic_srp_coefficient_metadata)
+
+    _set_use_stochastic_srp_coefficient_metadata = { "offset" : _set_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_srp_coefficient.setter
+    def use_stochastic_srp_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(SRPGSPM04aeIIR._metadata, SRPGSPM04aeIIR._set_use_stochastic_srp_coefficient_metadata, value)
+
+    _get_k1_stochastic_srp_coefficient_metadata = { "offset" : _get_k1_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def k1_stochastic_srp_coefficient(self) -> "StochasticModelParameters":
+        """K1 Stochastic SRP Coefficient."""
+        return self._intf.get_property(SRPGSPM04aeIIR._metadata, SRPGSPM04aeIIR._get_k1_stochastic_srp_coefficient_metadata)
+
+    _get_k2_stochastic_srp_coefficient_metadata = { "offset" : _get_k2_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def k2_stochastic_srp_coefficient(self) -> "StochasticModelParameters":
+        """K2 Stochastic SRP Coefficient."""
+        return self._intf.get_property(SRPGSPM04aeIIR._metadata, SRPGSPM04aeIIR._get_k2_stochastic_srp_coefficient_metadata)
+
     _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
@@ -38402,6 +40670,9 @@ class SRPGSPM04aeIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[include_boundary_mitigation] = "include_boundary_mitigation"
     _property_names[use_sun_central_body_file_values] = "use_sun_central_body_file_values"
     _property_names[solar_radius] = "solar_radius"
+    _property_names[use_stochastic_srp_coefficient] = "use_stochastic_srp_coefficient"
+    _property_names[k1_stochastic_srp_coefficient] = "k1_stochastic_srp_coefficient"
+    _property_names[k2_stochastic_srp_coefficient] = "k2_stochastic_srp_coefficient"
 
     def __init__(self, source_object=None):
         """Construct an object of type SRPGSPM04aeIIR."""
@@ -38420,13 +40691,13 @@ class SRPGSPM04aeIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SRPGSPM04aeIIR, [SRPGSPM04aeIIR, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4990438641832144132, 5202502645857195413), SRPGSPM04aeIIR)
+agcls.AgClassCatalog.add_catalog_entry((5234918099549165775, 5107034259154963873), SRPGSPM04aeIIR)
 agcls.AgTypeNameMap["SRPGSPM04aeIIR"] = SRPGSPM04aeIIR
 
 class SRPSpherical(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Spherical SRP model; assumes a spherical spacecraft. The equation used by STK is described in the Solar Radiation technical note."""
 
-    _num_methods = 19
+    _num_methods = 24
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_atmosphere_altitude_method_offset = 1
     _set_atmosphere_altitude_method_offset = 2
@@ -38447,8 +40718,13 @@ class SRPSpherical(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_use_sun_central_body_file_values_method_offset = 17
     _get_solar_radius_method_offset = 18
     _set_solar_radius_method_offset = 19
+    _get_use_stochastic_srp_coefficient_method_offset = 20
+    _set_use_stochastic_srp_coefficient_method_offset = 21
+    _get_stochastic_srp_coefficient_method_offset = 22
+    _get_srp_correction_type_method_offset = 23
+    _set_srp_correction_type_method_offset = 24
     _metadata = {
-        "iid_data" : (4935688664894662660, 12720226864849181351),
+        "iid_data" : (4999655798512064973, 1476616705254678163),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -38598,6 +40874,44 @@ class SRPSpherical(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def solar_radius(self, value:float) -> None:
         return self._intf.set_property(SRPSpherical._metadata, SRPSpherical._set_solar_radius_metadata, value)
 
+    _get_use_stochastic_srp_coefficient_metadata = { "offset" : _get_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_srp_coefficient(self) -> bool:
+        """True if using a stochastic SRP for propagation or estimation."""
+        return self._intf.get_property(SRPSpherical._metadata, SRPSpherical._get_use_stochastic_srp_coefficient_metadata)
+
+    _set_use_stochastic_srp_coefficient_metadata = { "offset" : _set_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_srp_coefficient.setter
+    def use_stochastic_srp_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(SRPSpherical._metadata, SRPSpherical._set_use_stochastic_srp_coefficient_metadata, value)
+
+    _get_stochastic_srp_coefficient_metadata = { "offset" : _get_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_srp_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic SRP Coefficient."""
+        return self._intf.get_property(SRPSpherical._metadata, SRPSpherical._get_stochastic_srp_coefficient_metadata)
+
+    _get_srp_correction_type_metadata = { "offset" : _get_srp_correction_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(SRPCorrectionType),) }
+    @property
+    def srp_correction_type(self) -> "SRPCorrectionType":
+        """Get or set the SRP correction type."""
+        return self._intf.get_property(SRPSpherical._metadata, SRPSpherical._get_srp_correction_type_metadata)
+
+    _set_srp_correction_type_metadata = { "offset" : _set_srp_correction_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(SRPCorrectionType),) }
+    @srp_correction_type.setter
+    def srp_correction_type(self, value:"SRPCorrectionType") -> None:
+        return self._intf.set_property(SRPSpherical._metadata, SRPSpherical._set_srp_correction_type_metadata, value)
+
     _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
@@ -38608,6 +40922,9 @@ class SRPSpherical(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[include_boundary_mitigation] = "include_boundary_mitigation"
     _property_names[use_sun_central_body_file_values] = "use_sun_central_body_file_values"
     _property_names[solar_radius] = "solar_radius"
+    _property_names[use_stochastic_srp_coefficient] = "use_stochastic_srp_coefficient"
+    _property_names[stochastic_srp_coefficient] = "stochastic_srp_coefficient"
+    _property_names[srp_correction_type] = "srp_correction_type"
 
     def __init__(self, source_object=None):
         """Construct an object of type SRPSpherical."""
@@ -38626,13 +40943,13 @@ class SRPSpherical(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SRPSpherical, [SRPSpherical, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5125877137703219255, 8400477721897989536), SRPSpherical)
+agcls.AgClassCatalog.add_catalog_entry((5113327865999022175, 10410931722092169878), SRPSpherical)
 agcls.AgTypeNameMap["SRPSpherical"] = SRPSpherical
 
 class SRPNPlate(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the N-plate SRP model."""
 
-    _num_methods = 21
+    _num_methods = 24
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_atmosphere_altitude_method_offset = 1
     _set_atmosphere_altitude_method_offset = 2
@@ -38655,8 +40972,11 @@ class SRPNPlate(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_solar_radius_method_offset = 19
     _get_n_plate_definition_file_method_offset = 20
     _set_n_plate_definition_file_method_offset = 21
+    _get_use_stochastic_srp_coefficient_method_offset = 22
+    _set_use_stochastic_srp_coefficient_method_offset = 23
+    _get_n_plate_stochastic_parameters_method_offset = 24
     _metadata = {
-        "iid_data" : (5014342700106255399, 15101597874313585044),
+        "iid_data" : (4627568186958585476, 747928689150077092),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -38821,6 +41141,29 @@ class SRPNPlate(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(SRPNPlate._metadata, SRPNPlate._set_n_plate_definition_file_metadata, value)
 
+    _get_use_stochastic_srp_coefficient_metadata = { "offset" : _get_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_srp_coefficient(self) -> bool:
+        """True if using a stochastic SRP for propagation or estimation."""
+        return self._intf.get_property(SRPNPlate._metadata, SRPNPlate._get_use_stochastic_srp_coefficient_metadata)
+
+    _set_use_stochastic_srp_coefficient_metadata = { "offset" : _set_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_srp_coefficient.setter
+    def use_stochastic_srp_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(SRPNPlate._metadata, SRPNPlate._set_use_stochastic_srp_coefficient_metadata, value)
+
+    _get_n_plate_stochastic_parameters_metadata = { "offset" : _get_n_plate_stochastic_parameters_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def n_plate_stochastic_parameters(self) -> "NPlateStochasticParametersCollection":
+        """NPlate Stochastic Parameters."""
+        return self._intf.get_property(SRPNPlate._metadata, SRPNPlate._get_n_plate_stochastic_parameters_metadata)
+
     _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
@@ -38832,6 +41175,8 @@ class SRPNPlate(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[use_sun_central_body_file_values] = "use_sun_central_body_file_values"
     _property_names[solar_radius] = "solar_radius"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
+    _property_names[use_stochastic_srp_coefficient] = "use_stochastic_srp_coefficient"
+    _property_names[n_plate_stochastic_parameters] = "n_plate_stochastic_parameters"
 
     def __init__(self, source_object=None):
         """Construct an object of type SRPNPlate."""
@@ -38850,13 +41195,13 @@ class SRPNPlate(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SRPNPlate, [SRPNPlate, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4645210293341138373, 9981460367221995948), SRPNPlate)
+agcls.AgClassCatalog.add_catalog_entry((5220426888324730741, 4959025941497423538), SRPNPlate)
 agcls.AgTypeNameMap["SRPNPlate"] = SRPNPlate
 
 class SRPTabulatedAreaVector(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the tabulated area vector SRP model."""
 
-    _num_methods = 23
+    _num_methods = 26
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_atmosphere_altitude_method_offset = 1
     _set_atmosphere_altitude_method_offset = 2
@@ -38881,8 +41226,11 @@ class SRPTabulatedAreaVector(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _set_tab_area_vector_definition_file_method_offset = 21
     _get_interpolation_method_method_offset = 22
     _set_interpolation_method_method_offset = 23
+    _get_use_stochastic_srp_coefficient_method_offset = 24
+    _set_use_stochastic_srp_coefficient_method_offset = 25
+    _get_stochastic_srp_coefficient_method_offset = 26
     _metadata = {
-        "iid_data" : (4833860589877898808, 18366789859238573226),
+        "iid_data" : (4835665153026514733, 3259195672631861899),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -39062,6 +41410,29 @@ class SRPTabulatedAreaVector(IComponentInfo, ICloneable, SupportsDeleteCallback)
     def interpolation_method(self, value:"TabVecInterpolationMethod") -> None:
         return self._intf.set_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._set_interpolation_method_metadata, value)
 
+    _get_use_stochastic_srp_coefficient_metadata = { "offset" : _get_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_srp_coefficient(self) -> bool:
+        """True if using a stochastic SRP for propagation or estimation."""
+        return self._intf.get_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._get_use_stochastic_srp_coefficient_metadata)
+
+    _set_use_stochastic_srp_coefficient_metadata = { "offset" : _set_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_srp_coefficient.setter
+    def use_stochastic_srp_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._set_use_stochastic_srp_coefficient_metadata, value)
+
+    _get_stochastic_srp_coefficient_metadata = { "offset" : _get_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_srp_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic SRP Coefficient."""
+        return self._intf.get_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._get_stochastic_srp_coefficient_metadata)
+
     _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
@@ -39074,6 +41445,8 @@ class SRPTabulatedAreaVector(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _property_names[solar_radius] = "solar_radius"
     _property_names[tab_area_vector_definition_file] = "tab_area_vector_definition_file"
     _property_names[interpolation_method] = "interpolation_method"
+    _property_names[use_stochastic_srp_coefficient] = "use_stochastic_srp_coefficient"
+    _property_names[stochastic_srp_coefficient] = "stochastic_srp_coefficient"
 
     def __init__(self, source_object=None):
         """Construct an object of type SRPTabulatedAreaVector."""
@@ -39092,13 +41465,13 @@ class SRPTabulatedAreaVector(IComponentInfo, ICloneable, SupportsDeleteCallback)
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SRPTabulatedAreaVector, [SRPTabulatedAreaVector, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4701818138234904765, 5913653355719896758), SRPTabulatedAreaVector)
+agcls.AgClassCatalog.add_catalog_entry((4908315667033128611, 7223420365224956312), SRPTabulatedAreaVector)
 agcls.AgTypeNameMap["SRPTabulatedAreaVector"] = SRPTabulatedAreaVector
 
 class SRPVariableArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Variable Area SRP model."""
 
-    _num_methods = 21
+    _num_methods = 24
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_atmosphere_altitude_method_offset = 1
     _set_atmosphere_altitude_method_offset = 2
@@ -39121,8 +41494,11 @@ class SRPVariableArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_solar_radius_method_offset = 19
     _get_variable_area_history_file_method_offset = 20
     _set_variable_area_history_file_method_offset = 21
+    _get_use_stochastic_srp_coefficient_method_offset = 22
+    _set_use_stochastic_srp_coefficient_method_offset = 23
+    _get_stochastic_srp_coefficient_method_offset = 24
     _metadata = {
-        "iid_data" : (5274748456565795777, 3510230669144871556),
+        "iid_data" : (5741529698444666728, 1309967808241260178),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -39287,6 +41663,29 @@ class SRPVariableArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def variable_area_history_file(self, value:str) -> None:
         return self._intf.set_property(SRPVariableArea._metadata, SRPVariableArea._set_variable_area_history_file_metadata, value)
 
+    _get_use_stochastic_srp_coefficient_metadata = { "offset" : _get_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_srp_coefficient(self) -> bool:
+        """True if using a stochastic SRP for propagation or estimation."""
+        return self._intf.get_property(SRPVariableArea._metadata, SRPVariableArea._get_use_stochastic_srp_coefficient_metadata)
+
+    _set_use_stochastic_srp_coefficient_metadata = { "offset" : _set_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_srp_coefficient.setter
+    def use_stochastic_srp_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(SRPVariableArea._metadata, SRPVariableArea._set_use_stochastic_srp_coefficient_metadata, value)
+
+    _get_stochastic_srp_coefficient_metadata = { "offset" : _get_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def stochastic_srp_coefficient(self) -> "StochasticModelParameters":
+        """Stochastic SRP Coefficient."""
+        return self._intf.get_property(SRPVariableArea._metadata, SRPVariableArea._get_stochastic_srp_coefficient_metadata)
+
     _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
@@ -39298,6 +41697,8 @@ class SRPVariableArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[use_sun_central_body_file_values] = "use_sun_central_body_file_values"
     _property_names[solar_radius] = "solar_radius"
     _property_names[variable_area_history_file] = "variable_area_history_file"
+    _property_names[use_stochastic_srp_coefficient] = "use_stochastic_srp_coefficient"
+    _property_names[stochastic_srp_coefficient] = "stochastic_srp_coefficient"
 
     def __init__(self, source_object=None):
         """Construct an object of type SRPVariableArea."""
@@ -39316,7 +41717,7 @@ class SRPVariableArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SRPVariableArea, [SRPVariableArea, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5630766717492279474, 10931366228696915360), SRPVariableArea)
+agcls.AgClassCatalog.add_catalog_entry((4830981237889432088, 16750428619293327538), SRPVariableArea)
 agcls.AgTypeNameMap["SRPVariableArea"] = SRPVariableArea
 
 class ThirdBodyFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -39333,7 +41734,7 @@ class ThirdBodyFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_mode_type_method_offset = 7
     _get_ephemeris_source_warning_method_offset = 8
     _metadata = {
-        "iid_data" : (5266271845857733661, 13603411153532656554),
+        "iid_data" : (4980941539208985849, 8247730110356973964),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -39424,7 +41825,7 @@ class ThirdBodyFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ThirdBodyFunction, [ThirdBodyFunction, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5428984946557318479, 112860624386267545), ThirdBodyFunction)
+agcls.AgClassCatalog.add_catalog_entry((4914627852259254497, 2652266640921429695), ThirdBodyFunction)
 agcls.AgTypeNameMap["ThirdBodyFunction"] = ThirdBodyFunction
 
 class DragModelPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -39436,7 +41837,7 @@ class DragModelPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_plugin_identifier_method_offset = 2
     _get_plugin_config_method_offset = 3
     _metadata = {
-        "iid_data" : (4837155914397016406, 9637658823256129943),
+        "iid_data" : (5420962221798197527, 7363402891109486008),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -39486,13 +41887,13 @@ class DragModelPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DragModelPlugin, [DragModelPlugin, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5655297245689197224, 4743704511059047083), DragModelPlugin)
+agcls.AgClassCatalog.add_catalog_entry((5165657260305637895, 17232345968141013132), DragModelPlugin)
 agcls.AgTypeNameMap["DragModelPlugin"] = DragModelPlugin
 
 class SRPReflectionPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the plugin SRP Refelction."""
 
-    _num_methods = 16
+    _num_methods = 18
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_plugin_identifier_method_offset = 1
     _set_plugin_identifier_method_offset = 2
@@ -39510,8 +41911,10 @@ class SRPReflectionPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_use_sun_central_body_file_values_method_offset = 14
     _get_solar_radius_method_offset = 15
     _set_solar_radius_method_offset = 16
+    _get_use_stochastic_srp_coefficient_method_offset = 17
+    _set_use_stochastic_srp_coefficient_method_offset = 18
     _metadata = {
-        "iid_data" : (5650215102850348648, 15657237367331801737),
+        "iid_data" : (5266024806433966472, 3376927159720753029),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -39639,6 +42042,21 @@ class SRPReflectionPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def solar_radius(self, value:float) -> None:
         return self._intf.set_property(SRPReflectionPlugin._metadata, SRPReflectionPlugin._set_solar_radius_metadata, value)
 
+    _get_use_stochastic_srp_coefficient_metadata = { "offset" : _get_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_stochastic_srp_coefficient(self) -> bool:
+        """True if using a stochastic SRP for propagation or estimation."""
+        return self._intf.get_property(SRPReflectionPlugin._metadata, SRPReflectionPlugin._get_use_stochastic_srp_coefficient_metadata)
+
+    _set_use_stochastic_srp_coefficient_metadata = { "offset" : _set_use_stochastic_srp_coefficient_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_stochastic_srp_coefficient.setter
+    def use_stochastic_srp_coefficient(self, value:bool) -> None:
+        return self._intf.set_property(SRPReflectionPlugin._metadata, SRPReflectionPlugin._set_use_stochastic_srp_coefficient_metadata, value)
+
     _property_names[plugin_identifier] = "plugin_identifier"
     _property_names[plugin_config] = "plugin_config"
     _property_names[atmosphere_altitude] = "atmosphere_altitude"
@@ -39648,6 +42066,7 @@ class SRPReflectionPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[include_boundary_mitigation] = "include_boundary_mitigation"
     _property_names[use_sun_central_body_file_values] = "use_sun_central_body_file_values"
     _property_names[solar_radius] = "solar_radius"
+    _property_names[use_stochastic_srp_coefficient] = "use_stochastic_srp_coefficient"
 
     def __init__(self, source_object=None):
         """Construct an object of type SRPReflectionPlugin."""
@@ -39666,7 +42085,7 @@ class SRPReflectionPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SRPReflectionPlugin, [SRPReflectionPlugin, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5749102672076773026, 16538708712447368359), SRPReflectionPlugin)
+agcls.AgClassCatalog.add_catalog_entry((4742688463863249537, 1894698707330232465), SRPReflectionPlugin)
 agcls.AgTypeNameMap["SRPReflectionPlugin"] = SRPReflectionPlugin
 
 class EngineConstantAcceleration(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -39685,7 +42104,7 @@ class EngineConstantAcceleration(IComponentInfo, ICloneable, SupportsDeleteCallb
     _is_control_parameter_enabled_method_offset = 9
     _get_control_parameters_available_method_offset = 10
     _metadata = {
-        "iid_data" : (5367865563502630223, 15184193926796654464),
+        "iid_data" : (4692471975513405051, 3720423926387904679),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -39788,7 +42207,7 @@ class EngineConstantAcceleration(IComponentInfo, ICloneable, SupportsDeleteCallb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EngineConstantAcceleration, [EngineConstantAcceleration, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5132340659530008736, 12633535283190109318), EngineConstantAcceleration)
+agcls.AgClassCatalog.add_catalog_entry((5328544704368263225, 725683726529966724), EngineConstantAcceleration)
 agcls.AgTypeNameMap["EngineConstantAcceleration"] = EngineConstantAcceleration
 
 class EngineConstant(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -39807,7 +42226,7 @@ class EngineConstant(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _is_control_parameter_enabled_method_offset = 9
     _get_control_parameters_available_method_offset = 10
     _metadata = {
-        "iid_data" : (5392409510212550659, 12752117697636363187),
+        "iid_data" : (4657517358365535251, 17599122799917064867),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -39910,7 +42329,7 @@ class EngineConstant(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EngineConstant, [EngineConstant, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5219754818864697456, 15943359444309466020), EngineConstant)
+agcls.AgClassCatalog.add_catalog_entry((4645684425373300761, 8823254570190336650), EngineConstant)
 agcls.AgTypeNameMap["EngineConstant"] = EngineConstant
 
 class EngineIon(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -39938,7 +42357,7 @@ class EngineIon(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _is_control_parameter_enabled_method_offset = 18
     _get_control_parameters_available_method_offset = 19
     _metadata = {
-        "iid_data" : (4752468591493979126, 10206889890304714890),
+        "iid_data" : (5023472702558480547, 10396007741324781230),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -40114,7 +42533,7 @@ class EngineIon(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EngineIon, [EngineIon, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5583107124635364431, 13132643620917133983), EngineIon)
+agcls.AgClassCatalog.add_catalog_entry((5375964053576676255, 11720186560537073334), EngineIon)
 agcls.AgTypeNameMap["EngineIon"] = EngineIon
 
 class EngineThrottleTable(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -40141,7 +42560,7 @@ class EngineThrottleTable(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _is_control_parameter_enabled_method_offset = 17
     _get_control_parameters_available_method_offset = 18
     _metadata = {
-        "iid_data" : (5072248978585673510, 193877365964120460),
+        "iid_data" : (5552352083650542643, 18294227758746149526),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -40308,7 +42727,7 @@ class EngineThrottleTable(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EngineThrottleTable, [EngineThrottleTable, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5708677625607910551, 6846267070543381145), EngineThrottleTable)
+agcls.AgClassCatalog.add_catalog_entry((5052652760537825757, 7456361635957082036), EngineThrottleTable)
 agcls.AgTypeNameMap["EngineThrottleTable"] = EngineThrottleTable
 
 class EngineCustom(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -40333,7 +42752,7 @@ class EngineCustom(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _is_control_parameter_enabled_method_offset = 15
     _get_control_parameters_available_method_offset = 16
     _metadata = {
-        "iid_data" : (5506674519985653951, 2933120803682579083),
+        "iid_data" : (5107742139403367636, 7812079922710810791),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -40484,7 +42903,7 @@ class EngineCustom(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EngineCustom, [EngineCustom, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5466003591225632718, 10242738978556827264), EngineCustom)
+agcls.AgClassCatalog.add_catalog_entry((4927104284079618930, 6406248501065243529), EngineCustom)
 agcls.AgTypeNameMap["EngineCustom"] = EngineCustom
 
 class EnginePlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -40498,7 +42917,7 @@ class EnginePlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_plugin_identifier_method_offset = 4
     _get_plugin_config_method_offset = 5
     _metadata = {
-        "iid_data" : (5229149442286645775, 6989938573706770849),
+        "iid_data" : (4645754171018441633, 17531116121104762554),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -40564,7 +42983,7 @@ class EnginePlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EnginePlugin, [EnginePlugin, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5599410985521995715, 2643318681551189431), EnginePlugin)
+agcls.AgClassCatalog.add_catalog_entry((5547330935790053219, 16202038321339208868), EnginePlugin)
 agcls.AgTypeNameMap["EnginePlugin"] = EnginePlugin
 
 class EngineModelPolynomial(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -40581,7 +43000,7 @@ class EngineModelPolynomial(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _is_control_parameter_enabled_method_offset = 7
     _get_control_parameters_available_method_offset = 8
     _metadata = {
-        "iid_data" : (5059507493538489712, 6563525814359022262),
+        "iid_data" : (5586194034041454522, 10878474152859722390),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -40670,7 +43089,7 @@ class EngineModelPolynomial(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EngineModelPolynomial, [EngineModelPolynomial, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4861258356240938548, 15888178850114875033), EngineModelPolynomial)
+agcls.AgClassCatalog.add_catalog_entry((5112964806793115750, 9842628663061835692), EngineModelPolynomial)
 agcls.AgTypeNameMap["EngineModelPolynomial"] = EngineModelPolynomial
 
 class EngineModelThrustCoefficients(SupportsDeleteCallback):
@@ -40711,7 +43130,7 @@ class EngineModelThrustCoefficients(SupportsDeleteCallback):
     _get_reference_temp_method_offset = 31
     _set_reference_temp_method_offset = 32
     _metadata = {
-        "iid_data" : (5296036972774579420, 11767688325395047045),
+        "iid_data" : (4724217238049236394, 6171475580699976336),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -40988,7 +43407,7 @@ class EngineModelThrustCoefficients(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EngineModelThrustCoefficients, [EngineModelThrustCoefficients, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5353637564824579689, 8119903029500529314), EngineModelThrustCoefficients)
+agcls.AgClassCatalog.add_catalog_entry((5574963878657830798, 9142763940415967655), EngineModelThrustCoefficients)
 agcls.AgTypeNameMap["EngineModelThrustCoefficients"] = EngineModelThrustCoefficients
 
 class EngineModelIspCoefficients(SupportsDeleteCallback):
@@ -41029,7 +43448,7 @@ class EngineModelIspCoefficients(SupportsDeleteCallback):
     _get_reference_temp_method_offset = 31
     _set_reference_temp_method_offset = 32
     _metadata = {
-        "iid_data" : (5713640319682686971, 10102400234203899284),
+        "iid_data" : (5166746652817116764, 2687037270091568800),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -41306,7 +43725,7 @@ class EngineModelIspCoefficients(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EngineModelIspCoefficients, [EngineModelIspCoefficients, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4992422672175141294, 2073381080858427796), EngineModelIspCoefficients)
+agcls.AgClassCatalog.add_catalog_entry((4720489112193282762, 11460146754747308697), EngineModelIspCoefficients)
 agcls.AgTypeNameMap["EngineModelIspCoefficients"] = EngineModelIspCoefficients
 
 class EngineDefinition(SupportsDeleteCallback):
@@ -41357,7 +43776,7 @@ class EngineDefinition(SupportsDeleteCallback):
     _get_power_efficiency_equation_method_offset = 41
     _get_input_power_source_name_method_offset = 42
     _metadata = {
-        "iid_data" : (5036043198846161417, 5153337819751964810),
+        "iid_data" : (4624652151972296617, 17530861138170613660),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -41718,7 +44137,7 @@ class EngineDefinition(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EngineDefinition, [EngineDefinition, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5393150563279186375, 13009477743191425412), EngineDefinition)
+agcls.AgClassCatalog.add_catalog_entry((5583528814520849797, 14335926603283350432), EngineDefinition)
 agcls.AgTypeNameMap["EngineDefinition"] = EngineDefinition
 
 class DesignCR3BPSetup(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -41756,7 +44175,7 @@ class DesignCR3BPSetup(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _create_propagator_method_offset = 28
     _delete_propagator_method_offset = 29
     _metadata = {
-        "iid_data" : (5264958649687951205, 13543844180411904148),
+        "iid_data" : (4884620008553327645, 14963794878018859151),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -42010,7 +44429,7 @@ class DesignCR3BPSetup(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DesignCR3BPSetup, [DesignCR3BPSetup, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5481838123027635983, 11793357896339033728), DesignCR3BPSetup)
+agcls.AgClassCatalog.add_catalog_entry((4666751403884963283, 7780301288863509397), DesignCR3BPSetup)
 agcls.AgTypeNameMap["DesignCR3BPSetup"] = DesignCR3BPSetup
 
 class DesignCR3BPObject(SupportsDeleteCallback):
@@ -42022,7 +44441,7 @@ class DesignCR3BPObject(SupportsDeleteCallback):
     _get_object_type_method_offset = 2
     _get_object_depends_on_method_offset = 3
     _metadata = {
-        "iid_data" : (5592045192875480542, 4785324167736681404),
+        "iid_data" : (5059024436722795326, 4945905291131094148),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -42070,7 +44489,7 @@ class DesignCR3BPObject(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DesignCR3BPObject, [DesignCR3BPObject, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5056607814409438097, 3247415104540331914), DesignCR3BPObject)
+agcls.AgClassCatalog.add_catalog_entry((4793033593007943936, 9398871610688302002), DesignCR3BPObject)
 agcls.AgTypeNameMap["DesignCR3BPObject"] = DesignCR3BPObject
 
 class DesignCR3BPObjectCollection(SupportsDeleteCallback):
@@ -42084,7 +44503,7 @@ class DesignCR3BPObjectCollection(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 4
     _get_item_by_name_method_offset = 5
     _metadata = {
-        "iid_data" : (5392292082478645264, 18434852992809556111),
+        "iid_data" : (5153909768474553676, 1615921454195647421),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -42160,7 +44579,7 @@ class DesignCR3BPObjectCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DesignCR3BPObjectCollection, [DesignCR3BPObjectCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4944643529672307384, 4598384306676136330), DesignCR3BPObjectCollection)
+agcls.AgClassCatalog.add_catalog_entry((5120260932329414944, 2468595685013353376), DesignCR3BPObjectCollection)
 agcls.AgTypeNameMap["DesignCR3BPObjectCollection"] = DesignCR3BPObjectCollection
 
 class DesignER3BPSetup(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -42199,7 +44618,7 @@ class DesignER3BPSetup(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _create_propagator_method_offset = 29
     _delete_propagator_method_offset = 30
     _metadata = {
-        "iid_data" : (5065880826790351987, 2796329394240216450),
+        "iid_data" : (4830787474457665506, 6073882663340096416),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -42462,7 +44881,7 @@ class DesignER3BPSetup(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DesignER3BPSetup, [DesignER3BPSetup, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4729659118460925408, 15947058378431851408), DesignER3BPSetup)
+agcls.AgClassCatalog.add_catalog_entry((5019012907267645825, 9620424766373873552), DesignER3BPSetup)
 agcls.AgTypeNameMap["DesignER3BPSetup"] = DesignER3BPSetup
 
 class DesignER3BPObject(SupportsDeleteCallback):
@@ -42474,7 +44893,7 @@ class DesignER3BPObject(SupportsDeleteCallback):
     _get_object_type_method_offset = 2
     _get_object_depends_on_method_offset = 3
     _metadata = {
-        "iid_data" : (5302017474501657583, 7831999212900136352),
+        "iid_data" : (5760227222818215703, 1542335992417679775),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -42522,7 +44941,7 @@ class DesignER3BPObject(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DesignER3BPObject, [DesignER3BPObject, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4634948133649418552, 5142846314822857399), DesignER3BPObject)
+agcls.AgClassCatalog.add_catalog_entry((5067999657119833986, 1038433605937596332), DesignER3BPObject)
 agcls.AgTypeNameMap["DesignER3BPObject"] = DesignER3BPObject
 
 class DesignER3BPObjectCollection(SupportsDeleteCallback):
@@ -42536,7 +44955,7 @@ class DesignER3BPObjectCollection(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 4
     _get_item_by_name_method_offset = 5
     _metadata = {
-        "iid_data" : (4950524500182993336, 7133458467934249351),
+        "iid_data" : (5210410722450335364, 17768148809752018067),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -42612,7 +45031,7 @@ class DesignER3BPObjectCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DesignER3BPObjectCollection, [DesignER3BPObjectCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5559032907505982605, 14965528908650146187), DesignER3BPObjectCollection)
+agcls.AgClassCatalog.add_catalog_entry((5305269565100176869, 8051314541081468319), DesignER3BPObjectCollection)
 agcls.AgTypeNameMap["DesignER3BPObjectCollection"] = DesignER3BPObjectCollection
 
 class Thruster(SupportsDeleteCallback):
@@ -42637,7 +45056,7 @@ class Thruster(SupportsDeleteCallback):
     _is_control_parameter_enabled_method_offset = 15
     _get_control_parameters_available_method_offset = 16
     _metadata = {
-        "iid_data" : (5599776828859582129, 4144344513181628805),
+        "iid_data" : (4897413484178348169, 14065475799132173490),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -42784,7 +45203,7 @@ class Thruster(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Thruster, [Thruster, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4928727831726254613, 15629250845104267194), Thruster)
+agcls.AgClassCatalog.add_catalog_entry((5199684452337404202, 17034409441670559154), Thruster)
 agcls.AgTypeNameMap["Thruster"] = Thruster
 
 class ThrusterSetCollection(SupportsDeleteCallback):
@@ -42804,7 +45223,7 @@ class ThrusterSetCollection(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 10
     _get_item_by_name_method_offset = 11
     _metadata = {
-        "iid_data" : (5150845786246781308, 9319871362540407435),
+        "iid_data" : (5000500991828843308, 3325893931301104263),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -42922,7 +45341,7 @@ class ThrusterSetCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ThrusterSetCollection, [ThrusterSetCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5241768383210010526, 2853913701615206820), ThrusterSetCollection)
+agcls.AgClassCatalog.add_catalog_entry((4632201175668240721, 7099039102235663531), ThrusterSetCollection)
 agcls.AgTypeNameMap["ThrusterSetCollection"] = ThrusterSetCollection
 
 class ThrusterSet(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -42934,7 +45353,7 @@ class ThrusterSet(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_direction_definition_method_offset = 2
     _get_thrusters_method_offset = 3
     _metadata = {
-        "iid_data" : (5226642763030458307, 9877909486177362105),
+        "iid_data" : (5448162226065492676, 6598322007256320171),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -42984,7 +45403,7 @@ class ThrusterSet(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ThrusterSet, [ThrusterSet, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4871586803196060100, 17136152086637392032), ThrusterSet)
+agcls.AgClassCatalog.add_catalog_entry((5188274825901285522, 5461850625803999889), ThrusterSet)
 agcls.AgTypeNameMap["ThrusterSet"] = ThrusterSet
 
 class AsTriggerCondition(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -43007,7 +45426,7 @@ class AsTriggerCondition(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _copy_calculation_object_to_clipboard_method_offset = 13
     _paste_calculation_object_from_clipboard_method_offset = 14
     _metadata = {
-        "iid_data" : (4822555187395734580, 16648748127025965747),
+        "iid_data" : (4914595086896241139, 2645191808496205193),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -43142,7 +45561,7 @@ class AsTriggerCondition(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AsTriggerCondition, [AsTriggerCondition, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5463923426204927664, 16539300349541669282), AsTriggerCondition)
+agcls.AgClassCatalog.add_catalog_entry((5724805194501635927, 10508531607616408729), AsTriggerCondition)
 agcls.AgTypeNameMap["AsTriggerCondition"] = AsTriggerCondition
 
 class CustomFunctionScriptEngine(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -43155,7 +45574,7 @@ class CustomFunctionScriptEngine(IComponentInfo, ICloneable, SupportsDeleteCallb
     _get_file_extension_name_method_offset = 3
     _set_file_extension_name_method_offset = 4
     _metadata = {
-        "iid_data" : (4615251189220139708, 578580787211182211),
+        "iid_data" : (4983722271503167977, 10437267514155071162),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -43212,7 +45631,7 @@ class CustomFunctionScriptEngine(IComponentInfo, ICloneable, SupportsDeleteCallb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CustomFunctionScriptEngine, [CustomFunctionScriptEngine, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5687711712574011852, 8387513872181828256), CustomFunctionScriptEngine)
+agcls.AgClassCatalog.add_catalog_entry((5050258762543487834, 6500680835391346092), CustomFunctionScriptEngine)
 agcls.AgTypeNameMap["CustomFunctionScriptEngine"] = CustomFunctionScriptEngine
 
 class NumericalPropagatorWrapper(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -43235,7 +45654,7 @@ class NumericalPropagatorWrapper(IComponentInfo, ICloneable, SupportsDeleteCallb
     _get_numerical_integrator_type_method_offset = 13
     _set_numerical_integrator_method_offset = 14
     _metadata = {
-        "iid_data" : (5516706745347836377, 14251979156411537064),
+        "iid_data" : (4751338698108187853, 15977598846616444325),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -43374,7 +45793,7 @@ class NumericalPropagatorWrapper(IComponentInfo, ICloneable, SupportsDeleteCallb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, NumericalPropagatorWrapper, [NumericalPropagatorWrapper, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5585542860795755319, 14715416518501616516), NumericalPropagatorWrapper)
+agcls.AgClassCatalog.add_catalog_entry((4864535527106976734, 16242139276709922465), NumericalPropagatorWrapper)
 agcls.AgTypeNameMap["NumericalPropagatorWrapper"] = NumericalPropagatorWrapper
 
 class NumericalPropagatorWrapperCR3BP(IComponentInfo, ICloneable, SupportsDeleteCallback):
@@ -43389,7 +45808,7 @@ class NumericalPropagatorWrapperCR3BP(IComponentInfo, ICloneable, SupportsDelete
     _get_numerical_integrator_type_method_offset = 5
     _set_numerical_integrator_method_offset = 6
     _metadata = {
-        "iid_data" : (4855858447190994553, 6591909352563703225),
+        "iid_data" : (5390952185239663647, 5365999300530851214),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -43464,7 +45883,7 @@ class NumericalPropagatorWrapperCR3BP(IComponentInfo, ICloneable, SupportsDelete
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, NumericalPropagatorWrapperCR3BP, [NumericalPropagatorWrapperCR3BP, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5175736139608374254, 18343359665990805900), NumericalPropagatorWrapperCR3BP)
+agcls.AgClassCatalog.add_catalog_entry((5166616782558803671, 16921765388279260322), NumericalPropagatorWrapperCR3BP)
 agcls.AgTypeNameMap["NumericalPropagatorWrapperCR3BP"] = NumericalPropagatorWrapperCR3BP
 
 class PropagatorFunctionCollection(SupportsDeleteCallback):
@@ -43484,7 +45903,7 @@ class PropagatorFunctionCollection(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 10
     _get_item_by_name_method_offset = 11
     _metadata = {
-        "iid_data" : (5526427479745593523, 16580441229047482540),
+        "iid_data" : (5638010095750174700, 13705094690353023374),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -43602,7 +46021,7 @@ class PropagatorFunctionCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PropagatorFunctionCollection, [PropagatorFunctionCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4733298211782133858, 8850809927363953818), PropagatorFunctionCollection)
+agcls.AgClassCatalog.add_catalog_entry((5077632231415021828, 8159594498875249808), PropagatorFunctionCollection)
 agcls.AgTypeNameMap["PropagatorFunctionCollection"] = PropagatorFunctionCollection
 
 class BulirschStoerIntegrator(INumericalIntegrator, SupportsDeleteCallback):
@@ -43635,7 +46054,7 @@ class BulirschStoerIntegrator(INumericalIntegrator, SupportsDeleteCallback):
     _get_second_safety_coefficient_method_offset = 23
     _set_second_safety_coefficient_method_offset = 24
     _metadata = {
-        "iid_data" : (4637303974342457954, 933667345742664628),
+        "iid_data" : (5234599780787142274, 16873980420370194870),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -43850,7 +46269,7 @@ class BulirschStoerIntegrator(INumericalIntegrator, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BulirschStoerIntegrator, [BulirschStoerIntegrator, INumericalIntegrator])
 
-agcls.AgClassCatalog.add_catalog_entry((4731955954915235525, 1753081381555895174), BulirschStoerIntegrator)
+agcls.AgClassCatalog.add_catalog_entry((5231592608300406471, 13169577158064565415), BulirschStoerIntegrator)
 agcls.AgTypeNameMap["BulirschStoerIntegrator"] = BulirschStoerIntegrator
 
 class GaussJacksonIntegrator(INumericalIntegrator, SupportsDeleteCallback):
@@ -43870,7 +46289,7 @@ class GaussJacksonIntegrator(INumericalIntegrator, SupportsDeleteCallback):
     _get_single_step_integrator_type_method_offset = 10
     _set_single_step_integrator_method_offset = 11
     _metadata = {
-        "iid_data" : (5739514811298770911, 891298140076643235),
+        "iid_data" : (5239822372838288746, 12782559237749006764),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -43982,256 +46401,8 @@ class GaussJacksonIntegrator(INumericalIntegrator, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GaussJacksonIntegrator, [GaussJacksonIntegrator, INumericalIntegrator])
 
-agcls.AgClassCatalog.add_catalog_entry((5486032430987957740, 15684774974462300568), GaussJacksonIntegrator)
+agcls.AgClassCatalog.add_catalog_entry((5424577159088227478, 12555171870865820848), GaussJacksonIntegrator)
 agcls.AgTypeNameMap["GaussJacksonIntegrator"] = GaussJacksonIntegrator
-
-class RungeKutta2nd3rd(INumericalIntegrator, SupportsDeleteCallback):
-    """Properties for the RK2nd3rd numerical integrator."""
-
-    _num_methods = 24
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_initial_step_method_offset = 1
-    _set_initial_step_method_offset = 2
-    _get_use_fixed_step_method_offset = 3
-    _set_use_fixed_step_method_offset = 4
-    _get_use_max_step_method_offset = 5
-    _set_use_max_step_method_offset = 6
-    _get_use_min_step_method_offset = 7
-    _set_use_min_step_method_offset = 8
-    _get_max_step_method_offset = 9
-    _set_max_step_method_offset = 10
-    _get_min_step_method_offset = 11
-    _set_min_step_method_offset = 12
-    _get_max_relative_err_method_offset = 13
-    _set_max_relative_err_method_offset = 14
-    _get_max_absolute_err_method_offset = 15
-    _set_max_absolute_err_method_offset = 16
-    _get_high_safety_coefficient_method_offset = 17
-    _set_high_safety_coefficient_method_offset = 18
-    _get_low_safety_coefficient_method_offset = 19
-    _set_low_safety_coefficient_method_offset = 20
-    _get_error_control_method_offset = 21
-    _set_error_control_method_offset = 22
-    _get_max_iterations_method_offset = 23
-    _set_max_iterations_method_offset = 24
-    _metadata = {
-        "iid_data" : (5029371599579144861, 8833459632619542423),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, RungeKutta2nd3rd)
-
-    _get_initial_step_metadata = { "offset" : _get_initial_step_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @property
-    def initial_step(self) -> float:
-        """Get or set the initial step. Uses time dimension."""
-        return self._intf.get_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._get_initial_step_metadata)
-
-    _set_initial_step_metadata = { "offset" : _set_initial_step_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @initial_step.setter
-    def initial_step(self, value:float) -> None:
-        return self._intf.set_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._set_initial_step_metadata, value)
-
-    _get_use_fixed_step_metadata = { "offset" : _get_use_fixed_step_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def use_fixed_step(self) -> bool:
-        """True if running in fixed-step mode."""
-        return self._intf.get_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._get_use_fixed_step_metadata)
-
-    _set_use_fixed_step_metadata = { "offset" : _set_use_fixed_step_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @use_fixed_step.setter
-    def use_fixed_step(self, value:bool) -> None:
-        return self._intf.set_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._set_use_fixed_step_metadata, value)
-
-    _get_use_max_step_metadata = { "offset" : _get_use_max_step_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def use_max_step(self) -> bool:
-        """Whether or not to enforce the maximum step."""
-        return self._intf.get_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._get_use_max_step_metadata)
-
-    _set_use_max_step_metadata = { "offset" : _set_use_max_step_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @use_max_step.setter
-    def use_max_step(self, value:bool) -> None:
-        return self._intf.set_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._set_use_max_step_metadata, value)
-
-    _get_use_min_step_metadata = { "offset" : _get_use_min_step_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def use_min_step(self) -> bool:
-        """Whether or not to enforce the minimum step."""
-        return self._intf.get_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._get_use_min_step_metadata)
-
-    _set_use_min_step_metadata = { "offset" : _set_use_min_step_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @use_min_step.setter
-    def use_min_step(self, value:bool) -> None:
-        return self._intf.set_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._set_use_min_step_metadata, value)
-
-    _get_max_step_metadata = { "offset" : _get_max_step_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @property
-    def max_step(self) -> float:
-        """Get or set the maximum step size to allow (absolute value). Uses Time Dimension."""
-        return self._intf.get_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._get_max_step_metadata)
-
-    _set_max_step_metadata = { "offset" : _set_max_step_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @max_step.setter
-    def max_step(self, value:float) -> None:
-        return self._intf.set_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._set_max_step_metadata, value)
-
-    _get_min_step_metadata = { "offset" : _get_min_step_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @property
-    def min_step(self) -> float:
-        """Get or set the minimum step size to allow (absolute value). Uses Time Dimension."""
-        return self._intf.get_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._get_min_step_metadata)
-
-    _set_min_step_metadata = { "offset" : _set_min_step_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @min_step.setter
-    def min_step(self, value:float) -> None:
-        return self._intf.set_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._set_min_step_metadata, value)
-
-    _get_max_relative_err_metadata = { "offset" : _get_max_relative_err_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @property
-    def max_relative_err(self) -> float:
-        """Get or set the maximum relative error used to control step size. Dimensionless."""
-        return self._intf.get_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._get_max_relative_err_metadata)
-
-    _set_max_relative_err_metadata = { "offset" : _set_max_relative_err_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @max_relative_err.setter
-    def max_relative_err(self, value:float) -> None:
-        return self._intf.set_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._set_max_relative_err_metadata, value)
-
-    _get_max_absolute_err_metadata = { "offset" : _get_max_absolute_err_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @property
-    def max_absolute_err(self) -> float:
-        """Get or set the maximum absolute error; Also used if relative scale is too small. Dimensionless."""
-        return self._intf.get_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._get_max_absolute_err_metadata)
-
-    _set_max_absolute_err_metadata = { "offset" : _set_max_absolute_err_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @max_absolute_err.setter
-    def max_absolute_err(self, value:float) -> None:
-        return self._intf.set_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._set_max_absolute_err_metadata, value)
-
-    _get_high_safety_coefficient_metadata = { "offset" : _get_high_safety_coefficient_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @property
-    def high_safety_coefficient(self) -> float:
-        """Get or set the 'safety' coefficient used to decrease step size if the error is too high. Dimensionless."""
-        return self._intf.get_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._get_high_safety_coefficient_metadata)
-
-    _set_high_safety_coefficient_metadata = { "offset" : _set_high_safety_coefficient_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @high_safety_coefficient.setter
-    def high_safety_coefficient(self, value:float) -> None:
-        return self._intf.set_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._set_high_safety_coefficient_metadata, value)
-
-    _get_low_safety_coefficient_metadata = { "offset" : _get_low_safety_coefficient_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @property
-    def low_safety_coefficient(self) -> float:
-        """Get or set the 'safety' coefficient used to increase step size if the error is too low. Dimensionless."""
-        return self._intf.get_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._get_low_safety_coefficient_metadata)
-
-    _set_low_safety_coefficient_metadata = { "offset" : _set_low_safety_coefficient_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @low_safety_coefficient.setter
-    def low_safety_coefficient(self, value:float) -> None:
-        return self._intf.set_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._set_low_safety_coefficient_metadata, value)
-
-    _get_error_control_metadata = { "offset" : _get_error_control_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ErrorControl),) }
-    @property
-    def error_control(self) -> "ErrorControl":
-        """Get or set the error control method."""
-        return self._intf.get_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._get_error_control_metadata)
-
-    _set_error_control_metadata = { "offset" : _set_error_control_method_offset,
-            "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ErrorControl),) }
-    @error_control.setter
-    def error_control(self, value:"ErrorControl") -> None:
-        return self._intf.set_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._set_error_control_metadata, value)
-
-    _get_max_iterations_metadata = { "offset" : _get_max_iterations_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LongArg,) }
-    @property
-    def max_iterations(self) -> int:
-        """Get or set the maximum iterations. Dimensionless."""
-        return self._intf.get_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._get_max_iterations_metadata)
-
-    _set_max_iterations_metadata = { "offset" : _set_max_iterations_method_offset,
-            "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LongArg,) }
-    @max_iterations.setter
-    def max_iterations(self, value:int) -> None:
-        return self._intf.set_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._set_max_iterations_metadata, value)
-
-    _property_names[initial_step] = "initial_step"
-    _property_names[use_fixed_step] = "use_fixed_step"
-    _property_names[use_max_step] = "use_max_step"
-    _property_names[use_min_step] = "use_min_step"
-    _property_names[max_step] = "max_step"
-    _property_names[min_step] = "min_step"
-    _property_names[max_relative_err] = "max_relative_err"
-    _property_names[max_absolute_err] = "max_absolute_err"
-    _property_names[high_safety_coefficient] = "high_safety_coefficient"
-    _property_names[low_safety_coefficient] = "low_safety_coefficient"
-    _property_names[error_control] = "error_control"
-    _property_names[max_iterations] = "max_iterations"
-
-    def __init__(self, source_object=None):
-        """Construct an object of type RungeKutta2nd3rd."""
-        SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, RungeKutta2nd3rd)
-        INumericalIntegrator.__init__(self, source_object)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-        INumericalIntegrator._private_init(self, intf)
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, RungeKutta2nd3rd, [RungeKutta2nd3rd, INumericalIntegrator])
-
-agcls.AgClassCatalog.add_catalog_entry((5013268286479080464, 11193883274659343489), RungeKutta2nd3rd)
-agcls.AgTypeNameMap["RungeKutta2nd3rd"] = RungeKutta2nd3rd
 
 class RungeKutta4th(INumericalIntegrator, SupportsDeleteCallback):
     """Properties for the RK4th numerical integrator."""
@@ -44241,7 +46412,7 @@ class RungeKutta4th(INumericalIntegrator, SupportsDeleteCallback):
     _get_initial_step_method_offset = 1
     _set_initial_step_method_offset = 2
     _metadata = {
-        "iid_data" : (5335025532636155549, 11281214721828458654),
+        "iid_data" : (4756799170734851856, 1341847037735175311),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -44280,7 +46451,7 @@ class RungeKutta4th(INumericalIntegrator, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RungeKutta4th, [RungeKutta4th, INumericalIntegrator])
 
-agcls.AgClassCatalog.add_catalog_entry((4823736396468222347, 4720771055494135428), RungeKutta4th)
+agcls.AgClassCatalog.add_catalog_entry((4864372246912102123, 16743175932148818850), RungeKutta4th)
 agcls.AgTypeNameMap["RungeKutta4th"] = RungeKutta4th
 
 class RungeKutta4th5th(INumericalIntegrator, SupportsDeleteCallback):
@@ -44313,7 +46484,7 @@ class RungeKutta4th5th(INumericalIntegrator, SupportsDeleteCallback):
     _get_max_iterations_method_offset = 23
     _set_max_iterations_method_offset = 24
     _metadata = {
-        "iid_data" : (5450222780175851139, 4668614171350112699),
+        "iid_data" : (5191931661828247898, 17729869760617034637),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -44528,256 +46699,8 @@ class RungeKutta4th5th(INumericalIntegrator, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RungeKutta4th5th, [RungeKutta4th5th, INumericalIntegrator])
 
-agcls.AgClassCatalog.add_catalog_entry((5037275303378310013, 15369839879042503843), RungeKutta4th5th)
+agcls.AgClassCatalog.add_catalog_entry((4812754380821185286, 10016421672499543997), RungeKutta4th5th)
 agcls.AgTypeNameMap["RungeKutta4th5th"] = RungeKutta4th5th
-
-class RungeKutta4thAdapt(INumericalIntegrator, SupportsDeleteCallback):
-    """Properties for the RK4thAdapt numerical integrator."""
-
-    _num_methods = 24
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_initial_step_method_offset = 1
-    _set_initial_step_method_offset = 2
-    _get_use_fixed_step_method_offset = 3
-    _set_use_fixed_step_method_offset = 4
-    _get_use_max_step_method_offset = 5
-    _set_use_max_step_method_offset = 6
-    _get_use_min_step_method_offset = 7
-    _set_use_min_step_method_offset = 8
-    _get_max_step_method_offset = 9
-    _set_max_step_method_offset = 10
-    _get_min_step_method_offset = 11
-    _set_min_step_method_offset = 12
-    _get_max_relative_err_method_offset = 13
-    _set_max_relative_err_method_offset = 14
-    _get_max_absolute_err_method_offset = 15
-    _set_max_absolute_err_method_offset = 16
-    _get_high_safety_coefficient_method_offset = 17
-    _set_high_safety_coefficient_method_offset = 18
-    _get_low_safety_coefficient_method_offset = 19
-    _set_low_safety_coefficient_method_offset = 20
-    _get_error_control_method_offset = 21
-    _set_error_control_method_offset = 22
-    _get_max_iterations_method_offset = 23
-    _set_max_iterations_method_offset = 24
-    _metadata = {
-        "iid_data" : (5274574660423565325, 9613513386779582873),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, RungeKutta4thAdapt)
-
-    _get_initial_step_metadata = { "offset" : _get_initial_step_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @property
-    def initial_step(self) -> float:
-        """Get or set the initial step. Uses time dimension."""
-        return self._intf.get_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._get_initial_step_metadata)
-
-    _set_initial_step_metadata = { "offset" : _set_initial_step_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @initial_step.setter
-    def initial_step(self, value:float) -> None:
-        return self._intf.set_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._set_initial_step_metadata, value)
-
-    _get_use_fixed_step_metadata = { "offset" : _get_use_fixed_step_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def use_fixed_step(self) -> bool:
-        """True if running in fixed-step mode."""
-        return self._intf.get_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._get_use_fixed_step_metadata)
-
-    _set_use_fixed_step_metadata = { "offset" : _set_use_fixed_step_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @use_fixed_step.setter
-    def use_fixed_step(self, value:bool) -> None:
-        return self._intf.set_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._set_use_fixed_step_metadata, value)
-
-    _get_use_max_step_metadata = { "offset" : _get_use_max_step_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def use_max_step(self) -> bool:
-        """Whether or not to enforce the maximum step."""
-        return self._intf.get_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._get_use_max_step_metadata)
-
-    _set_use_max_step_metadata = { "offset" : _set_use_max_step_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @use_max_step.setter
-    def use_max_step(self, value:bool) -> None:
-        return self._intf.set_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._set_use_max_step_metadata, value)
-
-    _get_use_min_step_metadata = { "offset" : _get_use_min_step_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def use_min_step(self) -> bool:
-        """Whether or not to enforce the minimum step."""
-        return self._intf.get_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._get_use_min_step_metadata)
-
-    _set_use_min_step_metadata = { "offset" : _set_use_min_step_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @use_min_step.setter
-    def use_min_step(self, value:bool) -> None:
-        return self._intf.set_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._set_use_min_step_metadata, value)
-
-    _get_max_step_metadata = { "offset" : _get_max_step_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @property
-    def max_step(self) -> float:
-        """Get or set the maximum step size to allow (absolute value). Uses Time Dimension."""
-        return self._intf.get_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._get_max_step_metadata)
-
-    _set_max_step_metadata = { "offset" : _set_max_step_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @max_step.setter
-    def max_step(self, value:float) -> None:
-        return self._intf.set_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._set_max_step_metadata, value)
-
-    _get_min_step_metadata = { "offset" : _get_min_step_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @property
-    def min_step(self) -> float:
-        """Get or set the minimum step size to allow (absolute value). Uses Time Dimension."""
-        return self._intf.get_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._get_min_step_metadata)
-
-    _set_min_step_metadata = { "offset" : _set_min_step_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @min_step.setter
-    def min_step(self, value:float) -> None:
-        return self._intf.set_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._set_min_step_metadata, value)
-
-    _get_max_relative_err_metadata = { "offset" : _get_max_relative_err_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @property
-    def max_relative_err(self) -> float:
-        """Get or set the maximum relative error used to control step size. Dimensionless."""
-        return self._intf.get_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._get_max_relative_err_metadata)
-
-    _set_max_relative_err_metadata = { "offset" : _set_max_relative_err_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @max_relative_err.setter
-    def max_relative_err(self, value:float) -> None:
-        return self._intf.set_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._set_max_relative_err_metadata, value)
-
-    _get_max_absolute_err_metadata = { "offset" : _get_max_absolute_err_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @property
-    def max_absolute_err(self) -> float:
-        """Get or set the maximum absolute error; Also used if relative scale is too small. Dimensionless."""
-        return self._intf.get_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._get_max_absolute_err_metadata)
-
-    _set_max_absolute_err_metadata = { "offset" : _set_max_absolute_err_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @max_absolute_err.setter
-    def max_absolute_err(self, value:float) -> None:
-        return self._intf.set_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._set_max_absolute_err_metadata, value)
-
-    _get_high_safety_coefficient_metadata = { "offset" : _get_high_safety_coefficient_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @property
-    def high_safety_coefficient(self) -> float:
-        """Get or set the 'safety' coefficient used to decrease step size if the error is too high. Dimensionless."""
-        return self._intf.get_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._get_high_safety_coefficient_metadata)
-
-    _set_high_safety_coefficient_metadata = { "offset" : _set_high_safety_coefficient_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @high_safety_coefficient.setter
-    def high_safety_coefficient(self, value:float) -> None:
-        return self._intf.set_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._set_high_safety_coefficient_metadata, value)
-
-    _get_low_safety_coefficient_metadata = { "offset" : _get_low_safety_coefficient_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @property
-    def low_safety_coefficient(self) -> float:
-        """Get or set the 'safety' coefficient used to increase step size if the error is too low. Dimensionless."""
-        return self._intf.get_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._get_low_safety_coefficient_metadata)
-
-    _set_low_safety_coefficient_metadata = { "offset" : _set_low_safety_coefficient_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    @low_safety_coefficient.setter
-    def low_safety_coefficient(self, value:float) -> None:
-        return self._intf.set_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._set_low_safety_coefficient_metadata, value)
-
-    _get_error_control_metadata = { "offset" : _get_error_control_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ErrorControl),) }
-    @property
-    def error_control(self) -> "ErrorControl":
-        """Get or set the error control method."""
-        return self._intf.get_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._get_error_control_metadata)
-
-    _set_error_control_metadata = { "offset" : _set_error_control_method_offset,
-            "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ErrorControl),) }
-    @error_control.setter
-    def error_control(self, value:"ErrorControl") -> None:
-        return self._intf.set_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._set_error_control_metadata, value)
-
-    _get_max_iterations_metadata = { "offset" : _get_max_iterations_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LongArg,) }
-    @property
-    def max_iterations(self) -> int:
-        """Get or set the maximum iterations. Dimensionless."""
-        return self._intf.get_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._get_max_iterations_metadata)
-
-    _set_max_iterations_metadata = { "offset" : _set_max_iterations_method_offset,
-            "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LongArg,) }
-    @max_iterations.setter
-    def max_iterations(self, value:int) -> None:
-        return self._intf.set_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._set_max_iterations_metadata, value)
-
-    _property_names[initial_step] = "initial_step"
-    _property_names[use_fixed_step] = "use_fixed_step"
-    _property_names[use_max_step] = "use_max_step"
-    _property_names[use_min_step] = "use_min_step"
-    _property_names[max_step] = "max_step"
-    _property_names[min_step] = "min_step"
-    _property_names[max_relative_err] = "max_relative_err"
-    _property_names[max_absolute_err] = "max_absolute_err"
-    _property_names[high_safety_coefficient] = "high_safety_coefficient"
-    _property_names[low_safety_coefficient] = "low_safety_coefficient"
-    _property_names[error_control] = "error_control"
-    _property_names[max_iterations] = "max_iterations"
-
-    def __init__(self, source_object=None):
-        """Construct an object of type RungeKutta4thAdapt."""
-        SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, RungeKutta4thAdapt)
-        INumericalIntegrator.__init__(self, source_object)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-        INumericalIntegrator._private_init(self, intf)
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, RungeKutta4thAdapt, [RungeKutta4thAdapt, INumericalIntegrator])
-
-agcls.AgClassCatalog.add_catalog_entry((4758480604737476882, 4943826813823350154), RungeKutta4thAdapt)
-agcls.AgTypeNameMap["RungeKutta4thAdapt"] = RungeKutta4thAdapt
 
 class RungeKuttaF7th8th(INumericalIntegrator, SupportsDeleteCallback):
     """Properties for the RK7th8th numerical integrator."""
@@ -44809,7 +46732,7 @@ class RungeKuttaF7th8th(INumericalIntegrator, SupportsDeleteCallback):
     _get_max_iterations_method_offset = 23
     _set_max_iterations_method_offset = 24
     _metadata = {
-        "iid_data" : (5003032963108949314, 2079494990998510258),
+        "iid_data" : (4753553600153627632, 17968004315566317738),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -45024,7 +46947,7 @@ class RungeKuttaF7th8th(INumericalIntegrator, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RungeKuttaF7th8th, [RungeKuttaF7th8th, INumericalIntegrator])
 
-agcls.AgClassCatalog.add_catalog_entry((5576782931552734990, 14700968610991896240), RungeKuttaF7th8th)
+agcls.AgClassCatalog.add_catalog_entry((5006157916512596656, 11777910275034836361), RungeKuttaF7th8th)
 agcls.AgTypeNameMap["RungeKuttaF7th8th"] = RungeKuttaF7th8th
 
 class RungeKuttaV8th9th(INumericalIntegrator, SupportsDeleteCallback):
@@ -45059,7 +46982,7 @@ class RungeKuttaV8th9th(INumericalIntegrator, SupportsDeleteCallback):
     _get_coefficient_type_method_offset = 25
     _set_coefficient_type_method_offset = 26
     _metadata = {
-        "iid_data" : (5129527927042386535, 1794743312009283255),
+        "iid_data" : (5213974657618034266, 11093052436118779062),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -45248,17 +47171,17 @@ class RungeKuttaV8th9th(INumericalIntegrator, SupportsDeleteCallback):
 
     _get_coefficient_type_metadata = { "offset" : _get_coefficient_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CoeffRungeKuttaV8th9th),) }
+            "marshallers" : (agmarshall.EnumArg(CoefficientRungeKuttaV8th9th),) }
     @property
-    def coefficient_type(self) -> "CoeffRungeKuttaV8th9th":
+    def coefficient_type(self) -> "CoefficientRungeKuttaV8th9th":
         """Get or set the set of coefficients to use."""
         return self._intf.get_property(RungeKuttaV8th9th._metadata, RungeKuttaV8th9th._get_coefficient_type_metadata)
 
     _set_coefficient_type_metadata = { "offset" : _set_coefficient_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CoeffRungeKuttaV8th9th),) }
+            "marshallers" : (agmarshall.EnumArg(CoefficientRungeKuttaV8th9th),) }
     @coefficient_type.setter
-    def coefficient_type(self, value:"CoeffRungeKuttaV8th9th") -> None:
+    def coefficient_type(self, value:"CoefficientRungeKuttaV8th9th") -> None:
         return self._intf.set_property(RungeKuttaV8th9th._metadata, RungeKuttaV8th9th._set_coefficient_type_metadata, value)
 
     _property_names[initial_step] = "initial_step"
@@ -45290,7 +47213,7 @@ class RungeKuttaV8th9th(INumericalIntegrator, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RungeKuttaV8th9th, [RungeKuttaV8th9th, INumericalIntegrator])
 
-agcls.AgClassCatalog.add_catalog_entry((5675169713119132491, 10165191028029519797), RungeKuttaV8th9th)
+agcls.AgClassCatalog.add_catalog_entry((5208971875892518791, 2823450251947124403), RungeKuttaV8th9th)
 agcls.AgTypeNameMap["RungeKuttaV8th9th"] = RungeKuttaV8th9th
 
 class ScriptingTool(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -45311,7 +47234,7 @@ class ScriptingTool(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _get_pre_iterate_method_offset = 11
     _set_pre_iterate_method_offset = 12
     _metadata = {
-        "iid_data" : (4663132750434503155, 7930548857949584564),
+        "iid_data" : (4619441924087358550, 10339583398656270479),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -45430,7 +47353,7 @@ class ScriptingTool(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScriptingTool, [ScriptingTool, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5386292892735441079, 13900834054744615054), ScriptingTool)
+agcls.AgClassCatalog.add_catalog_entry((5162284313157361886, 16385743776642331788), ScriptingTool)
 agcls.AgTypeNameMap["ScriptingTool"] = ScriptingTool
 
 class ScriptingSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -45451,7 +47374,7 @@ class ScriptingSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallbac
     _get_item_by_index_method_offset = 11
     _get_item_by_name_method_offset = 12
     _metadata = {
-        "iid_data" : (5377494462842049808, 17202565285805206185),
+        "iid_data" : (4759032216346206734, 5626063522708771744),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -45580,7 +47503,7 @@ class ScriptingSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScriptingSegmentCollection, [ScriptingSegmentCollection, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5747222952172680036, 9765550541896094091), ScriptingSegmentCollection)
+agcls.AgClassCatalog.add_catalog_entry((4666729036493627263, 3450584042496990359), ScriptingSegmentCollection)
 agcls.AgTypeNameMap["ScriptingSegmentCollection"] = ScriptingSegmentCollection
 
 class ScriptingSegment(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -45601,7 +47524,7 @@ class ScriptingSegment(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _set_object_name_method_offset = 11
     _get_available_object_names_method_offset = 12
     _metadata = {
-        "iid_data" : (4879802289783632705, 8146140236855949728),
+        "iid_data" : (4784456776691810794, 7189589206184493194),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -45722,7 +47645,7 @@ class ScriptingSegment(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScriptingSegment, [ScriptingSegment, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4750376263332927565, 2703854210644328112), ScriptingSegment)
+agcls.AgClassCatalog.add_catalog_entry((5042453203955947794, 18066493471333147548), ScriptingSegment)
 agcls.AgTypeNameMap["ScriptingSegment"] = ScriptingSegment
 
 class ScriptingParameterCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -45743,7 +47666,7 @@ class ScriptingParameterCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallb
     _get_item_by_index_method_offset = 11
     _get_item_by_name_method_offset = 12
     _metadata = {
-        "iid_data" : (4902261710191863466, 8162432943313407620),
+        "iid_data" : (5242724876158931407, 8467830116631897529),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -45872,7 +47795,7 @@ class ScriptingParameterCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallb
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScriptingParameterCollection, [ScriptingParameterCollection, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4890502539091661881, 1580839912369041288), ScriptingParameterCollection)
+agcls.AgClassCatalog.add_catalog_entry((4667176901272811330, 15386442895055762324), ScriptingParameterCollection)
 agcls.AgTypeNameMap["ScriptingParameterCollection"] = ScriptingParameterCollection
 
 class ScriptingParameter(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -45904,7 +47827,7 @@ class ScriptingParameter(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _get_max_value_method_offset = 22
     _set_max_value_method_offset = 23
     _metadata = {
-        "iid_data" : (5574668373759188189, 12962501081415056814),
+        "iid_data" : (4963314347131727310, 12259294833778084480),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -46112,7 +48035,7 @@ class ScriptingParameter(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScriptingParameter, [ScriptingParameter, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5251359406070671618, 17193361196137710260), ScriptingParameter)
+agcls.AgClassCatalog.add_catalog_entry((5044285395100317307, 720297748556443787), ScriptingParameter)
 agcls.AgTypeNameMap["ScriptingParameter"] = ScriptingParameter
 
 class ScriptingCalculationObject(SupportsDeleteCallback):
@@ -46131,7 +48054,7 @@ class ScriptingCalculationObject(SupportsDeleteCallback):
     _copy_calculation_object_to_clipboard_method_offset = 9
     _paste_calculation_object_from_clipboard_method_offset = 10
     _metadata = {
-        "iid_data" : (4858284977774556021, 17365740631458954930),
+        "iid_data" : (4859498478334030634, 9063007953463719852),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -46230,7 +48153,7 @@ class ScriptingCalculationObject(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScriptingCalculationObject, [ScriptingCalculationObject, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5296189893641852469, 9482879366663785884), ScriptingCalculationObject)
+agcls.AgClassCatalog.add_catalog_entry((5662585912683680066, 8422982041141169036), ScriptingCalculationObject)
 agcls.AgTypeNameMap["ScriptingCalculationObject"] = ScriptingCalculationObject
 
 class ScriptingCalculationObjectCollection(SupportsDeleteCallback):
@@ -46250,7 +48173,7 @@ class ScriptingCalculationObjectCollection(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 10
     _get_item_by_name_method_offset = 11
     _metadata = {
-        "iid_data" : (5107928153766242116, 14842271196491693998),
+        "iid_data" : (5170112272206159887, 12631709139616810369),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -46368,7 +48291,7 @@ class ScriptingCalculationObjectCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScriptingCalculationObjectCollection, [ScriptingCalculationObjectCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4980684683189716790, 9229952429326373522), ScriptingCalculationObjectCollection)
+agcls.AgClassCatalog.add_catalog_entry((5525268906894974701, 8325656536295118752), ScriptingCalculationObjectCollection)
 agcls.AgTypeNameMap["ScriptingCalculationObjectCollection"] = ScriptingCalculationObjectCollection
 
 class UserVariableDefinition(SupportsDeleteCallback):
@@ -46381,7 +48304,7 @@ class UserVariableDefinition(SupportsDeleteCallback):
     _get_variable_name_method_offset = 3
     _set_variable_name_method_offset = 4
     _metadata = {
-        "iid_data" : (5529170653593380386, 2900532398815823505),
+        "iid_data" : (5184622137268383799, 18384130090909960844),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -46436,7 +48359,7 @@ class UserVariableDefinition(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UserVariableDefinition, [UserVariableDefinition, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5176854942637247565, 2244191041652103592), UserVariableDefinition)
+agcls.AgClassCatalog.add_catalog_entry((5659163379850402910, 15883290589783851140), UserVariableDefinition)
 agcls.AgTypeNameMap["UserVariableDefinition"] = UserVariableDefinition
 
 class UserVariable(SupportsDeleteCallback):
@@ -46453,7 +48376,7 @@ class UserVariable(SupportsDeleteCallback):
     _is_control_parameter_enabled_method_offset = 7
     _get_control_parameters_available_method_offset = 8
     _metadata = {
-        "iid_data" : (5102207211866036182, 1394843534775836036),
+        "iid_data" : (5196973171956232110, 11064551813660666503),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -46539,7 +48462,7 @@ class UserVariable(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UserVariable, [UserVariable, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5297374455989115384, 13571318339920513665), UserVariable)
+agcls.AgClassCatalog.add_catalog_entry((5384885480592212542, 10668651035839574688), UserVariable)
 agcls.AgTypeNameMap["UserVariable"] = UserVariable
 
 class UserVariableUpdate(SupportsDeleteCallback):
@@ -46558,7 +48481,7 @@ class UserVariableUpdate(SupportsDeleteCallback):
     _is_control_parameter_enabled_method_offset = 9
     _get_control_parameters_available_method_offset = 10
     _metadata = {
-        "iid_data" : (4670752174265368180, 17869180467884326790),
+        "iid_data" : (5670708995107668204, 14483757430995402137),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -46659,7 +48582,7 @@ class UserVariableUpdate(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UserVariableUpdate, [UserVariableUpdate, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4882327334920636266, 17132518977558649745), UserVariableUpdate)
+agcls.AgClassCatalog.add_catalog_entry((4823543729386307303, 12951065722558316990), UserVariableUpdate)
 agcls.AgTypeNameMap["UserVariableUpdate"] = UserVariableUpdate
 
 class UserVariableDefinitionCollection(SupportsDeleteCallback):
@@ -46676,7 +48599,7 @@ class UserVariableDefinitionCollection(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 7
     _get_item_by_name_method_offset = 8
     _metadata = {
-        "iid_data" : (5470704527173093908, 13614551030675263652),
+        "iid_data" : (5368349877568224979, 13930055645711437211),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -46773,7 +48696,7 @@ class UserVariableDefinitionCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UserVariableDefinitionCollection, [UserVariableDefinitionCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5638480263077990789, 8497446502851080127), UserVariableDefinitionCollection)
+agcls.AgClassCatalog.add_catalog_entry((5552434535292412346, 16251083681147486390), UserVariableDefinitionCollection)
 agcls.AgTypeNameMap["UserVariableDefinitionCollection"] = UserVariableDefinitionCollection
 
 class UserVariableCollection(SupportsDeleteCallback):
@@ -46787,7 +48710,7 @@ class UserVariableCollection(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 4
     _get_item_by_name_method_offset = 5
     _metadata = {
-        "iid_data" : (5705306334517654460, 13719441307500405395),
+        "iid_data" : (4988780424248288032, 12488657405736153485),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -46863,7 +48786,7 @@ class UserVariableCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UserVariableCollection, [UserVariableCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5475744921255961082, 2914707611325759872), UserVariableCollection)
+agcls.AgClassCatalog.add_catalog_entry((5222965012134716729, 11143878631910434710), UserVariableCollection)
 agcls.AgTypeNameMap["UserVariableCollection"] = UserVariableCollection
 
 class UserVariableUpdateCollection(SupportsDeleteCallback):
@@ -46877,7 +48800,7 @@ class UserVariableUpdateCollection(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 4
     _get_item_by_name_method_offset = 5
     _metadata = {
-        "iid_data" : (5192861693448909451, 7822980997782731710),
+        "iid_data" : (5702082835365489467, 4865736447691270844),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -46953,7 +48876,7 @@ class UserVariableUpdateCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UserVariableUpdateCollection, [UserVariableUpdateCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4747161639227059513, 4742269417223348868), UserVariableUpdateCollection)
+agcls.AgClassCatalog.add_catalog_entry((4752534081752223879, 3924376913247225497), UserVariableUpdateCollection)
 agcls.AgTypeNameMap["UserVariableUpdateCollection"] = UserVariableUpdateCollection
 
 class CalculationGraphCollection(SupportsDeleteCallback):
@@ -46968,7 +48891,7 @@ class CalculationGraphCollection(SupportsDeleteCallback):
     _remove_all_method_offset = 5
     _get_count_method_offset = 6
     _metadata = {
-        "iid_data" : (4825792128715941832, 18011952732228699781),
+        "iid_data" : (5516442616646248070, 3261607093467786633),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -47051,7 +48974,7 @@ class CalculationGraphCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationGraphCollection, [CalculationGraphCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5083290063025081319, 11449288902000481971), CalculationGraphCollection)
+agcls.AgClassCatalog.add_catalog_entry((5418924113054929765, 11371930002032965306), CalculationGraphCollection)
 agcls.AgTypeNameMap["CalculationGraphCollection"] = CalculationGraphCollection
 
 class ScriptingParameterEnumerationChoice(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -47064,7 +48987,7 @@ class ScriptingParameterEnumerationChoice(IRuntimeTypeInfoProvider, SupportsDele
     _get_value_method_offset = 3
     _set_value_method_offset = 4
     _metadata = {
-        "iid_data" : (4694284698603687135, 9562347633715624110),
+        "iid_data" : (5395118750325668378, 5130127185757078937),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -47119,7 +49042,7 @@ class ScriptingParameterEnumerationChoice(IRuntimeTypeInfoProvider, SupportsDele
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScriptingParameterEnumerationChoice, [ScriptingParameterEnumerationChoice, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5753527390070997698, 16891583172060726955), ScriptingParameterEnumerationChoice)
+agcls.AgClassCatalog.add_catalog_entry((5623319278581312205, 12943393144307263377), ScriptingParameterEnumerationChoice)
 agcls.AgTypeNameMap["ScriptingParameterEnumerationChoice"] = ScriptingParameterEnumerationChoice
 
 class ScriptingParameterEnumerationChoiceCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -47139,7 +49062,7 @@ class ScriptingParameterEnumerationChoiceCollection(IRuntimeTypeInfoProvider, Su
     _get_item_by_index_method_offset = 10
     _get_item_by_name_method_offset = 11
     _metadata = {
-        "iid_data" : (4745458710490589844, 11574573708867379850),
+        "iid_data" : (5264899045164591189, 11823198972002816911),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -47261,7 +49184,7 @@ class ScriptingParameterEnumerationChoiceCollection(IRuntimeTypeInfoProvider, Su
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScriptingParameterEnumerationChoiceCollection, [ScriptingParameterEnumerationChoiceCollection, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4758918111060636034, 3872610572386515628), ScriptingParameterEnumerationChoiceCollection)
+agcls.AgClassCatalog.add_catalog_entry((4923415581100107846, 352768431588088705), ScriptingParameterEnumerationChoiceCollection)
 agcls.AgTypeNameMap["ScriptingParameterEnumerationChoiceCollection"] = ScriptingParameterEnumerationChoiceCollection
 
 class ProfileSNOPTOptimizer(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -47292,7 +49215,7 @@ class ProfileSNOPTOptimizer(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCa
     _get_allow_internal_primal_infeasibility_measure_normalization_method_offset = 21
     _set_allow_internal_primal_infeasibility_measure_normalization_method_offset = 22
     _metadata = {
-        "iid_data" : (5270666790947867762, 11607595184192645561),
+        "iid_data" : (4761566514231544336, 16440334854811012758),
         "vtable_reference" : IProfile._vtable_offset + IProfile._num_methods - 1,
     }
     _property_names = {}
@@ -47497,7 +49420,7 @@ class ProfileSNOPTOptimizer(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCa
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProfileSNOPTOptimizer, [ProfileSNOPTOptimizer, IProfile, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5284407112942418573, 3368784081012521918), ProfileSNOPTOptimizer)
+agcls.AgClassCatalog.add_catalog_entry((5576211256354990102, 6758436634960565675), ProfileSNOPTOptimizer)
 agcls.AgTypeNameMap["ProfileSNOPTOptimizer"] = ProfileSNOPTOptimizer
 
 class SNOPTControl(SupportsDeleteCallback):
@@ -47523,7 +49446,7 @@ class SNOPTControl(SupportsDeleteCallback):
     _get_custom_display_unit_method_offset = 16
     _set_custom_display_unit_method_offset = 17
     _metadata = {
-        "iid_data" : (4762704521604592018, 2371064697729832603),
+        "iid_data" : (5313158771394868975, 823628597647255739),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -47683,7 +49606,7 @@ class SNOPTControl(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SNOPTControl, [SNOPTControl, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5571950865244808171, 10821277464681537955), SNOPTControl)
+agcls.AgClassCatalog.add_catalog_entry((5078094421024728428, 13123040340062899356), SNOPTControl)
 agcls.AgTypeNameMap["SNOPTControl"] = SNOPTControl
 
 class SNOPTResult(SupportsDeleteCallback):
@@ -47711,7 +49634,7 @@ class SNOPTResult(SupportsDeleteCallback):
     _get_custom_display_unit_method_offset = 18
     _set_custom_display_unit_method_offset = 19
     _metadata = {
-        "iid_data" : (4901011265381019165, 12207151560770997405),
+        "iid_data" : (5209435221272394530, 1063051836276181910),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -47887,7 +49810,7 @@ class SNOPTResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SNOPTResult, [SNOPTResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5429352756697192284, 6147634570721065617), SNOPTResult)
+agcls.AgClassCatalog.add_catalog_entry((4844223296523866371, 10908274275188531094), SNOPTResult)
 agcls.AgTypeNameMap["SNOPTResult"] = SNOPTResult
 
 class SNOPTControlCollection(SupportsDeleteCallback):
@@ -47900,7 +49823,7 @@ class SNOPTControlCollection(SupportsDeleteCallback):
     _get_count_method_offset = 3
     _get_control_by_paths_method_offset = 4
     _metadata = {
-        "iid_data" : (5604173860902349208, 5855630180278497942),
+        "iid_data" : (5657168604002112917, 11049065605200467131),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -47969,7 +49892,7 @@ class SNOPTControlCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SNOPTControlCollection, [SNOPTControlCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5633121791954045522, 5448792849790426752), SNOPTControlCollection)
+agcls.AgClassCatalog.add_catalog_entry((4654074054150186967, 16066618780334214577), SNOPTControlCollection)
 agcls.AgTypeNameMap["SNOPTControlCollection"] = SNOPTControlCollection
 
 class SNOPTResultCollection(SupportsDeleteCallback):
@@ -47982,7 +49905,7 @@ class SNOPTResultCollection(SupportsDeleteCallback):
     _get_count_method_offset = 3
     _get_result_by_paths_method_offset = 4
     _metadata = {
-        "iid_data" : (5507754285275224124, 2750094358517221257),
+        "iid_data" : (5570951535078071343, 423357908418546594),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -48051,7 +49974,7 @@ class SNOPTResultCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SNOPTResultCollection, [SNOPTResultCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4656791029766995763, 579569562398177441), SNOPTResultCollection)
+agcls.AgClassCatalog.add_catalog_entry((5009682754993924045, 6443095517267680694), SNOPTResultCollection)
 agcls.AgTypeNameMap["SNOPTResultCollection"] = SNOPTResultCollection
 
 class ProfileIPOPTOptimizer(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -48078,7 +50001,7 @@ class ProfileIPOPTOptimizer(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCa
     _get_options_filename_method_offset = 17
     _set_options_filename_method_offset = 18
     _metadata = {
-        "iid_data" : (4751264102437666878, 12170707282220075141),
+        "iid_data" : (5731552271081301388, 12022112604516133796),
         "vtable_reference" : IProfile._vtable_offset + IProfile._num_methods - 1,
     }
     _property_names = {}
@@ -48251,7 +50174,7 @@ class ProfileIPOPTOptimizer(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCa
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProfileIPOPTOptimizer, [ProfileIPOPTOptimizer, IProfile, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5568187666386354440, 8632403443185718923), ProfileIPOPTOptimizer)
+agcls.AgClassCatalog.add_catalog_entry((4781974902284324840, 7580537188180028336), ProfileIPOPTOptimizer)
 agcls.AgTypeNameMap["ProfileIPOPTOptimizer"] = ProfileIPOPTOptimizer
 
 class IPOPTControl(SupportsDeleteCallback):
@@ -48277,7 +50200,7 @@ class IPOPTControl(SupportsDeleteCallback):
     _get_custom_display_unit_method_offset = 16
     _set_custom_display_unit_method_offset = 17
     _metadata = {
-        "iid_data" : (5150148644969543295, 6124481234419825067),
+        "iid_data" : (5356885890505989801, 12176886966313535893),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -48437,7 +50360,7 @@ class IPOPTControl(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, IPOPTControl, [IPOPTControl, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5415810020451243738, 18234088207928978568), IPOPTControl)
+agcls.AgClassCatalog.add_catalog_entry((5414100775063398666, 1532891905150507959), IPOPTControl)
 agcls.AgTypeNameMap["IPOPTControl"] = IPOPTControl
 
 class IPOPTResult(SupportsDeleteCallback):
@@ -48465,7 +50388,7 @@ class IPOPTResult(SupportsDeleteCallback):
     _get_custom_display_unit_method_offset = 18
     _set_custom_display_unit_method_offset = 19
     _metadata = {
-        "iid_data" : (4762668939937227037, 15340309722893180073),
+        "iid_data" : (4905230277611827102, 12321733079057152700),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -48641,7 +50564,7 @@ class IPOPTResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, IPOPTResult, [IPOPTResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5749859566825051606, 3700808484372834489), IPOPTResult)
+agcls.AgClassCatalog.add_catalog_entry((5116151319337901968, 7370010814855837875), IPOPTResult)
 agcls.AgTypeNameMap["IPOPTResult"] = IPOPTResult
 
 class IPOPTControlCollection(SupportsDeleteCallback):
@@ -48654,7 +50577,7 @@ class IPOPTControlCollection(SupportsDeleteCallback):
     _get_count_method_offset = 3
     _get_control_by_paths_method_offset = 4
     _metadata = {
-        "iid_data" : (5371619775496741938, 13477957420178317993),
+        "iid_data" : (5169061459720996211, 9445401401515456937),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -48723,7 +50646,7 @@ class IPOPTControlCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, IPOPTControlCollection, [IPOPTControlCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4683303804897886652, 10183995070423025552), IPOPTControlCollection)
+agcls.AgClassCatalog.add_catalog_entry((5041836178962467711, 12847350312882053787), IPOPTControlCollection)
 agcls.AgTypeNameMap["IPOPTControlCollection"] = IPOPTControlCollection
 
 class IPOPTResultCollection(SupportsDeleteCallback):
@@ -48736,7 +50659,7 @@ class IPOPTResultCollection(SupportsDeleteCallback):
     _get_count_method_offset = 3
     _get_result_by_paths_method_offset = 4
     _metadata = {
-        "iid_data" : (5596307863142992893, 15167583734049716609),
+        "iid_data" : (5124525065719580258, 15269871249985422511),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -48805,7 +50728,7 @@ class IPOPTResultCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, IPOPTResultCollection, [IPOPTResultCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4859533124734869945, 6672937630293285034), IPOPTResultCollection)
+agcls.AgClassCatalog.add_catalog_entry((5762822809971987694, 345820666589901451), IPOPTResultCollection)
 agcls.AgTypeNameMap["IPOPTResultCollection"] = IPOPTResultCollection
 
 class ManeuverOptimalFinite(IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -48854,7 +50777,7 @@ class ManeuverOptimalFinite(IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteC
     _get_should_reinitialize_stm_at_start_of_segment_propagation_method_offset = 39
     _set_should_reinitialize_stm_at_start_of_segment_propagation_method_offset = 40
     _metadata = {
-        "iid_data" : (5286881738049363473, 1389375119741404061),
+        "iid_data" : (5675817984628692024, 623322022288161184),
         "vtable_reference" : IManeuver._vtable_offset + IManeuver._num_methods - 1,
     }
     _property_names = {}
@@ -49206,7 +51129,7 @@ class ManeuverOptimalFinite(IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteC
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ManeuverOptimalFinite, [ManeuverOptimalFinite, IManeuver, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4783707281485617471, 8884688168498554016), ManeuverOptimalFinite)
+agcls.AgClassCatalog.add_catalog_entry((5262924960617027836, 14771934034574714008), ManeuverOptimalFinite)
 agcls.AgTypeNameMap["ManeuverOptimalFinite"] = ManeuverOptimalFinite
 
 class ManeuverOptimalFiniteSNOPTOptimizer(SupportsDeleteCallback):
@@ -49236,7 +51159,7 @@ class ManeuverOptimalFiniteSNOPTOptimizer(SupportsDeleteCallback):
     _get_snopt_scaling_method_offset = 20
     _set_snopt_scaling_method_offset = 21
     _metadata = {
-        "iid_data" : (4996902975628294078, 18237553613899441294),
+        "iid_data" : (4868813535784566588, 4233264806878572679),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -49426,7 +51349,7 @@ class ManeuverOptimalFiniteSNOPTOptimizer(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ManeuverOptimalFiniteSNOPTOptimizer, [ManeuverOptimalFiniteSNOPTOptimizer, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5483625747432348382, 14294427433302231435), ManeuverOptimalFiniteSNOPTOptimizer)
+agcls.AgClassCatalog.add_catalog_entry((5379476307188241059, 15289281494982811315), ManeuverOptimalFiniteSNOPTOptimizer)
 agcls.AgTypeNameMap["ManeuverOptimalFiniteSNOPTOptimizer"] = ManeuverOptimalFiniteSNOPTOptimizer
 
 class ManeuverOptimalFiniteInitialBoundaryConditions(SupportsDeleteCallback):
@@ -49444,7 +51367,7 @@ class ManeuverOptimalFiniteInitialBoundaryConditions(SupportsDeleteCallback):
     _get_l_method_offset = 8
     _get_provide_runtime_type_info_method_offset = 9
     _metadata = {
-        "iid_data" : (5320001354157658271, 816071206625377690),
+        "iid_data" : (5575948335520716341, 14543407550516173242),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -49545,7 +51468,7 @@ class ManeuverOptimalFiniteInitialBoundaryConditions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ManeuverOptimalFiniteInitialBoundaryConditions, [ManeuverOptimalFiniteInitialBoundaryConditions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5403990726835451340, 7745594952569886897), ManeuverOptimalFiniteInitialBoundaryConditions)
+agcls.AgClassCatalog.add_catalog_entry((4972034412409340717, 12415779093462204062), ManeuverOptimalFiniteInitialBoundaryConditions)
 agcls.AgTypeNameMap["ManeuverOptimalFiniteInitialBoundaryConditions"] = ManeuverOptimalFiniteInitialBoundaryConditions
 
 class ManeuverOptimalFiniteFinalBoundaryConditions(SupportsDeleteCallback):
@@ -49567,7 +51490,7 @@ class ManeuverOptimalFiniteFinalBoundaryConditions(SupportsDeleteCallback):
     _set_upper_delta_final_time_method_offset = 12
     _get_provide_runtime_type_info_method_offset = 13
     _metadata = {
-        "iid_data" : (5608962754148717072, 2139911199912873131),
+        "iid_data" : (5468631753845386558, 13463304990405471162),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -49699,7 +51622,7 @@ class ManeuverOptimalFiniteFinalBoundaryConditions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ManeuverOptimalFiniteFinalBoundaryConditions, [ManeuverOptimalFiniteFinalBoundaryConditions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4678443343641316330, 11312029768054324407), ManeuverOptimalFiniteFinalBoundaryConditions)
+agcls.AgClassCatalog.add_catalog_entry((4889473175267491235, 614183790043907226), ManeuverOptimalFiniteFinalBoundaryConditions)
 agcls.AgTypeNameMap["ManeuverOptimalFiniteFinalBoundaryConditions"] = ManeuverOptimalFiniteFinalBoundaryConditions
 
 class ManeuverOptimalFinitePathBoundaryConditions(SupportsDeleteCallback):
@@ -49725,7 +51648,7 @@ class ManeuverOptimalFinitePathBoundaryConditions(SupportsDeleteCallback):
     _set_upper_bound_elevation_method_offset = 16
     _get_provide_runtime_type_info_method_offset = 17
     _metadata = {
-        "iid_data" : (5626545003649153510, 987668436727379598),
+        "iid_data" : (5337222061703426409, 500557084289977517),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -49889,7 +51812,7 @@ class ManeuverOptimalFinitePathBoundaryConditions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ManeuverOptimalFinitePathBoundaryConditions, [ManeuverOptimalFinitePathBoundaryConditions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4897975046961720324, 9957266801658589367), ManeuverOptimalFinitePathBoundaryConditions)
+agcls.AgClassCatalog.add_catalog_entry((5545930768547081965, 3705955075450694058), ManeuverOptimalFinitePathBoundaryConditions)
 agcls.AgTypeNameMap["ManeuverOptimalFinitePathBoundaryConditions"] = ManeuverOptimalFinitePathBoundaryConditions
 
 class ManeuverOptimalFiniteSteeringNodeElement(SupportsDeleteCallback):
@@ -49912,7 +51835,7 @@ class ManeuverOptimalFiniteSteeringNodeElement(SupportsDeleteCallback):
     _get_velocity_y_method_offset = 13
     _get_velocity_z_method_offset = 14
     _metadata = {
-        "iid_data" : (5681974857341656774, 10284978685885765302),
+        "iid_data" : (5196916891214494962, 2872422562523433612),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -50059,7 +51982,7 @@ class ManeuverOptimalFiniteSteeringNodeElement(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ManeuverOptimalFiniteSteeringNodeElement, [ManeuverOptimalFiniteSteeringNodeElement, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5696406060930657926, 17218302901274105782), ManeuverOptimalFiniteSteeringNodeElement)
+agcls.AgClassCatalog.add_catalog_entry((5238136938836024970, 9741331404342228611), ManeuverOptimalFiniteSteeringNodeElement)
 agcls.AgTypeNameMap["ManeuverOptimalFiniteSteeringNodeElement"] = ManeuverOptimalFiniteSteeringNodeElement
 
 class ManeuverOptimalFiniteSteeringNodeCollection(SupportsDeleteCallback):
@@ -50071,7 +51994,7 @@ class ManeuverOptimalFiniteSteeringNodeCollection(SupportsDeleteCallback):
     _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _metadata = {
-        "iid_data" : (5138882826234024662, 1556125155199223470),
+        "iid_data" : (5368361401485951334, 6395788154295113872),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -50133,7 +52056,7 @@ class ManeuverOptimalFiniteSteeringNodeCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ManeuverOptimalFiniteSteeringNodeCollection, [ManeuverOptimalFiniteSteeringNodeCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5393217767348672036, 7434771889247315870), ManeuverOptimalFiniteSteeringNodeCollection)
+agcls.AgClassCatalog.add_catalog_entry((4933121280211144660, 14878446999952277155), ManeuverOptimalFiniteSteeringNodeCollection)
 agcls.AgTypeNameMap["ManeuverOptimalFiniteSteeringNodeCollection"] = ManeuverOptimalFiniteSteeringNodeCollection
 
 class ManeuverOptimalFiniteBounds(SupportsDeleteCallback):
@@ -50146,7 +52069,7 @@ class ManeuverOptimalFiniteBounds(SupportsDeleteCallback):
     _get_upper_bound_method_offset = 3
     _set_upper_bound_method_offset = 4
     _metadata = {
-        "iid_data" : (4890434832875217083, 2136658822181412241),
+        "iid_data" : (5307162424763186111, 5243873500413751213),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -50199,7 +52122,7 @@ class ManeuverOptimalFiniteBounds(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ManeuverOptimalFiniteBounds, [ManeuverOptimalFiniteBounds, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5146246105135506503, 247496315851455622), ManeuverOptimalFiniteBounds)
+agcls.AgClassCatalog.add_catalog_entry((5461780179419229876, 13093732691342497719), ManeuverOptimalFiniteBounds)
 agcls.AgTypeNameMap["ManeuverOptimalFiniteBounds"] = ManeuverOptimalFiniteBounds
 
 class ProfileLambertProfile(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -50264,7 +52187,7 @@ class ProfileLambertProfile(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCa
     _get_second_maneuver_segment_method_offset = 55
     _set_second_maneuver_segment_method_offset = 56
     _metadata = {
-        "iid_data" : (5131435118186162975, 3470838594007664273),
+        "iid_data" : (4989433513908954449, 3497397823221873854),
         "vtable_reference" : IProfile._vtable_offset + IProfile._num_methods - 1,
     }
     _property_names = {}
@@ -50737,7 +52660,7 @@ class ProfileLambertProfile(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCa
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProfileLambertProfile, [ProfileLambertProfile, IProfile, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5105045193344882222, 12893260449528183951), ProfileLambertProfile)
+agcls.AgClassCatalog.add_catalog_entry((4611712228975478676, 18145641357544214451), ProfileLambertProfile)
 agcls.AgTypeNameMap["ProfileLambertProfile"] = ProfileLambertProfile
 
 class ProfileLambertSearchProfile(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -50810,7 +52733,7 @@ class ProfileLambertSearchProfile(IProfile, IRuntimeTypeInfoProvider, SupportsDe
     _get_second_maneuver_segment_method_offset = 63
     _set_second_maneuver_segment_method_offset = 64
     _metadata = {
-        "iid_data" : (4665356793630001439, 491401694762539420),
+        "iid_data" : (4730569925118037699, 3613407439076994960),
         "vtable_reference" : IProfile._vtable_offset + IProfile._num_methods - 1,
     }
     _property_names = {}
@@ -51347,7 +53270,7 @@ class ProfileLambertSearchProfile(IProfile, IRuntimeTypeInfoProvider, SupportsDe
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProfileLambertSearchProfile, [ProfileLambertSearchProfile, IProfile, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5474786237822332834, 5691720590487098242), ProfileLambertSearchProfile)
+agcls.AgClassCatalog.add_catalog_entry((4942776449265589001, 12660225522654835332), ProfileLambertSearchProfile)
 agcls.AgTypeNameMap["ProfileLambertSearchProfile"] = ProfileLambertSearchProfile
 
 class ProfileGoldenSection(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -51365,7 +53288,7 @@ class ProfileGoldenSection(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCal
     _get_enable_display_status_method_offset = 8
     _set_enable_display_status_method_offset = 9
     _metadata = {
-        "iid_data" : (4933620988574091389, 14999261045366057143),
+        "iid_data" : (5583518476988599289, 17439287715590573243),
         "vtable_reference" : IProfile._vtable_offset + IProfile._num_methods - 1,
     }
     _property_names = {}
@@ -51467,7 +53390,7 @@ class ProfileGoldenSection(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCal
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProfileGoldenSection, [ProfileGoldenSection, IProfile, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5513205475854680150, 3336794135692898437), ProfileGoldenSection)
+agcls.AgClassCatalog.add_catalog_entry((5596571459441138356, 995194203366138780), ProfileGoldenSection)
 agcls.AgTypeNameMap["ProfileGoldenSection"] = ProfileGoldenSection
 
 class GoldenSectionControlCollection(SupportsDeleteCallback):
@@ -51480,7 +53403,7 @@ class GoldenSectionControlCollection(SupportsDeleteCallback):
     _get_count_method_offset = 3
     _get_control_by_paths_method_offset = 4
     _metadata = {
-        "iid_data" : (4979017413367074730, 8845884185412844198),
+        "iid_data" : (4930544335795444596, 4406073175644707225),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -51549,7 +53472,7 @@ class GoldenSectionControlCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GoldenSectionControlCollection, [GoldenSectionControlCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5048787599091551597, 9878884015237706136), GoldenSectionControlCollection)
+agcls.AgClassCatalog.add_catalog_entry((5065047795679480698, 3080762174109116605), GoldenSectionControlCollection)
 agcls.AgTypeNameMap["GoldenSectionControlCollection"] = GoldenSectionControlCollection
 
 class GoldenSectionControl(SupportsDeleteCallback):
@@ -51573,7 +53496,7 @@ class GoldenSectionControl(SupportsDeleteCallback):
     _get_tolerance_method_offset = 14
     _set_tolerance_method_offset = 15
     _metadata = {
-        "iid_data" : (5047558345947381297, 4599741228227139758),
+        "iid_data" : (5593066707570638202, 473529997396939432),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -51717,7 +53640,7 @@ class GoldenSectionControl(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GoldenSectionControl, [GoldenSectionControl, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5740988849348914654, 3351787303745426560), GoldenSectionControl)
+agcls.AgClassCatalog.add_catalog_entry((5652706087018868516, 15832667100414900892), GoldenSectionControl)
 agcls.AgTypeNameMap["GoldenSectionControl"] = GoldenSectionControl
 
 class GoldenSectionResultCollection(SupportsDeleteCallback):
@@ -51730,7 +53653,7 @@ class GoldenSectionResultCollection(SupportsDeleteCallback):
     _get_count_method_offset = 3
     _get_result_by_paths_method_offset = 4
     _metadata = {
-        "iid_data" : (5409994296917849120, 6122413435407341964),
+        "iid_data" : (5072607885695340824, 8424106303179939228),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -51799,7 +53722,7 @@ class GoldenSectionResultCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GoldenSectionResultCollection, [GoldenSectionResultCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4688981584704829625, 17514973311597057458), GoldenSectionResultCollection)
+agcls.AgClassCatalog.add_catalog_entry((4728622993436477119, 1762721230942838204), GoldenSectionResultCollection)
 agcls.AgTypeNameMap["GoldenSectionResultCollection"] = GoldenSectionResultCollection
 
 class GoldenSectionResult(SupportsDeleteCallback):
@@ -51819,7 +53742,7 @@ class GoldenSectionResult(SupportsDeleteCallback):
     _get_custom_display_unit_method_offset = 10
     _set_custom_display_unit_method_offset = 11
     _metadata = {
-        "iid_data" : (4846497611718727319, 542211254498659735),
+        "iid_data" : (5640853431111379492, 8064836800226812083),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -51931,7 +53854,7 @@ class GoldenSectionResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GoldenSectionResult, [GoldenSectionResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5673153722049580977, 2874596235403525044), GoldenSectionResult)
+agcls.AgClassCatalog.add_catalog_entry((5196911112361773848, 14422917558000502974), GoldenSectionResult)
 agcls.AgTypeNameMap["GoldenSectionResult"] = GoldenSectionResult
 
 class ProfileGridSearch(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -51949,7 +53872,7 @@ class ProfileGridSearch(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallba
     _get_should_generate_graph_method_offset = 8
     _set_should_generate_graph_method_offset = 9
     _metadata = {
-        "iid_data" : (5405732854479547480, 9799438297963148967),
+        "iid_data" : (5312473127557972181, 5784807165427333271),
         "vtable_reference" : IProfile._vtable_offset + IProfile._num_methods - 1,
     }
     _property_names = {}
@@ -52051,7 +53974,7 @@ class ProfileGridSearch(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallba
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProfileGridSearch, [ProfileGridSearch, IProfile, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5524069762900486808, 16155020909550560909), ProfileGridSearch)
+agcls.AgClassCatalog.add_catalog_entry((5544477121684259255, 18247286408906463374), ProfileGridSearch)
 agcls.AgTypeNameMap["ProfileGridSearch"] = ProfileGridSearch
 
 class GridSearchControlCollection(SupportsDeleteCallback):
@@ -52064,7 +53987,7 @@ class GridSearchControlCollection(SupportsDeleteCallback):
     _get_count_method_offset = 3
     _get_control_by_paths_method_offset = 4
     _metadata = {
-        "iid_data" : (4691532401394199808, 17256766706916015489),
+        "iid_data" : (5722525299267868874, 11145739946551680176),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -52133,7 +54056,7 @@ class GridSearchControlCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GridSearchControlCollection, [GridSearchControlCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5099714536736489649, 14219853598408991422), GridSearchControlCollection)
+agcls.AgClassCatalog.add_catalog_entry((4902322692162508456, 2110817210545221005), GridSearchControlCollection)
 agcls.AgTypeNameMap["GridSearchControlCollection"] = GridSearchControlCollection
 
 class GridSearchControl(SupportsDeleteCallback):
@@ -52157,7 +54080,7 @@ class GridSearchControl(SupportsDeleteCallback):
     _get_step_method_offset = 14
     _set_step_method_offset = 15
     _metadata = {
-        "iid_data" : (5325393925969668946, 16093979779729701504),
+        "iid_data" : (4652498283225579664, 4468961229862665372),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -52301,7 +54224,7 @@ class GridSearchControl(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GridSearchControl, [GridSearchControl, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4746562151392512031, 8555222574508072328), GridSearchControl)
+agcls.AgClassCatalog.add_catalog_entry((4837459894070637296, 9508415890860424892), GridSearchControl)
 agcls.AgTypeNameMap["GridSearchControl"] = GridSearchControl
 
 class GridSearchResultCollection(SupportsDeleteCallback):
@@ -52314,7 +54237,7 @@ class GridSearchResultCollection(SupportsDeleteCallback):
     _get_count_method_offset = 3
     _get_result_by_paths_method_offset = 4
     _metadata = {
-        "iid_data" : (4758661919879989672, 11442891986959097493),
+        "iid_data" : (5746346369301004778, 18098233442813415854),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -52383,7 +54306,7 @@ class GridSearchResultCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GridSearchResultCollection, [GridSearchResultCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5269787613116083574, 524079993261553293), GridSearchResultCollection)
+agcls.AgClassCatalog.add_catalog_entry((5024344653030699584, 2952058538634494893), GridSearchResultCollection)
 agcls.AgTypeNameMap["GridSearchResultCollection"] = GridSearchResultCollection
 
 class GridSearchResult(SupportsDeleteCallback):
@@ -52403,7 +54326,7 @@ class GridSearchResult(SupportsDeleteCallback):
     _get_custom_display_unit_method_offset = 10
     _set_custom_display_unit_method_offset = 11
     _metadata = {
-        "iid_data" : (5085356470408734259, 12084031111375475366),
+        "iid_data" : (4992090206523535549, 14664080139649058996),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -52515,7 +54438,7 @@ class GridSearchResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GridSearchResult, [GridSearchResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4937096937333925880, 757142270461828760), GridSearchResult)
+agcls.AgClassCatalog.add_catalog_entry((4980461545100350191, 17239349709035204541), GridSearchResult)
 agcls.AgTypeNameMap["GridSearchResult"] = GridSearchResult
 
 class CalculationObjectLinkEmbedControlCollection(SupportsDeleteCallback):
@@ -52534,7 +54457,7 @@ class CalculationObjectLinkEmbedControlCollection(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 9
     _get_item_by_name_method_offset = 10
     _metadata = {
-        "iid_data" : (5563123083513181514, 17290440528090745231),
+        "iid_data" : (4686778086372410855, 9535433120098812843),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -52645,7 +54568,7 @@ class CalculationObjectLinkEmbedControlCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationObjectLinkEmbedControlCollection, [CalculationObjectLinkEmbedControlCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5719207221443687100, 18379399996235772605), CalculationObjectLinkEmbedControlCollection)
+agcls.AgClassCatalog.add_catalog_entry((5259005966022246562, 14273644362705022878), CalculationObjectLinkEmbedControlCollection)
 agcls.AgTypeNameMap["CalculationObjectLinkEmbedControlCollection"] = CalculationObjectLinkEmbedControlCollection
 
 class ProfileBisection(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
@@ -52662,7 +54585,7 @@ class ProfileBisection(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallbac
     _get_maximum_iterations_method_offset = 7
     _set_maximum_iterations_method_offset = 8
     _metadata = {
-        "iid_data" : (4869548750746603413, 18221766685931608474),
+        "iid_data" : (5221822488625999312, 17349278734792024739),
         "vtable_reference" : IProfile._vtable_offset + IProfile._num_methods - 1,
     }
     _property_names = {}
@@ -52755,7 +54678,7 @@ class ProfileBisection(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallbac
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProfileBisection, [ProfileBisection, IProfile, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4978358905423378133, 5715780492563669683), ProfileBisection)
+agcls.AgClassCatalog.add_catalog_entry((4831751961475764086, 17548379429202775454), ProfileBisection)
 agcls.AgTypeNameMap["ProfileBisection"] = ProfileBisection
 
 class BisectionControl(SupportsDeleteCallback):
@@ -52777,7 +54700,7 @@ class BisectionControl(SupportsDeleteCallback):
     _get_custom_display_unit_method_offset = 12
     _set_custom_display_unit_method_offset = 13
     _metadata = {
-        "iid_data" : (5506505844080734602, 5687964756702748064),
+        "iid_data" : (5397670769218273792, 13301960962226185375),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -52905,7 +54828,7 @@ class BisectionControl(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BisectionControl, [BisectionControl, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5730147831056659199, 16297410616900240567), BisectionControl)
+agcls.AgClassCatalog.add_catalog_entry((5375408899264619554, 14281903727113274293), BisectionControl)
 agcls.AgTypeNameMap["BisectionControl"] = BisectionControl
 
 class BisectionControlCollection(SupportsDeleteCallback):
@@ -52918,7 +54841,7 @@ class BisectionControlCollection(SupportsDeleteCallback):
     _get_count_method_offset = 3
     _get_control_by_paths_method_offset = 4
     _metadata = {
-        "iid_data" : (5067962422209494432, 14690707282194004360),
+        "iid_data" : (5184836803155314417, 8533156819230061231),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -52987,7 +54910,7 @@ class BisectionControlCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BisectionControlCollection, [BisectionControlCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5413946160255400988, 3723160509644083091), BisectionControlCollection)
+agcls.AgClassCatalog.add_catalog_entry((5157600711115730085, 2065227331819075225), BisectionControlCollection)
 agcls.AgTypeNameMap["BisectionControlCollection"] = BisectionControlCollection
 
 class BisectionResult(SupportsDeleteCallback):
@@ -53009,7 +54932,7 @@ class BisectionResult(SupportsDeleteCallback):
     _get_custom_display_unit_method_offset = 12
     _set_custom_display_unit_method_offset = 13
     _metadata = {
-        "iid_data" : (5002983920746056467, 14435764932344965529),
+        "iid_data" : (4888060932289294604, 576390240906889105),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -53137,7 +55060,7 @@ class BisectionResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BisectionResult, [BisectionResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4679191932121975856, 3661654645336243355), BisectionResult)
+agcls.AgClassCatalog.add_catalog_entry((5401733279616373390, 12965508332942966707), BisectionResult)
 agcls.AgTypeNameMap["BisectionResult"] = BisectionResult
 
 class BisectionResultCollection(SupportsDeleteCallback):
@@ -53150,7 +55073,7 @@ class BisectionResultCollection(SupportsDeleteCallback):
     _get_count_method_offset = 3
     _get_result_by_paths_method_offset = 4
     _metadata = {
-        "iid_data" : (5274158208537002615, 13074544314501011364),
+        "iid_data" : (5339978888190246595, 3213694863704268439),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -53219,5 +55142,1173 @@ class BisectionResultCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BisectionResultCollection, [BisectionResultCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5219088716918017814, 2293503427773161615), BisectionResultCollection)
+agcls.AgClassCatalog.add_catalog_entry((5640190044808217186, 16164990214097189036), BisectionResultCollection)
 agcls.AgTypeNameMap["BisectionResultCollection"] = BisectionResultCollection
+
+class FlightDynamicsRecordCreator(SupportsDeleteCallback):
+    """Flight dynamics record creator."""
+
+    _num_methods = 13
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_segment_name_method_offset = 1
+    _set_segment_name_method_offset = 2
+    _get_desired_epoch_type_method_offset = 3
+    _set_desired_epoch_type_method_offset = 4
+    _get_epoch_method_offset = 5
+    _set_epoch_method_offset = 6
+    _get_preview_method_offset = 7
+    _export_method_offset = 8
+    _get_use_default_record_name_method_offset = 9
+    _set_use_default_record_name_method_offset = 10
+    _get_record_name_method_offset = 11
+    _set_record_name_method_offset = 12
+    _reset_method_offset = 13
+    _metadata = {
+        "iid_data" : (5520453339668107661, 5640035844857452949),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, FlightDynamicsRecordCreator)
+
+    _get_segment_name_metadata = { "offset" : _get_segment_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def segment_name(self) -> str:
+        """Get or set the segment to pull the ephemeris from."""
+        return self._intf.get_property(FlightDynamicsRecordCreator._metadata, FlightDynamicsRecordCreator._get_segment_name_metadata)
+
+    _set_segment_name_metadata = { "offset" : _set_segment_name_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @segment_name.setter
+    def segment_name(self, value:str) -> None:
+        return self._intf.set_property(FlightDynamicsRecordCreator._metadata, FlightDynamicsRecordCreator._set_segment_name_metadata, value)
+
+    _get_desired_epoch_type_metadata = { "offset" : _get_desired_epoch_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(FlightDynamicsRecordEpochType),) }
+    @property
+    def desired_epoch_type(self) -> "FlightDynamicsRecordEpochType":
+        """Get or sets the  the state from the ephemeris."""
+        return self._intf.get_property(FlightDynamicsRecordCreator._metadata, FlightDynamicsRecordCreator._get_desired_epoch_type_metadata)
+
+    _set_desired_epoch_type_metadata = { "offset" : _set_desired_epoch_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(FlightDynamicsRecordEpochType),) }
+    @desired_epoch_type.setter
+    def desired_epoch_type(self, value:"FlightDynamicsRecordEpochType") -> None:
+        return self._intf.set_property(FlightDynamicsRecordCreator._metadata, FlightDynamicsRecordCreator._set_desired_epoch_type_metadata, value)
+
+    _get_epoch_metadata = { "offset" : _get_epoch_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def epoch(self) -> typing.Any:
+        """Get or set the Date & Time associated with this launch time."""
+        return self._intf.get_property(FlightDynamicsRecordCreator._metadata, FlightDynamicsRecordCreator._get_epoch_metadata)
+
+    _set_epoch_metadata = { "offset" : _set_epoch_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @epoch.setter
+    def epoch(self, value:typing.Any) -> None:
+        return self._intf.set_property(FlightDynamicsRecordCreator._metadata, FlightDynamicsRecordCreator._set_epoch_metadata, value)
+
+    _get_preview_metadata = { "offset" : _get_preview_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def preview(self) -> "FlightDynamicsRecordPreview":
+        """Get the flight dynamics record preview."""
+        return self._intf.get_property(FlightDynamicsRecordCreator._metadata, FlightDynamicsRecordCreator._get_preview_metadata)
+
+    _export_metadata = { "offset" : _export_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def export(self) -> None:
+        """Set the converted initial state to be used by the problem."""
+        return self._intf.invoke(FlightDynamicsRecordCreator._metadata, FlightDynamicsRecordCreator._export_metadata, )
+
+    _get_use_default_record_name_metadata = { "offset" : _get_use_default_record_name_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_default_record_name(self) -> bool:
+        """Get or set the option for using the default record name."""
+        return self._intf.get_property(FlightDynamicsRecordCreator._metadata, FlightDynamicsRecordCreator._get_use_default_record_name_metadata)
+
+    _set_use_default_record_name_metadata = { "offset" : _set_use_default_record_name_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_default_record_name.setter
+    def use_default_record_name(self, value:bool) -> None:
+        return self._intf.set_property(FlightDynamicsRecordCreator._metadata, FlightDynamicsRecordCreator._set_use_default_record_name_metadata, value)
+
+    _get_record_name_metadata = { "offset" : _get_record_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def record_name(self) -> str:
+        """Get or set the flight dynamics record name."""
+        return self._intf.get_property(FlightDynamicsRecordCreator._metadata, FlightDynamicsRecordCreator._get_record_name_metadata)
+
+    _set_record_name_metadata = { "offset" : _set_record_name_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @record_name.setter
+    def record_name(self, value:str) -> None:
+        return self._intf.set_property(FlightDynamicsRecordCreator._metadata, FlightDynamicsRecordCreator._set_record_name_metadata, value)
+
+    _reset_metadata = { "offset" : _reset_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def reset(self) -> None:
+        """Reset the flight dynamics record creator parameters to default values."""
+        return self._intf.invoke(FlightDynamicsRecordCreator._metadata, FlightDynamicsRecordCreator._reset_metadata, )
+
+    _property_names[segment_name] = "segment_name"
+    _property_names[desired_epoch_type] = "desired_epoch_type"
+    _property_names[epoch] = "epoch"
+    _property_names[preview] = "preview"
+    _property_names[use_default_record_name] = "use_default_record_name"
+    _property_names[record_name] = "record_name"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type FlightDynamicsRecordCreator."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, FlightDynamicsRecordCreator)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, FlightDynamicsRecordCreator, [FlightDynamicsRecordCreator, ])
+
+agcls.AgClassCatalog.add_catalog_entry((4627216992777549771, 6370155646715156155), FlightDynamicsRecordCreator)
+agcls.AgTypeNameMap["FlightDynamicsRecordCreator"] = FlightDynamicsRecordCreator
+
+class FlightDynamicsRecordPreview(SupportsDeleteCallback):
+    """Flight dynamics record preview."""
+
+    _num_methods = 8
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_preview_result_label_method_offset = 1
+    _get_epoch_label_method_offset = 2
+    _get_rx_label_method_offset = 3
+    _get_ry_label_method_offset = 4
+    _get_rz_label_method_offset = 5
+    _get_vx_label_method_offset = 6
+    _get_vy_label_method_offset = 7
+    _get_vz_label_method_offset = 8
+    _metadata = {
+        "iid_data" : (4906035350535645867, 16755140245840141245),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, FlightDynamicsRecordPreview)
+
+    _get_preview_result_label_metadata = { "offset" : _get_preview_result_label_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def preview_result_label(self) -> str:
+        """Get the result of the initial state validation operation."""
+        return self._intf.get_property(FlightDynamicsRecordPreview._metadata, FlightDynamicsRecordPreview._get_preview_result_label_metadata)
+
+    _get_epoch_label_metadata = { "offset" : _get_epoch_label_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def epoch_label(self) -> str:
+        """Get the epoch of the retrieved state from the ephemeris."""
+        return self._intf.get_property(FlightDynamicsRecordPreview._metadata, FlightDynamicsRecordPreview._get_epoch_label_metadata)
+
+    _get_rx_label_metadata = { "offset" : _get_rx_label_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def rx_label(self) -> str:
+        """Get the initial x position component for import label."""
+        return self._intf.get_property(FlightDynamicsRecordPreview._metadata, FlightDynamicsRecordPreview._get_rx_label_metadata)
+
+    _get_ry_label_metadata = { "offset" : _get_ry_label_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def ry_label(self) -> str:
+        """Get the initial y position component for import label."""
+        return self._intf.get_property(FlightDynamicsRecordPreview._metadata, FlightDynamicsRecordPreview._get_ry_label_metadata)
+
+    _get_rz_label_metadata = { "offset" : _get_rz_label_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def rz_label(self) -> str:
+        """Get the initial z position component for import label."""
+        return self._intf.get_property(FlightDynamicsRecordPreview._metadata, FlightDynamicsRecordPreview._get_rz_label_metadata)
+
+    _get_vx_label_metadata = { "offset" : _get_vx_label_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def vx_label(self) -> str:
+        """Get the x velocity component for import label."""
+        return self._intf.get_property(FlightDynamicsRecordPreview._metadata, FlightDynamicsRecordPreview._get_vx_label_metadata)
+
+    _get_vy_label_metadata = { "offset" : _get_vy_label_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def vy_label(self) -> str:
+        """Get the y velocity component for import label."""
+        return self._intf.get_property(FlightDynamicsRecordPreview._metadata, FlightDynamicsRecordPreview._get_vy_label_metadata)
+
+    _get_vz_label_metadata = { "offset" : _get_vz_label_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def vz_label(self) -> str:
+        """Get the z velocity component for import label."""
+        return self._intf.get_property(FlightDynamicsRecordPreview._metadata, FlightDynamicsRecordPreview._get_vz_label_metadata)
+
+    _property_names[preview_result_label] = "preview_result_label"
+    _property_names[epoch_label] = "epoch_label"
+    _property_names[rx_label] = "rx_label"
+    _property_names[ry_label] = "ry_label"
+    _property_names[rz_label] = "rz_label"
+    _property_names[vx_label] = "vx_label"
+    _property_names[vy_label] = "vy_label"
+    _property_names[vz_label] = "vz_label"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type FlightDynamicsRecordPreview."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, FlightDynamicsRecordPreview)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, FlightDynamicsRecordPreview, [FlightDynamicsRecordPreview, ])
+
+agcls.AgClassCatalog.add_catalog_entry((5411971604735159521, 15440500176408799904), FlightDynamicsRecordPreview)
+agcls.AgTypeNameMap["FlightDynamicsRecordPreview"] = FlightDynamicsRecordPreview
+
+class FlightDynamicsRecord(IComponentInfo, ICloneable, SupportsDeleteCallback):
+    """Properties for the Flight Dynamics Record."""
+
+    _num_methods = 7
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_notes_method_offset = 1
+    _set_notes_method_offset = 2
+    _get_record_time_stamp_method_offset = 3
+    _get_propagator_name_method_offset = 4
+    _get_propagator_method_offset = 5
+    _get_state_config_properties_method_offset = 6
+    _export_propulsion_to_browser_method_offset = 7
+    _metadata = {
+        "iid_data" : (5483155947268462567, 8876247271768353951),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, FlightDynamicsRecord)
+
+    _get_notes_metadata = { "offset" : _get_notes_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def notes(self) -> str:
+        """User commecnt/information associated with the record."""
+        return self._intf.get_property(FlightDynamicsRecord._metadata, FlightDynamicsRecord._get_notes_metadata)
+
+    _set_notes_metadata = { "offset" : _set_notes_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @notes.setter
+    def notes(self, value:str) -> None:
+        return self._intf.set_property(FlightDynamicsRecord._metadata, FlightDynamicsRecord._set_notes_metadata, value)
+
+    _get_record_time_stamp_metadata = { "offset" : _get_record_time_stamp_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def record_time_stamp(self) -> str:
+        """Time stamp when the FD record was created from its source."""
+        return self._intf.get_property(FlightDynamicsRecord._metadata, FlightDynamicsRecord._get_record_time_stamp_metadata)
+
+    _get_propagator_name_metadata = { "offset" : _get_propagator_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def propagator_name(self) -> str:
+        """Propagator name."""
+        return self._intf.get_property(FlightDynamicsRecord._metadata, FlightDynamicsRecord._get_propagator_name_metadata)
+
+    _get_propagator_metadata = { "offset" : _get_propagator_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def propagator(self) -> "IComponentInfo":
+        """The numerical propagator (force model and integrator) configuration associated with this record"""
+        return self._intf.get_property(FlightDynamicsRecord._metadata, FlightDynamicsRecord._get_propagator_metadata)
+
+    _get_state_config_properties_metadata = { "offset" : _get_state_config_properties_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def state_config_properties(self) -> "StateConfigCollection":
+        """State Config. properties"""
+        return self._intf.get_property(FlightDynamicsRecord._metadata, FlightDynamicsRecord._get_state_config_properties_metadata)
+
+    _export_propulsion_to_browser_metadata = { "offset" : _export_propulsion_to_browser_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def export_propulsion_to_browser(self) -> None:
+        """Export the version of the propagator stored in this record to the component browser."""
+        return self._intf.invoke(FlightDynamicsRecord._metadata, FlightDynamicsRecord._export_propulsion_to_browser_metadata, )
+
+    _property_names[notes] = "notes"
+    _property_names[record_time_stamp] = "record_time_stamp"
+    _property_names[propagator_name] = "propagator_name"
+    _property_names[propagator] = "propagator"
+    _property_names[state_config_properties] = "state_config_properties"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type FlightDynamicsRecord."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, FlightDynamicsRecord)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IComponentInfo._private_init(self, intf)
+        ICloneable._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, FlightDynamicsRecord, [FlightDynamicsRecord, IComponentInfo, ICloneable])
+
+agcls.AgClassCatalog.add_catalog_entry((4807092537151161144, 1177068905856649), FlightDynamicsRecord)
+agcls.AgTypeNameMap["FlightDynamicsRecord"] = FlightDynamicsRecord
+
+class StateConfig(SupportsDeleteCallback):
+    """The state configuration properties."""
+
+    _num_methods = 3
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_name_method_offset = 1
+    _get_value_method_offset = 2
+    _get_description_method_offset = 3
+    _metadata = {
+        "iid_data" : (5218585370721131078, 14389318378123657388),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, StateConfig)
+
+    _get_name_metadata = { "offset" : _get_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def name(self) -> str:
+        """State config. property name"""
+        return self._intf.get_property(StateConfig._metadata, StateConfig._get_name_metadata)
+
+    _get_value_metadata = { "offset" : _get_value_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def value(self) -> typing.Any:
+        """State config. property value"""
+        return self._intf.get_property(StateConfig._metadata, StateConfig._get_value_metadata)
+
+    _get_description_metadata = { "offset" : _get_description_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def description(self) -> str:
+        """State config. property description"""
+        return self._intf.get_property(StateConfig._metadata, StateConfig._get_description_metadata)
+
+    _property_names[name] = "name"
+    _property_names[value] = "value"
+    _property_names[description] = "description"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type StateConfig."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, StateConfig)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, StateConfig, [StateConfig, ])
+
+agcls.AgClassCatalog.add_catalog_entry((5147056345731206153, 4050656358881841821), StateConfig)
+agcls.AgTypeNameMap["StateConfig"] = StateConfig
+
+class StateConfigCollection(SupportsDeleteCallback):
+    """The list of state config. properties."""
+
+    _num_methods = 5
+    _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
+    _item_method_offset = 1
+    _get__new_enum_method_offset = 2
+    _get_count_method_offset = 3
+    _get_item_by_index_method_offset = 4
+    _get_item_by_name_method_offset = 5
+    _metadata = {
+        "iid_data" : (5638609249729678772, 3763226006554911146),
+        "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, StateConfigCollection)
+    def __iter__(self):
+        """Create an iterator for the StateConfigCollection object."""
+        self.__dict__["_enumerator"] = self._new_enum
+        self._enumerator.reset()
+        return self
+    def __next__(self) -> "StateConfig":
+        """Return the next element in the collection."""
+        if self._enumerator is None:
+            raise StopIteration
+        nextval = self._enumerator.next()
+        if nextval is None:
+            raise StopIteration
+        return nextval
+
+    _item_metadata = { "offset" : _item_method_offset,
+            "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
+    def item(self, index_or_name:typing.Any) -> "StateConfig":
+        """Allow you to iterate through the collection."""
+        return self._intf.invoke(StateConfigCollection._metadata, StateConfigCollection._item_metadata, index_or_name, OutArg())
+
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.IEnumVariantArg,) }
+    @property
+    def _new_enum(self) -> EnumeratorProxy:
+        """Allow you to enumerate through the collection."""
+        return self._intf.get_property(StateConfigCollection._metadata, StateConfigCollection._get__new_enum_metadata)
+
+    _get_count_metadata = { "offset" : _get_count_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LongArg,) }
+    @property
+    def count(self) -> int:
+        """Return the size of the collection."""
+        return self._intf.get_property(StateConfigCollection._metadata, StateConfigCollection._get_count_metadata)
+
+    _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
+            "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
+    def get_item_by_index(self, index:int) -> "StateConfig":
+        """Retrieve a state config property in the collection by index."""
+        return self._intf.invoke(StateConfigCollection._metadata, StateConfigCollection._get_item_by_index_metadata, index, OutArg())
+
+    _get_item_by_name_metadata = { "offset" : _get_item_by_name_method_offset,
+            "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
+    def get_item_by_name(self, name:str) -> "StateConfig":
+        """Retrieve a state config property in the collection by name."""
+        return self._intf.invoke(StateConfigCollection._metadata, StateConfigCollection._get_item_by_name_metadata, name, OutArg())
+
+    __getitem__ = item
+
+
+    _property_names[_new_enum] = "_new_enum"
+    _property_names[count] = "count"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type StateConfigCollection."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, StateConfigCollection)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, StateConfigCollection, [StateConfigCollection, ])
+
+agcls.AgClassCatalog.add_catalog_entry((5361079505222259205, 3206329748982143674), StateConfigCollection)
+agcls.AgTypeNameMap["StateConfigCollection"] = StateConfigCollection
+
+class NPlateStochasticParameter(SupportsDeleteCallback):
+    """Properties for individual NPlate Stochastic Parameter."""
+
+    _num_methods = 11
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_name_method_offset = 1
+    _get_nominal_value_method_offset = 2
+    _set_nominal_value_method_offset = 3
+    _get_estimate_parameter_method_offset = 4
+    _set_estimate_parameter_method_offset = 5
+    _get_half_life_method_offset = 6
+    _set_half_life_method_offset = 7
+    _get_sigma_method_offset = 8
+    _set_sigma_method_offset = 9
+    _get_long_term_sigma_method_offset = 10
+    _set_long_term_sigma_method_offset = 11
+    _metadata = {
+        "iid_data" : (5315915602862323331, 5980694002638308227),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, NPlateStochasticParameter)
+
+    _get_name_metadata = { "offset" : _get_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def name(self) -> str:
+        """NPlate Stochastic Parameter name."""
+        return self._intf.get_property(NPlateStochasticParameter._metadata, NPlateStochasticParameter._get_name_metadata)
+
+    _get_nominal_value_metadata = { "offset" : _get_nominal_value_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def nominal_value(self) -> float:
+        """Nominal Value for this N-Plate group."""
+        return self._intf.get_property(NPlateStochasticParameter._metadata, NPlateStochasticParameter._get_nominal_value_metadata)
+
+    _set_nominal_value_metadata = { "offset" : _set_nominal_value_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @nominal_value.setter
+    def nominal_value(self, value:float) -> None:
+        return self._intf.set_property(NPlateStochasticParameter._metadata, NPlateStochasticParameter._set_nominal_value_metadata, value)
+
+    _get_estimate_parameter_metadata = { "offset" : _get_estimate_parameter_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def estimate_parameter(self) -> bool:
+        """True if estimating this parameter."""
+        return self._intf.get_property(NPlateStochasticParameter._metadata, NPlateStochasticParameter._get_estimate_parameter_metadata)
+
+    _set_estimate_parameter_metadata = { "offset" : _set_estimate_parameter_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @estimate_parameter.setter
+    def estimate_parameter(self, value:bool) -> None:
+        return self._intf.set_property(NPlateStochasticParameter._metadata, NPlateStochasticParameter._set_estimate_parameter_metadata, value)
+
+    _get_half_life_metadata = { "offset" : _get_half_life_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def half_life(self) -> float:
+        """Half life of the parameter."""
+        return self._intf.get_property(NPlateStochasticParameter._metadata, NPlateStochasticParameter._get_half_life_metadata)
+
+    _set_half_life_metadata = { "offset" : _set_half_life_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @half_life.setter
+    def half_life(self, value:float) -> None:
+        return self._intf.set_property(NPlateStochasticParameter._metadata, NPlateStochasticParameter._set_half_life_metadata, value)
+
+    _get_sigma_metadata = { "offset" : _get_sigma_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def sigma(self) -> float:
+        """Sigma value for the parameter."""
+        return self._intf.get_property(NPlateStochasticParameter._metadata, NPlateStochasticParameter._get_sigma_metadata)
+
+    _set_sigma_metadata = { "offset" : _set_sigma_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @sigma.setter
+    def sigma(self, value:float) -> None:
+        return self._intf.set_property(NPlateStochasticParameter._metadata, NPlateStochasticParameter._set_sigma_metadata, value)
+
+    _get_long_term_sigma_metadata = { "offset" : _get_long_term_sigma_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def long_term_sigma(self) -> float:
+        """Long term Sigma value for the parameter."""
+        return self._intf.get_property(NPlateStochasticParameter._metadata, NPlateStochasticParameter._get_long_term_sigma_metadata)
+
+    _set_long_term_sigma_metadata = { "offset" : _set_long_term_sigma_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @long_term_sigma.setter
+    def long_term_sigma(self, value:float) -> None:
+        return self._intf.set_property(NPlateStochasticParameter._metadata, NPlateStochasticParameter._set_long_term_sigma_metadata, value)
+
+    _property_names[name] = "name"
+    _property_names[nominal_value] = "nominal_value"
+    _property_names[estimate_parameter] = "estimate_parameter"
+    _property_names[half_life] = "half_life"
+    _property_names[sigma] = "sigma"
+    _property_names[long_term_sigma] = "long_term_sigma"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type NPlateStochasticParameter."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, NPlateStochasticParameter)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, NPlateStochasticParameter, [NPlateStochasticParameter, ])
+
+agcls.AgClassCatalog.add_catalog_entry((4680468058143437420, 675355810905676729), NPlateStochasticParameter)
+agcls.AgTypeNameMap["NPlateStochasticParameter"] = NPlateStochasticParameter
+
+class NPlateStochasticParametersCollection(SupportsDeleteCallback):
+    """The list of NPlate Stochastic Parameters."""
+
+    _num_methods = 5
+    _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
+    _item_method_offset = 1
+    _get__new_enum_method_offset = 2
+    _get_count_method_offset = 3
+    _get_item_by_index_method_offset = 4
+    _get_item_by_name_method_offset = 5
+    _metadata = {
+        "iid_data" : (5050835475032650439, 15923412898073845411),
+        "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, NPlateStochasticParametersCollection)
+    def __iter__(self):
+        """Create an iterator for the NPlateStochasticParametersCollection object."""
+        self.__dict__["_enumerator"] = self._new_enum
+        self._enumerator.reset()
+        return self
+    def __next__(self) -> "NPlateStochasticParameter":
+        """Return the next element in the collection."""
+        if self._enumerator is None:
+            raise StopIteration
+        nextval = self._enumerator.next()
+        if nextval is None:
+            raise StopIteration
+        return nextval
+
+    _item_metadata = { "offset" : _item_method_offset,
+            "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
+    def item(self, index_or_name:typing.Any) -> "NPlateStochasticParameter":
+        """Iterate through the collection."""
+        return self._intf.invoke(NPlateStochasticParametersCollection._metadata, NPlateStochasticParametersCollection._item_metadata, index_or_name, OutArg())
+
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.IEnumVariantArg,) }
+    @property
+    def _new_enum(self) -> EnumeratorProxy:
+        """A property that allows you to enumerate through the collection."""
+        return self._intf.get_property(NPlateStochasticParametersCollection._metadata, NPlateStochasticParametersCollection._get__new_enum_metadata)
+
+    _get_count_metadata = { "offset" : _get_count_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LongArg,) }
+    @property
+    def count(self) -> int:
+        """Get the number of associated objects in the set."""
+        return self._intf.get_property(NPlateStochasticParametersCollection._metadata, NPlateStochasticParametersCollection._get_count_metadata)
+
+    _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
+            "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
+    def get_item_by_index(self, index:int) -> "NPlateStochasticParameter":
+        """Retrieve an associated object from the collection by index."""
+        return self._intf.invoke(NPlateStochasticParametersCollection._metadata, NPlateStochasticParametersCollection._get_item_by_index_metadata, index, OutArg())
+
+    _get_item_by_name_metadata = { "offset" : _get_item_by_name_method_offset,
+            "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
+    def get_item_by_name(self, name:str) -> "NPlateStochasticParameter":
+        """Retrieve an associated object from the collection by name."""
+        return self._intf.invoke(NPlateStochasticParametersCollection._metadata, NPlateStochasticParametersCollection._get_item_by_name_metadata, name, OutArg())
+
+    __getitem__ = item
+
+
+    _property_names[_new_enum] = "_new_enum"
+    _property_names[count] = "count"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type NPlateStochasticParametersCollection."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, NPlateStochasticParametersCollection)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, NPlateStochasticParametersCollection, [NPlateStochasticParametersCollection, ])
+
+agcls.AgClassCatalog.add_catalog_entry((4680315072251616400, 8797571931979123131), NPlateStochasticParametersCollection)
+agcls.AgTypeNameMap["NPlateStochasticParametersCollection"] = NPlateStochasticParametersCollection
+
+class StochasticDensityCorrection(SupportsDeleteCallback):
+    """Properties for Stochastic Density Corrections."""
+
+    _num_methods = 10
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_half_life_method_offset = 1
+    _set_half_life_method_offset = 2
+    _get_sigma_method_offset = 3
+    _set_sigma_method_offset = 4
+    _get_sigma_scale_method_offset = 5
+    _set_sigma_scale_method_offset = 6
+    _get_density_ratio_root_method_offset = 7
+    _set_density_ratio_root_method_offset = 8
+    _get_density_increase_threshold_method_offset = 9
+    _set_density_increase_threshold_method_offset = 10
+    _metadata = {
+        "iid_data" : (5160946642463797400, 11588875655508637096),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, StochasticDensityCorrection)
+
+    _get_half_life_metadata = { "offset" : _get_half_life_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def half_life(self) -> float:
+        """Density Correction Half-life."""
+        return self._intf.get_property(StochasticDensityCorrection._metadata, StochasticDensityCorrection._get_half_life_metadata)
+
+    _set_half_life_metadata = { "offset" : _set_half_life_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @half_life.setter
+    def half_life(self, value:float) -> None:
+        return self._intf.set_property(StochasticDensityCorrection._metadata, StochasticDensityCorrection._set_half_life_metadata, value)
+
+    _get_sigma_metadata = { "offset" : _get_sigma_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def sigma(self) -> float:
+        """Uncertainty in relative density at periapsis for non-Earth atmospheres."""
+        return self._intf.get_property(StochasticDensityCorrection._metadata, StochasticDensityCorrection._get_sigma_metadata)
+
+    _set_sigma_metadata = { "offset" : _set_sigma_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @sigma.setter
+    def sigma(self, value:float) -> None:
+        return self._intf.set_property(StochasticDensityCorrection._metadata, StochasticDensityCorrection._set_sigma_metadata, value)
+
+    _get_sigma_scale_metadata = { "offset" : _get_sigma_scale_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def sigma_scale(self) -> float:
+        """Scale Factor for Density Correction Sigma."""
+        return self._intf.get_property(StochasticDensityCorrection._metadata, StochasticDensityCorrection._get_sigma_scale_metadata)
+
+    _set_sigma_scale_metadata = { "offset" : _set_sigma_scale_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @sigma_scale.setter
+    def sigma_scale(self, value:float) -> None:
+        return self._intf.set_property(StochasticDensityCorrection._metadata, StochasticDensityCorrection._set_sigma_scale_metadata, value)
+
+    _get_density_ratio_root_metadata = { "offset" : _get_density_ratio_root_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def density_ratio_root(self) -> float:
+        """Mapping of density uncertainty goes as K^(1/n)."""
+        return self._intf.get_property(StochasticDensityCorrection._metadata, StochasticDensityCorrection._get_density_ratio_root_metadata)
+
+    _set_density_ratio_root_metadata = { "offset" : _set_density_ratio_root_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @density_ratio_root.setter
+    def density_ratio_root(self, value:float) -> None:
+        return self._intf.set_property(StochasticDensityCorrection._metadata, StochasticDensityCorrection._set_density_ratio_root_metadata, value)
+
+    _get_density_increase_threshold_metadata = { "offset" : _get_density_increase_threshold_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def density_increase_threshold(self) -> float:
+        """Open density gain when density ratio increases by this amount."""
+        return self._intf.get_property(StochasticDensityCorrection._metadata, StochasticDensityCorrection._get_density_increase_threshold_metadata)
+
+    _set_density_increase_threshold_metadata = { "offset" : _set_density_increase_threshold_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @density_increase_threshold.setter
+    def density_increase_threshold(self, value:float) -> None:
+        return self._intf.set_property(StochasticDensityCorrection._metadata, StochasticDensityCorrection._set_density_increase_threshold_metadata, value)
+
+    _property_names[half_life] = "half_life"
+    _property_names[sigma] = "sigma"
+    _property_names[sigma_scale] = "sigma_scale"
+    _property_names[density_ratio_root] = "density_ratio_root"
+    _property_names[density_increase_threshold] = "density_increase_threshold"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type StochasticDensityCorrection."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, StochasticDensityCorrection)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, StochasticDensityCorrection, [StochasticDensityCorrection, ])
+
+agcls.AgClassCatalog.add_catalog_entry((5571662393103124469, 15851609502791835562), StochasticDensityCorrection)
+agcls.AgTypeNameMap["StochasticDensityCorrection"] = StochasticDensityCorrection
+
+class StochasticModelParameters(SupportsDeleteCallback):
+    """Properties for Stochastic Model Parameters."""
+
+    _num_methods = 14
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_model_type_method_offset = 1
+    _set_model_type_method_offset = 2
+    _get_half_life_method_offset = 3
+    _set_half_life_method_offset = 4
+    _get_sigma_method_offset = 5
+    _set_sigma_method_offset = 6
+    _get_sigma_long_term_method_offset = 7
+    _set_sigma_long_term_method_offset = 8
+    _get_error_threshold_method_offset = 9
+    _set_error_threshold_method_offset = 10
+    _get_process_noise_step_method_offset = 11
+    _set_process_noise_step_method_offset = 12
+    _get_diffusion_coefficient_method_offset = 13
+    _set_diffusion_coefficient_method_offset = 14
+    _metadata = {
+        "iid_data" : (4809890025149670810, 15837781490732927126),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, StochasticModelParameters)
+
+    _get_model_type_metadata = { "offset" : _get_model_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(StochasticModel),) }
+    @property
+    def model_type(self) -> "StochasticModel":
+        """Type of stochastic model used for SRP correction."""
+        return self._intf.get_property(StochasticModelParameters._metadata, StochasticModelParameters._get_model_type_metadata)
+
+    _set_model_type_metadata = { "offset" : _set_model_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(StochasticModel),) }
+    @model_type.setter
+    def model_type(self, value:"StochasticModel") -> None:
+        return self._intf.set_property(StochasticModelParameters._metadata, StochasticModelParameters._set_model_type_metadata, value)
+
+    _get_half_life_metadata = { "offset" : _get_half_life_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def half_life(self) -> float:
+        """Half life value for Gauss Markov stochastic process."""
+        return self._intf.get_property(StochasticModelParameters._metadata, StochasticModelParameters._get_half_life_metadata)
+
+    _set_half_life_metadata = { "offset" : _set_half_life_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @half_life.setter
+    def half_life(self, value:float) -> None:
+        return self._intf.set_property(StochasticModelParameters._metadata, StochasticModelParameters._set_half_life_metadata, value)
+
+    _get_sigma_metadata = { "offset" : _get_sigma_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def sigma(self) -> float:
+        """Root variance of the initial error in the nominal value."""
+        return self._intf.get_property(StochasticModelParameters._metadata, StochasticModelParameters._get_sigma_metadata)
+
+    _set_sigma_metadata = { "offset" : _set_sigma_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @sigma.setter
+    def sigma(self, value:float) -> None:
+        return self._intf.set_property(StochasticModelParameters._metadata, StochasticModelParameters._set_sigma_metadata, value)
+
+    _get_sigma_long_term_metadata = { "offset" : _get_sigma_long_term_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def sigma_long_term(self) -> float:
+        """Root variance of the initial error in the long term constant value used in the Vasicek model."""
+        return self._intf.get_property(StochasticModelParameters._metadata, StochasticModelParameters._get_sigma_long_term_metadata)
+
+    _set_sigma_long_term_metadata = { "offset" : _set_sigma_long_term_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @sigma_long_term.setter
+    def sigma_long_term(self, value:float) -> None:
+        return self._intf.set_property(StochasticModelParameters._metadata, StochasticModelParameters._set_sigma_long_term_metadata, value)
+
+    _get_error_threshold_metadata = { "offset" : _get_error_threshold_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def error_threshold(self) -> float:
+        """Covariance floor for long term mean used in the Vasicek model."""
+        return self._intf.get_property(StochasticModelParameters._metadata, StochasticModelParameters._get_error_threshold_metadata)
+
+    _set_error_threshold_metadata = { "offset" : _set_error_threshold_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @error_threshold.setter
+    def error_threshold(self, value:float) -> None:
+        return self._intf.set_property(StochasticModelParameters._metadata, StochasticModelParameters._set_error_threshold_metadata, value)
+
+    _get_process_noise_step_metadata = { "offset" : _get_process_noise_step_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def process_noise_step(self) -> float:
+        """Process noise step when minimum floor is hit used in the Vasicek model."""
+        return self._intf.get_property(StochasticModelParameters._metadata, StochasticModelParameters._get_process_noise_step_metadata)
+
+    _set_process_noise_step_metadata = { "offset" : _set_process_noise_step_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @process_noise_step.setter
+    def process_noise_step(self, value:float) -> None:
+        return self._intf.set_property(StochasticModelParameters._metadata, StochasticModelParameters._set_process_noise_step_metadata, value)
+
+    _get_diffusion_coefficient_metadata = { "offset" : _get_diffusion_coefficient_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def diffusion_coefficient(self) -> float:
+        """Determine the amount of process noise to be added to state covariance used in the Random Walk model."""
+        return self._intf.get_property(StochasticModelParameters._metadata, StochasticModelParameters._get_diffusion_coefficient_metadata)
+
+    _set_diffusion_coefficient_metadata = { "offset" : _set_diffusion_coefficient_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @diffusion_coefficient.setter
+    def diffusion_coefficient(self, value:float) -> None:
+        return self._intf.set_property(StochasticModelParameters._metadata, StochasticModelParameters._set_diffusion_coefficient_metadata, value)
+
+    _property_names[model_type] = "model_type"
+    _property_names[half_life] = "half_life"
+    _property_names[sigma] = "sigma"
+    _property_names[sigma_long_term] = "sigma_long_term"
+    _property_names[error_threshold] = "error_threshold"
+    _property_names[process_noise_step] = "process_noise_step"
+    _property_names[diffusion_coefficient] = "diffusion_coefficient"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type StochasticModelParameters."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, StochasticModelParameters)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, StochasticModelParameters, [StochasticModelParameters, ])
+
+agcls.AgClassCatalog.add_catalog_entry((5419809100136675372, 647297862937289349), StochasticModelParameters)
+agcls.AgTypeNameMap["StochasticModelParameters"] = StochasticModelParameters
+
+class NPlateStochasticCorrectionParameter(SupportsDeleteCallback):
+    """Properties for individual NPlate Stochastic Parameter."""
+
+    _num_methods = 5
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_name_method_offset = 1
+    _get_initial_estimate_method_offset = 2
+    _set_initial_estimate_method_offset = 3
+    _get_long_term_initial_estimate_method_offset = 4
+    _set_long_term_initial_estimate_method_offset = 5
+    _metadata = {
+        "iid_data" : (5468856016965195279, 1584957336516041123),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, NPlateStochasticCorrectionParameter)
+
+    _get_name_metadata = { "offset" : _get_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def name(self) -> str:
+        """NPlate Stochastic Correction Parameter name."""
+        return self._intf.get_property(NPlateStochasticCorrectionParameter._metadata, NPlateStochasticCorrectionParameter._get_name_metadata)
+
+    _get_initial_estimate_metadata = { "offset" : _get_initial_estimate_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def initial_estimate(self) -> float:
+        """Initial Error Estimat."""
+        return self._intf.get_property(NPlateStochasticCorrectionParameter._metadata, NPlateStochasticCorrectionParameter._get_initial_estimate_metadata)
+
+    _set_initial_estimate_metadata = { "offset" : _set_initial_estimate_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @initial_estimate.setter
+    def initial_estimate(self, value:float) -> None:
+        return self._intf.set_property(NPlateStochasticCorrectionParameter._metadata, NPlateStochasticCorrectionParameter._set_initial_estimate_metadata, value)
+
+    _get_long_term_initial_estimate_metadata = { "offset" : _get_long_term_initial_estimate_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def long_term_initial_estimate(self) -> float:
+        """Long Term Initial Error Estimate"""
+        return self._intf.get_property(NPlateStochasticCorrectionParameter._metadata, NPlateStochasticCorrectionParameter._get_long_term_initial_estimate_metadata)
+
+    _set_long_term_initial_estimate_metadata = { "offset" : _set_long_term_initial_estimate_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @long_term_initial_estimate.setter
+    def long_term_initial_estimate(self, value:float) -> None:
+        return self._intf.set_property(NPlateStochasticCorrectionParameter._metadata, NPlateStochasticCorrectionParameter._set_long_term_initial_estimate_metadata, value)
+
+    _property_names[name] = "name"
+    _property_names[initial_estimate] = "initial_estimate"
+    _property_names[long_term_initial_estimate] = "long_term_initial_estimate"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type NPlateStochasticCorrectionParameter."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, NPlateStochasticCorrectionParameter)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, NPlateStochasticCorrectionParameter, [NPlateStochasticCorrectionParameter, ])
+
+agcls.AgClassCatalog.add_catalog_entry((5167925731570461718, 8987978264569245831), NPlateStochasticCorrectionParameter)
+agcls.AgTypeNameMap["NPlateStochasticCorrectionParameter"] = NPlateStochasticCorrectionParameter
+
+class NPlateStochasticCorrectionParametersCollection(SupportsDeleteCallback):
+    """The list of NPlate Stochastic Parameters."""
+
+    _num_methods = 5
+    _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
+    _item_method_offset = 1
+    _get__new_enum_method_offset = 2
+    _get_count_method_offset = 3
+    _get_item_by_index_method_offset = 4
+    _get_item_by_name_method_offset = 5
+    _metadata = {
+        "iid_data" : (5430217593849383322, 4588285222219692194),
+        "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, NPlateStochasticCorrectionParametersCollection)
+    def __iter__(self):
+        """Create an iterator for the NPlateStochasticCorrectionParametersCollection object."""
+        self.__dict__["_enumerator"] = self._new_enum
+        self._enumerator.reset()
+        return self
+    def __next__(self) -> "NPlateStochasticCorrectionParameter":
+        """Return the next element in the collection."""
+        if self._enumerator is None:
+            raise StopIteration
+        nextval = self._enumerator.next()
+        if nextval is None:
+            raise StopIteration
+        return nextval
+
+    _item_metadata = { "offset" : _item_method_offset,
+            "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
+    def item(self, index_or_name:typing.Any) -> "NPlateStochasticCorrectionParameter":
+        """Iterate through the collection."""
+        return self._intf.invoke(NPlateStochasticCorrectionParametersCollection._metadata, NPlateStochasticCorrectionParametersCollection._item_metadata, index_or_name, OutArg())
+
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.IEnumVariantArg,) }
+    @property
+    def _new_enum(self) -> EnumeratorProxy:
+        """A property that allows you to enumerate through the collection."""
+        return self._intf.get_property(NPlateStochasticCorrectionParametersCollection._metadata, NPlateStochasticCorrectionParametersCollection._get__new_enum_metadata)
+
+    _get_count_metadata = { "offset" : _get_count_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LongArg,) }
+    @property
+    def count(self) -> int:
+        """Get the number of associated objects in the set."""
+        return self._intf.get_property(NPlateStochasticCorrectionParametersCollection._metadata, NPlateStochasticCorrectionParametersCollection._get_count_metadata)
+
+    _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
+            "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
+    def get_item_by_index(self, index:int) -> "NPlateStochasticCorrectionParameter":
+        """Retrieve an associated object from the collection by index."""
+        return self._intf.invoke(NPlateStochasticCorrectionParametersCollection._metadata, NPlateStochasticCorrectionParametersCollection._get_item_by_index_metadata, index, OutArg())
+
+    _get_item_by_name_metadata = { "offset" : _get_item_by_name_method_offset,
+            "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
+    def get_item_by_name(self, name:str) -> "NPlateStochasticCorrectionParameter":
+        """Retrieve an associated object from the collection by name."""
+        return self._intf.invoke(NPlateStochasticCorrectionParametersCollection._metadata, NPlateStochasticCorrectionParametersCollection._get_item_by_name_metadata, name, OutArg())
+
+    __getitem__ = item
+
+
+    _property_names[_new_enum] = "_new_enum"
+    _property_names[count] = "count"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type NPlateStochasticCorrectionParametersCollection."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, NPlateStochasticCorrectionParametersCollection)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, NPlateStochasticCorrectionParametersCollection, [NPlateStochasticCorrectionParametersCollection, ])
+
+agcls.AgClassCatalog.add_catalog_entry((4735317796490436147, 10116006759640228236), NPlateStochasticCorrectionParametersCollection)
+agcls.AgTypeNameMap["NPlateStochasticCorrectionParametersCollection"] = NPlateStochasticCorrectionParametersCollection

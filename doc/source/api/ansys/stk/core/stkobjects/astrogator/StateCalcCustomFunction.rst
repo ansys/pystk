@@ -5,7 +5,7 @@ StateCalcCustomFunction
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
-   Custom Function Calc objects.
+   Do not use this class, as it is deprecated. Custom Function Calc objects.
 
 .. py:currentmodule:: StateCalcCustomFunction
 

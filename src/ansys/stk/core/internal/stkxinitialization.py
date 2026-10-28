@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -30,11 +30,7 @@ from ..internal  import marshall         as agmarshall
 from ..internal.comutil     import IDispatch
 from ..internal.apiutil     import (InterfaceProxy, initialize_from_source_object, get_interface_property,
     set_class_attribute, SupportsDeleteCallback)
-from ..utilities.exceptions import STKRuntimeError
 
-
-def _raise_uninitialized_error(*args):
-    raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
 
 class STKXInitialize(SupportsDeleteCallback):
@@ -46,7 +42,7 @@ class STKXInitialize(SupportsDeleteCallback):
     _initialize_data_method_offset = 2
     _initialize_data_ex_method_offset = 3
     _metadata = {
-        "iid_data" : (5587570431076459601, 3289199399803536798),
+        "iid_data" : (5033046144316014528, 12414997222494834876),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -61,18 +57,18 @@ class STKXInitialize(SupportsDeleteCallback):
         return self._intf.invoke(STKXInitialize._metadata, STKXInitialize._initialize_activation_context_metadata, )
 
     _initialize_data_metadata = { "offset" : _initialize_data_method_offset,
-            "arg_types" : (agcom.BSTR, agcom.BSTR,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
-    def initialize_data(self, install_home:str, config_directory:str) -> None:
-        """Copy the virtual registry to the Config directory and initialize it with the install home specified."""
-        return self._intf.invoke(STKXInitialize._metadata, STKXInitialize._initialize_data_metadata, install_home, config_directory)
+            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg,) }
+    def initialize_data(self, install_home:str, all_users_directory:str, config_directory:str) -> None:
+        """Copy the virtual registry to the Config directory and initialize it with the install home and all users directory specified."""
+        return self._intf.invoke(STKXInitialize._metadata, STKXInitialize._initialize_data_metadata, install_home, all_users_directory, config_directory)
 
     _initialize_data_ex_metadata = { "offset" : _initialize_data_ex_method_offset,
-            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg,) }
-    def initialize_data_ex(self, install_home:str, config_directory:str, defaults:bool, styles:bool, vgt:bool, amm:bool, gator:bool, online_data:bool, online_sgp4:bool) -> None:
-        """Copy the virtual registry to the Config directory and initialize it with the install home specified, and config options."""
-        return self._intf.invoke(STKXInitialize._metadata, STKXInitialize._initialize_data_ex_metadata, install_home, config_directory, defaults, styles, vgt, amm, gator, online_data, online_sgp4)
+            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg,) }
+    def initialize_data_ex(self, install_home:str, all_users_directory:str, config_directory:str, defaults:bool, styles:bool, vgt:bool, amm:bool, gator:bool, online_data:bool, online_sgp4:bool) -> None:
+        """Copy the virtual registry to the Config directory and initialize it with the install home, all users directory, and config options specified."""
+        return self._intf.invoke(STKXInitialize._metadata, STKXInitialize._initialize_data_ex_metadata, install_home, all_users_directory, config_directory, defaults, styles, vgt, amm, gator, online_data, online_sgp4)
 
 
     def __init__(self, source_object=None):
@@ -88,5 +84,5 @@ class STKXInitialize(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, STKXInitialize, [STKXInitialize, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5130722036779683869, 8760598985969493655), STKXInitialize)
+agcls.AgClassCatalog.add_catalog_entry((4887201765317381124, 912561769072360120), STKXInitialize)
 agcls.AgTypeNameMap["STKXInitialize"] = STKXInitialize

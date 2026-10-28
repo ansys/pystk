@@ -21,8 +21,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridCoordinateDefinition.set_custom`
               - Set grid values type to custom values.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridCoordinateDefinition.set_grid_values_fixed_number_of_steps`
-              - Do not use this method, as it is deprecated. Use SetGridValuesFixedNumberOfStepsEx.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridCoordinateDefinition.set_fixed_number_of_steps`
               - Set grid values type to fixed number of steps with min and max as Quantity.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridCoordinateDefinition.set_fixed_step`
               - Set grid values type to fixed step.
@@ -83,26 +81,8 @@ Method detail
 
         :obj:`~SpatialAnalysisToolGridValuesCustom`
 
-.. py:method:: set_grid_values_fixed_number_of_steps(self, min: float, max: float, num_steps: int) -> SpatialAnalysisToolGridValuesFixedNumberOfSteps
+.. py:method:: set_grid_values_fixed_number_of_steps(self, min: Quantity, max: Quantity, num_steps: int) -> SpatialAnalysisToolGridValuesFixedNumberOfSteps
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridCoordinateDefinition.set_grid_values_fixed_number_of_steps
-
-    Do not use this method, as it is deprecated. Use SetGridValuesFixedNumberOfStepsEx.
-
-    :Parameters:
-
-        **min** : :obj:`~float`
-
-        **max** : :obj:`~float`
-
-        **num_steps** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~SpatialAnalysisToolGridValuesFixedNumberOfSteps`
-
-.. py:method:: set_fixed_number_of_steps(self, min: Quantity, max: Quantity, num_steps: int) -> SpatialAnalysisToolGridValuesFixedNumberOfSteps
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridCoordinateDefinition.set_fixed_number_of_steps
 
     Set grid values type to fixed number of steps with min and max as Quantity.
 

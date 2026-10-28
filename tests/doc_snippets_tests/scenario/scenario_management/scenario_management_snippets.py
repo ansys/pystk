@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -76,7 +76,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
     def OpenVdfSTKSnippet(self, root):
         # STKObjectRoot root: STK Object Model Root
         if os.name == "nt":
-            installPath = r"C:\Program Files\AGI\STK 12"
+            installPath = r"C:\Program Files\AGI\STK_ODTK 13"
         else:
             installPath = os.environ["STK_INSTALL_DIR"]
         vdfPath = "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"
@@ -285,3 +285,39 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         scenario.graphics_3d.medium_font.point_size = 18
         scenario.graphics_3d.medium_font.bold = True
         scenario.graphics_3d.medium_font.italic = False
+
+    def test_SaveScenarioAsVdfSnippet(self):
+        root = self.get_root()
+        self.SaveScenarioAsVDF(root)
+
+    @code_snippet(
+        name="SaveScenarioAsVdf",
+        description="Save the current scenario as a VDF",
+        category="Scenario | Scenario Management",
+        eid="stkobjects~Scenario | stkobjects~PreferencesVDF~save_scenario_as_vdf",
+    )
+    def SaveScenarioAsVDF(self, root):
+        # STKObjectRoot root: STK Object Model Root
+        scenario = root.current_scenario
+        root.preferences.vdf_preferences.save_scenario_as_vdf = True
+
+    def test_SaveAnOpenScenarioSnippet(self):
+        root = self.get_root()
+        self.SaveAnOpenScenario(root)
+
+    @code_snippet(
+        name="SaveAnOpenScenario",
+        description="Save the current scenario",
+        category="Scenario | Scenario Management",
+        eid="stkobjects~Scenario | stkobjects~STKObjectRoot~save_as",
+    )
+    def SaveAnOpenScenario(self, root):
+        from pathlib import Path
+
+        # Create a directory for scenario files
+        scenario_directory = Path.cwd() / "MyScenario"
+        scenario_directory.mkdir(parents=True, exist_ok=True)
+
+        # Save the scenario
+        scenario_path = scenario_directory / "MyScenario.sc"
+        root.save_as(str(scenario_path))

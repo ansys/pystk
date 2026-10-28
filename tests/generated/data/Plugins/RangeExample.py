@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -21,15 +21,15 @@
 # SOFTWARE.
 
 import typing
-from agi.stk12.plugins.accessconstraintplugin import (
+from agi.stk13.plugins.accessconstraintplugin import (
     AgEAccessConstraintObjectType,
     AgEAccessConstraintDependencyFlags,
     AgEAltitudeReference,
     AgEAccessApparentPositionType,
 )
-from agi.stk12.plugins.utplugin import AgEUtLogMsgType, AgEUtTimeScale, AgEUtFrame
-from agi.stk12.plugins.attrautomation import AgEAttrAddFlags
-from agi.stk12.plugins.stkplugin import AgStkPluginSite
+from agi.stk13.plugins.utplugin import AgEUtLogMsgType, AgEUtTimeScale, AgEUtFrame
+from agi.stk13.plugins.attrautomation import AgEAttrAddFlags
+from agi.stk13.plugins.stkplugin import AgStkPluginSite
 
 
 class CAgAccessConstraintPlugin(object):
@@ -97,7 +97,7 @@ class CAgAccessConstraintPlugin(object):
             AgEUtLogMsgType.eUtLogMsgInfo, f"{self.DisplayName}: Register(Satellite to Aircraft/Facility/GroundVehicle)"
         )
 
-    def Init(self, site: "IAgUtPluginSite") -> bool:
+    def Init(self, site: "IUtPluginSite") -> bool:
         """
         Triggered just before the first computational event trigger.
         """
@@ -240,7 +240,7 @@ class CAgAccessConstraintPlugin(object):
         del self.root
         del self.site
 
-    def GetPluginConfig(self, pAttrBuilder: "IAgAttrBuilder") -> typing.Any:
+    def GetPluginConfig(self, pAttrBuilder: "IAttrBuilder") -> typing.Any:
         """
         Get an attribute container of the configuration settings.
         """
@@ -262,7 +262,7 @@ class CAgAccessConstraintPlugin(object):
             )
         return self.scope
 
-    def VerifyPluginConfig(self, pPluginCfgResult: "IAgUtPluginConfigVerifyResult") -> None:
+    def VerifyPluginConfig(self, pPluginCfgResult: "IUtPluginConfigVerifyResult") -> None:
         """
         Verify the Plugin Config
         """

@@ -20,12 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedNumberOfSteps.max`
-              - Do not use this property, as it is deprecated. Use MaxEx.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedNumberOfSteps.maximum`
               - Maximum coordinate value as Quantity.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedNumberOfSteps.min`
-              - Do not use this property, as it is deprecated. Use MinEx.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedNumberOfSteps.minimum`
               - Minimum coordinate value as Quantity.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedNumberOfSteps.number_of_steps`
@@ -44,23 +40,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: max
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedNumberOfSteps.max
-    :type: float
-
-    Do not use this property, as it is deprecated. Use MaxEx.
-
 .. py:property:: maximum
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedNumberOfSteps.maximum
     :type: Quantity
 
     Maximum coordinate value as Quantity.
-
-.. py:property:: min
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedNumberOfSteps.min
-    :type: float
-
-    Do not use this property, as it is deprecated. Use MinEx.
 
 .. py:property:: minimum
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedNumberOfSteps.minimum

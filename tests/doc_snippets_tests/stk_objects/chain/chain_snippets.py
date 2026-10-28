@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -71,7 +71,7 @@ class ChainSnippets(CodeSnippetsTestBase):
             MySatellite = self.get_scenario().children.new(STKObjectType.SATELLITE, "MySatellite")
             MySatellite.propagator.propagate()
 
-            self.ComputeChainSnippet(chain)
+            self.ComputeChainSnippet(chain, MyFacility, MySatellite)
         finally:
             chain.unload()
             MyFacility.unload()
@@ -83,12 +83,12 @@ class ChainSnippets(CodeSnippetsTestBase):
         category="STK Objects | Chain",
         eid="stkobjects~Chain",
     )
-    def ComputeChainSnippet(self, chain):
+    def ComputeChainSnippet(self, chain, facility, satellite):
         # Chain chain: Chain object
 
-        # Add some objects to chain (using STK path)
-        chain.objects.add("Facility/MyFacility")
-        chain.objects.add("Satellite/MySatellite")
+        # Add some objects to chain
+        chain.start_object = facility
+        chain.end_object = satellite
 
         # Compute the chain
         chain.compute_access()
@@ -100,7 +100,7 @@ class ChainSnippets(CodeSnippetsTestBase):
             satellite.propagator.propagate()
             MyFacility = self.get_scenario().children.new(STKObjectType.FACILITY, "MyFacility")
 
-            self.CreateChainAdvancedSnippet(self.get_root(), chain, satellite)
+            self.CreateChainAdvancedSnippet(self.get_root(), chain, MyFacility, satellite)
         finally:
             chain.unload()
             satellite.unload()
@@ -112,7 +112,7 @@ class ChainSnippets(CodeSnippetsTestBase):
         category="STK Objects | Chain",
         eid="stkobjects~Chain",
     )
-    def CreateChainAdvancedSnippet(self, root, chain, satellite):
+    def CreateChainAdvancedSnippet(self, root, chain, facility, satellite):
         # Chain chain: Chain object
         # Satellite satellite: Satellite object
 
@@ -120,8 +120,8 @@ class ChainSnippets(CodeSnippetsTestBase):
         chain.clear_access()
 
         # Add some objects to chain
-        chain.objects.add("Facility/MyFacility")
-        chain.objects.add_object(satellite)
+        chain.start_object = facility
+        chain.end_object = satellite
 
         # Configure chain parameters
         chain.recompute_automatically = False

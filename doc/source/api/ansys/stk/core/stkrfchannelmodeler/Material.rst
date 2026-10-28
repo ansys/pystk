@@ -18,8 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.Material.height_standard_deviation`
+              - Get or set the material height standard deviation
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.Material.properties`
               - Get material properties.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.Material.roughness`
+              - Get or set the material roughness
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.Material.type`
               - Get material type.
 
@@ -36,11 +40,23 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: height_standard_deviation
+    :canonical: ansys.stk.core.stkrfchannelmodeler.Material.height_standard_deviation
+    :type: float
+
+    Get or set the material height standard deviation
+
 .. py:property:: properties
     :canonical: ansys.stk.core.stkrfchannelmodeler.Material.properties
     :type: str
 
     Get material properties.
+
+.. py:property:: roughness
+    :canonical: ansys.stk.core.stkrfchannelmodeler.Material.roughness
+    :type: float
+
+    Get or set the material roughness
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkrfchannelmodeler.Material.type

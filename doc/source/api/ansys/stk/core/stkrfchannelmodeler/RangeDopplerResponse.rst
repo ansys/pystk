@@ -22,6 +22,8 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.angular_velocity`
               - Get the angular velocity.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.data_dimensions`
+              - Get the dimensions of the data. The dimensions are ordered in {Transmit Antenna Count, Receive Antenna Count, Velocity Count, Range Count, Complex Number (imaginary and real)}.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.pulse_count`
               - Get the pulse count.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.range_count`
@@ -51,6 +53,12 @@ Property detail
     :type: float
 
     Get the angular velocity.
+
+.. py:property:: data_dimensions
+    :canonical: ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.data_dimensions
+    :type: list
+
+    Get the dimensions of the data. The dimensions are ordered in {Transmit Antenna Count, Receive Antenna Count, Velocity Count, Range Count, Complex Number (imaginary and real)}.
 
 .. py:property:: pulse_count
     :canonical: ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.pulse_count

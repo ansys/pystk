@@ -1,0 +1,90 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.stkengine",
+        "NewRootScope": "ansys.stk.core.stkengine"
+    },
+    "MemberMappings": [
+        {
+            "ParentScope": "STKEngineApplication",
+            "OldName": "_STKXInitialize",
+            "NewName": "_stkx_intialize"
+        },
+        {
+            "ParentScope": "STKEngineApplication",
+            "OldName": "_STKXInitializeTimer",
+            "NewName": "_stkx_intialize_timer"
+        },
+        {
+            "ParentScope": "STKEngineApplication",
+            "OldName": "NewObjectRoot",
+            "NewName": "new_object_root"
+        },
+        {
+            "ParentScope": "STKEngineApplication",
+            "OldName": "NewObjectModelContext",
+            "NewName": "new_object_model_context"
+        },
+        {
+            "ParentScope": "STKEngineApplication",
+            "OldName": "SetGrpcOptions",
+            "NewName": "set_grpc_options"
+        },
+        {
+            "ParentScope": "STKEngineApplication",
+            "OldName": "NewGrpcCallBatcher",
+            "NewName": "new_grpc_call_batcher"
+        },
+        {
+            "ParentScope": "STKEngineApplication",
+            "OldName": "ShutDown",
+            "NewName": "shutdown"
+        },
+        {
+            "ParentScope": "STKEngine",
+            "OldName": "StartApplication",
+            "NewName": "start_application"
+        },
+        {
+            "ParentScope": "STKEngine",
+            "OldName": "_initX11",
+            "NewName": "_init_x11"
+        }
+    ],
+    "InterfaceMappings": [],
+    "ClassMappings": [],
+    "EnumTypeMappings": [],
+    "EnumValueMappings": [
+        {
+            "ParentScope": "STKEngineTimerType",
+            "OldName": "DisableTimers",
+            "NewName": "DISABLE_TIMERS"
+        },
+        {
+            "ParentScope": "STKEngineTimerType",
+            "OldName": "TkinterMainloop",
+            "NewName": "TKINTER_MAIN_LOOP"
+        },
+        {
+            "ParentScope": "STKEngineTimerType",
+            "OldName": "InteractivePython",
+            "NewName": "INTERACTIVE_PYTHON"
+        },
+        {
+            "ParentScope": "STKEngineTimerType",
+            "OldName": "SigAlarm",
+            "NewName": "SIG_ALARM"
+        },
+        {
+            "ParentScope": "STKEngineTimerType",
+            "OldName": "SigRt",
+            "NewName": "SIG_RT"
+        }
+    ],
+    "NamedArgumentMappings": [
+        {
+            "ParentScope": "STKEngine.StartApplication",
+            "OldName": "noGraphics",
+            "NewName": "no_graphics"
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -91,8 +91,8 @@ class StarSnippets(CodeSnippetsTestBase):
         star.magnitude = -1.0
         star.parallax = 0.0  # in arcSec
         star.proper_motion_declination = 1.5  # in arcSec
-        star.proper_motion_radial_velocity = 0.75  # in meters
         star.proper_motion_right_ascension = -0.5  # in arcSec
+        star.radial_velocity = 0.75  # in m/s
 
     # endregion
 
@@ -103,7 +103,9 @@ class StarSnippets(CodeSnippetsTestBase):
     @staticmethod
     def CreateStarFromStarDatabase(root: "STKObjectRoot"):
         # Import object from database using Connect
-        command: str = "ImportFromDB * Star ScenarioCollection VisualMagnitude 0 1.0 RightAsc 200.0 230.0 Constellation ImportedFromStarDB"
+        command: str = (
+            "ImportFromDB * Star ScenarioCollection VisualMagnitude 0 1.0 RightAsc 200.0 230.0 Constellation ImportedFromStarDB"
+        )
         root.execute_command(command)
 
         star: "Star" = clr.CastAs(root.get_object_from_path("Star/Star-65474"), Star)

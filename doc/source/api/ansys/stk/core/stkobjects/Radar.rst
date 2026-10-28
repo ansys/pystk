@@ -22,8 +22,6 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Radar.set_model`
-              - Do not use this method, as it is deprecated. Use ModelComponentLinking on Radar instead. Sets the current radar model by name.
 
     .. tab-item:: Properties
 
@@ -31,12 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.Radar.chain_analysis_options`
+              - Get the radar's chain analysis options.
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.graphics`
               - Get the 2D Graphics properties for the radar.
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.graphics_3d`
               - Get the 3D Graphics properties for the radar.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Radar.model`
-              - Do not use this property, as it is deprecated. Use ModelComponentLinking on Radar instead. Gets the current radar model.
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.model_component_linking`
               - Get the link/embed controller for managing the radar model component.
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.refraction`
@@ -47,8 +45,6 @@ Overview
               - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.rf_environment`
               - Get the object RF Environment settings.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Radar.supported_models`
-              - Do not use this property, as it is deprecated. Use ModelComponentLinking on Radar instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.use_refraction_in_access`
               - Flag controls whether refraction is applied when computing relative position in Access.
 
@@ -65,6 +61,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: chain_analysis_options
+    :canonical: ansys.stk.core.stkobjects.Radar.chain_analysis_options
+    :type: ChainAnalysisOptions
+
+    Get the radar's chain analysis options.
+
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Radar.graphics
     :type: RadarGraphics
@@ -76,12 +78,6 @@ Property detail
     :type: RadarGraphics3D
 
     Get the 3D Graphics properties for the radar.
-
-.. py:property:: model
-    :canonical: ansys.stk.core.stkobjects.Radar.model
-    :type: IRadarModel
-
-    Do not use this property, as it is deprecated. Use ModelComponentLinking on Radar instead. Gets the current radar model.
 
 .. py:property:: model_component_linking
     :canonical: ansys.stk.core.stkobjects.Radar.model_component_linking
@@ -113,12 +109,6 @@ Property detail
 
     Get the object RF Environment settings.
 
-.. py:property:: supported_models
-    :canonical: ansys.stk.core.stkobjects.Radar.supported_models
-    :type: list
-
-    Do not use this property, as it is deprecated. Use ModelComponentLinking on Radar instead. Gets an array of supported model names.
-
 .. py:property:: use_refraction_in_access
     :canonical: ansys.stk.core.stkobjects.Radar.use_refraction_in_access
     :type: bool
@@ -128,6 +118,7 @@ Property detail
 
 Method detail
 -------------
+
 
 
 .. py:method:: is_refraction_type_supported(self, model: SensorRefractionType) -> bool
@@ -148,22 +139,6 @@ Method detail
 
 
 
-
-
-
-.. py:method:: set_model(self, model_name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.Radar.set_model
-
-    Do not use this method, as it is deprecated. Use ModelComponentLinking on Radar instead. Sets the current radar model by name.
-
-    :Parameters:
-
-        **model_name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
 
 
 

@@ -32,6 +32,8 @@ Overview
               - Reset - resets the current values of specified profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSTargetSequence.reset_profiles`
               - Reset - resets the controls of the search profiles to the segments' values.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSTargetSequence.set_all_profile_modes`
+              - Set the mode for all profiles in this target sequence to the value held by the SetAllProfileModesTo property.
 
     .. tab-item:: Properties
 
@@ -49,6 +51,8 @@ Overview
               - If true, inner target sequences will have their profiles reset before each run.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSTargetSequence.segments`
               - Return the segments contained within the target sequence.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSTargetSequence.set_all_profile_modes_to`
+              - The mode setting that will be applied to all profiles in this target sequence when the SetAllProfileModes method is invoked.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSTargetSequence.when_profiles_finish`
               - When Profiles Converge - the action to be carried out if targeting has converged.
 
@@ -94,6 +98,12 @@ Property detail
     :type: MCSSegmentCollection
 
     Return the segments contained within the target sequence.
+
+.. py:property:: set_all_profile_modes_to
+    :canonical: ansys.stk.core.stkobjects.astrogator.MCSTargetSequence.set_all_profile_modes_to
+    :type: ProfileMode
+
+    The mode setting that will be applied to all profiles in this target sequence when the SetAllProfileModes method is invoked.
 
 .. py:property:: when_profiles_finish
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSTargetSequence.when_profiles_finish
@@ -185,6 +195,17 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+.. py:method:: set_all_profile_modes(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.MCSTargetSequence.set_all_profile_modes
+
+    Set the mode for all profiles in this target sequence to the value held by the SetAllProfileModesTo property.
+
+    :Returns:
+
+        :obj:`~None`
+
 
 
 

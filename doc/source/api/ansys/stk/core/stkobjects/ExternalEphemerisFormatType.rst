@@ -40,6 +40,9 @@ Overview
             * - :py:attr:`~CCSDS_V2`
               - CCSDS v2 orbit ephemeris file format that ends with '.oem' extension.
 
+            * - :py:attr:`~CCSDS_V3`
+              - CCSDS v3 orbit ephemeris file format that ends with '.oem' extension.
+
 
 Import detail
 -------------

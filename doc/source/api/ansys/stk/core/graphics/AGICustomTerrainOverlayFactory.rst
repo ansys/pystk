@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.AGICustomTerrainOverlayFactory.initialize_with_string`
-              - Initialize an agi custom terrain overlay with the provided values.
+              - Initialize a new instance with the provided values.
 
 
 Import detail
@@ -37,7 +37,7 @@ Method detail
 .. py:method:: initialize_with_string(self, uri: str) -> AGICustomTerrainOverlay
     :canonical: ansys.stk.core.graphics.AGICustomTerrainOverlayFactory.initialize_with_string
 
-    Initialize an agi custom terrain overlay with the provided values.
+    Initialize a new instance with the provided values.
 
     :Parameters:
 

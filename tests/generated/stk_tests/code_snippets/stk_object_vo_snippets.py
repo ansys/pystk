@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -144,6 +144,7 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
             # GetAvailableArticulations returns a one dimensional array of articulation names
             articulations = modelArticulation.get_available_articulations(lod)
 
+            # Enumerate through available articulations
             articulation: int = 0
             while articulation < Array.Length(articulations):
                 # We need the articulation string to call the GetAvailableTransformations function

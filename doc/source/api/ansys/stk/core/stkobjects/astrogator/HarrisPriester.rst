@@ -28,6 +28,8 @@ Overview
               - Flag indicates whether this model computes pressure.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.computes_temperature`
               - Flag indicates whether this model computes temperature.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.drag_correction_type`
+              - Drag correction type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.drag_model_plugin`
               - Drag model plugin properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.drag_model_plugin_name`
@@ -38,10 +40,16 @@ Overview
               - Average solar Flux (F10.7); the 81-day averaged Ottawa 10.7 cm solar flux value. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.n_plate_definition_file`
               - Drag N-Plate definition file.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.n_plate_stochastic_parameters`
+              - NPlate Stochastic Parameters.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.stochastic_ballistic_coefficient`
+              - Stochastic Ballistic Coefficient.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.sun_position`
               - Get or set the sun position computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.use_approximate_altitude`
               - True if using approximate altitude formula.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.use_stochastic_ballistic_coefficient`
+              - True if using stochastic model for ballistic coefficient.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.variable_area_history_file`
               - Drag variable area history file.
 
@@ -82,6 +90,12 @@ Property detail
 
     Flag indicates whether this model computes temperature.
 
+.. py:property:: drag_correction_type
+    :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.drag_correction_type
+    :type: DragCorrectionType
+
+    Drag correction type.
+
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.drag_model_plugin
     :type: DragModelPlugin
@@ -112,6 +126,18 @@ Property detail
 
     Drag N-Plate definition file.
 
+.. py:property:: n_plate_stochastic_parameters
+    :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.n_plate_stochastic_parameters
+    :type: NPlateStochasticParametersCollection
+
+    NPlate Stochastic Parameters.
+
+.. py:property:: stochastic_ballistic_coefficient
+    :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.stochastic_ballistic_coefficient
+    :type: StochasticModelParameters
+
+    Stochastic Ballistic Coefficient.
+
 .. py:property:: sun_position
     :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.sun_position
     :type: SunPosition
@@ -123,6 +149,12 @@ Property detail
     :type: bool
 
     True if using approximate altitude formula.
+
+.. py:property:: use_stochastic_ballistic_coefficient
+    :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.use_stochastic_ballistic_coefficient
+    :type: bool
+
+    True if using stochastic model for ballistic coefficient.
 
 .. py:property:: variable_area_history_file
     :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.variable_area_history_file

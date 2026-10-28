@@ -22,8 +22,6 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.set_demodulator`
               - Set the current demodulator model by name.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.set_filter`
-              - Do not use this method, as it is deprecated. Use FilterComponentLinking on ReceiverModelMedium instead. Sets the current filter model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.set_polarization_type`
               - Set the current polarization type.
 
@@ -45,8 +43,6 @@ Overview
               - Get or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.enable_polarization`
               - Get or set the enable polarization option.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.filter`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMedium instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.filter_component_linking`
               - Get the link/embed controller for managing the filter model component.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.frequency`
@@ -73,8 +69,6 @@ Overview
               - Get or set the auto select demodulator option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.supported_demodulators`
               - Get an array of supported demodulator model names.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.supported_filters`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMedium instead. Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.supported_rain_outage_percent_values`
               - Get an array of supported rain outage percent values.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.system_noise_temperature`
@@ -132,12 +126,6 @@ Property detail
     :type: bool
 
     Get or set the enable polarization option.
-
-.. py:property:: filter
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.filter
-    :type: IRFFilterModel
-
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMedium instead. Gets the current filter model.
 
 .. py:property:: filter_component_linking
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.filter_component_linking
@@ -217,12 +205,6 @@ Property detail
 
     Get an array of supported demodulator model names.
 
-.. py:property:: supported_filters
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.supported_filters
-    :type: list
-
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMedium instead. Gets an array of supported filter model names.
-
 .. py:property:: supported_rain_outage_percent_values
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.supported_rain_outage_percent_values
     :type: list
@@ -282,25 +264,10 @@ Method detail
 
 
 
-
 .. py:method:: set_demodulator(self, name: str) -> None
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.set_demodulator
 
     Set the current demodulator model by name.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: set_filter(self, name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.set_filter
-
-    Do not use this method, as it is deprecated. Use FilterComponentLinking on ReceiverModelMedium instead. Sets the current filter model by name.
 
     :Parameters:
 
@@ -324,7 +291,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
 
 
 

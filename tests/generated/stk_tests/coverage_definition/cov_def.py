@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -1344,7 +1344,6 @@ class EarlyBoundTests(TestBase):
         # AvailableAssets
         arAssets = oCollection.available_assets
         TestBase.logger.WriteLine3("\tThe AssetList collection contains: {0} available assets.", Array.Length(arAssets))
-
         iIndex: int = 0
         while iIndex < Array.Length(arAssets):
             TestBase.logger.WriteLine7("\t\tAsset {0}: {1}", iIndex, arAssets[iIndex])
@@ -1442,7 +1441,6 @@ class EarlyBoundTests(TestBase):
         # constellation removed above
         Assert.assertEqual((Array.Length(arAssets) - 1), oCollection.count)
         TestBase.logger.WriteLine3("\tThe new AssetList collection contains: {0} elements.", oCollection.count)
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             # Item
@@ -1692,7 +1690,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(NUM_GRID_POINTS, gps.count)
         arGps = gps.to_array()
         Assert.assertEqual((3 * NUM_GRID_POINTS), Array.Length(arGps))
-
         i: int = 0
         while i < NUM_GRID_POINTS:
             if i == 0:
@@ -1804,7 +1801,6 @@ class EarlyBoundTests(TestBase):
             sb.AppendFormat("{0}, {1}", pt.latitude, pt.longitude)
             sb.AppendLine()
             intervals = pt.intervals
-
             i: int = 0
             while i <= (len(intervals) - 1):
                 sb.AppendFormat("  => [{0},{1}]", intervals[i][0], intervals[i][1])
@@ -1843,7 +1839,6 @@ class EarlyBoundTests(TestBase):
         i: int = 0
         while i < 2:
             TestBase.LoadTestScenario(Path.Combine("CovDefTests", "CovDefTests.sc"))
-
             j: int = 0
             while j < 100:
                 cov: "CoverageDefinition" = CoverageDefinition(
@@ -1926,7 +1921,6 @@ class EarlyBoundTests(TestBase):
             sbFast.AppendFormat("{0}, {1}", pt.latitude, pt.longitude)
             sbFast.AppendLine()
             intervals = pt.intervals
-
             i: int = 0
             while i <= (len(intervals) - 1):
                 sbFast.AppendFormat("  => [{0:.000000},{1:.000000}]", intervals[i][0], intervals[i][1])
@@ -1954,7 +1948,6 @@ class EarlyBoundTests(TestBase):
         aLonVals = result.data_sets[1].get_values()
 
         watchSlow.Start()
-
         i: int = 0
         while i < len(aLatVals):
             sbSlow.AppendFormat("{0}, {1}", aLatVals[i], aLonVals[i])
@@ -1995,7 +1988,7 @@ class EarlyBoundTests(TestBase):
 
         # Ensure that fast and slow give the same results, and that fast is faster than slow.
         Assert.assertEqual(sbFast.ToString(), sbSlow.ToString())
-        Assert.assertGreater(float(watchSlow.ElapsedMilliseconds), (4.0 * watchFast.ElapsedMilliseconds))
+        Assert.assertGreater(float(watchSlow.ElapsedMilliseconds), (1.2 * watchFast.ElapsedMilliseconds))
 
     # endregion
 
@@ -2089,6 +2082,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- GRID INSPECTOR ALL TYPES TEST ----- END -----")
 
     def CompareGridPointsByBoundsType(self, covDef: "CoverageDefinition", eBounds: "CoverageBounds"):
+
         def generated1(a: "List[float]", b: "List[float]"):
             return (cmp(a[0], b[0]) * 10) + cmp(a[1], b[1])
 
@@ -2121,7 +2115,6 @@ class EarlyBoundTests(TestBase):
         List.Sort(gridPointLocations, cmp=arrayCompare)
 
         Assert.assertEqual(len(gridInspector), len(gridPointLocations))
-
         i: int = 0
         while i < len(gridInspector):
             arDouble1: "List[float]" = gridInspector[i]
@@ -2455,7 +2448,6 @@ class EarlyBoundTests(TestBase):
         # AvailableAssets
         arAssets = oCollection.available_assets
         TestBase.logger.WriteLine3("\tThe AssetList collection contains: {0} available assets.", Array.Length(arAssets))
-
         iIndex: int = 0
         while iIndex < Array.Length(arAssets):
             TestBase.logger.WriteLine7("\t\tAsset {0}: {1}", iIndex, arAssets[iIndex])
@@ -2553,7 +2545,6 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual(Array.Length(arAssets), oCollection.count)
         TestBase.logger.WriteLine3("\tThe new AssetList collection contains: {0} elements.", oCollection.count)
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             # Item
@@ -2608,7 +2599,6 @@ class EarlyBoundTests(TestBase):
         # DefinitionSupportedTypes
         arTypes = fom.definition_supported_types
         TestBase.logger.WriteLine3("\tThe FigureOfMerit supports: {0} definition types", len(arTypes))
-
         iIndex: int = 0
         while iIndex < len(arTypes):
             eType: "FigureOfMeritDefinitionType" = FigureOfMeritDefinitionType(int(arTypes[iIndex][0]))

@@ -41,7 +41,7 @@ Draw a new Surface Extent Triangulator
 
     # Scenario scenario: Scenario object
     manager = scenario.scene_manager
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    installPath = r"C:\Program Files\AGI\STK_ODTK 13" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
     texture_path = os.path.join(installPath, "STKData", "VO", "Textures", "AGI_logo_small.png")
     texture = manager.textures.load_from_string_uri(texture_path)
     mesh = manager.initializers.surface_mesh_primitive.initialize()

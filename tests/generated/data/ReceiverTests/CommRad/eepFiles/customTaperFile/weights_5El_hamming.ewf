@@ -1,0 +1,15 @@
+# File format is as follows:
+# If first character of a line is '#' the entire line is treated as a comment line.
+# First non-comment line is file format version (required).  Tells STK the format of the remaining file.
+# Second non-comment line is a sampling mode (required).  Only "SampleAndHold" is supported (future will bring more options).
+# Third non-comment line defines the format of the element weight data.
+# Fourth non-comment line is a number of elements (required).
+# Remaining non-comment lines are time specified complex element weights (required) with the following format:
+#   <time>  <element 1 id>  <element 1 complex weight>  ... <element n id>  <element n complex weight> where 
+#   element ids MUST correspond to the ENABLED element id specified in the Element Configuration and the 
+#   complex weights are specified as a comma separated real and imag values enclosed in parentheses.
+CustomTaperFileBeamformer v1
+SampleAndHold
+5
+-1.0E300 0 (0.16785218258752427) 1 (0.68214781741247588) 2 (1.000)  3 (0.68214781741247588) 4 (0.16785218258752427)
+1.0E300  0 (0.16785218258752427) 1 (0.68214781741247588) 2 (1.000)  3 (0.68214781741247588) 4 (0.16785218258752427)

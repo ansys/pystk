@@ -5,7 +5,7 @@ ColorRGBA
 
    object
 
-   A variably translucent color representation that can be used with certain methods in the STK Object Model.
+   A variably translucent color representation that can be used with certain methods in the Object Model.
 
 .. py:currentmodule:: ColorRGBA
 

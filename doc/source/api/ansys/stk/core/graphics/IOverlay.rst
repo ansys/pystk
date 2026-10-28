@@ -74,7 +74,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.padding`
               - Get or set the padding surrounding the overlays that are contained within this overlay. The array contains the components of the padding arranged in the order left, top, right, bottom.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.parent`
-              - Get the overlay's parent. This may be another overlay if this overlay was added to that overlay's overlays collection. Or, it may be the screen overlay manager if this overlay was added to the scene manager'sscreen overlays collection.
+              - Get the overlay's parent. This may be another overlay if this overlay was added to that overlay's overlays collection. Or, it may be the screen overlay manager if this overlay was added to the scene manager's screen overlays collection.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.picking_enabled`
               - Get or set a value indicating whether or not picking on the overlay is enabled. If picking is disabled, this overlay will never show up in the result of PickScreenOverlay, even if it occupies the specified pick position.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.pinning_origin`
@@ -248,7 +248,7 @@ Property detail
     :canonical: ansys.stk.core.graphics.IOverlay.parent
     :type: IScreenOverlayContainer
 
-    Get the overlay's parent. This may be another overlay if this overlay was added to that overlay's overlays collection. Or, it may be the screen overlay manager if this overlay was added to the scene manager'sscreen overlays collection.
+    Get the overlay's parent. This may be another overlay if this overlay was added to that overlay's overlays collection. Or, it may be the screen overlay manager if this overlay was added to the scene manager's screen overlays collection.
 
 .. py:property:: picking_enabled
     :canonical: ansys.stk.core.graphics.IOverlay.picking_enabled

@@ -1,0 +1,53 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.utilities.colors",
+        "NewRootScope": "ansys.stk.core.utilities.colors"
+    },
+    "MemberMappings": [
+        {
+            "ParentScope": "Color",
+            "OldName": "_ToOLECOLOR",
+            "NewName": "_to_ole_color"
+        },
+        {
+            "ParentScope": "Color",
+            "OldName": "_FromOLECOLOR",
+            "NewName": "_from_ole_color"
+        },
+        {
+            "ParentScope": "Color",
+            "OldName": "FromRGB",
+            "NewName": "from_rgb"
+        },
+        {
+            "ParentScope": "Color",
+            "OldName": "GetRGB",
+            "NewName": "get_rgb"
+        },
+        {
+            "ParentScope": "_ColorsImpl",
+            "OldName": "FromRGB",
+            "NewName": "from_rgb"
+        },
+        {
+            "ParentScope": "Colors",
+            "OldName": "FromRGB",
+            "NewName": "from_rgb"
+        },
+        {
+            "ParentScope": "Colors",
+            "OldName": "FromRGBA",
+            "NewName": "from_rgba"
+        },
+        {
+            "ParentScope": "Colors",
+            "OldName": "FromARGB",
+            "NewName": "from_argb"
+        }
+    ],
+    "InterfaceMappings": [],
+    "ClassMappings": [],
+    "EnumTypeMappings": [],
+    "EnumValueMappings": [],
+    "NamedArgumentMappings": []
+}

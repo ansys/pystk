@@ -39,6 +39,7 @@ Examples
 
         examples/satellite-coverage-calculator
         examples/satellite-coverage-analysis
+        examples/solar-eclipse-path-of-totality
 
     Space mission
     =============
@@ -51,6 +52,7 @@ Examples
         examples/hohmann-transfer
         examples/bielliptic-transfer
         examples/lambert-transfer
+        examples/phasing-geo-orbits
 
     .. nbgallery::
         :caption: Mission analysis
@@ -69,6 +71,8 @@ Examples
         examples/communication-link-calculator
         examples/multifunction-radar-parametric-study
         examples/multifunction-radar-design
+        examples/missile-interference-test
+        examples/radio-frequency-spectrum-filters
 
     Aviator mission planning
     ========================

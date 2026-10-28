@@ -118,6 +118,9 @@ Overview
             * - :py:attr:`~FILE`
               - Vector interpolated from tabulated data from file.
 
+            * - :py:attr:`~SURFACE_NORMAL`
+              - The normal vector for the surface of a central body at a sub-point obtained using the geodetic projection of the selected point onto the central body.
+
 
 Import detail
 -------------

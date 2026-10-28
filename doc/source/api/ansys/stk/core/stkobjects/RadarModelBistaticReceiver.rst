@@ -14,15 +14,6 @@ Overview
 
 .. tab-set::
 
-    .. tab-item:: Methods
-
-        .. list-table::
-            :header-rows: 0
-            :widths: auto
-
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.set_mode`
-              - Do not use this method, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Sets the current radar mode by name.
-
     .. tab-item:: Properties
 
         .. list-table::
@@ -35,18 +26,12 @@ Overview
               - Get the bistatic transmitter collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.clutter`
               - Get the radar clutter settings.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.clutter_geometry`
-              - Do not use this property, as it is deprecated.Use the Clutter property instead.Gets the radar clutter geometry.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.jamming`
               - Get the radar jamming.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.mode`
-              - Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Gets the current radar mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.mode_component_linking`
               - Get the link/embed controller for managing the radar mode component.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.receiver`
               - Get the radar receiver.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.supported_modes`
-              - Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Gets an array of supported mode names.
 
 
 
@@ -79,23 +64,11 @@ Property detail
 
     Get the radar clutter settings.
 
-.. py:property:: clutter_geometry
-    :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.clutter_geometry
-    :type: RadarClutterGeometry
-
-    Do not use this property, as it is deprecated.Use the Clutter property instead.Gets the radar clutter geometry.
-
 .. py:property:: jamming
     :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.jamming
     :type: RadarJamming
 
     Get the radar jamming.
-
-.. py:property:: mode
-    :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.mode
-    :type: IRadarModeBistaticReceiver
-
-    Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Gets the current radar mode.
 
 .. py:property:: mode_component_linking
     :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.mode_component_linking
@@ -108,37 +81,5 @@ Property detail
     :type: RadarReceiver
 
     Get the radar receiver.
-
-.. py:property:: supported_modes
-    :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.supported_modes
-    :type: list
-
-    Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Gets an array of supported mode names.
-
-
-Method detail
--------------
-
-
-
-
-
-
-
-
-
-.. py:method:: set_mode(self, mode_name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.set_mode
-
-    Do not use this method, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Sets the current radar mode by name.
-
-    :Parameters:
-
-        **mode_name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
 
 

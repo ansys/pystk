@@ -39,6 +39,8 @@ Overview
               - Animation end time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.animation_end_loop_type`
               - Animation end time or loop-at time. A member of the ScenarioEndLoopType enumeration.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.animation_step_size`
+              - Animation step size for single step in seconds. Same as AnimStepValue for Time Step type.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.animation_step_type`
               - Time step, real time (with offset) or a multiple of real time. A member of the ScenarioTimeStepType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.animation_step_value`
@@ -82,6 +84,12 @@ Property detail
     :type: ScenarioEndLoopType
 
     Animation end time or loop-at time. A member of the ScenarioEndLoopType enumeration.
+
+.. py:property:: animation_step_size
+    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.animation_step_size
+    :type: float
+
+    Animation step size for single step in seconds. Same as AnimStepValue for Time Step type.
 
 .. py:property:: animation_step_type
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.animation_step_type
@@ -140,6 +148,8 @@ Property detail
 
 Method detail
 -------------
+
+
 
 
 

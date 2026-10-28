@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -44,7 +44,7 @@ from ansys.stk.core.stkobjects.astrogator import *
 from ansys.stk.core.stkobjects.aviator import *
 from ansys.stk.core.stkutil import *
 from ansys.stk.core.analysis_workbench import *
-from ansys.stk.core.utilities.exceptions import *
+from ansys.stk.core.internal.comutil import OLE32Lib
 from app_provider import TestTarget
 
 
@@ -77,7 +77,9 @@ class EngineLifetimeManager:
 
     @staticmethod
     def Initialize(args=None, lock=False) -> "IAgAppProvider":
+
         if EngineLifetimeManager.target is None and args is not None:
+
             if os.name != "nt" and args.target == "Stk":
                 raise RuntimeError("Stk target not supported on Linux.")
 
@@ -216,6 +218,7 @@ class GC:
 
 
 class Assert:
+
     @staticmethod
     def assertIsNone(obj, msg=None):
         testCase = GetTestCase()
@@ -697,9 +700,9 @@ class Double:
     @staticmethod
     def TryParse(str):
         try:
-            return (True, float(str))
+            return (float(str), True)
         except:
-            return (False, math.nan)
+            return (math.nan, False)
 
     @staticmethod
     def ToString(value):
@@ -736,7 +739,7 @@ class Int32:
 class Convert:
     @staticmethod
     def ToDouble(value):
-        res, convertedValue = Double.TryParse(value)
+        convertedValue, res = Double.TryParse(value)
         if not res:
             raise Exception(f"Cannot convert [{value}] to double")
         else:
@@ -913,6 +916,7 @@ class Application:
 
 
 class IAgAppProvider:
+
     def CreateApplication(self, ignored) -> "STKObjectRoot":
         return None
 
@@ -929,6 +933,7 @@ class PythonStkApplicationProvider(IAgAppProvider):
     Application = None
 
     def __init__(self, args, use_grpc: bool = False):
+
         if args.attach:
             self.stk: "STKDesktopApplication" = STKDesktop.attach_to_application(
                 grpc_server=use_grpc, grpc_port=args.grpc_port, grpc_host=args.grpc_host
@@ -1008,6 +1013,9 @@ class PythonStkXNoGfxApplicationProvider(IAgAppProvider):
 
     def InstantiateStkObjectModelContext(self) -> "STKObjectModelContext":
         return self.stk.new_object_model_context()
+
+    def InstantiateSTKXApplication(self) -> "STKXApplication":
+        return self.stk
 
 
 class TestBase(unittest.TestCase):
@@ -1214,7 +1222,7 @@ class TestBase(unittest.TestCase):
                 TestBase._stkDbDir = TestBase.GetSTKHomeDir()
             else:
                 # all users
-                TestBase._stkDbDir = os.path.join(os.environ["ALLUSERSPROFILE"], "AGI", "STK 12")
+                TestBase._stkDbDir = os.path.join(os.environ["ALLUSERSPROFILE"], "AGI", "STK_ODTK 13")
             print(f"Using STKDB={TestBase._stkDbDir}")
         return TestBase._stkDbDir
 
@@ -1336,6 +1344,44 @@ class OSHelper:
         from sys import platform
 
         return platform.startswith("linux")
+
+    @staticmethod
+    def IsRegFree():
+        return OLE32Lib.use_xcom_registry
+
+    @staticmethod
+    def SupportsCSharpPlugins():
+        return not OSHelper.IsLinux() and not OSHelper.IsRegFree()
+
+    @staticmethod
+    def SupportsScriptPlugins():
+        return not OSHelper.IsLinux() and not OSHelper.IsRegFree()
+
+    @staticmethod
+    def SupportsScriptingTool():
+        # Could be supported if we update the test to use Python
+        return not OSHelper.IsLinux() and not OSHelper.IsRegFree()
+
+    @staticmethod
+    def SupportsSEET():
+        return not OSHelper.IsLinux() and not OSHelper.IsRegFree()
+
+    @staticmethod
+    def SupportsRAE():
+        return not OSHelper.IsLinux()
+
+    @staticmethod
+    def SupportsInSite64():
+        return not OSHelper.IsLinux()
+
+    @staticmethod
+    def IsSupportedPlugin(pluginName: str):
+        pythonPlugin = "Python" in pluginName
+        return (
+            (not OSHelper.IsLinux() and not OSHelper.IsRegFree())
+            or (OSHelper.IsLinux() and pythonPlugin)
+            or (OSHelper.IsRegFree() and pythonPlugin)
+        )
 
 
 class TimeSpan:
@@ -1752,6 +1798,7 @@ class DataProviderResultWriter(object):
 
 
 class CategoryManager:
+
     included_categories = []
     excluded_categories = []
     isUsingPyTest = False

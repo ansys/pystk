@@ -25,12 +25,6 @@ Overview
             * - :py:attr:`~ITURP676_9`
               - ITU-R P676-9 atmospheric absorption model type.
 
-            * - :py:attr:`~TIREM331`
-              - TIREM 3.31 atmospheric absorption model type.
-
-            * - :py:attr:`~TIREM320`
-              - TIREM 3.20 atmospheric absorption model type.
-
             * - :py:attr:`~SIMPLE_SATCOM`
               - Simple Satcom atmospheric absorption model type.
 
@@ -48,6 +42,9 @@ Overview
 
             * - :py:attr:`~ITURP676_13`
               - ITU-R P676-13 atmospheric absorption model type.
+
+            * - :py:attr:`~TIREM630`
+              - TIREM 6.30 atmospheric absorption model type.
 
 
 Import detail

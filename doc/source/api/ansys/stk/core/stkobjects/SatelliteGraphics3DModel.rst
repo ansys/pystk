@@ -49,7 +49,7 @@ Change the 3D Model and marker properties
     model.model_data.filename = r"STKData\VO\Models\Space\dsp.glb"
     orbitmarker = model.orbit_marker
     if os.name == "nt":
-        installPath = r"C:\Program Files\AGI\STK 12"
+        installPath = r"C:\Program Files\AGI\STK_ODTK 13"
     else:
         installPath = os.environ["STK_INSTALL_DIR"]
     orbitmarker.set_marker_image_filename(os.path.join(installPath, "STKData", "VO", "Markers", "Satellite.ppm"))

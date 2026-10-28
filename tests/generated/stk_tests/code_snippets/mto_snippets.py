@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -89,6 +89,7 @@ class MtoSnippets(CodeSnippetsTestBase):
             track: "MTOTrack" = mto.tracks.add(i)
             date: "Date" = root.conversion_utility.new_date("UTCG", str(scenario.start_time))
 
+            # Interpolate mto points
             j: int = 0
             while j < pointCount:
                 lat: float = lat0 + (1 * i)
@@ -221,7 +222,6 @@ class MtoSnippets(CodeSnippetsTestBase):
 
         # Output results
         Console.WriteLine("ComputeAllTracks:")
-
         i: int = 0
         while i < len(trackVisibilityArray):
             Console.WriteLine(
@@ -272,7 +272,6 @@ class MtoSnippets(CodeSnippetsTestBase):
 
         # Output results
         Console.WriteLine("ComputeTracks:")
-
         i: int = 0
         while i < len(trackVisibilityArray):
             Console.WriteLine(
@@ -480,6 +479,7 @@ class MtoSnippets(CodeSnippetsTestBase):
 
         result = range.compute_ranges(MTORangeMode.EACH, tracks, "1 Jan 2012 12:00:00.000")
 
+        # Print results
         i: int = 0
         while i < len(result):
             Console.WriteLine("Track #: {0}, Visible: {1}, Range: {2}", result[i][0], result[i][1], result[i][2])

@@ -18,8 +18,6 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.CameraVideoRecording.start_recording`
-              - Do not use this method, as it is deprecated. Use the overload taking a video format instead. Starts recording a file in the WMV format at the specified bit and frame rate.
             * - :py:attr:`~ansys.stk.core.graphics.CameraVideoRecording.start_recording_frame_stack`
               - Start recording a frame stack. Each frame is saved as a separate image file. The filename of each frame is defined by a prefix followed by a frame number.
             * - :py:attr:`~ansys.stk.core.graphics.CameraVideoRecording.start_recording_video`
@@ -59,24 +57,6 @@ Property detail
 Method detail
 -------------
 
-
-.. py:method:: start_recording(self, wmv_filename: str, video_bit_rate: int, video_frame_rate: int) -> None
-    :canonical: ansys.stk.core.graphics.CameraVideoRecording.start_recording
-
-    Do not use this method, as it is deprecated. Use the overload taking a video format instead. Starts recording a file in the WMV format at the specified bit and frame rate.
-
-    :Parameters:
-
-        **wmv_filename** : :obj:`~str`
-
-        **video_bit_rate** : :obj:`~int`
-
-        **video_frame_rate** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: start_recording_frame_stack(self, file_directory: str, file_prefix: str, camera_snapshot_file_format: SnapshotFileFormat, starting_frame_number: int, number_of_frame_digits: int) -> None
     :canonical: ansys.stk.core.graphics.CameraVideoRecording.start_recording_frame_stack

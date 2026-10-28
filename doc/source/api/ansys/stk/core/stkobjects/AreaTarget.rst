@@ -30,6 +30,8 @@ Overview
               - Get the data defining the boundary with the selected method.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.automatic_computation_of_centroid`
               - Opt whether to have the centroid automatically computed.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.chain_analysis_options`
+              - Get the area target's chain analysis options.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.common_tasks`
               - Common tasks associated with AreaTargets.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.graphics`
@@ -182,6 +184,12 @@ Property detail
     :type: bool
 
     Opt whether to have the centroid automatically computed.
+
+.. py:property:: chain_analysis_options
+    :canonical: ansys.stk.core.stkobjects.AreaTarget.chain_analysis_options
+    :type: ChainAnalysisOptions
+
+    Get the area target's chain analysis options.
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.stkobjects.AreaTarget.common_tasks

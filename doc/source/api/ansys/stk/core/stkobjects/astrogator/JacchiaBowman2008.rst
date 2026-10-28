@@ -26,6 +26,8 @@ Overview
               - Get or set the atmospheric model DTC file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmosphere_data_source`
               - Get or set the atmospheric model data source - data file or constant values.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.drag_correction_type`
+              - Drag correction type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.drag_model_plugin`
               - Drag model plugin properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.drag_model_plugin_name`
@@ -44,14 +46,24 @@ Overview
               - Average solar Flux (M10). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.n_plate_definition_file`
               - Drag N-Plate definition file.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.n_plate_stochastic_parameters`
+              - NPlate Stochastic Parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.s10`
               - Solar Flux (S10). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.s10_avg`
               - Average solar Flux (S10). Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.stochastic_ballistic_coefficient`
+              - Stochastic Ballistic Coefficient.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.stochastic_density_correction`
+              - Stochastic StochasticDensity Correction.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.sun_position`
               - Get or set the sun position computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.use_approximate_altitude`
               - True if using approximate altitude formula.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.use_stochastic_ballistic_coefficient`
+              - True if using stochastic model for ballistic coefficient.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.use_stochastic_density_correction`
+              - True if using stochastic model for a density model correction.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.variable_area_history_file`
               - Drag variable area history file.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.y10`
@@ -89,6 +101,12 @@ Property detail
     :type: AtmosphereDataSource
 
     Get or set the atmospheric model data source - data file or constant values.
+
+.. py:property:: drag_correction_type
+    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.drag_correction_type
+    :type: DragCorrectionType
+
+    Drag correction type.
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.drag_model_plugin
@@ -144,6 +162,12 @@ Property detail
 
     Drag N-Plate definition file.
 
+.. py:property:: n_plate_stochastic_parameters
+    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.n_plate_stochastic_parameters
+    :type: NPlateStochasticParametersCollection
+
+    NPlate Stochastic Parameters.
+
 .. py:property:: s10
     :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.s10
     :type: float
@@ -156,6 +180,18 @@ Property detail
 
     Average solar Flux (S10). Dimensionless.
 
+.. py:property:: stochastic_ballistic_coefficient
+    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.stochastic_ballistic_coefficient
+    :type: StochasticModelParameters
+
+    Stochastic Ballistic Coefficient.
+
+.. py:property:: stochastic_density_correction
+    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.stochastic_density_correction
+    :type: StochasticDensityCorrection
+
+    Stochastic StochasticDensity Correction.
+
 .. py:property:: sun_position
     :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.sun_position
     :type: SunPosition
@@ -167,6 +203,18 @@ Property detail
     :type: bool
 
     True if using approximate altitude formula.
+
+.. py:property:: use_stochastic_ballistic_coefficient
+    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.use_stochastic_ballistic_coefficient
+    :type: bool
+
+    True if using stochastic model for ballistic coefficient.
+
+.. py:property:: use_stochastic_density_correction
+    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.use_stochastic_density_correction
+    :type: bool
+
+    True if using stochastic model for a density model correction.
 
 .. py:property:: variable_area_history_file
     :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.variable_area_history_file

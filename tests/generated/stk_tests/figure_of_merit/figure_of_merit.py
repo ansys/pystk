@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -77,7 +77,6 @@ class EarlyBoundTests(TestBase):
         # DefinitionSupportedTypes
         arTypes = EarlyBoundTests.AG_FOM.definition_supported_types
         TestBase.logger.WriteLine3("\tThe FigureOfMerit supports: {0} definition types", len(arTypes))
-
         iIndex: int = 0
         while iIndex < len(arTypes):
             eType: "FigureOfMeritDefinitionType" = FigureOfMeritDefinitionType(int(arTypes[iIndex][0]))
@@ -807,20 +806,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(FigureOfMeritConstraintName.J_OVER_S, fomcs.constraint_name)
 
         # ===================================================================
-        # SrchTrkSinglePulseJOverS
-        # ===================================================================
-        # Set to other than the access constraint we are going to test.
-        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.FREQUENCY)
-        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.SEARCH_TRACK_SINGLE_PULSE_J_OVER_S)
-        Assert.assertEqual(FigureOfMeritConstraintName.SEARCH_TRACK_SINGLE_PULSE_J_OVER_S, fomcs.constraint_name)
-        Assert.assertEqual("SrchTrkSinglePulseJOverS", fomcs.constraint)
-        # Set to other than the access constraint we are going to test.
-        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.FREQUENCY)
-        fomcs = fom.set_access_constraint_definition_name("SrchTrkSinglePulseJOverS")
-        Assert.assertEqual("SrchTrkSinglePulseJOverS", fomcs.constraint)
-        Assert.assertEqual(FigureOfMeritConstraintName.SEARCH_TRACK_SINGLE_PULSE_J_OVER_S, fomcs.constraint_name)
-
-        # ===================================================================
         # CrdnCondition
         # ===================================================================
         # Set to other than the access constraint we are going to test.
@@ -849,6 +834,7 @@ class EarlyBoundTests(TestBase):
 
     # region DP_PreData_Unit
     def test_DP_PreData_Unit(self):
+
         holdDateFormat: str = TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat")
 
         try:

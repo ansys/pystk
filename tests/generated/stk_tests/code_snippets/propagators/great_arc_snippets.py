@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -90,6 +90,7 @@ class GreatArcSnippets(CodeSnippetsTestBase):
         # Remove any previous waypoints
         propagator.waypoints.remove_all()
 
+        # Insert the waypoints
         i: int = 0
         while i < len(waypoints):
             waypoint: "VehicleWaypointsElement" = propagator.waypoints.add()
@@ -128,6 +129,7 @@ class GreatArcSnippets(CodeSnippetsTestBase):
         # Remove any previous waypoints
         propagator.waypoints.remove_all()
 
+        # Insert the waypoints
         i: int = 0
         while i < len(waypoints):
             waypoint: "VehicleWaypointsElement" = propagator.waypoints.add()
@@ -140,7 +142,6 @@ class GreatArcSnippets(CodeSnippetsTestBase):
 
         # List the waypoints after extracting them into an array
         waypointArray = propagator.waypoints.to_array()
-
         j: int = 0
         while j < len(waypointArray):
             Console.WriteLine(
@@ -175,6 +176,7 @@ class GreatArcSnippets(CodeSnippetsTestBase):
         # Remove any previous waypoints
         propagator.waypoints.remove_all()
 
+        # Insert the waypoints
         i: int = 0
         while i < len(waypoints):
             waypoint: "VehicleWaypointsElement" = propagator.waypoints.add()

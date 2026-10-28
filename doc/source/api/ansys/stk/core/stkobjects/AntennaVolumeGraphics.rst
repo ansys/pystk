@@ -49,8 +49,6 @@ Overview
               - Get the elevation start value.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.elevation_stop`
               - Get the elevation stop value.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.gain_offset`
-              - Do not use this property, as it is deprecated. Use the MinimumDisplayedGain property instead. Gets or sets the gain offset value.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.gain_scale`
               - Get or set the gain scale value.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.levels`
@@ -141,12 +139,6 @@ Property detail
 
     Get the elevation stop value.
 
-.. py:property:: gain_offset
-    :canonical: ansys.stk.core.stkobjects.AntennaVolumeGraphics.gain_offset
-    :type: float
-
-    Do not use this property, as it is deprecated. Use the MinimumDisplayedGain property instead. Gets or sets the gain offset value.
-
 .. py:property:: gain_scale
     :canonical: ansys.stk.core.stkobjects.AntennaVolumeGraphics.gain_scale
     :type: float
@@ -198,8 +190,6 @@ Property detail
 
 Method detail
 -------------
-
-
 
 
 

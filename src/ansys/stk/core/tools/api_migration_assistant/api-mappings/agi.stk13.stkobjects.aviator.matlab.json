@@ -1,0 +1,216 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.stkobjects.aviator.matlab",
+        "NewRootScope": "ansys.stk.core.stkobjects.aviator.matlab"
+    },
+    "MemberMappings": [
+        {
+            "ParentScope": "IAgAvtrStrategyMATLABNav",
+            "OldName": "FunctionName",
+            "NewName": "function_name"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLABNav",
+            "OldName": "IsFunctionPathValid",
+            "NewName": "is_function_path_valid"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLABNav",
+            "OldName": "CheckForErrors",
+            "NewName": "check_for_errors"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLABNav",
+            "OldName": "DisplayOutput",
+            "NewName": "display_output"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLABProfile",
+            "OldName": "FunctionName",
+            "NewName": "function_name"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLABProfile",
+            "OldName": "IsFunctionPathValid",
+            "NewName": "is_function_path_valid"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLABProfile",
+            "OldName": "CheckForErrors",
+            "NewName": "check_for_errors"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLABProfile",
+            "OldName": "DisplayOutput",
+            "NewName": "display_output"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLABFull3D",
+            "OldName": "FunctionName",
+            "NewName": "function_name"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLABFull3D",
+            "OldName": "IsFunctionPathValid",
+            "NewName": "is_function_path_valid"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLABFull3D",
+            "OldName": "CheckForErrors",
+            "NewName": "check_for_errors"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLABFull3D",
+            "OldName": "DisplayOutput",
+            "NewName": "display_output"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "TargetName",
+            "NewName": "target_name"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "ValidTargetNames",
+            "NewName": "valid_target_names"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "TargetResolution",
+            "NewName": "target_resolution"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "UseStopTimeToGo",
+            "NewName": "use_stop_time_to_go"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "StopTimeToGo",
+            "NewName": "stop_time_to_go"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "SetStopTimeToGo",
+            "NewName": "set_stop_time_to_go"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "UseStopSlantRange",
+            "NewName": "use_stop_slant_range"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "StopSlantRange",
+            "NewName": "stop_slant_range"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "SetStopSlantRange",
+            "NewName": "set_stop_slant_range"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "FunctionName",
+            "NewName": "function_name"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "IsFunctionPathValid",
+            "NewName": "is_function_path_valid"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "CheckForErrors",
+            "NewName": "check_for_errors"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "DisplayOutput",
+            "NewName": "display_output"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "ClosureMode",
+            "NewName": "closure_mode"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "HOBSMaxAngle",
+            "NewName": "hobs_max_angle"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "HOBSAngleTol",
+            "NewName": "hobs_angle_tol"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "ComputeTASDot",
+            "NewName": "compute_tas_dot"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "AirspeedOptions",
+            "NewName": "airspeed_options"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "PosVelStrategies",
+            "NewName": "position_velocity_strategies"
+        },
+        {
+            "ParentScope": "IAgAvtrStrategyMATLAB3DGuidance",
+            "OldName": "CancelTgtPosVel",
+            "NewName": "cancel_target_position_velocity"
+        }
+    ],
+    "InterfaceMappings": [
+        {
+            "OldName": "IAgAvtrStrategyMATLABNav",
+            "NewName": "StrategyMATLABNavigation"
+        },
+        {
+            "OldName": "IAgAvtrStrategyMATLABProfile",
+            "NewName": "StrategyMATLABProfile"
+        },
+        {
+            "OldName": "IAgAvtrStrategyMATLABFull3D",
+            "NewName": "StrategyMATLABFull3D"
+        },
+        {
+            "OldName": "IAgAvtrStrategyMATLAB3DGuidance",
+            "NewName": "StrategyMATLAB3DGuidance"
+        }
+    ],
+    "ClassMappings": [
+        {
+            "OldName": "AgAvtrStrategyMATLABNav",
+            "NewName": "StrategyMATLABNavigation"
+        },
+        {
+            "OldName": "AgAvtrStrategyMATLABProfile",
+            "NewName": "StrategyMATLABProfile"
+        },
+        {
+            "OldName": "AgAvtrStrategyMATLABFull3D",
+            "NewName": "StrategyMATLABFull3D"
+        },
+        {
+            "OldName": "AgAvtrStrategyMATLAB3DGuidance",
+            "NewName": "StrategyMATLAB3DGuidance"
+        },
+        {
+            "OldName": "AgAvtrBasicManeuverMATLABFactory",
+            "NewName": "BasicManeuverMATLABFactory"
+        }
+    ],
+    "EnumTypeMappings": [
+        {
+            "OldName": "AgEAvtrClosureMode",
+            "NewName": "ClosureMode"
+        }
+    ],
+    "EnumValueMappings": [],
+    "NamedArgumentMappings": []
+}

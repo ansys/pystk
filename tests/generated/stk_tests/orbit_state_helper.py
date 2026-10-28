@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -429,7 +429,6 @@ class OrbitStateHelper(object):
         # CoordinateSystem test
         arTypes = self.m_oCartesian.supported_coordinate_system_types
         self.m_logger.WriteLine3("\t\tCartesian supports: {0} types", len(arTypes))
-
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
@@ -527,7 +526,6 @@ class OrbitStateHelper(object):
         # CoordinateSystem test
         arTypes = self.m_oClassical.supported_coordinate_system_types
         self.m_logger.WriteLine3("\t\tClassical supports: {0} types", len(arTypes))
-
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
@@ -575,7 +573,6 @@ class OrbitStateHelper(object):
         oLicenses: "ExecuteCommandResult" = None
         oLicenses = self.m_oApplication.execute_command("GetLicenses /")
         Assert.assertIsNotNone(oLicenses)
-
         iI: int = 0
         while iI < oLicenses.count:
             strLicense: str = oLicenses[iI]
@@ -1345,7 +1342,6 @@ class OrbitStateHelper(object):
         # CoordinateSystem test
         arTypes = self.m_oGeodetic.supported_coordinate_system_types
         self.m_logger.WriteLine3("\t\tGeodetic supports: {0} types", len(arTypes))
-
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
@@ -1658,7 +1654,6 @@ class OrbitStateHelper(object):
         # CoordinateSystem test
         arTypes = self.m_oDelaunay.supported_coordinate_system_types
         self.m_logger.WriteLine3("\t\tDelaunay supports: {0} types", len(arTypes))
-
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
@@ -1705,7 +1700,6 @@ class OrbitStateHelper(object):
         oLicenses: "ExecuteCommandResult" = None
         oLicenses = self.m_oApplication.execute_command("GetLicenses /")
         Assert.assertIsNotNone(oLicenses)
-
         iI: int = 0
         while iI < oLicenses.count:
             strLicense: str = oLicenses[iI]
@@ -1944,7 +1938,6 @@ class OrbitStateHelper(object):
         # CoordinateSystem test
         arTypes = self.m_oEquinoctial.supported_coordinate_system_types
         self.m_logger.WriteLine3("\t\tEquinoctial supports: {0} types", len(arTypes))
-
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
@@ -2207,7 +2200,6 @@ class OrbitStateHelper(object):
         # CoordinateSystem test
         arTypes = self.m_oMixed.supported_coordinate_system_types
         self.m_logger.WriteLine3("\t\tMixedSpherical supports: {0} types", len(arTypes))
-
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
@@ -2428,7 +2420,6 @@ class OrbitStateHelper(object):
         # CoordinateSystem test
         arTypes = self.m_oSpherical.supported_coordinate_system_types
         self.m_logger.WriteLine3("\t\tSpherical supports: {0} types", len(arTypes))
-
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(

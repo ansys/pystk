@@ -165,7 +165,7 @@ Strategy pattern
 This section provides information on the strategy pattern as it relates to
 PySTK. The strategy pattern enables you to delegate behavior to different
 strategies that can be selected at runtime. It is useful when you need to vary
-the behavior of certain components, such as authentication methods or request
+the behavior of certain components, such as authentication methods, or request
 handling strategies, without altering the objects that use them.
 
 gRPC call batching

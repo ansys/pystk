@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -40,11 +40,7 @@ from .internal.apiutil import (
     set_class_attribute,
 )
 from .internal.comutil import IDispatch, IUnknown
-from .utilities.exceptions import STKRuntimeError
 
-
-def _raise_uninitialized_error(*args):
-    raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
 class WindowServiceType(IntEnum):
     """Well-known types of services."""
@@ -234,7 +230,7 @@ class WindowsCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, WindowsCollection, [WindowsCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5494012632689531786, 14643514705293336469), WindowsCollection)
+agcls.AgClassCatalog.add_catalog_entry((5214364363717914366, 13578877492221407144), WindowsCollection)
 agcls.AgTypeNameMap["WindowsCollection"] = WindowsCollection
 
 class Window(SupportsDeleteCallback):
@@ -479,7 +475,7 @@ class Window(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Window, [Window, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4826632444527701187, 17778306301041749141), Window)
+agcls.AgClassCatalog.add_catalog_entry((5499256377237207604, 1833479666897313423), Window)
 agcls.AgTypeNameMap["Window"] = Window
 
 class Toolbar(SupportsDeleteCallback):
@@ -565,7 +561,7 @@ class Toolbar(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Toolbar, [Toolbar, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5472906868102444420, 13479142476234282134), Toolbar)
+agcls.AgClassCatalog.add_catalog_entry((4933179785366539802, 14000769212146133947), Toolbar)
 agcls.AgTypeNameMap["Toolbar"] = Toolbar
 
 class ToolbarCollection(SupportsDeleteCallback):
@@ -663,7 +659,7 @@ class ToolbarCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ToolbarCollection, [ToolbarCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5214835483446608103, 6177983444187579524), ToolbarCollection)
+agcls.AgClassCatalog.add_catalog_entry((5456824333564167713, 9127285738383814044), ToolbarCollection)
 agcls.AgTypeNameMap["ToolbarCollection"] = ToolbarCollection
 
 class WindowMapObject(SupportsDeleteCallback):
@@ -703,7 +699,7 @@ class WindowMapObject(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, WindowMapObject, [WindowMapObject, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5532961742508552268, 7732337666827650452), WindowMapObject)
+agcls.AgClassCatalog.add_catalog_entry((4810650615632165871, 5900599590476949660), WindowMapObject)
 agcls.AgTypeNameMap["WindowMapObject"] = WindowMapObject
 
 class WindowGlobeObject(SupportsDeleteCallback):
@@ -743,5 +739,5 @@ class WindowGlobeObject(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, WindowGlobeObject, [WindowGlobeObject, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5334286057966533215, 999415816428096669), WindowGlobeObject)
+agcls.AgClassCatalog.add_catalog_entry((4681936252797348470, 12626443510729352364), WindowGlobeObject)
 agcls.AgTypeNameMap["WindowGlobeObject"] = WindowGlobeObject

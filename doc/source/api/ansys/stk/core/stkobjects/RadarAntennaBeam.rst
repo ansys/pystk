@@ -33,7 +33,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarAntennaBeam.activity`
               - Get the activity.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAntennaBeam.beam_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAntennaBeam.beamwidth`
               - Get or set the antenna beamwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarAntennaBeam.gain`
               - Get or set the antenna mainlobe gain.
@@ -63,8 +63,8 @@ Property detail
 
     Get the activity.
 
-.. py:property:: beam_width
-    :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.beam_width
+.. py:property:: beamwidth
+    :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.beamwidth
     :type: float
 
     Get or set the antenna beamwidth.

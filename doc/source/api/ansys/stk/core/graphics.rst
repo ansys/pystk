@@ -189,6 +189,12 @@ Summary
             * - :py:class:`~ansys.stk.core.graphics.CentralBodyGraphicsIndexer`
               - An indexer into the central body graphics for a particular central body, which provides graphical properties such as showing or hiding the central body in the scene, and working with terrain and imagery for the specified central body.
 
+            * - :py:class:`~ansys.stk.core.graphics.CesiumIonTerrainOverlay`
+              - A terrain overlay for handling Cesium Ion Streaming Terrain.
+
+            * - :py:class:`~ansys.stk.core.graphics.CesiumIonTerrainOverlayFactory`
+              - A terrain overlay for handling Cesium Ion Streaming Terrain.
+
             * - :py:class:`~ansys.stk.core.graphics.Clouds`
               - Load, show and hide clouds in the scene.
 
@@ -427,10 +433,10 @@ Summary
               - A collection containing a model primitive's available articulations. A model articulation identifies geometry on the model and is a collection of transformations that can be applied to that geometry.
 
             * - :py:class:`~ansys.stk.core.graphics.ModelPrimitive`
-              - The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models.
+              - The model primitive loads and renders `glTF 2.0 <https://www.khronos.org/gltf/>`_ (.gltf, .glb), `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models/>`_ (MDL) models.
 
             * - :py:class:`~ansys.stk.core.graphics.ModelPrimitiveFactory`
-              - The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models.
+              - The model primitive loads and renders `glTF 2.0 <https://www.khronos.org/gltf/>`_ (.gltf, .glb), `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models/>`_ (MDL) models.
 
             * - :py:class:`~ansys.stk.core.graphics.ModelTransformation`
               - A model transformation defines a transformation that is applied to geometry on a model primitive. That geometry is identified by the model articulation which contains the transformation...
@@ -765,7 +771,7 @@ Summary
               - The method used to blur or smooth a raster.
 
             * - :py:class:`~ansys.stk.core.graphics.ConstrainedUpAxis`
-              - When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen.
+              - When setting the camera's axes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen.
 
             * - :py:class:`~ansys.stk.core.graphics.CylinderFillOptions`
               - Cylinder faces that can be filled.
@@ -819,7 +825,7 @@ Summary
               - Transformation types that define the way a model transformation changes the geometry of the model articulation it is associated with.
 
             * - :py:class:`~ansys.stk.core.graphics.ModelUpAxis`
-              - When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen.
+              - When setting the camera's axes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen.
 
             * - :py:class:`~ansys.stk.core.graphics.Origin`
               - Vertical and horizontal origin.
@@ -840,7 +846,7 @@ Summary
               - Describes how to interpret positions defining a polyline.
 
             * - :py:class:`~ansys.stk.core.graphics.PrimitiveIndicesOrderHint`
-              - An optimization hint optionally provided to a primitive'sSetPartial method to enhance performance.
+              - An optimization hint optionally provided to a primitive's SetPartial method to enhance performance.
 
             * - :py:class:`~ansys.stk.core.graphics.PrimitivesSortOrder`
               - The order in which primitives are sorted before rendering.
@@ -852,7 +858,7 @@ Summary
               - The axis on which a raster will be flipped.
 
             * - :py:class:`~ansys.stk.core.graphics.RasterFormat`
-              - Common raster band layouts that may be contained within a raster dataset. Each pixel of the raster will contain the bands defined by the layout in the specified order. A typical color raster image will have an rgbraster format.
+              - Common raster band layouts that may be contained within a raster dataset. Each pixel of the raster will contain the bands defined by the layout in the specified order. A typical color raster image will have an rgb raster format.
 
             * - :py:class:`~ansys.stk.core.graphics.RasterOrientation`
               - The vertical orientation of the raster.
@@ -873,7 +879,7 @@ Summary
               - Describes when a primitive will be rendered. Some primitives need to be rendered during or at a certain time. For example, translucent primitives need to be rendered after opaque primitives to allow proper blending...
 
             * - :py:class:`~ansys.stk.core.graphics.RenderPassHint`
-              - An optimization hint optionally provided to a primitive'sSet method to enhance performance when per-position colors are used.
+              - An optimization hint optionally provided to a primitive's Set method to enhance performance when per-position colors are used.
 
             * - :py:class:`~ansys.stk.core.graphics.ScreenOverlayOrigin`
               - Specify the origin of a screen overlay, as well as the direction of the horizontal and vertical axes. The origin specifies both the origin in the parent overlay's coordinate system and the origin within the overlay itself that is positioned.
@@ -1001,6 +1007,8 @@ well as in STK Engine custom applications.
      CameraVideoRecording<graphics/CameraVideoRecording>
      CentralBodyGraphics<graphics/CentralBodyGraphics>
      CentralBodyGraphicsIndexer<graphics/CentralBodyGraphicsIndexer>
+     CesiumIonTerrainOverlay<graphics/CesiumIonTerrainOverlay>
+     CesiumIonTerrainOverlayFactory<graphics/CesiumIonTerrainOverlayFactory>
      Clouds<graphics/Clouds>
      ColorToLuminanceFilter<graphics/ColorToLuminanceFilter>
      ColorToLuminanceFilterFactory<graphics/ColorToLuminanceFilterFactory>

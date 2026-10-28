@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""Contains a wrapper for a raw COM object that is not part of the STK Object Model."""
+"""Contains a wrapper for a raw COM object that is not part of the Object Model."""
 
 from ctypes import c_void_p
 
@@ -29,16 +29,16 @@ class COMObject(object):
     """
     Holds a raw COM pointer.
 
-    May be returned from STK if the return argument is not part of the STK Object Model.
+    May be returned from if the return argument is not part of the Object Model.
     """
 
     def __init__(self):
         """Construct an object of type COMObject."""
-        self._pUnk = None
+        self._intf : "IUnknown" = None
 
     def get_pointer(self) -> c_void_p:
         """Return the COM object pointer as a ctypes.c_void_p."""
-        if self._pUnk is None:
+        if self._intf is None:
             return c_void_p()
         else:
-            return self._pUnk.p
+            return self._intf.p

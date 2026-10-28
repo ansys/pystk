@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -196,7 +196,7 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.commSystem.set_link_selection_criteria_type(CommSystemLinkSelectionCriteriaType.SCRIPT_PLUGIN)
         lsc = EarlyBoundTests.commSystem.link_selection_criteria
         Assert.assertEqual(CommSystemLinkSelectionCriteriaType.SCRIPT_PLUGIN, lsc.type)
-        if not OSHelper.IsLinux():
+        if OSHelper.SupportsScriptPlugins():
             # script plugins do not work on linux
             scriptPlugin: "CommSystemLinkSelectionCriteriaScriptPlugin" = clr.CastAs(
                 EarlyBoundTests.commSystem.link_selection_criteria, CommSystemLinkSelectionCriteriaScriptPlugin

@@ -1,0 +1,12 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.stkengine.tkcontrols",
+        "NewRootScope": "ansys.stk.core.stkengine.tkcontrols"
+    },
+    "MemberMappings": [],
+    "InterfaceMappings": [],
+    "ClassMappings": [],
+    "EnumTypeMappings": [],
+    "EnumValueMappings": [],
+    "NamedArgumentMappings": []
+}

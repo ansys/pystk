@@ -18,8 +18,6 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.set_filter`
-              - Do not use this method, as it is deprecated. Use FilterComponentLinking on RadarReceiver instead. Sets the current filter model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.set_ifstc_type`
               - Set the IF STC Type.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.set_polarization_type`
@@ -45,8 +43,6 @@ Overview
               - Get or set the enable polarization option.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.enable_rfstc`
               - Get or set whether the RF STC is enabled.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.filter`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on RadarReceiver instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.filter_component_linking`
               - Get the link/embed controller for managing the filter model component.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.frequency`
@@ -67,8 +63,6 @@ Overview
               - Get or set the rain outage percent.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.rfstc`
               - Get the RF STC.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.supported_filters`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on RadarReceiver instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.supported_ifstc_types`
               - Get the IF STC Types.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.supported_rain_outage_percent_values`
@@ -129,12 +123,6 @@ Property detail
 
     Get or set whether the RF STC is enabled.
 
-.. py:property:: filter
-    :canonical: ansys.stk.core.stkobjects.RadarReceiver.filter
-    :type: IRFFilterModel
-
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on RadarReceiver instead. Gets the current filter model.
-
 .. py:property:: filter_component_linking
     :canonical: ansys.stk.core.stkobjects.RadarReceiver.filter_component_linking
     :type: IComponentLinkEmbedControl
@@ -194,12 +182,6 @@ Property detail
     :type: IRadarSTCAttenuation
 
     Get the RF STC.
-
-.. py:property:: supported_filters
-    :canonical: ansys.stk.core.stkobjects.RadarReceiver.supported_filters
-    :type: list
-
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on RadarReceiver instead. Gets an array of supported model names.
 
 .. py:property:: supported_ifstc_types
     :canonical: ansys.stk.core.stkobjects.RadarReceiver.supported_ifstc_types
@@ -262,21 +244,6 @@ Method detail
 
 
 
-
-.. py:method:: set_filter(self, name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.RadarReceiver.set_filter
-
-    Do not use this method, as it is deprecated. Use FilterComponentLinking on RadarReceiver instead. Sets the current filter model by name.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
-
 .. py:method:: set_ifstc_type(self, type_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.RadarReceiver.set_ifstc_type
 
@@ -318,7 +285,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
 
 
 

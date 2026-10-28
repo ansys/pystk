@@ -20,7 +20,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProvider.name`
               - Get the scattering point provider name.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProvider.point_provider_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProvider.type`
               - Get the scattering point provider type enumeration.
 
 
@@ -41,8 +41,8 @@ Property detail
 
     Get the scattering point provider name.
 
-.. py:property:: point_provider_type
-    :canonical: ansys.stk.core.stkobjects.IScatteringPointProvider.point_provider_type
+.. py:property:: type
+    :canonical: ansys.stk.core.stkobjects.IScatteringPointProvider.type
     :type: ScatteringPointProviderType
 
     Get the scattering point provider type enumeration.

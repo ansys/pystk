@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -21,9 +21,9 @@
 # SOFTWARE.
 
 from datetime import datetime
-from agi.stk12.plugins.utplugin import AgEUtLogMsgType, AgEUtTimeScale
-from agi.stk12.plugins.stkplugin import AgStkPluginSite
-from agi.stk12.plugins.asplugin import (
+from agi.stk13.plugins.utplugin import AgEUtLogMsgType, AgEUtTimeScale
+from agi.stk13.plugins.stkplugin import AgStkPluginSite
+from agi.stk13.plugins.asplugin import (
     AgEAsEphemInterpolationMethod,
     AgEAsCovRep,
     AgEAsEphemFileDistanceUnit,

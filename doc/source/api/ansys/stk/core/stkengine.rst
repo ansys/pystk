@@ -8,15 +8,6 @@ Summary
 
 .. tab-set::
 
-    .. tab-item:: Subpackages
-
-        .. list-table::
-            :header-rows: 0
-            :widths: auto
-
-            * - :py:obj:`~ansys.stk.core.stkengine.experimental`
-
-
     .. tab-item:: Submodules
 
         .. list-table::
@@ -58,14 +49,6 @@ Starts STK Engine and provides access to the Object Model root.
 .. py:currentmodule:: ansys.stk.core.stkengine
 
 .. TABLE OF CONTENTS
-
-.. toctree::
-    :titlesonly:
-    :maxdepth: 1
-    :hidden:
-
-     🖿 experimental<stkengine/experimental>
-
 
 .. toctree::
     :titlesonly:

@@ -45,8 +45,6 @@ Overview
               - Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.ground_ellipses`
               - Get the  ground ellipses properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.lighting_maximum_step`
-              - Do not use this property, as it is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route`
               - Get the route properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route_supported_types`
@@ -103,12 +101,6 @@ Property detail
     :type: VehicleGroundEllipsesCollection
 
     Get the  ground ellipses properties.
-
-.. py:property:: lighting_maximum_step
-    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.lighting_maximum_step
-    :type: float
-
-    Do not use this property, as it is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
 .. py:property:: route
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.route
@@ -171,8 +163,6 @@ Method detail
     :Returns:
 
         :obj:`~bool`
-
-
 
 
 

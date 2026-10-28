@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -22,6 +22,7 @@
 
 """Test the `sensor_graphs` module."""
 import pytest
+from pathlib import Path
 from stk_environment import stk_root
 from ansys.stk.extensions.data_analysis.graphs.sensor_graphs import azimuth_elevation_line_chart, footprint_area_line_chart
 
@@ -30,11 +31,11 @@ def sensor(stk_root):
     from ansys.stk.core.stkobjects import STKObjectType
 
     stk_root.new_scenario("GraphTest")
+    stk_root.execute_command("Terrain * TerrainServer UseTerrainForAnalysis No")
     scenario = stk_root.current_scenario
     scenario.set_time_period("5 Jun 2022", "6 Jun 2022")
 
     place = scenario.children.new(STKObjectType.PLACE, "Place")
-    place.use_terrain = False
     place.position.assign_planetodetic(39.95, -75.16, 0)
 
     sensor = place.children.new(STKObjectType.SENSOR, "Sensor")
@@ -52,7 +53,8 @@ def sensor_from_satellite(stk_root):
     satellite = stk_root.current_scenario.children.new(STKObjectType.SATELLITE, "Satellite")
     satellite.set_propagator_type(PropagatorType.SGP4)
     propagator = satellite.propagator
-    propagator.common_tasks.add_segments_from_online_source("25544")
+    tle_file = Path(__file__).parent / "data" / "iss_5Jun2022.tle"
+    propagator.common_tasks.add_segments_from_file("25544", str(tle_file.resolve()))
     propagator.propagate()
 
     sensor = satellite.children.new(STKObjectType.SENSOR, "Sensor")

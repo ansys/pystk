@@ -53,7 +53,7 @@ Fork the repository
 
 Forking the repository is the first step to contributing to the project. This
 allows you to have your own copy of the project so you can make changes without
-affection the main project. Once you have made your changes, you can submit a
+affecting the main project. Once you have made your changes, you can submit a
 pull-request to the main project to have your changes reviewed and merged.
 
 .. button-link:: https://github.com/ansys/pystk/fork

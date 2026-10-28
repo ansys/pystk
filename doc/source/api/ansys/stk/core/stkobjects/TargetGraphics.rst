@@ -3,6 +3,8 @@ TargetGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.TargetGraphics
 
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IGroundLocationGraphics`
+
    Class defining 2D Graphics for a Target object.
 
 .. py:currentmodule:: TargetGraphics

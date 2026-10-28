@@ -34,7 +34,7 @@ root.new_scenario("IntroductionToRadar")
 # Once the scenario is created, it is possible to show a 3D graphics window by running:
 
 # +
-from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
+from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_widget = GlobeWidget(root, 640, 480)
@@ -44,7 +44,7 @@ globe_widget.show()
 # Show a 2D graphics window by running:
 
 # +
-from ansys.stk.core.stkengine.experimental.jupyterwidgets import MapWidget
+from ansys.stk.core.experimental.jupyterwidgets import MapWidget
 
 
 map_widget = MapWidget(root, 640, 480)

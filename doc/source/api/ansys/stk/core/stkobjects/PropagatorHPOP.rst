@@ -62,7 +62,7 @@ Set satellite propagator to HPOP and set force model properties
 
     forceModel = satellite.propagator.force_model
     if os.name == "nt":
-        installPath = r"C:\Program Files\AGI\STK 12"
+        installPath = r"C:\Program Files\AGI\STK_ODTK 13"
     else:
         installPath = os.environ["STK_INSTALL_DIR"]
     grv_path = ["STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv"]
