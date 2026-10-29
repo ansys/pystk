@@ -51,3 +51,22 @@ updates:
       actions:
         patterns:
           - "*"
+
+  - package-ecosystem: "pre-commit"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    cooldown:
+      default-days: 7 # semver-* options are not applicable for pre-commit
+      exclude:
+        - "ansys/pre-commit-hooks/*"
+    labels:
+      - "dependencies:pre-commit"
+    assignees:
+      - "pyansys-ci-bot"
+    commit-message:
+      prefix: "build"
+    groups:
+      pre-commit-hooks:
+        patterns:
+          - "*"
