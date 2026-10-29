@@ -7,7 +7,8 @@ configuration, the packaging metadata or the CI/CD workflows changes the global
 hash and therefore invalidates every notebook.
 
 Usage: ``python scripts/examples_cache.py`` executes the missing or stale
-notebooks. It does nothing if ``BUILD_EXAMPLES`` is ``false``.
+notebooks. It does nothing if ``BUILD_EXAMPLES`` is ``false``. Set
+``EXAMPLES_CACHE_FORCE=true`` to execute every example regardless of the cache.
 """
 
 import hashlib
@@ -90,6 +91,7 @@ def execute_examples() -> None:
 
     CACHE_DIRECTORY.mkdir(parents=True, exist_ok=True)
     global_hash = global_key()
+    force = os.environ.get("EXAMPLES_CACHE_FORCE", "false") == "true"
     examples = sorted(EXAMPLES_DIRECTORY.glob("*.py"))
     current = {example.stem for example in examples}
 
@@ -99,7 +101,7 @@ def execute_examples() -> None:
             file.unlink()
 
     for example in examples:
-        if cached_notebook(example, global_hash):
+        if not force and cached_notebook(example, global_hash):
             print(f"[cache hit]  {example.name}")
             continue
         print(f"[executing]  {example.name}", flush=True)
