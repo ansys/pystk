@@ -36,10 +36,10 @@ root.new_scenario("SolarEclipse2026Spain")
 # Once the scenario is created, it is possible to show a 3D graphics window centered in Spain by running:
 
 # +
-from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
+from ansys.stk.extensions import GlobeVisualization
 
 
-globe_plotter = GlobeWidget(root, 640, 480)
+globe_plotter = GlobeVisualization(root=root, width=640, height=480)
 globe_plotter.camera.position = [
     -1923.8084226341264,
     6062.904530536664,
