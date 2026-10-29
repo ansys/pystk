@@ -18,9 +18,7 @@ import sys
 
 PROJECT_ROOT = pathlib.Path(__file__).resolve().parents[1]
 EXAMPLES_DIRECTORY = PROJECT_ROOT / "examples"
-CACHE_DIRECTORY = pathlib.Path(
-    os.environ.get("EXAMPLES_CACHE_DIR", EXAMPLES_DIRECTORY / ".cache")
-)
+CACHE_DIRECTORY = pathlib.Path(os.environ.get("EXAMPLES_CACHE_DIR", EXAMPLES_DIRECTORY / ".cache"))
 
 # Files and directories that invalidate every cached notebook when modified
 GLOBAL_INPUTS = [
@@ -86,8 +84,8 @@ def cached_notebook(example: pathlib.Path, global_hash: str | None = None):
 def execute_examples() -> None:
     """Execute the examples without a valid cached notebook."""
     import jupytext
-    import nbformat
     from nbclient import NotebookClient
+    import nbformat
 
     CACHE_DIRECTORY.mkdir(parents=True, exist_ok=True)
     global_hash = global_key()

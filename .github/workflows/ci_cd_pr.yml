@@ -312,7 +312,9 @@ jobs:
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: examples/.cache
-          key: examples-${{ hashFiles('uv.lock', 'pyproject.toml', 'tox.ini', 'doc/source/conf.py', 'scripts/examples_cache.py', 'src/**', '.github/workflows/ci_cd_*.yml', 'examples/**', '!examples/.cache/**') }}-${{ github.run_id }}
+          key: examples-${{ hashFiles('uv.lock', 'pyproject.toml', 'tox.ini', 'doc/source/conf.py',
+            'scripts/examples_cache.py', 'src/**', '.github/workflows/ci_cd_*.yml',
+            'examples/**', '!examples/.cache/**') }}-${{ github.run_id }}
           restore-keys: |
             examples-
 
