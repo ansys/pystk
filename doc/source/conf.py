@@ -190,6 +190,8 @@ linkcheck_ignore = [
     # Spurious failures
     r"https://www.khronos.org/collada/",
     r"https://www.khronos.org/gltf/",
+    # New example not yet published. Remove after the next documentation deploy.
+    rf"https://{cname}/version/.*/examples/sun-synchronous-orbit\.(py|ipynb|pdf)",
 ]
 
 # -- Declare the Jinja context -----------------------------------------------
