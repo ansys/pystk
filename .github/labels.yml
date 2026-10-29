@@ -87,6 +87,10 @@
   description: Related with pipelines dependencies
   color: fabed4
 
+- name: 'dependencies:pre-commit'
+  description: Related with pre-commit hooks dependencies
+  color: fabed4
+
 # -- CI/CD labels ------------------------------------------------------------
 
 - name: 'ci'
