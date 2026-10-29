@@ -75,6 +75,12 @@ urls.Source = "https://github.com/ansys/pystk"
 scripts.pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistant.api_migration_assistant:main"
 
 [dependency-groups]
+dev = [
+  { include-group = "doc" },
+  { include-group = "docstyle" },
+  { include-group = "tests" },
+  { include-group = "vulnerabilities" },
+]
 doc = [
   "ansys-sphinx-theme==1.9.0",
   "build==1.6.1",
