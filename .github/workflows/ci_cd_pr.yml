@@ -302,6 +302,20 @@ jobs:
             python -m pip install --upgrade pip tox==4.38.0 && rm -rf .tox
           fi
 
+      - name: "Restore the executed examples"
+        # The cache entry is only a starting point. The script that executes the
+        # examples validates every notebook against a hash of the dependencies,
+        # the library sources, the documentation and CI/CD configuration, and
+        # the example itself, so stale notebooks are never reused.
+        if: |
+          contains(github.event.pull_request.labels.*.name, 'docs:examples')
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: examples/.cache
+          key: examples-${{ hashFiles('uv.lock', 'pyproject.toml', 'tox.ini', 'doc/source/conf.py', 'scripts/examples_cache.py', 'src/**', '.github/workflows/ci_cd_*.yml', 'examples/**', '!examples/.cache/**') }}-${{ github.run_id }}
+          restore-keys: |
+            examples-
+
       - name: "Build docs including the 'Examples' section"
         # Render the documentation including or excluding different sections
         # according to the labels of the pull-request.
@@ -316,7 +330,7 @@ jobs:
           docker exec \
             --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
-            "export BUILD_API=false BUILD_EXAMPLES=true && tox -e doc-clean,doc-links,doc-html"
+            "export BUILD_API=false BUILD_EXAMPLES=true EXAMPLES_CACHE_SALT=${STK_DOCKER_IMAGE} && tox -e doc-clean,doc-links,doc-html"
 
       - name: "Build docs including the 'API' section"
         id: build-doc-with-api
@@ -350,7 +364,7 @@ jobs:
           docker exec \
             --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
-            "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc-clean,doc-links,doc-html"
+            "export BUILD_API=true BUILD_EXAMPLES=true EXAMPLES_CACHE_SALT=${STK_DOCKER_IMAGE} && tox -e doc-clean,doc-links,doc-html"
 
       - name: "Download latest API docs"
         # If required, combine partially rendered documentation with the nightly
