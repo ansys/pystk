@@ -53,6 +53,7 @@ Examples
         examples/bielliptic-transfer
         examples/lambert-transfer
         examples/phasing-geo-orbits
+        examples/low-thrust-spiral-transfer
 
     .. nbgallery::
         :caption: Mission analysis
