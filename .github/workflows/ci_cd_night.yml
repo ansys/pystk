@@ -193,12 +193,13 @@ jobs:
     steps:
       - name: "Keep only the latest examples cache of the default branch"
         env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
         run: |
           gh cache list \
             --key examples- \
-            --ref "refs/heads/${{ github.event.repository.default_branch }}" \
+            --ref "refs/heads/${DEFAULT_BRANCH}" \
             --sort created_at --order desc \
             --limit 100 \
             --json id \

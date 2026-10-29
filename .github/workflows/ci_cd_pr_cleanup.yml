@@ -3,6 +3,10 @@ on:
   pull_request:
     types: [closed]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 # Apply the principle of least privilege to state at job level the right
 # permissions. More information about workflow permissions in the page
 # https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#permissions
