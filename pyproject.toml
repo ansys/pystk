@@ -107,7 +107,7 @@ doc = [
 ]
 docstyle = [
   "rst2html==2020.7.4",
-  "vale==3.22.0.0",
+  "vale==3.25.1.0",
 ]
 tests = [
   "numpy==2.2.6",
