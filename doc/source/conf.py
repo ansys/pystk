@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 import pathlib
+import re
 import shutil
 import subprocess
 import sys
@@ -598,7 +599,14 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
         # A valid executed notebook replaces the example, so nbsphinx doesn't run it again
         cached_notebook = examples_cache.cached_notebook(file, global_hash)
         if cached_notebook is not None:
-            shutil.copyfile(cached_notebook, SOURCE_EXAMPLES / f"{file.stem}.ipynb")
+            notebook = json.loads(cached_notebook.read_text(encoding="utf-8"))
+            for cell in notebook["cells"]:
+                if cell["cell_type"] == "markdown":
+                    # Links to other examples must target the notebooks that replace the .py files
+                    cell["source"] = re.sub(r"(\]\(\./[\w-]+)\.py(#|\))", r"\1.ipynb\2", "".join(cell["source"]))
+            (SOURCE_EXAMPLES / f"{file.stem}.ipynb").write_text(
+                json.dumps(notebook, indent=1, ensure_ascii=False), encoding="utf-8"
+            )
             continue
         destination_file = SOURCE_EXAMPLES / file.name
         destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
