@@ -7,8 +7,8 @@ env:
   ANSYS_STK: 'ansys-stk'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
   LICENSE_SERVER_PORT: '1055'
-  MAIN_PYTHON_VERSION: '3.13'
-  MINIMUM_PYTHON_VERSION: '3.10'
+  MAIN_PYTHON_VERSION: '3.14'
+  MINIMUM_PYTHON_VERSION: '3.11'
   PYSTK_DIR: '/home/stk/pystk'
   QUARTO_VERSION: '1.5.55'
   STK_DOCKER_IMAGE: 'ansys/stk-13.1:dev-ubuntu22.04'
@@ -169,7 +169,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        python-version: ['3.10', '3.11', '3.12', '3.13']
+        python-version: ['3.11', '3.12', '3.13', '3.14']
         target: ['all']
     steps:
       - uses: ansys/actions/build-wheelhouse@f5e1481b9c128197a30d1dc1dfc52b8cd6865555 # v11.1.5
@@ -418,13 +418,13 @@ jobs:
       contents: read # Read the source code of the project
     strategy:
       matrix:
-        # Tests run against Python 3.10 to ensure backwards compatibility with
+        # Tests run against Python 3.11 to ensure backwards compatibility with
         # the lowest supported Python version. Testing against a single version
         # minimizes the time for CI/CD runs.
         #
         # Can not use ${{ env.MINIMUM_PYTHON_VERSION }} because GitHub actions
         # does not support ENV variable substitution in matrix definition
-        python: ['3.10']
+        python: ['3.11']
       fail-fast: false
     steps:
       - name: "Checkout the project"

@@ -14,14 +14,13 @@ maintainers = [
 authors = [
   { name = "ANSYS, Inc.", email = "pyansys.core@ansys.com" },
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 classifiers = [
   "Development Status :: 4 - Beta",
   "Intended Audience :: Developers",
   "Intended Audience :: Science/Research",
   "Operating System :: OS Independent",
   "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
@@ -53,7 +52,7 @@ optional-dependencies.grpc = [
 ]
 optional-dependencies.jupyter = [
   "jupyter-rfb>=1.0.2",
-  "numpy>=2.2.6",
+  "numpy>=2.3.2",
   "pillow>=11.3.0",
   "sidecar>=0.7.0",
   "simplejpeg>=1.8.2",
@@ -96,7 +95,7 @@ doc = [
   "numpydoc==1.11.0",
   "pandas==2.3.3",
   "plotly==7.1.0",
-  "scipy==1.15.3",
+  "scipy==1.17.1",
   "sphinx==8.2.3",
   "sphinx-copybutton==0.5.2",
   "sphinx-design==0.6.1",
@@ -110,13 +109,13 @@ docstyle = [
   "vale==3.26.0.1",
 ]
 tests = [
-  "numpy==2.2.6",
+  "numpy==2.3.2",
   "parameterized==0.9.0",
   "pytest==9.2.0",
   "pytest-cov==7.1.0",
   "pytest-mpl==0.19.0",
   "pytz==2026.6",
-  "scipy==1.15.3",
+  "scipy==1.17.1",
 ]
 vulnerabilities = [
   "bandit[toml]==1.9.4",
@@ -126,6 +125,9 @@ vulnerabilities = [
 
 [tool.flit]
 module.name = "ansys.stk"
+
+[tool.uv]
+override-dependencies = [ "typer==0.27.3" ]
 
 [tool.ruff]
 line-length = 120
