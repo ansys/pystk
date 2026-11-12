@@ -120,14 +120,11 @@ tests = [
 vulnerabilities = [
   "bandit[toml]==1.9.4",
   "safety==3.8.1",
-  "typer==0.27.3",
+  "typer<0.26.0,>=0.16.0",
 ]
 
 [tool.flit]
 module.name = "ansys.stk"
-
-[tool.uv]
-override-dependencies = [ "typer==0.27.3" ]
 
 [tool.ruff]
 line-length = 120
