@@ -72,10 +72,10 @@ scenario = root.current_scenario
 # Position the camera so that the satellite is viewable along with the communications site in the background. Notice how the satellite is targeting the communications site.
 
 # + tags=["nbsphinx-thumbnail"]
-from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
+from ansys.stk.extensions import GlobeVisualization
 
 
-globe_widget = GlobeWidget(root, 640, 480)
+globe_widget = GlobeVisualization(root=root, width=640, height=480)
 globe_widget.camera.position = [
     -5487.455182656891,
     42686.16671890387,

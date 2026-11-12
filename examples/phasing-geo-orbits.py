@@ -86,10 +86,10 @@ scenario.set_time_period(start_time, stop_time)
 # It is now possible to show a 3D graphics window by running:
 
 # +
-from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
+from ansys.stk.extensions import GlobeVisualization
 
 
-plotter = GlobeWidget(root, 640, 480)
+plotter = GlobeVisualization(root=root, width=640, height=480)
 plotter.show()
 # -
 
