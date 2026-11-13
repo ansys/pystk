@@ -121,7 +121,7 @@ tests = [
 vulnerabilities = [
   "bandit[toml]==1.9.4",
   "safety==3.8.1",
-  "typer==0.27.3",
+  "typer==0.28.0",
 ]
 
 [tool.flit]
