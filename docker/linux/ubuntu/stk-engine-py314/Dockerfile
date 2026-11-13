@@ -7,13 +7,13 @@ FROM ${basePythonImage} AS builder
 # 1) Build Python into its own builder stage
 ##############################################
 
-# Install Python 3.10 and create a symbolic link named "python".
+# Install Python 3.14 and create a symbolic link named "python".
 USER root
 WORKDIR /tmp
-RUN wget --no-check-certificate https://www.python.org/ftp/python/3.10.18/Python-3.10.18.tar.xz && \
-    tar xf Python-3.10.18.tar.xz
-WORKDIR /tmp/Python-3.10.18
-RUN ./configure --with-openssl=/tmp/openssl --enable-optimizations && \
+RUN wget --no-check-certificate https://www.python.org/ftp/python/3.14.10/Python-3.14.10.tar.xz && \
+    tar xf Python-3.14.10.tar.xz
+WORKDIR /tmp/Python-3.14.10
+RUN ./configure --enable-shared --with-openssl=/tmp/openssl --enable-optimizations && \
     make altinstall
 
 #############################################################
@@ -35,13 +35,23 @@ RUN apt-get update -y; \
 # Set the display environment variable to allow GUI applications
 ENV DISPLAY=:0
 
-# Copy the Python interpreter, the standard library and pip to the final image
-COPY --from=builder /usr/local/bin/python3.10 /usr/local/bin/python3.10
-COPY --from=builder /usr/local/lib/python3.10 /usr/local/lib/python3.10
-COPY --from=builder /usr/local/bin/pip3.10 /usr/local/bin/pip3.10
+# Copy the Python interpreter and pip binaries
+COPY --from=builder /usr/local/bin/python3.14 /usr/local/bin/python3.14
+COPY --from=builder /usr/local/bin/pip3.14 /usr/local/bin/pip3.14
 
-RUN ln -sfn /usr/local/bin/python3.10 /usr/local/bin/python && \
-    ln -sfn /usr/local/bin/pip3.10 /usr/local/bin/pip
+# Copy the Python standard library
+COPY --from=builder /usr/local/lib/python3.14 /usr/local/lib/python3.14
+
+# Copy the core shared library engine and compiled standard modules
+COPY --from=builder /usr/local/lib/libpython3.14.so.1.0 /usr/local/lib/libpython3.14.so.1.0
+COPY --from=builder /usr/local/lib/*python3.14*.so* /usr/local/lib/
+
+# Refresh the OS library linker cache (required for --enable-shared)
+RUN ldconfig
+
+# Create convenience symlinks
+RUN ln -sfn /usr/local/bin/python3.14 /usr/local/bin/python && \
+    ln -sfn /usr/local/bin/pip3.14 /usr/local/bin/pip
 
 COPY docker-entrypoint.sh "${STK_USER_HOME}/bin/docker-entrypoint.sh"
 RUN chmod +x "${STK_USER_HOME}/bin/docker-entrypoint.sh"; \

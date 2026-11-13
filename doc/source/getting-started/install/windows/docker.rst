@@ -154,13 +154,14 @@ Example
 .. code-block:: dosbatch
 
     docker run \
-      --detach --interactive --tty \
-      --network="host" \
-      --env ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE \
-      --volume working-directory:/home/stk/pystk
-      --name stk-python3.12 \
-      --entrypoint /bin/bash \
-      ansys/stk:dev-ubuntu22.04-python3.12
+      --interactive --tty \
+      --env ANSYSLMD_LICENSE_FILE=%ANSYSLMD_LICENSE_FILE% \
+      --volume D:\Dev\GitHub\pystk:C:\working-directory \
+      --workdir C:\working-directory \
+      --name stk-python3.14 \
+      --entrypoint cmd \
+      ansys/stk-13.1:dev-windowsservercore-ltsc2019-python3.14
+
 
 Install PySTK in the container
 ==============================

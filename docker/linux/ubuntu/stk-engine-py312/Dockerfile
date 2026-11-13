@@ -10,10 +10,10 @@ FROM ${basePythonImage} AS builder
 # Install Python 3.12 and create a symbolic link named "python".
 USER root
 WORKDIR /tmp
-RUN wget --no-check-certificate https://www.python.org/ftp/python/3.12.4/Python-3.12.4.tar.xz && \
-    tar xf Python-3.12.4.tar.xz
-WORKDIR /tmp/Python-3.12.4
-RUN ./configure --with-openssl=/tmp/openssl --enable-optimizations && \
+RUN wget --no-check-certificate https://www.python.org/ftp/python/3.12.16/Python-3.12.16.tar.xz && \
+    tar xf Python-3.12.16.tar.xz
+WORKDIR /tmp/Python-3.12.16
+RUN ./configure --enable-shared --with-openssl=/tmp/openssl --enable-optimizations && \
     make altinstall
 
 #############################################################
@@ -35,11 +35,21 @@ RUN apt-get update -y; \
 # Set the display environment variable to allow GUI applications
 ENV DISPLAY=:0
 
-# Copy the Python interpreter, the standard library and pip to the final image
+# Copy the Python interpreter and pip binaries
 COPY --from=builder /usr/local/bin/python3.12 /usr/local/bin/python3.12
-COPY --from=builder /usr/local/lib/python3.12 /usr/local/lib/python3.12
 COPY --from=builder /usr/local/bin/pip3.12 /usr/local/bin/pip3.12
 
+# Copy the Python standard library
+COPY --from=builder /usr/local/lib/python3.12 /usr/local/lib/python3.12
+
+# Copy the core shared library engine and compiled standard modules
+COPY --from=builder /usr/local/lib/libpython3.12.so.1.0 /usr/local/lib/libpython3.12.so.1.0
+COPY --from=builder /usr/local/lib/*python3.12*.so* /usr/local/lib/
+
+# Refresh the OS library linker cache (required for --enable-shared)
+RUN ldconfig
+
+# Create convenience symlinks
 RUN ln -sfn /usr/local/bin/python3.12 /usr/local/bin/python && \
     ln -sfn /usr/local/bin/pip3.12 /usr/local/bin/pip
 
