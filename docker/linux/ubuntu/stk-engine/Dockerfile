@@ -37,7 +37,7 @@ ENV STK_USER_HOME=/home/stk
 RUN set -e; \
     useradd -ms /bin/bash stk; \
     apt-get update; \
-    apt-get install --no-install-recommends -y libgfortran5; \
+    apt-get install --no-install-recommends -y libgfortran5 libgomp1; \
     apt-get clean; \
     rm -rf /var/lib/apt/lists/*
 
