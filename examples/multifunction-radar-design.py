@@ -8,7 +8,7 @@
 
 # ## Problem statement
 
-# A radar site is located near a regional airport at latitude $34.7422^\circ$ and longitude $	-118.225^\circ$. The radar antenna is located $50$ ft above the ground. A small private aircraft with a radar cross section of $10$ dBsm flies through the zone from east to west.
+# A radar site is located near a regional airport at latitude $34.7422^\circ$ and longitude $-118.225^\circ$. The radar antenna is located $50$ ft above the ground. A small private aircraft with a radar cross section (RCS) of $10$ dBsm flies through the zone from east to west.
 #
 # A multifunction radar with three beams tracks the aircraft. The three beams are:
 #
@@ -18,9 +18,9 @@
 #
 # Determine how well the radar system can track the plane.
 
-# ## Launch a new STK instance
+# ## Launching a new STK application instance
 
-# Start by launching a new STK instance. In this example, STKEngine is used.
+# Start by launching a new instance of the STK application. In this example, the STK Engine technology platform is used.
 
 # +
 from ansys.stk.core.stkengine import STKEngine
@@ -29,14 +29,14 @@ from ansys.stk.core.stkengine import STKEngine
 stk = STKEngine.start_application(no_graphics=False)
 # -
 
-# ## Create a new scenario
+# ## Creating a new scenario
 
-# Create a new scenario in STK by running:
+# Create a new STK scenario by running:
 
 root = stk.new_object_root()
 root.new_scenario("MultifunctionRadar")
 
-# Once the scenario is created, it is possible to show a 3D graphics window by running:
+# Once the scenario is created, it is possible to show a 3D Graphics window by running:
 
 # +
 from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
@@ -46,7 +46,7 @@ globe_plotter = GlobeWidget(root, 640, 480)
 globe_plotter.show()
 # -
 
-# Show a 2D graphics window by running:
+# Show a 2D Graphics window by running:
 
 # +
 from ansys.stk.core.experimental.jupyterwidgets import MapWidget
@@ -56,7 +56,7 @@ map_plotter = MapWidget(root, 640, 480)
 map_plotter.show()
 # -
 
-# ## Set the scenario time period
+# ## Setting the scenario time period
 
 # Using the newly created scenario, set the start and stop times. Rewind the scenario so that the graphics match the start and stop times of the scenario:
 
@@ -69,15 +69,15 @@ scenario.set_time_period("26 Apr 2023 18:00:00.000", "26 Apr 2023 19:00:00.000")
 root.rewind()
 # -
 
-# ## Set the unit preferences
+# ## Setting the unit preferences
 
-# For this problem, the distances are be provided in feet, so change the distance unit preference to ft:
+# For this problem, the distances should be provided in feet, so change the distance unit preference to ft:
 
 root.units_preferences.set_current_unit("distance", "ft")
 
-# ## Create the radar site
+# ## Creating the radar site
 
-# The radar site is located near a regional airport, at latitude $34.7422^\circ$ and longitude $-118.225^\circ$ with a height $50$ ft above ground. First, insert a place object to represent the site:
+# The radar site is located near a regional airport, at latitude $34.7422^\circ$ and longitude $-118.225^\circ$ with a height $50$ ft above ground. First, insert a Place object to represent the site:
 
 # +
 from ansys.stk.core.stkobjects import Place, STKObjectType
@@ -86,7 +86,7 @@ from ansys.stk.core.stkobjects import Place, STKObjectType
 radar_site = Place(scenario.children.new(STKObjectType.PLACE, "RadarSite"))
 # -
 
-# Then, assign the radar site's position:
+# Then, assign the radar site’s position:
 
 radar_site.position.assign_geodetic(34.7422, -118.225, 0)
 
@@ -94,9 +94,9 @@ radar_site.position.assign_geodetic(34.7422, -118.225, 0)
 
 radar_site.height_above_ground = 50
 
-# ## Create a small private aircraft
+# ## Creating a small private aircraft
 
-# To model the small private aircraft flying from east to west through the airfield, insert an aircraft object:
+# To model the small private aircraft flying from east to west through the airfield, insert an Aircraft object:
 
 # +
 from ansys.stk.core.stkobjects import Aircraft
@@ -120,16 +120,16 @@ small_aircraft.route.set_altitude_reference_type(
 
 # The aircraft flies between two points. The first point is located at latitude $34.75^\circ$ and longitude $-117.50^\circ$. The second point is located at latitude $34.75^\circ$ and longitude $-119.0^\circ$. At both points, the aircraft flies at an altitude of $5000$ ft with a speed of $140$ mi/hr (equivalent to $205.333$ ft/sec).
 
-# Add the first waypoint to the aircraft's route:
+# Add the first waypoint to the aircraft’s route:
 
 waypoint1 = small_aircraft.route.waypoints.add()
 
-# Then, set the waypoint's latitude to $34.75^\circ$ and longitude to $-117.50^\circ$:
+# Then, set the waypoint’s latitude to $34.75^\circ$ and longitude to $-117.50^\circ$:
 
 waypoint1.latitude = 34.75
 waypoint1.longitude = -117.50
 
-# Set the waypoint's altitude to $5000$ ft:
+# Set the waypoint’s altitude to $5000$ ft:
 
 waypoint1.altitude = 5000
 
@@ -137,7 +137,7 @@ waypoint1.altitude = 5000
 
 waypoint1.speed = 205.333
 
-# Next, add the second waypoint to the aircraft's route:
+# Next, add the second waypoint to the aircraft’s route:
 
 waypoint2 = small_aircraft.route.waypoints.add()
 
@@ -148,16 +148,16 @@ waypoint2.longitude = -119.0
 waypoint2.altitude = 5000
 waypoint2.speed = 205.333
 
-# Then, propagate the aircraft's route:
+# Then, propagate the aircraft’s route:
 
 small_aircraft.route.propagate()
 
-# Next, specify the aircraft's RCS. Set the airliner's radar cross section's `inherit` property to false in order to override the default RCS value inherited from the scenario:
+# Next, specify the aircraft’s radar cross section. Set the airliner’s RCS`inherit` property to false in order to override the default RCS value inherited from the scenario:
 
 small_aircraft_rcs = small_aircraft.radar_cross_section
 small_aircraft_rcs.inherit = False
 
-# Get the aircraft's RCS model, select the model's first frequency band, and configure the model to use a constant RCS of $10$ dBsm:
+# Get the aircraft’s RCS model, select the model’s first frequency band, and configure the model to use a constant RCS of $10$ dBsm:
 
 # +
 from ansys.stk.core.stkobjects import RadarCrossSectionModel
@@ -169,14 +169,14 @@ band1.set_compute_strategy("Constant Value")
 band1.compute_strategy.constant_value = 10
 # -
 
-# It is now possible to view the aircraft's route relative to the radar site using the 2D graphics window:
+# It is now possible to view the aircraft’s route relative to the radar site using the 2D Graphics window:
 
 map_plotter.camera.position = [-30427439, 110996044, 0.0]
 map_plotter.show()
 
-# ## Create a multifunction radar system
+# ## Creating a multifunction radar system
 
-# To create the multifunction radar system, first insert a radar object on the radar site:
+# To create the multifunction radar system, first attach a Radar object to the radar site:
 
 # +
 from ansys.stk.core.stkobjects import Radar
@@ -185,11 +185,11 @@ from ansys.stk.core.stkobjects import Radar
 radar = Radar(radar_site.children.new(STKObjectType.RADAR, "MultifunctionRadar"))
 # -
 
-# Set the radar's model type to multifunction:
+# Set the radar’s model type to Multifunction:
 
 radar.model_component_linking.set_component("Multifunction")
 
-# Then, get the radar's model, which is now a `RadarModelMultifunction` object:
+# Then, get the radar’s model, which is now a `RadarModelMultifunction` object:
 
 # +
 from ansys.stk.core.stkobjects import RadarModelMultifunction
@@ -198,7 +198,7 @@ from ansys.stk.core.stkobjects import RadarModelMultifunction
 multifunction_model = RadarModelMultifunction(radar.model_component_linking.component)
 # -
 
-# All the beams created in this scenario are oriented along the radar object's pointing type, which is fixed. Configure the radar model to use a fixed pointing strategy:
+# All the beams created in this scenario are oriented along the radar object’s pointing type, which is Fixed. Configure the radar model to use a Fixed pointing strategy:
 
 # +
 from ansys.stk.core.stkobjects import PointingStrategyType
@@ -209,17 +209,17 @@ multifunction_model.set_pointing_strategy_type(PointingStrategyType.FIXED)
 
 # Now, any beams created on the radar remain fixed relative to the radar itself.
 
-# Next, set the radar transmitter's power limit, which corresponds to the peak output power of the transmitter, to $40$ dBW:
+# Next, set the radar transmitter’s power limit, which corresponds to the peak output power of the transmitter, to $40$ dBW:
 
 multifunction_model.transmitter.maximum_power_limit = 40
 
-# Then, specify the transmitter polarization, which describes the orientation of the electric field vector with reference to the antenna's orientation. The transmitter is linearly polarized with the electrical field aligned with the reference axis.
+# Then, specify the transmitter polarization, which describes the orientation of the electric field vector with reference to the antenna’s orientation. The transmitter is linearly polarized with the electrical field aligned with the reference axis.
 
 # First, enable the use of polarization on the transmitter:
 
 multifunction_model.transmitter.enable_polarization = True
 
-# Set the transmitter's polarization type to linear:
+# Set the transmitter’s polarization type to Linear:
 
 # +
 from ansys.stk.core.stkobjects import PolarizationType
@@ -238,13 +238,13 @@ multifunction_model.receiver.set_polarization_type(PolarizationType.LINEAR)
 
 # Finally, add additional gain to the radar. In this scenario, it is necessary to model gains and losses that affect performance but are not defined using built-in analytical models. When the transmitted signal returns to the receiver, the system adds a separate gain to the signal.
 
-# Add a pre-receive gain of $10$ dB to the radar's receiver:
+# Add a pre-receive gain of $10$ dB to the radar’s receiver:
 
 multifunction_model.receiver.pre_receive_gains_losses.add(10)
 
-# ## Access the component directory
+# ## Accessing the component directory
 
-# Some of the radar's beams use custom waveform strategies. Pre-configured waveform strategies are stored in the component browser, and can be duplicated to change and save them.
+# Some of the radar’s beams use custom waveform strategies. Pre-configured waveform strategies are stored in the component directory (which is accessed through the Component Browser in the STK application's GUI) and can be duplicated to change and save them.
 
 # To create waveform strategies, first get all available radar components from the component directory:
 
@@ -255,31 +255,31 @@ from ansys.stk.core.stkobjects import Component
 radar_components = scenario.component_directory.get_components(Component.RADAR)
 # -
 
-# Then, get the radar waveform components folder:
+# Then, get the Radar Waveforms components folder:
 
 radar_waveform_components = radar_components.get_folder("Radar Waveforms")
 
-# ## Create a horizon search beam and a targeted beam associated with it
+# ## Creating a horizon search beam and a targeted beam associated with it
 
-# The radar's first beam is a horizon search beam that is fixed in a single direction, with an azimuth of $85^\circ$ and an elevation of $3^\circ$. It has a beam width of $2^\circ$. Once the horizon search beam detects the private plane, the radar model switches to using an active tracking beam targeting the private plane. The beam has a beam width of $1.4^\circ$ and a gain of $30$ dB, and uses range-dependent waveform strategies.
+# The radar’s first beam is a horizon search beam that is fixed in a single direction, with an azimuth of $85^\circ$ and an elevation of $3^\circ$. It has a beam width of $2^\circ$. Once the horizon search beam detects the private plane, the radar model switches to using an active tracking beam targeting the private plane. The beam has a beam width of $1.4^\circ$, a gain of $30$ dB, and uses range-dependent waveform strategies.
 
-# First, select the first beam and name it "HorizonTargeted":
+# First, select the first beam and name it “HorizonTargeted”:
 
 horizon_targeted = multifunction_model.antenna_beams.item(0)
 horizon_targeted.identifier = "HorizonTargeted"
 
-# Then, create a new beam and name it "HorizonSearch":
+# Then, create a new beam and name it “HorizonSearch”:
 
 horizon_search = multifunction_model.antenna_beams.add()
 horizon_search.identifier = "HorizonSearch"
 
-# ## Configure the horizon search beam
+# ## Configuring the horizon search beam
 
 # First, set the beam width to $2^\circ$:
 
 horizon_search.beamwidth = 2
 
-# The horizon search beam uses a rectangular waveform with a frequency of $3.5$ GHz. Get the rectangular waveform component from the component browser, then duplicate the component and name it "Horizon Search Rectangular":
+# The horizon search beam uses a rectangular waveform with a frequency of $3.5$ GHz. Get the Rectangular waveform component from the component directory, then duplicate the component and name it “Horizon Search Rectangular”:
 
 horizon_search_rectangular_waveform = radar_waveform_components.duplicate_component(
     "Rectangular", "Horizon Search Rectangular"
@@ -303,7 +303,7 @@ horizon_search.waveform_selection_strategy.fixed_waveform = "Horizon Search Rect
 
 # Next, set the pointing properties for the beam. The beam points in a fixed direction, with an azimuth of $85^\circ$ and an elevation of $3^\circ$, and rotates about the boresight.
 
-# By default, the beam's pointing strategy is already set to fixed. Assign the azimuth and elevation for the beam, and configure it to rotate about the boresight:
+# By default, the beam’s pointing strategy is already set to fixed. Assign the azimuth and elevation for the beam, and configure it to rotate about the boresight:
 
 # +
 from ansys.stk.core.stkutil import AzElAboutBoresight
@@ -314,7 +314,7 @@ horizon_search.pointing_strategy.orientation.assign_az_el(
 )
 # -
 
-# ## Determine when the horizon search beam detects the private aircraft
+# ## Determining when the horizon search beam detects the private aircraft
 
 # First, get and compute the access between the radar and the small aircraft:
 
@@ -388,7 +388,7 @@ plt.show()
 
 # When the private plane flies through the beam, S/T Integrated PDet and SNR (dB) spike. The S/T Integrated SNR (dB) rises as the range between the radar and the aircraft decreases. The S/T Integrated SNR increases in the middle of the graph because the range decreases and the private plane is in a side lobe.
 
-# Next, set the time interval for the Horizon Search beam. The beam begins searching at the scenario time, then stops once it detects the private plane. At that point, the radar switches to the targeted beam.
+# Next, set the time interval for the horizon search beam. The beam begins searching at the scenario start time, then stops once it detects the private plane. At that point, the radar switches to the targeted beam.
 
 # To set the interval, get the first time when the beam can track the plane with a PDet higher than 0.8:
 
@@ -399,7 +399,7 @@ first_time = horizon_search_access_df[
     horizon_search_access_df["s/t integrated pdet"] >= 0.8
 ].iloc[0]["time"]
 
-# Then set the beam's activity to use time intervals:
+# Then set the beam’s activity to use time intervals:
 
 # +
 from ansys.stk.core.stkobjects import RadarActivityType
@@ -416,26 +416,26 @@ interval = horizon_search.activity.time_intervals.add()
 
 interval.stop = first_time
 
-# ## Configure the horizon targeted beam
+# ## Configuring the horizon targeted beam
 
-# Once the Horizon Search beam detects the private plane, the radar model switches to using an active tracking beam targeting the private plane. The beam has a beam width of $1.4^\circ$ and a gain of $30$ dB, and uses range-dependent waveform strategies.
+# Once the horizon search beam detects the private plane, the radar model switches to using an active tracking beam targeting the private plane. The beam has a beam width of $1.4^\circ$, a gain of $30$ dB, and uses range-dependent waveform strategies.
 
 # First, set the beam width to $1.4^\circ$ and the gain to $30$ dB:
 
 horizon_targeted.beamwidth = 1.4
 horizon_targeted.gain = 30
 
-# ## Create range-dependent waveform strategies
+# ## Creating range-dependent waveform strategies
 
-# It is possible to change a beam's frequency, power, or both by creating unique waveforms for that beam based on distance to the target. The horizon targeted beam tracks the private plane. During the scenario analysis period, the plane's distance from the radar site varies from $20$ to $250$ km. The beam switches waveforms based on the distance to the aircraft from the radar. The default waveform strategy settings in STK are optimal. However, for this scenario, the beam uses different frequencies based on the distance to the aircraft. Therefore, create and customize four new waveforms. STK's multifunction radar automatically switches from one waveform to another based on the distance between the plane and the radar site. Later, reuse these waveforms for a beam which targets the airliner.
+# It is possible to change a beam’s frequency, power, or both by creating unique waveforms for that beam based on distance to the target. The horizon targeted beam tracks the private plane. During the scenario analysis period, the plane’s distance from the radar site varies from $20$ to $250$ km. The beam switches waveforms based on the distance to the aircraft from the radar. The default waveform strategy settings in the STK application are optimal. However, for this scenario, the beam uses different frequencies based on the distance to the aircraft. Therefore, create and customize four new waveforms. The STK application’s Multifunction radar model automatically switches from one waveform to another based on the distance between the plane and the radar site. Later, reuse these waveforms for a beam which targets the airliner.
 
-# The first waveform is used for long range. Duplicate the `Long Range Rectangular` component, and name the duplicate "Aircraft Long Range Rectangular":
+# The first waveform is used for long-range detection. Duplicate the `Long Range Rectangular` component, and name the duplicate “Aircraft Long Range Rectangular”:
 
 long_range_rectangular_waveform = radar_waveform_components.duplicate_component(
     "Long Range Rectangular", "Aircraft Long Range Rectangular"
 )
 
-# The long-range rectangular waveform uses low pulse repetition frequency (PRF) rectangular pulses, with a default PRF of $0.0005$ MHz. Configure the waveform's frequency to $2.0$ GHz:
+# The long-range rectangular waveform uses low pulse repetition frequency (PRF) rectangular pulses, with a default PRF of $0.0005$ MHz. Configure the waveform’s frequency to $2.0$ GHz:
 
 # +
 from ansys.stk.core.stkobjects import FrequencySpecificationType
@@ -447,46 +447,46 @@ long_range_rectangular_waveform.frequency_specification = (
 long_range_rectangular_waveform.frequency = 2.0
 # -
 
-# Next, set the medium-range rectangular waveform by duplicating the `Medium Range Rectangular` component, which uses a default PRF of $0.002$ MHz. Name the duplicate "Aircraft Medium Range Rectangular":
+# Next, set the medium-range rectangular waveform by duplicating the `Medium Range Rectangular` component, which uses a default PRF of $0.002$ MHz. Name the duplicate “Aircraft Medium Range Rectangular”:
 
 medium_range_rectangular_waveform = radar_waveform_components.duplicate_component(
     "Medium Range Rectangular", "Aircraft Medium Range Rectangular"
 )
 
-# Configure the waveform's frequency to $3.0$ GHz:
+# Configure the waveform’s frequency to $3.0$ GHz:
 
 medium_range_rectangular_waveform.frequency_specification = (
     FrequencySpecificationType.FREQUENCY
 )
 medium_range_rectangular_waveform.frequency = 3.0
 
-# Then, set the short-range rectangular waveform. Duplicate the `Short Range Rectangular` component, which uses a default PRF of $0.005$ MHz, and name the duplicate "Aircraft Short Range Rectangular":
+# Then, set the short-range rectangular waveform. Duplicate the `Short Range Rectangular` component, which uses a default PRF of $0.005$ MHz, and name the duplicate “Aircraft Short Range Rectangular”:
 
 short_range_rectangular_waveform = radar_waveform_components.duplicate_component(
     "Short Range Rectangular", "Aircraft Short Range Rectangular"
 )
 
-# Set the waveform's frequency to $8.0$ GHz:
+# Set the waveform’s frequency to $8.0$ GHz:
 
 short_range_rectangular_waveform.frequency_specification = (
     FrequencySpecificationType.FREQUENCY
 )
 short_range_rectangular_waveform.frequency = 8.0
 
-# Finally, set the ultra-long-range rectangular waveform by duplicating the `Ultra Long Range Rectangular` component, which has a default PRF of $0.0001$ MHz, and naming the duplicate "Aircraft Ultra Long Range Rectangular":
+# Finally, set the ultra-long-range rectangular waveform by duplicating the `Ultra Long Range Rectangular` component, which has a default PRF of $0.0001$ MHz, and naming the duplicate “Aircraft Ultra Long Range Rectangular”:
 
 ultra_long_range_rectangular_waveform = radar_waveform_components.duplicate_component(
     "Ultra Long Range Rectangular", "Aircraft Ultra Long Range Rectangular"
 )
 
-# Set the waveform's frequency to $1.0$ GHz:
+# Set the waveform’s frequency to $1.0$ GHz:
 
 ultra_long_range_rectangular_waveform.frequency_specification = (
     FrequencySpecificationType.FREQUENCY
 )
 ultra_long_range_rectangular_waveform.frequency = 1.0
 
-# Next, override the beam's default waveform strategies in order to support dynamic waveform switching. Configure the beam's waveform strategy to use range limits to choose between waveforms:
+# Next, override the beam’s default waveform strategies in order to support dynamic waveform switching. Configure the beam’s waveform strategy to use range limits to choose between waveforms:
 
 # +
 from ansys.stk.core.stkobjects import WaveformSelectionStrategyType
@@ -535,7 +535,7 @@ horizon_targeted.pointing_strategy.available_target_objects
 
 horizon_targeted.pointing_strategy.target_object = "Aircraft/SmallAircraft"
 
-# ## View how waveform strategies vary with range for the horizon targeted beam
+# ## Viewing how waveform strategies vary with range for the horizon targeted beam
 
 # First, get and compute the access between the radar and the aircraft:
 
@@ -572,7 +572,7 @@ horizon_targeted_aer_df = (
 )
 horizon_targeted_aer_df.head(5)
 
-# Then, combine the data for range and the data for S/T Integrated PDet and S/t PDet 1 over time and view the first five rows of the data:
+# Then, combine the data for range and the data for S/T Integrated PDet and S/Tf PDet 1 over time and view the first five rows of the data:
 
 df_merged = pd.merge(
     horizon_targeted_aer_df, horizon_targeted_access_df, on="time", how="inner"
@@ -623,11 +623,11 @@ plt.show()
 
 # A negative range indicates that the private plane is approaching the radar site, while a positive range means that the plane is moving away from the site. The range is 0 when the plane is directly above the site.
 
-# The ultra long range waveform is never used, as the aircraft is never far enough from the radar site for the beam to switch to this waveform. Because the beam moves between waveforms based on range from the target, there is good tracking (above 0.8 PDet) at almost all times. The only times when the PDet is below 0.8 is when the respective waveforms are used at the very limits of their configured ranges.
+# The ultra-long-range waveform is never used, as the aircraft is never far enough from the radar site for the beam to switch to this waveform. Because the beam moves between waveforms based on range from the target, there is good tracking (above 0.8 PDet) at almost all times. The only times when the PDet is below 0.8 are when the respective waveforms are used at the very limits of their configured ranges.
 
-# ## Configure the target airliner beam's start time
+# ## Configuring the target airliner beam’s start time
 
-# Next, configure the beam to start tracking the private plane when the horizon search beam is first able to track it. Configure the beam to use a time interval list as its activity type:
+# Next, configure the beam to start tracking the private plane when the horizon search beam is first able to track it. Configure the beam to use a Time Interval List as its activity type:
 
 # +
 from ansys.stk.core.stkobjects import RadarActivityType
@@ -636,12 +636,12 @@ from ansys.stk.core.stkobjects import RadarActivityType
 horizon_targeted.set_activity_type(RadarActivityType.TIME_INTERVAL_LIST)
 # -
 
-# Then, add an interval to the beam's activity, and set the start time to the first time the horizon search beam detects the aircraft:
+# Then, add an interval to the beam’s activity, and set the start time to the first time the horizon search beam detects the aircraft:
 
 interval = horizon_targeted.activity.time_intervals.add()
 interval.start = first_time
 
-# ## Determine when the horizon targeted beam detects the private aircraft
+# ## Determining when the horizon targeted beam detects the private aircraft
 
 # Recompute the access between the radar and the small aircraft:
 
@@ -702,7 +702,7 @@ plt.legend(loc="upper right")
 plt.show()
 # -
 
-# S/T PDet1 uses one pulse and S/T Integrated PDet uses up to 512 pulses. Both S/T PDet1 and S/T Integrated PDet show reflections from the private plane. However, the S/T PDet1 values drop twice, while the S/T Integrated PDet values only drop below 0.8 on two instances.
+# S/T PDet1 uses one pulse and S/T Integrated PDet uses up to 512 pulses. Both S/T PDet1 and S/T Integrated PDet show reflections from the private plane. However, the S/T PDet1 values drop twice, while the S/T Integrated PDet values only drop below 0.8 in two instances.
 
 # Once the horizon targeted beam can no longer track the private plane, the radar switches back to using the horizon search beam. To configure the time intervals, first find the first time that the horizon targeted beam cannot see the private plane with a PDet above 0.8:
 
@@ -713,7 +713,7 @@ last_time = horizon_targeted_access_df[
     horizon_targeted_access_df["s/t integrated pdet"] < 0.8
 ].iloc[0]["time"]
 
-# Then, add a new time interval to the horizon search beam's activity:
+# Then, add a new time interval to the horizon search beam’s activity:
 
 interval2 = horizon_search.activity.time_intervals.add()
 
@@ -725,28 +725,28 @@ interval2.start = last_time
 
 interval.stop = last_time
 
-# ## Create a volume search beam
+# ## Creating a volume search beam
 
 # The last beam on the radar is a volume search beam that scans the horizon. The beam has a gain of $30$ dB and a beam width of $5^\circ$. It spins continuously over $360^\circ$. The cone angle is $87^\circ$ with a spin rate of $60^\circ$ per second.
 
-# First, create the beam by adding a beam to the multifunction model's antenna beams:
+# First, create the beam by adding a beam to the multifunction model’s antenna beams:
 
 volume_search = multifunction_model.antenna_beams.add()
 
-# Then, rename the beam to "VolumeSearch":
+# Then, rename the beam “VolumeSearch”:
 
 volume_search.identifier = "VolumeSearch"
 
-# To set the beam width, it is necessary to first set the beam's gain, because a larger beam width necessitates a lower gain. If the beam width were set first, STK would produce an invalid sidelobe gain computation error.
+# To set the beam width, it is necessary to first set the beam’s gain, because a larger beam width necessitates a lower gain. If the beam width were set first, STK would produce an invalid sidelobe gain computation error.
 
 # First set the gain to $30$ dB and then the beam width to $5^\circ$:
 
 volume_search.gain = 30
 volume_search.beamwidth = 5
 
-# Next, configure the volume search beam's waveform strategy. The beam uses a volume search rectangular waveform, with a frequency of $3.5$ GHz and a power of $50$ dBW.
+# Next, configure the volume search beam’s waveform strategy. The beam uses a volume search rectangular waveform, with a frequency of $3.5$ GHz and a power of $50$ dBW.
 
-# First, get the `Rectangular` waveform component, then duplicate it and name the duplicate "Volume Search Rectangular":
+# First, get the `Rectangular` waveform component, then duplicate it and name the duplicate “Volume Search Rectangular”:
 
 volume_search_rectangular_waveform = radar_waveform_components.duplicate_component(
     "Rectangular", "Volume Search Rectangular"
@@ -764,17 +764,17 @@ volume_search_rectangular_waveform.power = 50
 
 volume_search.waveform_selection_strategy.fixed_waveform = "Volume Search Rectangular"
 
-# Next, set the beam's pointing type to spinning:
+# Next, set the beam’s pointing type to spinning:
 
 volume_search.set_pointing_strategy_type(PointingStrategyType.SPINNING)
 
-# The beam's `pointing_strategy` property now returns a `PointingStrategySpinning` object. Use the `PointingStrategySpinning` object to set the cone angle to $87^\circ$ and the spin rate to $60^\circ$ per second:
+# The beam’s `pointing_strategy` property now returns a `PointingStrategySpinning` object. Use the `PointingStrategySpinning` object to set the cone angle to $87^\circ$ and the spin rate to $60^\circ$ per second:
 
 point_strategy = volume_search.pointing_strategy
 point_strategy.cone_angle = 87
 point_strategy.spin_rate = 60
 
-# ## Determine when the beam can track the plane
+# ## Determining when the beam can track the plane
 
 # To determine when the beam can track the aircraft, first get and compute the access between the radar and the small aircraft:
 
@@ -843,9 +843,9 @@ plt.show()
 
 # The volume search beam obtains reflections from the private plane. There are a couple of instances in which the S/T Integrated PDet for the private plane is above 0.80000, so the volume search picks up the private plane.
 
-# ## Visualize the radar system
+# ## Visualizing the radar system
 
-# First, configure the 3D graphics for the radar. Changes to the radar's 3D graphics settings are applied to all beams in the system.
+# First, configure the 3D graphics properties for the Radar object. Changes to the radar’s 3D graphics settings are applied to all beams in the system.
 
 # Configure graphics to show the volumes of the beams:
 
@@ -859,7 +859,7 @@ radar.graphics_3d.volume.gain_scale = 328
 
 radar.graphics_3d.volume.set_resolution(-180, 180, 0.5, -180, 180, 0.5)
 
-# It is now possible to see the beams in the 3D graphics window:
+# It is now possible to see the beams in the 3D Graphics window:
 
 globe_plotter.camera.position = [17039826, 2810211, 11818867]
 globe_plotter.show()

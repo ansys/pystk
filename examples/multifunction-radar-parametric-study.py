@@ -1,20 +1,20 @@
-# # Multifunction radar parametric study
+# Multifunction radar parametric study
 
 # This tutorial demonstrates how to conduct a parametric study on a multifunction radar system using PySTK. It is inspired by [this tutorial]( https://help.agi.com/stk/Content/training/MFR_Analyzer.htm).
 
 # ## What are important parameters in a multifunction radar?
 
-# A multifunction radar models multiple radar beams working together at the same location. Each beam has its own specifications and constraints. Some important settings include beam gain, goal signal to noise ratio (SNR), and maximum number of pulses integrated.
+# A multifunction radar models multiple radar beams working together at the same location. Each beam has its own specifications and constraints. Some important settings include the beam gain, the goal signal-to-noise ratio (SNR), and the maximum number of pulses integrated.
 #
 # Beam gain measures how the antenna for a beam concentrates power in a certain direction. It is related to both efficiency and directivity. The optimal gain value depends on how an antenna is being used. The best choice for hitting a receiver far away is a high-gain value, as the signal has to travel over a large distance, so it needs to be intensified and pointed directly at the target. If the signal must be received evenly over a broad area, however, lower gain is more appropriate.
 #
-# Signal to noise ratio is a measure that compares the level of a desired signal to the level of noise. To increase SNR, radar systems often use multiple pulse integration which is the process of summing multiple transmit pulses to improve detection. When a target is located within the radar beam during a single scan, it may reflect several pulses. By adding the returns from all pulses returned by a given target during a single scan, the radar sensitivity SNR can be increased. With STK's Goal SNR setting, STK integrates up to the maximum pulse number to achieve the desired signal-to-noise ratio.
+# Signal-to-noise ratio is a measure that compares the level of a desired signal to the level of noise. To increase SNR, radar systems often use multiple pulse integration, which is the process of summing multiple transmit pulses to improve detection. When a target is located within the radar beam during a single scan, it may reflect several pulses. By adding the returns from all pulses returned by a given target during a single scan, the radar sensitivity SNR can be increased. With the Goal SNR setting, the STK application integrates up to the maximum pulse number to achieve the desired signal-to-noise ratio.
 #
-# The effectiveness of a certain radar configuration can be measured by the probability of detection for a designated target, which is always between 0 and 1. The probability of detection is a function of the per pulse signal to noise ratio (SNR), the number of pulses integrated, the probability of false alarm and the radar cross section (RCS) fluctuation type. STK reports the probability of detection based off of a single pulse (S/T Pdet1), and over all integrated pulses (S/T Integrated PDet).
+# The effectiveness of a certain radar configuration can be measured by the probability of detection (PDet) for a designated target, which is always between 0 and 1. The probability of detection is a function of the per pulse signal to noise ratio (SNR), the number of pulses integrated, the probability of false alarm and the radar cross section (RCS) fluctuation type. STK reports the probability of detection based off of a single pulse (S/T PDet1), and over all integrated pulses (S/T Integrated PDet).
 
 # ## Problem statement
 
-# An aircraft leaves an airbase in Spain and flies to an airbase in Italy. The aircraft has a constant radar cross section value of $20$ dBsm. A radar site located at an Italian airbase employs a multifunction radar which tracks the inbound aircraft. Terrain is accounted for analytically in the vicinity of the radar site. An integrated PDet value of 0.8 to 1.0 is required to track the aircraft with certainty. Determine how beam gain, signal to noise ratio, and pulse integration affect the multifunction radar's ability to track the aircraft.
+# An aircraft leaves an airbase in Spain and flies to an airbase in Italy. The aircraft has a constant radar cross section value of $20$ dBsm. A radar site located at an Italian airbase employs a multifunction radar which tracks the inbound aircraft. Terrain is accounted for analytically in the vicinity of the radar site. An integrated PDet value of 0.8 to 1.0 is required to track the aircraft with certainty. Determine how beam gain, signal to noise ratio, and pulse integration affect the multifunction radar’s ability to track the aircraft.
 #
 # Conduct parametric studies varying:
 #
@@ -23,9 +23,9 @@
 # - Maximum number of pulses from $1$ to $200$ in increments of $10$.
 # - Gain from $20$ to $40$ dB in increments of $5$ dB, and goal SNR from $10$ to $20$ dB in increments of $2$ dB at the same time.
 
-# ## Launch a new STK instance
+# ## Launching a new STK application instance
 
-# Start by launching a new STK instance. In this example, `STKEngine` is used.
+# Start by launching a new STK instance. In this example, the STK Engine technology platform is used.
 
 # +
 from ansys.stk.core.stkengine import STKEngine
@@ -34,9 +34,9 @@ from ansys.stk.core.stkengine import STKEngine
 stk = STKEngine.start_application(no_graphics=False)
 # -
 
-# ## Load the starter scenario
+# ## Loading the starter scenario
 
-# The STK scenario used in this tutorial is included with the STK installation as a VDF file. To open the scenario, first access the STK Root object:
+# The STK scenario used in this tutorial is included with the STK installation as a Visual Data file (VDF). To open the scenario, first access the STK Root object:
 
 root = stk.new_object_root()
 
@@ -62,7 +62,7 @@ root.load_vdf(scenario_filepath, "")
 
 scenario = root.current_scenario
 
-# Once the scenario is loaded, it is possible to show a 3D graphics window and view the aircraft's route by running:
+# Once the scenario is loaded, it is possible to show a 3D graphics window and view the aircraft’s route by running:
 
 # +
 from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
@@ -73,11 +73,11 @@ globe_plotter.camera.position = [7934, 1684, 7025]
 globe_plotter.show()
 # -
 
-# ## Compute initial radar access
+# ## Computing initial radar access
 
-# The radar has a single beam, identified as the `TargetTransport` beam, which targets the aircraft with a gain value of $30$ dB. The beam uses a waveform strategy similar to the medium range rectangular strategy.
+# The radar has a single beam, identified as the `TargetTransport` beam, which targets the aircraft with a gain value of $30$ dB. The beam uses a waveform strategy similar to the Medium Range Rectangular strategy.
 
-# To determine how well the radar detects the aircraft with its initial settings, first get the radar object using the STK root object and the radar's path:
+# To determine how well the radar detects the aircraft with its initial settings, first get the radar object using the STK root object and the radar’s path:
 
 mfr = root.get_object_from_path("/Place/Radar_Site/Radar/MFR")
 
@@ -85,12 +85,12 @@ mfr = root.get_object_from_path("/Place/Radar_Site/Radar/MFR")
 
 aircraft = root.get_object_from_path("/Aircraft/Aircraft/")
 
-# Create an access between the radar and the aircraft and compute the access:
+# Create an access between the radar and the aircraft and compute access:
 
 access = mfr.get_access_to_object(aircraft)
 access.compute_access()
 
-# Any beams that are part of a radar become a data provider group under that radar's `Radar Multifunction` provider. To get the data for the `TargetTransport` beam, first select the access's `Radar Multifunction` provider, then select the `TargetTransport` group:
+# Any beams that are part of a radar become a data provider group under that radar’s `Radar Multifunction` provider. To get the data for the `TargetTransport` beam, first select the access’s `Radar Multifunction` provider, then select the `TargetTransport` group:
 
 target_transport_provider = access.data_providers.item(
     "Radar Multifunction"
@@ -101,7 +101,7 @@ target_transport_provider = access.data_providers.item(
 access_start, access_stop = access.computed_access_interval_times.get_interval(0)
 f"The access starts at {access_start} and ends at {access_stop}."
 
-# Get the S/T integrated SNR, S/T Integrated PDet, and S/T Pulses Integrated over time during the access, using a 10 second time step, and convert the data to a `pandas` dataframe:
+# Get the S/T Integrated SNR, S/T Integrated PDet, and S/T Pulses Integrated over time during the access, using a 10-second time step, and convert the data to a `pandas` dataframe:
 
 elements = [
     "Time",
@@ -195,15 +195,15 @@ axes[0].axhline(y=0.8, color="r", linestyle="-.")
 plt.show()
 # -
 
-# ## Determine the impacts of gain
+# ## Determining the impact of gain
 
-# Antenna gain indicates how strong a signal an antenna can send or receive in a specified direction. Conduct a trade study to determine affect of gain on S/T Integrated PDet.
+# Antenna gain indicates how strong a signal an antenna can send or receive in a specified direction. Conduct a trade study to determine the effect of gain on S/T Integrated PDet.
 
-# First, get the multifunction radar system's `TargetTransport` beam:
+# First, get the multifunction radar system’s `TargetTransport` beam:
 
 target_transport = mfr.model_component_linking.component.antenna_beams.item(0)
 
-# The current gain is $30$ dB. Vary the gain from $20$ dB to $40$ dB in $2$ dB increments by setting the beam's `gain` property. For each gain value, recompute the access between the radar and the aircraft, get the S/T Integrated PDet over the access interval, and then compute the mean PDet:
+# The current gain is $30$ dB. Vary the gain from $20$ dB to $40$ dB in $2$-dB increments by setting the beam’s `gain` property. For each gain value, recompute access between the radar and the aircraft, get the S/T Integrated PDet over the access interval, and then compute the mean PDet:
 
 # +
 gain_values = list(range(20, 42, 2))
@@ -236,11 +236,11 @@ plt.show()
 
 target_transport.gain = 30
 
-# ## Determine the impacts of goal SNR
+# ## Determining the impact of goal SNR
 
 # Goal SNR is an integration analysis based on the desired signal-to-noise ratio. Conduct a second trade study to determine how varying goal SNR affects S/T Integrated PDet.
 
-# First, to set the goal SNR, get the radar model's detection processing settings:
+# First, to set the goal SNR, get the radar model’s detection processing settings:
 
 detection_processing = mfr.model_component_linking.component.detection_processing
 
@@ -253,7 +253,7 @@ from ansys.stk.core.stkobjects import RadarPulseIntegrationGoalSNR
 pulse_integration = RadarPulseIntegrationGoalSNR(detection_processing.pulse_integration)
 # -
 
-# The current goal SNR is $16$ dB. Vary the goal SNR from $10$ dB to $22$ dB in $1$ dB increments by setting the `snr` property on this object. For each SNR value, recompute the access between the radar and the aircraft, get the S/T Integrated PDet over the access interval, and then compute the mean PDet:
+# The current goal SNR is $16$ dB. Vary the goal SNR from $10$ dB to $22$ dB in $1$-dB increments by setting the `snr` property on this object. For each SNR value, recompute access between the radar and the aircraft, get the S/T Integrated PDet over the access interval, and then compute the mean PDet:
 
 # +
 mean_pdets = []
@@ -286,11 +286,11 @@ plt.show()
 
 pulse_integration.snr = 16
 
-# ## Determine the impact of the number of maximum pulses
+# ## Determining the impact of the maximum number of pulses
 
 # Conduct a trade study to determine how varying the maximum number of pulses integrated affects S/T Integrated PDet.
 
-# The maximum number of pulses is $512$. Vary the maximum number from $1$ to $200$ in increments of $10$ by setting the `maximum_pulses` property on the pulse integration settings object. For each value, recompute the access between the radar and the aircraft, get the S/T Integrated PDet over the access interval, and then compute the mean PDet:
+# The maximum number of pulses is $512$. Vary the maximum number from $1$ to $200$ in increments of $10$ by setting the `maximum_pulses` property on the pulse integration settings object. For each value, recompute access between the radar and the aircraft, get the S/T Integrated PDet over the access interval, and then compute the mean PDet:
 
 # +
 max_pulse_values = list(range(1, 210, 10))
@@ -323,9 +323,9 @@ plt.show()
 
 pulse_integration.maximum_pulses = 512
 
-# ## Determine the impact of varying gain and goal SNR at the same time
+# ## Determining the impact of varying gain and goal SNR at the same time
 
-# Finally, determine how varying gain and goal SNR at the same time impact the probability of detection. Vary the gain from $20$ to $40$ dB in increments of $5$ dB, and vary the goal SNR from $10$ to $20$ dB in increments of $2$ dB. For each combination of gain and goal SNR values, recompute the access between the radar and the aircraft, get the S/T Integrated PDet over the access interval, and then compute the mean PDet:
+# Finally, determine how varying gain and goal SNR at the same time impact the probability of detection. Vary the gain from $20$ to $40$ dB in increments of $5$ dB, and vary the goal SNR from $10$ to $20$ dB in increments of $2$ dB. For each combination of gain and goal SNR values, recompute access between the radar and the aircraft, get the S/T Integrated PDet over the access interval, and then compute the mean PDet:
 
 snrs = list(range(10, 22, 2))
 gains = list(range(20, 45, 5))
@@ -459,7 +459,7 @@ fig.show(renderer="notebook")
 
 # A gain of $36$ dB and goal SNR of $16$ dB are predicted to give an integrated PDet of approximately 0.41.
 
-# Then, use STK to calculate the actual PDet produced by a gain of $36$ dB and goal SNR of $16$ dB:
+# Then, use the STK application to calculate the actual PDet produced by a gain of $36$ dB and goal SNR of $16$ dB:
 
 pulse_integration.snr = 16
 target_transport.gain = 36
