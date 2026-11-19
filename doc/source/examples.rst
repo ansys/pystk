@@ -53,6 +53,7 @@ Examples
         examples/bielliptic-transfer
         examples/lambert-transfer
         examples/phasing-geo-orbits
+        examples/inclination-maneuver
 
     .. nbgallery::
         :caption: Mission analysis
