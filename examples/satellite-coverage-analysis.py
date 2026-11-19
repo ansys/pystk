@@ -31,10 +31,10 @@ root.new_scenario("SatGraveyardCoverage")
 # Once the scenario is created, it is possible to show a 3D graphics window by running:
 
 # +
-from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
+from ansys.stk.extensions import GlobeVisualization
 
 
-globe_plotter = GlobeWidget(root, 640, 480)
+globe_plotter = GlobeVisualization(root=root, width=640, height=480)
 globe_plotter.show()
 # -
 
