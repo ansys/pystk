@@ -169,6 +169,7 @@ distributions/
 # Examples are kept at the root of the repository but copied at documentation
 # build time inside the documentation source directory
 doc/source/examples/
+examples/.cache/
 doc/source/_static/docker/
 doc/source/_static/artifacts/
 doc/source/_static/migration-tables/*.json

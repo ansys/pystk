@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 import pathlib
+import re
 import shutil
 import subprocess
 import sys
@@ -213,7 +214,7 @@ if not BUILD_EXAMPLES:
     )
 else:
     extensions.extend(["myst_parser", "nbsphinx"])
-    nbsphinx_execute = "always"
+    nbsphinx_execute = "auto"
     nbsphinx_custom_formats = {
         ".mystnb": ["jupytext.reads", {"fmt": "mystnb"}],
         ".py": ["jupytext.reads", {"fmt": ""}],
@@ -270,6 +271,9 @@ PYPROJECT_CONTENT = toml.loads(PYPROJECT_FILE.read_text(encoding="utf-8"))
 OPTIONAL_DEPENDENCIES = PYPROJECT_CONTENT["project"]["optional-dependencies"]
 PROJECT_ROOT = pathlib.Path(__file__).resolve().parents[2]
 EXAMPLES_ROOT_DIRECTORY = PROJECT_ROOT / "examples"
+
+sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
+import examples_cache  # noqa: E402
 
 
 def zip_directory(directory_path: pathlib.Path, zip_filename: pathlib.Path, ignore_patterns=None):
@@ -581,6 +585,7 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
     IMAGES_DIRECTORY = EXAMPLES_DIRECTORY / "img"
 
     # Copy the examples
+    global_hash = examples_cache.global_key()
     all_examples = list(EXAMPLES_DIRECTORY.glob("*.py"))
     examples = [file for file in all_examples if f"{file.name}" not in exclude_examples]
     for file in status_iterator(
@@ -591,6 +596,18 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
         verbosity=1,
         stringify_func=(lambda file: file.name),
     ):
+        # A valid executed notebook replaces the example, so nbsphinx doesn't run it again
+        cached_notebook = examples_cache.cached_notebook(file, global_hash)
+        if cached_notebook is not None:
+            notebook = json.loads(cached_notebook.read_text(encoding="utf-8"))
+            for cell in notebook["cells"]:
+                if cell["cell_type"] == "markdown":
+                    # Links to other examples must target the notebooks that replace the .py files
+                    cell["source"] = re.sub(r"(\]\(\./[\w-]+)\.py(#|\))", r"\1.ipynb\2", "".join(cell["source"]))
+            (SOURCE_EXAMPLES / f"{file.stem}.ipynb").write_text(
+                json.dumps(notebook, indent=1, ensure_ascii=False), encoding="utf-8"
+            )
+            continue
         destination_file = SOURCE_EXAMPLES / file.name
         destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
 
