@@ -86,7 +86,7 @@ doc = [
   "build==1.6.1",
   "ipykernel==7.3.0",
   "jupyter-server==2.21.1",
-  "jupyterlab==4.6.4",
+  "jupyterlab==4.6.5",
   "jupytext==1.19.6",
   "libcst==1.9.0",
   "matplotlib==3.10.9",
@@ -107,7 +107,7 @@ doc = [
 ]
 docstyle = [
   "rst2html==2020.7.4",
-  "vale==3.25.1.0",
+  "vale==3.26.0.1",
 ]
 tests = [
   "numpy==2.2.6",
