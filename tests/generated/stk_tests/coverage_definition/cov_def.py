@@ -1913,22 +1913,23 @@ class EarlyBoundTests(TestBase):
         gps: "CoverageGridPointSelection" = EarlyBoundTests.AG_COV.grid_inspector.get_grid_point_selection()
         Assert.assertIsNotNone(gps)
 
-        watchFast.Start()
-        count: int = 0
-        pt: "CoverageSelectedGridPoint"
-        for pt in gps:
-            count += 1
-            sbFast.AppendFormat("{0}, {1}", pt.latitude, pt.longitude)
-            sbFast.AppendLine()
-            intervals = pt.intervals
-            i: int = 0
-            while i <= (len(intervals) - 1):
-                sbFast.AppendFormat("  => [{0:.000000},{1:.000000}]", intervals[i][0], intervals[i][1])
+        with DisabledGc():
+            watchFast.Start()
+            count: int = 0
+            pt: "CoverageSelectedGridPoint"
+            for pt in gps:
+                count += 1
+                sbFast.AppendFormat("{0}, {1}", pt.latitude, pt.longitude)
                 sbFast.AppendLine()
+                intervals = pt.intervals
+                i: int = 0
+                while i <= (len(intervals) - 1):
+                    sbFast.AppendFormat("  => [{0:.000000},{1:.000000}]", intervals[i][0], intervals[i][1])
+                    sbFast.AppendLine()
 
-                i += 1
+                    i += 1
 
-        watchFast.Stop()
+            watchFast.Stop()
 
         # THE SLOW WAY
 
@@ -1947,39 +1948,40 @@ class EarlyBoundTests(TestBase):
         aLatVals = result.data_sets[0].get_values()
         aLonVals = result.data_sets[1].get_values()
 
-        watchSlow.Start()
-        i: int = 0
-        while i < len(aLatVals):
-            sbSlow.AppendFormat("{0}, {1}", aLatVals[i], aLonVals[i])
-            sbSlow.AppendLine()
-            EarlyBoundTests.AG_COV.grid_inspector.select_point(aLatVals[i], aLonVals[i])
+        with DisabledGc():
+            watchSlow.Start()
+            i: int = 0
+            while i < len(aLatVals):
+                sbSlow.AppendFormat("{0}, {1}", aLatVals[i], aLonVals[i])
+                sbSlow.AppendLine()
+                EarlyBoundTests.AG_COV.grid_inspector.select_point(aLatVals[i], aLonVals[i])
 
-            drResult: "DataProviderResult" = dpSelectedPointCoverage.execute(
-                (clr.CastAs(TestBase.Application.current_scenario, Scenario)).start_time,
-                (clr.CastAs(TestBase.Application.current_scenario, Scenario)).stop_time,
-            )
-            if str(drResult.message.messages[0]) != "No Accesses Found":
-                elemNames = drResult.data_sets.element_names
-
-                intvlStart = drResult.data_sets.get_data_set_by_name("Access Start").get_values()
-                intvlStop = drResult.data_sets.get_data_set_by_name("Access End").get_values()
-
-                Assert.assertEqual(
-                    Array.Length(intvlStart),
-                    Array.Length(intvlStop),
-                    "Start time dataset inconsistent with stop time dataset!",
+                drResult: "DataProviderResult" = dpSelectedPointCoverage.execute(
+                    (clr.CastAs(TestBase.Application.current_scenario, Scenario)).start_time,
+                    (clr.CastAs(TestBase.Application.current_scenario, Scenario)).stop_time,
                 )
+                if str(drResult.message.messages[0]) != "No Accesses Found":
+                    elemNames = drResult.data_sets.element_names
 
-                j: int = 0
-                while j < Array.Length(intvlStart):
-                    sbSlow.AppendFormat("  => [{0:.000000},{1:.000000}]", intvlStart[j], intvlStop[j])
-                    sbSlow.AppendLine()
+                    intvlStart = drResult.data_sets.get_data_set_by_name("Access Start").get_values()
+                    intvlStop = drResult.data_sets.get_data_set_by_name("Access End").get_values()
 
-                    j += 1
+                    Assert.assertEqual(
+                        Array.Length(intvlStart),
+                        Array.Length(intvlStop),
+                        "Start time dataset inconsistent with stop time dataset!",
+                    )
 
-            i += 1
+                    j: int = 0
+                    while j < Array.Length(intvlStart):
+                        sbSlow.AppendFormat("  => [{0:.000000},{1:.000000}]", intvlStart[j], intvlStop[j])
+                        sbSlow.AppendLine()
 
-        watchSlow.Stop()
+                        j += 1
+
+                i += 1
+
+            watchSlow.Stop()
 
         EarlyBoundTests.AG_COV.clear_accesses()
         EarlyBoundTests.AG_COV.asset_list.remove_all()
@@ -1988,7 +1990,7 @@ class EarlyBoundTests(TestBase):
 
         # Ensure that fast and slow give the same results, and that fast is faster than slow.
         Assert.assertEqual(sbFast.ToString(), sbSlow.ToString())
-        Assert.assertGreater(float(watchSlow.ElapsedMilliseconds), watchFast.ElapsedMilliseconds)
+        Assert.assertGreater(float(watchSlow.ElapsedMilliseconds), (1.2 * watchFast.ElapsedMilliseconds))
 
     # endregion
 
