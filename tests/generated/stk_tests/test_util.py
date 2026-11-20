@@ -20,6 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+from contextlib import contextmanager
 import enum
 import math
 import inspect
@@ -1308,6 +1309,20 @@ class TestBase(unittest.TestCase):
         wpe.longitude = -20
         wpe.time = "1 Jul 1999 00:55:00.000"
         ga.propagate()
+
+
+@contextmanager
+def DisabledGc():
+    """Pause the garbage collector for a section of code."""
+    import gc
+    was_enabled = gc.isenabled()
+    gc.collect()
+    gc.disable()
+    try:
+        yield
+    finally:
+        if was_enabled:
+            gc.enable()
 
 
 class Stopwatch:
