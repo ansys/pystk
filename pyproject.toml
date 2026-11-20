@@ -43,7 +43,7 @@ optional-dependencies.core = [
   # NOTE: no dependencies are installed by default ensuring a dependency-free installation of ansys-stk[core]
 ]
 optional-dependencies.extensions = [
-  "matplotlib==3.10.9",
+  "matplotlib==3.11.2",
   "pandas>=2.3.1",
 ]
 optional-dependencies.grpc = [
@@ -88,7 +88,7 @@ doc = [
   "jupyterlab==4.6.6",
   "jupytext==1.19.6",
   "libcst==1.9.0",
-  "matplotlib==3.10.9",
+  "matplotlib==3.11.2",
   "myst-parser==5.2.0",
   "nbconvert==7.17.2",
   "nbsphinx==0.9.8",
