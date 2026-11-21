@@ -73,6 +73,7 @@ Examples
         examples/multifunction-radar-design
         examples/missile-interference-test
         examples/radio-frequency-spectrum-filters
+        examples/high-frequency-communication
 
     Aviator mission planning
     ========================
