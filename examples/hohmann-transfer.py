@@ -1,6 +1,6 @@
 # # Hohmann transfer
 #
-# This tutorial provides a practical example on how to solve a Hohmann transfer problem using Python.
+# This tutorial provides a practical example on how to solve a Hohmann transfer problem using Python and the Ansys STK/Astrogator® capability.
 #
 # ## What is a Hohmann transfer?
 #
@@ -8,18 +8,18 @@
 #
 # The orbit transfer is typically modeled under the two-body assumption. This means that it assumes a simplified scenario where only two significant gravitational bodies are considered: the spacecraft and the central body (for example, a planet or a moon).
 #
-# It is composed of two impulses. The first impulse takes place at the periapsis of the transfer orbit. The last impulse takes place at the apoapsis of the transfer orbit.
+# It is composed of two impulsive maneuvers. The first impulsive maneuver takes place at the periapsis of the transfer orbit. The last impulsive maneuver takes place at the apoapsis of the transfer orbit.
 #
 # ## Problem statement
 #
-# A satellite presents an circular and equatorial orbit with a periapsis radius of $6700$ kilometers. Propagate this parking orbit for $2$ hours. Next, apply a Hohmann transfer to raise the apoapsis radius up to $42238$ km. Finally, propagate the new orbit for $1$ day.
+# A satellite presents a circular and equatorial orbit with a periapsis radius of $6700$ kilometers. Propagate this parking orbit for $2$ hours. Next, apply a Hohmann transfer to raise the apoapsis radius up to $42238$ km. Finally, propagate the new orbit for $1$ day.
 #
 # Compute the required $\Delta v$ for each impulse of the maneuver.
 
 
-# ## Launch a new STK instance
+# ## Launching a new STK application instance
 #
-# Start by launching a new STK instance. In this example, ``STKEngine`` is used in ``no_graphics`` mode. This means that the graphic user interface (GUI) of the product is not launched:
+# Start by launching a new instance of the STK application. In this example, the STK Engine technology platform is used in `no_graphics` mode. This means that the graphic user interface (GUI) of the STK application is not launched:
 
 # +
 from ansys.stk.core.stkengine import STKEngine
@@ -29,14 +29,14 @@ stk = STKEngine.start_application(no_graphics=False)
 print(f"Using {stk.version}")
 # -
 
-# ## Create a new scenario
+# ## Creating a new scenario
 #
-# Start by creating a new scenario in STK by running:
+# Start by creating a new STK scenario by running:
 
 root = stk.new_object_root()
 root.new_scenario("HohmannTransfer")
 
-# Once created, it is possible to show a 3D graphics window by running:
+# Once created, it is possible to show a 3D Graphics window by running:
 
 # +
 from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
@@ -46,9 +46,9 @@ plotter = GlobeWidget(root, 640, 480)
 plotter.show()
 # -
 
-# ## Adding a satellite to the scenario
+# ## Adding a Satellite object to the scenario
 #
-# Now that a new scenario is available, add a new satellite:
+# Now that a new scenario is available, add a new Satellite object:
 
 # +
 from ansys.stk.core.stkobjects import STKObjectType
@@ -57,7 +57,7 @@ from ansys.stk.core.stkobjects import STKObjectType
 satellite = root.current_scenario.children.new(STKObjectType.SATELLITE, "Satellite")
 # -
 
-# Then, declare the type of orbit propagator used for the satellite:
+# Then, declare Astrogator as the orbit propagator used for the satellite:
 
 # +
 from ansys.stk.core.stkobjects import PropagatorType
@@ -66,14 +66,14 @@ from ansys.stk.core.stkobjects import PropagatorType
 satellite.set_propagator_type(PropagatorType.ASTROGATOR)
 # -
 
-# Initialize the propagator by making sure that no previous sequence is present. Add any additional configurations for the propagator. For this example, its is requested to draw the maneuver in 3D.
+# Initialize the propagator by making sure that no previous Mission Control Sequence (MCS) is present. Then, add any additional configurations for the propagator. For this example, it’s requested to draw the maneuver in 3D.
 
 satellite.propagator.main_sequence.remove_all()
 satellite.propagator.options.draw_trajectory_in_3d = True
 
-# ## Set up the initial state of the satellite
+# ## Setting up the initial state of the satellite
 #
-# Start by adding a new segment to the main sequence for modeling the initial state of the satellite:
+# Start by adding a new `INITIAL_STATE` segment to the MCS to model the initial state of the satellite:
 
 # +
 from ansys.stk.core.stkobjects.astrogator import SegmentType
@@ -100,9 +100,9 @@ initial_state.element.arg_of_periapsis = 0.00
 initial_state.element.true_anomaly = 0.00
 # -
 
-# ## Propagate the parking orbit of the satellite
+# ## Propagating the parking orbit of the satellite
 #
-# The parking orbit is the temporary orbit that the satellite follows before starting any maneuver. Modelling a parking orbit requires inserting a new `PROPAGATE` segment type in the main sequence. To be consistent with the assumptions of the Hohmann transfer, the segment should be propagated using an `Earth point mass` propagator. The total duration of the propagation is set for $7200$ seconds, that is $2$ hours.
+# The parking orbit is the temporary orbit that the satellite follows before starting any maneuver. Modelling a parking orbit requires inserting a new `PROPAGATE` segment type in the MCS. To be consistent with the assumptions of the Hohmann transfer, the segment should be propagated using an `Earth Point Mass` propagator. The total duration of the propagation is set for $7200$ seconds — that is $2$ hours.
 
 parking_orbit_propagate = satellite.propagator.main_sequence.insert(
     SegmentType.PROPAGATE, "Parking Orbit Propagate", "-"
@@ -119,18 +119,18 @@ from ansys.stk.core.utilities.colors import Colors
 parking_orbit_propagate.properties.color = Colors.Blue
 # -
 
-# ## Set up the Hohmann transfer
+# ## Setting up the Hohmann transfer
 #
 # The Hohmann transfer can be modelled as a sequence composed by three segments:
 #
 #
-# - **First impulse**: it is applied at the periapsis to raise the radius of apoapsis up to a desired value.
-# - **Propagation**: the satellite is propagated along its new transfer orbit until it reaches the apogee.
-# - **Last impulse**: it is a applied in the perigee of the transfer orbit to achieve a circular orbit.
+# - **First Impulse**: an impulsive maneuver is applied at the periapsis to raise the radius of apoapsis up to a desired value.
+# - **Hohmann Propagate**: the satellite is propagated along its new transfer orbit until it reaches the apogee.
+# - **Last Impulse**: an impulsive maneuver is applied in the perigee of the transfer orbit to achieve a circular orbit.
 #
 # A differential corrector is required for solving the first and last impulses to achieve the desired radius of apoapsis and a circular orbit. Therefore, these segments need to be modeled using a `TARGET_SEQUENCE` segment type. Regarding the propagation segment, this can be modeled using a `PROPAGATION` segment type. All these segments can be collected under a `SEQUENCE` segment type.
 #
-# All maneuvers are modeled as `IMPULSIVE` maneuver type. The attitude control used is of the type `THRUST_VECTOR`.
+# All maneuvers are modeled as the `IMPULSIVE` maneuver type. The attitude control used is the `THRUST_VECTOR` type.
 
 # +
 from ansys.stk.core.stkobjects.astrogator import AttitudeControl, ManeuverType
@@ -173,9 +173,9 @@ for control_sequence in hohmann_transfer.segments:
     except:
         continue
 
-# ### First impulse
+# ### Configuring the First Impulse segment
 #
-# Enable the component of the velocity impulse along the X axis as a control parameter. Add the radius of apoapsis as a result to be achieved.
+# Enable the component of the velocity impulse along the X axis as a control parameter, then add the radius of apoapsis as a result to be achieved:
 
 # +
 from ansys.stk.core.stkobjects.astrogator import ControlManeuver
@@ -185,7 +185,7 @@ first_impulse.enable_control_parameter(ControlManeuver.IMPULSIVE_CARTESIAN_X)
 first_impulse.results.add("Keplerian Elems/Radius of Apoapsis")
 # -
 
-# Now, configure the solver for this first impulse. A differential corrector can be used to solve for the values of the control parameters to achieved the desired results:
+# Now, configure the solver for this first impulse. A Differential Corrector can be used to solve for the values of the control parameters to achieve the desired results:
 
 # +
 from ansys.stk.core.stkobjects.astrogator import ProfileMode
@@ -209,9 +209,9 @@ desired_radius_of_apoapsis.desired_value = 42238.00
 desired_radius_of_apoapsis.tolerance = 0.10
 # -
 
-# ### Propagation
+# ### Configuring the Hohmann Propagate segment
 
-# After the first impulse, a propagation segment takes place in a Hohmann transfer. The stopping condition is imposed to take place at the apoapsis of the orbit:
+# After the first impulse, a Propagate segment takes place in a Hohmann transfer. The stopping condition is imposed to take place at the apoapsis of the orbit:
 
 hohmann_propagate.stopping_conditions.add("Apoapsis")
 hohmann_propagate.stopping_conditions.remove("Duration")
@@ -220,13 +220,13 @@ hohmann_propagate.stopping_conditions.remove("Duration")
 
 hohmann_propagate.properties.color = Colors.Red
 
-# ### Last impulse
+# ### Configuring the Last Impulse segment
 #
-# Again, enable the component of the velocity impulse along the X axis as a control parameter. In this case, add the eccentricity as a result to be achieved.
+# Again, enable the component of the velocity impulse along the X axis as a control parameter. In this case, add eccentricity as a result to be achieved:
 
 last_impulse.enable_control_parameter(ControlManeuver.IMPULSIVE_CARTESIAN_X)
 last_impulse.results.add("Keplerian Elems/Eccentricity")
-# Now, configure the solver for this last impulse. A differential corrector can be used to solve for the values of the control parameters to achieved the desired results:
+# Now, configure the solver for this last impulse. A Differential Corrector can be used to solve for the values of the control parameters to achieve the desired results:
 
 # +
 hohmann_end_solver = hohmann_end.profiles["Differential Corrector"]
@@ -247,9 +247,9 @@ desired_eccentricity.desired_value = 0
 desired_eccentricity.tolerance = 0.01
 # -
 
-# ## Propagation along the final orbit
+# ## Propagating along the final orbit
 #
-# Once the last impulse has been applied, it is possible to propagate the satellite along its final orbit. Start by creating a new propagation segment in the main sequence. Propagate the satellite for a total of $86400$ seconds.
+# Once the last impulse has been applied, it is possible to propagate the satellite along its final orbit. Start by creating a new Propagate segment in the MCS. Propagate the satellite for a total of $86400$ seconds:
 
 propagate_final_orbit = satellite.propagator.main_sequence.insert(
     SegmentType.PROPAGATE, "Final State Propagate", "-"
@@ -258,9 +258,9 @@ propagate_final_orbit.properties.color = Colors.Green
 propagate_final_orbit.propagator_name = "Earth Point Mass"
 propagate_final_orbit.stopping_conditions["Duration"].properties.trip = 86400.00
 
-# ## Running the main control sequence
+# ## Running the MCS
 #
-# Once that all the segments for the main sequence are defined, the main control sequence can be executed to solve for the desired values in each sequence:
+# Once all the segments for the MCS are defined, the MCS can be executed to solve for the desired values in each sequence:
 
 # +
 from ansys.stk.core.stkobjects.astrogator import TargetSequenceAction
@@ -272,22 +272,22 @@ hohmann_end.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
 satellite.propagator.run_mcs()
 # -
 
-# ## Retrieve the results
+# ## Retrieving the results
 #
 # Once the analysis has been performed, analytical results can be retrieved for a desired segment. The $\Delta v$ for each impulse along the x-direction are:
 
 print(f"\N{GREEK CAPITAL LETTER DELTA}V1 = {delta_v1_x.final_value:.5f} [km/s]")
 print(f"\N{GREEK CAPITAL LETTER DELTA}V2 = {delta_v2_x.final_value:.5f} [km/s]")
 
-# ## Apply the results
+# ## Applying the results
 #
-# Previously computed results need to be applied to the main sequence. This can be done by running:
+# Previously computed results need to be applied to the MCS. This can be done by running:
 
 satellite.propagator.apply_all_profile_changes()
 
-# ## Plot the trajectory
+# ## Plotting the trajectory
 #
-# Finally, it is possible to visualize the complete sequence of maneuvers by showing the plotter again. Since the maneuver gets out of the field of view of the plotter's camera, the position of the camera is updated:
+# Finally, it is possible to visualize the complete sequence of maneuvers by showing the plotter again. Since the maneuver gets out of the field of view of the plotter’s camera, the position of the camera is updated:
 
 plotter.camera.position = [57000, 85000, 55000]
 plotter.show()
