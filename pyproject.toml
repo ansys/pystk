@@ -14,14 +14,13 @@ maintainers = [
 authors = [
   { name = "ANSYS, Inc.", email = "pyansys.core@ansys.com" },
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 classifiers = [
   "Development Status :: 4 - Beta",
   "Intended Audience :: Developers",
   "Intended Audience :: Science/Research",
   "Operating System :: OS Independent",
   "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
@@ -44,7 +43,7 @@ optional-dependencies.core = [
   # NOTE: no dependencies are installed by default ensuring a dependency-free installation of ansys-stk[core]
 ]
 optional-dependencies.extensions = [
-  "matplotlib==3.10.9",
+  "matplotlib==3.11.2",
   "pandas>=2.3.1",
 ]
 optional-dependencies.grpc = [
@@ -53,7 +52,7 @@ optional-dependencies.grpc = [
 ]
 optional-dependencies.jupyter = [
   "jupyter-rfb>=1.0.2",
-  "numpy>=2.2.6",
+  "numpy>=2.3.2",
   "pillow>=11.3.0",
   "sidecar>=0.7.0",
   "simplejpeg>=1.8.2",
@@ -84,22 +83,22 @@ dev = [
 doc = [
   "ansys-sphinx-theme==1.9.0",
   "build==1.6.1",
-  "ipykernel==7.3.0",
+  "ipykernel==7.4.0",
   "jupyter-server==2.21.1",
-  "jupyterlab==4.6.5",
+  "jupyterlab==4.6.6",
   "jupytext==1.19.6",
   "libcst==1.9.0",
-  "matplotlib==3.10.9",
-  "myst-parser==4.0.1",
+  "matplotlib==3.11.2",
+  "myst-parser==5.2.0",
   "nbconvert==7.17.2",
   "nbsphinx==0.9.8",
   "numpydoc==1.11.0",
-  "pandas==2.3.3",
+  "pandas==3.1.1",
   "plotly==7.1.0",
-  "scipy==1.15.3",
-  "sphinx==8.2.3",
+  "scipy==1.17.1",
+  "sphinx==9.0.4",
   "sphinx-copybutton==0.5.2",
-  "sphinx-design==0.6.1",
+  "sphinx-design==0.8.0",
   "sphinx-jinja==2.0.2",
   "sphinxcontrib-jquery==4.1",
   "sphinxcontrib-mermaid==2.1.1",
@@ -107,21 +106,21 @@ doc = [
 ]
 docstyle = [
   "rst2html==2020.7.4",
-  "vale==3.26.0.1",
+  "vale==3.27.0.0",
 ]
 tests = [
-  "numpy==2.2.6",
+  "numpy==2.4.6",
   "parameterized==0.9.0",
   "pytest==9.2.0",
   "pytest-cov==7.1.0",
   "pytest-mpl==0.19.0",
   "pytz==2026.6",
-  "scipy==1.15.3",
+  "scipy==1.17.1",
 ]
 vulnerabilities = [
   "bandit[toml]==1.9.4",
   "safety==3.8.1",
-  "typer==0.27.3",
+  "typer>=0.16.0,<0.30.0",
 ]
 
 [tool.flit]
