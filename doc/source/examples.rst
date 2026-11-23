@@ -58,6 +58,7 @@ Examples
         :caption: Mission analysis
 
         examples/porkchop-plots
+        examples/sun-synchronous-orbit
 
     Communications and radar
     ========================
