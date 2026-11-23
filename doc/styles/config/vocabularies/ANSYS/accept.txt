@@ -41,6 +41,7 @@ PySTK
 Python
 sidelobe
 SEET
+skywave
 STK
 STK Desktop
 STKEngine
