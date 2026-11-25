@@ -80,7 +80,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
     )
     def GreatArcInterpolatorSnippet(self, scenario):
         # Scenario scenario: Scenario object
-        # Create a array of LLA values and interoplate them over the specified
+        # Create an array of LLA values and interpolate them over the specified
         # central body
         positionArray = [[35.017], [-118.540], [0], [44.570], [-96.474], [0], [31.101], [-82.619], [0]]
         manager = scenario.scene_manager

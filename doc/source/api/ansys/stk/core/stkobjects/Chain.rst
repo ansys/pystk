@@ -91,7 +91,7 @@ Overview
 Examples
 --------
 
-Print the strand intervals of chain object
+Print the strand intervals of the chain object
 
 .. code-block:: python
 

@@ -2,7 +2,7 @@
 
 .. meta::
     :description: PySTK provides a Python API to interact with Ansys Systems Tool Kit® (STK®) software.
-    :keywords: PySTK, STK, AGI, Ansys, Python, API, MBSE, Satellite, Space, Mission, Analysis, Astrodynamics, Orbit, Propagation, Coverage, Access, Conjunction, Maneuver, Sensor, Communication, Ground Station, Facility, Facility, Scenario, Chain, Vector, Point, Area, Grid, Region, Terrain, Vehicle, Aircraft, Ship, Submarine, Missile
+    :keywords: PySTK, STK, AGI, Ansys, Python, API, MBSE, Satellite, Space, Mission, Analysis, Astrodynamics, Orbit, Propagation, Coverage, Access, Conjunction, Maneuver, Sensor, Communication, Ground Station, Facility, Scenario, Chain, Vector, Point, Area, Grid, Region, Terrain, Vehicle, Aircraft, Ship, Submarine, Missile
 
 .. figure:: _static/logo.png
     :align: center

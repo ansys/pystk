@@ -97,7 +97,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="TimeDependentDataProviderElements",
-        description="Use a Time Dependent Data Provider and requesting only specified elements",
+        description="Use a time-dependent data provider and request only specified elements",
         category="STK Objects | Data Providers",
         eid="stkobjects~DataProviderCollection",
     )

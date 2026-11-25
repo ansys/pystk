@@ -38,7 +38,7 @@ Write documentation
 
 The documentation generator used in PySTK is `Sphinx`_. Most of the documents
 are written in `reStructuredText`_. Some parts of the documentation, like the
-:ref:`examples <Examples>`, use mix of `markdown`_ and Python. If
+:ref:`examples <Examples>`, use a mix of `markdown`_ and Python. If
 you are interested in writing examples, see the :ref:`writing examples <write-examples>`
 section.
 
@@ -51,9 +51,9 @@ files.
 The layout of the ``doc/source`` directory is reflected in the slug of the
 online documentation. For example, the
 ``doc/source/contribute/documentarian.rst`` renders as
-``https://docs.pystk.com/contribute/documentarian``.
+``https://stk.docs.pyansys.com/contribute/documentarian``.
 
-Thus, if you create a new file, it important to follow these rules:
+Thus, if you create a new file, it is important to follow these rules:
 
 - Use lowercase letters for file and directory names
 - Use short and descriptive names
@@ -62,7 +62,7 @@ Thus, if you create a new file, it important to follow these rules:
 
 All files need to be included in a table of contents. No dangling files are
 permitted. If a file is not included in the table of contents, Sphinx raises a
-warning that makes the build to fail.
+warning that causes the build to fail.
 
 A table of contents can be declared using a directive like this:
 
@@ -131,7 +131,7 @@ Write a new code snippet
 The :ref:`code snippets <PySTK code snippets>` demonstrate how to perform
 common tasks in PySTK. Code snippets are written in `pytest`_ test functions
 in the `code snippet directory`_ and are run as part of the
-tests. They are also included in the documentation, providing PySTK users
+tests. They are also included in the documentation, providing PySTK users with
 useful templates for the building blocks of PySTK scenario design. This
 enables the snippets to appear:
 
@@ -248,9 +248,6 @@ different environments for cleaning the build, running the tests, and building
 the documentation in different formats such as HTML or PDF. The following
 environments are available:
 
-The following
-environments are available:
-
 .. jinja:: toxenvs
 
     .. dropdown:: Documentation environments
@@ -281,5 +278,5 @@ Two environment variables are available for the documentation build:
   built.
 
 By using these environment variables, you can speed up the build process. This
-allows to shorten the build time when only certain parts of the documentation
+allows you to shorten the build time when only certain parts of the documentation
 are modified.

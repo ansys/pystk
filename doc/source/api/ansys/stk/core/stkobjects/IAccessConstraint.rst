@@ -54,7 +54,7 @@ Get access between objects by path using the existing accesses
     access = scenario.get_access_between_objects_by_path(object1, object2)
 
 
-Configure the access interval to the availability time span of the object where access is being computed to
+Configure the access interval to the availability time span of the object for which access is being computed
 
 .. code-block:: python
 
@@ -128,7 +128,7 @@ Add and configure an altitude access constraint
     # AccessConstraintCollection accessConstraints: Access Constraint collection
 
     # To make this more efficient, wrap this method between calls to root.BeginUpdate() and root.EndUpdate()
-    # Attitude constraint
+    # Altitude constraint
     altitude = accessConstraints.add_constraint(AccessConstraintType.ALTITUDE)
     altitude.enable_minimum = True
     altitude.minimum = 20.5  # km

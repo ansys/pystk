@@ -37,7 +37,7 @@ Configure the basic acceleration performance model of an aircraft
     # AircraftModel aviatorAircraft: Aviator Aircraft object
     # Get the acceleration type
     acceleration = aviatorAircraft.acceleration
-    # Get the build in performance model
+    # Get the built-in performance model
     basicAccModel = acceleration.get_built_in_model()
 
     # Get the level turns options

@@ -38,7 +38,7 @@ Enumerations
 
 Enumerations enable you to define a set of named constant values. Enumeration
 classes are located in the STK Object Model modules (for
-example—:py:mod:`~ansys.stk.core.stkobjects`). Most inherit from Python's
+example, :py:mod:`~ansys.stk.core.stkobjects`). Most inherit from Python's
 :obj:`enum.IntEnum` class while a few inherit from :obj:`enum.IntFlag` and may
 be combined using the bitwise OR operator to select multiple options from within the
 enumeration.
@@ -68,12 +68,12 @@ STK interfaces and classes
 --------------------------
 
 The STK object model is comprised of programming interfaces that are
-implemented by Python classes located in the provided modules. With few
+implemented by Python classes located in the provided modules. With a few
 exceptions, classes returned from PySTK methods inherit from one or more
 interfaces. You may immediately access any method from the inherited
 interfaces without casting, although in some situations casting may improve
 IDE auto-complete feature results. These classes have a reference to an STK
-object; this reference is removed upon calling ``del()`` on the Python class.
+object; this reference is removed by using ``del`` on the Python class.
 Because these classes are references to STK objects, you cannot
 create them directly from Python; objects must be returned from PySTK methods.
 
@@ -103,7 +103,7 @@ but they also support Python indexing and iteration.
 Multiple return values
 ----------------------
 
-Some methods in PYSTK return multiple values rather than returning one list.
+Some methods in PySTK return multiple values rather than returning one list.
 The multiple values are returned as a tuple.
 
 .. literalinclude:: /../../tests/doc_snippets_tests/stk_objects/facility/facility_snippets.py
@@ -191,7 +191,7 @@ performance optimization.
 
 Only calls that do not return a value may be batched together, such as
 set-property requests and methods without a return value. Any method that has
-a return value (including get-property requests) automatically execute any
+a return value (including get-property requests) automatically executes any
 previously batched commands before the method with a return value is executed.
 
 Therefore, to reduce the number of remote API requests and improve
@@ -265,7 +265,7 @@ on the Windows message loop to be dispatched. To work around this issue,
 Windows messages need to be dispatched through the Windows message queue. This
 can be accomplished in different ways depending on the type of Python script
 that is executing (console or user interface), and on the type of user
-interface library being used. For instance, if you use the tkinter user
+interface library being used. For instance, if you use the Tkinter user
 interface library, a simple way of accomplishing this with this library is to
 create a tkinter window while using the desktop application user interface. No
 action is needed if Python is used only for automation. The following script

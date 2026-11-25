@@ -162,7 +162,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         # Now switch control to the desktop application and create another facility.
         # The user interface becomes unresponsive.
 
-        # Now open a tkinter window that processing Windows messages.
+        # Now open a tkinter window that processes Windows messages.
         from tkinter import Tk
 
         window = Tk()

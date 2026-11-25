@@ -19,7 +19,7 @@ platform.
         :link-type: doc
         :padding: 2 2 2 2
 
-        Everything you need prior installing PySTK.
+        Everything you need prior to installing PySTK.
 
     .. grid-item-card:: :fa:`download` Install
         :link: getting-started/install

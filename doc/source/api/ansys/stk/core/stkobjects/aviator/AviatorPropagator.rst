@@ -44,7 +44,7 @@ Configure the Aviator propagator
 .. code-block:: python
 
     # Aircraft aircraft: Aircraft object
-    # Set to Propagator to Aviator
+    # Set Propagator to Aviator
     aircraft.set_route_type(PropagatorType.AVIATOR)
     # Get the aircraft's route
     aircraftRoute = aircraft.route

@@ -8,7 +8,7 @@ Download Dockerfiles
 ====================
 
 Start by downloading the PySTK Docker images for Windows. The images contain
-the latest three stable versions of Python.
+a few of the latest stable versions of Python.
 
 .. jinja:: docker_images
 
@@ -48,6 +48,7 @@ must be contained inside of the ``stk-engine`` directory.
     ├── stk-engine-py311
     ├── stk-engine-py312
     ├── stk-engine-py313
+    ├── stk-engine-py314
     └── stk-engine-pybase
 
 Build Docker images
@@ -123,12 +124,12 @@ Syntax
 
 .. code-block:: dosbatch
 
-    docker run \
-      --detach --interactive --tty \
-      --network="host" \
-      --env ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE \
-      --name <container-name> \
-      --entrypoint <entrypoint> \
+    docker run ^
+      --detach --interactive --tty ^
+      --network="host" ^
+      --env ANSYSLMD_LICENSE_FILE=%ANSYSLMD_LICENSE_FILE% ^
+      --name <container-name> ^
+      --entrypoint <entrypoint> ^
       <image-name>
 
 Command breakdown
@@ -142,7 +143,7 @@ process.
 - ``--interactive`` Enables interactive mode, providing a TTY session for connecting to the container.
 - ``--tty`` Allocates a pseudo-TTY, ensuring proper formatting and display of the container's output.
 - ``--network="host"`` Shares the host's network stack with the container, enabling network connectivity.
-- ``--env ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE`` Specifies environment variable(s) to be shared with the container.
+- ``--env ANSYSLMD_LICENSE_FILE=%ANSYSLMD_LICENSE_FILE%`` Specifies environment variables to be shared with the container.
 - ``--name <container-name>`` Assigns a name to the container for easy identification and reference.
 - ``--entrypoint <entrypoint>`` Defines the command or script to be executed when the container starts.
 - ``--volume <volume>`` Specifies the binding volume between the host and the container.
@@ -153,13 +154,13 @@ Example
 
 .. code-block:: dosbatch
 
-    docker run \
-      --interactive --tty \
-      --env ANSYSLMD_LICENSE_FILE=%ANSYSLMD_LICENSE_FILE% \
-      --volume D:\Dev\GitHub\pystk:C:\working-directory \
-      --workdir C:\working-directory \
-      --name stk-python3.14 \
-      --entrypoint cmd \
+    docker run ^
+      --interactive --tty ^
+      --env ANSYSLMD_LICENSE_FILE=%ANSYSLMD_LICENSE_FILE% ^
+      --volume D:\Dev\GitHub\pystk:C:\working-directory ^
+      --workdir C:\working-directory ^
+      --name stk-python3.14 ^
+      --entrypoint cmd ^
       ansys/stk-13.1:dev-windowsservercore-ltsc2019-python3.14
 
 
@@ -171,9 +172,9 @@ with the container, it is possible to install the package by running:
 
 .. code-block:: dosbatch
 
-    docker exec \
-      --interactive --tty \
-      stk-python3.<minor> \
+    docker exec ^
+      --interactive --tty ^
+      stk-python3.<minor> ^
       cmd /C "python -m venv .venv && cd pystk && chcp 65001 && call C:\Users\STK\.venv\Scripts\activate.bat && python -m pip install --upgrade pip && python -m pip install -e C:\Users\STK\pystk[tests,doc,visualization]"
 
 
@@ -187,9 +188,9 @@ Save your scripts inside the working directory. Then, execute them by running:
 
 .. code-block:: dosbatch
 
-    docker exec \
-      --interactive --tty \
-      stk-python3.<minor> \
-      cmd /C "python /home/stk/pystk/<script>"
+    docker exec ^
+      --interactive --tty ^
+      stk-python3.<minor> ^
+      cmd /C "python C:\working-directory\<script>"
 
 Where ``<script>`` is the name of the Python script you want to execute.

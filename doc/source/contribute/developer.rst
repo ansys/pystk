@@ -15,7 +15,7 @@ Contributing as a developer
         :link: clone-the-repository
         :link-type: ref
 
-        Download your own copy in your local machine.
+        Download your own copy on your local machine.
 
     .. grid-item-card:: :fa:`download` Install for developers
         :padding: 2 2 2 2
@@ -73,7 +73,7 @@ Clone the repository
 
 Make sure you `configure SSH`_ with your GitHub
 account. This allows you to clone the repository without having to use tokens
-or passwords. Also, make sure you have `git`_ installed in your machine.
+or passwords. Also, make sure you have `git`_ installed on your machine.
 
 To clone the repository using SSH, run:
 
@@ -92,7 +92,7 @@ To clone the repository using SSH, run:
 Install for developers
 ======================
 
-Installing PySTK in development mode allows you to perform changes to the code
+Installing PySTK in development mode allows you to make changes to the code
 and see the changes reflected in your environment without having to reinstall
 the library every time you make a change.
 
@@ -209,15 +209,15 @@ STK is containerized using Docker. This allows you to deploy the project in
 multiple environments without having to worry about dependencies.
 
 Although building a Docker container is not required if you have `STK software`_
-installed in your local machine, it helps to isolate all your development
+installed on your local machine, it helps to isolate your entire development
 environment.
 
 To build the Docker containers, you need to have `Docker Engine`_ and `Docker
-Compose`_ installed in your system.
+Compose`_ installed on your system.
 
 Then, download the latest `STK Engine`_ artifacts for your platform.
 
-Next, create a folder named ``distributions/`` inside next to the corresponding
+Next, create a folder named ``distributions/`` inside the corresponding
 ``docker/<platform>/stk-engine/`` and place the artifacts inside this folder.
 
 Ensure the ``ANSYSLMD_LICENSE_FILE=<PORT>@<HOSTNAME>`` environment variable is
@@ -276,7 +276,7 @@ Run the tests
 
 Once you have made your changes, you can run the tests to verify that your
 modifications did not break the project. PySTK tests support different markers
-to avoid running the whole suite of tests. These markers are associated to a
+to avoid running the whole suite of tests. These markers are associated with a
 dedicated `Tox`_ environment.
 
 .. jinja:: toxenvs

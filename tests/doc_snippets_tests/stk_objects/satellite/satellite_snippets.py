@@ -729,7 +729,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="GraphicsDetails",
-        description="Modify the Detail Thresholds Levels",
+        description="Modify the Detail Threshold Levels",
         category="STK Objects | Satellite | Graphics",
         eid="stkobjects~Graphics3DDetailThreshold",
     )
@@ -755,7 +755,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="GraphicsOrbitSystem",
-        description="Add Fixed System Orbit System in 3D Display",
+        description="Add Fixed Orbit System in 3D Display",
         category="STK Objects | Satellite | Graphics",
         eid="stkobjects~VehicleGraphics3DSystemsCollection",
     )

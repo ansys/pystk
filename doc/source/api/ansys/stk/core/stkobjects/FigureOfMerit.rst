@@ -73,7 +73,7 @@ Configure the Contours of the figure of merit (FOM) and define a color ramp
     contours.color_method = FigureOfMeritGraphics2DColorMethod.COLOR_RAMP
     contours.level_attributes.remove_all()
 
-    contours.level_attributes.add_level_range(590, 660, 10)  # Start, Start, Step
+    contours.level_attributes.add_level_range(590, 660, 10)  # Start, Stop, Step
     contours.ramp_color.start_color = Colors.Red
     contours.ramp_color.end_color = Colors.Blue
 

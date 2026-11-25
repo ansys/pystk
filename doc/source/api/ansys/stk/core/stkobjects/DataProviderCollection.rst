@@ -134,7 +134,7 @@ Extract Elements from Data Providers with Groups
     satvz = satVelDP.data_sets.get_data_set_by_name("z").get_values()
 
 
-Use a Time Dependent Data Provider and requesting only specified elements
+Use a time-dependent data provider and request only specified elements
 
 .. code-block:: python
 

@@ -36,7 +36,7 @@ Overview
 Examples
 --------
 
-Modify the Detail Thresholds Levels
+Modify the Detail Threshold Levels
 
 .. code-block:: python
 

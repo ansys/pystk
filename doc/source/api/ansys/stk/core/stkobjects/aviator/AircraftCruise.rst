@@ -40,7 +40,7 @@ Configure the basic cruise performance model of an aircraft
     # AircraftModel aviatorAircraft: Aviator Aircraft object
     # Get the cruise type
     cruise = aviatorAircraft.cruise
-    # Get the build in performance model
+    # Get the built-in performance model
     basicCruiseModel = cruise.get_built_in_model()
 
     # Set the ceiling altitude

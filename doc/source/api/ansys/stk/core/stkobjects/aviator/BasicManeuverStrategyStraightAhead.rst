@@ -45,7 +45,7 @@ Add and configure a basic maneuver procedure
     # Opt to maintain course (as opposed to maintain heading)
     straightAhead.reference_frame = StraightAheadReferenceFrame.MAINTAIN_COURSE
 
-    # Set the profile to use a Autopilot - Vertical Plane strategy
+    # Set the profile to use an Autopilot - Vertical Plane strategy
     basicManeuver.profile_strategy_type = "Autopilot - Vertical Plane"
     # Get the options for the profile strategy
     autopilot = basicManeuver.profile

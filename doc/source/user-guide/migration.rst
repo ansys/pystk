@@ -1,11 +1,11 @@
 Migrate to PySTK
 ################
 
-This topic describes how to migrate your existing Python code to PySTK, so that you can benefit from the improvements provided by the new API. This is useful if you have existing Python scripts based on the `STK API for Python <https://help.agi.com/stkdevkit/Content/python/pythonIntro.htm>`_ that is currently shipped with the Ansys STK® application install.
+This topic describes how to migrate your existing Python code to PySTK, so that you can benefit from the improvements provided by the new API. This is useful if you have existing Python scripts based on the `STK API for Python <https://help.agi.com/stkdevkit/Content/python/pythonIntro.htm>`_ that are currently shipped with the Ansys STK® application install.
 
 In general, the overall logic of the code is unchanged, but namespaces, classes, interfaces, enumerations, methods, and arguments have been renamed. Migrating your code consists of replacing the old names with the new names. The :ref:`migration table <Migration table>` provided on this page contains the mappings between the old names and the new names.
 
-Updating your code manually by looking up the mappings one at a time can be time consuming. The :ref:`API Migration Assistant <API migration assistant>` included with the PySTK package facilitates this process.
+Updating your code manually by looking up the mappings one at a time can be time-consuming. The :ref:`API Migration Assistant <API migration assistant>` included with the PySTK package facilitates this process.
 
 API migration assistant
 =======================
@@ -75,7 +75,7 @@ Record traces
 .. warning::
     Using Python version 3.11 or greater is strongly recommended for best results.
 
-The first phase of the migration process is to record one or multiple traces of the execution of your Python application using the old STK API. Start the recording by invoking the API migration assistant with the following options:
+The first phase of the migration process is to record one or more traces of the execution of your Python application using the old STK API. Start the recording by invoking the API migration assistant with the following options:
 
 .. code-block:: console
 
@@ -254,7 +254,7 @@ There are additional options available to control how the changes are applied. U
     --mappings-directory <directory>
                             directory containing the JSON API mappings (default: ...)
     --recordings-directory <directory>
-                            directory receiving the JSON recordings (default:...)
+                            directory receiving the JSON recordings (default: ...)
 
 Review, tweak, and accept
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -265,7 +265,7 @@ Review and test the suggested code changes. Once you are satisfied with the resu
 Migration table
 ===============
 
-The table below lists the interface, classes, enumerations, and method names that have been updated in PySTK. You can look up a specific name using the Search box to only display the rows that contain that symbol. Note that the root of the namespace has also changed from :py:attr:`agi.stk[version]` to :py:attr:`ansys.stk.core`.
+The table below lists the interface, classes, enumerations, and method names that have been updated in PySTK. You can look up a specific name using the Search box to only display the rows that contain that symbol. Note that the root of the namespace has also changed from :py:mod:`agi.stk[version]` to :py:mod:`ansys.stk.core`.
 
 .. jinja:: migration_table
 

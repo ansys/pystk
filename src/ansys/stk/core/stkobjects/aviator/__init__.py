@@ -6991,7 +6991,7 @@ class ProcedureCollection(SupportsDeleteCallback):
     >>> # Opt to maintain course (as opposed to maintain heading)
     >>> straightAhead.reference_frame = StraightAheadReferenceFrame.MAINTAIN_COURSE
     >>>
-    >>> # Set the profile to use a Autopilot - Vertical Plane strategy
+    >>> # Set the profile to use an Autopilot - Vertical Plane strategy
     >>> basicManeuver.profile_strategy_type = "Autopilot - Vertical Plane"
     >>> # Get the options for the profile strategy
     >>> autopilot = basicManeuver.profile
@@ -7619,7 +7619,7 @@ class AviatorPropagator(SupportsDeleteCallback):
     --------
     Configure the Aviator propagator:
     >>> # Aircraft aircraft: Aircraft object
-    >>> # Set to Propagator to Aviator
+    >>> # Set Propagator to Aviator
     >>> aircraft.set_route_type(PropagatorType.AVIATOR)
     >>> # Get the aircraft's route
     >>> aircraftRoute = aircraft.route
@@ -7727,7 +7727,7 @@ class ProcedureBasicManeuver(IProcedure, SupportsDeleteCallback):
     >>> # Opt to maintain course (as opposed to maintain heading)
     >>> straightAhead.reference_frame = StraightAheadReferenceFrame.MAINTAIN_COURSE
     >>>
-    >>> # Set the profile to use a Autopilot - Vertical Plane strategy
+    >>> # Set the profile to use an Autopilot - Vertical Plane strategy
     >>> basicManeuver.profile_strategy_type = "Autopilot - Vertical Plane"
     >>> # Get the options for the profile strategy
     >>> autopilot = basicManeuver.profile
@@ -8902,7 +8902,7 @@ class AircraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
     >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
     >>> # Get the cruise type
     >>> cruise = aviatorAircraft.cruise
-    >>> # Get the build in performance model
+    >>> # Get the built-in performance model
     >>> basicCruiseModel = cruise.get_built_in_model()
     >>>
     >>> # Set the ceiling altitude
@@ -8937,7 +8937,7 @@ class AircraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
     >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
     >>> # Get the acceleration type
     >>> acceleration = aviatorAircraft.acceleration
-    >>> # Get the build in performance model
+    >>> # Get the built-in performance model
     >>> basicAccModel = acceleration.get_built_in_model()
     >>>
     >>> # Get the level turns options
@@ -10408,7 +10408,7 @@ class AircraftAcceleration(ICatalogItem, SupportsDeleteCallback):
     >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
     >>> # Get the acceleration type
     >>> acceleration = aviatorAircraft.acceleration
-    >>> # Get the build in performance model
+    >>> # Get the built-in performance model
     >>> basicAccModel = acceleration.get_built_in_model()
     >>>
     >>> # Get the level turns options
@@ -10519,7 +10519,7 @@ class AircraftBasicAccelerationModel(IPerformanceModel, ICatalogItem, SupportsDe
     >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
     >>> # Get the acceleration type
     >>> acceleration = aviatorAircraft.acceleration
-    >>> # Get the build in performance model
+    >>> # Get the built-in performance model
     >>> basicAccModel = acceleration.get_built_in_model()
     >>>
     >>> # Get the level turns options
@@ -10722,7 +10722,7 @@ class AircraftCruise(ICatalogItem, SupportsDeleteCallback):
     >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
     >>> # Get the cruise type
     >>> cruise = aviatorAircraft.cruise
-    >>> # Get the build in performance model
+    >>> # Get the built-in performance model
     >>> basicCruiseModel = cruise.get_built_in_model()
     >>>
     >>> # Set the ceiling altitude
@@ -11450,7 +11450,7 @@ class AircraftBasicCruiseModel(IPerformanceModel, ICatalogItem, SupportsDeleteCa
     >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
     >>> # Get the cruise type
     >>> cruise = aviatorAircraft.cruise
-    >>> # Get the build in performance model
+    >>> # Get the built-in performance model
     >>> basicCruiseModel = cruise.get_built_in_model()
     >>>
     >>> # Set the ceiling altitude
@@ -16072,7 +16072,7 @@ class LevelTurns(SupportsDeleteCallback):
     >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
     >>> # Get the acceleration type
     >>> acceleration = aviatorAircraft.acceleration
-    >>> # Get the build in performance model
+    >>> # Get the built-in performance model
     >>> basicAccModel = acceleration.get_built_in_model()
     >>>
     >>> # Get the level turns options
@@ -16246,7 +16246,7 @@ class AttitudeTransitions(SupportsDeleteCallback):
     >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
     >>> # Get the acceleration type
     >>> acceleration = aviatorAircraft.acceleration
-    >>> # Get the build in performance model
+    >>> # Get the built-in performance model
     >>> basicAccModel = acceleration.get_built_in_model()
     >>>
     >>> # Get the level turns options
@@ -16380,7 +16380,7 @@ class ClimbAndDescentTransitions(SupportsDeleteCallback):
     >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
     >>> # Get the acceleration type
     >>> acceleration = aviatorAircraft.acceleration
-    >>> # Get the build in performance model
+    >>> # Get the built-in performance model
     >>> basicAccModel = acceleration.get_built_in_model()
     >>>
     >>> # Get the level turns options
@@ -16904,7 +16904,7 @@ class AircraftSimpleAerodynamic(SupportsDeleteCallback):
     >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
     >>> # Get the acceleration type
     >>> acceleration = aviatorAircraft.acceleration
-    >>> # Get the build in performance model
+    >>> # Get the built-in performance model
     >>> basicAccModel = acceleration.get_built_in_model()
     >>>
     >>> # Get the level turns options
@@ -17217,7 +17217,7 @@ class AircraftAerodynamic(SupportsDeleteCallback):
     >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
     >>> # Get the acceleration type
     >>> acceleration = aviatorAircraft.acceleration
-    >>> # Get the build in performance model
+    >>> # Get the built-in performance model
     >>> basicAccModel = acceleration.get_built_in_model()
     >>>
     >>> # Get the level turns options
@@ -17735,7 +17735,7 @@ class AircraftPropulsion(SupportsDeleteCallback):
     >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
     >>> # Get the acceleration type
     >>> acceleration = aviatorAircraft.acceleration
-    >>> # Get the build in performance model
+    >>> # Get the built-in performance model
     >>> basicAccModel = acceleration.get_built_in_model()
     >>>
     >>> # Get the level turns options
@@ -17929,7 +17929,7 @@ class AircraftSimplePropulsion(SupportsDeleteCallback):
     >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
     >>> # Get the acceleration type
     >>> acceleration = aviatorAircraft.acceleration
-    >>> # Get the build in performance model
+    >>> # Get the built-in performance model
     >>> basicAccModel = acceleration.get_built_in_model()
     >>>
     >>> # Get the level turns options
@@ -18691,7 +18691,7 @@ class BasicManeuverStrategyStraightAhead(IBasicManeuverStrategy, SupportsDeleteC
     >>> # Opt to maintain course (as opposed to maintain heading)
     >>> straightAhead.reference_frame = StraightAheadReferenceFrame.MAINTAIN_COURSE
     >>>
-    >>> # Set the profile to use a Autopilot - Vertical Plane strategy
+    >>> # Set the profile to use an Autopilot - Vertical Plane strategy
     >>> basicManeuver.profile_strategy_type = "Autopilot - Vertical Plane"
     >>> # Get the options for the profile strategy
     >>> autopilot = basicManeuver.profile
@@ -22616,7 +22616,7 @@ class BasicManeuverAirspeedOptions(SupportsDeleteCallback):
     >>> # Opt to maintain course (as opposed to maintain heading)
     >>> straightAhead.reference_frame = StraightAheadReferenceFrame.MAINTAIN_COURSE
     >>>
-    >>> # Set the profile to use a Autopilot - Vertical Plane strategy
+    >>> # Set the profile to use an Autopilot - Vertical Plane strategy
     >>> basicManeuver.profile_strategy_type = "Autopilot - Vertical Plane"
     >>> # Get the options for the profile strategy
     >>> autopilot = basicManeuver.profile
@@ -23393,7 +23393,7 @@ class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategy, SupportsDeleteC
     >>> # Opt to maintain course (as opposed to maintain heading)
     >>> straightAhead.reference_frame = StraightAheadReferenceFrame.MAINTAIN_COURSE
     >>>
-    >>> # Set the profile to use a Autopilot - Vertical Plane strategy
+    >>> # Set the profile to use an Autopilot - Vertical Plane strategy
     >>> basicManeuver.profile_strategy_type = "Autopilot - Vertical Plane"
     >>> # Get the options for the profile strategy
     >>> autopilot = basicManeuver.profile
