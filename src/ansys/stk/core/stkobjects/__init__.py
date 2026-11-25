@@ -11024,7 +11024,7 @@ class IAccessConstraint(object):
     >>>
     >>> access = scenario.get_access_between_objects_by_path(object1, object2)
 
-    Configure the access interval to the availability time span of the object where access is being computed to:
+    Configure the access interval to the availability time span of the object for which access is being computed:
     >>> # STKObjectRoot root: STK Object Model root
     >>>
     >>> satellite = root.get_object_from_path("Satellite/MySatellite")
@@ -11079,7 +11079,7 @@ class IAccessConstraint(object):
     >>> # AccessConstraintCollection accessConstraints: Access Constraint collection
     >>>
     >>> # To make this more efficient, wrap this method between calls to root.BeginUpdate() and root.EndUpdate()
-    >>> # Attitude constraint
+    >>> # Altitude constraint
     >>> altitude = accessConstraints.add_constraint(AccessConstraintType.ALTITUDE)
     >>> altitude.enable_minimum = True
     >>> altitude.minimum = 20.5  # km
@@ -20199,7 +20199,7 @@ class STKObjectRoot(ISTKObject, ILifetimeInformation, IAnimation, SupportsDelete
     >>> # Now switch control to the desktop application and create another facility.
     >>> # The user interface becomes unresponsive.
     >>>
-    >>> # Now open a tkinter window that processing Windows messages.
+    >>> # Now open a tkinter window that processes Windows messages.
     >>> from tkinter import Tk
     >>>
     >>> window = Tk()
@@ -21813,7 +21813,7 @@ class AccessConstraintCollection(SupportsDeleteCallback):
 
     Examples
     --------
-    Get handle to the object access constraints:
+    Get a handle to the object access constraints:
     >>> # Satellite satellite: Satellite object
     >>> accessConstraints = satellite.access_constraints
     """
@@ -22923,7 +22923,7 @@ class Graphics3DDetailThreshold(SupportsDeleteCallback):
 
     Examples
     --------
-    Modify the Detail Thresholds Levels:
+    Modify the Detail Threshold Levels:
     >>> # Satellite satellite: Satellite object
     >>> details = satellite.graphics_3d.model.detail_threshold
     >>> details.enable_detail_threshold = True
@@ -37436,7 +37436,7 @@ class DataProviderCollection(SupportsDeleteCallback):
     >>> satvy = satVelDP.data_sets.get_data_set_by_name("y").get_values()
     >>> satvz = satVelDP.data_sets.get_data_set_by_name("z").get_values()
 
-    Use a Time Dependent Data Provider and requesting only specified elements:
+    Use a time-dependent data provider and request only specified elements:
     >>> # STKObjectRoot root: STK Object Model root
     >>> # Satellite satellite: Satellite object
     >>> # Scenario scenario: Scenario object
@@ -38094,7 +38094,7 @@ class DataProviderResultDataSetCollection(SupportsDeleteCallback):
     >>> # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
     >>> coverage_df = coverage_data.data_sets.to_pandas_dataframe()
 
-    Load a Numpy array with flight profile data:
+    Load a NumPy array with flight profile data:
     >>> # Aircraft aircraft: Aircraft object
     >>> from scipy.spatial import ConvexHull
     >>> import matplotlib.pyplot as plt
@@ -38108,10 +38108,10 @@ class DataProviderResultDataSetCollection(SupportsDeleteCallback):
     >>>     self.get_scenario().start_time, self.get_scenario().stop_time, time_step_sec, field_names
     >>> )
     >>>
-    >>> # convert dataset collection in a row format as a Numpy array
+    >>> # convert dataset collection in a row format as a NumPy array
     >>> flight_profile_data_arr = flight_profile_data.data_sets.to_numpy_array()
     >>>
-    >>> # plot estimated fligth envelope as a convex hull
+    >>> # plot estimated flight envelope as a convex hull
     >>> hull = ConvexHull(flight_profile_data_arr)
     >>>
     >>> plt.figure(figsize=(15, 10))
@@ -59558,7 +59558,7 @@ class VehicleGraphics3DSystemsCollection(SupportsDeleteCallback):
 
     Examples
     --------
-    Add Fixed System Orbit System in 3D Display:
+    Add Fixed Orbit System in 3D Display:
     >>> # Satellite satellite: Satellite object
     >>> orbitsystems = satellite.graphics_3d.orbit_systems
     >>> orbitsystems.fixed_by_window.show_graphics = True
@@ -68999,7 +68999,7 @@ class MTO(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     Examples
     --------
     Load multi-track object (MTO) track points from a file:
-    >>> # load_points expects the path an Ephemeris file path
+    >>> # load_points expects the path to an ephemeris file
     >>> # MTO mto: MTO Object
     >>> track2 = mto.tracks.add(2)
     >>> installPath = r"C:\Program Files\AGI\STK_ODTK 13" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
@@ -75301,7 +75301,7 @@ class Chain(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
 
     Examples
     --------
-    Print the strand intervals of chain object:
+    Print the strand intervals of the chain object:
     >>> # Chain chain: Chain Object
     >>> # Compute the chain access if not done already.
     >>> chain.compute_access()
@@ -78404,7 +78404,7 @@ class FigureOfMerit(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     >>> contours.color_method = FigureOfMeritGraphics2DColorMethod.COLOR_RAMP
     >>> contours.level_attributes.remove_all()
     >>>
-    >>> contours.level_attributes.add_level_range(590, 660, 10)  # Start, Start, Step
+    >>> contours.level_attributes.add_level_range(590, 660, 10)  # Start, Stop, Step
     >>> contours.ramp_color.start_color = Colors.Red
     >>> contours.ramp_color.end_color = Colors.Blue
 

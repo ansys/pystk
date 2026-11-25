@@ -115,7 +115,7 @@ Create a new Time Instant
     timeEpoch.epoch = 3600
 
 
-Get Times From a Defined Time Instant and create an cell array
+Get Times From a Defined Time Instant and create a cell array
 
 .. code-block:: python
 
@@ -212,15 +212,15 @@ Create new Aligned and Constrained Axes
     # VectorGeometryToolVectorDisplacement Sat2EarthCenter: vector component
     # VectorGeometryToolVectorFixedInAxes bodyYSat: vector component
     AxesFactory = vgtSat.axes.factory
-    AlignConstain = AxesFactory.create(
+    AlignConstrain = AxesFactory.create(
         "AlignConstrain",
         "Aligned to displacement vector and constrained to Body Y",
         AxesType.ALIGNED_AND_CONSTRAINED,
     )
-    AlignConstain.alignment_reference_vector.set_vector(Sat2EarthCenter)
-    AlignConstain.alignment_direction.assign_xyz(1, 0, 0)
-    AlignConstain.constraint_reference_vector.set_vector(bodyYSat)
-    AlignConstain.constraint_direction.assign_xyz(0, 0, 1)
+    AlignConstrain.alignment_reference_vector.set_vector(Sat2EarthCenter)
+    AlignConstrain.alignment_direction.assign_xyz(1, 0, 0)
+    AlignConstrain.constraint_reference_vector.set_vector(bodyYSat)
+    AlignConstrain.constraint_direction.assign_xyz(0, 0, 1)
 
 
 Create a new Between Vectors Angle
@@ -342,11 +342,11 @@ Get a default VGT component on vehicle
 
     # Satellite satellite: Satellite object
     vgtSat = satellite.analysis_workbench_components
-    # Get handle to the Center point on the satellite
+    # Get a handle to the Center point on the satellite
     centerPtSat = vgtSat.points.item("Center")
-    # Get handle to the Body Y Vector
+    # Get a handle to the Body Y Vector
     bodyYSat = vgtSat.vectors.item("Body.Y")
-    # Get handle to the Body Axes
+    # Get a handle to the Body Axes
     bodyAxes = vgtSat.axes.item("Body")
     icrfAxes = vgtSat.axes.item("ICRF")
 

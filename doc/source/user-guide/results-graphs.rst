@@ -33,12 +33,12 @@ In the `Report Contents` section of the `Report Style` window, the various data 
 
 .. image:: img/report-contents.png
 
-.. note:: The `Section`, `Line`, and `Time`` elements are used to provide formatting for the report style; they are not actual data providers.
+.. note:: The `Section`, `Line`, and `Time` elements are used to provide formatting for the report style; they are not actual data providers.
 
 Data providers
 ==============
 
-In the `Data Providers` section of the `Report Style` window, the data providers available for a particular object are listed. Expand a particular group to view the nested data providers associated with that group. Expanding a particular data provider further to display the data Elements that are associated with it.
+In the `Data Providers` section of the `Report Style` window, the data providers available for a particular object are listed. Expand a particular group to view the nested data providers associated with that group. Expand a particular data provider further to display the data elements that are associated with it.
 
 .. image:: img/data-providers.png
 

@@ -413,7 +413,7 @@ class MtoSnippets(CodeSnippetsTestBase):
         )
 
     def LoadMtoTrackPointsFromFile(self, track: "MTOTrack", filePath: str):
-        # LoadPoints expects the path an Ephemeris file path
+        # LoadPoints expects the path to an ephemeris file
         track.points.load_points(filePath)
 
     # endregion

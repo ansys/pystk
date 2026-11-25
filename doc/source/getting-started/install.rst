@@ -1,7 +1,7 @@
 Install PySTK
 #############
 
-PySTK can be installed in different platforms. Select your platform for
+PySTK can be installed on different platforms. Select your platform for
 instructions on how to install PySTK.
 
 .. grid:: 2

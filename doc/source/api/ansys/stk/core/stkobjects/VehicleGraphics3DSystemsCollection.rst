@@ -53,7 +53,7 @@ Overview
 Examples
 --------
 
-Add Fixed System Orbit System in 3D Display
+Add Fixed Orbit System in 3D Display
 
 .. code-block:: python
 

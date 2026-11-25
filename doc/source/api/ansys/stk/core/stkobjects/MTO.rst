@@ -42,7 +42,7 @@ Load multi-track object (MTO) track points from a file
 
 .. code-block:: python
 
-    # load_points expects the path an Ephemeris file path
+    # load_points expects the path to an ephemeris file
     # MTO mto: MTO Object
     track2 = mto.tracks.add(2)
     installPath = r"C:\Program Files\AGI\STK_ODTK 13" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]

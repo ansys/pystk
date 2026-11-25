@@ -65,7 +65,7 @@ Overview
 Examples
 --------
 
-Get handle to the object access constraints
+Get a handle to the object access constraints
 
 .. code-block:: python
 

@@ -1,12 +1,12 @@
-Install PySTK locally in Linux
+Install PySTK locally on Linux
 ##############################
 
-This topic provides details on installing PySTK locally in Linux platforms.
+This topic provides details on installing PySTK locally on Linux platforms.
 
 .. note::
 
     This topic assumes that you have a local installation of STK and a valid
-    license in your machine.
+    license on your machine.
 
 Download artifacts
 ==================
@@ -86,10 +86,10 @@ Install extra artifacts
 
 PySTK includes some additional features such as gRPC connection support or
 Jupyter widgets for visualization. These features require some extra artifacts
-to be installed, either pulling those dependencies from the public PyPi
+to be installed, either pulling those dependencies from the public PyPI
 registry or from the wheelhouses included on the :ref:`artifacts <Artifacts>`
 page. A wheelhouse provides all of the required dependencies. It facilitates
-deploying PySTK on isolated networks that do not have access to the public PyPi
+deploying PySTK on isolated networks that do not have access to the public PyPI
 registry.
 
 Start by selecting the additional feature group to install with PySTK. Finally,

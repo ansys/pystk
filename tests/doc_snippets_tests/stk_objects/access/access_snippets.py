@@ -70,7 +70,7 @@ class AccessSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="AccessConstraints",
-        description="Get handle to the object access constraints",
+        description="Get a handle to the object access constraints",
         category="STK Objects | Access",
         eid="stkobjects~AccessConstraintCollection",
     )
@@ -258,7 +258,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         # AccessConstraintCollection accessConstraints: Access Constraint collection
 
         # To make this more efficient, wrap this method between calls to root.BeginUpdate() and root.EndUpdate()
-        # Attitude constraint
+        # Altitude constraint
         altitude = accessConstraints.add_constraint(AccessConstraintType.ALTITUDE)
         altitude.enable_minimum = True
         altitude.minimum = 20.5  # km
@@ -563,7 +563,7 @@ class AccessSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ConfigureAccessIntervalAvailability",
-        description="Configure the access interval to the availability time span of the object where access is being computed to",
+        description="Configure the access interval to the availability time span of the object for which access is being computed",
         category="STK Objects | Access",
         eid="stkobjects~IAccessConstraint",
     )

@@ -1,7 +1,7 @@
 About PySTK
 ###########
 
-PySTK is the next generation Python API for Ansys Systems Toolkit® (STK®) software. The
+PySTK is the next generation Python API for Ansys Systems Tool Kit® (STK®) software. The
 API is an evolution of the existing STK Python API with the following goals:
 
 - PyAnsys compliance:
@@ -19,7 +19,7 @@ API is an evolution of the existing STK Python API with the following goals:
 
   - The interface, class, method and property names have been updated to
     remove cryptic abbreviations, making your code easier to read and
-    maintain, and facilitates discovering and locating API features.
+    maintain, and facilitate discovery and location of API features.
 
   - Better code completion is now available in IDEs (Visual Studio Code,
     PyCharm) or Jupyter Lab.
@@ -31,9 +31,9 @@ API is an evolution of the existing STK Python API with the following goals:
 
   - The documentation has been reorganized and features an :ref:`API reference`
     that is specific to Python, whereas the `STK Programming Help`_ covers
-    multiple languages, including C#, Java and Python.
+    multiple languages, including C#, Java, and Python.
 
-  - :ref:`Examples <Examples>` provided to demonstrate how to use the API for
+  - :ref:`Examples <Examples>` are provided to demonstrate how to use the API for
     specific aerospace applications.
 
 As a result of this evolution, existing code must be migrated to the PySTK API.
@@ -65,7 +65,7 @@ Available configurations and environments
 -----------------------------------------
 
 Multiple configurations and environments are supported, requiring specific
-instructions to get setup. Refer to the table below to access prerequisites and
+instructions to get set up. Refer to the table below to access prerequisites and
 installation instructions for your desired environment.
 
 .. list-table::
@@ -77,10 +77,10 @@ installation instructions for your desired environment.
       - **Installation guide**
     * - Locally on Windows
       - :ref:`Prerequisites <Prerequisites>`
-      - :ref:`Installation <Install PySTK locally in Windows>`
+      - :ref:`Installation <Install PySTK locally on Windows>`
     * - Locally on Linux
       - :ref:`Prerequisites <Prerequisites>`
-      - :ref:`Installation <Install PySTK locally in Linux>`
+      - :ref:`Installation <Install PySTK locally on Linux>`
     * - Windows Docker container
       - :ref:`Prerequisites <Prerequisites>`
       - :ref:`Installation <Install PySTK in a Windows container>`
@@ -89,7 +89,7 @@ installation instructions for your desired environment.
       - :ref:`Installation <Install PySTK in a Linux container>`
 
 
-Once your environment is setup, you can review the :ref:`user guide <User
+Once your environment is set up, you can review the :ref:`user guide <User
 guide>` to get acquainted with the API, or browse :ref:`examples <Examples>`.
 Additionally, the :ref:`API reference` describes all types that are available
 through the API.
@@ -114,7 +114,7 @@ The PySTK API currently has the following limitations:
   :py:attr:`RadarProbabilityOfDetectionPlugin.raw_plugin_object`,
   :py:attr:`IRadarClutterMapModelPlugin.raw_plugin_object`,
   :py:attr:`RadarCrossSectionComputeStrategyPlugin.raw_plugin_object`,
-  :py:attr:`RadarStcAttenuationPlugi.raw_plugin_objectn` are not available and
+  :py:attr:`RadarStcAttenuationPlugin.raw_plugin_object` are not available and
   always return :obj:`None`.
 
 - Engine plugins are not currently supported.

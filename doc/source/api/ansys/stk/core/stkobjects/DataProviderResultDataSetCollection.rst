@@ -133,7 +133,7 @@ Convert coverage definition data provider results to a Pandas DataFrame
     coverage_df = coverage_data.data_sets.to_pandas_dataframe()
 
 
-Load a Numpy array with flight profile data
+Load a NumPy array with flight profile data
 
 .. code-block:: python
 
@@ -150,10 +150,10 @@ Load a Numpy array with flight profile data
         self.get_scenario().start_time, self.get_scenario().stop_time, time_step_sec, field_names
     )
 
-    # convert dataset collection in a row format as a Numpy array
+    # convert dataset collection in a row format as a NumPy array
     flight_profile_data_arr = flight_profile_data.data_sets.to_numpy_array()
 
-    # plot estimated fligth envelope as a convex hull
+    # plot estimated flight envelope as a convex hull
     hull = ConvexHull(flight_profile_data_arr)
 
     plt.figure(figsize=(15, 10))

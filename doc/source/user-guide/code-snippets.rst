@@ -10,7 +10,7 @@ Analysis Workbench
   - :ref:`Create a new collection of interval list <CreateCollectionList>`
   - :ref:`Create a new time interval <CreateTimeInterval>`
   - :ref:`Create a new time instant <CreateTimeInstant>`
-  - :ref:`Get times from a defined time instant and create an cell array <GetTimesFromTimeInstant>`
+  - :ref:`Get times from a defined time instant and create a cell array <GetTimesFromTimeInstant>`
   - :ref:`Create a new orbit parameter set <CreateOrbitParameterSet>`
   - :ref:`Create a new attitude parameter set <CreateAttitudeParameterSet>`
   - :ref:`Get a scalar component and evaluate at a specific time <GetScalarAndEvaluate>`
@@ -74,7 +74,7 @@ Initialization
 STK Objects
   Access
     - :ref:`Get access between objects by path using the existing accesses <GetAccesses>`
-    - :ref:`Configure the access interval to the availability time span of the object where access is being computed to <ConfigureAccessIntervalAvailability>`
+    - :ref:`Configure the access interval to the availability time span of the object for which access is being computed <ConfigureAccessIntervalAvailability>`
     - :ref:`Configure the access analysis time period to specified time instants <ConfigureAccessInterval>`
     - :ref:`Compute and extract access interval times <ExtractAccessIntervals>`
     - :ref:`Compute an access for one point <ComputeAccessPoint>`
@@ -91,7 +91,7 @@ STK Objects
     - :ref:`Add and configure a line of sight sun exclusion access constraint <AddSunExclusionConstraint>`
     - :ref:`Add and configure a lighting condition access constraint <AddLightingConstraint>`
     - :ref:`Return a list of available constraints <AvailableAccessConstraints>`
-    - :ref:`Get handle to the object access constraints <AccessConstraints>`
+    - :ref:`Get a handle to the object access constraints <AccessConstraints>`
   AdvCAT
     - :ref:`Create a new AdvCat object <CreateCAT>`
   Aircraft
@@ -107,7 +107,7 @@ STK Objects
     - :ref:`Set an elliptical area target <CreateEllipticalAreaTarget>`
     - :ref:`Create an area target (on the current scenario central body) <CreateAreaTarget>`
   Chain
-    - :ref:`Print the strand intervals of chain object <ChainStrandIntervals>`
+    - :ref:`Print the strand intervals of the chain object <ChainStrandIntervals>`
     - :ref:`Define and compute a chain (advanced) <CreateChainAdvanced>`
     - :ref:`Define and compute a chain (basic) <ComputeChain>`
     - :ref:`Create a chain (on the current scenario central body) <CreateChain>`
@@ -123,7 +123,7 @@ STK Objects
     - :ref:`Get data for a single point in time <SingleTimeDataProvider>`
     - :ref:`Extract elements from data providers with pre-data <DataProviderPreData>`
     - :ref:`Extract elements from data providers with groups <GroupsDataProvider>`
-    - :ref:`Use a time dependent data provider and requesting only specified elements <TimeDependentDataProviderElements>`
+    - :ref:`Use a time-dependent data provider and request only specified elements <TimeDependentDataProviderElements>`
     - :ref:`Use an interval data provider <IntervalDataProvider>`
   Facility
     Graphics
@@ -159,8 +159,8 @@ STK Objects
   Satellite
     Graphics
       - :ref:`Add a vector to display in 3D <AddGraphicsVector>`
-      - :ref:`Add fixed system orbit system in 3D display <GraphicsOrbitSystem>`
-      - :ref:`Modify the detail thresholds levels <GraphicsDetails>`
+      - :ref:`Add fixed orbit system in 3D display <GraphicsOrbitSystem>`
+      - :ref:`Modify the detail threshold levels <GraphicsDetails>`
       - :ref:`Change the 3D model and marker properties <GraphicsModel>`
       - :ref:`Display drop lines in 3D window <GraphicsDropline>`
       - :ref:`Add a data display to the 3D window <GraphicsDataDisplay>`
@@ -317,8 +317,8 @@ Create a new time instant
 
 .. _GetTimesFromTimeInstant:
 
-Get times from a defined time instant and create an cell array
-==============================================================
+Get times from a defined time instant and create a cell array
+=============================================================
 
 .. code-block:: python
 
@@ -429,15 +429,15 @@ Create new aligned and constrained axes
     # VectorGeometryToolVectorDisplacement Sat2EarthCenter: vector component
     # VectorGeometryToolVectorFixedInAxes bodyYSat: vector component
     AxesFactory = vgtSat.axes.factory
-    AlignConstain = AxesFactory.create(
+    AlignConstrain = AxesFactory.create(
         "AlignConstrain",
         "Aligned to displacement vector and constrained to Body Y",
         AxesType.ALIGNED_AND_CONSTRAINED,
     )
-    AlignConstain.alignment_reference_vector.set_vector(Sat2EarthCenter)
-    AlignConstain.alignment_direction.assign_xyz(1, 0, 0)
-    AlignConstain.constraint_reference_vector.set_vector(bodyYSat)
-    AlignConstain.constraint_direction.assign_xyz(0, 0, 1)
+    AlignConstrain.alignment_reference_vector.set_vector(Sat2EarthCenter)
+    AlignConstrain.alignment_direction.assign_xyz(1, 0, 0)
+    AlignConstrain.constraint_reference_vector.set_vector(bodyYSat)
+    AlignConstrain.constraint_direction.assign_xyz(0, 0, 1)
 
 .. _CreateBetweenAngle:
 
@@ -579,11 +579,11 @@ Get a default VGT component on vehicle
 
     # Satellite satellite: Satellite object
     vgtSat = satellite.analysis_workbench_components
-    # Get handle to the Center point on the satellite
+    # Get a handle to the Center point on the satellite
     centerPtSat = vgtSat.points.item("Center")
-    # Get handle to the Body Y Vector
+    # Get a handle to the Body Y Vector
     bodyYSat = vgtSat.vectors.item("Body.Y")
-    # Get handle to the Body Axes
+    # Get a handle to the Body Axes
     bodyAxes = vgtSat.axes.item("Body")
     icrfAxes = vgtSat.axes.item("ICRF")
 
@@ -820,10 +820,10 @@ Load a numpy array with flight profile data
         self.get_scenario().start_time, self.get_scenario().stop_time, time_step_sec, field_names
     )
 
-    # convert dataset collection in a row format as a Numpy array
+    # convert dataset collection in a row format as a NumPy array
     flight_profile_data_arr = flight_profile_data.data_sets.to_numpy_array()
 
-    # plot estimated fligth envelope as a convex hull
+    # plot estimated flight envelope as a convex hull
     hull = ConvexHull(flight_profile_data_arr)
 
     plt.figure(figsize=(15, 10))
@@ -1085,7 +1085,7 @@ Compute interpolated positions along a great arc
 .. code-block:: python
 
     # Scenario scenario: Scenario object
-    # Create a array of LLA values and interoplate them over the specified
+    # Create an array of LLA values and interpolate them over the specified
     # central body
     positionArray = [[35.017], [-118.540], [0], [44.570], [-96.474], [0], [31.101], [-82.619], [0]]
     manager = scenario.scene_manager
@@ -1223,8 +1223,8 @@ Get access between objects by path using the existing accesses
 
 .. _ConfigureAccessIntervalAvailability:
 
-Configure the access interval to the availability time span of the object where access is being computed to
-===========================================================================================================
+Configure the access interval to the availability time span of the object for which access is being computed
+============================================================================================================
 
 .. code-block:: python
 
@@ -1357,7 +1357,7 @@ Compute an access between two STK objects (using object path)
 
 .. _ComputeAccess:
 
-Compute an access between two STK objects (using ISTKObject interface)
+Compute an access between two STK objects (using istkobject interface)
 ======================================================================
 
 .. code-block:: python
@@ -1436,7 +1436,7 @@ Add and configure an altitude access constraint
     # AccessConstraintCollection accessConstraints: Access Constraint collection
 
     # To make this more efficient, wrap this method between calls to root.BeginUpdate() and root.EndUpdate()
-    # Attitude constraint
+    # Altitude constraint
     altitude = accessConstraints.add_constraint(AccessConstraintType.ALTITUDE)
     altitude.enable_minimum = True
     altitude.minimum = 20.5  # km
@@ -1543,8 +1543,8 @@ Return a list of available constraints
 
 .. _AccessConstraints:
 
-Get handle to the object access constraints
-===========================================
+Get a handle to the object access constraints
+=============================================
 
 .. code-block:: python
 
@@ -1729,8 +1729,8 @@ Create an area target (on the current scenario central body)
 
 .. _ChainStrandIntervals:
 
-Print the strand intervals of chain object
-==========================================
+Print the strand intervals of the chain object
+==============================================
 
 .. code-block:: python
 
@@ -1992,8 +1992,8 @@ Extract elements from data providers with groups
 
 .. _TimeDependentDataProviderElements:
 
-Use a time dependent data provider and requesting only specified elements
-=========================================================================
+Use a time-dependent data provider and request only specified elements
+======================================================================
 
 .. code-block:: python
 
@@ -2157,7 +2157,7 @@ Configure the contours of the figure of merit (fom) and define a color ramp
     contours.color_method = FigureOfMeritGraphics2DColorMethod.COLOR_RAMP
     contours.level_attributes.remove_all()
 
-    contours.level_attributes.add_level_range(590, 660, 10)  # Start, Start, Step
+    contours.level_attributes.add_level_range(590, 660, 10)  # Start, Stop, Step
     contours.ramp_color.start_color = Colors.Red
     contours.ramp_color.end_color = Colors.Blue
 
@@ -2273,7 +2273,7 @@ Load multi-track object (MTO) track points from a file
 
 .. code-block:: python
 
-    # load_points expects the path an Ephemeris file path
+    # load_points expects the path to an ephemeris file
     # MTO mto: MTO Object
     track2 = mto.tracks.add(2)
     installPath = r"C:\Program Files\AGI\STK_ODTK 13" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
@@ -2362,8 +2362,8 @@ Add a vector to display in 3D
 
 .. _GraphicsOrbitSystem:
 
-Add fixed system orbit system in 3D display
-===========================================
+Add fixed orbit system in 3D display
+====================================
 
 .. code-block:: python
 
@@ -2375,8 +2375,8 @@ Add fixed system orbit system in 3D display
 
 .. _GraphicsDetails:
 
-Modify the detail thresholds levels
-===================================
+Modify the detail threshold levels
+==================================
 
 .. code-block:: python
 
@@ -3262,7 +3262,7 @@ Configure the basic cruise performance model of an aircraft
     # AircraftModel aviatorAircraft: Aviator Aircraft object
     # Get the cruise type
     cruise = aviatorAircraft.cruise
-    # Get the build in performance model
+    # Get the built-in performance model
     basicCruiseModel = cruise.get_built_in_model()
 
     # Set the ceiling altitude
@@ -3303,7 +3303,7 @@ Configure the basic acceleration performance model of an aircraft
     # AircraftModel aviatorAircraft: Aviator Aircraft object
     # Get the acceleration type
     acceleration = aviatorAircraft.acceleration
-    # Get the build in performance model
+    # Get the built-in performance model
     basicAccModel = acceleration.get_built_in_model()
 
     # Get the level turns options
@@ -3350,7 +3350,7 @@ Configure the aviator propagator
 .. code-block:: python
 
     # Aircraft aircraft: Aircraft object
-    # Set to Propagator to Aviator
+    # Set Propagator to Aviator
     aircraft.set_route_type(PropagatorType.AVIATOR)
     # Get the aircraft's route
     aircraftRoute = aircraft.route
@@ -3492,7 +3492,7 @@ Add and configure a basic maneuver procedure
     # Opt to maintain course (as opposed to maintain heading)
     straightAhead.reference_frame = StraightAheadReferenceFrame.MAINTAIN_COURSE
 
-    # Set the profile to use a Autopilot - Vertical Plane strategy
+    # Set the profile to use an Autopilot - Vertical Plane strategy
     basicManeuver.profile_strategy_type = "Autopilot - Vertical Plane"
     # Get the options for the profile strategy
     autopilot = basicManeuver.profile
@@ -3996,7 +3996,7 @@ Manage STK desktop application events
     # Now switch control to the desktop application and create another facility.
     # The user interface becomes unresponsive.
 
-    # Now open a tkinter window that processing Windows messages.
+    # Now open a tkinter window that processes Windows messages.
     from tkinter import Tk
 
     window = Tk()

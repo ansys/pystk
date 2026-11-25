@@ -13,7 +13,7 @@ Saving an STK scenario
 
 PySTK enables the automatic creation, saving, and loading of scenarios.
 
-Unlike other applications that save a single file, STK saves a scenario as a group of files that comprise the collection of objects that are relevant to the scenario. When an STK scenario is saved, the scenario itself is saved as an object, and each object within the scenario is saved individually. The file extension for the scenario object is `.sc`. Additionally, the current layout of your workspace is saved in an Microsoft Excel Workbook file.
+Unlike other applications that save a single file, STK saves a scenario as a group of files that comprise the collection of objects that are relevant to the scenario. When an STK scenario is saved, the scenario itself is saved as an object, and each object within the scenario is saved individually. The file extension for the scenario object is `.sc`. Additionally, the current layout of your workspace is saved in a Microsoft Excel workbook file.
 
 Satellites, aircraft, ground vehicles, ships, planets, stars, receivers, and transmitters are examples of the objects that can constitute a scenario in STK. Within a scenario, you can set general properties, such as time period, units of measure, and the appearance of the 2D and 3D windows. Information that is contained in the scenario can be used to create reports and to perform other analytical tasks.
 

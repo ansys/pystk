@@ -16,7 +16,7 @@ instructions on how to install PySTK.
         :link: windows/docker
         :link-type: doc
 
-        Use PySTK with a Windows based container
+        Use PySTK with a Windows-based container
 
 .. toctree::
    :maxdepth: 3

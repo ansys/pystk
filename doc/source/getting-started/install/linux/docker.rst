@@ -8,7 +8,7 @@ Download Dockerfiles
 ====================
 
 Start by downloading the PySTK Docker images for Linux. The images contain
-the latest three stable versions of Python.
+a few of the latest stable versions of Python.
 
 .. jinja:: docker_images
 
@@ -41,6 +41,7 @@ This directory must be contained inside of the ``stk-engine`` directory.
     ├── stk-engine-py311
     ├── stk-engine-py312
     ├── stk-engine-py313
+    ├── stk-engine-py314
     └── stk-engine-pybase
 
 Build Docker images
@@ -49,7 +50,7 @@ Build Docker images
 Navigate to the ``linux/ubuntu`` directory and use `Docker Compose`_ to build the
 image of your choice by running:
 
-.. code-block:: dosbatch
+.. code-block:: bash
 
     docker compose build stk-python3.<minor>
 
@@ -138,7 +139,7 @@ process.
 - ``--interactive`` Enables interactive mode, providing a TTY session for connecting to the container.
 - ``--tty`` Allocates a pseudo-TTY, ensuring proper formatting and display of the container's output.
 - ``--network="host"`` Shares the host's network stack with the container, enabling network connectivity.
-- ``--env ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE`` Specifies environment variable(s) to be shared with the container.
+- ``--env ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE`` Specifies environment variables to be shared with the container.
 - ``--name <container-name>`` Assigns a name to the container for easy identification and reference.
 - ``--entrypoint <entrypoint>`` Defines the command or script to be executed when the container starts.
 - ``--volume <volume>`` Specifies the binding volume between the host and the container.
@@ -153,10 +154,10 @@ Example
       --detach --interactive --tty \
       --network="host" \
       --env ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE \
-      --volume working-directory:/home/stk/pystk
+      --volume working-directory:/home/stk/pystk \
       --name stk-python3.12 \
       --entrypoint /bin/bash \
-      ansys/stk:dev-ubuntu22.04-python3.12
+      ansys/stk-13.1:dev-ubuntu22.04-python3.12
 
 Install PySTK in the container
 ==============================
@@ -179,7 +180,7 @@ Running scripts in the container
 
 Save your scripts inside the working directory. Then, execute them by running:
 
-.. code-block:: dosbatch
+.. code-block:: bash
 
     docker exec \
       --interactive --tty \

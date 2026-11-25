@@ -16,7 +16,7 @@ instructions on how to install PySTK.
         :link: linux/docker
         :link-type: doc
 
-        Use PySTK with a Linux based container
+        Use PySTK with a Linux-based container
 
 .. toctree::
    :maxdepth: 3

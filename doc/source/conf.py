@@ -169,7 +169,7 @@ source_suffix = {
 # The master toctree document.
 master_doc = "index"
 
-# Common content for every RST file such us links
+# Common content for every RST file such as links
 rst_epilog = ""
 links_filepath = pathlib.Path(__file__).parent.absolute() / "links.rst"
 rst_epilog += links_filepath.read_text(encoding="utf-8")
@@ -447,12 +447,12 @@ latex_elements = {
 
 def copy_docker_files_to_static_dir(app: sphinx.application.Sphinx):
     """
-    Copy the examples directory to the source directory of the documentation.
+    Copy the docker images to the source directory of the documentation.
 
     Parameters
     ----------
     app : sphinx.application.Sphinx
-        Sphinx application instance containing the all the doc build configuration.
+        Sphinx application instance containing all the doc build configuration.
 
     """
     SOURCE_DIR = pathlib.Path(app.srcdir)
@@ -494,7 +494,7 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
     Parameters
     ----------
     app : sphinx.application.Sphinx
-        Sphinx application instance containing the all the doc build configuration.
+        Sphinx application instance containing all the doc build configuration.
     exception : Exception
         Exception encountered during the building of the documentation.
 
@@ -562,7 +562,7 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
     Parameters
     ----------
     app : sphinx.application.Sphinx
-        Sphinx application instance containing the all the doc build configuration.
+        Sphinx application instance containing all the doc build configuration.
 
     """
     if app.builder.name == "linkcheck":
@@ -629,7 +629,7 @@ def remove_examples_from_source_dir(app: sphinx.application.Sphinx, exception: E
     Parameters
     ----------
     app : sphinx.application.Sphinx
-        Sphinx application instance containing the all the doc build configuration.
+        Sphinx application instance containing all the doc build configuration.
     exception : Exception
         Exception encountered during the building of the documentation.
 
@@ -646,12 +646,11 @@ def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception)
 
     Quarto needs to be installed in the system to render the PDF files. See
     https://quarto.org/docs/get-started/.
-    Artifact
 
     Parameters
     ----------
     app : sphinx.application.Sphinx
-        Sphinx application instance containing the all the doc build configuration.
+        Sphinx application instance containing all the doc build configuration.
     exception : Exception
         Exception encountered during the building of the documentation.
 
@@ -699,7 +698,7 @@ def copy_graph_images_to_source_dir(app: sphinx.application.Sphinx):
     Parameters
     ----------
     app : sphinx.application.Sphinx
-        Sphinx application instance containing the all the doc build configuration.
+        Sphinx application instance containing all the doc build configuration.
 
     """
     SOURCE_GRAPHS = pathlib.Path(app.srcdir) / "graph_images_temp"
@@ -731,7 +730,7 @@ def remove_graph_images_from_source_dir(app: sphinx.application.Sphinx, exceptio
     Parameters
     ----------
     app : sphinx.application.Sphinx
-        Sphinx application instance containing the all the doc build configuration.
+        Sphinx application instance containing all the doc build configuration.
     exception : Exception
         Exception encountered during the building of the documentation.
 
@@ -762,7 +761,7 @@ def read_migration_tables(app: sphinx.application.Sphinx):
     Parameters
     ----------
     app : sphinx.application.Sphinx
-        Sphinx application instance containing the all the doc build configuration.
+        Sphinx application instance containing all the doc build configuration.
 
     """
     ROOT_DIR = pathlib.Path(app.srcdir).parent.parent
@@ -815,14 +814,14 @@ def run_autoapi(app: sphinx.application.Sphinx):
     Parameters
     ----------
     app : sphinx.application.Sphinx
-        Sphinx application instance containing the all the doc build configuration.
+        Sphinx application instance containing all the doc build configuration.
 
     """
     logger = logging.getLogger(__name__)
     logger.info("\nWriting reST files for API documentation...", color="green")
 
-    scritps_dir = pathlib.Path(app.srcdir).parent.parent / "scripts"
-    sys.path.append(str(scritps_dir.resolve()))
+    scripts_dir = pathlib.Path(app.srcdir).parent.parent / "scripts"
+    sys.path.append(str(scripts_dir.resolve()))
 
     from autoapi import autodoc_extensions
     autodoc_extensions()
@@ -836,7 +835,7 @@ def setup(app: sphinx.application.Sphinx):
     Parameters
     ----------
     app : sphinx.application.Sphinx
-        Sphinx application instance containing the all the doc build configuration.
+        Sphinx application instance containing all the doc build configuration.
 
     """
     # HACK: rST files are copied to the doc/source directory before the build.
