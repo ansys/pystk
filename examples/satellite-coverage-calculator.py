@@ -4,15 +4,15 @@
 #
 # ## What is satellite coverage?
 #
-# Engineers and operators often need to determine the times that a satellite can "access" (or see) another object. Satellite coverage describes which areas of the Earth can access a satellite considering constraints defining what constitutes a valid access, including elevation angle, sun light or umbra restrictions, gimbal speed, range, and more. Satellite coverage can be calculated globally, or over a certain region.
+# Engineers and operators often need to determine the times that a satellite can “access” (or see) another object. Satellite coverage describes which areas of the Earth can access a satellite considering constraints defining what constitutes a valid access, including elevation angle, sun light or umbra restrictions, gimbal speed, range, and more. Satellite coverage can be calculated globally, or over a certain region.
 #
 # ## Problem statement
 #
-# Two satellites present circular orbits. The first satellite has an inclination of $97.3^\circ$ and an altitude of $400$ km. The second satellite has a RAAN of $340^\circ$. Calculate the coverage these satellites provide over the tropics region of the Earth, defined as the area between the latitudes of $-23.5^\circ$ and $23.5^\circ$. Use a point resolution of $3.0^\circ$. Determine which satellite achieves higher coverage of the tropics region and if coverage is better or worse near the Equator. Finally, determine which areas of the tropics region receive coverage from both satellites at the same time.
+# Two satellites present circular orbits. The first satellite has an inclination of $97.3^\circ$ and an altitude of $400$ km. The second satellite has a RAAN of $340^\circ$. Calculate the coverage these satellites provide over the tropical region of the Earth, defined as the area between the latitudes of $-23.5^\circ$ and $23.5^\circ$. Use a point resolution of $3.0^\circ$. Determine which satellite achieves higher coverage of the tropics and if coverage is better or worse near the Equator. Finally, determine which areas of the tropics receive coverage from both satellites at the same time.
 #
-# ## Launch a new STK instance
+# ## Launching a new STK application instance
 #
-# Start by launching a new STK instance. In this example, STKEngine is used.
+# Start by launching a new instance of the STK application. In this example, the STK Engine technology platform is used.
 
 # +
 from ansys.stk.core.stkengine import STKEngine
@@ -21,14 +21,14 @@ from ansys.stk.core.stkengine import STKEngine
 stk = STKEngine.start_application(no_graphics=False)
 print(f"Using {stk.version}")
 # -
-# ## Create a new scenario
+# ## Creating a new scenario
 #
-# Create a new scenario in STK by running:
+# Create a new STK scenario by running:
 
 root = stk.new_object_root()
 root.new_scenario("Coverage")
 
-# Once the scenario is created, it is possible to show a 3D graphics window by running:
+# Once the scenario is created, it is possible to show a 3D Graphics window by running:
 
 # +
 from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
@@ -38,7 +38,7 @@ globe_plotter = GlobeWidget(root, 640, 480)
 globe_plotter.show()
 # -
 
-# A 2D graphics window can be created to better visualize the satellite coverage area:
+# A 2D Graphics window can be created to better visualize the satellite coverage area:
 
 # +
 from ansys.stk.core.experimental.jupyterwidgets import MapWidget
@@ -48,7 +48,7 @@ map_plotter = MapWidget(root, 640, 480)
 map_plotter.show()
 # -
 
-# ## Set the scenario time period
+# ## Setting the scenario time period
 
 # Using the newly created scenario, set the start and stop times. Rewind the scenario so that the graphics match the start and stop times of the scenario:
 
@@ -56,7 +56,7 @@ scenario = root.current_scenario
 scenario.set_time_period("1 Jul 2016", "2 Jul 2016")
 root.rewind()
 
-# ## Add the satellites to the scenario
+# ## Adding the satellites to the scenario
 
 # First, add a satellite in a polar orbit:
 
@@ -67,7 +67,7 @@ from ansys.stk.core.stkobjects import STKObjectType
 polar_sat = root.current_scenario.children.new(STKObjectType.SATELLITE, "PolarSat")
 # -
 
-# Then, set the satellite's propagator to J4Pertubation:
+# Then, set the satellite’s propagator to J4Pertubation:
 
 # +
 from ansys.stk.core.stkobjects import PropagatorType
@@ -94,7 +94,7 @@ polar_sat_propagator.initial_state.representation.assign_cartesian(
 
 shuttle = root.current_scenario.children.new(STKObjectType.SATELLITE, "Shuttle")
 
-# Set the satellite's propagator to J4Pertubation:
+# Set the satellite’s propagator to J4Pertubation:
 
 shuttle.set_propagator_type(PropagatorType.J4_PERTURBATION)
 
@@ -118,9 +118,9 @@ map_plotter.show()
 
 globe_plotter.show()
 
-# ## Create a coverage definition
+# ## Creating a coverage definition
 
-# Create a coverage definition object modeling the region of Tropics:
+# Create a Coverage Definition object modeling the region of tropics:
 
 tropics = root.current_scenario.children.new(
     STKObjectType.COVERAGE_DEFINITION, "Tropics"
@@ -137,57 +137,57 @@ tropics.grid.bounds.minimum_latitude = -23.5
 tropics.grid.bounds.maximum_latitude = 23.5
 tropics.grid.resolution.latitude_longitude = 3
 # -
-# ### Assign the assets
+# ### Assigning the coverage assets
 
-# Assign the satellites (PolarSat and Shuttle) as assets on the coverage definition. To do so, use a path to the satellites of the form ``ItemType/ItemName``.
+# Assign the satellites (PolarSat and Shuttle) as assets on the coverage definition. To do so, use a path to the satellites of the form `ItemType/ItemName`.
 
 tropics.asset_list.add("Satellite/PolarSat")
 tropics.asset_list.add("Satellite/Shuttle")
 
-# ### Configure the 2D graphics
+# ### Configuring the 2D graphics
 
-# Use the coverage definition's static property (which holds a ``ICoverageGraphics2DStatic`` object), to set the Show Regions, Show Region Labels, Show Points, and Points - Fill graphics properties.
+# Use the coverage definition’s static property (which holds a `ICoverageGraphics2DStatic` object), to set the Show Regions, Show Region Labels, Show Points, and Points - Fill graphics properties.
 
 tropics.graphics.static.show_region = True
 tropics.graphics.static.show_labels = True
 tropics.graphics.static.show_points = True
 tropics.graphics.static.fill_points = True
 
-# To set the visibility for Progress of Computations, use a ``CoverageGraphics2DProgres``s object, which is available through the ``ICoverageGraphics`` object's ``progress`` property.
+# To set the visibility for Progress of Computations, use a `CoverageGraphics2DProgres`s object, which is available through the `ICoverageGraphics` object’s `progress` property.
 
 tropics.graphics.progress.show_graphics = True
 
-# To set the satisfaction visibility, use an ``ICoverageGraphics2DAnimation`` object, which is accessible through the ``ICoverageGraphics`` object's ``animation`` property.
+# To set the satisfaction visibility, use an `ICoverageGraphics2DAnimation` object, which is accessible through the `ICoverageGraphics` object’s `animation` property.
 
 tropics.graphics.animation_settings.show_satisfaction = False
 
-# View the coverage definition's graphics using the 2D graphics window:
+# View the coverage definition’s graphics using the 2D graphics window:
 
 map_plotter.show()
 
-# ## Compute coverage and create reports
+# ## Computing coverage and creating reports
 
 # Use the tropics coverage definition object to compute accesses:
 
 tropics.compute_accesses()
 
 
-# ### Create reports
+# ### Creating reports
 
-# To create reports, access the data providers associated with the coverage object. Then, select the type of report using the ``item`` method and the name of the report. The Coverage By Asset and Coverage by Latitude reports correspond to ``IDataProviderFixed`` objects. By using the ``exec`` method, compute the data needed for these reports. The ``exec`` method returns an ``IDataProviderResult`` object, through which it is possible to access an ``IDataProviderResultDataSetCollection`` through the ``data_sets`` property. This object corresponds to the desired data.
+# To create reports, access the data providers associated with the coverage object. Then, select the type of report using the `item` method and the name of the report. The Coverage By Asset and Coverage by Latitude reports correspond to `IDataProviderFixed` objects. By using the `exec` method, compute the data needed for these reports. The `exec` method returns an `IDataProviderResult` object, through which it is possible to access an `IDataProviderResultDataSetCollection` through the `data_sets` property. This object corresponds to the desired data.
 
 access_by_asset = tropics.data_providers.item("Coverage By Asset")
 access_by_latitude = tropics.data_providers.item("Coverage by Latitude")
 asset_data_provider_results = access_by_asset.execute()
 latitude_data_provider_results = access_by_latitude.execute()
 
-# **Which satellite achieved a higher average coverage of the tropics region?**
+# **Which satellite achieved a higher average coverage of the tropics?**
 
-# Converting to a pandas ``dataframe`` makes the answer clear:
+# Converting to a pandas `dataframe` makes the answer clear:
 
 asset_data_provider_results.data_sets.to_pandas_dataframe()
 
-# **Answer:** the satellite ``PolarSat`` achieved higher average coverage of the tropics region with an average coverage percentage of $2.704572194409824$.
+# **Answer:** the satellite `PolarSat` achieved higher average coverage of the tropics with an average coverage percentage of $2.704572194409824$.
 
 # **Note:** converting to a numpy array is also possible:
 
@@ -222,22 +222,22 @@ ax.set_ylabel("Percent time covered")
 plt.show()
 # -
 
-# ## Assess the quality of coverage
+# ## Assessing the quality of coverage
 
-# ### Set the graphics
+# ### Setting the graphics
 
-# The Figure of Merit object has its own graphics which the Coverage Definition graphics interferes with. Thus, turn off the Show Regions and Show Points options of the Coverage Definition:
+# The Figure Of Merit object has its own graphics with which the Coverage Definition's graphics interferes. Thus, turn off the Show Regions and Show Points options of the Coverage Definition:
 
 tropics.graphics.static.show_region = False
 tropics.graphics.static.show_points = False
 
-# ### Create a Figure of Merit
+# ### Creating a figure of merit
 
-# Create a Figure of Merit:
+# Create a Figure Of Merit object:
 
 coverage = tropics.children.new(STKObjectType.FIGURE_OF_MERIT, "Coverage")
 
-# ### Define the coverage
+# ### Setting the coverage definition
 
 # Set the coverage definition to N Asset Coverage:
 
@@ -257,9 +257,9 @@ from ansys.stk.core.stkobjects import FigureOfMeritCompute
 coverage.definition.set_compute_type(FigureOfMeritCompute.MAXIMUM)
 # -
 
-# ### Configure the graphics
+# ### Configuring the coverage graphics
 
-# Set some animation graphics options for the Figure of Merit object:
+# Set the animation graphics options for the Figure of Merit object:
 
 # +
 from ansys.stk.core.stkobjects import FigureOfMeritGraphics2DAccumulation
@@ -273,7 +273,7 @@ coverage.graphics.animation_settings.fill_points = False
 coverage.graphics.animation_settings.marker_style = "Star"
 # -
 
-# ### Configure the static graphics
+# ### Configuring the static coverage graphics
 
 # Set some static graphics options:
 
@@ -285,9 +285,9 @@ coverage.graphics.static.marker_style = "Circle"
 
 globe_plotter.show()
 
-# ### Define the coverage for the Figure of Merit
+# ### Defining the coverage for the figure of merit
 
-# Adjust the definition of the Figure of Merit's coverage to determine which points have coverage from both satellites at the same time:
+# Adjust the definition of the Figure Of Merit object’s coverage to determine which points have coverage from both satellites at the same time:
 
 # +
 from ansys.stk.core.stkobjects import FigureOfMeritSatisfactionType
@@ -302,7 +302,7 @@ coverage.definition.satisfaction.satisfaction_threshold = 2
 
 # The 3D Graphics window immediately reflects the reduction in the amount of the coverage region that satisfies the 'at least 2' criterion.
 
-# ### Configure the animation graphics
+# ### Configuring the animation graphics
 
 # Set some animation graphics to see when points are covered by neither, one, or both satellites:
 
@@ -333,7 +333,7 @@ root.play_forward()
 
 # Note that points are highlighted in pink when they are covered by only one satellite, and in blue when covered by both satellites.
 
-# ### Create a Satisfied by Time report
+# ### Creating a Satisfied by Time report
 
 # The Satisfied by Time report summarizes the percentage and true area of the grid that satisfies the Figure Of Merit at each time step:
 

@@ -1,27 +1,27 @@
 # # Lambert transfer
 #
-# This tutorial provides a practical example on how to solve an interplanetary Lambert transfer using Python. A direct and prograde interplanetary transfer arc between the Earth and Mars is solved by using the ``Lambert Profile`` included in Astrogator.
+# This tutorial provides a practical example on how to solve an interplanetary Lambert transfer using Python. A direct and prograde interplanetary transfer arc between the Earth and Mars is solved by using the `Lambert Profile` included with the Ansys STK/Astrogator® capability.
 
 
 # ## What is a Lambert transfer?
 #
-# A Lambert transfer, named after Johann Heinrich Lambert, is a type of orbit transfer used in orbital mechanics. It allows to calculate the trajectory between two orbits under the influence of gravity from a central body, such as a planet or a star.
+# A Lambert transfer, named after Johann Heinrich Lambert, is a type of orbit transfer used in orbital mechanics. It allows you to calculate the trajectory between two orbits under the influence of gravity from a central body, such as a planet or a star.
 #
-# From the mathematical point of view, a Lambert transfer is the solution of the two-body boundary value problem in the framework of orbital mechanics. This problem is also known as the Lambert’s problem.
+# From the mathematical point of view, a Lambert transfer is the solution of the two-body boundary value problem in the framework of orbital mechanics. This problem is also known as Lambert’s problem.
 #
 # Therefore, Lambert’s problem states to find for the Keplerian orbit which connects two known position vectors, $\vec{r_{1}}$ 1 and $\vec{r_{2}}$, over a finite amount of time, $\Delta t$, under a gravity field of gravitational parameter $\mu$.
 #
 # The first impulse $\Delta v_1$ is performed at $\vec{r_1}$ to inject a spacecraft into a transfer orbit until it reaches $\vec{r_2}$, where a last impulse is performed to achieve the desired final orbit.
 #
-# It is important to say that perturbations are not considered in this notebook. Only the Keplerian Lambert’s problem is studied. Despite this, STK is capable of using different force models during the propagation of the orbit, allowing for solving the so-called perturbed Lambert's problem.
+# It is important to say that perturbations are not considered in this notebook. Only the Keplerian Lambert’s problem is studied. Despite this, STK is capable of using different force models during the propagation of the orbit, allowing for solving the so-called perturbed Lambert’s problem.
 #
 # ## Problem statement
 #
 # Find the Lambert transfer between Earth and Mars starting on August 1, 2005, and ending on March 1, 2006. Assume that the only force acting on the spacecraft is the gravitational force of the Sun. Assume both Earth and Mars are virtual points. Positions of the planets can be obtained using the default ephemerides files provided in STK. Compute the required $\Delta v$ for each impulse of the maneuver.
 
-# ## Launch a new STK instance
+# ## Launching a new STK application instance
 #
-# Start by launching a new STK instance. In this example, ``STKEngine`` is used with graphics (``no_graphics`` mode set to ``False``). This means that the graphic user interface (GUI) of the product is not launched but 2D and 3D visualization is still available through the STK Engine controls & Jupyter widgets:
+# Start by launching a new instance of the STK application. In this example, the STK Engine technology platform is used with graphics (`no_graphics` mode set to `False`). This means that the graphic user interface (GUI) of the product is not launched, but 2D and 3D visualization is still available through the STK Engine controls & Jupyter widgets:
 
 # +
 from ansys.stk.core.stkengine import STKEngine
@@ -31,7 +31,7 @@ stk = STKEngine.start_application(no_graphics=False)
 print(f"Using {stk.version}")
 # -
 
-# ## Create a new scenario
+# ## Creating a new scenario
 #
 # Next, create a new scenario. The central body for this scenario must be the Sun.
 
@@ -54,7 +54,7 @@ scenario.set_time_period(START_TIME, STOP_TIME)
 
 root.rewind()
 
-# Once created, you can visualize the scenario in a 3D graphics window. Update the value of the far plane of the camera to ensure that distant objects are represented in the scene.
+# Once created, you can visualize the scenario in a 3D Graphics window. Update the value of the far plane of the camera to ensure that distant objects are represented in the scene.
 
 # +
 from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
@@ -65,9 +65,9 @@ plotter.camera.far_plane = 1e12
 plotter.show()
 # -
 
-# ## Add the planets to the scenario
+# ## Adding the planets to the scenario
 #
-# Once the scenario is created, planets can be added. The default ephemerides are used for modeling the orbit of the Earth and Mars. However, it is possible to use other sources for the ephemerides, as provided by the ``EphemSourceType`` enumeration. Finally, a royal blue color is used for representing the Earth while a salmon color is used for Mars.
+# Once the scenario is created, Planet object can be added. The default ephemerides are used for modeling the orbit of the Earth and Mars. However, it is possible to use other sources for the ephemerides, as provided by the `EphemSourceType` enumeration. Finally, a royal blue color is used for representing the Earth while a salmon color is used for Mars.
 
 # +
 from ansys.stk.core.stkobjects import (
@@ -120,13 +120,13 @@ plotter.camera.position = [402322147.89965045, -554001077.0502352, 31332205.8573
 plotter.show()
 
 
-# ## Solve the initial and final state vectors
+# ## Solving the initial and final state vectors
 #
 # The initial and final state vectors are required to solve for the transfer orbit. These vectors can be computed knowing the positions of the planets involved in the transfer.
 #
 # The data providers can be used to find the state vector of an object at a given epoch and with respect to a reference frame.
 
-# First, an utility function for converting a ``DataProviderResult`` instance into a Python dictionary is implemented. This allows to easily structure and manipulate the computed values.
+# First, n utility function for converting a `DataProviderResult` instance into a Python dictionary is implemented. This allows you to easily structure and manipulate the computed values.
 
 
 def from_data_result_to_dict(data_result: "DataProviderResult") -> dict:
@@ -206,17 +206,17 @@ print(f"Mars position at arrival: {initial_position} km")
 print(f"Mars velocity at arrival: {initial_velocity} km/s")
 # -
 
-# ## Add a satellite to the scenario
+# ## Adding a Satellite object to the scenario
 #
-# Once the initial and final states are known, it is time to add a new satellite to the scenario. This object is used to simulate the transfer orbit between Earth and Mars at the desired launch and arrival dates.
+# Once the initial and final states are known, it is time to add a new Satellite object to the scenario. This object is used to simulate the transfer orbit between Earth and Mars at the desired launch and arrival dates.
 #
-# The central body for the satellite must be the Sun to be compliant with the Keplerian assumption of the Lambert transfer. Remember that the gravity for Earth and Mars are ignored in this example.
+# The central body for the satellite must be the Sun to be compliant with the Keplerian assumption of the Lambert transfer. Remember that the gravities for Earth and Mars are ignored in this example.
 
 satellite = root.current_scenario.children.new_on_central_body(
     STKObjectType.SATELLITE, "Satellite", "Sun"
 )
 
-# Then, indicate the type of propagator used for the satellite. In this case, the propagator must be astrogator.
+# Then, indicate the type of propagator used for the satellite. In this case, the propagator must be Astrogator.
 
 # +
 from ansys.stk.core.stkobjects import PropagatorType
@@ -225,13 +225,13 @@ from ansys.stk.core.stkobjects import PropagatorType
 satellite.set_propagator_type(PropagatorType.ASTROGATOR)
 # -
 
-# Remove all the main sequence to ensure no prior segments lead to wrong results during the simulation.
+# Remove all the Mission Control Sequence (MCS) segments to ensure no prior segments lead to wrong results during the simulation.
 
 satellite.propagator.main_sequence.remove_all()
 
-# ## Declare the initial state of the satellite
+# ## Declaring the initial state of the satellite
 #
-# Now, declare the initial state of the satellite by using an initial state segment.
+# Now, declare the initial state of the satellite by using an Initial State segment.
 
 # +
 from ansys.stk.core.stkobjects.astrogator import ElementSetType, SegmentType
@@ -261,7 +261,7 @@ initial_state.element.vy = initial_velocity[1]
 initial_state.element.vz = initial_velocity[2]
 # -
 
-# ## Construct the transfer sequence
+# ## Constructing the transfer sequence
 #
 # The transfer sequence can be modeled as a target sequence containing three segments: a first impulsive maneuver, a propagation, and a last impulsive maneuver.
 
@@ -302,9 +302,9 @@ for control_sequence in satellite.propagator.main_sequence:
     except:
         continue
 
-# ## Configure the Lambert profile
+# ## Configuring the Lambert profile
 #
-# To ease the creation of a Lambert's transfer, STK provides a profile named ``IProfileLambertProfile``. This profile can be added to a target sequence. Later, it can be configured to solve for the desired transfer requirements such as the time of flight and the final state vector.
+# To ease the creation of a Lambert transfer, the STK application provides a profile named `IProfileLambertProfile`. This profile can be added to a target sequence. Later, it can be configured to solve for the desired transfer requirements such as the time of flight and the final state vector.
 #
 # Additional configuration parameters exist, such as the number of revolutions or the direction of motion. However, since this example covers a direct transfer arc, these options are not explored.
 
@@ -314,7 +314,7 @@ lambert = lambert_transfer.profiles.add("Lambert Profile")
 
 # Next, declare the target state vector. In this case, the target state vector is the final state vector. This vector is defined in an inertial reference frame centered at the Sun. Cartesian coordinates are used for the components of the position and velocity.
 #
-# It is also important to enable the second maneuver property. This allows to specify the target velocity.
+# It is also important to enable the second maneuver property. This allows you to specify the target velocity.
 
 # +
 from ansys.stk.core.stkobjects.astrogator import LambertTargetCoordinateType
@@ -349,7 +349,7 @@ print(f"Time of flight: {tof} seconds")
 
 # Then, other parameters for the transfer can be configured. These include the type of solution, the direction of motion, and the padding altitude for the collision with the central body.
 #
-# **Since planets are modeled as points, see the problem statement, the value for the altitude padding for the central body collision is 0 km.**
+# **Since planets are modeled as points (see the problem statement), the value for the altitude padding for the central body collision is 0 km.**
 
 # +
 from ansys.stk.core.stkobjects.astrogator import (
@@ -367,7 +367,7 @@ lambert.direction_of_motion = LambertDirectionOfMotionType.SHORT
 lambert.central_body_collision_altitude_padding = 0
 # -
 
-# It is required to enable writing access to the lambert profile to the segments of the target sequence. This ensures that the control parameter values are modified to match the target values.
+# It is required to enable writing access to the Lambert profile to the segments of the target sequence. This ensures that the control parameter values are modified to match the target values.
 
 # +
 lambert.enable_write_to_first_maneuver = True
@@ -381,9 +381,9 @@ lambert.enable_write_to_second_maneuver = True
 lambert.second_maneuver_segment = last_impulse.name
 # -
 
-# ## Run the main control sequence
+# ## Running the Mission Control Sequence
 #
-# Once the whole control sequence is declared and the Lambert profile active, the simulation can be performed. Ensure that the Lambert profile is active and that the mission control sequence runs all active profiles. In addition, any profile must run to return and continue once finished. Do not continue on failure or reset inner targeters.
+# Once the whole control sequence is declared and the Lambert profile active, the simulation can be performed. Ensure that the Lambert profile is active and that the MCS runs all active profiles. In addition, any profile must run to return and continue once finished, do not continue on failure, or reset inner targeters before each run.
 
 # +
 from ansys.stk.core.stkobjects.astrogator import (
@@ -402,12 +402,12 @@ lambert_transfer.continue_on_failure = False
 lambert_transfer.reset_inner_targeters = False
 # -
 
-# Finally, run the mission control sequence and apply the results to all profiles. Note that in this case, the only existing profile is the `Lambert Profile`.
+# Finally, run the MCS and apply the results to all profiles. Note that in this case, the only existing profile is the `Lambert Profile`.
 
 satellite.propagator.run_mcs()
 satellite.propagator.apply_all_profile_changes()
 
-# ## Retrieve the results
+# ## Retrieving the results
 
 # Now, the results can be retrieved. The value of the increment in velocity magnitude for the first and last impulse are computed. Also, the $C_{3}$ values for the characteristic departure and arrival energy are solved.
 
@@ -430,9 +430,9 @@ print(f"Last impulse:  {delta_v2:.2f} km/s")
 print(f"C3 at arrival: {c3_arrival:.2f} km2/s2")
 # -
 
-# ## Visualize the transfer
+# ## Visualizing the transfer
 #
-# Finally, animate the scene to visualize the transfer orbit. Ensure the satellite is visible by updating the detail threshold of its three-dimensional model and forcing STK to draw its trajectory:
+# Finally, animate the scene to visualize the transfer orbit. Ensure the satellite is visible by updating the detail threshold of its three-dimensional model and forcing the STK application to draw its trajectory:
 
 # +
 satellite.propagator.options.draw_trajectory_in_3d = True

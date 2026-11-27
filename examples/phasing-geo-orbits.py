@@ -1,10 +1,10 @@
 # # GEO Orbit Phasing
 #
-# This tutorial provides a practical example on how to solve a phasing maneuver problem using Python.
+# This tutorial provides a practical example on how to solve a phasing maneuver problem using Python and the Ansys STK/Astrogator® capability.
 #
 # ## What is orbit phasing?
 #
-# Orbit phasing is an orbital maneuver used to adjust the position of a spacecraft within its orbit without changing the orbit's shape or orientation. This is particularly important for satellites in geostationary orbit (GEO) that need to move along the geostationary belt to a different orbital slot, or for constellation satellites that must maintain specific relative positions within the same orbital plane.
+# Orbit phasing is an orbital maneuver used to adjust the position of a spacecraft within its orbit without changing the orbit’s shape or orientation. This is particularly important for satellites in geostationary orbit (GEO) that need to move along the geostationary belt to a different orbital slot, or for constellation satellites that must maintain specific relative positions within the same orbital plane.
 #
 # The phasing maneuver involves temporarily changing the orbital period by adjusting the semi-major axis. By placing the satellite into a slightly different orbit (the phasing orbit), it will drift relative to its target position. After a specified number of orbits, the satellite returns to the original orbit at the desired location.
 #
@@ -14,13 +14,13 @@
 # - **Phasing orbit**: A temporary orbit with a different period to achieve the desired drift
 #
 #
-# The **phase angle** is the angular displacement between the two satellites at initial time. In this context, it is defined as always positive and between 0 and 360 degrees. To make the rendezvous between the satellites, it has to be reduced to 0 in a specified number of orbits (called **phasing orbits**), so each phase orbit will reduce the angular gap by just a fraction of the overall value.
+# The **phase angle** is the angular displacement between the two satellites at initial time. In this context, it is defined as always positive and between 0 and 360 degrees. To make the rendezvous between the satellites, it has to be reduced to 0 in a specified number of orbits (called **phasing orbits**), so that each phase orbit will reduce the angular gap by just a fraction of the overall value.
 #
 # $$ \theta_{gap}=\frac{\theta}{n_{orbits}}$$
 #
 # where $\theta$ is the phase angle, and $\theta_{gap}$ is the angular displacement to recover after each phasing orbit.
 #
-# In the code below, **Kepler's equation** is used to calculate the period and semimajor axis of the phasing orbit, given the number of revolutions around the phasing orbit itself. As first, the **eccentric anomaly E** is calculated from $\theta_{gap}$ :
+# In the code below, **Kepler’s equation** is used to calculate the period and semimajor axis of the phasing orbit, given the number of revolutions around the phasing orbit itself. As first, the **eccentric anomaly E** is calculated from $\theta_{gap}$ :
 #
 # $$\tan\left(\frac{E}{2}\right)=\sqrt{\frac{1 - e}{1 + e}}\tan\left(\frac{\theta_{gap}}{2}\right)$$
 #
@@ -58,9 +58,9 @@ propagation_time = 16 * 86400
 phasing_orbits = 5
 # -
 
-# ## Launch a new STK instance
+# ## Launching a new STK application instance
 #
-# Start by launching a new STK instance. In this example, ``STKEngine`` is used with graphics (``no_graphics`` mode set to ``False``). This means that the STK graphic user interface (GUI) of the product is not launched but 2D and 3D visualization is still available through the STK Engine controls:
+# Start by launching a new instance of the STK application. In this example, the STK Engine technology platform is used without graphics (`no_graphics` mode set to `False`). This means that the STK application graphic user interface (GUI) of the product is not launched, but 2D and 3D visualization is still available through STK Engine controls:
 
 # +
 from ansys.stk.core.stkengine import STKEngine
@@ -70,20 +70,20 @@ stk = STKEngine.start_application(no_graphics=False)
 print(f"Using {stk.version}")
 # -
 
-# ## Create a new scenario
+# ## Creating a new scenario
 #
-# Start by creating a new scenario in STK:
+# Start by creating a new STK scenario:
 
 root = stk.new_object_root()
 root.new_scenario("PhasingOrbit")
 scenario = root.current_scenario
 
-# Configure the scenario time to cover a 16 day period starting July 1, 2026:
+# Configure the scenario time to cover a 16-day period starting on July 1, 2026:
 
 start_time, stop_time = "1 Jul 2026 16:00:00.000", "+16 day"
 scenario.set_time_period(start_time, stop_time)
 
-# It is now possible to show a 3D graphics window by running:
+# It is now possible to show a 3D Graphics window by running:
 
 # +
 from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
@@ -93,9 +93,9 @@ plotter = GlobeWidget(root, 640, 480)
 plotter.show()
 # -
 
-# ## Add the satellites
+# ## Adding the satellites
 
-# Create the target satellite which will remain at a fixed position in geostationary orbit. This satellite serves as the reference point for the phasing maneuver:
+# Create the target satellite, which will remain at a fixed position in geostationary orbit. This satellite serves as the reference point for the phasing maneuver:
 
 # +
 from ansys.stk.core.stkobjects import STKObjectType
@@ -108,9 +108,9 @@ target_satellite = scenario.children.new(STKObjectType.SATELLITE, "Target")
 
 chaser_satellite = scenario.children.new(STKObjectType.SATELLITE, "Chaser")
 
-# ## Set up vectors in analysis workbench
+# ## Setting up vectors with the Analysis Workbench
 
-# Analysis workbench (AWB) is used in this example to calculate the phase angle between the two satellites. To begin using analysis workbench, first retrieve the AWB component root:
+# The Analysis Workbench (AWB) capability is used in this example to calculate the phase angle between the two satellites. To begin using the Analysis Workbench capability, first retrieve the AWB component root:
 
 awb_root = root.analysis_workbench_components_root
 
@@ -136,17 +136,17 @@ chaser_vectors = awb_root.get_provider(
     chaser_satellite.class_name + "/" + chaser_satellite.instance_name
 ).vectors
 
-# Retrieve the target satellite's position vector. Position vectors are automatically created on STK objects when they are added to a scenario. Then, designate this vector as the vector that the dihedral angle sweeps to:
+# Retrieve the target satellite’s position vector. Position vectors are automatically created on STK objects when they are added to a scenario. Then, designate this vector as the vector that the dihedral angle sweeps to:
 
 target_position_vector = target_vectors.item("Position")
 phase_angle_awb.to_vector.set_vector(target_position_vector)
 
-# Retrieve the chaser satellite's position vector and set it as the vector that the dihedral angle begins from:
+# Retrieve the chaser satellite’s position vector and set it as the vector that the dihedral angle begins from:
 
 chaser_position_vector = chaser_vectors.item("Position")
 phase_angle_awb.from_vector.set_vector(chaser_position_vector)
 
-# Then, retrieve the target satellite's orbit normal vector, which is perpendicular to its orbit with respect to the Earth's center. Set this vector as the vector that the angle sweeps about:
+# Then, retrieve the target satellite’s orbit normal vector, which is perpendicular to its orbit with respect to the Earth’s center. Set this vector as the vector that the angle sweeps about:
 
 about_vector = target_vectors.item("Orbit_Normal")
 phase_angle_awb.pole_about.set_vector(about_vector)
@@ -163,9 +163,9 @@ earth_calc_scalar_factory = awb_root.get_provider(
 phase_angle_calc = earth_calc_scalar_factory.create_angle("PhaseAngle", "PhaseAngle")
 phase_angle_calc.input_angle = phase_angle_awb
 
-# ## Set up the target satellite
+# ## Setting up the target satellite
 
-# Declare the type of orbit propagator used for the target satellite. Set the propagator to an Astrogator type:
+# Declare the type of orbit propagator used for the target satellite. Set the propagator to use Astrogator:
 
 # +
 from ansys.stk.core.stkobjects import PropagatorType
@@ -178,13 +178,13 @@ target_satellite.set_propagator_type(PropagatorType.ASTROGATOR)
 
 target_satellite.propagator.main_sequence.remove_all()
 
-# Then, configure graphics settings to allow 3D visualization of the satellite's trajectory:
+# Then, configure graphics settings to allow 3D visualization of the satellite’s trajectory:
 
 target_satellite.propagator.options.draw_trajectory_in_3d = True
 
-# ## Set up the initial state of the target satellite
+# ## Setting up the initial state of the target satellite
 #
-# Access the existing initial state segment in the main sequence and configure the element type to a Keplerian element:
+# Access the existing Initial State segment in the Mission Control Sequence (MCS) and configure the element type to a Keplerian element:
 
 # +
 from ansys.stk.core.stkobjects.astrogator import ElementSetType, SegmentType
@@ -210,7 +210,7 @@ target_keplerian_elements.true_anomaly = true_anomaly_target
 target_keplerian_elements.arg_of_periapsis = arg_of_periapsis
 # -
 
-# Configure the propagation segment. Propagate the orbit of the target for 16 days:
+# Configure the Propagate segment. Propagate the orbit of the target for 16 days:
 
 # +
 target_propagate_segment = target_satellite.propagator.main_sequence.insert(
@@ -243,13 +243,13 @@ if run_code != RunCode.MARCHING:
     raise ValueError("Could not propagate target satellite orbit.")
 # -
 
-# Finally, show the orbit of the satellite in the 3D graphics window:
+# Finally, show the orbit of the satellite in the 3D Graphics window:
 
 plotter.show()
 
-# ## Set up the chaser satellite
+# ## Setting up the chaser satellite
 
-# Declare the type of orbit propagator used for the chaser satellite as the Astrogator type and ensure a clean main sequence:
+# Declare the type of orbit propagator used for the chaser satellite as the Astrogator type and ensure a clean MCS:
 
 chaser_satellite.set_propagator_type(PropagatorType.ASTROGATOR)
 chaser_satellite.propagator.main_sequence.remove_all()
@@ -258,9 +258,9 @@ chaser_satellite.propagator.main_sequence.remove_all()
 
 chaser_satellite.propagator.options.draw_trajectory_in_3d = True
 
-# ## Set up the initial state of the chaser satellite
+# ## Setting up the initial state of the chaser satellite
 #
-# Access the existing initial state segment in the main sequence and configure the element type to a Keplerian type:
+# Access the existing Initial State segment in the MCS and configure the element type to a Keplerian type:
 
 chaser_initial_state = chaser_satellite.propagator.main_sequence.insert(
     SegmentType.INITIAL_STATE, "Initial State", "-"
@@ -268,7 +268,7 @@ chaser_initial_state = chaser_satellite.propagator.main_sequence.insert(
 chaser_initial_state.set_element_type(ElementSetType.KEPLERIAN)
 chaser_initial_state.initial_state.epoch = scenario.start_time
 
-# Declare the keplerian elements using the previously defined parameters:
+# Declare the Keplerian elements using the previously defined parameters:
 
 # +
 chaser_keplerian_elements = chaser_initial_state.element
@@ -300,11 +300,11 @@ if run_code != RunCode.MARCHING:
 
 plotter.show()
 
-# ## Calculate phasing parameters
+# ## Calculating the phasing maneuver parameters
 #
-# Now, calculate the parameters for the phasing maneuver using Kepler's equation and orbital mechanics principles.
+# Now, calculate the parameters for the phasing maneuver using Kepler’s equation and orbital mechanics principles.
 
-# First, retrieve the mean period and semi-major axis (SMA) of the chaser satellite's initial orbit. To do so, use the Kozai-Izsak Mean data provider associated with the satellite. Use an ICRF (International Celestial Reference Frame) coordinate system:
+# First, retrieve the mean period and semi-major axis (SMA) of the chaser satellite’s initial orbit. To do so, use the Kozai-Izsak Mean data provider associated with the satellite. Use an ICRF (International Celestial Reference Frame) coordinate system:
 
 mean_keplerian_data_provider = chaser_satellite.data_providers[
     "Kozai-Izsak Mean"
@@ -347,7 +347,7 @@ eccentric_anomaly = 2 * math.atan(
     * math.tan(phase_angle_per_orbit / 2)
 )
 
-# Use Kepler's equation to calculate the time needed to cover the phase angle in the original orbit:
+# Use Kepler’s equation to calculate the time needed to cover the phase angle in the original orbit:
 
 time_to_cover_phase_angle = (mean_orbital_period / (2 * math.pi)) * (
     eccentric_anomaly - eccentricity * math.sin(eccentric_anomaly)
@@ -357,7 +357,7 @@ time_to_cover_phase_angle = (mean_orbital_period / (2 * math.pi)) * (
 
 phasing_orbit_period = mean_orbital_period - time_to_cover_phase_angle
 
-# Then, calculate the SMA of the phasing orbit using the Earth's gravitational parameter, which is approximately 398600.44 $km^3 s^{-2} $:
+# Then, calculate the SMA of the phasing orbit using the Earth’s gravitational parameter, which is approximately 398600.44 $km^3 s^{-2} $:
 
 earth_gravitational_parameter = 398600.44
 transfer_semi_major_axis = math.pow(
@@ -365,7 +365,7 @@ transfer_semi_major_axis = math.pow(
     2 / 3,
 )
 
-# Next, calculate the eccentricity and the radii of the initial orbit. Start by using the chaser satellite's Astrogator data provider to retrieve the Keplerian elements of the orbit. Retrieve this data during the entire scenario at 60 second intervals and convert the data to a Pandas dataframe:
+# Next, calculate the eccentricity and the radii of the initial orbit. Start by using the chaser satellite’s Astrogator data provider to retrieve the Keplerian elements of the orbit. Retrieve this data during the entire scenario at 60 second intervals and convert the data to a Pandas dataframe:
 
 keplerian_elements_data_provider = chaser_satellite.data_providers[
     "Astrogator Values"
@@ -402,9 +402,9 @@ velocity_periapsis_final = math.sqrt(
 
 delta_v_estimate = velocity_periapsis_final - velocity_periapsis_initial
 
-# ## Set up the phasing maneuver sequence
+# ## Setting up the phasing maneuver sequence
 #
-# Add a target sequence to perform the first Delta-V maneuver and propagate through the phasing orbits. Add the first target sequence segment and configure it to use the active profiles:
+# Add a Target Sequence to perform the first Delta-V maneuver and propagate through the phasing orbits. Add the first Target Sequence segment and configure it to use the active profiles:
 
 # +
 from ansys.stk.core.stkobjects.astrogator import TargetSequenceAction
@@ -416,7 +416,7 @@ phasing_start_sequence = chaser_satellite.propagator.main_sequence.insert(
 phasing_start_sequence.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
 # -
 
-# Next, add an impulsive maneuver segment, through which Astrogator calculates the new state of the satellite by adding a Delta-V vector to the final state velocity of the previous segment. Configure the maneuver to use a Cartesian X control parameter:
+# Next, add an impulsive maneuver segment, through which the Astrogator capability calculates the new state of the satellite by adding a Delta-V vector to the final state velocity of the previous segment. Configure the maneuver to use a Cartesian X control parameter:
 
 # +
 from ansys.stk.core.stkobjects.astrogator import ControlManeuver, ManeuverType
@@ -441,7 +441,7 @@ thrust_vector.thrust_axes_name = "Satellite/Chaser VNC(Earth)"
 thrust_vector.x = delta_v_estimate * 1000
 # -
 
-# Finally, add a propagate segment using an Earth Point Mass propagator:
+# Finally, add a Propagate segment using an Earth Point Mass propagator:
 
 phasing_orbit_propagate = phasing_start_sequence.segments.insert(
     SegmentType.PROPAGATE, "Phasing Orbit", "-"
@@ -469,13 +469,13 @@ phasing_orbit_propagate.stopping_conditions.item(
     0
 ).properties.repeat_count = phasing_orbits
 
-# Finally, designate that the stopping condition should be calculated for the angle between the chaser's position vector and the target's position vector:
+# Finally, designate that the stopping condition should be calculated for the angle between the chaser’s position vector and the target’s position vector:
 
 phasing_orbit_propagate.results.add("Vector/Angle Between Vectors")
 phasing_orbit_propagate.results[0].vector1_name = "Satellite/Chaser Position"
 phasing_orbit_propagate.results[0].vector2_name = "Satellite/Target Position"
 
-# ## Configure the differential corrector for phasing
+# ## Configuring the differential corrector for phasing
 #
 # Set up the differential corrector to adjust the first Delta-V to achieve zero phase angle at the end of the phasing orbits:
 
@@ -509,18 +509,18 @@ phasing_angle_result.enable = True
 phasing_angle_result.desired_value = 0.0
 phasing_angle_result.tolerance = 0.1
 
-# ## Set up the circularization maneuver
+# ## Setting up the circularization maneuver
 #
-# Add a second target sequence to perform the circularization Delta-V to return to the original circular orbit.
+# Add a second Target Sequence to perform the circularization Delta-V to return to the original circular orbit.
 
-# First, add a second target sequence segment to the chaser satellite's main sequence and configure it to use the active profiles:
+# First, add a second Target Sequence segment to the chaser satellite’s main sequence and configure it to use the active profiles:
 
 circularization_sequence = chaser_satellite.propagator.main_sequence.insert(
     SegmentType.TARGET_SEQUENCE, "Circularization", "-"
 )
 circularization_sequence.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
 
-# Next, add a maneuver segment and configure it to use an impulsive control maneuver:
+# Next, add a Maneuver segment and configure it to use an Impulsive maneuver type:
 
 second_delta_v_maneuver = circularization_sequence.segments.insert(
     SegmentType.MANEUVER, "DV2", "-"
@@ -528,7 +528,7 @@ second_delta_v_maneuver = circularization_sequence.segments.insert(
 second_delta_v_maneuver.set_maneuver_type(ManeuverType.IMPULSIVE)
 second_delta_v_maneuver.enable_control_parameter(ControlManeuver.IMPULSIVE_CARTESIAN_X)
 
-# Finally, add a propagate segment to move the satellite to the final orbit. Configure it to use an Earth Point Mass propagator and stop after a duration of one day:
+# Finally, add a Propagate segment to move the satellite to the final orbit. Configure it to use an Earth Point Mass propagator and stop after a duration of one day:
 
 final_orbit_propagate = circularization_sequence.segments.insert(
     SegmentType.PROPAGATE, "Final Orbit", "-"
@@ -544,7 +544,7 @@ final_orbit_propagate.results.add("Keplerian Elems/Eccentricity")
 
 final_orbit_propagate.properties.color = Colors.Yellow
 
-# ## Configure the differential corrector for circularization
+# ## Configuring the differential corrector for circularization
 #
 # Set up the differential corrector to achieve a circular orbit with the desired eccentricity:
 
@@ -554,7 +554,7 @@ circularization_differential_corrector = circularization_sequence.profiles[
 circularization_differential_corrector.mode = ProfileMode.ITERATE
 circularization_differential_corrector.max_iterations = 50
 
-# Configure the corrector's control parameter:
+# Configure the corrector’s control parameter:
 
 circularization_x_control_parameter = (
     circularization_differential_corrector.control_parameters.get_control_by_paths(
@@ -575,17 +575,17 @@ circularization_eccentricity_result.enable = True
 circularization_eccentricity_result.desired_value = 0.0001
 circularization_eccentricity_result.tolerance = 0.00001
 
-# ## Run the main control sequence
+# ## Running the MCS
 #
-# Execute the mission control sequence to solve for the phasing maneuver:
+# Execute the MCS to solve for the phasing maneuver:
 
 chaser_satellite.propagator.run_mcs()
 target_satellite.propagator.run_mcs()
 root.rewind()
 
-# ## Retrieve the results
+# ## Retrieving the results
 #
-# Once the analysis has been performed, retrieve the Delta-V values and phasing orbit parameters using the chaser satellite's Maneuver Summary data provider:
+# Once the analysis has been performed, retrieve the Delta-V values and phasing orbit parameters using the chaser satellite’s Maneuver Summary data provider:
 
 maneuver_data_provider = chaser_satellite.data_providers["Maneuver Summary"]
 
@@ -623,7 +623,7 @@ print("")
 plotter.show()
 # -
 
-# ## Plot the phase angle history
+# ## Plotting the phase angle history
 #
 # Retrieve and plot the phase angle between the chaser and target satellites over time. To do so, use the scalar calculation AWB component representing the value of the phase angle:
 
@@ -670,7 +670,7 @@ plt.gca().grid(visible=True, which="both", linestyle="--")
 plt.show()
 # -
 
-# ## Plot the orbital altitude history
+# ## Plotting the orbital altitude history
 #
 # Retrieve and plot the altitude of both satellites to visualize the phasing orbit:
 
@@ -744,7 +744,7 @@ plt.show()
 # This example demonstrates how to:
 #
 # 1. Set up two geostationary satellites with different true anomalies
-# 2. Calculate the required phasing orbit parameters using Kepler's equation
+# 2. Calculate the required phasing orbit parameters using Kepler’s equation
 # 3. Design a phasing maneuver sequence with differential corrector profiles
 # 4. Execute the maneuver and retrieve the results
 # 5. Visualize the phase angle and altitude histories

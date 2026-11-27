@@ -1,14 +1,15 @@
 # # Results and graphs
 
-# This tutorial demonstrates how the STK object model provides direct access to the data provider tools exposed by each object in STK that form the foundation of the report styles in the GUI.
+# This tutorial demonstrates how the STK Object Model provides direct access to the data provider tools exposed by each object in the STK application that form the foundation of the report styles in the GUI.
 
-# The following example uses the `J2000 Position Velocity` report to demonstrate the retrieval of data through the object model. This report consists of specific J2000 data provider elements from two groups: `Cartesian Velocity` and `Cartesian Position`.
+# The following example uses the `J2000 Position Velocity` report to demonstrate the retrieval of data through the object model. This report consists of specific J2000 data provider elements from two groups: `Cartesian Velocity` and `Cartesian Position`, to report position and velocity of the object with respect to the object’s central body, as observed from its central body’s J2000 coordinate system.
+
 
 # ![The J2000 Position Velocity report contents](./img/object-model-report-contents.png)
 
-# ## Launch a new STK instance
+# ## Launching a new STK application instance
 
-# Start by launching a new STK instance. In this example, STKEngine is used.
+# Start by launching a new instance of the STK application. In this example, the STK Engine technology platform is used.
 
 # +
 from ansys.stk.core.stkengine import STKEngine
@@ -23,7 +24,7 @@ print(f"Using {stk.version}")
 root = stk.new_object_root()
 root.new_scenario("GraphsAndResults")
 
-# Once the scenario is created, it is possible to show a 3D graphics window by running:
+# Once the scenario is created, it is possible to show a 3D Graphics window by running:
 
 # +
 from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
@@ -33,7 +34,7 @@ globe_widget = GlobeWidget(root, 640, 480)
 globe_widget.show()
 # -
 
-# Show a 2D graphics window by running:
+# Show a 2D Graphics window by running:
 
 # +
 from ansys.stk.core.experimental.jupyterwidgets import MapWidget
@@ -43,7 +44,7 @@ map_widget = MapWidget(root, 640, 480)
 map_widget.show()
 # -
 
-# ## Set the scenario time period
+# ## Setting the scenario time period
 
 # Using the newly created scenario, set the start and stop times. Rewind the scenario so that the graphics match the start and stop times of the scenario:
 
@@ -53,7 +54,7 @@ root.rewind()
 
 # ## Adding a satellite to the scenario
 
-# Now that a new scenario is available, add a new satellite:
+# Now that a new scenario is available, add a new Satellite object:
 
 # +
 from ansys.stk.core.stkobjects import STKObjectType
@@ -64,7 +65,7 @@ satellite = root.current_scenario.children.new(
 )
 # -
 
-# Ensure that the satellite's associated times use the scenario's times as well.
+# Ensure that the satellite’s associated start and stop times match the scenario’s analysis interval and define its propagator:
 
 # +
 from ansys.stk.core.stkobjects import PropagatorTwoBody, PropagatorType
@@ -80,9 +81,9 @@ propagator.ephemeris_interval.set_start_and_stop_times(
 propagator.propagate()
 # -
 
-# ## Setup data providers for use in the object model
+# ## Setting up data providers for use in the object model
 
-# To retrieve the data for the `J2000 Position Velocity` report, setup its specific data providers for use in the Object Model. Use the various `DataProvider` interfaces to do this:
+# To retrieve the data for a `J2000 Position Velocity` report, set up its specific data providers for use in the Object Model. Use the various `DataProvider` interfaces to do this:
 
 # +
 from ansys.stk.core.stkobjects import DataProviderGroup
@@ -120,21 +121,21 @@ for item in cart_pos.group:
 
 # The basic interfaces are now setup to compute information from the data providers that the report is using. Next, cast these objects to provide the `IDataProvider` interface with inputs so it can compute the proper data.
 
-# ## Data provider "PreData" inputs
+# ## Setting data provider “PreData” inputs
 
 # Some data providers require input data before the calculation can provide data results. This data is known as PreData. There are two ways to ascertain if PreData is required for a particular data provider:
-# - Refer to the data provider documentation which provides the format of the PreData if any is required.
+# - Refer to the data provider documentation, which provides the format of the PreData if any is required.
 # - Retrieve the data provider schema and parse it for PreData tags.
 #
 # Use the `DataProviderCollection.get_schema()` method to get the schema for all STK data providers.
 
 schema = str(satellite.data_providers.get_schema())
 
-# Once the format of the PreData is known, set the `IDataProvider.pre_data` property. This property must be set before issuing the data provider's calculation method.
+# Once the format of the PreData is known, set the `IDataProvider.pre_data` property. This property must be set before issuing the data provider’s calculation method.
 
-# ## Set the `pre_data` property on the `IDataProvider` interface
+# ## Setting the `pre_data` property on the `IDataProvider` interface
 
-# The following example demonstrates setting the satellite's object path as the PreData for the `RIC Coordinates` data provider and then calls the data provider's computation execution method.
+# The following example demonstrates setting the Satellite object’s path as the PreData for the `RIC Coordinates` data provider and then calls the data provider’s computation execution method.
 
 # +
 from ansys.stk.core.stkobjects import DataProviderResult, DataProviderTimeVarying
@@ -147,15 +148,13 @@ provider.pre_data = "Satellite/SatelliteTwoBody"
 result = provider.execute("1 Jul 2020 17:14:00.00", "1 Jul 2020 17:29:00.00", 1)
 # -
 
-# ## Data provider time inputs
-
-# In the `Time Period` section of the `Report` window in STK, highlight `J2000 Position Velocity` and click the `Specify Time Properties` radio button. The `J2000 Position Velocity` report uses a time period to provide the underlying data provider's information about what data to compute. Provide the same information to the object model data providers.
+# The J2000 Position Velocity report uses a time period to provide the underlying data provider’s information about what data to compute. In the STK application GUI, you would open the Report & Graph Manager with the Satellite object, select the J2000 Position Velocity report style in the Installed Styles folder, then select the Specify Time Properties option to enter the equivalent PreData for the report. In the section above, you provided the same information to the object model data providers.
 
 # ![Report time properties](./img/specify-time-properties.png)
 
-# ## Retrieve the data
+# ## Computing and retrieving the data
 
-# There are three ways to compute the data, depending on the data provider type. The first method requires a time interval and step size, the second requires only a time interval, and the third is independent of time.
+# There are three ways to compute the data, depending on the data provider type; the first method requires a time interval and step size, the second requires only a time interval, and the third is independent of time.
 #
 # Provide input information to the data providers by casting the data provider interfaces to the proper execution interface. In the case of the `Cartesian Velocity` and `Cartesian Position` data providers, cast to `DataProviderTimeVarying`:
 
@@ -169,12 +168,11 @@ pos_result = pos_time_var.execute("1 Jul 2020 17:14:00.00", "1 Jul 2020 17:29:00
 
 # `vel_result` and `pos_result` now contain the data from the `J2000 Cartesian Velocity` and `Cartesian Position` data providers, more data than the original report contained.
 #
-# ## Retrieve specific elements
+# ## Retrieving specific elements
 #
-# Recall that the original `Cartesian Position Velocity` report contained only four elements of the `Cartesian Velocity J2000` group: `x`, `y`, `z`, and `speed`. Similarly, the `Cartesian Position J2000` data provider contained within your report style only contains three elements: `x`, `y`, and `z`.
+# Recall that the original `Cartesian Position Velocity` report contained only four data provider elements of the `J2000` data provider group: `x`, `y`, `z`, and `speed`. Similarly, the `Cartesian Position` data provider contained within your report style only contains three elements in the `J2000` group: `x`, `y`, and `z`.
 #
-# When the J2000 data provider of `Cartesian Velocity` was executed, seven elements were retrieved instead of the four specifically contained in the
-# report, adding the `time`, `radial`, and `intrack` elements to the `DataProviderResult`. To be precise as possible, DataProviderResult` should contain only the elements which were contained in the original report. To do this, use the `DataProviderTimeVarying.execute_elements()` method.
+# When the `Cartesian Velocity-J2000` data provider group was executed, seven elements were retrieved instead of the four specifically contained in the report, adding the `time`, `radial`, and `intrack` elements to the `DataProviderResult`. To be precise as possible, `DataProviderResult` should contain only the elements that were contained in the original report. To do this, use the `DataProviderTimeVarying.execute_elements()` method.
 #
 # First, specify in an array the elements to retrieve from the data provider. Next, pass the array into `DataProviderTimeVarying.execute_elements()`:
 
@@ -192,13 +190,13 @@ pos_result = pos_time_var.execute_elements(
 
 # The original data from the `J2000 Position Velocity` report is now stored in `DataProviderResult` objects and ready to traverse.
 #
-# ## Traverse the result data
+# ## Traversing the report
 #
-# Review the original report. The data in the report consisted of time intervals with various elements.
+# Review the report as seen in the STK application GUI below. The data in the report consists of time intervals with various elements:
 #
 # ![Original report](./img/original-report-data.png)
 #
-# Similarly, the result needs to be cast to the appropriate interface to make use of the data. In the case of the `J2000 Cartesian Velocity` and `Position` data providers, that interface is the `DataProviderResultIntervalCollection`. Since each data provider result shares the same result type, consolidate the data traversal into one method, which takes a `DataProviderResult`:
+# Similarly, the result needs to be cast to the appropriate interface to make use of the data. In the case of the `Cartesian Velocity` and `Cartesian Position` data providers, that interface is the `DataProviderResultIntervalCollection`. Since each data provider result shares the same result type, consolidate the data traversal into one method, which takes a `DataProviderResult`:
 
 
 def write_interval_data(result: DataProviderResult):
@@ -225,7 +223,7 @@ def write_interval_data(result: DataProviderResult):
 
 #  **Note:** the type of data returned by the DataProvider can be determined using the `DataProviderResult.category` property, which returns an enumeration describing the interface. The `DataProviderResult.value` property is then cast to one of three interfaces, depending on the category enumeration: `DataProviderResultIntervalCollection`, `DataProviderResultSubSectionCollection`, or `DataProviderResultTextMessage`.
 
-# ## Complete the output
+# ## Completing the output
 
 # Finally, call the method with `DataProviderResult` arguments. The data from the `J2000 Position Velocity` report is traversed and output:
 

@@ -4,15 +4,15 @@
 #
 # ## What is a porkchop plot?
 #
-# A porkchop plot is a graphical tool used in astrodynamics to visualize the fuel or energy requirements for space missions, especially interplanetary travel. It shows contours of mission parameters, typically launch and arrival dates, with color-coded regions indicating different energy costs. The plot's shape often resembles a porkchop, hence the name.
+# A porkchop plot is a graphical tool used in astrodynamics to visualize the fuel or energy requirements for space missions, especially interplanetary travel. It shows contours of mission parameters, typically launch and arrival dates, with color-coded regions indicating different energy costs. The plot’s shape often resembles a porkchop, hence the name.
 #
-# Porkchop plots are usually generated under the assumption of the restricted two-body problem. The restricted two-body problem assumes that each planet is treated as a single point mass, focusing solely on the gravitational influence of the Sun. This simplifies the model by ignoring gravitational interactions between planets, allowing spacecraft trajectories to be calculated based only on the Sun's and a single planet's gravity. The trajectory of the spacecraft is computed by solving a [Lambert transfer](./lambert-transfer.py).
+# Porkchop plots are usually generated under the assumption of the restricted two-body problem. The restricted two-body problem assumes that each planet is treated as a single point mass, focusing solely on the gravitational influence of the Sun. This simplifies the model by ignoring gravitational interactions between planets, allowing spacecraft trajectories to be calculated based only on the Sun’s and a single planet’s gravity. The trajectory of the spacecraft is computed by solving a [Lambert transfer](./lambert-transfer.py).
 #
 # ## Problem statement
 #
-# The goal of this tutorial is to reproduce the porkchop in Fig. 4 from  NASA's Interplanetary Mission Design Handbook, Volume I, Part 2, available for download [here](https://ntrs.nasa.gov/citations/19840010158). This porkchop shows the characteristic energy at launch $C_{3_{\text{launch}}} = \Delta v_{\text{launch}}^2$ for a interplanetary Lambert transfer between Earth and Mars.
+# The goal of this tutorial is to reproduce the porkchop in Fig. 4 from  NASA’s Interplanetary Mission Design Handbook, Volume I, Part 2, available for download [here](https://ntrs.nasa.gov/citations/19840010158). This porkchop shows the characteristic energy at launch $C_{3_{\text{launch}}} = \Delta v_{\text{launch}}^2$ for a interplanetary Lambert transfer between Earth and Mars.
 #
-# ![Fig. 7 directly taken from NASA's manual](./img/nasa-porkchop.png)
+# ![Fig. 7 directly taken from NASA’s manual](./img/nasa-porkchop.png)
 
 # ## Overview of the algorithm
 #
@@ -26,9 +26,9 @@
 #
 # Some of these steps can be implemented as functions to ease the readability of the code and its maintenance.
 
-# ## Launch STK
+# ## Launching an STK application instance
 #
-# Start by launching a new STK instance in headless mode (no GUI):
+# Start by launching a new instance of the STK application in headless mode (no graphical user interface) using the STK Engine technology platform:
 
 # +
 from ansys.stk.core.stkengine import STKEngine
@@ -38,9 +38,9 @@ stk = STKEngine.start_application(no_graphics=False)
 print(f"Using {stk.version}")
 # -
 
-# ## Create a new scenario
+# ## Creating a new scenario
 #
-# Next, create a new scenario. The central body for this scenario must be the Sun.
+# Next, create a new STK scenario. The central body for this scenario must be the Sun.
 
 # +
 from ansys.stk.core.stkobjects import STKObjectType
@@ -56,7 +56,7 @@ scenario = root.children.new_on_central_body(
 
 # ## Generating a span of launch and arrival dates
 #
-# Generating a span of launch and arrival dates allows to compute, in the future, for any combination of dates. When manipulating dates and times in PySTK, it is important to always use the API. Do not rely on the Python <inv:datetime> module since it does not account for leap-seconds.
+# Generating a span of launch and arrival dates allows to compute, in the future, for any combination of dates. When manipulating dates and times using PySTK, it is important to always use the API. Do not rely on the Python <inv:datetime> module since it does not account for leap-seconds.
 
 
 def linspace_dates(start_date, end_date, interval, unit):
@@ -111,9 +111,9 @@ for date in linspace_dates(first_launch, last_launch, 1, "day")[:5]:
 print("...")
 
 
-# ## Solve the ephemerides of the planets
+# ## Solving the ephemerides of the planets
 #
-# With launch and arrival dates generated, it is time to generate a routine for computing the state vector of the planets. This function was presented in the [Lambert transfer](./lambert-transfer.py) example. Therefore, it is reproduced in here:
+# With launch and arrival dates generated, it is time to generate a routine for computing the state vector of the planets. This function is presented in the [Lambert transfer](./lambert-transfer.py) example. Therefore, it is reproduced in here:
 
 
 # +
@@ -173,7 +173,7 @@ def get_object_pos_vel_at_epoch(
 
 # -
 
-# Now, add the planets to the scene:
+# Now, add the planets to the scenario:
 
 # +
 from ansys.stk.core.stkobjects import EphemSourceType, PlanetPositionSourceType
@@ -202,9 +202,9 @@ for date in launch_span[:5]:
 print("...")
 # -
 
-# ## Add a satellite
+# ## Adding a satellite
 #
-# A satellite object is used to solve for the Lambert transfer between Earth and Mars. Astrogator is used for its propagation. Make sure to clean the main sequence.
+# A Satellite object is used to solve for the Lambert transfer between Earth and Mars. Astrogator is used as its propagator. Make sure to clear the Mission Control Sequence (MCS).
 
 # +
 from ansys.stk.core.stkobjects import PropagatorType
@@ -217,9 +217,9 @@ satellite.set_propagator_type(PropagatorType.ASTROGATOR)
 satellite.propagator.main_sequence.remove_all()
 # -
 
-# ### Initial state
+# ### Configuring the satellite’s Initial state
 #
-# The initial state of the satellite must be changed for every launch date. However, the initial state segment instance remains in the main sequence. Therefore, it is possible to configure here only the constant parameters of the initial state of the satellite:
+# The initial state of the satellite must be changed for every launch date. However, the Initial State segment instance remains in the MCS. Therefore, it is possible to configure only the constant parameters of the initial state of the satellite:
 
 # +
 from ansys.stk.core.stkobjects.astrogator import ElementSetType, SegmentType
@@ -232,9 +232,9 @@ initial_state.coord_system_name = "CentralBody/Sun Inertial"
 initial_state.set_element_type(ElementSetType.CARTESIAN)
 # -
 
-# ### Interplanetary transfer
+# ### Modeling the nterplanetary transfer
 #
-# For the interplanetary transfer, a similar situation occurs. The different segments of the Lambert trajectory remain no matter the launch and arrival dates. Therefore, it is possible configure here only the constant parameters.
+# For the interplanetary transfer, a similar situation occurs. The different segments of the Lambert trajectory remain, no matter the launch and arrival dates. Therefore, it is possible configure only the constant parameters.
 
 # Start by declaring the different segments of the Lambert transfer:
 
@@ -261,7 +261,7 @@ last_impulse.set_maneuver_type(ManeuverType.IMPULSIVE)
 transfer.profiles.remove_all()
 lambert = transfer.profiles.add("Lambert Profile")
 
-# Configure the profile. Do not configure any parameters related with the target:
+# Configure the Lambert profile. Do not configure any parameters related with the target:
 
 # +
 from ansys.stk.core.stkobjects.astrogator import (
@@ -279,7 +279,7 @@ lambert.revolutions = 0
 lambert.central_body_collision_altitude_padding = 0
 # -
 
-# Allow the profile to write its results to the transfer segments:
+# Allow the Lambert profile to write its results to the transfer segments:
 
 # +
 lambert.enable_write_to_first_maneuver = True
@@ -293,7 +293,7 @@ lambert.enable_write_to_second_maneuver = True
 lambert.second_maneuver_segment = last_impulse.name
 # -
 
-# Activate the profile and configure its behavior when solving for the results:
+# Activate the Lambert profile and configure its behavior when solving for the results:
 
 # +
 from ansys.stk.core.stkobjects.astrogator import (
@@ -310,11 +310,11 @@ transfer.continue_on_failure = False
 transfer.reset_inner_targeters = False
 # -
 
-# ## Solve the transfer
+# ## Solving for the transfer
 #
 # Only the constant parameters have been configured so far. Now, it is time to create a routine capable of modifying the state of the satellite and the Lambert profile so that the required impulses can be solved for any launch and arrival date.
 #
-# **Note:** the porkchop plots presented in NASA's manual assume prograde transfers. However, the Lambert profile only differentiates between long and short solution transfers. The relation between prograde/retrograde and long/short transfers is set by the angular momentum. Although its magnitude can not be found unless solving the problem, its direction can be retrieved from the initial and final position vectors. Therefore, depending on the angular momentum, a long or short transfer is imposed.
+# **Note:** the porkchop plots presented in NASA’s manual assume prograde transfers. However, the Lambert profile only differentiates between long- and short-solution transfers. The relation between prograde/retrograde and long/short transfers is set by the angular momentum. Although its magnitude cannot be found unless solving the problem, its direction can be retrieved from the initial and final position vectors. Therefore, depending on the angular momentum, a long or short transfer is imposed.
 
 # +
 import numpy as np
@@ -413,9 +413,9 @@ for i, launch_date in enumerate(launch_span):
         tof_values[j, i] = tof / 3600 / 24
 # -
 
-# ## Plot the porkchop
+# ## Plotting the porkchop
 #
-# With the values for $C_{3_{\text{launch}}}$, $\Delta v_{\text{arrival}}$, and the time of flight, it is possible to generate the porkchop plot. However, before proceeding, we need to convert the `Date` objects to `datetime.datetime` objects so that Matplotlib can correctly interpret them as time values.
+# With the values for $C_{3_{\text{launch}}}$, $\Delta v_{\text{arrival}}$, and the time of flight, it is possible to generate the porkchop plot. However, before proceeding, you need to convert the `Date` objects to `datetime.datetime` objects so that Matplotlib can correctly interpret them as time values.
 
 # +
 from datetime import datetime
@@ -529,7 +529,7 @@ ax.xaxis.set_major_formatter(mdates.DateFormatter("%y/%m/%d"))
 ax.yaxis.set_major_formatter(mdates.DateFormatter("%y/%m/%d"))
 plt.xticks(rotation=90)
 
-# Set the ticks for bot axes
+# Set the ticks for both axes
 ax.set_xticks(
     [as_datetime(date) for date in linspace_dates(first_launch, last_launch, 20, "day")]
 )

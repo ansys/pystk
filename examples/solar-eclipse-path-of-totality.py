@@ -10,13 +10,13 @@
 
 # The strategy to solve this problem relies on three ingredients:
 #
-# - A **place** object that carries the lighting constraints of the eclipse. A location experiences a total eclipse when it lies inside the umbra of the Moon, so the place is constrained to be in umbra with both the Sun and the Moon acting as obstructing central bodies.
-# - A **satellite** that is permanently visible from Spain. This satellite is only used as a coverage asset, so that the accesses computed by the coverage definition are exclusively driven by the lighting constraints.
-# - A **coverage definition** bounded by the Spanish borders, whose grid points inherit the constraints of the place object, together with an **access duration figure of merit** that accumulates, for every grid point, the time spent inside the umbra.
+# - A **Place** object that carries the lighting constraints of the eclipse. A location experiences a total eclipse when it lies inside the umbra of the Moon, so the place is constrained to be in umbra with both the Sun and the Moon acting as obstructing central bodies.
+# - A **Satellite** object that is permanently visible from Spain. This satellite is only used as a coverage asset, so that the accesses computed by the coverage definition are exclusively driven by the lighting constraints.
+# - A **Coverage Definition** object whose bounds are the borders of Spain and whose grid points inherit the constraints of the place object, together with an **Access Duration Figure of Merit** object that accumulates, for every grid point, the time spent inside the umbra.
 
-# ## Launch a new STK instance
+# ## Launching a new STK application instance
 
-# Start by launching a new STK instance. In this example, STKEngine is used.
+# Start by launching a new instance of the STK application. In this example, the STK Engine technology platform is used.
 
 # +
 from ansys.stk.core.stkengine import STKEngine
@@ -26,14 +26,14 @@ stk = STKEngine.start_application(no_graphics=False)
 print(f"Using {stk.version}")
 # -
 
-# ## Create a new scenario
+# ## Creating a new scenario
 
 # Create a new scenario in STK by running:
 
 root = stk.new_object_root()
 root.new_scenario("SolarEclipse2026Spain")
 
-# Once the scenario is created, it is possible to show a 3D graphics window centered in Spain by running:
+# Once the scenario is created, it is possible to show a 3D Graphics window centered in Spain by running:
 
 # +
 from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
@@ -58,7 +58,7 @@ globe_plotter.show()
 
 globe_plotter.camera.direction
 
-# ## Set the scenario time period
+# ## Setting the scenario time period
 
 # The eclipse is visible from Spain during the late afternoon of $12$ August $2026$. Set the scenario time period to a window of $1$ hour and $45$ minutes containing the event, and rewind the scenario so that the graphics match the start and stop times of the scenario:
 
@@ -66,11 +66,11 @@ scenario = root.current_scenario
 scenario.set_time_period("12 Aug 2026 17:00:00.000", "12 Aug 2026 18:45:00.000")
 root.rewind()
 
-# ## Insert the asset satellite
+# ## Inserting the asset satellite
 
 # A coverage definition always requires at least one asset. Because the analysis is driven by the lighting constraints and not by the visibility of a spacecraft, the asset must be an object that every point of Spain can see during the whole scenario. A geostationary satellite placed over the Greenwich meridian satisfies this requirement.
 
-# First, insert the satellite:
+# First, insert a Satellite objcect:
 
 # +
 from ansys.stk.core.stkobjects import STKObjectType
@@ -79,7 +79,7 @@ from ansys.stk.core.stkobjects import STKObjectType
 asset_satellite = scenario.children.new(STKObjectType.SATELLITE, "Asset_Sat")
 # -
 
-# Then, set the propagator to two-body, which is accurate enough for an asset that only needs to remain in view:
+# Then, set the propagator type to two-body, which is accurate enough for an asset that only needs to remain in view:
 
 # +
 from ansys.stk.core.stkobjects import PropagatorType
@@ -98,7 +98,7 @@ from ansys.stk.core.stkutil import OrbitStateType
 orbit = propagator.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
 # -
 
-# A geostationary orbit is a circular equatorial orbit with a semi-major axis of $42164.17$ km. Set the ``size_shape_type`` property to semi-major axis and eccentricity:
+# A geostationary orbit is a circular equatorial orbit with a semi-major axis of $42164.17$ km. Set the `size_shape_type` property to semi-major axis and eccentricity:
 
 # +
 from ansys.stk.core.stkobjects import ClassicalSizeShape
@@ -139,11 +139,11 @@ orbit.location.value = 0
 propagator.initial_state.representation.assign(orbit)
 propagator.propagate()
 
-# ## Insert the constraint place
+# ## Inserting the constraint template object
 
-# The lighting conditions of the eclipse are modeled with a place object. This object is not analyzed on its own: it is used as a template whose access constraints are replicated on every point of the coverage grid.
+# The lighting conditions of the eclipse are modeled with a Place object. This object is not analyzed on its own; it is used as a template whose access constraints are replicated on every point of the coverage grid.
 
-# First, insert the place and locate it in the east of Spain using geodetic coordinates:
+# First, insert the Place object and locate it in the eastern Spain using geodetic coordinates:
 
 eclipse_constraints = scenario.children.new(STKObjectType.PLACE, "Eclipse_Constraints")
 eclipse_constraints.position.assign_geodetic(39.8587, -0.0706, 0)
@@ -168,7 +168,7 @@ from ansys.stk.core.stkobjects import ConstraintLighting
 lighting_constraint.condition = ConstraintLighting.UMBRA
 # -
 
-# By default, STK only accounts for the shadow cast by the central body. Add a central body obstruction constraint so that the Moon is also considered when the lighting conditions are evaluated:
+# By default, the STK application only accounts for the shadow cast by the central body. Add a central body obstruction constraint so that the Moon is also considered when the lighting conditions are evaluated:
 
 central_body_obstruction = eclipse_constraints.access_constraints.add_constraint(
     AccessConstraintType.CENTRAL_BODY_OBSTRUCTION
@@ -182,25 +182,25 @@ for central_body in ["Sun", "Moon"]:
 
 central_body_obstruction.assigned_obstructions
 
-# With these two constraints, the place object only has access to the asset satellite while the Moon completely blocks the solar disk.
+# With these two constraints, the Place object only has access to the asset satellite while the Moon completely blocks the solar disk.
 
-# ## Insert the coverage definition
+# ## Inserting the coverage definition
 
-# The coverage definition discretizes Spain into a grid of points. Each of these points inherits the lighting constraints of the place object, so the accesses computed between the grid and the asset satellite represent the totality intervals.
+# The coverage definition discretizes Spain into a grid of points. Each of these points inherits the lighting constraints of the Place object, so the accesses computed between the grid and the asset satellite represent the totality intervals.
 
-# First, insert the coverage definition:
+# First, insert a Coverage Definition object:
 
 spain_coverage = scenario.children.new(
     STKObjectType.COVERAGE_DEFINITION, "Spain_Coverage"
 )
 
-# Because many properties are modified before computing the accesses, disable the automatic recomputation to avoid unnecessary calculations:
+# Because many properties are modified before computing the accesses, disable their automatic recomputation to avoid unnecessary calculations:
 
 spain_coverage.advanced.recompute_automatically = False
 
-# ### Restrict the analysis interval to the totality window
+# ### Restricting the analysis interval to the totality window
 
-# The lighting constraint of the place object reports umbra whenever the solar disk is completely blocked, regardless of which body is responsible for it. Over Spain, the Moon casts its umbra between $18{:}26$ and $18{:}35$ UTC, but shortly afterwards the Sun sets on the eastern edge of the country and the Earth itself starts to cast its own umbra. Both events satisfy the constraint, so nightfall would be counted as a second, much longer eclipse in the easternmost regions.
+# The lighting constraint of the Place object reports umbra whenever the solar disk is completely blocked, regardless of which body is responsible for it. Over Spain, the Moon casts its umbra between $18{:}26$ and $18{:}35$ UTC, but shortly afterwards the Sun sets on the eastern edge of the country and the Earth itself starts to cast its own umbra. Both events satisfy the constraint, so nightfall would be counted as a second, much longer eclipse in the easternmost regions.
 #
 # Avoid this by restricting the analysis interval of the coverage definition to a window that contains the totality but excludes the sunset:
 
@@ -208,9 +208,9 @@ spain_coverage.interval.analysis_interval.set_start_and_stop_times(
     "12 Aug 2026 17:00:00.000", "12 Aug 2026 18:35:00.000"
 )
 
-# ### Bound the grid with the Spanish borders
+# ### Bounding the grid with the Spanish border
 
-# The grid is bounded by the borders of Spain, which are available as an ArcView shapefile shipped with STK. First, set the bounds type to custom regions:
+# The grid is bounded by the borders of Spain, which are available as an ArcView shapefile (*.shp) shipped with the STK application. First, set the bounds type to Custom Regions:
 
 # +
 from ansys.stk.core.stkobjects import CoverageBounds
@@ -219,7 +219,7 @@ from ansys.stk.core.stkobjects import CoverageBounds
 spain_coverage.grid.bounds_type = CoverageBounds.CUSTOM_REGIONS
 # -
 
-# Then, locate the shapefile inside the STK installation directory:
+# Then, locate the shapefile inside the STK software installation directory:
 
 # +
 import os
@@ -262,9 +262,9 @@ spain_shapefile = resolve_spain_shapefile()
 
 spain_coverage.grid.bounds.region_files.add(str(spain_shapefile))
 
-# ### Set the grid resolution
+# ### Setting the grid resolution
 
-# The grid point granularity presents a trade-off between computational workload and accuracy of the results. Because the path of totality is only a few hundred kilometers wide, a fine resolution of $0.025^\circ$ in latitude and longitude, roughly $2.8$ km, is used to resolve the edges of the band and the location of the longest totality accurately.
+# The grid point granularity presents a trade-off between computational workload and accuracy of the results. Because the path of totality is only a few hundred kilometers wide, a fine resolution of $0.025^\circ$ in latitude and longitude, roughly $2.8$ km, is used to accurately resolve the edges of the band and the location of the longest totality.
 
 # First, set the resolution type to latitude/longitude:
 
@@ -279,9 +279,9 @@ spain_coverage.grid.resolution_type = CoverageResolution.RESOLUTION_LATITUDE_LON
 
 spain_coverage.grid.resolution.latitude_longitude = 0.025
 
-# ### Seed the grid with the constraint place
+# ### Seeding the grid with the constraint place
 
-# The grid points must behave like the place object previously inserted. Set the reference constraint class of the point definition to place:
+# The grid points must behave like the Place object previously inserted. Set the reference constraint class of the point definition to Place:
 
 # +
 from ansys.stk.core.stkobjects import CoverageGridClass
@@ -298,32 +298,32 @@ spain_coverage.point_definition.use_grid_seed = True
 
 spain_coverage.point_definition.seed_instance = eclipse_constraints.path
 
-# ## Compute coverage
+# ## Computing coverage
 
 # Assign the asset satellite to the coverage definition:
 
 spain_coverage.asset_list.add(asset_satellite.path)
 
-# The grid itself is not relevant for the analysis, so hide the region boundary and the grid points to keep the 3D graphics window clean:
+# The grid itself is not relevant for the analysis, so hide the region boundary and the grid points to keep the 3D Graphics window clean:
 
 spain_coverage.graphics.static.show_region = False
 spain_coverage.graphics.static.show_points = False
 
-# Then, compute the accesses between the grid points and the asset. Only the points that are inside the umbra of the Moon at some instant of the scenario report an access:
+# Then, compute the access between the grid points and the asset. Only the points that are inside the umbra of the Moon at some instant of the scenario report an access:
 
 spain_coverage.compute_accesses()
 
-# ## Insert an access duration Figure of Merit
+# ## Inserting an Access Duration figure of merit
 
-# The duration of the totality at every grid point is the duration of the access computed in the previous step. An access duration Figure of Merit quantifies this magnitude over the whole grid.
+# The duration of the totality at every grid point is the duration of the access computed in the previous step. An Access Duration Figure Of Merit object quantifies this magnitude over the whole grid.
 
-# First, insert the Figure of Merit as a child of the coverage definition:
+# First, insert the Figure Of Merit object as a child of the Coverage Definition object:
 
 eclipse_path = spain_coverage.children.new(
     STKObjectType.FIGURE_OF_MERIT, "Eclipse_Path"
 )
 
-# Then, set its definition type to access duration:
+# Then, set its definition type to Access Duration:
 
 # +
 from ansys.stk.core.stkobjects import FigureOfMeritDefinitionType
@@ -333,7 +333,7 @@ eclipse_path.set_definition_type(FigureOfMeritDefinitionType.ACCESS_DURATION)
 definition = eclipse_path.definition
 # -
 
-# Compute the average of the access durations at every grid point. Since a given location can only experience one totality interval, the average is the duration of the totality itself:
+# Compute the average of the access duration across every grid point. Since a given location can only experience one totality interval, the average is the duration of the totality itself:
 
 # +
 from ansys.stk.core.stkobjects import FigureOfMeritCompute
@@ -353,9 +353,9 @@ definition.satisfaction.satisfaction_type = FigureOfMeritSatisfactionType.GREATE
 definition.satisfaction.satisfaction_threshold = TOTALITY_THRESHOLD_SECONDS
 # -
 
-# ## Draw the contour map of the duration time
+# ## Drawing the contour map of the duration time
 
-# The static graphics of the Figure of Merit draw the contour map of the duration of the totality directly on the globe. First, enable the graphics and fill the grid points:
+# The static graphics of the Figure Of Merit object draw the contour map of the duration of the totality directly on the globe. First, enable the satisfaction graphics and fill the grid points:
 
 eclipse_path.graphics.show_graphics = True
 eclipse_path.graphics.static.show_graphics = True
@@ -391,7 +391,7 @@ contours.ramp_color.start_color = Color.from_rgb(143, 188, 143)
 contours.ramp_color.end_color = Color.from_rgb(255, 128, 128)
 # -
 
-# Draw the legend of the contour levels on the 3D graphics window so that the colors can be read as durations:
+# Draw the legend of the contour levels on the 3D Graphics window so that the colors can be read as durations:
 
 legend = contours.legend
 legend.text_options.title = "Length of eclipse (seconds)"
@@ -414,11 +414,11 @@ globe_plotter.camera.position = [7150, -440, 6010]
 globe_plotter.show()
 # -
 
-# The contour map shows the path of totality entering Spain through Galicia and Asturias, crossing Castilla y León, Aragón, and the Comunidad Valenciana, and leaving the country through the Balearic Islands. The totality lasts the longest on the northwestern coast, where the Sun is still around $8^\circ$ above the horizon, and it becomes progressively shorter towards the southeast, where the eclipse takes place almost at sunset. It also vanishes towards the edges of the band, where only a partial eclipse is visible.
+# The contour map shows the path of totality entering Spain through Galicia and Asturias, crossing Castile and León, Aragon, and the Valencian Community, and leaving the country through the Balearic Islands. The totality lasts the longest on the northwestern coast, where the Sun is still around $8^\circ$ above the horizon, and it becomes progressively shorter towards the southeast, where the eclipse takes place almost at sunset. It also vanishes towards the edges of the band, where only a partial eclipse is visible.
 
-# ## Analyze the results
+# ## Analyzing the results
 
-# The Value By Point data provider reports the value of the Figure of Merit, in this case the duration of the totality in seconds, at every grid point. Convert it to a pandas ``dataframe``:
+# The Value By Point data provider reports the value of the figure of merit — in this case the duration of the totality in seconds — at every grid point. Convert it to a pandas `dataframe`:
 
 value_by_point_df = (
     eclipse_path.data_providers.item("Value By Point")
@@ -430,7 +430,7 @@ value_by_point_df = value_by_point_df.astype(
     {"latitude": float, "longitude": float, "fom value": float}
 )
 
-# STK reports longitudes in the $[0, 360)^\circ$ range. Wrap them into the $[-180, 180)^\circ$ range so that the Spanish territory is contiguous:
+# The STK application reports longitudes in the $[0, 360)^\circ$ range. Wrap them into the $[-180, 180)^\circ$ range so that the Spanish territory is contiguous:
 
 value_by_point_df["longitude"] = (value_by_point_df["longitude"] + 180) % 360 - 180
 
@@ -458,9 +458,9 @@ print(f"Duration: {longest_totality['fom value']:.1f} s")
 
 # This location lies on the northwestern coast of Spain, between Galicia and Asturias, which is consistent with the maximum duration published by the Instituto Geográfico Nacional for this eclipse.
 
-# ## Examine the lighting times of a viewing location
+# ## Examining the lighting times of a viewing location
 
-# The contour map identifies the regions where the eclipse is total, but a specific viewing location may also be of interest. Insert a place object at the venue of the eclipse observation, for instance the city of Burgos:
+# The contour map identifies the regions where the eclipse is total, but a specific viewing location may also be of interest. Insert a Place object at the venue of the eclipse observation — for instance the city of Burgos in Castile and León:
 
 viewing_location = scenario.children.new(STKObjectType.PLACE, "Viewing_Location")
 viewing_location.position.assign_geodetic(42.3439, -3.6969, 0)
